@@ -279,5 +279,8 @@ def build() -> None:
         src = config.DATA_DIR / name
         if src.exists():
             shutil.copy(src, config.DIST_DIR / "data" / name)
+    # dist/에서 그대로 배포한다. outputDirectory를 쓰면 dist/dist를 찾아 cleanUrls가 죽는다(2026-09-06 실측 404).
+    io.open(config.DIST_DIR / "vercel.json", "w", encoding="utf-8", newline="\n").write(
+        '{\n  "cleanUrls": true,\n  "trailingSlash": false\n}\n')
     io.open(config.DIST_DIR / "robots.txt", "w").write("User-agent: *\nAllow: /\nUser-agent: GPTBot\nDisallow: /\nUser-agent: ClaudeBot\nDisallow: /\nUser-agent: CCBot\nDisallow: /\n")
     print(f"  [site] dist/ 생성 - ko {len(_pieces('ko'))}편 · en {len(_pieces('en'))}편")
