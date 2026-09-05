@@ -1,0 +1,42 @@
+name: daily
+on:
+  schedule:
+    - cron: "0 0 * * *"   # 09:00 KST · 수집기(06:30·07:00 KST) 뒤
+  workflow_dispatch:
+    inputs:
+      send:
+        description: "Buttondown 실제 발송"
+        default: "true"
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 두뇌 (읽기 전용)
+        uses: actions/checkout@v4
+        with:
+          repository: neovibelab/virtual-brain
+          token: ${{ secrets.BRAIN_PAT }}
+          path: brain
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - name: 하루 한 바퀴
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
+          BRAIN_DIR: ${{ github.workspace }}/brain/llm-wiki
+          INTERN_LAUNCH_DATE: ${{ vars.INTERN_LAUNCH_DATE }}
+        run: |
+          if [ "${{ github.event.inputs.send || 'true' }}" = "true" ]; then python run_daily.py --send; else python run_daily.py; fi
+      - name: 기록 커밋
+        run: |
+          git config user.name "ai-intern-01"
+          git config user.email "intern@neovibelab.com"
+          git add content data dist rules
+          git diff --cached --quiet || git commit -m "D+$(python -c 'import json;s=json.load(open("data/stats.json"));print(s[-1]["day"])') · $(date -u +%Y-%m-%d)"
+          git push
