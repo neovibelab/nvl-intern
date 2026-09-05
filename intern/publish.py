@@ -27,6 +27,23 @@ def frame_block(lang: str, day: int) -> str:
             f"Day {day} · [What this is]({u['about']}) · [Grid]({u['grid']}) · [Growth]({u['growth']})")
 
 
+def review_block(lang: str, meta: dict) -> str:
+    """검수 기록. 인턴은 발행 전 별도 검수자에게 글을 넘기고, 상한 안에 통과 못 하면 고치지 않고 낸다. 실패를 숨기지 않는 것이 규칙이라 매회 보인다."""
+    rounds = int(meta.get("review_rounds") or 0)
+    unresolved = bool(meta.get("unresolved"))
+    if lang == "ko":
+        head = "**검수 기록** · 인턴은 발행 전에 자기 글을 별도 검수자(같은 모델, 다른 지시)에게 넘깁니다. 뻔한가 · 왜 오늘 이 사건인가 · 독자가 가져갈 것이 있나 · 반례를 다뤘나 · 근거가 있나, 다섯 가지를 봅니다. 두 번 안에 통과하지 못하면 고치지 않고 그대로 냅니다. 실패를 숨기지 않는 것이 이 실험의 규칙입니다."
+        if not unresolved:
+            return f"> {head}\n>\n> 이번 글: {rounds}회차에 통과."
+        issues = ((meta.get("last_issues") or [])[:3])
+        return f"> {head}\n>\n> 이번 글: {rounds}회 모두 통과하지 못했습니다. 마지막 지적을 그대로 둡니다.\n>\n" + "\n".join(f"> - {i}" for i in issues)
+    head = "**Review log** · Before publishing, the intern hands the piece to a separate reviewer (same model, different instructions) that asks five things: is it obvious, why this event today, what a reader takes away, does it face the counterargument, is there evidence. If it fails twice, the piece goes out unchanged. Not hiding failure is a rule of this experiment."
+    if not unresolved:
+        return f"> {head}\n>\n> This piece: passed on round {rounds}."
+    issues = ((meta.get("last_issues_en") or meta.get("last_issues") or [])[:3])
+    return f"> {head}\n>\n> This piece: failed all {rounds} rounds. The last notes stay as written.\n>\n" + "\n".join(f"> - {i}" for i in issues)
+
+
 def sources_block(lang: str, summary: str, items: list[dict]) -> str:
     """오늘의 소재 - 사건·기사 요약 + 원문 인링크."""
     head = "**오늘의 소재**" if lang == "ko" else "**Today's source**"
@@ -101,11 +118,7 @@ def piece_markdown(lang: str, date: str, slug: str, j: dict, body: str, meta: di
         "source_summary": (meta.get("source_summary") or {}).get(lang, ""),
         "wiki": meta.get("wiki", []), "lexicon": meta.get("lexicon", []),
     }
-    unresolved_line = ""
-    if meta.get("unresolved"):
-        unresolved_line = ("\n\n> 미해결. 검수를 정해진 횟수 안에 통과하지 못했습니다. 지적을 그대로 둡니다: " if lang == "ko"
-                           else "\n\n> Unresolved. This piece failed its own review within the allowed rounds. The notes stay: ") \
-                          + " / ".join(((meta.get("last_issues_en") if lang == "en" else None) or meta.get("last_issues", []))[:3])
+    unresolved_line = "\n\n" + review_block(lang, meta)
     bet_line = ""
     if bet:
         if lang == "ko":

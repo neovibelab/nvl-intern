@@ -53,6 +53,8 @@ TENSE_KO = {"vibe": "바이브", "signal": "시그널", "background": "배경"}
 SITE_URL = os.environ.get("INTERN_SITE_URL", "https://intern.neovibelab.com")
 ABOUT_URL = "https://www.neovibelab.com/intern"
 NEWSLETTER_URL = "https://maily.so/draft.briefing?via=intern"
+# 독자 신호는 레이더 서버를 경유한다. 정적 페이지에 Supabase 키를 심으면 레이더 표가 통째로 열린다.
+FEEDBACK_API = os.environ.get("INTERN_FEEDBACK_API", "https://nvl-vibe-radar.vercel.app/api/intern-feedback")
 LAUNCH_DATE = os.environ.get("INTERN_LAUNCH_DATE", "")  # D+N 계산 기준. 비면 첫 발행일
 
 

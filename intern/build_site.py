@@ -20,7 +20,9 @@ h1{font-size:clamp(26px,4vw,40px);font-weight:900;letter-spacing:-.02em;line-hei
 .hdr{display:inline-block;font-family:'DM Mono',monospace;font-size:13px;color:var(--lime);background:var(--dark);border:1px solid var(--gray-dark);padding:4px 10px;margin-bottom:8px}
 .meta{color:var(--gray);font-size:12px;font-family:'DM Mono',monospace;margin-bottom:26px}
 .body p{font-size:16.5px;line-height:1.95;color:#d9d9d2;margin-bottom:18px}.body strong{color:var(--white)}
-.body blockquote{border-left:2px solid var(--lime);padding:12px 18px;color:var(--gray);margin:18px 0;background:rgba(214,255,146,.05)}
+.body blockquote{border-left:2px solid var(--lime);padding:12px 18px;color:var(--gray);margin:18px 0;background:rgba(214,255,146,.05);font-size:13.5px;line-height:1.75}
+.body blockquote p{font-size:13.5px;line-height:1.75;color:var(--gray);margin:0 0 8px}.body blockquote p:last-child{margin:0}.body blockquote strong{color:var(--lime)}
+.body blockquote ul{margin:0 0 8px 18px;font-size:13.5px}
 .body sub{color:var(--gray);font-size:12px}
 .list a{display:block;padding:18px 0;border-bottom:1px solid var(--line);text-decoration:none}
 .list .t{font-size:18px;font-weight:700;margin:6px 0}.list .m{color:var(--gray);font-size:12px;font-family:'DM Mono',monospace}
@@ -33,6 +35,12 @@ td{padding:8px;border-bottom:1px solid var(--line);color:var(--gray)}td:first-ch
 .body p.frame strong{color:var(--lime)}.body ul{margin:0 0 18px 18px;color:var(--gray);font-size:14px;line-height:1.8}.body ul a{color:var(--white)}
 .body table.mini{max-width:420px;font-size:12px}.body table.mini th,.body table.mini td{text-align:center;padding:5px 6px}.body table.mini td:first-child,.body table.mini th:first-child{text-align:left}
 .body table.mini td.on{color:var(--lime);font-size:16px}.body table.mini td.from{color:var(--white)}
+.fb{margin:34px 0 10px;border:1px solid var(--gray-dark);background:var(--dark);padding:16px 18px}
+.fb .q{font-size:13px;color:var(--white);margin-bottom:10px}.fb .q span{color:var(--gray);font-size:12px;margin-left:8px}
+.fb .btns{display:flex;flex-wrap:wrap;gap:8px}.fb button{font-family:'DM Mono','Noto Sans KR',monospace;font-size:12px;padding:7px 12px;background:transparent;color:var(--white);border:1px solid var(--gray-dark);cursor:pointer}
+.fb button:hover{border-color:var(--lime);color:var(--lime)}.fb button.on{background:var(--lime);color:var(--black);border-color:var(--lime)}.fb button b{font-weight:500;color:var(--gray);margin-left:6px}.fb button.on b{color:var(--black)}
+.fb textarea{width:100%;margin-top:10px;background:var(--black);color:var(--white);border:1px solid var(--gray-dark);padding:10px;font-family:inherit;font-size:13px;min-height:64px}
+.fb .row{display:flex;gap:10px;align-items:center;margin-top:8px}.fb .note{font-size:11.5px;color:var(--gray);line-height:1.6}.fb[hidden]{display:none}
 .foot{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);color:var(--gray);font-size:12px;line-height:1.8}
 .foot a{color:var(--white)}.about{background:var(--dark);border:1px solid var(--gray-dark);padding:16px 18px;font-size:13.5px;color:var(--gray);line-height:1.7;margin-bottom:28px}
 @media(max-width:600px){.grid{grid-template-columns:80px repeat(3,1fr)}}"""
@@ -64,7 +72,7 @@ def md_to_html(md: str) -> str:
         if b.startswith("`") and b.endswith("`") and "\n" not in b:
             continue  # 헤더 줄은 따로
         if b.startswith("> "):
-            out.append(f"<blockquote>{_inline(b[2:])}</blockquote>"); continue
+            out.append(_quote(b)); continue
         if b.startswith("<sub>"):
             out.append(_inline_keep_tags(b)); continue
         if b.startswith("| "):
@@ -75,6 +83,28 @@ def md_to_html(md: str) -> str:
             out.append(f'<p class="frame">{_inline(b)}</p>'); continue
         out.append(f"<p>{_inline(b)}</p>")
     return "\n".join(out)
+
+
+def _quote(b: str) -> str:
+    lines = [re.sub(r"^>\s?", "", l) for l in b.splitlines()]
+    paras, cur, items = [], [], []
+    def flush():
+        nonlocal cur, items
+        if items:
+            paras.append("<ul>" + "".join(f"<li>{_inline(i)}</li>" for i in items) + "</ul>"); items = []
+        if cur:
+            paras.append(f"<p>{_inline(' '.join(cur))}</p>"); cur = []
+    for l in lines:
+        if not l.strip():
+            flush()
+        elif l.startswith("- "):
+            if cur: flush()
+            items.append(l[2:])
+        else:
+            if items: flush()
+            cur.append(l)
+    flush()
+    return "<blockquote>" + "".join(paras) + "</blockquote>"
 
 
 def _inline_keep_tags(b: str) -> str:
@@ -115,6 +145,48 @@ def page(lang: str, title: str, body: str, path_prefix: str = "") -> str:
 <div class="foot">{t['human']} <a href="{config.NEWSLETTER_URL}">{t['human_link']}</a><br>© 2026 엔터문화연구소 (Neo Vibe Lab) · Seoul</div></div></body></html>"""
 
 
+FB_T = {
+    "ko": dict(q="이 글은 어땠습니까", hint="누른 것은 매주 묶여 인턴의 규칙 후보가 됩니다. 관점은 안 건드립니다.",
+               btns=[("agree", "맞는 말이다"), ("obvious", "뻔하다"), ("weak", "근거가 약하다"), ("off", "관점이 어긋난다")],
+               ph="지적을 한두 문장으로 (선택, 500자)", send="보내기", thanks="기록했습니다. 일요일 회고에 반영됩니다.", done="이미 남겼습니다",
+               textnote="자유 지적은 공개되지 않고 인턴에게 직접 들어가지도 않습니다. 별도 모델이 유형과 건수로 정리한 것만 넘어갑니다."),
+    "en": dict(q="How was this piece", hint="Votes are batched weekly into the intern's rule candidates. The point of view is left alone.",
+               btns=[("agree", "Fair point"), ("obvious", "Obvious"), ("weak", "Weak evidence"), ("off", "Wrong lens")],
+               ph="A note in a sentence or two (optional, 500 chars)", send="Send", thanks="Recorded. It goes into Sunday's retrospective.", done="Already recorded",
+               textnote="Free-text notes are not shown publicly and never go to the intern directly. A separate model turns them into types and counts."),
+}
+
+
+def feedback_widget(lang: str, slug: str) -> str:
+    """독자 버튼 4 + 자유 텍스트. Supabase intern_feedback에 publishable 키로 INSERT. 표가 없으면(마이그레이션 전) 스스로 숨는다."""
+    t = FB_T[lang]
+    btns = "".join(f'<button type="button" data-k="{k}">{v}<b data-n="{k}"></b></button>' for k, v in t["btns"])
+    return f"""<div class="fb" id="fb" data-slug="{html.escape(slug)}" data-lang="{lang}" hidden>
+<div class="q">{t['q']}<span>{t['hint']}</span></div>
+<div class="btns">{btns}</div>
+<textarea id="fb-text" maxlength="500" placeholder="{t['ph']}"></textarea>
+<div class="row"><button type="button" id="fb-send">{t['send']}</button><span class="note" id="fb-msg"></span></div>
+<div class="note" style="margin-top:8px">{t['textnote']}</div>
+</div>
+<script>
+(function(){{
+var API={json.dumps(config.FEEDBACK_API)};
+var el=document.getElementById('fb');if(!el)return;
+var slug=el.dataset.slug,lang=el.dataset.lang;
+var key='fb:'+slug,mine={{}};try{{mine=JSON.parse(localStorage.getItem(key)||'{{}}')}}catch(e){{}}
+function save(){{try{{localStorage.setItem(key,JSON.stringify(mine))}}catch(e){{}}}}
+function counts(){{fetch(API+'?slug='+encodeURIComponent(slug)).then(function(r){{if(!r.ok)throw 0;return r.json()}}).then(function(d){{el.hidden=false;var c=d.counts||{{}};el.querySelectorAll('b[data-n]').forEach(function(b){{b.textContent=c[b.dataset.n]||''}});el.querySelectorAll('button[data-k]').forEach(function(b){{b.classList.toggle('on',!!mine[b.dataset.k])}})}}).catch(function(){{}})}}
+function post(kind,text,via){{return fetch(API,{{method:'POST',headers:{{'Content-Type':'application/json'}},body:JSON.stringify({{slug:slug,lang:lang,kind:kind,text:text||'',via:via||'web'}})}})}}
+var msg=document.getElementById('fb-msg');
+el.querySelectorAll('button[data-k]').forEach(function(b){{b.addEventListener('click',function(){{var k=b.dataset.k;if(mine[k]){{msg.textContent={json.dumps(t['done'])};return}}post(k,'','web').then(function(r){{if(r.ok){{mine[k]=1;save();msg.textContent={json.dumps(t['thanks'])};counts()}}}})}})}});
+document.getElementById('fb-send').addEventListener('click',function(){{var v=document.getElementById('fb-text').value.trim();if(v.length<2)return;post('text',v,'web').then(function(r){{if(r.ok){{document.getElementById('fb-text').value='';mine.text=1;save();msg.textContent={json.dumps(t['thanks'])};counts()}}}})}});
+var q=new URLSearchParams(location.search).get('fb');
+if(q&&['agree','obvious','weak','off'].indexOf(q)>=0&&!mine[q]){{post(q,'','mail').then(function(r){{if(r.ok){{mine[q]=1;save();msg.textContent={json.dumps(t['thanks'])};counts()}}}})}}
+counts();
+}})();
+</script>"""
+
+
 def _pieces(lang: str) -> list[tuple[dict, str, str]]:
     out = []
     for p in sorted((config.CONTENT_DIR / lang).glob("*.md"), reverse=True):
@@ -130,8 +202,13 @@ def render_piece(lang: str, fm: dict, body: str) -> str:
     hdr_html = f'<div class="hdr">{html.escape(hdr.group(1))}</div>' if hdr else ""
     day = fm.get("day", "")
     meta = f"D+{day} · {fm.get('date')}" if lang == "ko" else f"Day {day} · {fm.get('date')}"
+    inner = md_to_html(body)
+    # 독자 신호 위젯은 검수 기록 앞(원리 뒤)에 들어간다
+    k = inner.rfind("<blockquote>")
+    widget = feedback_widget(lang, fm.get("slug", ""))
+    inner = (inner[:k] + widget + inner[k:]) if k >= 0 else inner + widget
     return f"""<p class="label">{t['label']}</p>{hdr_html}<h1>{html.escape(fm.get('title',''))}</h1><p class="meta">{meta}</p>
-<div class="body">{md_to_html(body)}</div>"""
+<div class="body">{inner}</div>"""
 
 
 def build() -> None:

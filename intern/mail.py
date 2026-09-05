@@ -29,7 +29,14 @@ def send_piece(lang: str, day: int, title: str, body_md: str, slug: str, send: b
     """구독자는 언어만 고른다. 매일 한 편과 일요일 회고가 같은 리스트로 간다(2026-09-05 대표: 주기 구분 폐지)."""
     subject = (f"D+{day} · {title}" if lang == "ko" else f"Day {day} · {title}")
     url = f"{config.SITE_URL}/{'' if lang == 'ko' else 'en/'}{slug}"
-    footer = ("\n\n---\n\n[웹에서 읽기](%s)" % url) if lang == "ko" else ("\n\n---\n\n[Read on the web](%s)" % url)
+    if lang == "ko":
+        fb = ("**이 글은 어땠습니까** · [맞는 말이다](%s?fb=agree) · [뻔하다](%s?fb=obvious) · [근거가 약하다](%s?fb=weak) · [관점이 어긋난다](%s?fb=off)"
+              "\n\n누른 것은 매주 묶여 인턴의 규칙 후보가 됩니다. 지적을 문장으로 남기려면 웹 페이지 아래 칸에, 또는 이 메일에 답장하면 됩니다." % (url, url, url, url))
+        footer = "\n\n---\n\n" + fb + "\n\n[웹에서 읽기](%s)" % url
+    else:
+        fb = ("**How was this piece** · [Fair point](%s?fb=agree) · [Obvious](%s?fb=obvious) · [Weak evidence](%s?fb=weak) · [Wrong lens](%s?fb=off)"
+              "\n\nVotes are batched weekly into the intern's rule candidates. To leave a note, use the box on the web page or reply to this email." % (url, url, url, url))
+        footer = "\n\n---\n\n" + fb + "\n\n[Read on the web](%s)" % url
     filters = {"predicate": "and", "groups": [], "filters": [
         {"field": "subscriber.metadata.lang", "operator": "equals", "value": lang},
     ]}

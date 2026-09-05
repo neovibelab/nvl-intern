@@ -12,7 +12,9 @@ h1{font-size:clamp(26px,4vw,40px);font-weight:900;letter-spacing:-.02em;line-hei
 .hdr{display:inline-block;font-family:'DM Mono',monospace;font-size:13px;color:var(--lime);background:var(--dark);border:1px solid var(--gray-dark);padding:4px 10px;margin-bottom:8px}
 .meta{color:var(--gray);font-size:12px;font-family:'DM Mono',monospace;margin-bottom:26px}
 .body p{font-size:16.5px;line-height:1.95;color:#d9d9d2;margin-bottom:18px}.body strong{color:var(--white)}
-.body blockquote{border-left:2px solid var(--lime);padding:12px 18px;color:var(--gray);margin:18px 0;background:rgba(214,255,146,.05)}
+.body blockquote{border-left:2px solid var(--lime);padding:12px 18px;color:var(--gray);margin:18px 0;background:rgba(214,255,146,.05);font-size:13.5px;line-height:1.75}
+.body blockquote p{font-size:13.5px;line-height:1.75;color:var(--gray);margin:0 0 8px}.body blockquote p:last-child{margin:0}.body blockquote strong{color:var(--lime)}
+.body blockquote ul{margin:0 0 8px 18px;font-size:13.5px}
 .body sub{color:var(--gray);font-size:12px}
 .list a{display:block;padding:18px 0;border-bottom:1px solid var(--line);text-decoration:none}
 .list .t{font-size:18px;font-weight:700;margin:6px 0}.list .m{color:var(--gray);font-size:12px;font-family:'DM Mono',monospace}
@@ -25,6 +27,12 @@ td{padding:8px;border-bottom:1px solid var(--line);color:var(--gray)}td:first-ch
 .body p.frame strong{color:var(--lime)}.body ul{margin:0 0 18px 18px;color:var(--gray);font-size:14px;line-height:1.8}.body ul a{color:var(--white)}
 .body table.mini{max-width:420px;font-size:12px}.body table.mini th,.body table.mini td{text-align:center;padding:5px 6px}.body table.mini td:first-child,.body table.mini th:first-child{text-align:left}
 .body table.mini td.on{color:var(--lime);font-size:16px}.body table.mini td.from{color:var(--white)}
+.fb{margin:34px 0 10px;border:1px solid var(--gray-dark);background:var(--dark);padding:16px 18px}
+.fb .q{font-size:13px;color:var(--white);margin-bottom:10px}.fb .q span{color:var(--gray);font-size:12px;margin-left:8px}
+.fb .btns{display:flex;flex-wrap:wrap;gap:8px}.fb button{font-family:'DM Mono','Noto Sans KR',monospace;font-size:12px;padding:7px 12px;background:transparent;color:var(--white);border:1px solid var(--gray-dark);cursor:pointer}
+.fb button:hover{border-color:var(--lime);color:var(--lime)}.fb button.on{background:var(--lime);color:var(--black);border-color:var(--lime)}.fb button b{font-weight:500;color:var(--gray);margin-left:6px}.fb button.on b{color:var(--black)}
+.fb textarea{width:100%;margin-top:10px;background:var(--black);color:var(--white);border:1px solid var(--gray-dark);padding:10px;font-family:inherit;font-size:13px;min-height:64px}
+.fb .row{display:flex;gap:10px;align-items:center;margin-top:8px}.fb .note{font-size:11.5px;color:var(--gray);line-height:1.6}.fb[hidden]{display:none}
 .foot{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);color:var(--gray);font-size:12px;line-height:1.8}
 .foot a{color:var(--white)}.about{background:var(--dark);border:1px solid var(--gray-dark);padding:16px 18px;font-size:13.5px;color:var(--gray);line-height:1.7;margin-bottom:28px}
 @media(max-width:600px){.grid{grid-template-columns:80px repeat(3,1fr)}}</style></head><body>
