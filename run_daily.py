@@ -80,6 +80,7 @@ def main() -> int:
         print(f"  [verify] {r['status']:12s} {c[:60]}")
     ko = steps.hedge(ko, results, "ko")
     trace["claims"] = results
+    ko, trace["style_gate"] = steps.style_gate(ko, "ko")
     verified = sum(1 for r in results if r["status"] == "verified")
 
     # ⑥ 검수 (별도 컨텍스트)

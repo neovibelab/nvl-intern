@@ -180,6 +180,50 @@ def hedge(text: str, results: list[dict], lang: str = "ko") -> str:
     return llm.ask(prompt, system=PERSONA, max_tokens=6000)
 
 
+# ── ⑤' 문체 기계 게이트 ─────────────────────────────────────────────────────
+# 「A가 아니라 B」는 STYLE_KO가 한 편에 한 번으로 묶어 뒀지만 모델은 지키지 않는다.
+# 2026-09-06 모델 비교 실측: Opus 5가 800자에 최대 4회, Sonnet 5도 4회. 세는 자리를 만든다.
+
+CONTRAST_PATS = [r"[가-힣]{2,}이 아니라 ", r"[가-힣]{2,}가 아니라 ", r"[가-힣]{2,}이 아닌 ",
+                 r"[가-힣]{2,}가 아닌 ", r"[가-힣]{2,}보다는 "]
+
+
+def contrast_hits(text: str) -> list[str]:
+    """대조 공식이 쓰인 문장을 돌려준다."""
+    out = []
+    for sent in re.split(r"(?<=다)\.\s|[.!?]\s|\n", text):
+        if any(re.search(p, sent) for p in CONTRAST_PATS):
+            out.append(sent.strip())
+    return out
+
+
+def style_gate(text: str, lang: str = "ko") -> tuple[str, dict]:
+    """한 편에 대조 공식 하나까지. 넘으면 지목한 문장만 고쳐 다시 받는다. 1회로 끝낸다."""
+    hits = contrast_hits(text)
+    stat = {"before": len(hits), "after": len(hits), "revised": False}
+    if len(hits) <= 1 or lang != "ko":
+        return text, stat
+    prompt = f"""아래 글에 「A가 아니라 B」 꼴의 대조 공식이 {len(hits)}번 나온다. 한 편에 한 번까지만 남긴다.
+
+지목한 문장:
+{chr(10).join('- ' + h for h in hits)}
+
+가장 논지에 중요한 하나만 그대로 두고, 나머지는 **부정을 지우고 긍정문으로** 다시 쓴다.
+(예: 「총액이 아니라 회당 매출이 지표다」 → 「지표는 회당 매출이다」)
+다른 문장·순서·사실은 한 글자도 바꾸지 않는다. 길이를 유지한다. 본문만 돌려준다.
+
+[글]
+{text}"""
+    out = llm.ask(prompt, system=PERSONA, max_tokens=6000)
+    if not out or abs(len(out) - len(text)) > max(300, len(text) * 0.25):
+        print(f"  [style] 결과 길이 이상({len(text)}→{len(out)}) · 원문 유지")
+        return text, stat
+    stat["after"] = len(contrast_hits(out))
+    stat["revised"] = True
+    print(f"  [style] 대조공식 {stat['before']} → {stat['after']}")
+    return out, stat
+
+
 # ── ⑥ 자기 검수 (별도 컨텍스트) ────────────────────────────────────────────
 
 REVIEWER = """너는 발행 전 검수자다. 집필자가 아니다. 관대하지 않다. 다섯 질문만 묻는다.
