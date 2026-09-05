@@ -3,3 +3,7 @@ __pycache__/
 *.pyc
 brain/
 .vercel/
+
+.vercel
+dist/.vercel/
+dist/vercel.json
