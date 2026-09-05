@@ -180,9 +180,11 @@ def hedge(text: str, results: list[dict], lang: str = "ko") -> str:
     return llm.ask(prompt, system=PERSONA, max_tokens=6000)
 
 
-# ── ⑤' 문체 기계 게이트 ─────────────────────────────────────────────────────
-# 「A가 아니라 B」는 STYLE_KO가 한 편에 한 번으로 묶어 뒀지만 모델은 지키지 않는다.
-# 2026-09-06 모델 비교 실측: Opus 5가 800자에 최대 4회, Sonnet 5도 4회. 세는 자리를 만든다.
+# ── ⑥' 기계 게이트 (검수 뒤 마지막) ────────────────────────────────────────
+# 규칙은 프롬프트에 다 있었고 모델이 안 지켰다. 재는 자리가 없으면 규칙은 없는 것과 같다.
+# 2026-09-06 두 실측: ⓐ 모델 비교 - Opus가 800자에 대조 공식 4회.
+#                     ⓑ D+2 - 집필 1,051자가 헤지·수정 2회를 거쳐 1,551자, 대조 공식도 1→4로 되살아남.
+# 그래서 **검수 루프가 끝난 뒤** 한 번만 돈다. 앞에 두면 뒤 단계가 되돌린다.
 
 CONTRAST_PATS = [r"[가-힣]{2,}이 아니라 ", r"[가-힣]{2,}가 아니라 ", r"[가-힣]{2,}이 아닌 ",
                  r"[가-힣]{2,}가 아닌 ", r"[가-힣]{2,}보다는 "]
@@ -197,31 +199,49 @@ def contrast_hits(text: str) -> list[str]:
     return out
 
 
-def style_gate(text: str, lang: str = "ko") -> tuple[str, dict]:
-    """한 편에 대조 공식 하나까지. 넘으면 지목한 문장만 고쳐 다시 받는다. 1회로 끝낸다."""
-    hits = contrast_hits(text)
-    stat = {"before": len(hits), "after": len(hits), "revised": False}
-    if len(hits) <= 1 or lang != "ko":
+def _chars(t: str) -> int:
+    return len(re.sub(r"\s", "", t))
+
+
+def final_gate(text: str, lang: str = "ko", lo: int = 700, hi: int = 1000) -> tuple[str, dict]:
+    """분량 규격과 대조 공식을 기계로 확인하고, 어긋나면 한 번만 고쳐 받는다.
+
+    링크·헤지·출처 표기가 줄면 원문을 지킨다 - 줄이라고 했더니 근거를 지우는 쪽이 제일 위험하다.
+    """
+    hits = contrast_hits(text) if lang == "ko" else []
+    n, links = _chars(text), len(re.findall(r"\]\(https?://", text))
+    stat = {"chars": n, "contrast": len(hits), "chars_after": n, "contrast_after": len(hits), "revised": False}
+    over, under = n > hi, n < lo
+    if lang != "ko" or (not over and not under and len(hits) <= 1):
         return text, stat
-    prompt = f"""아래 글에 「A가 아니라 B」 꼴의 대조 공식이 {len(hits)}번 나온다. 한 편에 한 번까지만 남긴다.
-
-지목한 문장:
-{chr(10).join('- ' + h for h in hits)}
-
-가장 논지에 중요한 하나만 그대로 두고, 나머지는 **부정을 지우고 긍정문으로** 다시 쓴다.
-(예: 「총액이 아니라 회당 매출이 지표다」 → 「지표는 회당 매출이다」)
-다른 문장·순서·사실은 한 글자도 바꾸지 않는다. 길이를 유지한다. 본문만 돌려준다.
-
-[글]
-{text}"""
+    orders = []
+    if over:
+        orders.append(f"분량이 {n}자다. **{lo}~{hi}자로 줄인다.** 논지를 지탱하지 않는 예시·부연부터 덜어낸다. "
+                      "수치·출처·링크·「~로 알려졌다」 헤지는 그대로 둔다. 문장을 압축해 뜻을 흐리지 않는다.")
+    if under:
+        orders.append(f"분량이 {n}자다. {lo}~{hi}자로 늘린다. **새 사실을 만들지 않는다** - 이미 있는 근거를 풀어 쓴다.")
+    if len(hits) > 1:
+        orders.append("「A가 아니라 B」 꼴 대조 공식이 " + str(len(hits)) + "번 나온다. 가장 중요한 하나만 남기고 "
+                      "나머지는 부정을 지우고 긍정문으로 쓴다(예: 「총액이 아니라 회당 매출이 지표다」 → 「지표는 회당 매출이다」).\n"
+                      "지목: " + " / ".join(h[:60] for h in hits))
+    prompt = ("아래 글을 지시대로만 고친다. 논지·순서·사실은 바꾸지 않는다.\n\n"
+              + "\n\n".join(f"{i}. {o}" for i, o in enumerate(orders, 1))
+              + f"\n\n본문만 돌려준다.\n\n[글]\n{text}")
     out = llm.ask(prompt, system=PERSONA, max_tokens=6000)
-    if not out or abs(len(out) - len(text)) > max(300, len(text) * 0.25):
-        print(f"  [style] 결과 길이 이상({len(text)}→{len(out)}) · 원문 유지")
+    if not out:
+        print("  [gate] 빈 응답 · 원문 유지")
         return text, stat
-    stat["after"] = len(contrast_hits(out))
-    stat["revised"] = True
-    print(f"  [style] 대조공식 {stat['before']} → {stat['after']}")
+    if len(re.findall(r"\]\(https?://", out)) < links:
+        print(f"  [gate] 링크가 줄어 원문 유지({links} → {len(re.findall(r']\(https?://', out))})")
+        return text, stat
+    stat.update(chars_after=_chars(out), contrast_after=len(contrast_hits(out)), revised=True)
+    print(f"  [gate] 분량 {stat['chars']} → {stat['chars_after']}자 · 대조공식 {stat['contrast']} → {stat['contrast_after']}")
     return out, stat
+
+
+# 옛 이름 - 호출부가 남아 있으면 같은 것을 부른다
+def style_gate(text: str, lang: str = "ko") -> tuple[str, dict]:
+    return final_gate(text, lang)
 
 
 # ── ⑥ 자기 검수 (별도 컨텍스트) ────────────────────────────────────────────
@@ -294,7 +314,10 @@ _FOREIGN_KO_CHARS = re.compile(r"[一-龥ぁ-ゖァ-ヶЀ-ӿ]")
 def name_map(texts: list[str], lang: str) -> dict:
     """비현지 문자 고유명사 → 현지 표기 대응표. LLM은 표만 뽑고 치환은 apply_names가 한다."""
     pat = _FOREIGN_KO if lang == "ko" else _FOREIGN_EN
-    found = sorted({m for t in texts for m in pat.findall(t or "")}, key=len, reverse=True)
+    # 중국어·일본어는 띄어쓰기가 없어 문장 하나가 통째로 한 덩어리로 잡힌다(2026-09-06 실측:
+    # 「只有BTS超过1000万美元的K」가 고유명사로 올라가 병음 범벅이 됐다). 길이로 먼저 거른다.
+    found = sorted({m for t in texts for m in pat.findall(t or "")
+                    if 1 <= len(m) <= 10 and not re.search(r"\d{3,}", m)}, key=len, reverse=True)[:12]
     if not found:
         return {}
     ask = ("각 항목의 한글 표기를 적는다. 중국어는 표준중국어 발음의 국립국어원 외래어 표기법(蔡徐坤→차이쉬쿤, 界面新闻→제몐신문, 36氪→36커), "
@@ -302,6 +325,7 @@ def name_map(texts: list[str], lang: str) -> dict:
            else "Give the standard Romanized or English name for each item: pinyin for Chinese personal names (蔡徐坤→Cai Xukun), "
                 "the outlet's own English name where one exists (界面新闻→Jiemian News, 36氪→36Kr), Hepburn for Japanese, Revised Romanization for Korean. Latin letters and digits only.")
     d = llm.ask_json(f"""{ask}
+고유명사(인명·매체·기업·작품·지명)가 아니면 값을 빈 문자열로 둔다. 문장이나 구절은 옮기지 않는다.
 항목: {json.dumps(found, ensure_ascii=False)}
 JSON: {{"map": {{"원어": "표기", ...}}}}""", max_tokens=1500)
     m = d.get("map", {}) if isinstance(d, dict) else {}
@@ -309,7 +333,7 @@ JSON: {{"map": {{"원어": "표기", ...}}}}""", max_tokens=1500)
     for k, v in m.items():
         v = str(v).strip()
         bad = _FOREIGN_KO_CHARS.search(v) if lang == "ko" else _FOREIGN_ANY.search(v)
-        if k in found and v and v != k and not bad:
+        if k in found and v and v != k and not bad and len(v.split()) <= 4:
             out[k] = v
     dropped = [k for k in found if k not in out]
     if dropped:

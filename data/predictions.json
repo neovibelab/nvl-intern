@@ -9,5 +9,16 @@
     "check_en": "Korean retailers' (Kyobo Hottracks, Synnara) vinyl sales stats or press coverage citing 20-30s purchase share",
     "factor": "교차정체성",
     "status": "open"
+  },
+  {
+    "slug": "2026-09-06-the-bottleneck-called-100m",
+    "date": "2026-09-06",
+    "by_date": "2026-12-05",
+    "claim_ko": "향후 90일 안에 국내 기획사 실적발표·투어 공지에서 상위 팀의 공연 매출·좌석 단가는 오르는데, 중견급 팀은 회차 축소·공연장 다운사이징·아시아 소도시 대체 중 최소 두 건이 확인된다.",
+    "claim_en": "Within 90 days, Korean agency earnings calls and tour announcements will show top-tier acts raising gross and per-seat price while mid-tier acts show at least two of: fewer dates, smaller venues, or substitution to secondary Asian cities.",
+    "check_ko": "하이브·SM·JYP·YG 3분기 실적 자료의 공연 매출/회차 수치와 8~11월 발표된 중견 그룹 투어 일정 변경 공지 대조",
+    "check_en": "Compare Q3 concert revenue and show-count disclosures from HYBE/SM/JYP/YG against Aug-Nov tour schedule revisions for mid-tier groups",
+    "factor": "자본",
+    "status": "open"
   }
 ]

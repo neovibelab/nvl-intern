@@ -80,7 +80,6 @@ def main() -> int:
         print(f"  [verify] {r['status']:12s} {c[:60]}")
     ko = steps.hedge(ko, results, "ko")
     trace["claims"] = results
-    ko, trace["style_gate"] = steps.style_gate(ko, "ko")
     verified = sum(1 for r in results if r["status"] == "verified")
 
     # ⑥ 검수 (별도 컨텍스트)
@@ -95,7 +94,9 @@ def main() -> int:
             unresolved = True; break
         ko = steps.revise(ko, rv["issues"])
     trace["reviews"] = reviews
-    # ⑥' 표기·인링크 정리 (검수 뒤, 논지는 안 건드린다)
+    # ⑥' 기계 게이트 - 분량 규격과 대조 공식. 수정 루프가 끝난 뒤라야 되돌려지지 않는다
+    ko, trace["gate"] = steps.final_gate(ko, "ko")
+    # ⑥'' 표기·인링크 정리 (논지는 안 건드린다)
     links = steps.link_sources(trace["cluster"]["items"], results)
     ko = steps.polish(ko, "ko", links)
     trace["draft_ko_final"] = ko
@@ -171,7 +172,8 @@ def rebuild(args) -> int:
     unresolved = bool(reviews) and reviews[-1].get("verdict") != "pass"
     last_issues = reviews[-1].get("issues", []) if unresolved else []
     links = steps.link_sources(items, results)
-    ko = steps.polish(trace["draft_ko_final"], "ko", links)
+    ko, trace["gate"] = steps.final_gate(trace["draft_ko_final"], "ko")
+    ko = steps.polish(ko, "ko", links)
     en = steps.polish(trace["draft_en_final"], "en", links)
     trace["draft_ko_final"], trace["draft_en_final"] = ko, en
     outlets = [x.get("source") or "" for x in items]

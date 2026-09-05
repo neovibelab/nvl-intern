@@ -24,5 +24,31 @@
       "calls": 16,
       "search_uses": 12
     }
+  },
+  {
+    "date": "2026-09-06",
+    "day": 2,
+    "slug": "2026-09-06-the-bottleneck-called-100m",
+    "title_ko": "1400억은 병목의 다른 이름",
+    "title_en": "The Bottleneck Called $100M",
+    "factor": "자본",
+    "from_stage": "유통",
+    "to_stage": "소비",
+    "tense": "signal",
+    "radar_tense": "now",
+    "agrees": true,
+    "claims_total": 5,
+    "claims_verified": 2,
+    "review_rounds": 2,
+    "unresolved": true,
+    "bet": true,
+    "wiki_used": 3,
+    "lexicon_used": 3,
+    "tokens": {
+      "input": 165740,
+      "output": 23997,
+      "calls": 20,
+      "search_uses": 10
+    }
   }
 ]

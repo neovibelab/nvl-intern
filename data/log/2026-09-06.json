@@ -1,0 +1,167 @@
+{
+  "date": "2026-09-06",
+  "steps": {},
+  "cluster": {
+    "key": "097e5274-5379-419b-8305-193aece084fc",
+    "item_ids": [
+      "097e5274-5379-419b-8305-193aece084fc"
+    ],
+    "n": 1,
+    "radar_tense": "now",
+    "factor": "자본",
+    "stage": "유통",
+    "titles": [
+      "8회 공연에 1400억원…BTS, 세계 투어 시장 '큰손' 됐다"
+    ],
+    "urls": [
+      "https://view.asiae.co.kr/article/2026083017333834136"
+    ],
+    "items": [
+      {
+        "title": "8회 공연에 1400억원…BTS, 세계 투어 시장 '큰손' 됐다",
+        "url": "https://view.asiae.co.kr/article/2026083017333834136",
+        "source": "아시아경제",
+        "region": "korea",
+        "published_date": "2026-08-31T00:00:00+00:00",
+        "title_en": "BTS Becomes Major Player in Global Concert Market with 140 Billion Won Revenue from 8 Performances - 아시아경제"
+      }
+    ]
+  },
+  "source_summary": {
+    "ko": "BTS 아리랑 월드투어가 38회 공연에서 약 5998억원 매출과 230만장의 티켓을 판매했다. NH투자증권은 'BTS노믹스'의 경제효과를 약 8조원으로 추산했다.",
+    "en": "BTS's Arirang World Tour recorded approximately 599.8 billion won in sales and 2.3 million ticket sales across 38 concerts. NH Investment & Securities estimated the economic effect of 'BTS nomics' at approximately 8 trillion won.",
+    "titles_en": [
+      "BTS Becomes Major Player in Global Concert Market with 140 Billion Won Revenue from 8 Performances - 아시아경제"
+    ]
+  },
+  "materials": {
+    "wiki": [
+      "2026-05-29-팬덤-비즈니스-5단계.md",
+      "2026-07-25-라이브-티켓-가격의-경제학.md",
+      "2026-05-29-비즈니스-모델로서의-케이팝.md"
+    ],
+    "lexicon": [
+      "industry.md#tours; touring - 투어·투어링",
+      "industry.md#live; live performance - 라이브·라이브 공연",
+      "fandom.md#fandom tourism - 팬덤 관광"
+    ]
+  },
+  "judgment": {
+    "factor": "자본",
+    "from_stage": "유통",
+    "to_stage": "소비",
+    "tense": "signal",
+    "agrees": true,
+    "disagree_reason": "",
+    "angle_ko": "5998억이라는 숫자보다 중요한 건 '회당 1000만달러'가 한 팀만 넘겼다는 사실이다. 공연은 케이팝의 새 성장축이 아니라, 상위 소수만 통과하는 병목이다. 음반 다량구매 구조가 팬 1인당 지출을 늘렸다면 공연은 도시별 지불 한계를 재는 자로 바뀌었고, 그 자를 통과 못 하는 중간 규모 팀에게는 같은 호황이 비용 인플레로만 도착한다.",
+    "angle_en": "The headline is 600 billion won, but the real datum is that only one act cleared $10M per show. Touring isn't K-pop's new growth axis so much as a bottleneck only a few clear. Album bundling raised spend per fan; touring now measures each city's willingness-to-pay ceiling, and acts that can't clear it feel the same boom only as cost inflation.",
+    "title_ko": "1400억은 병목의 다른 이름",
+    "title_en": "The Bottleneck Called $100M",
+    "bet": {
+      "claim_ko": "향후 90일 안에 국내 기획사 실적발표·투어 공지에서 상위 팀의 공연 매출·좌석 단가는 오르는데, 중견급 팀은 회차 축소·공연장 다운사이징·아시아 소도시 대체 중 최소 두 건이 확인된다.",
+      "claim_en": "Within 90 days, Korean agency earnings calls and tour announcements will show top-tier acts raising gross and per-seat price while mid-tier acts show at least two of: fewer dates, smaller venues, or substitution to secondary Asian cities.",
+      "by_days": 90,
+      "check_ko": "하이브·SM·JYP·YG 3분기 실적 자료의 공연 매출/회차 수치와 8~11월 발표된 중견 그룹 투어 일정 변경 공지 대조",
+      "check_en": "Compare Q3 concert revenue and show-count disclosures from HYBE/SM/JYP/YG against Aug-Nov tour schedule revisions for mid-tier groups"
+    },
+    "principle_ko": "업계 전체 매출 신기록이 나왔을 때 확인할 것은 총액이 아니라 '회당 단가 상위가 몇 개인가'다 - 호황의 분포가 좁을수록 그 호황은 중간 플레이어에게 비용으로만 도착한다.",
+    "principle_en": "When an industry posts a record, check not the total but how few players hold the top unit price - the narrower the distribution, the more the boom reaches mid-tier players as cost, not revenue."
+  },
+  "draft_ko_v1": "[아시아경제](https://view.asiae.co.kr/article/2026083017333834136)에 따르면 BTS 아리랑 월드투어는 38회 공연에서 약 5998억원 매출과 티켓 230만장을 기록했고, 8회 공연만으로 1400억원을 거뒀습니다. NH투자증권은 이른바 'BTS노믹스'의 경제효과를 약 8조원으로 추산했다고 합니다. 그런데 같은 기사에서 더 오래 남는 숫자는 총액이 아니라 빌보드 상반기 집계의 한 줄입니다. 회당 평균 매출 1000만달러를 넘긴 팀이 BTS 하나뿐이라는 것.\n\n앨런 크루거가 『로코노믹스』에서 정리한 구도가 그대로 반복됩니다. 음반 수익이 무너지자 업계는 공연 가격으로 구멍을 메웠고, 그렇게 오른 값은 상위 소수에 몰렸습니다. 케이팝은 이 순서를 조금 늦게 밟았습니다. 멤버별 버전과 포토카드로 팬 1인당 음반 지출을 끌어올리는 구조가 오래 버텨줬기 때문입니다. 그 매출이 꺾이면서 무대가 공연으로 옮겨왔는데, 공연은 음반과 성질이 다릅니다. 음반은 팬이 몇 장을 사느냐로 늘어나지만 공연은 도시가 얼마를 견디느냐에서 멈춥니다. 티켓 가격은 원가로 정해지지 않고 그 시장이 감당하는 한계선에서 정해지며, 그 선을 재는 도구는 결국 리셀 데이터와 특전 상품의 판매 속도입니다. 특전은 지불 의사가 높은 관객에게 더 받아내는 가격 차별이고, 인지도가 낮으면 애초에 붙일 것이 없습니다.\n\n그래서 5998억은 업계의 바닥을 올리는 숫자가 아닙니다. 공연장 대관료, 인력비, 물류비, 무대 제작비는 상위 투어가 만든 시세를 따라 함께 오릅니다. 상위 팀에게는 특전으로 회수할 여지가 있지만 중간 규모 팀에게는 회수 경로 없이 비용만 도착합니다. 저는 앞으로 90일 안에 하이브·SM·JYP·YG의 3분기 실적 자료에서 상위 팀의 공연 매출과 좌석 단가가 오르는 동안, 8월부터 11월 사이 발표되는 중견 그룹 투어 공지에서 회차 축소, 공연장 다운사이징, 아시아 소도시로의 대체 가운데 최소 두 가지가 확인될 것이라고 봅니다.\n\n호황의 총액이 아니라 그 호황을 통과한 사업자의 수를 세면, 그 산업이 다음 해에 누구를 잃을지가 먼저 보입니다.",
+  "claims": [
+    {
+      "status": "verified",
+      "source": "한국경제(빌보드 박스스코어 인용)",
+      "url": "https://www.hankyung.com/article/2026082907317",
+      "note": "빌보드 집계 기준 8월 11일까지 38회 공연 4억3320만달러(약 5998억원)·티켓 230만장, 7월 8회 공연 1억250만달러(약 1414억원)로 수치 일치",
+      "claim": "BTS 아리랑 월드투어는 38회 공연에서 약 5998억원 매출과 티켓 230만장을 기록했고, 8회 공연만으로 1400억원을 거뒀습니다."
+    },
+    {
+      "status": "verified",
+      "source": "아시아경제",
+      "url": "https://view.asiae.co.kr/article/2026083017333834136",
+      "note": "아시아경제 보도에 따르면 NH투자증권은 지난 3월 BTS 월드투어 매출과 숙박·음식·쇼핑·관광 소비를 합친 'BTS노믹스' 경제효과를 약 8조원으로 추산했다.",
+      "claim": "NH투자증권은 이른바 'BTS노믹스'의 경제효과를 약 8조원으로 추산했다고 합니다."
+    },
+    {
+      "status": "contradicted",
+      "source": "Forbes(빌보드·폴스타 인용)",
+      "url": "https://www.forbes.com/sites/conormurray/2024/05/30/top-concert-tours-grossed-unprecedented-15-billion-between-october-and-march-and-that-doesnt-even-include-eras-tour/",
+      "note": "테일러 스위프트 에라스 투어는 2023년 회당 평균 약 1700만달러, 전체로도 149회 20억7762만달러(회당 약 1390만달러)로 BTS만 1000만달러를 넘겼다는 주장은 성립하지 않음",
+      "claim": "회당 평균 매출 1000만달러를 넘긴 팀이 BTS 하나뿐이라는 것."
+    },
+    {
+      "status": "unverified",
+      "source": "경향신문",
+      "url": "https://www.khan.co.kr/article/202104231845001",
+      "note": "앨런 크루거의 『로코노믹스』(음악 산업으로 슈퍼스타·멱법칙 등 경제 원리를 설명한 유작)는 실재하나, '그 구도'가 무엇이며 무엇에 반복된다는지 특정되지 않아 사실 여부 검증 불가.",
+      "claim": "앨런 크루거가 『로코노믹스』에서 정리한 구도가 그대로 반복됩니다."
+    },
+    {
+      "status": "unverified",
+      "source": "Billboard",
+      "url": "https://www.billboard.com/culture/product-recommendations/current-k-pop-concerts-1236234463/",
+      "note": "'중견 그룹' 기준과 축소·다운사이징 판단 근거가 불명확한 미래 예측이라 현 시점 검증 불가하며, 관련 보도에서도 일괄적 축소 추세는 확인되지 않음.",
+      "claim": "8월부터 11월 사이 발표되는 중견 그룹 투어 공지에서 회차 축소, 공연장 다운사이징, 아시아 소도시로의 대체 가운데 최소 두 가지가 확인될 것이라고 봅니다."
+    }
+  ],
+  "style_gate": {
+    "before": 2,
+    "after": 1,
+    "revised": true
+  },
+  "reviews": [
+    {
+      "verdict": "fix",
+      "issues": [
+        "논지의 핵심 근거인 '회당 1000만달러를 넘긴 팀이 한 팀뿐'이라는 사실이 각도문에만 있고 본문에는 없다. 본문은 'BTS가 상위권에 이름을 올렸다'까지만 쓴다. 병목 주장 전체가 '몇 팀이 그 선을 넘었는가'에 달려 있는데, 그 분모(빌보드 상반기 상위 투어 중 케이팝 팀 수, 1000만달러 미만 구간에 있는 팀들의 실제 회당 매출)가 글 안에 없다. 근거 없는 논지다.",
+        "'~라고 알려졌습니다'가 세 번 반복된다. 크루거 책 내용은 확인 가능한 사실인데 '알려졌다'로 뭉갰고, NH 추산 8조원도 출처를 인용하면서 다시 전언체로 후퇴한다. 결정적으로 마지막 문단의 '중견 그룹 투어 공지에서 회차 축소·다운사이징·소도시 대체 같은 조정이 나타나는 경우가 있다고 알려졌고'는 자기 예측을 전언으로 위장한 문장이다. 필자가 관찰하겠다는 것인지, 이미 벌어진 일이라는 것인지 문장이 스스로 모른다.",
+        "'왜 오늘인가'가 약하다. 아리랑 투어 매출 집계 발표라는 계기는 있으나, 이 시점이 아니면 안 되는 이유—예컨대 3분기 실적 발표 직전이라거나, 특정 중견 그룹의 투어 축소 공지가 이미 나왔다거나—는 제시되지 않는다. 마지막 문단의 '앞으로 90일'은 계기가 아니라 유예다.",
+        "반례를 전혀 다루지 않는다. 공연 병목론의 가장 뻔한 반박은 (1) 중견 팀은 애초에 아레나가 아니라 3000석 규모 아시아 투어로 수익 모델이 다르다, (2) 팬덤 규모 대비 티켓 소진율은 중견 팀이 더 높은 경우가 있다, (3) 대관료·물류비 인플레는 BTS 투어가 아니라 글로벌 공연 수요 회복 전반의 결과다—세 번째는 특히 치명적이다. 상위 투어가 시세를 올렸다는 인과를 글은 주장만 하고 검증하지 않는다.",
+        "'음반은 팬이 몇 장을 사느냐로 늘어나지만 공연은 도시가 얼마를 견디느냐에서 멈춥니다' — 이 대구가 이 글에서 가장 좋은 문장이지만, 뒤에서 '자로 바뀌었고' '그 선을 재는 도구' '통과한 사업자의 수를 세면' 같은 계측 은유가 계속 겹쳐 쌓인다. 은유 하나로 버텨야 할 글이 네 개를 굴린다.",
+        "실무자 수확이 얇다. '중견 팀은 특전으로 회수할 수 없다'까지는 관찰인데, 그럼 무엇을 하라는 것인가에 대한 답이 없다. 회차를 줄일지, 도시를 바꿀지, 특전 대신 무엇을 붙일지—판단 기준이 될 만한 수치(손익분기 좌석 점유율, 회당 고정비 대비 특전 매출 비중)가 하나도 제시되지 않는다."
+      ],
+      "one_line": "각도는 날카로운데 그 각도를 세우는 단 하나의 숫자를 본문이 빠뜨렸고, 예측을 '알려졌다'로 위장한 문장이 글 전체의 신뢰를 무너뜨린다."
+    },
+    {
+      "verdict": "fix",
+      "issues": [
+        "핵심 통계인 '1000만달러 넘긴 케이팝 팀은 BTS 한 팀'의 분모를 끝내 채우지 않고 '확인하지 못했습니다'로 넘긴다. 빌보드 상반기 투어 집계는 공개 자료이고 블랙핑크·세븐틴 등 스타디움급 팀의 회당 매출은 추정 가능하다. 논지 전체가 걸린 숫자를 미확인으로 두면 정직함이 아니라 취재 미완이다. '이 글의 논지는 그 분모가 채워질 때 검증되거나 무너집니다'는 검증 유예가 아니라 논지 유예다.",
+        "가격 처방이 앞의 전제와 충돌한다. 2문단에서 '티켓 가격은 원가로 정해지지 않고 그 시장이 감당하는 한계선에서 정해진다'고 못 박고, 4문단에서는 '회차를 줄이고 좌석 단가를 올리는 쪽이 유리하고'라고 권한다. 이미 한계선에서 정해진 가격을 어떻게 더 올리나. 단가 인상에 따른 점유율 하락 탄력성을 한 줄도 다루지 않아 손익분기 계산이 무력해진다.",
+        "예측의 반증 기준이 사실상 반증되지 않게 설계됐다. '회차 축소·공연장 다운사이징·아시아 소도시 대체 셋 중 하나도 확인되지 않으면'은 평년에도 셋 중 하나는 반드시 발생하는 조건이다. 게다가 8월 말에 쓰면서 관측 구간을 '8월부터 11월'로 소급했다. 최소한 '중견 3팀 이상에서 동시 관측' 같은 임계값이 있어야 예측이다.",
+        "마지막 문장 '호황의 총액은 산업의 평균이 아니라 상단의 높이를 말하고, 다음 해의 명단은 그 호황이 올린 원가를 감당한 사업자의 수가 말합니다'는 격언조 결말이자 A가 아니라 B 대조 공식이다. 2문단의 '음반은 팬이 몇 장을 사느냐로 늘어나지만 공연은 도시가 얼마를 견디느냐에서 멈춥니다'와 구조가 겹쳐 같은 수사를 두 번 쓴다. 하나는 잘라야 한다.",
+        "손익분기 시뮬레이션의 입력값(1만석·12만원·고정비 8억·MD 3만원)이 전부 출처 없는 가정인데 '특전 매출이 회당 고정비의 25%를 넘기지 못하는 팀'이라는 판정 기준까지 그 위에서 나온다. 25%가 어디서 왔는지 없다. 최소한 아레나 대관료·스태프비의 실제 레인지 한 건이라도 붙여야 실무자가 자기 숫자를 대입할 근거가 생긴다.",
+        "셋째 반박(팬데믹 후 수요 회복)을 '증명하지 못했습니다'로 인정한 뒤 도시 간 대관료 비교라는 검증 설계만 제시하고 끝낸다. 설계 제시는 정직하나, 이 반박이 성립하면 '중간 규모 팀에게 호황이 비용 인플레로만 도착한다'는 각도의 인과가 통째로 사라진다. 가장 아프다고 스스로 말한 반례를 미해결로 남기면 논지가 아니라 가설이다."
+      ],
+      "one_line": "자기 반증 조건을 명시한 태도는 살릴 만하나, 논지를 떠받칠 분모와 인과를 모두 미확인으로 남긴 채 반증 불가능한 예측과 격언조 결말로 봉합했다."
+    }
+  ],
+  "draft_ko_final": "[아시아경제](https://view.asiae.co.kr/article/2026083017333834136)에 따르면 BTS 아리랑 월드투어는 38회 공연에서 약 5998억원, 티켓 230만장을 기록했고 8회만으로 1400억원을 거뒀습니다. NH투자증권은 'BTS노믹스'의 경제효과를 약 8조원으로 추산했습니다. 더 오래 남는 숫자는 빌보드 상반기 투어 집계에서 회당 평균 매출 1000만달러를 넘긴 케이팝 팀이 BTS 한 팀이었다는 대목입니다. 기사 수치를 나누면 회당 158억원, 6만명, 1인당 26만원. 환율 1450원이면 1090만달러 남짓, 8회 1400억원 구간은 회당 175억원입니다. 다만 그 집계의 케이팝 팀 수와 1000만달러 아래 팀들의 회당 매출은 확인하지 못했습니다. 그 분모가 채워질 때 이 글은 검증되거나 무너집니다.\n\n앨런 크루거는 『로코노믹스』에서 음반 수익이 무너지자 업계가 티켓 값으로 구멍을 메웠고 오른 값이 상위 소수에게 몰렸다고 정리했습니다. 케이팝은 멤버별 버전과 포토카드 덕에 이 순서를 늦게 밟았습니다. 음반은 팬이 몇 장 사느냐로 늘지만, 공연은 도시가 얼마를 견디느냐에서 멈춥니다. 특전은 지불 의사가 높은 관객에게 더 받아내는 가격 차별이고, 인지도가 낮으면 붙일 것이 없습니다.\n\n반박은 셋. 중견 팀은 3000석 아시아 투어로 모델이 다르지만, 회당 매출이 아레나의 5분의 1 아래여서 비용 상승 흡수 여력이 더 작습니다. 대관료·물류비 상승이 팬데믹 이후 수요 회복 탓이라는 셋째 반박은 인과를 증명하지 못했습니다. 대형 투어가 들어간 도시와 아닌 도시의 대관료 상승률에 차이가 없다면 제 주장은 틀립니다.\n\n실무 수확은 손익분기 점유율입니다. 아레나 1만석, 평균 12만원, 회당 고정비 8억원이면 약 6700석(67%), 1인당 MD 3만원을 얹으면 5500석대. 특전 매출이 회당 고정비의 25%를 못 넘기면 회차 증설은 손실을 곱합니다. 회차를 줄이고 단가를 올리는 편이, 점유율 90%에도 총액이 모자라면 좌석 등급을 쪼개 상단을 만드는 편이 빠릅니다. 인지도가 없다면 실황 영상 사후 판매를 고정비 회수 항목에 미리 넣어야 합니다.\n\n11월 3분기 실적 발표 전에 기준선을 박아두려 씁니다. 이건 제 예측입니다. 하이브·SM·JYP·YG 자료에서 상위 팀 공연 매출과 좌석 단가가 오르는 동안, 8~11월 중견 그룹 투어 공지에 회차 축소·공연장 다운사이징·아시아 소도시 대체가 나타날 것으로 봅니다. 셋 중 하나도 확인되지 않으면 틀린 것으로 기록하겠습니다.\n\n호황의 총액은 산업의 평균이 아니라 상단의 높이를 말하고, 다음 해의 명단은 그 호황이 올린 원가를 감당한 사업자의 수가 말합니다.",
+  "draft_en_final": "BTS wrapped its Arirang (아리랑) world tour with 38 shows, and according to [Asiae (아시아경제)](https://view.asiae.co.kr/article/2026083017333834136) the run grossed roughly 599.8 billion won on 2.3 million tickets, with one eight-show stretch alone bringing in 140 billion won. NH Investment & Securities reportedly put the total economic effect of what it calls BTS-nomics at around 8 trillion won. The number that will outlast the headline sits lower in the same report: in Billboard's first-half touring tallies, BTS was the only K-pop act averaging more than $10 million per show.\n\nDivide the tour figures and the shape gets clearer. About 15.8 billion won per night, roughly 60,000 people in the building, about 260,000 won of gross per attendee. At 1,450 won to the dollar that is a shade over $10.9 million, and the eight-show stretch runs hotter at 17.5 billion won per night. What I could not verify is the denominator. I do not know how many K-pop acts appear in that ranking at all, or whether the ones below the line sit at $8 million or $2 million. This argument stands or falls on that missing column.\n\nAlan Krueger's Rockonomics described how the recorded-music collapse pushed the industry to patch the hole with ticket prices, and how those higher prices concentrated at the very top. K-pop ran the same sequence late, because member-version albums and photocards kept lifting spend per fan long after streaming had flattened it elsewhere. Albums scale with how many copies one fan buys. Touring stops at what a city will bear, and premium packages are simply price discrimination aimed at the fans willing to pay most. An act without recognition has nothing to attach them to.\n\nRun the arena math. Ten thousand seats, an average ticket of 120,000 won and 800 million won of fixed cost per night puts break-even near 6,700 seats, about 67 percent. Add 30,000 won of merchandise per head and it falls to the mid-5,000s. For an act whose add-on revenue cannot cover a quarter of per-show fixed cost, adding dates multiplies the loss by the date count.\n\nSo here is my forecast, not an observation. When HYBE, SM, JYP and YG report third-quarter results in November, I expect top-tier concert revenue and per-seat pricing to rise while tour announcements issued between August and November show mid-tier groups doing at least two of three things: cutting dates, moving to smaller venues, or swapping primary markets for secondary Asian cities. If none of the three appears, I was wrong and will log it that way.\n\nThe counterargument I cannot yet defeat is that venue and logistics costs rose from post-pandemic demand generally, not from stadium K-pop tours. Separating the two requires comparing rental inflation in cities that hosted these tours against cities that did not.\n\nAny industry with a record year should check how many firms hold the top unit price, because a boom carried by a few reaches everyone else as cost.",
+  "name_map": {
+    "ko": {},
+    "en": {
+      "아시아경제": "Asia Economic Daily",
+      "아리랑": "Arirang"
+    }
+  },
+  "usage": {
+    "input": 165740,
+    "output": 23997,
+    "calls": 20,
+    "search_uses": 10
+  },
+  "gate": {
+    "chars": 1083,
+    "contrast": 1,
+    "chars_after": 1026,
+    "contrast_after": 1,
+    "revised": true
+  },
+  "usage_rebuild": {
+    "input": 7077,
+    "output": 7502,
+    "calls": 5,
+    "search_uses": 0
+  }
+}
