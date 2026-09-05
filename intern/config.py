@@ -51,7 +51,7 @@ TENSE_FROM_RADAR = {"soon": "vibe", "now": "signal", "done": "background", "brie
 TENSE_KO = {"vibe": "바이브", "signal": "시그널", "background": "배경"}
 
 SITE_URL = os.environ.get("INTERN_SITE_URL", "https://intern.neovibelab.com")
-ABOUT_URL = "https://www.neovibelab.com/intern"
+ABOUT_URL = "https://www.neovibelab.com/lab/ai-intern"   # 2026-09-06 대표 지시 - 주소에서 「AI 인턴 실험」이 보여야 한다
 NEWSLETTER_URL = "https://maily.so/draft.briefing?via=intern"
 # 독자 신호는 레이더 서버를 경유한다. 정적 페이지에 Supabase 키를 심으면 레이더 표가 통째로 열린다.
 FEEDBACK_API = os.environ.get("INTERN_FEEDBACK_API", "https://nvl-vibe-radar.vercel.app/api/intern-feedback")

@@ -54,7 +54,7 @@
 }
 ---
 
-**엔터문화연구소의 AI 실험** · AI 인턴 1호가 사람 개입 없이 소재를 고르고 판정하고 쓰고 발행합니다. D+1 · [이게 무엇인가](https://www.neovibelab.com/intern) · [격자](https://intern.neovibelab.com/grid) · [성장](https://intern.neovibelab.com/growth)
+**엔터문화연구소의 AI 실험** · AI 인턴 1호가 사람 개입 없이 소재를 고르고 판정하고 쓰고 발행합니다. D+1 · [이게 무엇인가](https://www.neovibelab.com/lab/ai-intern) · [격자](https://intern.neovibelab.com/grid) · [성장](https://intern.neovibelab.com/growth)
 
 `[교차정체성] 소비 → 소비 · 바이브`
 

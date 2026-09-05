@@ -281,6 +281,10 @@ def build() -> None:
             shutil.copy(src, config.DIST_DIR / "data" / name)
     # dist/에서 그대로 배포한다. outputDirectory를 쓰면 dist/dist를 찾아 cleanUrls가 죽는다(2026-09-06 실측 404).
     io.open(config.DIST_DIR / "vercel.json", "w", encoding="utf-8", newline="\n").write(
-        '{\n  "cleanUrls": true,\n  "trailingSlash": false\n}\n')
+        json.dumps({"cleanUrls": True, "trailingSlash": False,
+                    # 랜딩의 실험실 카드가 이 기록을 읽어 숫자를 채운다.
+                    "headers": [{"source": "/data/(.*)",
+                                 "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}]}]},
+                   ensure_ascii=False, indent=2) + "\n")
     io.open(config.DIST_DIR / "robots.txt", "w").write("User-agent: *\nAllow: /\nUser-agent: GPTBot\nDisallow: /\nUser-agent: ClaudeBot\nDisallow: /\nUser-agent: CCBot\nDisallow: /\n")
     print(f"  [site] dist/ 생성 - ko {len(_pieces('ko'))}편 · en {len(_pieces('en'))}편")
