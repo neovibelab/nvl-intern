@@ -15,6 +15,16 @@
     ],
     "urls": [
       "https://www.jiemian.com/article/15038378.html"
+    ],
+    "items": [
+      {
+        "title": "문예청년들이 살려낸 블랙 바이닐 산업",
+        "url": "https://www.jiemian.com/article/15038378.html",
+        "source": "界面新闻",
+        "region": "china",
+        "published_date": "2026-09-01T00:00:00+00:00",
+        "title_en": "How Young Art Enthusiasts Revived the Black Vinyl Industry - 界面新闻"
+      }
     ]
   },
   "materials": {
@@ -113,12 +123,36 @@
       "one_line": "이분법의 핵심 근거(蔡徐坤 사례)가 스스로의 반례를 안고 있는데 이를 다루지 않아 논지가 흔들린다."
     }
   ],
-  "draft_ko_final": "蔡徐坤의 피지컬 음반 《KUN》은 발매 직후 12만장이 팔렸다고 중국 매체 36氪이 보도했다. 바이닐 한 장의 매출이 스트리밍 2만에서 3만 재생과 맞먹는다는 환산도 같은 보도에 실렸다. 이 사례가 주목받은 시점도 살펴볼 필요가 있다. RIAA가 2024년 미국 음반 매출 보고서에서 바이닐이 3년 연속 CD 판매를 앞질렀다고 밝힌 직후였고, IMARC 조사는 2024년 신규 바이닐 구매자의 약 50%가 18세에서 34세라고 집계했다. 스트리밍이 청취를 무한히 편리하게 만든 시점에 가장 불편한 매체를 젊은층이 도로 사들이는 흐름이 숫자로 겹친 것이다.\n\n카를로타 로드벤이 Jing Daily에 정리한 프레임을 보면, 에르메스는 직원의 판단으로 구매자를 가려내는 방식으로, 샤넬은 대기 명단과 가격 인상으로 희소성을 관리하는 방식으로 욕망을 유지한다. 두 방식의 공통점은 즉시 구매가 불가능하다는 데 있다. 스트리밍은 재생 버튼 하나로 청취를 완결시키면서 이 구매 불가능성을 지웠고, 바이닐은 주문하고 기다리고 턴테이블에 얹는 절차를 되돌려놓았다. 다만 이 절차가 곧바로 욕망을 만든다고 말하기는 이르다. 그 절차가 소비자가 자발적으로 감수한 마찰인지, 판매자가 미리 설계해 넣은 마찰인지에 따라 남는 의미가 달라지기 때문이다.\n\n한국 음반 시장은 이 구분을 가장 뚜렷하게 보여주는 사례다. 포토카드를 앨범마다 무작위로 삽입하고 특정 버전에만 팬미팅 응모권을 넣는 방식은, 같은 앨범을 여러 장 사게 만드는 유인을 기획사가 직접 설계한 결과다. 서클차트가 매년 발표하는 판매량 상위권에서 1인당 구매 수량이 수십 장에서 수백 장에 이르는 사례가 반복되는 이유도 여기에 있다. 이 경우 마찰은 팬이 자기 자격을 증명하려고 스스로 감수하는 절차라기보다, 산업이 매출을 늘리려고 앞에 세워둔 장치에 가깝다. 蔡徐坤의 바이닐 구매자와 K팝 앨범을 열 장씩 사는 구매자는 겉으로는 같은 물리 음반 소비로 보이지만, 전자는 희소성을 스스로 통과하는 소비이고 후자는 희소성을 산업이 미리 나눠 담아준 소비라는 점에서 다르다.\n\n이 구분을 적용하면 로드벤의 논리는 蔡徐坤의 바이닐 구매자에게는 들어맞지만, 포토카드 때문에 같은 앨범을 대량 구매하는 소비자에게는 그대로 적용되지 않는다. 후자의 구매는 소속 욕구나 차별화 욕구보다 응모권이라는 확률형 보상 구조에 더 가깝다. 물리 음반 판매량이 늘어난다고 해서 그 뒤의 소비자가 모두 마찰을 욕망으로 전환하고 있다고 단정할 수는 없다.\n\nIFPI 2024 글로벌 음악 보고서는 한국을 실물 음반 매출 비중이 가장 높은 시장으로 꼽았고, 이 매출의 상당 부분이 포토카드와 응모권을 겨냥한 중복 구매에서 나온다고 짚었다. 국내 레이블은 이미 마찰을 자연발생적 소비 심리에 맡기지 않고 확률형 보상으로 직접 설계해온 셈이다. 蔡徐坤 사례에서 가져올 것은 마찰을 더 넣으라는 교훈이 아니라, 어떤 마찰이 소비자가 스스로 자격을 증명하는 절차이고 어떤 마찰이 산업이 대신 심어놓은 장치인지 구분하는 기준이다. 마찰로 만든 숫자와 욕망으로 만든 숫자를 구분하지 못하면, 어떤 산업이든 매출 곡선만 보고 잘못된 다음 전략을 세우게 된다.",
+  "draft_ko_final": "蔡徐坤의 피지컬 음반 《KUN》은 발매 직후 12만장이 팔렸다고 중국 매체 36커(36氪)이 보도했다. 바이닐 한 장의 매출이 스트리밍 2만에서 3만 재생과 맞먹는다는 환산도 같은 보도에 실렸다. 이 사례가 주목받은 시점도 살펴볼 필요가 있다. RIAA가 2024년 미국 음반 매출 보고서에서 바이닐이 3년 연속 CD 판매를 앞질렀다고 밝힌 직후였고, IMARC 조사는 2024년 신규 바이닐 구매자의 약 50%가 18세에서 34세라고 집계했다. 스트리밍이 청취를 무한히 편리하게 만든 시점에 가장 불편한 매체를 젊은층이 도로 사들이는 흐름이 숫자로 겹친 것이다.\n\n카를로타 로드벤이 Jing Daily에 정리한 프레임을 보면, 에르메스는 직원의 판단으로 구매자를 가려내는 방식으로, 샤넬은 대기 명단과 가격 인상으로 희소성을 관리하는 방식으로 욕망을 유지한다. 두 방식의 공통점은 즉시 구매가 불가능하다는 데 있다. 스트리밍은 재생 버튼 하나로 청취를 완결시키면서 이 구매 불가능성을 지웠고, 바이닐은 주문하고 기다리고 턴테이블에 얹는 절차를 되돌려놓았다. 다만 이 절차가 곧바로 욕망을 만든다고 말하기는 이르다. 그 절차가 소비자가 자발적으로 감수한 마찰인지, 판매자가 미리 설계해 넣은 마찰인지에 따라 남는 의미가 달라지기 때문이다.\n\n한국 음반 시장은 이 구분을 가장 뚜렷하게 보여주는 사례다. 포토카드를 앨범마다 무작위로 삽입하고 특정 버전에만 팬미팅 응모권을 넣는 방식은, 같은 앨범을 여러 장 사게 만드는 유인을 기획사가 직접 설계한 결과다. 서클차트가 매년 발표하는 판매량 상위권에서 1인당 구매 수량이 수십 장에서 수백 장에 이르는 사례가 반복되는 이유도 여기에 있다. 이 경우 마찰은 팬이 자기 자격을 증명하려고 스스로 감수하는 절차라기보다, 산업이 매출을 늘리려고 앞에 세워둔 장치에 가깝다. 차이쉬쿤의 바이닐 구매자와 K팝 앨범을 열 장씩 사는 구매자는 겉으로는 같은 물리 음반 소비로 보이지만, 전자는 희소성을 스스로 통과하는 소비이고 후자는 희소성을 산업이 미리 나눠 담아준 소비라는 점에서 다르다.\n\n이 구분을 적용하면 로드벤의 논리는 차이쉬쿤의 바이닐 구매자에게는 들어맞지만, 포토카드 때문에 같은 앨범을 대량 구매하는 소비자에게는 그대로 적용되지 않는다. 후자의 구매는 소속 욕구나 차별화 욕구보다 응모권이라는 확률형 보상 구조에 더 가깝다. 물리 음반 판매량이 늘어난다고 해서 그 뒤의 소비자가 모두 마찰을 욕망으로 전환하고 있다고 단정할 수는 없다.\n\nIFPI 2024 글로벌 음악 보고서는 한국을 실물 음반 매출 비중이 가장 높은 시장으로 꼽았고, 이 매출의 상당 부분이 포토카드와 응모권을 겨냥한 중복 구매에서 나온다고 짚었다. 국내 레이블은 이미 마찰을 자연발생적 소비 심리에 맡기지 않고 확률형 보상으로 직접 설계해온 셈이다. 차이쉬쿤 사례에서 가져올 것은 마찰을 더 넣으라는 교훈이 아니라, 어떤 마찰이 소비자가 스스로 자격을 증명하는 절차이고 어떤 마찰이 산업이 대신 심어놓은 장치인지 구분하는 기준이다. 마찰로 만든 숫자와 욕망으로 만든 숫자를 구분하지 못하면, 어떤 산업이든 매출 곡선만 보고 잘못된 다음 전략을 세우게 된다.",
   "draft_en_final": "Cai Xukun's physical album \"KUN\" sold 120,000 copies shortly after release, according to Chinese outlet 36Kr. The same report translated the revenue math: one vinyl copy earns roughly what 20,000 to 30,000 streams would. The timing of that story matters. It landed right after the RIAA's 2024 U.S. music revenue report showed vinyl outselling CDs for a third straight year, and after IMARC's research counted roughly half of new 2024 vinyl buyers as aged 18 to 34. Streaming made listening as easy as pressing one button, and the group buying back the least convenient format is the youngest one in the market.\n\nCarlotta Lodven, writing in Jing Daily, laid out how luxury brands manage desire without discounting it. Hermès lets staff judgment decide who gets to buy. Chanel uses waitlists and price increases. Neither lets a customer complete a purchase instantly. Streaming had erased that kind of delay entirely; vinyl brings back the order, the wait, the act of placing a record on a turntable. But it's too early to say that sequence alone creates desire. What matters is whether a buyer chose that friction themselves or whether a seller built it in advance.\n\nKorea's album market draws that line clearly. Labels insert random photocards into every album and place fan-meeting raffle tickets inside only certain versions, a structure designed specifically to make fans buy the same album many times. Circle Chart's yearly sales rankings show why: per-buyer purchase counts routinely run into the dozens or hundreds for the same title. Here, the friction isn't something a fan absorbs to prove their own commitment. It's something the industry installed to raise revenue. A Cai Xukun vinyl buyer and a K-pop fan buying ten copies of one album both count as physical-format consumption, but one is clearing scarcity on their own, and the other is receiving scarcity that was pre-portioned for them.\n\nIFPI's 2024 global report named Korea as the market with the highest share of physical revenue worldwide, and noted that a large part of that revenue comes from repeat purchases aimed at photocards and raffle entries. Korean labels have already converted friction into an engineered probability reward rather than leaving it to organic desire. What travels from the Cai Xukun case isn't a lesson to add more friction everywhere. It's a filter for telling which friction a customer proves themselves through and which friction was simply planted by the seller. Within the next six months, Korean retailers such as Kyobo Hottracks or Synnara Records, or press coverage citing their data, should start naming 20-to-30-year-olds as the core group actually driving vinyl purchases, not just album purchases.\n\nAny industry selling both a convenient and an inconvenient version of the same product should check which of its own friction points customers are choosing and which ones were quietly built in to inflate the count.",
   "usage": {
     "input": 233462,
     "output": 32517,
     "calls": 16,
     "search_uses": 12
+  },
+  "source_summary": {
+    "ko": "중국의 문예청년들이 블랙 바이닐 레코드 산업을 부활시키고 있다. 레코드 플레이어와 바이닐 음반 판매가 증가하면서 관련 산업이 성장하고 있다.",
+    "en": "Young Chinese art and culture enthusiasts are reviving the black vinyl record industry. Sales of record players and vinyl albums are increasing, driving growth in the related industry.",
+    "titles_en": [
+      "How Young Art Enthusiasts Revived the Black Vinyl Industry - 界面新闻"
+    ]
+  },
+  "usage_rebuild": {
+    "input": 4564,
+    "output": 3677,
+    "calls": 5,
+    "search_uses": 0
+  },
+  "name_map": {
+    "ko": {
+      "界面新闻": "제몐신문",
+      "36氪": "36커",
+      "蔡徐坤": "차이쉬쿤"
+    },
+    "en": {
+      "界面新闻": "Jiemian News",
+      "蔡徐坤": "Cai Xukun"
+    }
   }
 }

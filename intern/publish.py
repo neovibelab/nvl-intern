@@ -11,6 +11,56 @@ AI_LABEL_KO = "이 글은 엔터문화연구소의 AI 인턴 1호가 사람 개�
 AI_LABEL_EN = "Written by AI Intern 01 at Neo Vibe Lab with no human in the loop."
 
 
+def _urls(lang: str) -> dict:
+    q = "?lang=en" if lang == "en" else ""
+    root = config.SITE_URL + ("/en" if lang == "en" else "")
+    return {"about": config.ABOUT_URL + q, "grid": f"{root}/grid", "growth": f"{root}/growth"}
+
+
+def frame_block(lang: str, day: int) -> str:
+    """매회 머리에 붙는 실험 프레임. 뉴스 요약이나 에세이로 읽히지 않게 하는 장치(2026-09-05 대표 지시)."""
+    u = _urls(lang)
+    if lang == "ko":
+        return (f"**엔터문화연구소의 AI 실험** · AI 인턴 1호가 사람 개입 없이 소재를 고르고 판정하고 쓰고 발행합니다. "
+                f"D+{day} · [이게 무엇인가]({u['about']}) · [격자]({u['grid']}) · [성장]({u['growth']})")
+    return (f"**A Neo Vibe Lab AI experiment** · AI Intern 01 picks the event, makes the call, writes and publishes with no human in the loop. "
+            f"Day {day} · [What this is]({u['about']}) · [Grid]({u['grid']}) · [Growth]({u['growth']})")
+
+
+def sources_block(lang: str, summary: str, items: list[dict]) -> str:
+    """오늘의 소재 - 사건·기사 요약 + 원문 인링크."""
+    head = "**오늘의 소재**" if lang == "ko" else "**Today's source**"
+    lines = []
+    for x in items:
+        if not x.get("url"):
+            continue
+        outlet = (x.get("source") or x.get("region") or "").strip()
+        title = ((x.get("title_en") if lang == "en" else None) or x.get("title") or "").strip().replace("]", "］").replace("[", "［")
+        date = (x.get("published_date") or "")[:10]
+        lines.append(f"- [{(outlet + ' · ') if outlet else ''}{title}]({x['url']})" + (f" · {date}" if date else ""))
+    first = f"{head} · {summary.strip()}" if summary.strip() else head
+    return first + ("\n\n" + "\n".join(lines) if lines else "")
+
+
+def grid_table(lang: str, j: dict) -> str:
+    """21칸 격자. ● 도착 칸, ○ 출발 칸(다를 때만)."""
+    st_labels = [s if lang == "ko" else config.STAGES_EN[s] for s in config.STAGES]
+    rows = ["| | " + " | ".join(st_labels) + " |", "|---|:-:|:-:|:-:|"]
+    for f in config.FACTORS:
+        cells = []
+        for s in config.STAGES:
+            if f == j["factor"] and s == j["to_stage"]:
+                cells.append("●")
+            elif f == j["factor"] and s == j["from_stage"]:
+                cells.append("○")
+            else:
+                cells.append("·")
+        rows.append(f"| {f if lang == 'ko' else config.FACTORS_EN[f]} | " + " | ".join(cells) + " |")
+    legend = ("<sub>● 도착 · ○ 출발 · 7요인 × 3단계 = 21칸. 인턴이 매일 한 칸을 찍는다.</sub>" if lang == "ko"
+              else "<sub>● arrives · ○ departs · 7 factors × 3 stages = 21 cells. The intern marks one every day.</sub>")
+    return "\n".join(rows) + "\n\n" + legend
+
+
 def slugify(title_en: str, date: str) -> str:
     s = re.sub(r"[^a-z0-9]+", "-", (title_en or "piece").lower()).strip("-")[:50]
     return f"{date}-{s or 'piece'}"
@@ -47,13 +97,15 @@ def piece_markdown(lang: str, date: str, slug: str, j: dict, body: str, meta: di
         "radar_tense": meta.get("radar_tense"), "agrees": j.get("agrees"),
         "bet": bet, "claims_total": meta.get("claims_total"), "claims_verified": meta.get("claims_verified"),
         "review_rounds": meta.get("review_rounds"), "unresolved": meta.get("unresolved"),
-        "sources": meta.get("sources", []), "wiki": meta.get("wiki", []), "lexicon": meta.get("lexicon", []),
+        "sources": meta.get("sources", []), "source_items": meta.get("source_items", []),
+        "source_summary": (meta.get("source_summary") or {}).get(lang, ""),
+        "wiki": meta.get("wiki", []), "lexicon": meta.get("lexicon", []),
     }
     unresolved_line = ""
     if meta.get("unresolved"):
         unresolved_line = ("\n\n> 미해결. 검수를 정해진 횟수 안에 통과하지 못했습니다. 지적을 그대로 둡니다: " if lang == "ko"
                            else "\n\n> Unresolved. This piece failed its own review within the allowed rounds. The notes stay: ") \
-                          + " / ".join(meta.get("last_issues", [])[:3])
+                          + " / ".join(((meta.get("last_issues_en") if lang == "en" else None) or meta.get("last_issues", []))[:3])
     bet_line = ""
     if bet:
         if lang == "ko":
@@ -62,10 +114,23 @@ def piece_markdown(lang: str, date: str, slug: str, j: dict, body: str, meta: di
             bet_line = f"\n\n**Bet** · {bet['claim_en']} · within {bet['by_days']} days · check: {bet['check_en']}"
     else:
         bet_line = "\n\n**베팅** · 오늘은 없음" if lang == "ko" else "\n\n**Bet** · none today"
-    return (f"---\n{json.dumps(fm, ensure_ascii=False, indent=1)}\n---\n\n"
-            f"`{header}`\n\n# {title}\n\n{body.strip()}{bet_line}\n\n"
+    u = _urls(lang)
+    tail = (f"{label} 판정·검증·검수 기록은 [성장 페이지]({u['growth']})에 남고, 베팅은 기한 뒤 스스로 채점합니다. "
+            f"관점은 사람이 씁니다: [엔터문화연구소 뉴스레터]({config.NEWSLETTER_URL})." if lang == "ko" else
+            f"{label} The call, fact checks and review notes stay on the [growth page]({u['growth']}); bets are self-scored when due. "
+            f"The point of view is written by a human: the [Neo Vibe Lab newsletter]({config.NEWSLETTER_URL}).")
+    srcs = sources_block(lang, fm["source_summary"], fm["source_items"]) if (fm["source_summary"] or fm["source_items"]) else ""
+    nm = (meta.get("name_map") or {}).get(lang) or {}
+    fm["name_map"] = nm
+    doc = (f"{frame_block(lang, meta['day'])}\n\n"
+            f"`{header}`\n\n# {title}\n\n"
+            + (f"{srcs}\n\n" if srcs else "")
+            + f"{grid_table(lang, j)}\n\n"
+            f"{body.strip()}{bet_line}\n\n"
             f"**{'원리' if lang == 'ko' else 'Principle'}** · {principle}{unresolved_line}\n\n"
-            f"<sub>{label}</sub>\n")
+            f"<sub>{tail}</sub>\n")
+    doc = steps.apply_names(doc, nm, lang)
+    return f"---\n{json.dumps(fm, ensure_ascii=False, indent=1)}\n---\n\n" + doc
 
 
 def parse_piece(path) -> tuple[dict, str]:

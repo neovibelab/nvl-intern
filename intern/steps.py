@@ -2,6 +2,7 @@
 """③ 화살표 판정 · ④ 집필 · ⑤ 팩트 검증 · ⑥ 자기 검수. 정본 = ai-intern/PROJECT.md 「매일 파이프라인」."""
 import io
 import json
+import re
 
 from . import config, llm
 
@@ -18,7 +19,9 @@ STYLE_KO = """문체 규칙(반드시):
 - 은유·비유로 낯선 개념을 풀지 않는다. 독자가 아는 항목과의 비교로 푼다.
 - 극존칭(드리다·하십시오)을 쓰지 않는다. 합니다체.
 - 계몽·다짐·격언조로 끝내지 않는다. 마지막 줄은 다른 업종이 가져갈 원리 한 문장이다.
-- 수치·인용에는 출처 매체를 문장 안에 적는다. 확인 안 된 것은 「~로 알려졌다」로 헤지한다."""
+- 수치·인용에는 출처 매체를 문장 안에 적는다. 확인 안 된 것은 「~로 알려졌다」로 헤지한다.
+- 한자·가나·키릴 등 비한글 문자의 고유명사(인명·매체·기업·작품)는 첫 등장에 「한글 표기(원어)」로 쓴다. 예: 차이쉬쿤(蔡徐坤), 36커(36氪). 두 번째부터는 한글 표기만.
+- 소재 기사를 처음 언급하는 자리에 마크다운 링크를 건다: [매체명](URL). 사건 무리에 적힌 URL만 쓰고 만들지 않는다."""
 
 STYLE_EN = """Style rules (must):
 - No em dashes. Break the sentence instead.
@@ -26,7 +29,9 @@ STYLE_EN = """Style rules (must):
 - No meta phrasing like "the real question is" or "what's interesting is".
 - Do not explain unfamiliar things with metaphors; compare them to things the reader already knows.
 - Name the outlet inside the sentence for figures and quotes. Hedge anything unverified with "reportedly".
-- End with one sentence on what another industry would take from this case. No slogans."""
+- End with one sentence on what another industry would take from this case. No slogans.
+- Proper nouns in non-Latin scripts (Chinese, Japanese, Korean, Cyrillic) appear on first mention as "Romanized (original)", e.g. Cai Xukun (蔡徐坤), 36Kr (36氪). Romanized only after that.
+- Link the source article at its first mention as a markdown link: [outlet](URL). Use only URLs given in the cluster; never invent one."""
 
 
 def _rules() -> str:
@@ -142,7 +147,7 @@ def verify_claim(claim: str) -> dict:
 
 주장: {claim}
 
-JSON: {{"status":"verified|unverified|contradicted","source":"매체명 또는 URL","note":"한 줄"}}""",
+JSON: {{"status":"verified|unverified|contradicted","source":"매체명","url":"확인한 페이지 URL(없으면 빈 문자열)","note":"한 줄"}}""",
                          tools=llm.WEB_SEARCH_TOOL, max_tokens=3000)
         if d.get("status") not in ("verified", "unverified", "contradicted"):
             d["status"] = "unverified"
@@ -208,3 +213,135 @@ def revise(text: str, issues: list[str]) -> str:
 [글]
 {text}"""
     return llm.ask(prompt, system=PERSONA, max_tokens=6000)
+
+
+# ── ①' 소재 요약 · ⑥' 표기·링크 정리 (2026-09-05 대표 지시: 매회 고정) ──────────
+
+def summarize_sources(cluster_text: str) -> dict:
+    """소재가 된 사건과 기사를 독자에게 먼저 보여준다. 두 언어 한 번에. 의견 없이 사실만."""
+    d = llm.ask_json(f"""아래는 오늘 글의 소재가 된 기사 무리다. 독자가 본문을 읽기 전에 볼 「오늘의 소재」 요약을 쓴다.
+
+{cluster_text}
+
+규칙: 사실만(누가·무엇을·언제·어디 보도). 의견·해석·형용 없음. 인명·매체명 같은 고유명사는 원문 문자 그대로 둔다(표기는 코드가 붙인다). 한국어 2~3문장(200자 안), 영어 2~3문장(60 words 안).
+titles_en: 기사 제목을 위 목록 순서대로 영어로 옮긴다(매체명은 원문 그대로).
+JSON: {{"ko":"...","en":"...","titles_en":["...", ...]}}""", model=config.MODEL_FAST, max_tokens=2000)
+    return {"ko": str(d.get("ko", "")).strip(), "en": str(d.get("en", "")).strip(),
+            "titles_en": [str(t) for t in d.get("titles_en", []) if isinstance(t, str)]}
+
+
+def issues_en(issues: list[str]) -> list[str]:
+    """검수 지적(한국어)을 영문판용으로 옮긴다."""
+    if not issues:
+        return []
+    d = llm.ask_json(f"""Translate each reviewer note into plain English. Keep proper nouns in their original script. Same count and order.
+{json.dumps(issues, ensure_ascii=False)}
+JSON: {{"en": ["...", ...]}}""", model=config.MODEL_FAST, max_tokens=2000)
+    out = [str(x) for x in d.get("en", []) if isinstance(x, str)]
+    return out if len(out) == len(issues) else issues
+
+
+_FOREIGN_KO = re.compile(r"[A-Za-z0-9]*[一-龥ぁ-ゖァ-ヶЀ-ӿ]+[A-Za-z0-9一-龥ぁ-ゖァ-ヶЀ-ӿ]*")
+_FOREIGN_EN = re.compile(r"[A-Za-z0-9]*[一-龥ぁ-ゖァ-ヶЀ-ӿ가-힣]+[A-Za-z0-9一-龥ぁ-ゖァ-ヶЀ-ӿ가-힣]*")
+_FOREIGN_ANY = re.compile(r"[一-龥ぁ-ゖァ-ヶЀ-ӿ가-힣]")
+_FOREIGN_KO_CHARS = re.compile(r"[一-龥ぁ-ゖァ-ヶЀ-ӿ]")
+
+
+def name_map(texts: list[str], lang: str) -> dict:
+    """비현지 문자 고유명사 → 현지 표기 대응표. LLM은 표만 뽑고 치환은 apply_names가 한다."""
+    pat = _FOREIGN_KO if lang == "ko" else _FOREIGN_EN
+    found = sorted({m for t in texts for m in pat.findall(t or "")}, key=len, reverse=True)
+    if not found:
+        return {}
+    ask = ("각 항목의 한글 표기를 적는다. 중국어는 표준중국어 발음의 국립국어원 외래어 표기법(蔡徐坤→차이쉬쿤, 界面新闻→제몐신문, 36氪→36커), "
+           "일본어는 일본어 표기법, 통용되는 한국어 명칭이 따로 있으면 그것(人民日报→인민일보). 한글·숫자·라틴 문자만 쓴다." if lang == "ko"
+           else "Give the standard Romanized or English name for each item: pinyin for Chinese personal names (蔡徐坤→Cai Xukun), "
+                "the outlet's own English name where one exists (界面新闻→Jiemian News, 36氪→36Kr), Hepburn for Japanese, Revised Romanization for Korean. Latin letters and digits only.")
+    d = llm.ask_json(f"""{ask}
+항목: {json.dumps(found, ensure_ascii=False)}
+JSON: {{"map": {{"원어": "표기", ...}}}}""", max_tokens=1500)
+    m = d.get("map", {}) if isinstance(d, dict) else {}
+    out = {}
+    for k, v in m.items():
+        v = str(v).strip()
+        bad = _FOREIGN_KO_CHARS.search(v) if lang == "ko" else _FOREIGN_ANY.search(v)
+        if k in found and v and v != k and not bad:
+            out[k] = v
+    dropped = [k for k in found if k not in out]
+    if dropped:
+        print(f"  [names] {lang} 표기 못 받음: {dropped[:5]}")
+    return out
+
+
+def apply_names(text: str, m: dict, lang: str) -> str:
+    """원어를 전부 현지 표기로 바꾸고, 현지 표기의 첫 등장에만 (원어)를 붙인다. URL·링크 대상은 건드리지 않는다."""
+    if not m or not text:
+        return text
+    parts = re.split(r"(\]\([^)]*\)|https?://\S+)", text)  # 링크 URL 보호
+    for orig, local in sorted(m.items(), key=lambda kv: len(kv[0]), reverse=True):
+        for idx in range(0, len(parts), 2):
+            seg = parts[idx]
+            seg = seg.replace(f"{local}({orig})", local).replace(f"{local} ({orig})", local)
+            seg = re.sub(r"(?<![A-Za-z0-9一-龥])" + re.escape(orig) + r"(?![A-Za-z0-9一-龥])", local, seg)
+            parts[idx] = seg
+        joined = "".join(parts)
+        first = None
+        bound = re.compile(r"(?<![가-힣A-Za-z0-9])" + re.escape(local) + r"(?![A-Za-z0-9])")
+        for idx in range(0, len(parts), 2):
+            mm = bound.search(parts[idx])
+            if mm:
+                first = (idx, mm.start()); break
+        if first:
+            idx, k = first
+            sep = "" if lang == "ko" else " "
+            parts[idx] = parts[idx][:k + len(local)] + f"{sep}({orig})" + parts[idx][k + len(local):]
+    return "".join(parts)
+
+
+def polish(text: str, lang: str, sources: list[dict]) -> str:
+    """소재·검증 출처의 인링크를 건다. 다른 문장은 건드리지 않는다."""
+    src = "\n".join(f"- {x.get('source') or ''} · {x.get('title') or ''} · {x.get('url')}" for x in sources if x.get("url"))
+    if not src:
+        return text
+    if lang == "ko":
+        prompt = f"""아래 글에서 한 가지만 고친다. 그 밖의 문장·단어·순서는 한 글자도 바꾸지 않는다.
+인링크: 아래 출처 목록의 매체나 기사가 본문에 처음 언급되는 자리에 [매체명](URL) 마크다운 링크를 건다. 매체명이 본문에 다른 표기로 적혀 있으면 그 표기를 링크 텍스트로 쓴다. 목록에 없는 URL은 만들지 않는다. 이미 링크가 있으면 그대로 둔다. 해당 매체가 본문에 없으면 아무것도 하지 않는다.
+
+[출처]
+{src}
+
+[글]
+{text}
+
+본문만 돌려준다."""
+    else:
+        prompt = f"""Make exactly one kind of change to the piece below and nothing else. Do not alter any other word, sentence or order.
+Links: where an outlet or article from the list below is first mentioned, make that mention a markdown link [outlet](URL), keeping the wording already in the text. Never invent a URL. Leave existing links as they are. If an outlet is not mentioned, do nothing.
+
+[Sources]
+{src}
+
+[Piece]
+{text}
+
+Return the body only."""
+    out = llm.ask(prompt, system=PERSONA, max_tokens=8000)
+    if not out or abs(len(out) - len(text)) > max(400, len(text) * 0.25):
+        print(f"  [polish] {lang} 결과 길이 이상({len(text)}→{len(out)}) · 원문 유지")
+        return text
+    print(f"  [polish] {lang} 링크 {len(re.findall(r'\]\(https?://', out))}")
+    return out
+
+
+def link_sources(cluster_items: list[dict], claims: list[dict]) -> list[dict]:
+    """인링크 후보 = 소재 기사 + 검증에서 URL이 잡힌 출처."""
+    out = [dict(x) for x in cluster_items if x.get("url")]
+    for r in claims or []:
+        if r.get("status") != "verified":
+            continue
+        src = str(r.get("source") or "")
+        m = re.search(r"https?://\S+", str(r.get("url") or "") + " " + src)
+        if m:
+            out.append({"source": src.replace(m.group(0), "").strip(" ·-:()") or m.group(0).split("/")[2],
+                        "title": r.get("claim", "")[:60], "url": m.group(0).rstrip(".,)")})
+    return out

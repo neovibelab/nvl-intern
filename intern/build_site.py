@@ -29,6 +29,10 @@ td{padding:8px;border-bottom:1px solid var(--line);color:var(--gray)}td:first-ch
 .grid{display:grid;grid-template-columns:110px repeat(3,1fr);gap:1px;background:var(--gray-dark);border:1px solid var(--gray-dark);margin:18px 0}
 .grid>div{background:var(--black);padding:10px;min-height:52px;font-size:12px}.grid .h{color:var(--lime);font-family:'DM Mono',monospace;font-size:11px}
 .grid .f{font-weight:700}.grid a{text-decoration:none;color:var(--lime)}.grid .z{color:var(--gray-dark)}
+.body p.frame{font-size:12.5px;color:var(--gray);border:1px solid var(--gray-dark);background:var(--dark);padding:10px 14px;line-height:1.7}
+.body p.frame strong{color:var(--lime)}.body ul{margin:0 0 18px 18px;color:var(--gray);font-size:14px;line-height:1.8}.body ul a{color:var(--white)}
+.body table.mini{max-width:420px;font-size:12px}.body table.mini th,.body table.mini td{text-align:center;padding:5px 6px}.body table.mini td:first-child,.body table.mini th:first-child{text-align:left}
+.body table.mini td.on{color:var(--lime);font-size:16px}.body table.mini td.from{color:var(--white)}
 .foot{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);color:var(--gray);font-size:12px;line-height:1.8}
 .foot a{color:var(--white)}.about{background:var(--dark);border:1px solid var(--gray-dark);padding:16px 18px;font-size:13.5px;color:var(--gray);line-height:1.7;margin-bottom:28px}
 @media(max-width:600px){.grid{grid-template-columns:80px repeat(3,1fr)}}"""
@@ -62,9 +66,32 @@ def md_to_html(md: str) -> str:
         if b.startswith("> "):
             out.append(f"<blockquote>{_inline(b[2:])}</blockquote>"); continue
         if b.startswith("<sub>"):
-            out.append(b); continue
+            out.append(_inline_keep_tags(b)); continue
+        if b.startswith("| "):
+            out.append(_table(b)); continue
+        if b.startswith("- "):
+            out.append("<ul>" + "".join(f"<li>{_inline(l[2:])}</li>" for l in b.splitlines() if l.startswith("- ")) + "</ul>"); continue
+        if b.startswith("**엔터문화연구소의 AI 실험**") or b.startswith("**A Neo Vibe Lab AI experiment**"):
+            out.append(f'<p class="frame">{_inline(b)}</p>'); continue
         out.append(f"<p>{_inline(b)}</p>")
     return "\n".join(out)
+
+
+def _inline_keep_tags(b: str) -> str:
+    inner = re.sub(r"^<sub>|</sub>$", "", b.strip())
+    return f"<sub>{_inline(inner)}</sub>"
+
+
+def _table(b: str) -> str:
+    rows = [r.strip().strip("|").split("|") for r in b.splitlines() if r.strip().startswith("|")]
+    rows = [r for r in rows if not all(re.fullmatch(r"\s*:?-+:?\s*", c) for c in r)]
+    if not rows:
+        return ""
+    mini = rows[0][0].strip() == ""
+    h = "".join(f"<th>{_inline(c.strip())}</th>" for c in rows[0])
+    body = "".join("<tr>" + "".join(
+        f"<td class='{'on' if c.strip() == '●' else 'from' if c.strip() == '○' else ''}'>{_inline(c.strip())}</td>" for c in r) + "</tr>" for r in rows[1:])
+    return f"<table class='{'mini' if mini else ''}'><tr>{h}</tr>{body}</table>"
 
 
 def _inline(t: str) -> str:
@@ -82,7 +109,7 @@ def page(lang: str, title: str, body: str, path_prefix: str = "") -> str:
 <title>{html.escape(title)} · {t['label']}</title><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
 <style>{CSS}</style></head><body>
 <nav><a class="brand" href="{root}">{t['label']}</a><span class="sp"></span>
-<a class="l" href="{root}">{t['today']}</a><a class="l" href="{root}growth.html">{t['growth']}</a><a class="l" href="{root}grid.html">{t['grid']}</a>
+<a class="l" href="{root}">{t['today']}</a><a class="l" href="{root}growth">{t['growth']}</a><a class="l" href="{root}grid">{t['grid']}</a>
 <a class="l" href="{config.ABOUT_URL}{'?lang=en' if lang == 'en' else ''}">{t['about']}</a><a class="l" href="{config.ABOUT_URL}{'?lang=en' if lang == 'en' else ''}#subscribe">{t['subscribe']}</a><a class="l" href="{t['other_href']}">{t['other']}</a></nav>
 <div class="wrap">{body}
 <div class="foot">{t['human']} <a href="{config.NEWSLETTER_URL}">{t['human_link']}</a><br>© 2026 엔터문화연구소 (Neo Vibe Lab) · Seoul</div></div></body></html>"""
@@ -108,8 +135,16 @@ def render_piece(lang: str, fm: dict, body: str) -> str:
 
 
 def build() -> None:
+    keep = config.DIST_DIR / ".vercel"
+    saved = None
+    if keep.exists():
+        saved = config.DIST_DIR.parent / ".vercel-keep"
+        shutil.rmtree(saved, ignore_errors=True); shutil.copytree(keep, saved)
     if config.DIST_DIR.exists():
         shutil.rmtree(config.DIST_DIR)
+    config.DIST_DIR.mkdir(parents=True, exist_ok=True)
+    if saved:
+        shutil.copytree(saved, keep); shutil.rmtree(saved, ignore_errors=True)
     stats = publish._load(config.DATA_DIR / "stats.json", [])
     preds = publish._load(config.DATA_DIR / "predictions.json", [])
     for lang in ("ko", "en"):
@@ -124,14 +159,14 @@ def build() -> None:
         # 오늘의 글 + 목록
         if pieces:
             fm, body, slug = pieces[0]
-            lst = "".join(f'<a href="{s}.html"><div class="m">D+{f.get("day")} · {f.get("date")} · {html.escape(f.get("factor",""))} {html.escape(f.get("from_stage",""))} → {html.escape(f.get("to_stage",""))} · {f.get("tense")}</div><div class="t">{html.escape(f.get("title",""))}</div></a>' for f, _, s in pieces[1:])
+            lst = "".join(f'<a href="{s}"><div class="m">D+{f.get("day")} · {f.get("date")} · {html.escape(f.get("factor",""))} {html.escape(f.get("from_stage",""))} → {html.escape(f.get("to_stage",""))} · {f.get("tense")}</div><div class="t">{html.escape(f.get("title",""))}</div></a>' for f, _, s in pieces[1:])
             main = about + render_piece(lang, fm, body) + (f'<h2 class="label" style="margin-top:50px">{t["list"]}</h2><div class="list">{lst}</div>' if lst else "")
         else:
             main = about + f"<p>{t['empty']}</p>"
         io.open(base / "index.html", "w", encoding="utf-8").write(page(lang, t["today"], main))
         # 성장
         rows = "".join(
-            f"<tr><td>{s['day']}</td><td>{s['date']}</td><td><a href='{s['slug']}.html'>{html.escape(s['title_ko'] if lang == 'ko' else s['title_en'])}</a></td>"
+            f"<tr><td>{s['day']}</td><td>{s['date']}</td><td><a href='{s['slug']}'>{html.escape(s['title_ko'] if lang == 'ko' else s['title_en'])}</a></td>"
             f"<td>{html.escape(s['factor'])} {html.escape(s['from_stage'])}→{html.escape(s['to_stage'])}</td><td>{s['tense']}</td>"
             f"<td>{'=' if s.get('agrees') else '≠ ' + str(s.get('radar_tense'))}</td><td>{s['claims_verified']}/{s['claims_total']}</td>"
             f"<td>{s['review_rounds']}{' · unresolved' if s['unresolved'] else ''}</td><td>{'●' if s['bet'] else ''}</td></tr>" for s in reversed(stats))
@@ -158,7 +193,7 @@ def build() -> None:
             gh += f"<div class='f'>{f if lang=='ko' else config.FACTORS_EN[f]}</div>"
             for st in config.STAGES:
                 ss = cells.get((f, st), [])
-                gh += "<div>" + ("".join(f"<a href='{x['slug']}.html'>D+{x['day']}</a> " for x in ss) if ss else "<span class='z'>·</span>") + "</div>"
+                gh += "<div>" + ("".join(f"<a href='{x['slug']}'>D+{x['day']}</a> " for x in ss) if ss else "<span class='z'>·</span>") + "</div>"
         gh += "</div>"
         io.open(base / "grid.html", "w", encoding="utf-8").write(page(lang, t["grid"], f"<p class='label'>{t['grid_title']}</p><h1>{'21칸' if lang=='ko' else '21 cells'}</h1>" + gh))
     # 데이터 공개

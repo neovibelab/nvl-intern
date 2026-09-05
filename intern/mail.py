@@ -25,18 +25,13 @@ def _call(method: str, path: str, body: dict | None = None, live: bool = False) 
         return e.code, e.read().decode(errors="replace")[:400]
 
 
-def send_piece(lang: str, day: int, title: str, body_md: str, slug: str, rhythm: str = "daily",
-               send: bool = False) -> dict:
+def send_piece(lang: str, day: int, title: str, body_md: str, slug: str, send: bool = False) -> dict:
+    """구독자는 언어만 고른다. 매일 한 편과 일요일 회고가 같은 리스트로 간다(2026-09-05 대표: 주기 구분 폐지)."""
     subject = (f"D+{day} · {title}" if lang == "ko" else f"Day {day} · {title}")
-    url = f"{config.SITE_URL}/{'' if lang == 'ko' else 'en/'}{slug}.html"
-    about = config.ABOUT_URL + ("?lang=en" if lang == "en" else "")
-    footer = ("\n\n---\n\n[웹에서 읽기](%s) · [이 실험이 무엇인가](%s)\n\nAI가 매일 읽고 정리합니다. 관점은 사람이 씁니다. 사람이 쓰는 쪽은 [엔터문화연구소 뉴스레터](%s)입니다.\n\n이 글은 엔터문화연구소의 AI 인턴 1호가 사람 개입 없이 썼습니다."
-              % (url, about, config.NEWSLETTER_URL)) if lang == "ko" else \
-             ("\n\n---\n\n[Read on the web](%s) · [What this experiment is](%s)\n\nAI reads and sorts every day. The point of view is written by a human: the [Neo Vibe Lab newsletter](%s).\n\nWritten by AI Intern 01 at Neo Vibe Lab with no human in the loop."
-              % (url, about, config.NEWSLETTER_URL))
+    url = f"{config.SITE_URL}/{'' if lang == 'ko' else 'en/'}{slug}"
+    footer = ("\n\n---\n\n[웹에서 읽기](%s)" % url) if lang == "ko" else ("\n\n---\n\n[Read on the web](%s)" % url)
     filters = {"predicate": "and", "groups": [], "filters": [
         {"field": "subscriber.metadata.lang", "operator": "equals", "value": lang},
-        {"field": "subscriber.metadata.rhythm", "operator": "equals", "value": rhythm},
     ]}
     payload = {"subject": subject, "body": body_md + footer, "status": "about_to_send" if send else "draft",
                "archival_mode": "disabled", "filters": filters}
