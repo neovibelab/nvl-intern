@@ -37,9 +37,12 @@ def load_env() -> None:
 load_env()
 
 BRAIN_DIR = pathlib.Path(os.environ.get("BRAIN_DIR") or (ROOT.parent / "claude-virtual-brain" / "llm-wiki"))
-MODEL_MAIN = os.environ.get("INTERN_MODEL_MAIN", "claude-sonnet-5")
+# 2026-09-06 Sonnet 5 → Opus 5. 근거 = 옆 세션 작성 모델 비교(두 소재·3회) - Sonnet은 분량 3/3 미달·사실 합성 1/3.
+# 인턴 프롬프트 실측 = scripts/bakeoff.py · reports/bakeoff/RESULT.md
+MODEL_MAIN = os.environ.get("INTERN_MODEL_MAIN", "claude-opus-5")
 MODEL_FAST = os.environ.get("INTERN_MODEL_FAST", "claude-haiku-4-5")
-MODEL_FALLBACK = {"claude-sonnet-5": "claude-sonnet-4-6", "claude-haiku-4-5": "claude-haiku-4-5-20251001"}
+MODEL_FALLBACK = {"claude-opus-5": "claude-sonnet-5", "claude-sonnet-5": "claude-sonnet-4-6",
+                  "claude-haiku-4-5": "claude-haiku-4-5-20251001"}
 
 FACTORS = ("IP", "포맷", "테크", "자본", "정책", "교차산업", "교차정체성")
 STAGES = ("생산", "유통", "소비")
