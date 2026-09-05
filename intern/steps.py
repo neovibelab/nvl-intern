@@ -34,6 +34,17 @@ STYLE_EN = """Style rules (must):
 - Link the source article at its first mention as a markdown link: [outlet](URL). Use only URLs given in the cluster; never invent one."""
 
 
+# 시제 기준 - 레이더 정본(`nvl-vibe-radar/classify_tense.py` PROMPT)과 같은 문구를 쓴다.
+# 인턴이 따로 정의하면 레이더 판정과의 「일치·불일치」가 서로 다른 자를 대는 일이 된다.
+TENSE_BLOCK = """- 시제 하나. **기사 속성이 아니라 독자 위치 기준 판정이다.** 독자 = 한국 엔터 실무자.
+  - vibe(바이브): **아직 한국에 안 왔다 그리고 반복될 종류다. 둘 다여야 한다.**
+    해외에서 이미 벌어지는 중이어도 한국 실무자에게 안 왔으면 vibe다. 해외 진행형을 signal로 내리지 마라.
+    순수 추측은 vibe가 아니다. **지금 관측되는 조짐**을 `vibe_evidence`에 한 줄로 댄다. 못 대면 vibe가 아니다.
+  - signal(시그널): **한국에서** 지금 벌어지는 중이다. 국내 사업자·국내 정책 전환·국내 개최.
+  - background(배경): 끝났거나(완료된 인수합병·분기 실적·확정 판결) 한 번 있는 일이다(개별 계약·인물 발언·신곡 발매·행사 후기).
+  **애매하면 vibe 쪽으로 올린다.** 잘못 올리면 사람이 내리지만 잘못 내리면 놓친다."""
+
+
 def _rules() -> str:
     try:
         return io.open(config.RULES_FILE, encoding="utf-8").read()
@@ -47,23 +58,22 @@ def judge(cluster_text: str, radar: dict, materials: str) -> dict:
     prompt = f"""[오늘의 사건 무리]
 {cluster_text}
 
-[레이더가 찍어 둔 판정] 시제={radar.get('radar_tense')} · 요인={radar.get('factor')} · 단계={radar.get('stage')}
-
 [재료 - 연구소 관점 렌즈·개념]
 {materials[:14000] or '(없음)'}
 
 좌표계로 판정한다.
 - 요인 하나: {' | '.join(config.FACTORS)}
 - 출발 단계 → 도착 단계: {' | '.join(config.STAGES)} (같아도 된다)
-- 시제 하나: vibe(아직 산업이 받아들이지 않았지만 조짐이 보이고 반복될 종류) / signal(지금 벌어지는 중, 누구나 찾을 수 있다) / background(끝났거나 한 번 있는 일)
-  기준 독자는 한국 엔터 실무자다. 해외에서 signal인 것이 한국에는 vibe일 수 있다.
-- 레이더 판정과 다르면 이유를 한 줄로 적는다. 같으면 agrees=true.
+{TENSE_BLOCK}
+- 이 판정은 **네가 먼저 찍는다.** 레이더가 따로 찍어 둔 값이 있지만 보여주지 않는다. 일치 여부는 코드가 뒤에 계산한다.
+- `tense_why`에 그 시제로 본 이유를 한 줄 적는다.
 - 베팅: 시제가 vibe이거나, signal이지만 vibe 가설이 서면 「무엇이 · 언제까지(30|90|180일) · 무엇으로 확인」 세 칸을 채운다. 못 채우면 null. 채점 가능한 문장만 쓴다.
 - 각도(angle): 이 사건에서 무엇을 말할지 한 줄. 뻔한 것(누구나 아는 요약)이면 다른 각도를 찾는다.
 - 원리(principle): 다른 업종이 이 사례에서 가져갈 원리 한 문장.
 
 JSON:
-{{"factor":"...","from_stage":"...","to_stage":"...","tense":"vibe|signal|background","agrees":true,"disagree_reason":"",
+{{"factor":"...","from_stage":"...","to_stage":"...","tense":"vibe|signal|background","tense_why":"한 줄",
+ "vibe_evidence":"vibe일 때만. 지금 관측되는 조짐 한 줄. 아니면 빈 문자열",
  "angle_ko":"...","angle_en":"...","title_ko":"...(20자 안)","title_en":"...",
  "bet": {{"claim_ko":"...","claim_en":"...","by_days":90,"check_ko":"무엇으로 확인","check_en":"..."}} 또는 null,
  "principle_ko":"...","principle_en":"..."}}"""
@@ -75,6 +85,15 @@ JSON:
             d[k] = radar.get("stage") or "유통"
     if d.get("tense") not in ("vibe", "signal", "background"):
         d["tense"] = config.TENSE_FROM_RADAR.get(radar.get("radar_tense")) or "signal"
+    # 조짐을 못 댄 vibe는 추측이다. 정본 규칙: 「곧」은 순수 추측이 아니다.
+    if d.get("tense") == "vibe" and not str(d.get("vibe_evidence") or "").strip():
+        print("  [judge] vibe인데 조짐이 비었다 → signal로 내린다")
+        d["tense"] = "signal"
+    # 레이더와의 일치는 코드가 계산한다. 모델은 라벨을 보지 못했다.
+    want = config.TENSE_FROM_RADAR.get(radar.get("radar_tense"))
+    d["radar_tense"] = radar.get("radar_tense")
+    d["agrees"] = (want == d["tense"]) if want else None
+    d["disagree_reason"] = "" if d["agrees"] is not False else str(d.get("tense_why") or "").strip()
     b = d.get("bet")
     if b and not (b.get("claim_ko") and b.get("check_ko") and b.get("by_days")):
         d["bet"] = None

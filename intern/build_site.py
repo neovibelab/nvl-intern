@@ -245,12 +245,12 @@ def build() -> None:
         rows = "".join(
             f"<tr><td>{s['day']}</td><td>{s['date']}</td><td><a href='{s['slug']}'>{html.escape(s['title_ko'] if lang == 'ko' else s['title_en'])}</a></td>"
             f"<td>{html.escape(s['factor'])} {html.escape(s['from_stage'])}→{html.escape(s['to_stage'])}</td><td>{s['tense']}</td>"
-            f"<td>{'=' if s.get('agrees') else '≠ ' + str(s.get('radar_tense'))}</td><td>{s['claims_verified']}/{s['claims_total']}</td>"
+            f"<td>{'-' if s.get('agrees') is None else '=' if s.get('agrees') else '≠ ' + str(s.get('radar_tense'))}</td><td>{s['claims_verified']}/{s['claims_total']}</td>"
             f"<td>{s['review_rounds']}{' · unresolved' if s['unresolved'] else ''}</td><td>{'●' if s['bet'] else ''}</td></tr>" for s in reversed(stats))
         n = len(stats) or 1
         summary = {
             "verified": sum(s["claims_verified"] for s in stats) / max(1, sum(s["claims_total"] for s in stats)),
-            "agree": sum(1 for s in stats if s.get("agrees")) / n,
+            "agree": (sum(1 for s in stats if s.get("agrees")) / max(1, sum(1 for s in stats if s.get("agrees") is not None))),
             "pass1": sum(1 for s in stats if s["review_rounds"] <= 1 and not s["unresolved"]) / n,
             "cells": len({(s["factor"], s["to_stage"]) for s in stats}),
         }

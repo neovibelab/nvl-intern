@@ -63,8 +63,28 @@ def main() -> int:
 
     # ③ 판정
     j = steps.judge(cluster_text, pick, mats["text"])
+    if j["tense"] == "background":
+        # 정본 규칙 - 「이미」만으로 된 편은 내지 않는다. 다음 후보로 한 번만 넘어간다.
+        alt = radar.pick_today(clusters, radar.used_keys() | {pick["key"]})
+        print(f"  [judge] 배경 판정 → 다음 후보로: {(alt['items'][0]['title'][:60] if alt else '없음')}")
+        trace["skipped"] = {"key": pick["key"], "reason": "background", "judgment": j}
+        if alt:
+            pick = alt
+            cluster_text = radar.describe(pick)
+            src_sum = steps.summarize_sources(cluster_text)
+            trace["source_summary"] = src_sum
+            trace["cluster"] = {"key": pick["key"], "item_ids": pick["item_ids"], "n": pick["n"],
+                                "radar_tense": pick["radar_tense"], "factor": pick["factor"], "stage": pick["stage"],
+                                "titles": [x["title"] for x in pick["items"]], "urls": [x["url"] for x in pick["items"]],
+                                "items": [{k: x.get(k) for k in ("title", "url", "source", "region", "published_date")} for x in pick["items"][:6]]}
+            for x, te in zip(trace["cluster"]["items"], src_sum.get("titles_en", [])):
+                x["title_en"] = te
+            mats = {"text": "", "wiki": [], "lexicon": []} if args.no_brain else brain.retrieve(cluster_text)
+            trace["materials"] = {"wiki": mats["wiki"], "lexicon": mats["lexicon"]}
+            j = steps.judge(cluster_text, pick, mats["text"])
     trace["judgment"] = j
-    print(f"  [judge] {steps.header_line(j, 'ko')} · 레이더와 {'일치' if j.get('agrees') else '불일치: ' + str(j.get('disagree_reason'))[:60]} · 베팅 {'있음' if j.get('bet') else '없음'}")
+    print(f"  [judge] {steps.header_line(j, 'ko')} · 레이더 {j.get('radar_tense') or '미분류'}와 "
+          f"{'일치' if j.get('agrees') else '비교 불가' if j.get('agrees') is None else '불일치'} · 베팅 {'있음' if j.get('bet') else '없음'}")
     print(f"  [judge] 각도: {j['angle_ko'][:80]}")
 
     # ④ 집필 ko

@@ -59,6 +59,19 @@ def sources_block(lang: str, summary: str, items: list[dict]) -> str:
     return first + ("\n\n" + "\n".join(lines) if lines else "")
 
 
+def no_em_dash(t: str) -> str:
+    """가운데 줄표는 전 출력 금지(루트 지침). 모델이 제목·조짐 같은 짧은 필드에 넣는다 - 기계로 친다."""
+    return t.replace(" — ", " - ").replace("—", "-").replace(" – ", " - ").replace("–", "-")
+
+
+def vibe_line(lang: str, j: dict) -> str:
+    """바이브 판정의 근거. 「곧」은 순수 추측이 아니라 관측된 조짐이어야 한다(정본 규칙)."""
+    ev = str(j.get("vibe_evidence") or "").strip()
+    if j.get("tense") != "vibe" or not ev:
+        return ""
+    return (f"**조짐** · {ev}" if lang == "ko" else f"**What is showing** · {ev}")
+
+
 def grid_table(lang: str, j: dict) -> str:
     """21칸 격자. ● 도착 칸, ○ 출발 칸(다를 때만)."""
     st_labels = [s if lang == "ko" else config.STAGES_EN[s] for s in config.STAGES]
@@ -112,6 +125,7 @@ def piece_markdown(lang: str, date: str, slug: str, j: dict, body: str, meta: di
         "title": title, "date": date, "slug": slug, "lang": lang, "day": meta["day"],
         "factor": j["factor"], "from_stage": j["from_stage"], "to_stage": j["to_stage"], "tense": j["tense"],
         "radar_tense": meta.get("radar_tense"), "agrees": j.get("agrees"),
+        "tense_why": j.get("tense_why", ""), "vibe_evidence": j.get("vibe_evidence", ""),
         "bet": bet, "claims_total": meta.get("claims_total"), "claims_verified": meta.get("claims_verified"),
         "review_rounds": meta.get("review_rounds"), "unresolved": meta.get("unresolved"),
         "sources": meta.get("sources", []), "source_items": meta.get("source_items", []),
@@ -139,10 +153,11 @@ def piece_markdown(lang: str, date: str, slug: str, j: dict, body: str, meta: di
             f"`{header}`\n\n# {title}\n\n"
             + (f"{srcs}\n\n" if srcs else "")
             + f"{grid_table(lang, j)}\n\n"
-            f"{body.strip()}{bet_line}\n\n"
-            f"**{'원리' if lang == 'ko' else 'Principle'}** · {principle}{unresolved_line}\n\n"
-            f"<sub>{tail}</sub>\n")
-    doc = steps.apply_names(doc, nm, lang)
+            + (f"{vibe_line(lang, j)}\n\n" if vibe_line(lang, j) else "")
+            + f"{body.strip()}{bet_line}\n\n"
+            + f"**{'원리' if lang == 'ko' else 'Principle'}** · {principle}{unresolved_line}\n\n"
+            + f"<sub>{tail}</sub>\n")
+    doc = no_em_dash(steps.apply_names(doc, nm, lang))
     return f"---\n{json.dumps(fm, ensure_ascii=False, indent=1)}\n---\n\n" + doc
 
 

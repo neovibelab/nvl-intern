@@ -97,11 +97,15 @@ def used_keys() -> set:
 
 
 def pick_today(clusters: list[dict], exclude: set) -> dict | None:
-    """「지금」(now) 우선, 없으면 「곧」(soon), 그다음 미분류. 소스 수·최신순. 이미 쓴 사건은 뺀다."""
+    """「곧」(soon) 우선, 그다음 「지금」(now)·미분류. 소스 수·최신순. 이미 쓴 사건은 뺀다.
+
+    2026-09-06 뒤집음. 전에는 now가 위였고 D+1·D+2가 둘 다 signal로 나왔다. 레이더 기본 화면이
+    바이브이고 소개 페이지가 「아직 오지 않은 변화」를 약속하는데 선택이 반대를 향하고 있었다.
+    """
     def public(c):
         return any((x.get("url") or "").startswith("http") and "mail.google.com" not in (x.get("url") or "") for x in c["items"])
     def score(c):
-        tense_rank = {"now": 3, "soon": 2, None: 1, "done": 0, "brief": -1}.get(c["radar_tense"], 1)
+        tense_rank = {"soon": 3, "now": 2, None: 1, "done": 0, "brief": -1}.get(c["radar_tense"], 1)
         coord = 1 if (c["factor"] and c["stage"]) else 0
         col = max({"vibe_search": 3, "gnews": 2, "newsroom": 2, "newsletter": 1}.get(x.get("collector"), 1) for x in c["items"])
         return (tense_rank, coord, col, c["n"], c["latest"])
