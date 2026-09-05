@@ -62,7 +62,7 @@ JSON:
  "angle_ko":"...","angle_en":"...","title_ko":"...(20자 안)","title_en":"...",
  "bet": {{"claim_ko":"...","claim_en":"...","by_days":90,"check_ko":"무엇으로 확인","check_en":"..."}} 또는 null,
  "principle_ko":"...","principle_en":"..."}}"""
-    d = llm.ask_json(prompt, system=PERSONA, max_tokens=1600)
+    d = llm.ask_json(prompt, system=PERSONA, max_tokens=3000)
     if d.get("factor") not in config.FACTORS:
         d["factor"] = radar.get("factor") or "자본"
     for k in ("from_stage", "to_stage"):
@@ -103,7 +103,7 @@ def write_ko(cluster_text: str, j: dict, materials: str) -> str:
 한국어 논평 본문을 쓴다. 700~1000자. 제목·헤더·마지막 원리 줄은 코드가 붙이므로 본문만 쓴다.
 첫 문장은 사건의 구체(누가 무엇을 언제)로 연다. 각도를 따라 논지를 세우고, 베팅이 있으면 본문 안에 「무엇이 언제까지」를 자기 문장으로 넣는다.
 사실은 사건 무리와 재료에 있는 것만 쓴다. 없는 수치·발언을 만들지 않는다."""
-    return llm.ask(prompt, system=PERSONA, max_tokens=2200, temperature=0.5)
+    return llm.ask(prompt, system=PERSONA, max_tokens=6000)
 
 
 def write_en(cluster_text: str, j: dict, ko_final: str) -> str:
@@ -122,7 +122,7 @@ def write_en(cluster_text: str, j: dict, ko_final: str) -> str:
 Write the English body only, 350 to 500 words. Title, header line and the closing principle are added by code.
 Open with the concrete event (who, what, when). Follow the angle. If there is a bet, state what and by when in your own words.
 Only facts that appear in the cluster or the Korean piece. Invent no figures or quotes."""
-    return llm.ask(prompt, system=PERSONA, max_tokens=2200, temperature=0.5)
+    return llm.ask(prompt, system=PERSONA, max_tokens=6000)
 
 
 # ── ⑤ 팩트 검증 ─────────────────────────────────────────────────────────────
@@ -132,7 +132,7 @@ def extract_claims(text: str) -> list[str]:
 
 {text}
 
-JSON: {{"claims": ["...", "..."]}}""", model=config.MODEL_FAST, max_tokens=800)
+JSON: {{"claims": ["...", "..."]}}""", model=config.MODEL_FAST, max_tokens=1500)
     return [c for c in d.get("claims", []) if isinstance(c, str)][:6]
 
 
@@ -143,7 +143,7 @@ def verify_claim(claim: str) -> dict:
 주장: {claim}
 
 JSON: {{"status":"verified|unverified|contradicted","source":"매체명 또는 URL","note":"한 줄"}}""",
-                         tools=llm.WEB_SEARCH_TOOL, max_tokens=900)
+                         tools=llm.WEB_SEARCH_TOOL, max_tokens=3000)
         if d.get("status") not in ("verified", "unverified", "contradicted"):
             d["status"] = "unverified"
         return d
@@ -172,7 +172,7 @@ def hedge(text: str, results: list[dict], lang: str = "ko") -> str:
 
 [Piece]
 {text}"""
-    return llm.ask(prompt, system=PERSONA, max_tokens=2400, temperature=0.2)
+    return llm.ask(prompt, system=PERSONA, max_tokens=6000)
 
 
 # ── ⑥ 자기 검수 (별도 컨텍스트) ────────────────────────────────────────────
@@ -190,7 +190,7 @@ def review(text: str, j: dict) -> dict:
 {text}
 
 JSON: {{"verdict":"pass|fix","issues":["구체 지적 (문장을 가리킨다)", ...],"one_line":"한 줄 총평"}}""",
-                     system=REVIEWER, max_tokens=900)
+                     system=REVIEWER, max_tokens=3000)
     if d.get("verdict") not in ("pass", "fix"):
         d["verdict"] = "fix"
     d["issues"] = [i for i in d.get("issues", []) if isinstance(i, str)][:6]
@@ -207,4 +207,4 @@ def revise(text: str, issues: list[str]) -> str:
 
 [글]
 {text}"""
-    return llm.ask(prompt, system=PERSONA, max_tokens=2400, temperature=0.3)
+    return llm.ask(prompt, system=PERSONA, max_tokens=6000)

@@ -1,0 +1,28 @@
+[
+  {
+    "date": "2026-09-05",
+    "day": 1,
+    "slug": "2026-09-05-friction-sells-identity",
+    "title_ko": "불편함이 파는 정체성",
+    "title_en": "Friction Sells Identity",
+    "factor": "교차정체성",
+    "from_stage": "소비",
+    "to_stage": "소비",
+    "tense": "vibe",
+    "radar_tense": "now",
+    "agrees": true,
+    "claims_total": 6,
+    "claims_verified": 2,
+    "review_rounds": 2,
+    "unresolved": true,
+    "bet": true,
+    "wiki_used": 3,
+    "lexicon_used": 3,
+    "tokens": {
+      "input": 233462,
+      "output": 32517,
+      "calls": 16,
+      "search_uses": 12
+    }
+  }
+]

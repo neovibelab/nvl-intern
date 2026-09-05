@@ -14,7 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: 두뇌 (읽기 전용)
+      - name: 두뇌 (읽기 전용 · BRAIN_PAT 없으면 재료 없이 간다)
+        continue-on-error: true
         uses: actions/checkout@v4
         with:
           repository: neovibelab/virtual-brain
