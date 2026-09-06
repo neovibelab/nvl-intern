@@ -201,7 +201,10 @@ def render_piece(lang: str, fm: dict, body: str) -> str:
     hdr = re.search(r"`([^`]+)`", body)
     hdr_html = f'<div class="hdr">{html.escape(hdr.group(1))}</div>' if hdr else ""
     day = fm.get("day", "")
-    meta = f"D+{day} · {fm.get('date')}" if lang == "ko" else f"Day {day} · {fm.get('date')}"
+    if fm.get("type") == "weekly":
+        meta = f"{fm.get('date')} · " + ("주간 회고" if lang == "ko" else "Weekly review")
+    else:
+        meta = f"D+{day} · {fm.get('date')}" if lang == "ko" else f"Day {day} · {fm.get('date')}"
     inner = md_to_html(body)
     # 독자 신호 위젯은 검수 기록 앞(원리 뒤)에 들어간다
     k = inner.rfind("<blockquote>")
@@ -222,7 +225,7 @@ def build() -> None:
     config.DIST_DIR.mkdir(parents=True, exist_ok=True)
     if saved:
         shutil.copytree(saved, keep); shutil.rmtree(saved, ignore_errors=True)
-    stats = publish._load(config.DATA_DIR / "stats.json", [])
+    stats = [s for s in publish._load(config.DATA_DIR / "stats.json", []) if s.get("type") != "weekly"]
     preds = publish._load(config.DATA_DIR / "predictions.json", [])
     for lang in ("ko", "en"):
         t = T[lang]
@@ -236,7 +239,12 @@ def build() -> None:
         # 오늘의 글 + 목록
         if pieces:
             fm, body, slug = pieces[0]
-            lst = "".join(f'<a href="{s}"><div class="m">D+{f.get("day")} · {f.get("date")} · {html.escape(f.get("factor",""))} {html.escape(f.get("from_stage",""))} → {html.escape(f.get("to_stage",""))} · {f.get("tense")}</div><div class="t">{html.escape(f.get("title",""))}</div></a>' for f, _, s in pieces[1:])
+            def _meta(f):
+                if f.get("type") == "weekly":
+                    return ("주간 회고" if lang == "ko" else "Weekly review") + f' · {f.get("date")}'
+                return (f'D+{f.get("day")} · {f.get("date")} · {html.escape(f.get("factor",""))} '
+                        f'{html.escape(f.get("from_stage",""))} → {html.escape(f.get("to_stage",""))} · {f.get("tense")}')
+            lst = "".join(f'<a href="{s}"><div class="m">{_meta(f)}</div><div class="t">{html.escape(f.get("title",""))}</div></a>' for f, _, s in pieces[1:])
             main = about + render_piece(lang, fm, body) + (f'<h2 class="label" style="margin-top:50px">{t["list"]}</h2><div class="list">{lst}</div>' if lst else "")
         else:
             main = about + f"<p>{t['empty']}</p>"

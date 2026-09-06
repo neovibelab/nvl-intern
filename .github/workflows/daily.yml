@@ -1,7 +1,8 @@
 name: daily
 on:
   schedule:
-    - cron: "0 0 * * *"   # 09:00 KST · 수집기(06:30·07:00 KST) 뒤
+    - cron: "0 0 * * *"   # 09:00 KST · 수집기(06:30·07:00)·시제 판정(08:00) 뒤
+                          # 월~금 한 편 · 토요일 주간 회고 · 일요일 휴재는 run_daily.py가 요일로 가른다
   workflow_dispatch:
     inputs:
       send:

@@ -13,7 +13,7 @@ import json
 import sys
 import time
 
-from intern import config, llm, radar, brain, steps, publish, build_site, mail
+from intern import config, llm, radar, brain, steps, publish, build_site, mail, weekly
 
 MAX_REVIEW_ROUNDS = 2
 
@@ -26,9 +26,20 @@ def main() -> int:
     ap.add_argument("--hours", type=int, default=168, help="레이더 창(시간)")
     ap.add_argument("--no-brain", action="store_true")
     ap.add_argument("--rebuild", action="store_true", help="그날 로그의 판정·최종 원고로 발행물만 다시 만든다(LLM은 소재 요약·표기 정리만)")
+    ap.add_argument("--weekly", action="store_true", help="요일과 무관하게 주간 회고를 쓴다")
+    ap.add_argument("--daily", action="store_true", help="요일과 무관하게 데일리를 쓴다")
     args = ap.parse_args()
     if args.rebuild:
         return rebuild(args)
+    # 리듬 - 월~금 한 편 · 토요일 휴재 · 일요일 회고 (2026-09-06 대표 지시)
+    y, m, d = map(int, args.date.split("-"))
+    wd = __import__("datetime").date(y, m, d).weekday()      # 0=월 … 5=토 6=일
+    if args.weekly or (wd == 6 and not args.daily):
+        return run_weekly(args)
+    if wd == 5 and not args.daily:
+        print("  [rhythm] 토요일은 쉰다. 기록만 남긴다.")
+        publish._dump(config.LOG_DIR / f"{args.date}.json", {"date": args.date, "rest": True})
+        return 0
     config.ensure_dirs()
     t0 = time.time()
     trace: dict = {"date": args.date, "steps": {}}
@@ -156,6 +167,39 @@ def main() -> int:
     for lang, md in (("ko", ko_md), ("en", en_md)):
         title = j["title_ko"] if lang == "ko" else j["title_en"]
         mail.send_piece(lang, meta["day"], title, md, slug, send=args.send)
+    print(f"== 완료 {time.time()-t0:.0f}s")
+    return 0
+
+
+def run_weekly(args) -> int:
+    """⑨ 주간 회고(일요일) - 새 소재를 안 찾는다. 한 주의 자기 기록만 읽는다."""
+    t0 = time.time()
+    week = weekly.week_number(args.date)
+    g = weekly.gather(args.date)
+    print(f"== 주간 회고 {week}주차 · {args.date} · 이번 주 {g['n']}편 · 격자 {g['cells']}칸 · "
+          f"불일치 {g['disagree']}/{g['compared']} · 미해결 {g['unresolved']} · 검증 {g['verified']}/{g['claims']}")
+    print(f"  [signals] {g['signals']}")
+    if not g["rows"]:
+        print("  [weekly] 이번 주 발행이 없다. 회고를 쓰지 않는다.")
+        publish._dump(config.LOG_DIR / f"{args.date}.json", {"date": args.date, "weekly": week, "empty": True})
+        return 0
+    ko = weekly.reflect(g, "ko")
+    print(f"  [weekly] ko {len(ko)}자")
+    ko, gate = steps.final_gate(ko, "ko", lo=700, hi=950)
+    en = weekly.reflect(g, "en")
+    print(f"  [weekly] en {len(en.split())} words")
+    trace = {"date": args.date, "weekly": week, "gather": {k: v for k, v in g.items() if k != "rows"},
+             "rows": [s["slug"] for s in g["rows"]], "gate": gate, "ko": ko, "en": en, "usage": dict(llm.USAGE)}
+    if args.dry_run:
+        print("\n" + "=" * 60 + "\n" + ko)
+        return 0
+    slug = weekly.record(args.date, week, g, ko, en, trace)
+    build_site.build()
+    print(f"  [publish] content/ko/{slug}.md · content/en/{slug}.md")
+    for lang in ("ko", "en"):
+        title = f"{week}주차 회고" if lang == "ko" else f"Week {week} review"
+        fm, body = publish.parse_piece(config.CONTENT_DIR / lang / f"{slug}.md")
+        mail.send_piece(lang, publish.day_number(args.date), title, body.strip(), slug, send=args.send)
     print(f"== 완료 {time.time()-t0:.0f}s")
     return 0
 

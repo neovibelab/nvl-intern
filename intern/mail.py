@@ -27,7 +27,8 @@ def _call(method: str, path: str, body: dict | None = None, live: bool = False) 
 
 def send_piece(lang: str, day: int, title: str, body_md: str, slug: str, send: bool = False) -> dict:
     """구독자는 언어만 고른다. 매일 한 편과 일요일 회고가 같은 리스트로 간다(2026-09-05 대표: 주기 구분 폐지)."""
-    subject = (f"D+{day} · {title}" if lang == "ko" else f"Day {day} · {title}")
+    weekly = "주차 회고" in title or title.startswith("Week ")
+    subject = title if weekly else (f"D+{day} · {title}" if lang == "ko" else f"Day {day} · {title}")
     url = f"{config.SITE_URL}/{'' if lang == 'ko' else 'en/'}{slug}"
     if lang == "ko":
         fb = ("**이 글은 어땠습니까** · [맞는 말이다](%s?fb=agree) · [뻔하다](%s?fb=obvious) · [근거가 약하다](%s?fb=weak) · [관점이 어긋난다](%s?fb=off)"
