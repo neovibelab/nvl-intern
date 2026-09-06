@@ -281,6 +281,10 @@ def build() -> None:
                 gh += "<div>" + ("".join(f"<a href='{x['slug']}'>D+{x['day']}</a> " for x in ss) if ss else "<span class='z'>·</span>") + "</div>"
         gh += "</div>"
         io.open(base / "grid.html", "w", encoding="utf-8").write(page(lang, t["grid"], f"<p class='label'>{t['grid_title']}</p><h1>{'21칸' if lang=='ko' else '21 cells'}</h1>" + gh))
+    # 브랜드 자산 - 메일·아카이브가 이 URL을 쓴다(외부 호스팅 금지)
+    src = config.ROOT / "assets"
+    if src.exists():
+        shutil.copytree(src, config.DIST_DIR / "assets", dirs_exist_ok=True)
     # 데이터 공개
     (config.DIST_DIR / "data").mkdir(exist_ok=True)
     for name in ("stats.json", "predictions.json"):
