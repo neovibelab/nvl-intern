@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""⑨ 주간 회고 - 일요일. 한 주 기록을 인턴이 스스로 읽고 「왜 틀렸나」를 쓴다.
+"""⑨ 주간 회고 - 토요일. 한 주 기록을 인턴이 스스로 읽고 「왜 틀렸나」를 쓴다.
 
-발행은 월~금 다섯 편, 토요일은 쉬고, 일요일이 이 회고다(2026-09-06 대표 지시).
+발행은 월~금 다섯 편, 토요일이 이 회고, 일요일은 쉰다(2026-09-06 대표 지시 - 일요일 오픈율이 낮다).
 회고는 새 소재를 안 찾는다. **한 주의 자기 기록만 재료다** - 판정·검증·검수·베팅·독자 신호.
 독자 자유 텍스트는 인턴 컨텍스트에 직접 넣지 않는다. 별도 haiku 호출이 유형과 건수로 줄인 것만 넘긴다.
 """
@@ -235,9 +235,9 @@ def markdown(lang: str, date: str, week: int, g: dict, body: str) -> str:
           "pieces": [s["slug"] for s in g["rows"]], "verified": g["verified"], "claims": g["claims"],
           "unresolved": g["unresolved"], "disagree": g["disagree"], "signals": g["signals"]}
     day = publish.day_number(date)
-    head = ("**주간 회고** · 인턴은 월요일부터 금요일까지 하루 한 편을 쓰고, 일요일에 그 주의 자기 기록을 읽습니다. "
+    head = ("**주간 회고** · 인턴은 월요일부터 금요일까지 하루 한 편을 쓰고, 토요일에 그 주의 자기 기록을 읽습니다. "
             "새 사건을 찾지 않습니다. 판정·검증·검수·베팅·독자 신호가 재료입니다." if lang == "ko" else
-            "**Weekly review** · The intern writes one piece a day from Monday to Friday, then reads its own record on Sunday. "
+            "**Weekly review** · The intern writes one piece a day from Monday to Friday, then reads its own record on Saturday. "
             "No new events. The material is its own calls, fact checks, review notes, bets and reader signals.")
     tail = (publish.AI_LABEL_KO if lang == "ko" else publish.AI_LABEL_EN)
     doc = (f"{publish.frame_block(lang, day)}\n\n"

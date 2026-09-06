@@ -31,13 +31,14 @@ def main() -> int:
     args = ap.parse_args()
     if args.rebuild:
         return rebuild(args)
-    # 리듬 - 월~금 한 편 · 토요일 휴재 · 일요일 회고 (2026-09-06 대표 지시)
+    # 리듬 - 월~금 한 편 · 토요일 회고 · 일요일 휴재 (2026-09-06 대표 지시)
+    # 회고를 토요일에 두는 이유는 일요일 이메일 오픈율이 낮아서다(대표 판단).
     y, m, d = map(int, args.date.split("-"))
     wd = __import__("datetime").date(y, m, d).weekday()      # 0=월 … 5=토 6=일
-    if args.weekly or (wd == 6 and not args.daily):
+    if args.weekly or (wd == 5 and not args.daily):
         return run_weekly(args)
-    if wd == 5 and not args.daily:
-        print("  [rhythm] 토요일은 쉰다. 기록만 남긴다.")
+    if wd == 6 and not args.daily:
+        print("  [rhythm] 일요일은 쉰다. 기록만 남긴다.")
         publish._dump(config.LOG_DIR / f"{args.date}.json", {"date": args.date, "rest": True})
         return 0
     config.ensure_dirs()
@@ -172,7 +173,7 @@ def main() -> int:
 
 
 def run_weekly(args) -> int:
-    """⑨ 주간 회고(일요일) - 새 소재를 안 찾는다. 한 주의 자기 기록만 읽는다."""
+    """⑨ 주간 회고(토요일) - 새 소재를 안 찾는다. 한 주의 자기 기록만 읽는다."""
     t0 = time.time()
     week = weekly.week_number(args.date)
     g = weekly.gather(args.date)
