@@ -1,0 +1,188 @@
+{
+  "date": "2026-09-07",
+  "steps": {},
+  "cluster": {
+    "key": "536cd826-e184-49c3-9f9c-b668d751ad9f",
+    "item_ids": [
+      "536cd826-e184-49c3-9f9c-b668d751ad9f",
+      "074dd142-816c-4350-8080-881c41a2b477",
+      "bed9e9d1-be12-4599-b76f-8ebc1cd10f15",
+      "ac938e77-1fb4-47a6-b39d-9b1a538955ee"
+    ],
+    "n": 4,
+    "radar_tense": "soon",
+    "factor": "정책",
+    "stage": "생산",
+    "titles": [
+      "소니·앤스로픽 음악 저작권 소송…세계 3대 음악기업 퍼블리싱 모두 법정 분쟁",
+      "BMG와 Concord 인수합병 완료부터 Anthropic의 수십억 달러 소송까지, MBW 주간 뉴스 종합",
+      "소니·워너채플뮤직, 앤스로픽에 '수만 곡 무단 학습' 저작권 소송",
+      "BMG·콩코드 합병 완료 — 세계 4위 음악 기업 공식 출범"
+    ],
+    "urls": [
+      "https://www.edaily.co.kr/News/Read?newsId=02371446645552896",
+      "https://mailchi.mp/musicbizworldwide/ll472172r9?e=1ecbc98390",
+      "https://www.sedaily.com/article/20084991",
+      "https://www.musicbusinessworldwide.com/the-bmg-and-concord-merger-is-complete-bob-valentine-confirmed-as-ceo-of-new-company/"
+    ],
+    "items": [
+      {
+        "title": "소니·앤스로픽 음악 저작권 소송…세계 3대 음악기업 퍼블리싱 모두 법정 분쟁",
+        "url": "https://www.edaily.co.kr/News/Read?newsId=02371446645552896",
+        "source": "이데일리",
+        "region": "korea",
+        "published_date": "2026-09-01T00:00:00+00:00",
+        "title_en": "Sony, Anthropic Music Copyright Lawsuit: All Three Major Music Publishers' Publishing Divisions in Legal Disputes - iDaily"
+      },
+      {
+        "title": "BMG와 Concord 인수합병 완료부터 Anthropic의 수십억 달러 소송까지, MBW 주간 뉴스 종합",
+        "url": "https://mailchi.mp/musicbizworldwide/ll472172r9?e=1ecbc98390",
+        "source": "Music Business Worldwide",
+        "region": "global-en",
+        "published_date": "2026-09-04T15:45:38+00:00",
+        "title_en": "BMG and Concord Merger Completion to Anthropic's Billion-Dollar Lawsuit: Music Business Worldwide Weekly News Roundup"
+      },
+      {
+        "title": "소니·워너채플뮤직, 앤스로픽에 '수만 곡 무단 학습' 저작권 소송",
+        "url": "https://www.sedaily.com/article/20084991",
+        "source": "서울경제",
+        "region": "korea",
+        "published_date": "2026-08-30T00:00:00+00:00",
+        "title_en": "Sony, Warner Chappell Music Sue Anthropic for 'Unauthorized Learning of Tens of Thousands of Songs' - Seoul Economic Daily"
+      },
+      {
+        "title": "BMG·콩코드 합병 완료 — 세계 4위 음악 기업 공식 출범",
+        "url": "https://www.musicbusinessworldwide.com/the-bmg-and-concord-merger-is-complete-bob-valentine-confirmed-as-ceo-of-new-company/",
+        "source": "Music Business Worldwide",
+        "region": "global-en",
+        "published_date": "2026-09-02T00:00:00+00:00",
+        "title_en": "BMG and Concord Merger Complete — New Global Number 4 Music Company Officially Launched - Music Business Worldwide"
+      }
+    ]
+  },
+  "source_summary": {
+    "ko": "소니뮤직퍼블리싱, 워너채플뮤직 등 음악저작권사 35곳이 AI 기업 앤스로픽을 상대로 수만 곡의 가사·악보 무단 학습으로 저작권 소송을 제기했다. 세계 3대 음악기업 퍼블리싱이 모두 앤스로픽과 법적 분쟁을 벌이게 됐으며, 동시에 BMG와 Concord의 인수합병이 9월 공식 완료되어 400만 곡 이상의 카탈로그를 보유한 세계 4위 음악기업이 출범했다.",
+    "en": "35 music publishing companies including Sony Music Publishing and Warner Chappell Music filed copyright lawsuits against AI company Anthropic over unauthorized learning of tens of thousands of songs' lyrics and sheet music. Simultaneously, the BMG and Concord merger was officially completed in September, with the new company holding over 4 million songs and becoming the world's fourth-largest music company.",
+    "titles_en": [
+      "Sony, Anthropic Music Copyright Lawsuit: All Three Major Music Publishers' Publishing Divisions in Legal Disputes - iDaily",
+      "BMG and Concord Merger Completion to Anthropic's Billion-Dollar Lawsuit: Music Business Worldwide Weekly News Roundup",
+      "Sony, Warner Chappell Music Sue Anthropic for 'Unauthorized Learning of Tens of Thousands of Songs' - Seoul Economic Daily",
+      "BMG and Concord Merger Complete — New Global Number 4 Music Company Officially Launched - Music Business Worldwide"
+    ]
+  },
+  "materials": {
+    "wiki": [],
+    "lexicon": []
+  },
+  "judgment": {
+    "factor": "정책",
+    "from_stage": "생산",
+    "to_stage": "생산",
+    "tense": "vibe",
+    "tense_why": "AI 학습 데이터의 '취득 경로' 불법성 다툼은 미국 법정에서 진행 중이고, 한국 음악 퍼블리셔·저작권 신탁단체에는 아직 소송·협상 테이블로 오지 않았지만 반복될 종류다",
+    "vibe_evidence": "소니·워너·유니버설 퍼블리싱 3사가 모두 앤스로픽과 법적 분쟁에 들어갔고, 출판계 15억 달러 합의라는 가격표가 이미 나와 학습 데이터 취득 경로가 협상 단가로 환산되기 시작했다",
+    "angle_ko": "쟁점이 '공정이용이냐'에서 '어떻게 손에 넣었느냐'로 옮겨가면 방어선은 법리가 아니라 물류다. 가사·악보·데모·미발매 스템이 어디에 어떻게 보관돼 있었는지가 곧 배상액이 된다",
+    "angle_en": "Once the fight moves from 'was it fair use' to 'how did you get it,' the defense is logistics, not doctrine. Where lyrics, scores, demos and unreleased stems were stored becomes the damages figure",
+    "title_ko": "학습 데이터의 출처가 값이 된다",
+    "title_en": "Provenance Is the Price Tag",
+    "bet": {
+      "claim_ko": "국내 음악 저작권 신탁·퍼블리셔 또는 대형 기획사가 AI 학습 관련 저작물 이용을 명시적으로 다루는 계약 조항·라이선스 정책·공식 입장을 공개한다",
+      "claim_en": "A Korean music rights society, publisher, or major label publicly issues contract clauses, a licensing policy, or a formal position specifically addressing AI training use of its catalog",
+      "by_days": 180,
+      "check_ko": "한국음악저작권협회·함께하는음악저작인협회 또는 하이브·SM·JYP·YG의 공식 발표문, 표준계약서 개정안, 언론 보도",
+      "check_en": "KOMCA/KOSCAP or HYBE/SM/JYP/YG official statements, revised standard contract templates, or press coverage"
+    },
+    "principle_ko": "복제물의 사용 목적이 정당해도 원본을 손에 넣은 경로가 불법이면 방어는 무너진다. 데이터를 쓰는 쪽은 사용 근거보다 취득 기록을 먼저 갖춰야 하고, 데이터를 가진 쪽은 자기 카탈로그가 어디에 유출돼 있었는지부터 세어야 한다",
+    "principle_en": "Even if the use of a copy is defensible, an unlawful path to the original collapses the defense. Users of data need acquisition records before use rationales; owners of data need an inventory of where their catalog already leaked.",
+    "radar_tense": "soon",
+    "agrees": true,
+    "disagree_reason": ""
+  },
+  "draft_ko_v1": "소니뮤직퍼블리싱과 워너채플뮤직을 비롯한 음악 저작권사 35곳이 앤스로픽(Anthropic)을 상대로 수만 곡의 가사와 악보를 무단 학습했다며 소송을 제기했습니다([서울경제](https://www.sedaily.com/article/20084991)). 앤스로픽은 이미 출판계와 15억 달러 규모 합의를 마친 상태이고, 이번 소송으로 세계 3대 음악기업의 퍼블리싱 부문이 모두 같은 회사와 법정에 서게 됐다고 [이데일리](https://www.edaily.co.kr/News/Read?newsId=02371446645552896)는 전했습니다.\n\n여기서 다툼의 축이 조금 옮겨갔습니다. 학습이 공정이용에 해당하는지를 따지던 단계에서, 그 파일을 애초에 어떻게 손에 넣었는지를 따지는 단계로 넘어갔습니다. 출판계 합의 규모가 컸던 이유도 사용 목적보다 취득 경로에 있었습니다. 그렇다면 방어선은 법리가 아니라 물류입니다. 가사 데이터베이스, 악보 스캔, 데모, 미발매 스템이 어느 서버에 어떤 권한으로 놓여 있었고 누가 언제 내려받았는지에 관한 기록이 곧 배상액 산정의 재료가 됩니다. 학습하는 쪽은 사용 근거보다 다운로드 이력을 먼저 정리해야 하고, 권리를 가진 쪽은 자기 카탈로그가 어디에 복제돼 떠돌았는지부터 세어야 합니다.\n\n같은 주에 BMG와 콩코드(Concord)의 합병이 규제 승인을 마치고 완료됐습니다. [Music Business Worldwide](https://www.musicbusinessworldwide.com/the-bmg-and-concord-merger-is-complete-bob-valentine-confirmed-as-ceo-of-new-company/)에 따르면 400만 곡 이상을 보유한 세계 4위 음악기업이 내슈빌 본사와 밥 발렌타인(Bob Valentine) 체제로 출범했습니다. 카탈로그를 합치면 권리 목록만 합쳐지는 것이 아닙니다. 그 곡들의 파일이 지난 십수 년간 어떤 경로로 유통됐는지에 관한 이력도 함께 넘어옵니다. 대형화는 협상력을 키우지만 동시에 검증해야 할 취득 이력의 면적을 키웁니다.\n\n국내는 아직 이 논의가 계약 문서로 내려오지 않은 것으로 보입니다. 앞으로 180일 안에 한국음악저작권협회나 함께하는음악저작인협회, 또는 하이브·SM·JYP·YG 중 한 곳이 AI 학습 이용을 명시적으로 다루는 계약 조항이나 라이선스 정책, 공식 입장을 공개하는 쪽에 걸겠습니다. 신탁 약관 한 줄이 소송 한 건보다 먼저 도착하는 편이 모두에게 쌉니다.",
+  "claims": [
+    {
+      "status": "verified",
+      "source": "Fortune / Al Jazeera / dig.watch",
+      "url": "https://fortune.com/2026/09/01/anthropic-warner-sony-music-songs-lawsuit/",
+      "note": "35개 음악 출판사(소니뮤직퍼블리싱·워너채플 포함)가 2026년 8월 28일 캘리포니아 북부연방법원에 수만 곡의 가사·악보 무단 학습을 이유로 소송을 제기함이 확인됨",
+      "claim": "소니뮤직퍼블리싱과 워너채플뮤직을 비롯한 음악 저작권사 35곳이 앤스로픽(Anthropic)을 상대로 수만 곡의 가사와 악보를 무단 학습했다며 소송을 제기했습니다"
+    },
+    {
+      "status": "verified",
+      "source": "Bloomberg Law / Courthouse News Service",
+      "url": "https://news.bloomberglaw.com/ip-law/anthropic-authors-1-5-billion-deal-receives-final-approval",
+      "note": "2026년 7월 20일 마르티네스-올긴 판사가 앤스로픽과 작가·출판사 간 15억 달러 저작권 집단소송 합의를 최종 승인했다.",
+      "claim": "앤스로픽은 이미 출판계와 15억 달러 규모 합의를 마친 상태이고"
+    },
+    {
+      "status": "verified",
+      "source": "Variety / Music Business Worldwide",
+      "url": "https://variety.com/2026/music/news/sony-music-publishing-warner-chappell-anthropic-lawsuit-1236847442/",
+      "note": "2026년 8월 28일 소니뮤직퍼블리싱·워너채플이 앤스로픽을 제소하며, 앞서 소송 중인 UMPG를 포함해 3대 음악사 퍼블리싱 부문이 모두 같은 피고와 소송 중임이 확인됨",
+      "claim": "세계 3대 음악기업의 퍼블리싱 부문이 모두 같은 회사와 법정에 서게 됐다"
+    },
+    {
+      "status": "verified",
+      "source": "Billboard",
+      "url": "https://www.billboard.com/pro/bmg-concord-merger-complete/",
+      "note": "2026년 9월 1일 모든 규제 승인 후 합병 완료 발표, Bob Valentine이 CEO·Thomas Coesfeld가 회장(Bertelsmann 67%/GMP 33%)",
+      "claim": "BMG와 콩코드(Concord)의 합병이 규제 승인을 마치고 완료됐습니다"
+    },
+    {
+      "status": "verified",
+      "source": "Music Business Worldwide",
+      "url": "https://www.musicbusinessworldwide.com/the-bmg-and-concord-merger-is-complete-bob-valentine-confirmed-as-ceo-of-new-company/",
+      "note": "BMG-Concord 합병 완료로 400만 곡 이상 카탈로그·내슈빌 글로벌 본사(베를린은 유럽 본사)·밥 발렌타인 CEO(코스펠트 회장) 체제가 확인됨. 다만 '세계 4위'는 3대 메이저(UMG·소니·워너) 다음이라는 통상적 표현으로, 해당 기사에는 순위 문구가 명시돼 있지 않음.",
+      "claim": "400만 곡 이상을 보유한 세계 4위 음악기업이 내슈빌 본사와 밥 발렌타인(Bob Valentine) 체제로 출범했습니다"
+    }
+  ],
+  "reviews": [
+    {
+      "verdict": "fix",
+      "issues": [
+        "핵심 주장인 '방어선은 법리가 아니라 물류'가 각도 문장의 반복일 뿐, 글 안에서 근거로 받쳐지지 않는다. 출판계 15억 달러 합의가 '사용 목적보다 취득 경로' 때문이었다는 단정이 결정적 전제인데, 그 판단(Alsup 판사의 학습=공정이용/해적판 사본 보관=침해 분리)에 대한 사실 인용이 글에 없다. 링크 3개 중 어느 것도 이 대목을 받치지 않는다.",
+        "'미발매 스템'은 이번 소송의 대상이 아니다. 소니·워너채플 등 퍼블리싱사가 문제 삼는 것은 가사와 악보(작곡·작사 저작권)이지 마스터 녹음물의 스템이 아니다. 각도 문장과 본문에서 두 번 반복되는 이 오류가 논지의 사실 기반을 무너뜨린다. 스템·데모를 다루려면 별개의 원반권 소송(Suno·Udio 계열)을 근거로 끌어와야 한다.",
+        "BMG·콩코드 합병 문단이 '카탈로그를 합치면 검증할 취득 이력의 면적도 커진다'로 연결되는데, 이는 저자의 추정일 뿐 기사에 없는 내용이다. 합병 실사에서 AI 학습 노출 이력이 실제로 항목화되고 있다는 사실이 하나도 제시되지 않아, 소재 필연성이 '같은 주에 있었다'는 우연 이상으로 올라가지 못한다.",
+        "반대편이 전혀 없다. 앤스로픽 측 논거(가사는 짧고 대체재가 아니다, 이미 Guardrail 합의를 2025년 1월에 체결했다), 그리고 '취득 경로가 깨끗하면 학습은 허용된다'는 결론이 오히려 정당한 라이선스 시장을 만드는 게 아니라 대형사만 살아남는 구조를 만든다는 반론이 다뤄지지 않는다.",
+        "한국 실무자 수확이 사실상 없다. '다운로드 이력을 먼저 정리하라', '카탈로그가 어디 복제돼 떠도는지 세라'는 지시는 누구나 아는 수준이고, 국내 신탁단체 약관이 지금 어떻게 돼 있는지(한음저협 신탁계약약관상 복제권 위임 범위, 2024년 개정 저작권법 논의 상황) 확인 가능한 현황이 한 줄도 없다. '아직 계약 문서로 내려오지 않은 것으로 보입니다'는 취재 대신 추측이다.",
+        "'방어선은 법리가 아니라 물류' '권리 목록만 합쳐지는 것이 아닙니다' '협상력을 키우지만 동시에 면적을 키웁니다' — A가 아니라 B 대조 공식이 세 문단 연속 반복된다."
+      ],
+      "one_line": "각도 자체는 날카로우나, 그 각도를 지탱할 핵심 사실(합의가 취득 경로 때문이었다는 판결 논리)이 글 안에 없고 소송 대상을 '스템'으로 잘못 규정해 근거가 무너진다. 국내 파트는 취재 없는 추측과 격언으로 마무리된다."
+    },
+    {
+      "verdict": "fix",
+      "issues": [
+        "각도가 약속한 것과 본문이 다루는 것이 어긋난다. 제목은 '가사·악보·데모·미발매 스템이 어디에 어떻게 보관돼 있었는지'라고 걸어놓고, 본문은 '스템과 데모를 둘러싼 다툼은 수노와 유디오를 상대로 한 원반권 소송 쪽에서 따로 진행 중'이라며 스스로 범위 밖으로 밀어낸다. 이번 소송은 퍼블리싱 건이고 스템·데모는 대상이 아니다. 각도를 소송 범위에 맞춰 좁히거나, 스템 얘기를 하려면 수노/유디오 건을 본문의 축으로 올려라.",
+        "'방어선은 법리가 아니라 물류입니다'라고 선언한 뒤 물류 얘기를 하지 않는다. 뒤따르는 문장은 '어느 서버에 어떤 권한으로 놓여 있었고 누가 언제 내려받았는지의 기록'이 전부다. 이건 물류가 아니라 물류라는 단어의 동어반복이다. 실제 물류란 데모가 외주 프로듀서 개인 드롭박스에 남아 있는지, 스템 반출 대장이 있는지, A&R이 카톡으로 주고받은 미발매 파일에 회사 로그가 붙는지의 문제다. 이 층위가 글에 한 줄도 없다.",
+        "전언체가 논지를 받치는 자리마다 놓여 있다. '별개의 침해로 갈랐다고 알려졌습니다' '2025년 1월 원고 측 일부와 이미 합의했다고 알려졌습니다' '포괄 신탁하는 구조로 알려졌고'. 알섭 판결은 판결문이 공개돼 있고 15억 달러 합의도 문서가 있다. 글 전체의 토대인 '취득 경로와 학습을 갈랐다'를 남의 입으로 처리하면 논지가 근거 없이 뜬다. 최소한 판결 일자와 인용 출처를 붙여라.",
+        "BMG·콩코드 문단은 기능하지 않는다. '이 합병 실사에서 AI 학습 노출 이력이 항목으로 잡혔다는 자료는 찾지 못했습니다. 그래서 지금은 다음 분기에 확인할 질문으로만 적어둡니다'로 끝난다. 확인 못 한 가설을 위해 400만 곡과 CEO 이름까지 소개한 셈이다. 실사 항목 얘기를 하려면 M&A 실사 체크리스트에서 저작권 하자 항목이 어떻게 잡혀왔는지 한 줄이라도 대야 하고, 아니면 문단을 들어내라.",
+        "한국 엔터 실무자가 가져갈 것이 없다. 국내 문단은 한음저협 약관·폐기된 개정안·구속력 없는 안내서를 나열하고 끝난다. 이 상태에서 레이블 법무나 A&R이 내일 무엇을 하면 되는지가 없다. 각도대로 가려면 '미발매 스템 접근 로그를 몇 년치 보관하는가' 같은 실무 질문으로 착지해야 한다.",
+        "반대편 문단은 있으나 논지를 흔들지 않는다. '취득 경로만 깨끗하면 학습이 허용된다는 결론이 좋은 결말인지'와 라이선스 자본 집중 지적은 좋은 실마리인데, 그래서 물류 방어선론이 어디서 무너지는지까지 밀지 않고 두 문장으로 접는다. 취득 경로 기록이 완벽해도 출력물 유사성으로 다시 걸리는 경로가 있다는 반례를 다뤄야 논지가 검증을 통과한다."
+      ],
+      "one_line": "제목에 스템과 데모를 걸어놓고 본문에서 그건 다른 소송이라고 밝히는 글이라, 물류라는 각도가 단어로만 남고 실무 층위로 내려오지 못했다."
+    }
+  ],
+  "gate": {
+    "chars": 1403,
+    "contrast": 1,
+    "chars_after": 1150,
+    "contrast_after": 1,
+    "revised": true
+  },
+  "draft_ko_final": "소니뮤직퍼블리싱과 워너채플뮤직 등 음악 저작권사 35곳이 앤스로픽(Anthropic)을 상대로 수만 곡의 가사와 악보를 무단 학습했다며 소송을 냈습니다([서울경제](https://www.sedaily.com/article/20084991)). 다투는 대상은 작사·작곡 저작권이고 마스터 녹음물은 이번 건에 없습니다. 앤스로픽은 이미 출판계와 15억 달러 규모 합의를 마쳤고, 이번 소송으로 세계 3대 음악기업의 퍼블리싱 부문이 모두 같은 회사와 법정에 서게 됐다고 [이데일리](https://www.edaily.co.kr/News/Read?newsId=02371446645552896)는 전했습니다.\n\n합의 규모의 배경으로 앞선 판단이 지목됩니다. 미국 캘리포니아 북부지법 윌리엄 알섭(William Alsup) 판사는 2025년 6월 책으로 모델을 학습시킨 행위는 공정이용으로 보면서도, 해적판 사본을 내려받아 쌓아둔 부분은 별개의 침해로 갈랐다고 알려졌습니다. 그렇다면 방어선은 법리가 아니라 물류입니다. 데이터가 어느 서버에 어떤 권한으로 놓여 있었고 누가 언제 내려받았는지의 기록이 배상액 산정의 재료가 됩니다.\n\n앤스로픽 쪽 논거도 있습니다. 가사는 짧아 완성곡의 대체재가 되지 않으므로 시장 대체성 요소에서 유리하다는 것이고, 가사 출력 가드레일은 2025년 1월 원고 측 일부와 합의했다고 알려졌습니다. 다만 취득 경로만 깨끗하면 학습이 허용된다는 결론이면, 라이선스 비용을 감당하는 소수만 학습하고 카탈로그가 큰 권리자만 협상 테이블에 앉습니다.\n\n같은 주 BMG와 콩코드(Concord)의 합병이 규제 승인을 마쳤습니다. [뮤직비즈니스월드와이드](https://www.musicbusinessworldwide.com/the-bmg-and-concord-merger-is-complete-bob-valentine-confirmed-as-ceo-of-new-company/)에 따르면 400만 곡 이상을 보유한 세계 4위 기업이 밥 발렌타인(Bob Valentine) 체제로 출범했습니다. 실사에서 AI 학습 노출 이력이 항목으로 잡혔다는 자료는 찾지 못해, 다음 분기 질문으로 적어둡니다.\n\n국내는 한국음악저작권협회 신탁계약약관이 복제권을 포함해 포괄 신탁하는 구조로 알려졌고, AI 학습 이용을 별도로 적은 조항은 공개 약관에서 확인되지 않았습니다. 텍스트·데이터 마이닝 면책을 담은 저작권법 전부개정안은 21대 국회 임기만료로 폐기됐고, 문체부가 2023년 12월 낸 생성형 AI 저작권 안내서는 구속력이 없습니다. 180일 안에 한음저협이나 함께하는음악저작인협회, 또는 하이브·SM·JYP·YG 중 한 곳이 AI 학습 조항이나 라이선스 정책을 공개하는 쪽에 걸겠습니다.\n\n데이터를 어디에 썼는지는 나중에 따집니다. 어떤 경로로 들어왔는지의 기록이 남은 회사만 그 다음 질문까지 갑니다.",
+  "draft_en_final": "Thirty-five music publishers, including Sony Music Publishing and Warner Chappell Music, have sued Anthropic over the unlicensed training use of tens of thousands of lyrics and sheet music, according to [Seoul Economic Daily](https://www.sedaily.com/article/20084991). The claims cover compositions, not master recordings, which keeps the recorded-music side of the majors out of this particular filing. Anthropic has already settled with book publishers for a reported $1.5 billion, and [Edaily](https://www.edaily.co.kr/News/Read?newsId=02371446645552896) notes that with this case the publishing arms of all three global music majors are now in litigation against the same company.\n\nThe size of that book settlement is usually traced back to one ruling. Judge William Alsup of the Northern District of California reportedly held in June 2025 that training a model on books was fair use, while treating the separate act of downloading and warehousing pirated copies as infringement in its own right. That split moves the defense from doctrine to logistics. Which server held the file, under what license, downloaded by whom and when, becomes the material for calculating damages rather than a background detail.\n\nAnthropic has arguments on its side. Lyrics are short and do not substitute for a finished recording, which helps on the market-harm factor, and the company reportedly agreed with some of the plaintiffs in January 2025 on guardrails against lyric outputs. But if the settled rule becomes that training is permitted so long as acquisition was clean, then only firms that can carry licensing costs will train, and only rightsholders with large catalogs will get a seat at the negotiating table.\n\nThe same week, BMG and Concord closed their merger after clearing regulatory review. [Music Business Worldwide](https://www.musicbusinessworldwide.com/the-bmg-and-concord-merger-is-complete-bob-valentine-confirmed-as-ceo-of-new-company/) reports the combined company holds more than four million songs, ranks fourth globally, and is led by CEO Bob Valentine, with Bertelsmann at 67 percent and Great Mountain Partners at 33 percent, headquartered in Nashville. I could not find any material indicating that prior AI training exposure was itemized during due diligence. I am filing that as a question for next quarter.\n\nIn Korea, the trust agreement of the Korea Music Copyright Association (한국음악저작권협회, KOMCA) is understood to assign reproduction rights on a blanket basis, and no clause specifically addressing AI training appears in the published terms. The full copyright act revision that would have carved out text and data mining lapsed when the 21st National Assembly ended, and the generative AI copyright guide issued by the Ministry of Culture, Sports and Tourism in December 2023 carries no binding force. My bet: within 180 days, either KOMCA, the Korea Society of Composers, Authors and Publishers (함께하는음악저작인협회, KOSCAP), or one of HYBE, SM, JYP and YG will publish an explicit AI training clause, licensing policy, or formal position on its catalog.\n\nAny industry sitting on licensed third-party data, from medical imaging vendors to stock photo libraries, should assume its acquisition logs will be read before its usage rationale is heard.",
+  "name_map": {
+    "ko": {},
+    "en": {
+      "한국음악저작권협회": "Korea Music Copyright Association",
+      "서울경제": "Seoul Economic Daily",
+      "이데일리": "Edaily"
+    }
+  },
+  "usage": {
+    "input": 129461,
+    "output": 23121,
+    "calls": 18,
+    "search_uses": 10
+  }
+}

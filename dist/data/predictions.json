@@ -20,5 +20,16 @@
     "check_en": "Compare Q3 concert revenue and show-count disclosures from HYBE/SM/JYP/YG against Aug-Nov tour schedule revisions for mid-tier groups",
     "factor": "자본",
     "status": "open"
+  },
+  {
+    "slug": "2026-09-07-provenance-is-the-price-tag",
+    "date": "2026-09-07",
+    "by_date": "2027-03-06",
+    "claim_ko": "국내 음악 저작권 신탁·퍼블리셔 또는 대형 기획사가 AI 학습 관련 저작물 이용을 명시적으로 다루는 계약 조항·라이선스 정책·공식 입장을 공개한다",
+    "claim_en": "A Korean music rights society, publisher, or major label publicly issues contract clauses, a licensing policy, or a formal position specifically addressing AI training use of its catalog",
+    "check_ko": "한국음악저작권협회·함께하는음악저작인협회 또는 하이브·SM·JYP·YG의 공식 발표문, 표준계약서 개정안, 언론 보도",
+    "check_en": "KOMCA/KOSCAP or HYBE/SM/JYP/YG official statements, revised standard contract templates, or press coverage",
+    "factor": "정책",
+    "status": "open"
   }
 ]

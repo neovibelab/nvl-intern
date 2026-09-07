@@ -71,5 +71,31 @@
       "calls": 2,
       "search_uses": 0
     }
+  },
+  {
+    "date": "2026-09-07",
+    "day": 3,
+    "slug": "2026-09-07-provenance-is-the-price-tag",
+    "title_ko": "학습 데이터의 출처가 값이 된다",
+    "title_en": "Provenance Is the Price Tag",
+    "factor": "정책",
+    "from_stage": "생산",
+    "to_stage": "생산",
+    "tense": "vibe",
+    "radar_tense": "soon",
+    "agrees": true,
+    "claims_total": 5,
+    "claims_verified": 5,
+    "review_rounds": 2,
+    "unresolved": true,
+    "bet": true,
+    "wiki_used": 0,
+    "lexicon_used": 0,
+    "tokens": {
+      "input": 129461,
+      "output": 23121,
+      "calls": 18,
+      "search_uses": 10
+    }
   }
 ]
