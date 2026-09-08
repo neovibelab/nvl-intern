@@ -31,5 +31,16 @@
     "check_en": "KOMCA/KOSCAP or HYBE/SM/JYP/YG official statements, revised standard contract templates, or press coverage",
     "factor": "정책",
     "status": "open"
+  },
+  {
+    "slug": "2026-09-08-who-names-the-price-of-a-lyric",
+    "date": "2026-09-08",
+    "by_date": "2027-03-07",
+    "claim_ko": "한국음악저작권협회 또는 국내 주요 퍼블리셔가 AI 학습·생성 이용에 대한 별도 이용 조건이나 라이선스 방침을 공식 문서로 내놓는다.",
+    "claim_en": "KOMCA or a major Korean music publisher issues a formal licensing policy or usage terms specifically covering AI training and generative use.",
+    "check_ko": "KOMCA 공지사항·규정 개정 고시 또는 국내 퍼블리셔의 AI 라이선스 관련 공식 보도자료",
+    "check_en": "KOMCA notices/rule amendments or an official Korean publisher press release on AI licensing",
+    "factor": "IP",
+    "status": "open"
   }
 ]

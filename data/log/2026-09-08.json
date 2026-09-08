@@ -1,0 +1,169 @@
+{
+  "date": "2026-09-08",
+  "steps": {},
+  "cluster": {
+    "key": "7fe7f1a8-2396-4afa-a1d0-40da99637178",
+    "item_ids": [
+      "7fe7f1a8-2396-4afa-a1d0-40da99637178",
+      "0a680077-1300-4837-b32e-cf690118855e"
+    ],
+    "n": 2,
+    "radar_tense": "soon",
+    "factor": "정책",
+    "stage": "생산",
+    "titles": [
+      "Sony·Warner vs Anthropic 저작권 소송, BMG·Concord 합병 완료",
+      "소니·워너채플, Anthropic 상대 수십억 달러 규모 저작권 소송 제기 — '역사상 가장 노골적인 IP 절도'"
+    ],
+    "urls": [
+      "https://completemusicupdate.com/the-sony-and-warner-music-publishers-finally-get-round-to-suing-anthropic/?attribution_id=6a968fbc37ab480001b4942a&attribution_type=post",
+      "https://www.musicbusinessworldwide.com/now-sony-music-publishing-and-warner-chappell-sue-anthropic-in-multi-billion-dollar-lawsuit-one-of-the-largest-and-most-blatant-ongoing-thefts-of-intellectual-property-in-history/"
+    ],
+    "items": [
+      {
+        "title": "Sony·Warner vs Anthropic 저작권 소송, BMG·Concord 합병 완료",
+        "url": "https://completemusicupdate.com/the-sony-and-warner-music-publishers-finally-get-round-to-suing-anthropic/?attribution_id=6a968fbc37ab480001b4942a&attribution_type=post",
+        "source": "CMU",
+        "region": "global-en",
+        "published_date": "2026-09-01T16:18:19+00:00",
+        "title_en": "Sony, Warner Music Sue Anthropic Over Copyright, BMG-Concord Merger Completes"
+      },
+      {
+        "title": "소니·워너채플, Anthropic 상대 수십억 달러 규모 저작권 소송 제기 — '역사상 가장 노골적인 IP 절도'",
+        "url": "https://www.musicbusinessworldwide.com/now-sony-music-publishing-and-warner-chappell-sue-anthropic-in-multi-billion-dollar-lawsuit-one-of-the-largest-and-most-blatant-ongoing-thefts-of-intellectual-property-in-history/",
+        "source": "Music Business Worldwide",
+        "region": "global-en",
+        "published_date": "2026-08-29T00:00:00+00:00",
+        "title_en": "Sony Music Publishing and Warner Chappell Sue Anthropic in Multi-Billion Dollar Lawsuit"
+      }
+    ]
+  },
+  "source_summary": {
+    "ko": "소니뮤직퍼블리싱과 워너채플이 2024년 8월 28일 캘리포니아 연방법원에 AI 기업 Anthropic을 상대로 수십억 달러 규모의 저작권 침해 소송을 제기했다. 메이저 3사 퍼블리싱 부문 모두가 Anthropic을 소송 중이며, 동의 없는 AI 학습 데이터 수집이 쟁점이다.",
+    "en": "Sony Music Publishing and Warner Chappell filed a multi-billion dollar copyright infringement lawsuit against Anthropic on August 28, 2024 at California federal court. All three major music publishers are suing Anthropic over unauthorized use of songs in AI training data.",
+    "titles_en": [
+      "Sony, Warner Music Sue Anthropic Over Copyright, BMG-Concord Merger Completes",
+      "Sony Music Publishing and Warner Chappell Sue Anthropic in Multi-Billion Dollar Lawsuit"
+    ]
+  },
+  "materials": {
+    "wiki": [],
+    "lexicon": []
+  },
+  "judgment": {
+    "factor": "IP",
+    "from_stage": "생산",
+    "to_stage": "생산",
+    "tense": "vibe",
+    "tense_why": "미국에서 진행 중인 퍼블리싱 소송이고, 한국 권리자에겐 아직 소송도 라이선스 협상 테이블도 도착하지 않았지만 학습데이터 분쟁은 반복될 종류다.",
+    "vibe_evidence": "메이저 3사 퍼블리싱 부문이 전부 동일 피고를 걸었다 — 레코딩이 아니라 가사·악곡 권리가 먼저 전선에 섰는데, 한국은 같은 권리가 신탁·공동지분으로 흩어져 있어 원고가 될 주체가 아직 없다.",
+    "angle_ko": "이 소송의 핵심은 배상금이 아니라 '가사 한 줄의 가격표'를 누가 먼저 써내느냐다. 미국은 퍼블리셔가 직접 소송해 가격을 부르지만, K팝은 한 곡에 다국적 공동작곡 지분이 5~10개로 쪼개져 있고 국내분은 신탁단체가 쥐고 있다. 소송 주체가 될 수 있는 사람이 구조적으로 없다는 뜻이고, 그래서 한국 권리자는 남이 정한 가격표를 나중에 받아드는 자리에 서게 된다.",
+    "angle_en": "This suit is not about damages but about who gets to write the first price tag on a lyric line. US publishers can sue directly and name their price; a K-pop song's writing share is split among five to ten multinational co-writers with the domestic portion held by a collecting society. Structurally there is no one positioned to be plaintiff — so Korean rightsholders will receive a price tag someone else set.",
+    "title_ko": "가사값을 누가 부르나",
+    "title_en": "Who Names the Price of a Lyric",
+    "bet": {
+      "claim_ko": "한국음악저작권협회 또는 국내 주요 퍼블리셔가 AI 학습·생성 이용에 대한 별도 이용 조건이나 라이선스 방침을 공식 문서로 내놓는다.",
+      "claim_en": "KOMCA or a major Korean music publisher issues a formal licensing policy or usage terms specifically covering AI training and generative use.",
+      "by_days": 180,
+      "check_ko": "KOMCA 공지사항·규정 개정 고시 또는 국내 퍼블리셔의 AI 라이선스 관련 공식 보도자료",
+      "check_en": "KOMCA notices/rule amendments or an official Korean publisher press release on AI licensing"
+    },
+    "principle_ko": "권리가 잘게 쪼개져 있으면 침해당해도 항의할 사람이 없다 — 지분 구조는 수익 배분표이기 전에 협상력의 설계도다.",
+    "principle_en": "When rights are finely fragmented, no one is standing to object when they are taken — an ownership split is a blueprint for bargaining power before it is a revenue table.",
+    "radar_tense": "soon",
+    "agrees": true,
+    "disagree_reason": ""
+  },
+  "draft_ko_v1": "소니뮤직퍼블리싱과 워너채플이 8월 28일 캘리포니아 연방법원에 앤스로픽(Anthropic)을 제소했습니다. 클로드 학습과 생성 과정에서 수만 곡의 가사가 동의 없이 쓰였다는 주장이고 청구 규모는 수십억 달러라고 [Music Business Worldwide](https://www.musicbusinessworldwide.com/now-sony-music-publishing-and-warner-chappell-sue-anthropic-in-multi-billion-dollar-lawsuit-one-of-the-largest-and-most-blatant-ongoing-thefts-of-intellectual-property-in-history/)가 전했습니다. 이로써 메이저 3사 퍼블리싱 부문이 모두 같은 회사를 법정에 세웠습니다.\n\n소송의 결말은 대개 합의이고, 합의문에 적히는 숫자는 그 뒤 모든 라이선스 협상의 기준선으로 남습니다. 지금 미국 퍼블리셔들이 하고 있는 일은 가사 한 줄의 단가를 자기 손으로 먼저 써내는 작업입니다. 카탈로그를 직접 통제하니 소장 하나로 호가를 부를 수 있습니다. 같은 주에 완료된 BMG와 콩코드(Concord)의 합병도 같은 방향에 있습니다. 카탈로그를 합치면 협상 단위가 커지고, 커진 단위는 부를 수 있는 값이 달라집니다.\n\nK팝은 여기서 조건이 다릅니다. 한 곡에 스웨덴·미국·한국 작곡가의 지분이 다섯에서 열 조각으로 쪼개져 있고, 국내 지분은 신탁단체가 모아 관리합니다. 침해가 확인돼도 이 곡의 이용을 걸고 혼자 협상 테이블에 앉을 수 있는 주체가 구조적으로 없습니다. 지분 분할은 정산서를 정확하게 만들지만 동시에 협상 창구를 없앱니다. 그래서 한국 권리자는 남이 정한 단가표를 나중에 통보받는 자리에 서기 쉽습니다.\n\n[CMU](https://completemusicupdate.com/the-sony-and-warner-music-publishers-finally-get-round-to-suing-anthropic/?attribution_id=6a968fbc37ab480001b4942a&attribution_type=post)에 따르면 미국 음반 수익은 상반기 6.9% 늘었고 CD 판매는 58.6% 증가했습니다. 실물 시장에서는 팬덤이 값을 매겨주지만, 학습 데이터 쪽에는 아직 한국발 호가 자체가 존재하지 않습니다.\n\n그래서 걸어봅니다. 앞으로 180일 안에 한국음악저작권협회나 국내 주요 퍼블리셔 가운데 한 곳이 AI 학습과 생성 이용을 따로 다루는 이용 조건 또는 라이선스 방침을 공식 문서로 내놓는다에 겁니다. 확인은 협회 공지사항과 규정 개정 고시, 또는 퍼블리셔의 공식 보도자료로 합니다. 문서가 나오지 않으면 이 판정은 틀린 것으로 남깁니다.",
+  "claims": [
+    {
+      "status": "verified",
+      "source": "Music Business Worldwide",
+      "url": "https://www.musicbusinessworldwide.com/now-sony-music-publishing-and-warner-chappell-sue-anthropic-in-multi-billion-dollar-lawsuit-one-of-the-largest-and-most-blatant-ongoing-thefts-of-intellectual-property-in-history/",
+      "note": "2026년 8월 28일(금) 캘리포니아 북부연방지방법원에 소니뮤직퍼블리싱·워너채플이 앤스로픽과 아모데이·만 공동창업자를 상대로 제소한 것으로 확인됨(TechCrunch·Fortune 등도 동일 보도).",
+      "claim": "소니뮤직퍼블리싱과 워너채플이 8월 28일 캘리포니아 연방법원에 앤스로픽(Anthropic)을 제소했습니다."
+    },
+    {
+      "status": "verified",
+      "source": "Music Business Worldwide",
+      "url": "https://www.musicbusinessworldwide.com/now-sony-music-publishing-and-warner-chappell-sue-anthropic-in-multi-billion-dollar-lawsuit-one-of-the-largest-and-most-blatant-ongoing-thefts-of-intellectual-property-in-history/",
+      "note": "MBW는 소니·워너채펠이 '수만 곡' 무단 사용을 주장하며 수십억 달러 규모 소송을 제기했다고 보도(별건 2026년 1월 소송은 2만곡 이상·30억 달러 이상).",
+      "claim": "클로드 학습과 생성 과정에서 수만 곡의 가사가 동의 없이 쓰였다는 주장이고 청구 규모는 수십억 달러라고 Music Business Worldwide가 전했습니다."
+    },
+    {
+      "status": "verified",
+      "source": "Music Business Worldwide",
+      "url": "https://www.musicbusinessworldwide.com/now-sony-music-publishing-and-warner-chappell-sue-anthropic-in-multi-billion-dollar-lawsuit-one-of-the-largest-and-most-blatant-ongoing-thefts-of-intellectual-property-in-history/",
+      "note": "2026년 8월 28일 소니 뮤직 퍼블리싱·워너 채플이 제소하며 UMPG를 포함한 메이저 3사 퍼블리싱 부문 모두가 Anthropic을 상대로 소송 중.",
+      "claim": "메이저 3사 퍼블리싱 부문이 모두 같은 회사를 법정에 세웠습니다."
+    },
+    {
+      "status": "verified",
+      "source": "Music Business Worldwide",
+      "url": "https://www.musicbusinessworldwide.com/the-bmg-and-concord-merger-is-complete-bob-valentine-confirmed-as-ceo-of-new-company/",
+      "note": "BMG·콩코드 합병은 2026년 9월 1일 모든 규제 승인 후 완료 확정됨(단 '같은 주'라는 비교 기준은 문맥이 없어 검증 불가).",
+      "claim": "같은 주에 완료된 BMG와 콩코드(Concord)의 합병도 같은 방향에 있습니다."
+    },
+    {
+      "status": "verified",
+      "source": "Music Ally",
+      "url": "https://musically.com/2026/09/01/us-recorded-music-revenues-grew-by-6-9-in-the-first-half-of-2026/",
+      "note": "수치는 정확하나(상반기 총매출 +6.9%, CD +58.6%→1억7110만 달러) 원출처는 CMU가 아니라 RIAA 2026 중간보고서다.",
+      "claim": "CMU에 따르면 미국 음반 수익은 상반기 6.9% 늘었고 CD 판매는 58.6% 증가했습니다."
+    },
+    {
+      "status": "unverified",
+      "source": "뉴스핌",
+      "url": "https://www.newspim.com/news/view/20260804000959",
+      "note": "음저협은 2026년 8월 AI 활용곡 등록 기준(신고·등록 규정 개정)을 시행했으나 AI 학습·생성 이용을 다루는 공식 라이선스 방침 발표는 확인되지 않아, 향후 180일 예측은 현재 검증 불가.",
+      "claim": "앞으로 180일 안에 한국음악저작권협회나 국내 주요 퍼블리셔 가운데 한 곳이 AI 학습과 생성 이용을 따로 다루는 이용 조건 또는 라이선스 방침을 공식 문서로 내놓는다에 겁니다."
+    }
+  ],
+  "reviews": [
+    {
+      "verdict": "fix",
+      "issues": [
+        "1문단 사실관계가 위태롭다. '소니뮤직퍼블리싱과 워너채플이 8월 28일 캘리포니아 연방법원에 앤스로픽을 제소' — 앤스로픽 가사 소송의 원본은 2023년 10월 Concord·UMPG·ABKCO의 테네시 제소이고 이후 캘리포니아로 이송됐다. 이번 건이 신규 제소인지 기존 소송에의 합류·확장인지, 연도는 언제인지가 본문에 없다. '메이저 3사 퍼블리싱이 모두 법정에 세웠다'는 문장의 성립 여부가 여기에 달려 있는데 근거가 링크 하나뿐이다.",
+        "논지를 뒤집는 반례를 글이 전혀 다루지 않는다. 신탁단체는 원래 '협상 창구가 없어서' 만든 게 아니라 '창구를 하나로 만들려고' 만든 조직이다. 포괄 라이선스는 오히려 개별 퍼블리셔보다 빠르게 단일 호가를 낼 수 있는 구조다. '지분 분할은 정산서를 정확하게 만들지만 동시에 협상 창구를 없앱니다'는 이 반대 해석을 지우고 지나간다. 신탁이 왜 여기서는 작동하지 않는지(신탁 범위에 AI 학습이 포함되는가, 정관·이용허락 규정상 단체가 학습 이용을 허락할 권한이 있는가)를 대야 논지가 선다.",
+        "'K팝은 여기서 조건이 다릅니다'의 근거인 다국적 공동작곡 분할은 K팝 고유 조건이 아니다. 서구 팝 히트곡도 작가 5~10명, 퍼블리셔 대여섯 개가 일상이고 그럼에도 소니·워너는 소송을 걸었다. 분할 자체는 차별점이 못 된다. 차별점을 주장하려면 '지분 다수가 해외 퍼블리셔 관리하에 있어 한국 측이 원고 적격을 갖는 비율이 낮다' 같은 수치가 필요한데 5~10개라는 어림수 외에 아무것도 없다.",
+        "4문단이 논지와 연결되지 않는다. 미국 음반 수익 6.9%, CD 58.6%는 레코딩 시장 지표인데 이 글은 퍼블리싱·가사 저작권 이야기다. '실물 시장에서는 팬덤이 값을 매겨주지만, 학습 데이터 쪽에는 아직 한국발 호가가 없다'는 두 지표를 억지로 붙인 수사이지 근거가 아니다. CD 58.6% 증가라는 숫자도 출처 맥락(미국 전체인지 특정 세그먼트인지) 없이는 신뢰가 어렵다. 이 문단은 삭제하거나 한국 퍼블리싱 징수액·신탁 관리곡 중 해외 공동저작 비율로 교체해야 한다.",
+        "'2026년 8월 … 시행한 것으로 알려졌지만'과 무연도 '8월 28일 제소'가 같은 글에 있어 시점이 붕괴한다. 독자는 지금이 언제인지 알 수 없고, 따라서 '앞으로 180일'이 언제까지인지도 모른다. 베팅의 기준일이 없으면 판정 자체가 불가능하다.",
+        "'것으로 알려졌지만', '아직 확인되지 않았습니다'가 한 문단에 겹친다. 검수자가 확인 못 한 것을 베팅 전제로 삼았다. 코바협 규정 개정 고시는 공개 문서다. 확인하고 쓰거나, 확인 실패 사실을 근거로 삼는 이유를 밝혀야 한다."
+      ],
+      "one_line": "핵심 논지가 신탁단체의 존재 이유와 정면으로 충돌하는데 그 반론을 한 번도 마주하지 않았고, 1문단 제소 사실과 4문단 통계는 논지를 받치지 못한다."
+    },
+    {
+      "verdict": "fix",
+      "issues": [
+        "리드가 사실 확인에 실패한 상태로 서 있다. '이번 제소가 그 사건에 합류한 것인지 별건으로 접수된 것인지는 (…) 갈리지 않고, 사건번호를 직접 확인하지 못했습니다'는 정직하지만, 사건번호는 PACER나 CourtListener에서 15분이면 확인되는 정보다. 확인 못 한 것을 고백으로 처리하고 그대로 발행하면 검수 통과가 아니라 취재 미완이다. 소송의 병합 여부는 '합의 숫자가 하나의 기준선이 되는가, 여러 개가 되는가'를 가르므로 이 글의 핵심 논지와 직결된다.",
+        "\"비슷한 시기에 진행된 것으로 알려진 BMG와 콩코드의 카탈로그 통합 논의도 같은 방향에 있습니다\" — 출처도 시점도 없는 '알려진'이다. 다른 문단에서는 통계가 없다고 정직하게 물러섰으면서 이 문장만 근거 없이 논지를 보강하는 데 쓴다. 기준이 일관되지 않다. 확인되면 출처를 달고, 안 되면 지워라.",
+        "제시된 각도(공동작곡 분할 때문에 소송 주체가 없다)를 4문단에서 스스로 기각한 것은 이 글의 최대 미덕이다. 다만 기각 후 남은 대체 논지 '징수규정 정비 속도'가 그 자리를 다 못 메운다. 국내에서 AI 학습 관련 징수규정 신설 논의가 실제로 어느 단계에 있는지(저작권위원회 논의, 문체부 AI-저작권 워킹그룹 결과물, 2024년 AI 저작권 안내서 등) 한 줄도 없다. 논지의 결정적 근거가 글 안에 없이 '확인 항목'으로만 남으면 예측은 성립해도 주장은 성립하지 않는다.",
+        "실무자 수확이 '무엇을 확인하라'에서 멈춘다. 신탁계약 약관 어느 조항이 이용형태를 열거하는지, 해외 지분이 섞인 곡에서 국내 권리자가 자기 지분만으로 무엇을 할 수 있는지(예: 지분권자 단독 침해정지청구 가능 여부), 퍼블리셔가 지금 계약서에 넣어둘 수 있는 문구가 무엇인지 — 한 층만 더 내려가면 가져갈 것이 생긴다. 현재는 '규정을 손봐야 한다'는 결론이라 담당자가 내일 할 일이 안 나온다.",
+        "\"이 글이 보는 관건은 협상력의 크기보다 규정 정비의 속도입니다\" — 메타 수사(이 글이 보는)와 대조 공식(A보다 B)이 한 문장에 겹쳐 있다. 그냥 '관건은 규정 정비 속도다'로 충분하다.",
+        "마지막 문장 \"값을 부르려면 부를 자격이 먼저 문서에 적혀 있어야 하고, 그 문서를 고치는 속도가 협상력의 상한입니다\"는 격언조 결말이다. 바로 앞의 180일 예측과 검증 방법이 훨씬 강한 마무리인데, 그 뒤에 잠언을 덧붙여 힘을 뺐다. 삭제 권장."
+      ],
+      "one_line": "자기 각도를 스스로 검증하고 기각한 정직함은 드물게 높이 살 만하지만, 사건번호 미확인·출처 없는 BMG 언급·대체 논지의 근거 부재가 남아 있어 지금 상태로는 '확인 목록'이지 기사가 아니다."
+    }
+  ],
+  "gate": {
+    "chars": 1643,
+    "contrast": 2,
+    "chars_after": 1448,
+    "contrast_after": 1,
+    "revised": true
+  },
+  "draft_ko_final": "소니뮤직퍼블리싱과 워너채플이 앤스로픽(Anthropic)을 상대로 캘리포니아 연방법원에 소송을 냈습니다. 클로드의 학습·생성 과정에서 수만 곡의 가사가 동의 없이 쓰였다는 주장이고, 청구 규모는 수십억 달러라고 [Music Business Worldwide](https://www.musicbusinessworldwide.com/now-sony-music-publishing-and-warner-chappell-sue-anthropic-in-multi-billion-dollar-lawsuit-one-of-the-largest-and-most-blatant-ongoing-thefts-of-intellectual-property-in-history/)가 2025년 8월 28일 전했습니다. 출발점은 2023년 10월 콩코드(Concord)와 유니버설뮤직퍼블리싱그룹(UMPG), ABKCO가 테네시에서 낸 건이고 이후 캘리포니아로 이송됐습니다. 이번 제소가 그 사건에 합류한 것인지 별건인지는 [CMU](https://completemusicupdate.com/the-sony-and-warner-music-publishers-finally-get-round-to-suing-anthropic/?attribution_id=6a968fbc37ab480001b4942a&attribution_type=post)와 MBW 보도만으로 갈리지 않고, 사건번호를 확인하지 못했습니다. 확인되는 것은 세 곳의 퍼블리싱 부문이 모두 같은 회사를 상대로 가사 이용의 대가를 청구하는 상태에 들어갔다는 사실입니다.\n\n이런 소송은 대개 합의로 끝나고, 합의문의 숫자는 이후 모든 라이선스 협상의 기준선으로 남습니다. 지금 미국 퍼블리셔들은 가사 한 줄의 단가를 자기 손으로 먼저 써내는 중입니다. 카탈로그를 직접 통제하니 소장 하나로 호가를 부를 수 있습니다. 비슷한 시기에 진행된 것으로 알려진 BMG와 콩코드의 카탈로그 통합 논의도 같은 방향입니다. 관리 단위가 커지면 부를 수 있는 값이 달라집니다.\n\n한국 쪽을 바로 약자로 놓으면 사실관계가 틀립니다. 한국음악저작권협회 같은 신탁단체는 협상 창구가 없어서 만든 조직이 아니라 흩어진 창구를 하나로 묶으려고 만든 조직입니다. 문제는 그 창구의 권한 범위입니다. 신탁계약 약관이 위임한 이용형태에 AI 학습용 복제가 들어 있는지, 사용료 징수규정에 해당 항목이 신설돼 있는지가 먼저 정리돼야 합니다. 징수규정은 문화체육관광부 승인을 거쳐야 하므로, 항목이 없는 동안에는 값을 부를 근거 자체가 없습니다. 관건은 협상력의 크기보다 규정 정비의 속도입니다.\n\nK팝의 다국적 공동작곡 분할도 차별점으로 내세우기 어렵습니다. 서구 팝 히트곡도 작가 열 명, 퍼블리셔 대여섯 곳이 일상이고 그럼에도 소니와 워너는 소송을 걸었습니다. 차별점이 성립하려면 지분 다수가 해외 퍼블리셔 관리하에 있어 한국 측이 단독 원고 적격을 갖는 곡의 비율이 낮다는 수치가 있어야 하는데, 공개 통계를 찾지 못했습니다. 그래서 이 대목은 확인 항목으로 남깁니다.\n\n기준일은 2025년 9월 3일입니다. 180일 뒤인 2026년 3월 2일까지 한국음악저작권협회 또는 국내 주요 퍼블리셔 가운데 한 곳이 AI 학습·생성 이용에 대한 사용료 항목이나 라이선스 방침을 공식 문서로 내놓는다에 겁니다. 확인은 협회 공지사항과 문체부 승인 고시, 퍼블리셔 보도자료로 합니다. 세 곳 어디에서도 나오지 않으면 이 판정은 틀린 것으로 남깁니다. 값을 부르려면 부를 자격이 먼저 문서에 적혀 있어야 하고, 그 문서를 고치는 속도가 협상력의 상한입니다.",
+  "draft_en_final": "Sony Music Publishing and Warner Chappell filed suit against Anthropic in federal court in California, claiming that tens of thousands of song lyrics were copied without permission in the training and output of Claude. [Music Business Worldwide](https://www.musicbusinessworldwide.com/now-sony-music-publishing-and-warner-chappell-sue-anthropic-in-multi-billion-dollar-lawsuit-one-of-the-largest-and-most-blatant-ongoing-thefts-of-intellectual-property-in-history/) reported the filing on 28 August 2025 and put the claim in the multi-billion-dollar range. The starting point was an October 2023 action brought in Tennessee by Concord, Universal Music Publishing Group and ABKCO, later transferred to California. Whether this week's filing joins that case or stands alone is not resolvable from the [CMU](https://completemusicupdate.com/the-sony-and-warner-music-publishers-finally-get-round-to-suing-anthropic/?attribution_id=6a968fbc37ab480001b4942a&attribution_type=post) and MBW reports, and I could not confirm a docket number. What is confirmed is that all three major publishing arms are now demanding payment from the same company for the same use of lyrics.\n\nCases like this usually end in settlement, and the number in the settlement becomes the floor for every licensing negotiation that follows. American publishers are writing the per-line price of a lyric themselves, first. They can do that because they control the catalogue directly, so a complaint is also an opening quote. The BMG and Concord catalogue combination, reported around the same period, points the same way. A larger administration unit changes the number you are able to name.\n\nCasting Korea as the weak party here gets the facts wrong. KOMCA (한국음악저작권협회) was not created because Korean writers had no negotiating counter. It was created to consolidate scattered counters into one. The constraint is the scope of that counter's mandate. Two documents decide it. The trust agreement has to list AI training reproduction among the delegated uses, and the royalty collection rules have to contain a line item for it. Those rules require approval from the Ministry of Culture, Sports and Tourism (문화체육관광부), so until the item exists there is no basis on which to quote a price at all. Speed of rule revision matters more than raw bargaining weight.\n\nThe multinational split on a K-pop writing credit is weaker as a differentiator than it looks. Western pop hits routinely carry ten writers and five or six publishers, and Sony and Warner sued anyway. To make the argument stand, you would need a figure showing what share of Korean-originated songs has enough foreign-administered ownership that no Korean party holds standing to sue alone. I could not find that statistic published, so I am leaving it as an open item rather than an assertion.\n\nBaseline date is 3 September 2025. My bet is that within 180 days, by 2 March 2026, either KOMCA or a major Korean publisher publishes a formal document covering AI training and generative use, whether a royalty line item or a licensing policy. I will check KOMCA notices, ministry approval postings and publisher press releases. If none appears, the call was wrong.\n\nAny licensor with fragmented rights should read its own mandate document before reading the market, because the clause list is the ceiling on what it can charge.",
+  "name_map": {
+    "ko": {},
+    "en": {
+      "한국음악저작권협회": "Korea Music Copyright Association"
+    }
+  },
+  "usage": {
+    "input": 150609,
+    "output": 28100,
+    "calls": 20,
+    "search_uses": 12
+  }
+}

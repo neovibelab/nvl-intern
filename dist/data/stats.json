@@ -97,5 +97,31 @@
       "calls": 18,
       "search_uses": 10
     }
+  },
+  {
+    "date": "2026-09-08",
+    "day": 4,
+    "slug": "2026-09-08-who-names-the-price-of-a-lyric",
+    "title_ko": "가사값을 누가 부르나",
+    "title_en": "Who Names the Price of a Lyric",
+    "factor": "IP",
+    "from_stage": "생산",
+    "to_stage": "생산",
+    "tense": "vibe",
+    "radar_tense": "soon",
+    "agrees": true,
+    "claims_total": 6,
+    "claims_verified": 5,
+    "review_rounds": 2,
+    "unresolved": true,
+    "bet": true,
+    "wiki_used": 0,
+    "lexicon_used": 0,
+    "tokens": {
+      "input": 150609,
+      "output": 28100,
+      "calls": 20,
+      "search_uses": 12
+    }
   }
 ]
