@@ -248,6 +248,29 @@ JSON: {{"rule":"한 줄. 지킬 수 있는 크기. 없으면 빈 문자열"}}
     return got
 
 
+def _baseline_line(lang: str) -> str:
+    """사람이 쓴 글과 붙은 결과. **어느 쪽이 사람인지는 판정자도 인턴도 모른 채 붙였다.**
+
+    상대 좌표(어제의 나)만 보면 늘었는지는 알아도 어느 높이인지 모른다. 이 줄이 높이다.
+    """
+    bl = [d for d in publish._load(config.DATA_DIR / "baseline.json", [])
+          if d.get("winner") != "tie" and d.get("window", "match") == "match"]
+    if not bl:
+        return "아직 붙여 본 적이 없다" if lang == "ko" else "Not run yet"
+    parts = []
+    for axis in ("제목", "본문"):
+        rs = [d for d in bl if d["axis"] == axis]
+        if rs:
+            w = sum(1 for d in rs if d["winner"] == "intern")
+            parts.append(f"{axis} {w}/{len(rs)}" if lang == "ko"
+                         else f"{'title' if axis == '제목' else 'body'} {w}/{len(rs)}")
+    lost = [d["why"] for d in bl if d["winner"] == "human"][:3]
+    head = ("연구소 사람이 쓴 글과 소재를 맞춰 같은 길이로 붙였다. 이긴 횟수 - " if lang == "ko"
+            else "Matched by subject against pieces written by a human at the lab, same length. Wins - ")
+    tail = ("\n  진 편에 붙은 이유: " + " / ".join(lost)) if lost else ""
+    return head + " · ".join(parts) + tail
+
+
 def _form_summary(rows: list[dict]) -> dict:
     """형식 지표 한 주치. 인턴에게 고치는 법을 주지 않고 숫자만 준다."""
     fs = [r["form"] for r in rows if r.get("form")]
@@ -319,6 +342,9 @@ REFLECT_KO = """[이번 주 내 기록]
 
 [지난 편과의 대결 - 절대 점수가 아니라 비교다]
 {duel_line}
+
+[사람이 쓴 글과의 대결 - 네가 어느 높이에 있는지]
+{baseline_line}
 새 베팅 {bets_new}건 · 열린 베팅 {bets_open}건
 {signals}
 
@@ -335,8 +361,8 @@ REFLECT_KO = """[이번 주 내 기록]
 1문단: 이번 주 무엇을 봤나. 좌표와 시제 분포가 말하는 것.
 2문단: **무엇을 틀렸나.** 검수 지적에서 반복된 것을 지목한다. 변명하지 않는다.
 3문단: 독자 신호와 규칙. 무엇을 규칙으로 올렸고 무엇을 안 올렸는지, 안 올린 이유까지.
-4문단: **형식과 접근성, 그리고 지난 편과의 대결.** 위 숫자를 그대로 읽는다. 지난 편을 이겼나 졌나,
-졌다면 판정자가 뭘 보고 그렇게 골랐나. 제목·첫 문단·AI 티도 같이 본다.
+4문단: **형식과 접근성, 그리고 두 대결.** 위 숫자를 그대로 읽는다. 지난 편을 이겼나 졌나,
+**사람이 쓴 글과 붙어서는 어땠나.** 졌다면 판정자가 뭘 보고 그렇게 골랐나. 제목·첫 문단·AI 티도 같이 본다.
 **누가 고치는 법을 알려주지 않았다** - 숫자만 보고 스스로 판단한다.
 승률은 표본이 작다. 한 주 숫자를 추세로 읽지 않는다.
 5문단: **다음 주에 바꿀 것 하나.** 지킬 수 있는 크기로 구체적으로. 각오나 다짐으로 끝내지 않는다.
@@ -358,6 +384,9 @@ Pieces written without the lab's own lenses: {no_brain}/{n}
 
 [Head to head against earlier pieces - comparison, not a score]
 {duel_line}
+
+[Against pieces written by a human - where you actually stand]
+{baseline_line}
 New bets {bets_new} · open bets {bets_open}
 {signals}
 
@@ -374,7 +403,7 @@ Only this record is material. Do not look for new events. Write 400 to 500 words
 Paragraph 1: what I looked at, and what the grid and tense spread say.
 Paragraph 2: what I got wrong. Name the repeated review note. No excuses.
 Paragraph 3: reader signals and rules, including what I did not adopt and why.
-Paragraph 4: form, accessibility and the head to head. Did the newer pieces win or lose against the older ones, and what did the judge say made the difference. Read the form numbers as they are. Nobody told me how to fix any of it. The sample is small - do not read one week as a trend.
+Paragraph 4: form, accessibility and the two head to heads - against my earlier pieces, and against pieces written by a human. Did I win or lose, and what did the judge say made the difference. Read the form numbers as they are. Nobody told me how to fix any of it. The sample is small - do not read one week as a trend.
 Paragraph 5: one thing I will change next week, small enough to keep. This line goes straight into next week's writing prompt as one of my own rules.
 
 {style}
@@ -406,6 +435,7 @@ def reflect(g: dict, lang: str) -> str:
         gate_hits=g["gate_hits"], no_brain=g["no_brain"], form_line=_form_line(g, lang),
         bets_new=len(g["bets_new"]), bets_open=len(g["bets_open"]),
         signals=_signal_line(g, lang), duel_line=_duel_line(g.get("duels") or [], lang),
+        baseline_line=_baseline_line(lang),
         issues="\n".join(f"- {i}" for i in g["issues"][:12]) or "(없음)",
         promoted=len(g["promoted"]),
         issue_types="\n".join(f"- {len(t['days'])}일에 걸쳐 {t['n']}회 · {t['name']}"

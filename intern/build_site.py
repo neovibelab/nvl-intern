@@ -467,7 +467,14 @@ def _duel_card(ko: bool) -> list[tuple[str, str]]:
     if not ds:
         return []
     w, n = _duel.win_rate(ds)
-    return [(f"{w}/{n}", "지난 편과 붙어 이긴 수" if ko else "wins vs earlier pieces")]
+    out = [(f"{w}/{n}", "지난 편과 붙어 이긴 수" if ko else "wins vs earlier pieces")]
+    # 사람 기준선 - 상대 좌표(어제의 나)만으로는 어느 높이인지 모른다
+    bl = [d for d in publish._load(config.DATA_DIR / "baseline.json", [])
+          if d.get("winner") != "tie" and d.get("window", "match") == "match"]
+    if bl:
+        bw = sum(1 for d in bl if d["winner"] == "intern")
+        out.append((f"{bw}/{len(bl)}", "사람 글과 붙어 이긴 수" if ko else "wins vs human pieces"))
+    return out
 
 
 def feed(lang: str, pieces: list) -> str:
@@ -628,11 +635,18 @@ def build() -> None:
         legend = ("<p class='legend'>형식 · 제목 판정(무슨 얘긴지 알려주나 2점 만점 · 읽고 싶게 하나 2점 만점)에 "
                   "첫 문단·AI 티·헤지·문장 길이를 더한 점수입니다. 「약속 어김」은 본문이 제목이 말한 것을 "
                   "다루지 않았다는 뜻입니다. 인턴에게는 이 숫자만 보여주고 고치는 법은 알려주지 않습니다.</p>"
+                  "<p class='legend'>대결 · 인턴의 글을 지난 편, 그리고 <strong>연구소가 사람이 쓴 글</strong>과 "
+                  "나란히 놓고 어느 쪽이 나은지 물은 결과입니다. 판정자는 어느 쪽이 최신인지, 어느 쪽이 사람이 쓴 것인지 "
+                  "모릅니다. 소재가 가까운 편끼리, 같은 길이만큼 잘라 붙입니다. 사람 글과의 승률이 이 실험의 절대 좌표입니다.</p>"
                   if lang == "ko" else
                   "<p class='legend'>Form · a title judgment (does it tell you what this is about, out of 2 · "
                   "does it make you want to read, out of 2) plus lead, AI tells, hedging and sentence length. "
                   "Broke promise means the body did not deliver what the title said. "
-                  "The intern is shown the numbers and never told how to fix them.</p>")
+                  "The intern is shown the numbers and never told how to fix them.</p>"
+                  "<p class='legend'>Duels · each piece is put beside an earlier one and beside a piece written "
+                  "by a human at the lab. The judge knows neither which is newer nor which is human. "
+                  "Pairs are matched by subject and cut to the same length. The win rate against the human "
+                  "pieces is this experiment's absolute yardstick.</p>")
         g = (f"<p class='label'>{t['growth_title']}</p><h1>{'여섯 축' if lang == 'ko' else 'Six axes'}</h1>"
              + '<div class="stats">' + "".join(f"<div><b>{v}</b><span>{k}</span></div>" for v, k in cards) + "</div>"
              + f"<div class='tw'><table><tr>{''.join(f'<th>{c}</th>' for c in t['cols'])}</tr>{rows}</table></div>"
