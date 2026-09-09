@@ -180,19 +180,36 @@ def hedge(text: str, results: list[dict], lang: str = "ko") -> str:
     bad = [r for r in results if r["status"] != "verified"]
     if not bad:
         return text
-    notes = "\n".join(f"- {r['claim']} → {r['status']} ({r.get('note','')})" for r in bad)
+    notes = "\n".join(
+        f"- [{r['status']}] {r['claim']}\n    검증이 찾은 것: {r.get('note', '') or '(없음)'}"
+        + (f" · 출처 {r.get('source', '')}" if r.get("source") else "") for r in bad)
     if lang == "ko":
-        prompt = f"""아래 글에서 다음 주장들이 확인되지 않았거나 반박됐다. 반박된 것은 지우거나 고치고, 미확인은 「~로 알려졌다」로 헤지한다. 다른 문장은 건드리지 않는다. 길이는 유지한다. 본문만 돌려준다.
+        prompt = f"""아래 글의 주장 몇 개가 검증에서 걸렸다. 순서대로 처리한다.
 
-[문제 주장]
+**1. 검증이 정정 사실을 찾아왔으면 그 사실로 고쳐 쓴다.** 이게 첫 번째 선택지다.
+   출처 매체를 문장 안에 적는다. **「알려졌습니다」로 바꾸지 마라** - 확인된 사실을 전언으로 내리는 것은 후퇴다.
+   (2026-09-10 실측: 인수 시점이 틀렸다는 판정에 정확한 날짜까지 왔는데 전언으로 바꿔 논지가 무너졌다.)
+**2. 고칠 재료가 없고 그 주장이 논지를 받치는 자리면, 헤지하지 말고 그 주장과 거기 기댄 문장을 함께 뺀다.**
+   빠진 자리는 남은 근거로 논지를 다시 세운다. **「~로 알려졌다」를 논지의 핵심 물증 자리에 두지 않는다.**
+**3. 곁가지 사실이고 확인만 안 된 것이면** 그때만 「~로 알려졌다」로 헤지한다.
+
+다른 문장은 건드리지 않는다. 본문만 돌려준다.
+
+[검증에 걸린 주장]
 {notes}
 
 [글]
 {text}"""
     else:
-        prompt = f"""In the piece below, these claims were unverified or contradicted. Remove or fix contradicted ones; hedge unverified ones with "reportedly". Leave other sentences untouched. Keep the length. Return the body only.
+        prompt = f"""Some claims in the piece below failed verification. Handle them in this order.
 
-[Claims]
+**1. If verification found the corrected fact, rewrite the sentence with that fact** and name the outlet. Do not downgrade a confirmed fact to "reportedly".
+**2. If there is nothing to correct it with and the claim carries the argument, cut it and the sentences leaning on it.** Rebuild the point from what remains. Never leave "reportedly" as the load-bearing evidence.
+**3. Only if it is a side fact that is merely unconfirmed**, hedge it with "reportedly".
+
+Leave other sentences untouched. Return the body only.
+
+[Claims that failed verification]
 {notes}
 
 [Piece]
@@ -266,28 +283,49 @@ def style_gate(text: str, lang: str = "ko") -> tuple[str, dict]:
 
 # ── ⑥ 자기 검수 (별도 컨텍스트) ────────────────────────────────────────────
 
-REVIEWER = """너는 발행 전 검수자다. 집필자가 아니다. 관대하지 않다. 다섯 질문만 묻는다.
+REVIEWER = """너는 발행 전 검수자다. 집필자가 아니다. 관대하지 않다. 다섯 질문을 묻는다.
 1 뻔한가 - 누구나 아는 요약이면 실패. 2 소재 필연성 - 왜 오늘 이 사건인가가 글에 있나. 3 독자 수확 - 한국 엔터 실무자가 가져갈 것이 있나.
 4 반대편 - 이 논지의 반례를 글이 스스로 다루나. 5 근거 - 논지를 받치는 사실이 글 안에 있나.
-문체도 본다: 대조 공식 반복, 메타 수사, 억지 은유, 격언조 결말, 불릿."""
+
+**지적을 두 층으로 나눈다. 이 구분이 판정을 정한다.**
+- **차단(blocking)** - 이대로 내보내면 안 되는 것. 넷뿐이다.
+  ① 사실이 틀렸다 ② 논지를 받치는 핵심 물증이 없거나 출처 없는 전언이다
+  ③ 각도가 약속한 것과 본문이 다루는 것이 어긋난다 ④ 논지를 뒤집는 반례를 글이 한 번도 마주하지 않는다
+- **개선(note)** - 있으면 더 나아지는 것. 더 나은 각도, 추가 사례, 문장 다듬기, 다뤘으면 하는 곁가지.
+
+**차단이 0이면 pass다.** 개선 지적이 남아 있어도 pass다. **완벽해야 통과하는 것이 아니다** -
+이 글은 매일 한 편 나가고 흠은 어느 글에나 있다. 물어야 할 것은 「더 좋아질 수 있나」가 아니라
+「이대로 내보내면 독자를 속이거나 헛읽게 하나」다.
+
+문체(대조 공식 반복·메타 수사·억지 은유·격언조 결말·불릿)는 기계 게이트가 따로 본다. **여기서는 차단 사유가 아니다.**
+**집필 과정을 본문에 쓴 자리**(「초고에서 저는」·「출처를 대지 못했습니다」 같은 자기 정정 고백)는 차단이다 - 독자가 읽을 글이지 작업 일지가 아니다."""
 
 
-def review(text: str, j: dict) -> dict:
+def review(text: str, j: dict, prev_issues: list[str] | None = None) -> dict:
+    prev = ""
+    if prev_issues:
+        prev = ("\n[앞 회차에서 네가 지적한 것 - 고쳐졌는지 먼저 본다. 고쳐졌으면 그 자리를 다시 물지 않는다]\n"
+                + "\n".join(f"- {i}" for i in prev_issues[:4]) + "\n")
     d = llm.ask_json(f"""[판정] {header_line(j, 'ko')} · 각도: {j['angle_ko']}
-
+{prev}
 [글]
 {text}
 
-JSON: {{"verdict":"pass|fix","issues":["구체 지적 (문장을 가리킨다)", ...],"one_line":"한 줄 총평"}}""",
+JSON: {{"blocking":["차단 사유 (문장을 가리킨다)", ...],"notes":["개선 제안", ...],"one_line":"한 줄 총평"}}
+차단이 없으면 blocking은 빈 배열로 둔다.""",
                      system=REVIEWER, max_tokens=3000)
-    if d.get("verdict") not in ("pass", "fix"):
-        d["verdict"] = "fix"
-    d["issues"] = [i for i in d.get("issues", []) if isinstance(i, str)][:6]
-    return d
+    blocking = [i for i in d.get("blocking", []) if isinstance(i, str)][:5]
+    notes = [i for i in d.get("notes", []) if isinstance(i, str)][:5]
+    # 판정은 코드가 내린다. 모델이 「관대하지 않다」에 눌려 흠 하나로 fix를 찍던 자리다.
+    return {"verdict": "fix" if blocking else "pass", "blocking": blocking, "notes": notes,
+            "issues": blocking or notes, "one_line": str(d.get("one_line", ""))[:200]}
 
 
 def revise(text: str, issues: list[str]) -> str:
     prompt = f"""검수자가 아래를 지적했다. 지적된 자리만 고친다. 논지는 유지하고 길이도 유지한다. 본문만 돌려준다.
+
+**집필 과정을 본문에 쓰지 않는다.** 「초고에서 저는」·「출처를 대지 못했습니다」·「검수에서 지적받아」 같은
+자기 정정 고백은 독자가 읽을 글에 들어가지 않는다. 못 대는 근거는 고백하지 말고 그 문장을 뺀다.
 
 [지적]
 {chr(10).join('- ' + i for i in issues)}

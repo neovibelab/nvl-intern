@@ -125,11 +125,12 @@ def main() -> int:
     # ⑥ 검수 (별도 컨텍스트)
     rounds, unresolved, last_issues, reviews = 0, False, [], []
     while True:
-        rv = steps.review(ko, j); reviews.append(rv); rounds += 1
-        print(f"  [review] {rounds}회차 {rv['verdict']} · {rv.get('one_line','')[:70]}")
+        prev = reviews[-1].get("blocking") if reviews else None
+        rv = steps.review(ko, j, prev_issues=prev); reviews.append(rv); rounds += 1
+        print(f"  [review] {rounds}회차 {rv['verdict']} · 차단 {len(rv.get('blocking', []))} · 개선 {len(rv.get('notes', []))} · {rv.get('one_line','')[:60]}")
         if rv["verdict"] == "pass":
             break
-        last_issues = rv["issues"]
+        last_issues = rv.get("blocking") or rv["issues"]
         if rounds >= MAX_REVIEW_ROUNDS:
             unresolved = True; break
         ko = steps.revise(ko, rv["issues"])
