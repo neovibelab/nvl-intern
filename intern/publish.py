@@ -65,8 +65,12 @@ def no_em_dash(t: str) -> str:
 
 
 def vibe_line(lang: str, j: dict) -> str:
-    """바이브 판정의 근거. 「곧」은 순수 추측이 아니라 관측된 조짐이어야 한다(정본 규칙)."""
-    ev = str(j.get("vibe_evidence") or "").strip()
+    """바이브 판정의 근거. 「곧」은 순수 추측이 아니라 관측된 조짐이어야 한다(정본 규칙).
+
+    영문판에는 영문 조짐만 싣는다. 없으면 줄을 통째로 뺀다 - 영문 글에 한국어 문장을
+    끼워 넣는 쪽이 빠뜨리는 쪽보다 나쁘다(2026-09-09 실측: 영문 페이지에 한국어가 그대로 나갔다).
+    """
+    ev = str(j.get("vibe_evidence_en" if lang == "en" else "vibe_evidence") or "").strip()
     if j.get("tense") != "vibe" or not ev:
         return ""
     return (f"**조짐** · {ev}" if lang == "ko" else f"**What is showing** · {ev}")
@@ -126,6 +130,7 @@ def piece_markdown(lang: str, date: str, slug: str, j: dict, body: str, meta: di
         "factor": j["factor"], "from_stage": j["from_stage"], "to_stage": j["to_stage"], "tense": j["tense"],
         "radar_tense": meta.get("radar_tense"), "agrees": j.get("agrees"),
         "tense_why": j.get("tense_why", ""), "vibe_evidence": j.get("vibe_evidence", ""),
+        "vibe_evidence_en": j.get("vibe_evidence_en", ""),
         "bet": bet, "claims_total": meta.get("claims_total"), "claims_verified": meta.get("claims_verified"),
         "review_rounds": meta.get("review_rounds"), "unresolved": meta.get("unresolved"),
         "sources": meta.get("sources", []), "source_items": meta.get("source_items", []),

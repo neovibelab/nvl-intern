@@ -61,7 +61,7 @@
 
 **Today's source** · BTS's Arirang (아리랑) World Tour recorded approximately 599.8 billion won in sales and 2.3 million ticket sales across 38 concerts. NH Investment & Securities estimated the economic effect of 'BTS nomics' at approximately 8 trillion won.
 
-- [Asia Economic Daily (아시아경제) · BTS Becomes Major Player in Global Concert Market with 140 Billion Won Revenue from 8 Performances - Asia Economic Daily](https://view.asiae.co.kr/article/2026083017333834136) · 2026-08-31
+- [Asia Economic Daily (Asia Economy (아시아경제)) · BTS Becomes Major Player in Global Concert Market with 140 Billion Won Revenue from 8 Performances - Asia Economic Daily](https://view.asiae.co.kr/article/2026083017333834136) · 2026-08-31
 
 | | production | distribution | consumption |
 |---|:-:|:-:|:-:|

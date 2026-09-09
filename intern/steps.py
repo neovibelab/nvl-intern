@@ -74,6 +74,7 @@ def judge(cluster_text: str, radar: dict, materials: str) -> dict:
 JSON:
 {{"factor":"...","from_stage":"...","to_stage":"...","tense":"vibe|signal|background","tense_why":"한 줄",
  "vibe_evidence":"vibe일 때만. 지금 관측되는 조짐 한 줄. 아니면 빈 문자열",
+ "vibe_evidence_en":"같은 조짐을 영어로. vibe가 아니면 빈 문자열",
  "angle_ko":"...","angle_en":"...","title_ko":"...(20자 안)","title_en":"...",
  "bet": {{"claim_ko":"...","claim_en":"...","by_days":90,"check_ko":"무엇으로 확인","check_en":"..."}} 또는 null,
  "principle_ko":"...","principle_en":"..."}}"""
@@ -335,8 +336,10 @@ def name_map(texts: list[str], lang: str) -> dict:
     pat = _FOREIGN_KO if lang == "ko" else _FOREIGN_EN
     # 중국어·일본어는 띄어쓰기가 없어 문장 하나가 통째로 한 덩어리로 잡힌다(2026-09-06 실측:
     # 「只有BTS超过1000万美元的K」가 고유명사로 올라가 병음 범벅이 됐다). 길이로 먼저 거른다.
+    # 길이 상한 - 띄어쓰기 없는 중국어·일본어 문장이 통째로 잡히는 것은 막되,
+    # 한국 기관명은 길다(함께하는음악저작인협회 11자·한국음악저작권협회 10자). 2026-09-09에 14로 올렸다.
     found = sorted({m for t in texts for m in pat.findall(t or "")
-                    if 1 <= len(m) <= 10 and not re.search(r"\d{3,}", m)}, key=len, reverse=True)[:12]
+                    if 1 <= len(m) <= 14 and not re.search(r"\d{3,}", m)}, key=len, reverse=True)[:18]
     if not found:
         return {}
     ask = ("각 항목의 한글 표기를 적는다. 중국어는 표준중국어 발음의 국립국어원 외래어 표기법(蔡徐坤→차이쉬쿤, 界面新闻→제몐신문, 36氪→36커), "

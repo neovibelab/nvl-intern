@@ -8,51 +8,150 @@ import shutil
 
 from . import config, publish
 
-CSS = """:root{--lime:#D6FF92;--black:#0A0A0A;--dark:#111;--gray:#888;--gray-dark:#333;--line:rgba(255,255,255,.08);--white:#F0F0EA}
-*{box-sizing:border-box;margin:0;padding:0}body{background:var(--black);color:var(--white);font-family:'Noto Sans KR',Outfit,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+CSS = """:root{--lime:#D6FF92;--lime-dim:rgba(214,255,146,.10);--black:#0A0A0A;--card:#121212;--edge:#242424;--ink:#E4E4DC;--dim:#8C8C84;--line:rgba(255,255,255,.07);--white:#F5F5EF}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--black);color:var(--ink);font-family:'Noto Sans KR',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6}
 a{color:var(--white)}.mono{font-family:'DM Mono',ui-monospace,monospace}
-nav{position:sticky;top:0;background:rgba(10,10,10,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:14px 24px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
-nav .brand{color:var(--lime);font-weight:800;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;font-size:13px}
-nav a.l{color:var(--gray);text-decoration:none;font-size:12px;font-family:'DM Mono',monospace;letter-spacing:.04em}nav a.l:hover{color:var(--lime)}
-nav .sp{flex:1}.wrap{max-width:760px;margin:0 auto;padding:40px 24px 80px}
+
+/* 상단 */
+nav{position:sticky;top:0;z-index:10;background:rgba(10,10,10,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:20px;padding:0 24px;height:52px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav .brand{display:flex;align-items:center;gap:8px;color:var(--white);font-weight:700;font-size:13px;text-decoration:none;flex:none}
+nav .brand::before{content:"";width:7px;height:7px;background:var(--lime);border-radius:50%;flex:none}
+nav .sp{flex:1;min-width:12px}
+nav a.l{color:var(--dim);text-decoration:none;font-size:12px;font-family:'DM Mono','Noto Sans KR',monospace;letter-spacing:.03em;flex:none;line-height:52px;border-bottom:2px solid transparent}
+nav a.l:hover{color:var(--lime)}nav a.l.on{color:var(--white);border-bottom-color:var(--lime)}
+.wrap{max-width:720px;margin:0 auto;padding:44px 24px 90px}
 .label{color:var(--lime);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
-h1{font-size:clamp(26px,4vw,40px);font-weight:900;letter-spacing:-.02em;line-height:1.2;margin:10px 0 18px}
-.hdr{display:inline-block;font-family:'DM Mono',monospace;font-size:13px;color:var(--lime);background:var(--dark);border:1px solid var(--gray-dark);padding:4px 10px;margin-bottom:8px}
-.meta{color:var(--gray);font-size:12px;font-family:'DM Mono',monospace;margin-bottom:26px}
-.body p{font-size:16.5px;line-height:1.95;color:#d9d9d2;margin-bottom:18px}.body strong{color:var(--white)}
-.body blockquote{border-left:2px solid var(--lime);padding:12px 18px;color:var(--gray);margin:18px 0;background:rgba(214,255,146,.05);font-size:13.5px;line-height:1.75}
-.body blockquote p{font-size:13.5px;line-height:1.75;color:var(--gray);margin:0 0 8px}.body blockquote p:last-child{margin:0}.body blockquote strong{color:var(--lime)}
-.body blockquote ul{margin:0 0 8px 18px;font-size:13.5px}
-.body sub{color:var(--gray);font-size:12px}
-.list a{display:block;padding:18px 0;border-bottom:1px solid var(--line);text-decoration:none}
-.list .t{font-size:18px;font-weight:700;margin:6px 0}.list .m{color:var(--gray);font-size:12px;font-family:'DM Mono',monospace}
-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0}th{color:var(--lime);font-family:'DM Mono',monospace;font-size:11px;text-align:left;padding:8px;border-bottom:1px solid var(--gray-dark);font-weight:500}
-td{padding:8px;border-bottom:1px solid var(--line);color:var(--gray)}td:first-child{color:var(--white)}
-.grid{display:grid;grid-template-columns:110px repeat(3,1fr);gap:1px;background:var(--gray-dark);border:1px solid var(--gray-dark);margin:18px 0}
-.grid>div{background:var(--black);padding:10px;min-height:52px;font-size:12px}.grid .h{color:var(--lime);font-family:'DM Mono',monospace;font-size:11px}
-.grid .f{font-weight:700}.grid a{text-decoration:none;color:var(--lime)}.grid .z{color:var(--gray-dark)}
-.body p.frame{font-size:12.5px;color:var(--gray);border:1px solid var(--gray-dark);background:var(--dark);padding:10px 14px;line-height:1.7}
-.body p.frame strong{color:var(--lime)}.body ul{margin:0 0 18px 18px;color:var(--gray);font-size:14px;line-height:1.8}.body ul a{color:var(--white)}
-.body table.mini{max-width:420px;font-size:12px}.body table.mini th,.body table.mini td{text-align:center;padding:5px 6px}.body table.mini td:first-child,.body table.mini th:first-child{text-align:left}
-.body table.mini td.on{color:var(--lime);font-size:16px}.body table.mini td.from{color:var(--white)}
-.fb{margin:34px 0 10px;border:1px solid var(--gray-dark);background:var(--dark);padding:16px 18px}
-.fb .q{font-size:13px;color:var(--white);margin-bottom:10px}.fb .q span{color:var(--gray);font-size:12px;margin-left:8px}
-.fb .btns{display:flex;flex-wrap:wrap;gap:8px}.fb button{font-family:'DM Mono','Noto Sans KR',monospace;font-size:12px;padding:7px 12px;background:transparent;color:var(--white);border:1px solid var(--gray-dark);cursor:pointer}
-.fb button:hover{border-color:var(--lime);color:var(--lime)}.fb button.on{background:var(--lime);color:var(--black);border-color:var(--lime)}.fb button b{font-weight:500;color:var(--gray);margin-left:6px}.fb button.on b{color:var(--black)}
-.fb textarea{width:100%;margin-top:10px;background:var(--black);color:var(--white);border:1px solid var(--gray-dark);padding:10px;font-family:inherit;font-size:13px;min-height:64px}
-.fb .row{display:flex;gap:10px;align-items:center;margin-top:8px}.fb .note{font-size:11.5px;color:var(--gray);line-height:1.6}.fb[hidden]{display:none}
-.foot{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);color:var(--gray);font-size:12px;line-height:1.8}
-.foot a{color:var(--white)}.about{background:var(--dark);border:1px solid var(--gray-dark);padding:16px 18px;font-size:13.5px;color:var(--gray);line-height:1.7;margin-bottom:28px}
-@media(max-width:600px){.grid{grid-template-columns:80px repeat(3,1fr)}}"""
+
+/* 글 머리 */
+.chip{display:inline-flex;align-items:center;gap:9px;font-family:'DM Mono',monospace;font-size:12.5px;padding:5px 12px;border:1px solid var(--edge);color:var(--dim)}
+.chip b{font-weight:500;color:var(--white)}
+.chip .t{color:var(--lime)}
+.chip.vibe{border-color:rgba(214,255,146,.4);background:var(--lime-dim)}
+h1{font-size:clamp(27px,4.2vw,40px);font-weight:900;letter-spacing:-.025em;line-height:1.22;margin:16px 0 14px;color:var(--white)}
+.meta{color:var(--dim);font-size:11.5px;font-family:'DM Mono','Noto Sans KR',monospace;display:flex;flex-wrap:wrap;gap:6px 16px;padding-bottom:20px;border-bottom:1px solid var(--line);margin-bottom:26px}
+.meta .warn{color:var(--lime)}
+
+/* 본문 */
+.body p{font-size:17px;line-height:1.95;margin:0 0 20px;color:var(--ink)}
+.body strong{color:var(--white);font-weight:700}
+.body a{color:var(--white);text-decoration:underline;text-decoration-color:rgba(214,255,146,.45);text-underline-offset:3px}
+.body a:hover{color:var(--lime)}
+.body sub{color:var(--dim);font-size:11.5px;line-height:1.75;display:block;margin-top:8px}
+.tw+p,.tw+.tw{margin-top:0}
+
+/* 실험 프레임 - 조용하게 */
+p.frame{font-size:11.5px;color:var(--dim);font-family:'DM Mono','Noto Sans KR',monospace;line-height:1.85;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:10px 0;margin:0 0 26px}
+p.frame strong{color:var(--lime);font-weight:500}
+p.frame a{text-decoration:none;color:var(--ink)}p.frame a:hover{color:var(--lime)}
+
+/* 오늘의 소재 */
+p.src{background:var(--card);border:1px solid var(--edge);padding:15px 18px 13px;margin:0;font-size:14.5px;line-height:1.85;color:var(--ink)}
+p.src.joined{border-bottom:none;padding-bottom:10px}
+p.src strong{display:block;color:var(--lime);font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:7px;font-weight:500}
+ul.src-list{background:var(--card);border:1px solid var(--edge);border-top:none;margin:0 0 26px;padding:0 18px 13px;list-style:none}
+ul.src-list li{font-size:12.5px;color:var(--dim);font-family:'DM Mono','Noto Sans KR',monospace;line-height:1.75;padding-left:15px;position:relative}
+ul.src-list li::before{content:"";position:absolute;left:1px;top:9px;width:5px;height:5px;background:var(--lime)}
+ul.src-list a{color:var(--ink);text-decoration:none}ul.src-list a:hover{color:var(--lime)}
+
+/* 조짐·베팅·원리 */
+p.evidence,p.bet{font-size:14px;line-height:1.8;color:var(--ink);background:var(--card);border-left:2px solid var(--edge);padding:12px 16px;margin:0 0 20px}
+p.evidence{border-left-color:var(--lime)}
+p.evidence strong,p.bet strong{color:var(--lime);font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+p.principle{font-size:17px;line-height:1.8;color:var(--white);border-left:2px solid var(--lime);padding:2px 0 2px 18px;margin:30px 0 22px;font-weight:500}
+p.principle strong{display:block;color:var(--lime);font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:7px;font-weight:500}
+
+/* 검수 기록 */
+.body blockquote{border:1px solid var(--edge);background:var(--card);padding:14px 17px;margin:26px 0;font-size:12.5px;line-height:1.8;color:var(--dim)}
+.body blockquote p{font-size:12.5px;line-height:1.8;color:var(--dim);margin:0 0 9px}
+.body blockquote p:last-child{margin:0}
+.body blockquote strong{color:var(--lime);font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:500}
+.body blockquote ul{margin:9px 0 0 16px;font-size:12px;line-height:1.75}
+.body blockquote li{margin-bottom:6px}
+
+/* 표 */
+.tw{overflow-x:auto;margin:0 0 26px;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{color:var(--lime);font-family:'DM Mono','Noto Sans KR',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;text-align:left;padding:9px 10px 9px 0;border-bottom:1px solid var(--edge);font-weight:500;white-space:nowrap}
+td{padding:9px 10px 9px 0;border-bottom:1px solid var(--line);color:var(--dim);white-space:nowrap}
+td:first-child{color:var(--ink)}
+td.ttl{white-space:normal;min-width:220px;line-height:1.6;padding-right:16px}
+td a{color:var(--ink);text-decoration:none}td a:hover{color:var(--lime)}
+table.mini{max-width:302px;font-size:11px;margin:2px 0 4px;border:1px solid var(--line)}
+table.mini th,table.mini td{text-align:center;padding:5px 2px;white-space:nowrap;border-bottom:1px solid var(--line);width:56px}
+table.mini tr:last-child td{border-bottom:none}
+table.mini th{font-size:9.5px;letter-spacing:.06em;padding:6px 2px}
+table.mini th:first-child,table.mini td:first-child{text-align:left;width:auto;color:var(--dim);font-family:'DM Mono','Noto Sans KR',monospace;font-size:10.5px;padding:5px 8px}
+table.mini td.on{color:var(--lime);font-size:13px;line-height:1;background:rgba(214,255,146,.13)}
+table.mini td.from{color:var(--white);background:rgba(255,255,255,.04)}
+table.mini td.z{color:#2B2B2B}
+
+/* 지난 글 */
+.list{margin-top:10px}
+.list a{display:flex;gap:18px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.list a:hover .t{color:var(--lime)}
+.list .c{flex:1;min-width:0}
+.list .t{font-size:17px;font-weight:700;color:var(--white);line-height:1.4;margin-bottom:5px}
+.list .m{color:var(--dim);font-size:11.5px;font-family:'DM Mono','Noto Sans KR',monospace}
+.list .m .t2{color:var(--lime)}
+.list .d{color:var(--dim);font-size:11px;font-family:'DM Mono',monospace;flex:none;white-space:nowrap}
+
+/* 성장 요약 */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:1px;background:var(--edge);border:1px solid var(--edge);margin:18px 0 30px}
+.stats div{background:var(--black);padding:16px 14px}
+.stats b{display:block;font-size:26px;font-weight:900;color:var(--lime);letter-spacing:-.02em;line-height:1.1;margin-bottom:6px}
+.stats span{font-size:11px;color:var(--dim);font-family:'DM Mono','Noto Sans KR',monospace;letter-spacing:.04em}
+
+/* 격자 페이지 */
+.grid{display:grid;grid-template-columns:104px repeat(3,1fr);gap:1px;background:var(--edge);border:1px solid var(--edge);margin:18px 0}
+.grid>div{background:var(--black);padding:11px 10px;min-height:54px;font-size:12px;display:flex;align-items:center;flex-wrap:wrap;gap:6px}
+.grid .h{color:var(--lime);font-family:'DM Mono','Noto Sans KR',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;align-items:flex-end}
+.grid .f{font-weight:700;color:var(--ink);font-size:12.5px}
+.grid a{text-decoration:none;color:var(--lime);font-family:'DM Mono',monospace;font-size:11.5px;border:1px solid rgba(214,255,146,.3);padding:2px 7px}
+.grid a:hover{background:var(--lime);color:var(--black)}
+.grid .z{color:#1C1C1C}
+
+/* 독자 신호 */
+.fb{margin:36px 0 12px;border:1px solid var(--edge);background:var(--card);padding:17px 18px}
+.fb .q{font-size:13.5px;color:var(--white);margin-bottom:11px;font-weight:700}
+.fb .q span{color:var(--dim);font-size:11.5px;margin-left:9px;font-weight:400}
+.fb .btns{display:flex;flex-wrap:wrap;gap:8px}
+.fb button{font-family:'DM Mono','Noto Sans KR',monospace;font-size:12px;padding:8px 13px;background:transparent;color:var(--ink);border:1px solid var(--edge);cursor:pointer;transition:all .15s}
+.fb button:hover{border-color:var(--lime);color:var(--lime)}
+.fb button.on{background:var(--lime);color:var(--black);border-color:var(--lime)}
+.fb button b{font-weight:500;color:var(--dim);margin-left:7px}.fb button.on b{color:var(--black)}
+.fb textarea{width:100%;margin-top:11px;background:var(--black);color:var(--ink);border:1px solid var(--edge);padding:11px;font-family:inherit;font-size:13px;min-height:64px;line-height:1.7}
+.fb textarea:focus{outline:none;border-color:var(--lime)}
+.fb .row{display:flex;gap:11px;align-items:center;margin-top:9px;flex-wrap:wrap}
+.fb .note{font-size:11px;color:var(--dim);line-height:1.65}
+.fb[hidden]{display:none}
+
+/* 꼬리 */
+.foot{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);color:var(--dim);font-size:11.5px;line-height:1.9;font-family:'DM Mono','Noto Sans KR',monospace}
+.foot a{color:var(--ink);text-decoration:none}.foot a:hover{color:var(--lime)}
+
+@media(max-width:600px){
+.wrap{padding:32px 18px 70px}
+h1{margin:13px 0 12px}
+.body p{font-size:16px;line-height:1.9}
+p.principle{font-size:16px}
+.grid{grid-template-columns:76px repeat(3,1fr)}
+.grid>div{padding:9px 7px;min-height:46px}
+.list a{gap:12px}
+.list .t{font-size:16px}
+}"""
 
 T = {
     "ko": dict(today="오늘", growth="성장", grid="격자", about="이 실험이 무엇인가", other="EN", other_href="/en/",
+               brand="엔터 바이브 리서치", weekly="주간 회고",
                list="지난 글", subscribe="구독", empty="아직 글이 없습니다.", label="엔터 바이브 리서치 · AI 인턴 1호",
                about_line="AI 인턴 1호가 매일 엔터 산업을 읽고 씁니다. 사람이 고르지도 고치지도 않습니다. 이 실험이 무엇인지는",
                here="여기", human="AI가 매일 읽고 정리합니다. 관점은 사람이 씁니다.", human_link="엔터문화연구소 뉴스레터",
                growth_title="성장 지표", cols=["날", "날짜", "제목", "좌표", "시제", "레이더와", "검증", "검수", "베팅"],
                grid_title="격자 21칸 · 인턴이 쓴 자리", empty_cell="", bets="베팅 대장", bet_cols=["날짜", "명제", "기한", "확인", "상태"]),
     "en": dict(today="Today", growth="Growth", grid="Grid", about="What this is", other="KO", other_href="/",
+               brand="Entertainment Vibe Research", weekly="Weekly review",
                list="Earlier pieces", subscribe="Subscribe", empty="No pieces yet.", label="Entertainment Vibe Research · AI Intern 01",
                about_line="AI Intern 01 reads and writes about the entertainment industry every day. No human picks or edits. What this experiment is:",
                here="here", human="AI reads and sorts every day. The point of view is written by a human.", human_link="Neo Vibe Lab newsletter",
@@ -61,8 +160,25 @@ T = {
 }
 
 
+# 문단 머리말 → 블록 종류. 한 편의 고정 구조를 눈으로 구분되게 한다(2026-09-09 UI 개편).
+BLOCK_KINDS = [
+    ("frame", ("**엔터문화연구소의 AI 실험**", "**A Neo Vibe Lab AI experiment**")),
+    ("src", ("**오늘의 소재**", "**Today's source**")),
+    ("evidence", ("**조짐**", "**What is showing**")),
+    ("bet", ("**베팅**", "**Bet**")),
+    ("principle", ("**원리**", "**Principle**")),
+]
+
+
+def _kind(b: str) -> str:
+    for name, heads in BLOCK_KINDS:
+        if any(b.startswith(h) for h in heads):
+            return name
+    return ""
+
+
 def md_to_html(md: str) -> str:
-    out = []
+    out, prev = [], ""
     for block in re.split(r"\n\s*\n", md.strip()):
         b = block.strip()
         if not b:
@@ -72,17 +188,25 @@ def md_to_html(md: str) -> str:
         if b.startswith("`") and b.endswith("`") and "\n" not in b:
             continue  # 헤더 줄은 따로
         if b.startswith("> "):
-            out.append(_quote(b)); continue
+            out.append(_quote(b)); prev = "quote"; continue
         if b.startswith("<sub>"):
-            out.append(_inline_keep_tags(b)); continue
+            out.append(_inline_keep_tags(b)); prev = "sub"; continue
         if b.startswith("| "):
-            out.append(_table(b)); continue
+            out.append('<div class="tw">' + _table(b) + "</div>"); prev = "table"; continue
         if b.startswith("- "):
-            out.append("<ul>" + "".join(f"<li>{_inline(l[2:])}</li>" for l in b.splitlines() if l.startswith("- ")) + "</ul>"); continue
-        if b.startswith("**엔터문화연구소의 AI 실험**") or b.startswith("**A Neo Vibe Lab AI experiment**"):
-            out.append(f'<p class="frame">{_inline(b)}</p>'); continue
-        out.append(f"<p>{_inline(b)}</p>")
-    return "\n".join(out)
+            cls = ' class="src-list"' if prev == "src" else ""
+            out.append(f"<ul{cls}>" + "".join(f"<li>{_inline(l[2:])}</li>" for l in b.splitlines() if l.startswith("- ")) + "</ul>")
+            prev = "list"; continue
+        k = _kind(b)
+        if k:
+            frag = _inline(b)
+            if k != "frame":  # 라벨이 한 줄을 차지하므로 바로 뒤 구분자는 군더더기가 된다
+                frag = frag.replace("</strong> · ", "</strong>", 1)
+            out.append(f'<p class="{k}">{frag}</p>'); prev = k; continue
+        out.append(f"<p>{_inline(b)}</p>"); prev = "p"
+    res = "\n".join(out)
+    # 소재 문단 뒤에 출처 목록이 붙으면 한 덩어리로 보이게 아래 테두리를 뗀다
+    return res.replace('<p class="src">', '<p class="src joined">') if 'class="src-list"' in res else res
 
 
 def _quote(b: str) -> str:
@@ -119,8 +243,16 @@ def _table(b: str) -> str:
         return ""
     mini = rows[0][0].strip() == ""
     h = "".join(f"<th>{_inline(c.strip())}</th>" for c in rows[0])
-    body = "".join("<tr>" + "".join(
-        f"<td class='{'on' if c.strip() == '●' else 'from' if c.strip() == '○' else ''}'>{_inline(c.strip())}</td>" for c in r) + "</tr>" for r in rows[1:])
+    def cell(c: str) -> str:
+        v = c.strip()
+        if v == "●":
+            return "<td class='on'>●</td>"
+        if v == "○":
+            return "<td class='from'>○</td>"
+        if v == "·":
+            return "<td class='z'>·</td>"
+        return f"<td>{_inline(v)}</td>"
+    body = "".join("<tr>" + "".join(cell(c) for c in r) + "</tr>" for r in rows[1:])
     return f"<table class='{'mini' if mini else ''}'><tr>{h}</tr>{body}</table>"
 
 
@@ -132,15 +264,22 @@ def _inline(t: str) -> str:
     return t.replace("\n", "<br>")
 
 
-def page(lang: str, title: str, body: str, path_prefix: str = "") -> str:
+def page(lang: str, title: str, body: str, here: str = "") -> str:
     t = T[lang]
     root = "/" if lang == "ko" else "/en/"
+    ab = config.ABOUT_URL + ("?lang=en" if lang == "en" else "")
+
+    def l(key: str, href: str, text: str) -> str:
+        return f'<a class="l{" on" if here == key else ""}" href="{href}">{text}</a>'
+    links = (l("today", root, t["today"]) + l("growth", f"{root}growth", t["growth"]) + l("grid", f"{root}grid", t["grid"])
+             + l("", ab, t["about"]) + l("", ab + "#subscribe", t["subscribe"]) + l("", t["other_href"], t["other"]))
     return f"""<!DOCTYPE html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{html.escape(title)} · {t['label']}</title><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+<title>{html.escape(title)} · {t['label']}</title>
+<meta name="description" content="{html.escape(t['about_line'])}">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
 <style>{CSS}</style></head><body>
-<nav><a class="brand" href="{root}">{t['label']}</a><span class="sp"></span>
-<a class="l" href="{root}">{t['today']}</a><a class="l" href="{root}growth">{t['growth']}</a><a class="l" href="{root}grid">{t['grid']}</a>
-<a class="l" href="{config.ABOUT_URL}{'?lang=en' if lang == 'en' else ''}">{t['about']}</a><a class="l" href="{config.ABOUT_URL}{'?lang=en' if lang == 'en' else ''}#subscribe">{t['subscribe']}</a><a class="l" href="{t['other_href']}">{t['other']}</a></nav>
+<nav><a class="brand" href="{root}">{t['brand']}</a><span class="sp"></span>{links}</nav>
 <div class="wrap">{body}
 <div class="foot">{t['human']} <a href="{config.NEWSLETTER_URL}">{t['human_link']}</a><br>© 2026 엔터문화연구소 (Neo Vibe Lab) · Seoul</div></div></body></html>"""
 
@@ -196,22 +335,53 @@ def _pieces(lang: str) -> list[tuple[dict, str, str]]:
     return out
 
 
-def render_piece(lang: str, fm: dict, body: str) -> str:
-    t = T[lang]
-    hdr = re.search(r"`([^`]+)`", body)
-    hdr_html = f'<div class="hdr">{html.escape(hdr.group(1))}</div>' if hdr else ""
+def _chip(lang: str, fm: dict) -> str:
+    """좌표 칩 - 요인·화살표·시제. 시제가 바이브면 칩 자체가 라임으로 켜진다."""
+    if fm.get("type") == "weekly" or not fm.get("factor"):
+        return ""
+    tense = fm.get("tense", "")
+    if lang == "ko":
+        arrow = f"{fm['from_stage']} → {fm['to_stage']}"
+        word = config.TENSE_KO.get(tense, tense)
+        factor = fm["factor"]
+    else:
+        arrow = f"{config.STAGES_EN.get(fm['from_stage'], '')} → {config.STAGES_EN.get(fm['to_stage'], '')}"
+        word = tense
+        factor = config.FACTORS_EN.get(fm["factor"], fm["factor"])
+    on = " vibe" if tense == "vibe" else ""
+    return (f'<span class="chip{on}"><b>{html.escape(factor)}</b>{html.escape(arrow)}'
+            f'<span class="t">{html.escape(word)}</span></span>')
+
+
+def _meta_line(lang: str, fm: dict) -> str:
+    """날짜·회차 뒤에 검증·검수를 같이 둔다. 기록이 남는다는 것이 매 편에서 보여야 한다."""
     day = fm.get("day", "")
     if fm.get("type") == "weekly":
-        meta = f"{fm.get('date')} · " + ("주간 회고" if lang == "ko" else "Weekly review")
-    else:
-        meta = f"D+{day} · {fm.get('date')}" if lang == "ko" else f"Day {day} · {fm.get('date')}"
+        head = f"{fm.get('date')} · " + ("주간 회고" if lang == "ko" else "Weekly review")
+        return f'<p class="meta"><span>{head}</span></p>'
+    parts = [f"D+{day} · {fm.get('date')}" if lang == "ko" else f"Day {day} · {fm.get('date')}"]
+    ct, cv = fm.get("claims_total"), fm.get("claims_verified")
+    if ct:
+        parts.append((f"사실 검증 {cv}/{ct}" if lang == "ko" else f"facts {cv}/{ct}"))
+    rounds = fm.get("review_rounds")
+    if rounds:
+        w = (f"검수 {rounds}회" if lang == "ko" else f"review {rounds}")
+        if fm.get("unresolved"):
+            w += (" · 미해결" if lang == "ko" else " · unresolved")
+            parts.append(f'<span class="warn">{w}</span>')
+        else:
+            parts.append(w)
+    return '<p class="meta">' + "".join(f"<span>{x}</span>" for x in parts) + "</p>"
+
+
+def render_piece(lang: str, fm: dict, body: str) -> str:
     inner = md_to_html(body)
     # 독자 신호 위젯은 검수 기록 앞(원리 뒤)에 들어간다
     k = inner.rfind("<blockquote>")
     widget = feedback_widget(lang, fm.get("slug", ""))
     inner = (inner[:k] + widget + inner[k:]) if k >= 0 else inner + widget
-    return f"""<p class="label">{t['label']}</p>{hdr_html}<h1>{html.escape(fm.get('title',''))}</h1><p class="meta">{meta}</p>
-<div class="body">{inner}</div>"""
+    return (f"{_chip(lang, fm)}<h1>{html.escape(fm.get('title', ''))}</h1>{_meta_line(lang, fm)}"
+            f'<div class="body">{inner}</div>')
 
 
 def build() -> None:
@@ -232,29 +402,53 @@ def build() -> None:
         base = config.DIST_DIR / ("" if lang == "ko" else "en")
         base.mkdir(parents=True, exist_ok=True)
         pieces = _pieces(lang)
-        about = f'<div class="about">{t["about_line"]} <a href="{config.ABOUT_URL}{"?lang=en" if lang == "en" else ""}">{t["here"]}</a>.</div>'
-        # 개별 글
+        # 개별 글 - 소개 상자는 두지 않는다. 본문 머리의 실험 프레임이 같은 말을 한다(2026-09-09)
         for fm, body, slug in pieces:
-            io.open(base / f"{slug}.html", "w", encoding="utf-8").write(page(lang, fm.get("title", ""), about + render_piece(lang, fm, body)))
-        # 오늘의 글 + 목록
+            io.open(base / f"{slug}.html", "w", encoding="utf-8").write(
+                page(lang, fm.get("title", ""), render_piece(lang, fm, body), here="today"))
+
+        def _row(f: dict, slug: str) -> str:
+            if f.get("type") == "weekly":
+                meta = f'<span class="t2">{t["weekly"]}</span>'
+                right = f.get("date", "")
+            else:
+                factor = f.get("factor", "") if lang == "ko" else config.FACTORS_EN.get(f.get("factor", ""), "")
+                a, b2 = f.get("from_stage", ""), f.get("to_stage", "")
+                if lang == "en":
+                    a, b2 = config.STAGES_EN.get(a, ""), config.STAGES_EN.get(b2, "")
+                word = config.TENSE_KO.get(f.get("tense", ""), f.get("tense", "")) if lang == "ko" else f.get("tense", "")
+                meta = f'{html.escape(factor)} {html.escape(a)} → {html.escape(b2)} · <span class="t2">{html.escape(word)}</span>'
+                right = (f'D+{f.get("day")} · {f.get("date", "")[5:]}' if lang == "ko"
+                         else f'Day {f.get("day")} · {f.get("date", "")[5:]}')
+            return (f'<a href="{slug}"><span class="c"><span class="t">{html.escape(f.get("title", ""))}</span>'
+                    f'<span class="m">{meta}</span></span><span class="d">{right}</span></a>')
+
         if pieces:
             fm, body, slug = pieces[0]
-            def _meta(f):
-                if f.get("type") == "weekly":
-                    return ("주간 회고" if lang == "ko" else "Weekly review") + f' · {f.get("date")}'
-                return (f'D+{f.get("day")} · {f.get("date")} · {html.escape(f.get("factor",""))} '
-                        f'{html.escape(f.get("from_stage",""))} → {html.escape(f.get("to_stage",""))} · {f.get("tense")}')
-            lst = "".join(f'<a href="{s}"><div class="m">{_meta(f)}</div><div class="t">{html.escape(f.get("title",""))}</div></a>' for f, _, s in pieces[1:])
-            main = about + render_piece(lang, fm, body) + (f'<h2 class="label" style="margin-top:50px">{t["list"]}</h2><div class="list">{lst}</div>' if lst else "")
+            lst = "".join(_row(f, s2) for f, _, s2 in pieces[1:])
+            main = render_piece(lang, fm, body) + (
+                f'<h2 class="label" style="margin-top:54px">{t["list"]}</h2><div class="list">{lst}</div>' if lst else "")
         else:
-            main = about + f"<p>{t['empty']}</p>"
-        io.open(base / "index.html", "w", encoding="utf-8").write(page(lang, t["today"], main))
+            main = f"<p>{t['empty']}</p>"
+        io.open(base / "index.html", "w", encoding="utf-8").write(page(lang, t["today"], main, here="today"))
         # 성장
-        rows = "".join(
-            f"<tr><td>{s['day']}</td><td>{s['date']}</td><td><a href='{s['slug']}'>{html.escape(s['title_ko'] if lang == 'ko' else s['title_en'])}</a></td>"
-            f"<td>{html.escape(s['factor'])} {html.escape(s['from_stage'])}→{html.escape(s['to_stage'])}</td><td>{s['tense']}</td>"
-            f"<td>{'-' if s.get('agrees') is None else '=' if s.get('agrees') else '≠ ' + str(s.get('radar_tense'))}</td><td>{s['claims_verified']}/{s['claims_total']}</td>"
-            f"<td>{s['review_rounds']}{' · unresolved' if s['unresolved'] else ''}</td><td>{'●' if s['bet'] else ''}</td></tr>" for s in reversed(stats))
+        def _row_cells(s):
+            if lang == "ko":
+                coord = f"{s['factor']} {s['from_stage']}→{s['to_stage']}"
+                tense = config.TENSE_KO.get(s["tense"], s["tense"])
+                rv = f"{s['review_rounds']}회" + (" · 미해결" if s["unresolved"] else "")
+            else:
+                coord = (f"{config.FACTORS_EN.get(s['factor'], s['factor'])} "
+                         f"{config.STAGES_EN.get(s['from_stage'], '')}→{config.STAGES_EN.get(s['to_stage'], '')}")
+                tense = s["tense"]
+                rv = f"{s['review_rounds']}" + (" · unresolved" if s["unresolved"] else "")
+            radar = "-" if s.get("agrees") is None else ("=" if s.get("agrees") else "≠ " + str(s.get("radar_tense")))
+            title = html.escape(s["title_ko"] if lang == "ko" else s["title_en"])
+            return (f"<tr><td>{s['day']}</td><td>{s['date'][5:]}</td><td class='ttl'><a href='{s['slug']}'>{title}</a></td>"
+                    f"<td>{html.escape(coord)}</td><td>{html.escape(tense)}</td><td>{radar}</td>"
+                    f"<td>{s['claims_verified']}/{s['claims_total']}</td><td>{html.escape(rv)}</td>"
+                    f"<td>{'●' if s['bet'] else ''}</td></tr>")
+        rows = "".join(_row_cells(s) for s in reversed(stats))
         n = len(stats) or 1
         summary = {
             "verified": sum(s["claims_verified"] for s in stats) / max(1, sum(s["claims_total"] for s in stats)),
@@ -262,13 +456,22 @@ def build() -> None:
             "pass1": sum(1 for s in stats if s["review_rounds"] <= 1 and not s["unresolved"]) / n,
             "cells": len({(s["factor"], s["to_stage"]) for s in stats}),
         }
-        bets = "".join(f"<tr><td>{p['date']}</td><td>{html.escape(p['claim_ko'] if lang == 'ko' else p['claim_en'])}</td><td>{p['by_date']}</td><td>{html.escape(p['check_ko'] if lang == 'ko' else p['check_en'])}</td><td>{p['status']}</td></tr>" for p in reversed(preds))
+        bets = "".join(f"<tr><td>{p['date'][5:]}</td><td class='ttl'>{html.escape(p['claim_ko'] if lang == 'ko' else p['claim_en'])}</td>"
+                       f"<td>{p['by_date'][5:]}</td><td class='ttl'>{html.escape(p['check_ko'] if lang == 'ko' else p['check_en'])}</td>"
+                       f"<td>{'열림' if (lang == 'ko' and p['status'] == 'open') else p['status']}</td></tr>" for p in reversed(preds))
+        cards = [
+            (f"{summary['verified']:.0%}", "사실 검증" if lang == "ko" else "facts verified"),
+            (f"{summary['agree']:.0%}", "레이더와 일치" if lang == "ko" else "agrees with radar"),
+            (f"{summary['pass1']:.0%}", "검수 1회 통과" if lang == "ko" else "review pass@1"),
+            (f"{summary['cells']}/21", "격자 칸" if lang == "ko" else "grid cells"),
+            (f"{len(preds)}", "베팅" if lang == "ko" else "bets"),
+        ]
         g = (f"<p class='label'>{t['growth_title']}</p><h1>{'다섯 축' if lang == 'ko' else 'Five axes'}</h1>"
-             f"<table><tr><th>{'사실' if lang=='ko' else 'Facts'}</th><th>{'판정 일치' if lang=='ko' else 'Judgment agrees'}</th><th>{'논지 1회 통과' if lang=='ko' else 'Argument pass@1'}</th><th>{'격자 칸' if lang=='ko' else 'Grid cells'}</th><th>{'예측' if lang=='ko' else 'Prediction'}</th></tr>"
-             f"<tr><td>{summary['verified']:.0%}</td><td>{summary['agree']:.0%}</td><td>{summary['pass1']:.0%}</td><td>{summary['cells']}/21</td><td>{'기한 전' if lang=='ko' else 'pending'}</td></tr></table>"
-             f"<table><tr>{''.join(f'<th>{c}</th>' for c in t['cols'])}</tr>{rows}</table>"
-             f"<h2 class='label' style='margin-top:40px'>{t['bets']}</h2><table><tr>{''.join(f'<th>{c}</th>' for c in t['bet_cols'])}</tr>{bets or '<tr><td colspan=5>-</td></tr>'}</table>")
-        io.open(base / "growth.html", "w", encoding="utf-8").write(page(lang, t["growth"], g))
+             + '<div class="stats">' + "".join(f"<div><b>{v}</b><span>{k}</span></div>" for v, k in cards) + "</div>"
+             + f"<div class='tw'><table><tr>{''.join(f'<th>{c}</th>' for c in t['cols'])}</tr>{rows}</table></div>"
+             f"<h2 class='label' style='margin-top:44px'>{t['bets']}</h2>"
+             f"<div class='tw'><table><tr>{''.join(f'<th>{c}</th>' for c in t['bet_cols'])}</tr>{bets or '<tr><td colspan=5>-</td></tr>'}</table></div>")
+        io.open(base / "growth.html", "w", encoding="utf-8").write(page(lang, t["growth"], g, here="growth"))
         # 격자
         cells = {}
         for s in stats:
@@ -280,7 +483,13 @@ def build() -> None:
                 ss = cells.get((f, st), [])
                 gh += "<div>" + ("".join(f"<a href='{x['slug']}'>D+{x['day']}</a> " for x in ss) if ss else "<span class='z'>·</span>") + "</div>"
         gh += "</div>"
-        io.open(base / "grid.html", "w", encoding="utf-8").write(page(lang, t["grid"], f"<p class='label'>{t['grid_title']}</p><h1>{'21칸' if lang=='ko' else '21 cells'}</h1>" + gh))
+        filled = len({(s2["factor"], s2["to_stage"]) for s2 in stats})
+        note = (f"<p class='meta' style='border:none;margin-top:6px'><span>{filled}/21 " +
+                ("칸이 찼습니다. 빈 칸이 곧 소재 공백입니다.</span></p>" if lang == "ko"
+                 else "cells filled. An empty cell is a gap in coverage.</span></p>"))
+        io.open(base / "grid.html", "w", encoding="utf-8").write(
+            page(lang, t["grid"], f"<p class='label'>{t['grid_title']}</p><h1>{'21칸' if lang == 'ko' else '21 cells'}</h1>"
+                 + note + '<div class="tw">' + gh + "</div>", here="grid"))
     # 브랜드 자산 - 메일·아카이브가 이 URL을 쓴다(외부 호스팅 금지)
     src = config.ROOT / "assets"
     if src.exists():

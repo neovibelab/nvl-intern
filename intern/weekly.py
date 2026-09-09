@@ -183,7 +183,9 @@ REFLECT_KO = """[이번 주 내 기록]
 {style}
 「저는」으로 시작하는 자기소개를 하지 않는다. 본문만 쓴다."""
 
-REFLECT_EN = """[My record this week]
+REFLECT_EN = """**Write in English.** The system prompt is in Korean; the piece is not.
+
+[My record this week]
 {n} pieces · {cells} grid cells · tenses {tense} · factors {factor}
 {disagree} of {compared} comparable calls differed from the radar
 Facts verified {verified}/{claims} · passed review on first round {pass1}/{n} · unresolved {unresolved} · style gate fired {gate_hits}
@@ -203,7 +205,7 @@ Paragraph 3: reader signals and rules, including what I did not adopt and why.
 Paragraph 4: one thing I will change next week, small enough to keep.
 
 {style}
-Do not introduce yourself. Body only."""
+Do not introduce yourself. Body only. **English only - no Korean sentences.**"""
 
 
 def reflect(g: dict, lang: str) -> str:
