@@ -1,0 +1,28 @@
+name: 두뇌 접근 확인
+# BRAIN_PAT이 실제로 붙었는지만 본다. 글은 쓰지 않고 돈도 안 든다.
+#
+# 왜 따로 두나 - daily는 두뇌 체크아웃을 continue-on-error로 넘긴다(재료가 없다고 발행을 멈추면 안 되니까).
+# 그래서 토큰이 없거나 만료돼도 조용히 지나간다. 여기서만 실패를 소리 내게 한다.
+# 토큰 갱신·만료 의심 때 손으로 돌린다.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: 두뇌 체크아웃 (읽기 전용)
+        uses: actions/checkout@v4
+        with:
+          repository: neovibelab/virtual-brain
+          token: ${{ secrets.BRAIN_PAT }}
+          path: brain
+      - name: 재료 세기
+        run: |
+          W=$(ls brain/llm-wiki/wiki/*.md 2>/dev/null | wc -l)
+          L=$(ls brain/llm-wiki/raw/lexicon/*.md 2>/dev/null | wc -l)
+          echo "wiki $W 장 · lexicon $L 개"
+          test "$W" -gt 0 || { echo "::error::wiki가 비었다. 경로나 권한을 본다"; exit 1; }
+          echo "::notice::두뇌 접근 정상 - wiki $W · lexicon $L"
