@@ -26,6 +26,7 @@ def main() -> int:
     ap.add_argument("--hours", type=int, default=168, help="레이더 창(시간)")
     ap.add_argument("--no-brain", action="store_true")
     ap.add_argument("--rebuild", action="store_true", help="그날 로그의 판정·최종 원고로 발행물만 다시 만든다(LLM은 소재 요약·표기 정리만)")
+    ap.add_argument("--force", action="store_true", help="그날 이미 발행했어도 다시 쓴다")
     ap.add_argument("--weekly", action="store_true", help="요일과 무관하게 주간 회고를 쓴다")
     ap.add_argument("--daily", action="store_true", help="요일과 무관하게 데일리를 쓴다")
     args = ap.parse_args()
@@ -42,6 +43,10 @@ def main() -> int:
         publish._dump(config.LOG_DIR / f"{args.date}.json", {"date": args.date, "rest": True})
         return 0
     config.ensure_dirs()
+    # 하루 한 편. 손으로 돌린 날 예약 실행이 또 돌면 같은 날짜에 두 편이 생긴다(2026-09-10 신설).
+    if not args.force and any(x.get("date") == args.date for x in publish._load(config.DATA_DIR / "stats.json", [])):
+        print(f"  [rhythm] {args.date}는 이미 발행했다. 다시 쓰려면 --force")
+        return 0
     t0 = time.time()
     trace: dict = {"date": args.date, "steps": {}}
     print(f"== AI 인턴 1호 · {args.date} · model {config.MODEL_MAIN}")
