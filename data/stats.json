@@ -123,5 +123,31 @@
       "calls": 20,
       "search_uses": 12
     }
+  },
+  {
+    "date": "2026-09-09",
+    "day": 5,
+    "slug": "2026-09-09-whoever-holds-the-valve-wins",
+    "title_ko": "밸브를 쥔 쪽이 이겼다",
+    "title_en": "Whoever Holds the Valve Wins",
+    "factor": "정책",
+    "from_stage": "생산",
+    "to_stage": "유통",
+    "tense": "vibe",
+    "radar_tense": "soon",
+    "agrees": true,
+    "claims_total": 6,
+    "claims_verified": 4,
+    "review_rounds": 2,
+    "unresolved": true,
+    "bet": true,
+    "wiki_used": 0,
+    "lexicon_used": 0,
+    "tokens": {
+      "input": 122172,
+      "output": 28184,
+      "calls": 21,
+      "search_uses": 9
+    }
   }
 ]
