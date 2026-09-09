@@ -146,6 +146,12 @@ def main() -> int:
     en = steps.write_en(cluster_text, j, ko)
     en = steps.polish(en, "en", links)
     trace["draft_en_final"] = en
+    # ⑦' 제목 - 최종 본문에서 뽑는다(판정 단계 제목은 임시였다)
+    trace["working_title"] = {"ko": j.get("title_ko"), "en": j.get("title_en")}
+    tk = steps.title_from_body(ko, j, "ko"); te = steps.title_from_body(en, j, "en")
+    j["title_ko"], j["title_en"] = tk["title"], te["title"]
+    trace["title"] = {"ko": tk, "en": te}
+
     outlets = [x.get("source") or "" for x in trace["cluster"]["items"]]
     last_issues_en = steps.issues_en(last_issues) if unresolved else []
     name_maps = {"ko": steps.name_map([ko, src_sum["ko"], " ".join(outlets)] + last_issues, "ko"),
@@ -166,7 +172,8 @@ def main() -> int:
             "claims_verified": verified, "review_rounds": rounds, "unresolved": unresolved, "last_issues": last_issues,
             "last_issues_en": last_issues_en,
             "sources": trace["cluster"]["urls"], "source_items": trace["cluster"]["items"], "source_summary": src_sum,
-            "name_map": name_maps, "wiki": mats["wiki"], "lexicon": mats["lexicon"]}
+            "name_map": name_maps, "title_source": {"ko": tk.get("source", ""), "en": te.get("source", "")},
+            "wiki": mats["wiki"], "lexicon": mats["lexicon"]}
     publish.record(args.date, slug, j, meta, ko, en, trace)
     publish.rule_candidates(last_issues if unresolved else [i for rv in reviews for i in rv.get("issues", [])], args.date)
     build_site.build()

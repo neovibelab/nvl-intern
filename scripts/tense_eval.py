@@ -18,8 +18,13 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 
 from intern import config, radar, steps  # noqa: E402
 
-OLD_BLOCK = """- 시제 하나: vibe(아직 산업이 받아들이지 않았지만 조짐이 보이고 반복될 종류) / signal(지금 벌어지는 중, 누구나 찾을 수 있다) / background(끝났거나 한 번 있는 일)
-  기준 독자는 한국 엔터 실무자다. 해외에서 signal인 것이 한국에는 vibe일 수 있다."""
+OLD_BLOCK = """- 시제 하나. **기사 속성이 아니라 독자 위치 기준 판정이다.** 독자 = 한국 엔터 실무자.
+  - vibe(바이브): **아직 한국에 안 왔다 그리고 반복될 종류다. 둘 다여야 한다.**
+    해외에서 이미 벌어지는 중이어도 한국 실무자에게 안 왔으면 vibe다. 해외 진행형을 signal로 내리지 마라.
+    순수 추측은 vibe가 아니다. **지금 관측되는 조짐**을 `vibe_evidence`에 한 줄로 댄다. 못 대면 vibe가 아니다.
+  - signal(시그널): **한국에서** 지금 벌어지는 중이다. 국내 사업자·국내 정책 전환·국내 개최.
+  - background(배경): 끝났거나 한 번 있는 일이다.
+  **애매하면 vibe 쪽으로 올린다."""  # 2026-09-06~09-10에 쓰던 지리 축. 2026-09-10 폐기
 BLIND = {"radar_tense": None, "factor": None, "stage": None}
 OUT = pathlib.Path(__file__).resolve().parent.parent / "reports" / "tense"
 

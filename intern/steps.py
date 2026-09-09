@@ -282,6 +282,59 @@ def style_gate(text: str, lang: str = "ko") -> tuple[str, dict]:
     return final_gate(text, lang)
 
 
+# ── ⑦' 제목 - 본문에서 뽑는다 ──────────────────────────────────────────────
+# 판정 단계의 제목은 쓰기 전에 정한 것이라 지어낸 압축 문구가 된다(2026-09-10 실측: 6편 전부
+# 제목 문장이 본문에 없었다). 최종 본문을 놓고 **핵심 문장을 골라** 거기서 줄인다.
+
+def title_from_body(body: str, j: dict, lang: str) -> dict:
+    """핵심 문장 하나를 고르고 그 문장의 말로 제목을 만든다. 근거 문장을 함께 돌려준다."""
+    working = j.get("title_ko" if lang == "ko" else "title_en", "")
+    if lang == "ko":
+        prompt = f"""아래는 오늘 발행할 글의 최종 본문이다. 제목을 정한다.
+
+**본문에서 핵심 문장 하나를 그대로 고른다.** 논지를 가장 짧게 담은 문장, 또는 독자가 멈출 문장.
+그 문장의 **말을 써서** 제목을 만든다. 20자 안. 새 비유나 압축 문구를 지어내지 않는다.
+문장을 짧게 줄이거나 질문형으로 바꾸는 것까지가 허용 범위다.
+
+참고 - 쓰기 전에 잡아 둔 임시 제목은 「{working}」이다. **본문이 그 제목대로 안 갔으면 버린다.**
+
+JSON: {{"source":"본문에서 고른 문장 그대로","title":"20자 안"}}
+
+[본문]
+{body}"""
+    else:
+        prompt = f"""Below is the final body of today's piece. Choose the title.
+
+**Pick one sentence from the body, verbatim** - the one that carries the argument most compactly, or the one a reader stops on.
+Build the title **out of that sentence's own words**. Keep it short. Do not invent a new metaphor or a compressed slogan.
+Shortening the sentence or turning it into a question is the whole allowed range.
+
+The working title set before writing was "{working}". **Drop it if the body did not go there.**
+
+JSON: {{"source":"the sentence, verbatim","title":"short"}}
+
+[Body]
+{body}"""
+    try:
+        d = llm.ask_json(prompt, system=PERSONA, max_tokens=1500)
+    except Exception as e:  # noqa: BLE001
+        print(f"  [title] 실패 {type(e).__name__} · 임시 제목 유지")
+        return {"title": working, "source": "", "from_body": False}
+    title = str(d.get("title") or "").strip().strip('"')
+    src = str(d.get("source") or "").strip()
+    if not title or (lang == "ko" and len(title) > 32):
+        print(f"  [title] 형식 이상({len(title)}자) · 임시 제목 유지")
+        return {"title": working, "source": src, "from_body": False}
+    # 고른 문장이 실제 본문에 있는지 확인한다. 없으면 지어낸 것이다.
+    key = re.sub(r"\s", "", src)[:18]
+    ok = bool(key) and key in re.sub(r"\s", "", body)
+    if not ok:
+        print("  [title] 고른 문장이 본문에 없다 · 임시 제목 유지")
+        return {"title": working, "source": src, "from_body": False}
+    print(f"  [title] {lang} 「{title}」 ← {src[:44]}")
+    return {"title": title, "source": src, "from_body": True}
+
+
 # ── ⑥ 자기 검수 (별도 컨텍스트) ────────────────────────────────────────────
 
 REVIEWER = """너는 발행 전 검수자다. 집필자가 아니다. 관대하지 않다. 다섯 질문을 묻는다.
