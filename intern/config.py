@@ -50,8 +50,10 @@ FACTORS_EN = {"IP": "IP", "포맷": "Format", "테크": "Tech", "자본": "Capit
               "교차산업": "Cross-industry", "교차정체성": "Cross-identity"}
 STAGES_EN = {"생산": "production", "유통": "distribution", "소비": "consumption"}
 # 저장값(레이더) ↔ 공개 어휘
-TENSE_FROM_RADAR = {"soon": "vibe", "now": "signal", "done": "background", "brief": "background", None: None}
-TENSE_KO = {"vibe": "바이브", "signal": "시그널", "background": "배경"}
+# 세 번째 시제는 2026-09-10에 「배경」에서 「뉴스」로 바꿨다(대표 지시). 배경은 용도를 가리키는
+# 이름이었고 독자가 알아야 하는 것은 성격이다 - 흐름이 아니라 그날의 사건. 옛 값도 계속 읽는다.
+TENSE_FROM_RADAR = {"soon": "vibe", "now": "signal", "done": "news", "brief": "news", None: None}
+TENSE_KO = {"vibe": "바이브", "signal": "시그널", "news": "뉴스", "background": "뉴스"}
 
 # 2026-09-10 DNS 확인(A 76.76.21.21 · 프록시 꺼짐 · HTTPS 200)으로 정식 주소 복귀.
 SITE_URL = os.environ.get("INTERN_SITE_URL", "https://intern.neovibelab.com")

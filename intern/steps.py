@@ -42,7 +42,8 @@ TENSE_BLOCK = """- 시제 하나. **기사 속성이 아니라 판정이다.** �
     지리는 기준이 아니다 - 해외든 국내든, 주변에서 돌면 바이브이고 이미 주류면 시그널이다.
     순수 추측은 vibe가 아니다. **지금 관측되는 조짐**을 `vibe_evidence`에 한 줄로 댄다. 못 대면 vibe가 아니다.
   - signal(시그널): **이미 주류에서 벌어지는 중이다.** 차트·실적·공식 발표·대형 사업자의 움직임처럼 누구나 찾을 수 있다.
-  - background(배경): 끝났거나(완료된 인수합병·분기 실적·확정 판결) 한 번 있는 일이다(개별 계약·인물 발언·신곡 발매·행사 후기).
+  - news(뉴스): **흐름이 아니라 그날의 사건이다.** 끝났거나(완료된 인수합병·분기 실적·확정 판결)
+    한 번 있는 일이다(개별 계약·인물 발언·신곡 발매·행사 후기). 사실로는 값이 있어도 다음이 없다.
   **애매하면 vibe 쪽으로 올린다.** 잘못 올리면 사람이 내리지만 잘못 내리면 놓친다."""
 
 
@@ -73,7 +74,7 @@ def judge(cluster_text: str, radar: dict, materials: str) -> dict:
 - 원리(principle): 다른 업종이 이 사례에서 가져갈 원리 한 문장.
 
 JSON:
-{{"factor":"...","from_stage":"...","to_stage":"...","tense":"vibe|signal|background","tense_why":"한 줄",
+{{"factor":"...","from_stage":"...","to_stage":"...","tense":"vibe|signal|news","tense_why":"한 줄",
  "vibe_evidence":"vibe일 때만. 지금 관측되는 조짐 한 줄. 아니면 빈 문자열",
  "vibe_evidence_en":"같은 조짐을 영어로. vibe가 아니면 빈 문자열",
  "angle_ko":"...","angle_en":"...","title_ko":"...(20자 안)","title_en":"...",
@@ -85,7 +86,9 @@ JSON:
     for k in ("from_stage", "to_stage"):
         if d.get(k) not in config.STAGES:
             d[k] = radar.get("stage") or "유통"
-    if d.get("tense") not in ("vibe", "signal", "background"):
+    if d.get("tense") == "background":
+        d["tense"] = "news"          # 옛 어휘로 답해도 받는다(2026-09-10 개명)
+    if d.get("tense") not in ("vibe", "signal", "news"):
         d["tense"] = config.TENSE_FROM_RADAR.get(radar.get("radar_tense")) or "signal"
     # 조짐을 못 댄 vibe는 추측이다. 정본 규칙: 「곧」은 순수 추측이 아니다.
     if d.get("tense") == "vibe" and not str(d.get("vibe_evidence") or "").strip():
