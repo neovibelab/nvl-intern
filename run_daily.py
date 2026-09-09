@@ -72,6 +72,9 @@ def main() -> int:
     # ② 재료
     mats = {"text": "", "wiki": [], "lexicon": []} if args.no_brain else brain.retrieve(cluster_text)
     trace["materials"] = {"wiki": mats["wiki"], "lexicon": mats["lexicon"]}
+    if not (mats["wiki"] or mats["lexicon"]):
+        # BRAIN_PAT이 없거나 만료되면 여기가 조용히 빈다. 로그에 한 줄이라도 남긴다.
+        print(f"  [brain] 재료 없음 - 두뇌를 못 읽었다({config.BRAIN_DIR}). 관점 렌즈 없이 쓴다")
 
     # ③ 판정
     j = steps.judge(cluster_text, pick, mats["text"])

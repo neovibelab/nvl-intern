@@ -112,6 +112,7 @@ def gather(date: str) -> dict:
         "unresolved": sum(1 for s in rows if s.get("unresolved")),
         "pass1": sum(1 for s in rows if s.get("review_rounds", 9) <= 1 and not s.get("unresolved")),
         "gate_hits": sum(1 for g in gates if g.get("revised")),
+        "no_brain": sum(1 for s in rows if (s.get("wiki_used") or 0) + (s.get("lexicon_used") or 0) == 0),
         "issues": issues,
         "bets_new": [p for p in preds if p["date"] in {s["date"] for s in rows}],
         "bets_open": [p for p in preds if p.get("status") == "open"],
@@ -165,6 +166,7 @@ REFLECT_KO = """[이번 주 내 기록]
 편수 {n} · 격자 {cells}칸 · 시제 {tense} · 요인 {factor}
 레이더와 비교 가능했던 {compared}건 중 {disagree}건 불일치
 사실 검증 {verified}/{claims} · 검수 1회 통과 {pass1}/{n} · 미해결 {unresolved} · 기계 게이트 작동 {gate_hits}회
+두뇌 재료 없이 쓴 편 {no_brain}/{n} (0이 아니면 연구소 관점 렌즈 없이 쓴 날이다)
 새 베팅 {bets_new}건 · 열린 베팅 {bets_open}건
 {signals}
 
@@ -189,6 +191,7 @@ REFLECT_EN = """**Write in English.** The system prompt is in Korean; the piece 
 {n} pieces · {cells} grid cells · tenses {tense} · factors {factor}
 {disagree} of {compared} comparable calls differed from the radar
 Facts verified {verified}/{claims} · passed review on first round {pass1}/{n} · unresolved {unresolved} · style gate fired {gate_hits}
+Pieces written without the lab's own lenses: {no_brain}/{n}
 New bets {bets_new} · open bets {bets_open}
 {signals}
 
@@ -215,7 +218,8 @@ def reflect(g: dict, lang: str) -> str:
         tense=dict(g["tense"]), factor=dict(g["factor"]),
         compared=g["compared"], disagree=g["disagree"],
         verified=g["verified"], claims=g["claims"], pass1=g["pass1"], unresolved=g["unresolved"],
-        gate_hits=g["gate_hits"], bets_new=len(g["bets_new"]), bets_open=len(g["bets_open"]),
+        gate_hits=g["gate_hits"], no_brain=g["no_brain"],
+        bets_new=len(g["bets_new"]), bets_open=len(g["bets_open"]),
         signals=_signal_line(g, lang),
         issues="\n".join(f"- {i}" for i in g["issues"][:12]) or "(없음)",
         promoted=len(g["promoted"]), pending=len(g["pending_rules"]),

@@ -443,12 +443,13 @@ def _summary_cards(lang: str, stats: list, preds: list) -> list:
     pass1 = sum(1 for s in stats if s["review_rounds"] <= 1 and not s["unresolved"]) / n
     cells = len({(s["factor"], s["to_stage"]) for s in stats})
     ko = lang == "ko"
+    with_brain = sum(1 for s in stats if (s.get("wiki_used") or 0) + (s.get("lexicon_used") or 0) > 0)
     return [
         (f"{verified:.0%}", "사실 검증" if ko else "facts verified"),
         (f"{agree:.0%}", "레이더와 일치" if ko else "agrees with radar"),
         (f"{pass1:.0%}", "검수 1회 통과" if ko else "review pass@1"),
         (f"{cells}/21", "격자 칸" if ko else "grid cells"),
-        (f"{len(preds)}", "베팅" if ko else "bets"),
+        (f"{with_brain}/{len(stats)}", "재료 붙은 편" if ko else "with materials"),
     ]
 
 
