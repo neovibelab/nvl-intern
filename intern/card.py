@@ -94,14 +94,14 @@ def render(fm: dict, lang: str, out: pathlib.Path) -> bool:
     y = 74
     if LOGO.exists():
         logo = Image.open(LOGO).convert("RGBA")
-        logo = logo.resize((236, 59), Image.LANCZOS)
+        logo = logo.resize((320, 80), Image.LANCZOS)
         im.paste(logo, (pad, y), logo)
     tag = "AI 인턴 01" if lang == "ko" else "AI Intern 01"
-    d.text((pad + 256, y + 20), tag, font=f_tag, fill=DIM)
+    d.text((pad + 344, y + 29), tag, font=f_tag, fill=DIM)
 
     # 좌표 칩
     chip = _chip_text(lang, fm)
-    cy = 186
+    cy = 196
     cw = d.textlength(chip, font=f_chip) + 40
     vibe = fm.get("tense") == "vibe"
     d.rectangle([pad, cy, pad + cw, cy + 52], fill=(28, 34, 20) if vibe else CARD,
@@ -111,7 +111,7 @@ def render(fm: dict, lang: str, out: pathlib.Path) -> bool:
     # 제목
     title = (fm.get("title") or "").strip()
     lines = _wrap(d, title, f_title, W - pad * 2, 3)
-    ty = 276
+    ty = 286
     for ln in lines:
         d.text((pad, ty), ln, font=f_title, fill=(245, 245, 239))
         ty += 84
@@ -137,8 +137,8 @@ def render_default(lang: str, out: pathlib.Path) -> bool:
     d.rectangle([0, 0, W, 6], fill=LIME)
     pad = 72
     if LOGO.exists():
-        logo = Image.open(LOGO).convert("RGBA").resize((280, 70), Image.LANCZOS)
-        im.paste(logo, (pad, 86), logo)
+        logo = Image.open(LOGO).convert("RGBA").resize((400, 100), Image.LANCZOS)
+        im.paste(logo, (pad, 74), logo)
     f_h = ImageFont.truetype(str(BOLD), 60)
     f_s = ImageFont.truetype(str(REG), 27)
     head = ("AI 인턴이 매일 엔터 산업을 읽고,\n아직 오지 않은 변화를 먼저 씁니다." if lang == "ko"
