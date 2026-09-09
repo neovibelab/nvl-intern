@@ -13,7 +13,7 @@ import json
 import sys
 import time
 
-from intern import config, llm, radar, brain, steps, publish, build_site, mail, weekly
+from intern import config, llm, radar, brain, steps, publish, build_site, mail, weekly, form
 
 MAX_REVIEW_ROUNDS = 2
 
@@ -148,7 +148,8 @@ def main() -> int:
     trace["draft_en_final"] = en
     # ⑦' 제목 - 최종 본문에서 뽑는다(판정 단계 제목은 임시였다)
     trace["working_title"] = {"ko": j.get("title_ko"), "en": j.get("title_en")}
-    tk = steps.title_from_body(ko, j, "ko"); te = steps.title_from_body(en, j, "en")
+    nouns = form.source_nouns(trace["cluster"]["items"], ko)
+    tk = steps.title_from_body(ko, j, "ko", nouns); te = steps.title_from_body(en, j, "en", nouns)
     j["title_ko"], j["title_en"] = tk["title"], te["title"]
     trace["title"] = {"ko": tk, "en": te}
 
@@ -173,7 +174,11 @@ def main() -> int:
             "last_issues_en": last_issues_en,
             "sources": trace["cluster"]["urls"], "source_items": trace["cluster"]["items"], "source_summary": src_sum,
             "name_map": name_maps, "title_source": {"ko": tk.get("source", ""), "en": te.get("source", "")},
+            "form": form.measure(j["title_ko"], ko, trace["cluster"]["items"]),
             "wiki": mats["wiki"], "lexicon": mats["lexicon"]}
+    trace["form"] = meta["form"]
+    print(f"  [form] 점수 {form.score(meta['form'])} · 제목 고유명사 {meta['form']['title_noun']} · "
+          f"리드 구체 {meta['form']['lead_concrete']} · AI tell {meta['form']['ai_tell']} · 문장중앙 {meta['form']['sent_med']}자")
     publish.record(args.date, slug, j, meta, ko, en, trace)
     publish.rule_candidates(last_issues if unresolved else [i for rv in reviews for i in rv.get("issues", [])], args.date)
     build_site.build()

@@ -6,7 +6,7 @@ import json
 import re
 import shutil
 
-from . import card, config, publish
+from . import card, config, form, publish
 
 CSS = """:root{--lime:#D6FF92;--lime-dim:rgba(214,255,146,.10);--black:#0A0A0A;--card:#121212;--edge:#242424;--ink:#E4E4DC;--dim:#8C8C84;--line:rgba(255,255,255,.07);--white:#F5F5EF}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -186,7 +186,7 @@ T = {
                list="지난 글", subscribe="구독", empty="아직 글이 없습니다.", label="엔터 바이브 리서치 · AI 인턴 1호",
                about_line="AI 인턴 1호가 매일 엔터 산업을 읽고 씁니다. 사람이 고르지도 고치지도 않습니다. 이 실험이 무엇인지는",
                here="여기", human="AI가 매일 읽고 정리합니다. 관점은 사람이 씁니다.", human_link="엔터문화연구소 뉴스레터",
-               growth_title="성장 지표", cols=["날", "날짜", "제목", "좌표", "시제", "레이더와", "검증", "검수", "베팅"],
+               growth_title="성장 지표", cols=["날", "날짜", "제목", "좌표", "시제", "레이더와", "검증", "검수", "베팅", "형식"],
                grid_title="격자 21칸 · 인턴이 쓴 자리", empty_cell="", bets="베팅 대장", bet_cols=["날짜", "명제", "기한", "확인", "상태"]),
     "en": dict(today="Today", growth="Growth", grid="Grid", about="What this is", other="KO", other_href="/",
                brand="Entertainment Vibe Research", lab_name="Neo Vibe Lab", weekly="Weekly review", about_short="About", home="Home",
@@ -197,7 +197,7 @@ T = {
                list="Earlier pieces", subscribe="Subscribe", empty="No pieces yet.", label="Entertainment Vibe Research · AI Intern 01",
                about_line="AI Intern 01 reads and writes about the entertainment industry every day. No human picks or edits. What this experiment is:",
                here="here", human="AI reads and sorts every day. The point of view is written by a human.", human_link="Neo Vibe Lab newsletter",
-               growth_title="Growth metrics", cols=["Day", "Date", "Title", "Grid", "Tense", "vs radar", "Verified", "Review", "Bet"],
+               growth_title="Growth metrics", cols=["Day", "Date", "Title", "Grid", "Tense", "vs radar", "Verified", "Review", "Bet", "Form"],
                grid_title="21 cells · where the intern has written", empty_cell="", bets="Bets", bet_cols=["Date", "Claim", "By", "Check", "Status"]),
 }
 
@@ -447,12 +447,15 @@ def _summary_cards(lang: str, stats: list, preds: list) -> list:
     cells = len({(s["factor"], s["to_stage"]) for s in stats})
     ko = lang == "ko"
     with_brain = sum(1 for s in stats if (s.get("wiki_used") or 0) + (s.get("lexicon_used") or 0) > 0)
+    forms = [s["form"] for s in stats if s.get("form")]
+    form_avg = round(sum(form.score(f) for f in forms) / len(forms)) if forms else 0
     return [
         (f"{verified:.0%}", "사실 검증" if ko else "facts verified"),
         (f"{agree:.0%}", "레이더와 일치" if ko else "agrees with radar"),
         (f"{pass1:.0%}", "검수 1회 통과" if ko else "review pass@1"),
         (f"{cells}/21", "격자 칸" if ko else "grid cells"),
         (f"{with_brain}/{len(stats)}", "재료 붙은 편" if ko else "with materials"),
+        (f"{form_avg}", "형식 점수" if ko else "form score"),
     ]
 
 
@@ -580,10 +583,15 @@ def build() -> None:
                 rv = f"{s['review_rounds']}" + (" · unresolved" if s["unresolved"] else "")
             radar = "-" if s.get("agrees") is None else ("=" if s.get("agrees") else "≠ " + str(s.get("radar_tense")))
             title = html.escape(s["title_ko"] if lang == "ko" else s["title_en"])
+            f0 = s.get("form") or {}
+            fm_cell = f"{form.score(f0)}" if f0 else "-"
+            if f0:
+                marks = ("이름" if f0.get("title_noun") else "") + (" 리드" if f0.get("lead_concrete") else "")
+                fm_cell += f" <span style='color:var(--dim)'>{marks.strip() or '-'}</span>"
             return (f"<tr><td>{s['day']}</td><td>{s['date'][5:]}</td><td class='ttl'><a href='{s['slug']}'>{title}</a></td>"
                     f"<td>{html.escape(coord)}</td><td>{html.escape(tense)}</td><td>{radar}</td>"
                     f"<td>{s['claims_verified']}/{s['claims_total']}</td><td>{html.escape(rv)}</td>"
-                    f"<td>{'●' if s['bet'] else ''}</td></tr>")
+                    f"<td>{'●' if s['bet'] else ''}</td><td>{fm_cell}</td></tr>")
         rows = "".join(_row_cells(s) for s in reversed(stats))
         n = len(stats) or 1
         summary = {

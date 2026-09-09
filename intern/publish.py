@@ -194,6 +194,7 @@ def record(date: str, slug: str, j: dict, meta: dict, ko_body: str, en_body: str
         "claims_total": meta.get("claims_total", 0), "claims_verified": meta.get("claims_verified", 0),
         "review_rounds": meta.get("review_rounds", 0), "unresolved": bool(meta.get("unresolved")),
         "bet": bool(j.get("bet")), "wiki_used": len(meta.get("wiki", [])), "lexicon_used": len(meta.get("lexicon", [])),
+        "form": meta.get("form", {}),
         "tokens": trace.get("usage", {}),
     })
     stats.sort(key=lambda s: s["date"])

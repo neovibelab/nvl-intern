@@ -13,7 +13,7 @@ import os
 import urllib.parse
 import urllib.request
 
-from . import config, llm, publish
+from . import config, form, llm, publish
 
 FB_KINDS_KO = {"agree": "맞는 말이다", "obvious": "뻔하다", "weak": "근거가 약하다", "off": "관점이 어긋난다"}
 FB_API = "https://nvl-vibe-radar.vercel.app/api/intern-feedback"
@@ -113,12 +113,30 @@ def gather(date: str) -> dict:
         "pass1": sum(1 for s in rows if s.get("review_rounds", 9) <= 1 and not s.get("unresolved")),
         "gate_hits": sum(1 for g in gates if g.get("revised")),
         "no_brain": sum(1 for s in rows if (s.get("wiki_used") or 0) + (s.get("lexicon_used") or 0) == 0),
+        "form": _form_summary(rows),
         "issues": issues,
         "bets_new": [p for p in preds if p["date"] in {s["date"] for s in rows}],
         "bets_open": [p for p in preds if p.get("status") == "open"],
         "promoted": [k for k, c in cands.items() if c.get("promoted")],
         "pending_rules": [(k, c["count"]) for k, c in cands.items() if not c.get("promoted") and c["count"] >= 2],
         "signals": reader_signals([s["slug"] for s in rows]),
+    }
+
+
+def _form_summary(rows: list[dict]) -> dict:
+    """형식 지표 한 주치. 인턴에게 고치는 법을 주지 않고 숫자만 준다."""
+    fs = [r["form"] for r in rows if r.get("form")]
+    if not fs:
+        return {}
+    n = len(fs)
+    return {
+        "n": n,
+        "score": round(sum(form.score(f) for f in fs) / n),
+        "title_noun": sum(1 for f in fs if f.get("title_noun")),
+        "lead_concrete": sum(1 for f in fs if f.get("lead_concrete")),
+        "ai_tell": sum(f.get("ai_tell", 0) for f in fs),
+        "hedge_10k": round(sum(f.get("hedge_10k", 0) for f in fs) / n, 1),
+        "sent_med": round(sum(f.get("sent_med", 0) for f in fs) / n),
     }
 
 
@@ -167,6 +185,9 @@ REFLECT_KO = """[이번 주 내 기록]
 레이더와 비교 가능했던 {compared}건 중 {disagree}건 불일치
 사실 검증 {verified}/{claims} · 검수 1회 통과 {pass1}/{n} · 미해결 {unresolved} · 기계 게이트 작동 {gate_hits}회
 두뇌 재료 없이 쓴 편 {no_brain}/{n} (0이 아니면 연구소 관점 렌즈 없이 쓴 날이다)
+
+[형식·접근성 - 기계가 센 것. 고치는 법은 아무도 안 알려준다]
+{form_line}
 새 베팅 {bets_new}건 · 열린 베팅 {bets_open}건
 {signals}
 
@@ -176,11 +197,13 @@ REFLECT_KO = """[이번 주 내 기록]
 [규칙]
 이미 올린 자기 규칙 {promoted}개 · 3회 재현을 못 채워 대기 중인 후보 {pending}개
 
-위 기록만 재료다. 새 사건을 찾지 않는다. 한국어 700~900자로 이번 주 회고를 쓴다.
+위 기록만 재료다. 새 사건을 찾지 않는다. 한국어 800~1000자로 이번 주 회고를 쓴다.
 1문단: 이번 주 무엇을 봤나. 좌표와 시제 분포가 말하는 것.
 2문단: **무엇을 틀렸나.** 검수 지적에서 반복된 것을 지목한다. 변명하지 않는다.
 3문단: 독자 신호와 규칙. 무엇을 규칙으로 올렸고 무엇을 안 올렸는지, 안 올린 이유까지.
-4문단: **다음 주에 바꿀 것 하나.** 지킬 수 있는 크기로 구체적으로. 각오나 다짐으로 끝내지 않는다.
+4문단: **형식과 접근성.** 위 숫자를 그대로 읽는다. 제목이 무슨 얘긴지 알려줬나, 첫 문단이 사건을 세웠나,
+AI 티가 늘었나. **누가 고치는 법을 알려주지 않았다** - 숫자만 보고 스스로 판단한다.
+5문단: **다음 주에 바꿀 것 하나.** 지킬 수 있는 크기로 구체적으로. 각오나 다짐으로 끝내지 않는다.
 
 {style}
 「저는」으로 시작하는 자기소개를 하지 않는다. 본문만 쓴다."""
@@ -192,6 +215,9 @@ REFLECT_EN = """**Write in English.** The system prompt is in Korean; the piece 
 {disagree} of {compared} comparable calls differed from the radar
 Facts verified {verified}/{claims} · passed review on first round {pass1}/{n} · unresolved {unresolved} · style gate fired {gate_hits}
 Pieces written without the lab's own lenses: {no_brain}/{n}
+
+[Form and accessibility - counted by machine. Nobody tells you how to fix it]
+{form_line}
 New bets {bets_new} · open bets {bets_open}
 {signals}
 
@@ -201,14 +227,28 @@ New bets {bets_new} · open bets {bets_open}
 [Rules]
 {promoted} self-rules promoted so far · {pending} candidates waiting for a third recurrence
 
-Only this record is material. Do not look for new events. Write 350 to 450 words.
+Only this record is material. Do not look for new events. Write 400 to 500 words.
 Paragraph 1: what I looked at, and what the grid and tense spread say.
 Paragraph 2: what I got wrong. Name the repeated review note. No excuses.
 Paragraph 3: reader signals and rules, including what I did not adopt and why.
-Paragraph 4: one thing I will change next week, small enough to keep.
+Paragraph 4: form and accessibility. Read the numbers above as they are. Did the titles say what the piece is about, did the leads set the event, did the AI tells go up. Nobody told me how to fix any of it.
+Paragraph 5: one thing I will change next week, small enough to keep.
 
 {style}
 Do not introduce yourself. Body only. **English only - no Korean sentences.**"""
+
+
+def _form_line(g: dict, lang: str) -> str:
+    f = g.get("form") or {}
+    if not f:
+        return "(측정 없음)" if lang == "ko" else "(not measured)"
+    if lang == "ko":
+        return (f"형식 점수 {f['score']}/100 · 제목에 소재 고유명사가 있던 편 {f['title_noun']}/{f['n']} · "
+                f"첫 문단에 누가 무엇을 언제가 있던 편 {f['lead_concrete']}/{f['n']} · "
+                f"AI tell(대조 공식·메타 수사·줄표) 합계 {f['ai_tell']} · 헤지 만자당 {f['hedge_10k']} · 문장 중앙 {f['sent_med']}자")
+    return (f"Form score {f['score']}/100 · titles carrying a proper noun {f['title_noun']}/{f['n']} · "
+            f"leads with who/what/when {f['lead_concrete']}/{f['n']} · "
+            f"AI tells {f['ai_tell']} · hedges per 10k {f['hedge_10k']} · median sentence {f['sent_med']}")
 
 
 def reflect(g: dict, lang: str) -> str:
@@ -218,7 +258,7 @@ def reflect(g: dict, lang: str) -> str:
         tense=dict(g["tense"]), factor=dict(g["factor"]),
         compared=g["compared"], disagree=g["disagree"],
         verified=g["verified"], claims=g["claims"], pass1=g["pass1"], unresolved=g["unresolved"],
-        gate_hits=g["gate_hits"], no_brain=g["no_brain"],
+        gate_hits=g["gate_hits"], no_brain=g["no_brain"], form_line=_form_line(g, lang),
         bets_new=len(g["bets_new"]), bets_open=len(g["bets_open"]),
         signals=_signal_line(g, lang),
         issues="\n".join(f"- {i}" for i in g["issues"][:12]) or "(없음)",
