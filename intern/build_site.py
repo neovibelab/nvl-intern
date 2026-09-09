@@ -27,7 +27,7 @@ nav a.l:hover{color:var(--lime)}nav a.l.on{color:var(--white);border-bottom-colo
 /* 글 머리 */
 .chip{display:inline-flex;align-items:center;gap:9px;font-family:'DM Mono',monospace;font-size:12.5px;padding:5px 12px;border:1px solid var(--edge);color:var(--dim)}
 .chip b{font-weight:500;color:var(--white)}
-.chip .t{color:var(--lime)}
+.chip .tn{color:var(--lime)}
 .chip.vibe{border-color:rgba(214,255,146,.4);background:var(--lime-dim)}
 h1{font-size:clamp(27px,4.2vw,40px);font-weight:900;letter-spacing:-.025em;line-height:1.22;margin:16px 0 14px;color:var(--white)}
 .meta{color:var(--dim);font-size:11.5px;font-family:'DM Mono','Noto Sans KR',monospace;display:flex;flex-wrap:wrap;gap:6px 16px;padding-bottom:20px;border-bottom:1px solid var(--line);margin-bottom:26px}
@@ -58,7 +58,7 @@ ul.src-list a{color:var(--ink);text-decoration:none}ul.src-list a:hover{color:va
 /* 조짐·베팅·원리 */
 p.evidence,p.bet{font-size:14px;line-height:1.8;color:var(--ink);background:var(--card);border-left:2px solid var(--edge);padding:12px 16px;margin:0 0 20px}
 p.evidence{border-left-color:var(--lime)}
-p.evidence strong,p.bet strong{color:var(--lime);font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+p.evidence strong,p.bet strong{display:block;margin-bottom:6px;color:var(--lime);font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
 p.principle{font-size:17px;line-height:1.8;color:var(--white);border-left:2px solid var(--lime);padding:2px 0 2px 18px;margin:30px 0 22px;font-weight:500}
 p.principle strong{display:block;color:var(--lime);font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:7px;font-weight:500}
 
@@ -87,11 +87,34 @@ table.mini td.on{color:var(--lime);font-size:13px;line-height:1;background:rgba(
 table.mini td.from{color:var(--white);background:rgba(255,255,255,.04)}
 table.mini td.z{color:#2B2B2B}
 
+/* 홈 */
+.hero{padding:8px 0 34px;border-bottom:1px solid var(--line);margin-bottom:30px}
+.hero h1{font-size:clamp(25px,3.6vw,34px);line-height:1.42;letter-spacing:-.02em;margin:14px 0 16px;font-weight:900}
+.hero-sub{font-size:14.5px;line-height:1.85;color:var(--dim);max-width:560px;margin-bottom:20px}
+.hero-run{display:flex;flex-wrap:wrap;gap:8px 10px;margin-bottom:22px}
+.hero-run span{font-family:'DM Mono','Noto Sans KR',monospace;font-size:11px;color:var(--dim);border:1px solid var(--edge);padding:4px 10px}
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-block;font-family:'DM Mono','Noto Sans KR',monospace;font-size:12px;letter-spacing:.04em;padding:11px 20px;background:var(--lime);color:var(--black);text-decoration:none;font-weight:500}
+.btn:hover{background:var(--white)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--edge)}
+.btn.ghost:hover{border-color:var(--lime);color:var(--lime)}
+.today-card{display:block;background:var(--card);border:1px solid var(--edge);padding:20px 20px 18px;text-decoration:none;transition:border-color .15s}
+.today-card:hover{border-color:rgba(214,255,146,.45)}
+.today-card .k{display:block;color:var(--lime);font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+.today-card .chip{margin-bottom:12px}
+.today-card .t{display:block;font-size:24px;font-weight:900;color:var(--white);letter-spacing:-.02em;line-height:1.3;margin-bottom:10px}
+.today-card:hover .t{color:var(--lime)}
+.today-card .s{display:block;font-size:14px;line-height:1.8;color:var(--dim);margin-bottom:14px}
+.today-card .go{font-family:'DM Mono',monospace;font-size:12px;color:var(--lime)}
+.more{margin:-16px 0 0;text-align:right}
+.more a{font-family:'DM Mono','Noto Sans KR',monospace;font-size:11.5px;color:var(--dim);text-decoration:none}
+.more a:hover{color:var(--lime)}
+
 /* 지난 글 */
 .list{margin-top:10px}
 .list a{display:flex;gap:18px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none}
 .list a:hover .t{color:var(--lime)}
-.list .c{flex:1;min-width:0}
+.list .c{flex:1;min-width:0;display:flex;flex-direction:column}
 .list .t{font-size:17px;font-weight:700;color:var(--white);line-height:1.4;margin-bottom:5px}
 .list .m{color:var(--dim);font-size:11.5px;font-family:'DM Mono','Noto Sans KR',monospace}
 .list .m .t2{color:var(--lime)}
@@ -131,7 +154,12 @@ table.mini td.z{color:#2B2B2B}
 .foot{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);color:var(--dim);font-size:11.5px;line-height:1.9;font-family:'DM Mono','Noto Sans KR',monospace}
 .foot a{color:var(--ink);text-decoration:none}.foot a:hover{color:var(--lime)}
 
+nav .short{display:none}
 @media(max-width:600px){
+nav{gap:14px;padding:0 18px}
+nav .brand{font-size:0}
+nav .full{display:none}nav .short{display:inline}
+nav a.l[data-k="home"]{display:none}
 .wrap{padding:32px 18px 70px}
 h1{margin:13px 0 12px}
 .body p{font-size:16px;line-height:1.9}
@@ -140,18 +168,29 @@ p.principle{font-size:16px}
 .grid>div{padding:9px 7px;min-height:46px}
 .list a{gap:12px}
 .list .t{font-size:16px}
+.hero{padding-top:0}
+.today-card .t{font-size:20px}
+.hero-cta .btn{flex:1;text-align:center}
 }"""
 
 T = {
     "ko": dict(today="오늘", growth="성장", grid="격자", about="이 실험이 무엇인가", other="EN", other_href="/en/",
-               brand="엔터 바이브 리서치", weekly="주간 회고",
+               brand="엔터 바이브 리서치", weekly="주간 회고", about_short="소개", home="홈",
+               hero="AI 인턴이 매일 엔터 산업을 읽고,<br>아직 오지 않은 변화를 먼저 씁니다.",
+               hero_sub="월요일부터 금요일까지 하루 한 편, 토요일에 그 주를 스스로 돌아봅니다. 소재도 관점도 사람이 고르지 않고, 틀린 날도 그대로 둡니다.",
+               latest="오늘의 글", read="읽기", all_pieces="지난 글 전체", sub_cta="구독하기", running="일째 · ",
+               pieces_word="편 발행", grid_word="격자 21칸", growth_link="지표 전부 보기",
                list="지난 글", subscribe="구독", empty="아직 글이 없습니다.", label="엔터 바이브 리서치 · AI 인턴 1호",
                about_line="AI 인턴 1호가 매일 엔터 산업을 읽고 씁니다. 사람이 고르지도 고치지도 않습니다. 이 실험이 무엇인지는",
                here="여기", human="AI가 매일 읽고 정리합니다. 관점은 사람이 씁니다.", human_link="엔터문화연구소 뉴스레터",
                growth_title="성장 지표", cols=["날", "날짜", "제목", "좌표", "시제", "레이더와", "검증", "검수", "베팅"],
                grid_title="격자 21칸 · 인턴이 쓴 자리", empty_cell="", bets="베팅 대장", bet_cols=["날짜", "명제", "기한", "확인", "상태"]),
     "en": dict(today="Today", growth="Growth", grid="Grid", about="What this is", other="KO", other_href="/",
-               brand="Entertainment Vibe Research", weekly="Weekly review",
+               brand="Entertainment Vibe Research", weekly="Weekly review", about_short="About", home="Home",
+               hero="An AI intern reads the entertainment industry<br>and writes what has not arrived yet.",
+               hero_sub="One piece a day Monday to Friday, and a review of its own week on Saturday. No human picks the topic or edits the text, and the days it gets things wrong stay up.",
+               latest="Today", read="Read", all_pieces="All pieces", sub_cta="Subscribe", running=" days in · ",
+               pieces_word=" pieces", grid_word="21 cells", growth_link="See all metrics",
                list="Earlier pieces", subscribe="Subscribe", empty="No pieces yet.", label="Entertainment Vibe Research · AI Intern 01",
                about_line="AI Intern 01 reads and writes about the entertainment industry every day. No human picks or edits. What this experiment is:",
                here="here", human="AI reads and sorts every day. The point of view is written by a human.", human_link="Neo Vibe Lab newsletter",
@@ -264,15 +303,18 @@ def _inline(t: str) -> str:
     return t.replace("\n", "<br>")
 
 
-def page(lang: str, title: str, body: str, here: str = "") -> str:
+def page(lang: str, title: str, body: str, here: str = "", latest: str = "") -> str:
     t = T[lang]
     root = "/" if lang == "ko" else "/en/"
     ab = config.ABOUT_URL + ("?lang=en" if lang == "en" else "")
 
-    def l(key: str, href: str, text: str) -> str:
-        return f'<a class="l{" on" if here == key else ""}" href="{href}">{text}</a>'
-    links = (l("today", root, t["today"]) + l("growth", f"{root}growth", t["growth"]) + l("grid", f"{root}grid", t["grid"])
-             + l("", ab, t["about"]) + l("", ab + "#subscribe", t["subscribe"]) + l("", t["other_href"], t["other"]))
+    def l(key: str, href: str, text: str, short: str = "") -> str:
+        label = (f'<span class="full">{text}</span><span class="short">{short}</span>') if short else text
+        return f'<a class="l{" on" if here == key else ""}" data-k="{key}" href="{href}">{label}</a>'
+    links = (l("home", root, t["home"]) + l("today", latest or root, t["today"])
+             + l("growth", f"{root}growth", t["growth"]) + l("grid", f"{root}grid", t["grid"])
+             + l("", ab, t["about"], t["about_short"]) + l("", ab + "#subscribe", t["subscribe"])
+             + l("", t["other_href"], t["other"]))
     return f"""<!DOCTYPE html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)} · {t['label']}</title>
 <meta name="description" content="{html.escape(t['about_line'])}">
@@ -350,7 +392,7 @@ def _chip(lang: str, fm: dict) -> str:
         factor = config.FACTORS_EN.get(fm["factor"], fm["factor"])
     on = " vibe" if tense == "vibe" else ""
     return (f'<span class="chip{on}"><b>{html.escape(factor)}</b>{html.escape(arrow)}'
-            f'<span class="t">{html.escape(word)}</span></span>')
+            f'<span class="tn">{html.escape(word)}</span></span>')
 
 
 def _meta_line(lang: str, fm: dict) -> str:
@@ -384,6 +426,22 @@ def render_piece(lang: str, fm: dict, body: str) -> str:
             f'<div class="body">{inner}</div>')
 
 
+def _summary_cards(lang: str, stats: list, preds: list) -> list:
+    n = len(stats) or 1
+    verified = sum(s["claims_verified"] for s in stats) / max(1, sum(s["claims_total"] for s in stats))
+    agree = sum(1 for s in stats if s.get("agrees")) / max(1, sum(1 for s in stats if s.get("agrees") is not None))
+    pass1 = sum(1 for s in stats if s["review_rounds"] <= 1 and not s["unresolved"]) / n
+    cells = len({(s["factor"], s["to_stage"]) for s in stats})
+    ko = lang == "ko"
+    return [
+        (f"{verified:.0%}", "사실 검증" if ko else "facts verified"),
+        (f"{agree:.0%}", "레이더와 일치" if ko else "agrees with radar"),
+        (f"{pass1:.0%}", "검수 1회 통과" if ko else "review pass@1"),
+        (f"{cells}/21", "격자 칸" if ko else "grid cells"),
+        (f"{len(preds)}", "베팅" if ko else "bets"),
+    ]
+
+
 def build() -> None:
     keep = config.DIST_DIR / ".vercel"
     saved = None
@@ -405,7 +463,7 @@ def build() -> None:
         # 개별 글 - 소개 상자는 두지 않는다. 본문 머리의 실험 프레임이 같은 말을 한다(2026-09-09)
         for fm, body, slug in pieces:
             io.open(base / f"{slug}.html", "w", encoding="utf-8").write(
-                page(lang, fm.get("title", ""), render_piece(lang, fm, body), here="today"))
+                page(lang, fm.get("title", ""), render_piece(lang, fm, body), here="today", latest=pieces[0][2]))
 
         def _row(f: dict, slug: str) -> str:
             if f.get("type") == "weekly":
@@ -423,14 +481,36 @@ def build() -> None:
             return (f'<a href="{slug}"><span class="c"><span class="t">{html.escape(f.get("title", ""))}</span>'
                     f'<span class="m">{meta}</span></span><span class="d">{right}</span></a>')
 
+        latest_slug = pieces[0][2] if pieces else ""
+        ab = config.ABOUT_URL + ("?lang=en" if lang == "en" else "")
         if pieces:
-            fm, body, slug = pieces[0]
+            fm0 = pieces[0][0]
+            summary = (fm0.get("source_summary") or "").strip()
+            if len(summary) > 150:
+                summary = summary[:150].rstrip() + "…"
+            chip = _chip(lang, fm0)
+            days = fm0.get("day", 0)
+            run = (f"D+{days}" if lang == "ko" else f"Day {days}")
+            hero = (f'<section class="hero"><p class="label">{t["brand"]}</p>'
+                    f'<h1>{t["hero"]}</h1><p class="hero-sub">{t["hero_sub"]}</p>'
+                    f'<p class="hero-run"><span>{run}</span><span>{len(pieces)}{t["pieces_word"]}</span>'
+                    f'<span>{len({(x[0].get("factor"), x[0].get("to_stage")) for x in pieces if x[0].get("factor")})}/21 {t["grid_word"]}</span></p>'
+                    f'<p class="hero-cta"><a class="btn" href="{ab}#subscribe">{t["sub_cta"]}</a>'
+                    f'<a class="btn ghost" href="{ab}">{t["about"]}</a></p></section>')
+            card = (f'<a class="today-card" href="{latest_slug}"><span class="k">{t["latest"]}</span>{chip}'
+                    f'<span class="t">{html.escape(fm0.get("title", ""))}</span>'
+                    + (f'<span class="s">{html.escape(summary)}</span>' if summary else "")
+                    + f'<span class="go">{t["read"]} →</span></a>')
+            stat_cards = "".join(f"<div><b>{v}</b><span>{k}</span></div>" for v, k in _summary_cards(lang, stats, preds))
             lst = "".join(_row(f, s2) for f, _, s2 in pieces[1:])
-            main = render_piece(lang, fm, body) + (
-                f'<h2 class="label" style="margin-top:54px">{t["list"]}</h2><div class="list">{lst}</div>' if lst else "")
+            main = (hero + card
+                    + f'<div class="stats">{stat_cards}</div>'
+                    + f'<p class="more"><a href="{"/" if lang == "ko" else "/en/"}growth">{t["growth_link"]} →</a></p>'
+                    + (f'<h2 class="label" style="margin-top:44px">{t["list"]}</h2><div class="list">{lst}</div>' if lst else ""))
         else:
             main = f"<p>{t['empty']}</p>"
-        io.open(base / "index.html", "w", encoding="utf-8").write(page(lang, t["today"], main, here="today"))
+        io.open(base / "index.html", "w", encoding="utf-8").write(
+            page(lang, t["home"], main, here="home", latest=latest_slug))
         # 성장
         def _row_cells(s):
             if lang == "ko":
@@ -459,19 +539,13 @@ def build() -> None:
         bets = "".join(f"<tr><td>{p['date'][5:]}</td><td class='ttl'>{html.escape(p['claim_ko'] if lang == 'ko' else p['claim_en'])}</td>"
                        f"<td>{p['by_date'][5:]}</td><td class='ttl'>{html.escape(p['check_ko'] if lang == 'ko' else p['check_en'])}</td>"
                        f"<td>{'열림' if (lang == 'ko' and p['status'] == 'open') else p['status']}</td></tr>" for p in reversed(preds))
-        cards = [
-            (f"{summary['verified']:.0%}", "사실 검증" if lang == "ko" else "facts verified"),
-            (f"{summary['agree']:.0%}", "레이더와 일치" if lang == "ko" else "agrees with radar"),
-            (f"{summary['pass1']:.0%}", "검수 1회 통과" if lang == "ko" else "review pass@1"),
-            (f"{summary['cells']}/21", "격자 칸" if lang == "ko" else "grid cells"),
-            (f"{len(preds)}", "베팅" if lang == "ko" else "bets"),
-        ]
+        cards = _summary_cards(lang, stats, preds)
         g = (f"<p class='label'>{t['growth_title']}</p><h1>{'다섯 축' if lang == 'ko' else 'Five axes'}</h1>"
              + '<div class="stats">' + "".join(f"<div><b>{v}</b><span>{k}</span></div>" for v, k in cards) + "</div>"
              + f"<div class='tw'><table><tr>{''.join(f'<th>{c}</th>' for c in t['cols'])}</tr>{rows}</table></div>"
              f"<h2 class='label' style='margin-top:44px'>{t['bets']}</h2>"
              f"<div class='tw'><table><tr>{''.join(f'<th>{c}</th>' for c in t['bet_cols'])}</tr>{bets or '<tr><td colspan=5>-</td></tr>'}</table></div>")
-        io.open(base / "growth.html", "w", encoding="utf-8").write(page(lang, t["growth"], g, here="growth"))
+        io.open(base / "growth.html", "w", encoding="utf-8").write(page(lang, t["growth"], g, here="growth", latest=latest_slug))
         # 격자
         cells = {}
         for s in stats:
@@ -489,7 +563,7 @@ def build() -> None:
                  else "cells filled. An empty cell is a gap in coverage.</span></p>"))
         io.open(base / "grid.html", "w", encoding="utf-8").write(
             page(lang, t["grid"], f"<p class='label'>{t['grid_title']}</p><h1>{'21칸' if lang == 'ko' else '21 cells'}</h1>"
-                 + note + '<div class="tw">' + gh + "</div>", here="grid"))
+                 + note + '<div class="tw">' + gh + "</div>", here="grid", latest=latest_slug))
     # 브랜드 자산 - 메일·아카이브가 이 URL을 쓴다(외부 호스팅 금지)
     src = config.ROOT / "assets"
     if src.exists():
