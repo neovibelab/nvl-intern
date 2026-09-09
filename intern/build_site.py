@@ -456,7 +456,7 @@ def _summary_cards(lang: str, stats: list, preds: list) -> list:
         (f"{pass1:.0%}", "검수 1회 통과" if ko else "review pass@1"),
         (f"{cells}/21", "격자 칸" if ko else "grid cells"),
         (f"{with_brain}/{len(stats)}", "재료 붙은 편" if ko else "with materials"),
-        (f"{form_avg}", "형식 점수" if ko else "form score"),
+        (f"{form_avg}/100", "형식 점수" if ko else "form score"),
     ]
 
 
@@ -585,13 +585,14 @@ def build() -> None:
             radar = "-" if s.get("agrees") is None else ("=" if s.get("agrees") else "≠ " + str(s.get("radar_tense")))
             title = html.escape(s["title_ko"] if lang == "ko" else s["title_en"])
             f0 = s.get("form") or {}
-            fm_cell = f"{form.score(f0)}" if f0 else "-"
+            fm_cell = f"{form.score(f0)}/100" if f0 else "-"
             if f0:
                 # 제목은 세는 게 아니라 판정한다(2026-09-10) - 알려주나·읽고 싶나, 그리고 낚시였나
                 tc = f0.get("title_check") or {}
                 marks = []
                 if tc:
-                    marks.append(("제목 %d·%d" if lang == "ko" else "title %d·%d") % (tc.get("clarity", 0), tc.get("pull", 0)))
+                    marks.append(("알려주나 %d/2 · 읽고싶나 %d/2" if lang == "ko" else "clarity %d/2 · pull %d/2")
+                                 % (tc.get("clarity", 0), tc.get("pull", 0)))
                     if not tc.get("kept_promise", True):
                         marks.append("약속 어김" if lang == "ko" else "broke promise")
                 if f0.get("lead_concrete"):
@@ -614,12 +615,12 @@ def build() -> None:
                        f"<td>{'열림' if (lang == 'ko' and p['status'] == 'open') else p['status']}</td></tr>" for p in reversed(preds))
         cards = _summary_cards(lang, stats, preds)
         # 형식 칸은 숫자만 보면 뜻을 모른다. 표 아래에 무엇을 잰 건지 한 줄로 적는다.
-        legend = ("<p class='legend'>형식 · 제목 판정(무슨 얘긴지 알려주나 0~2 · 읽고 싶게 하나 0~2)에 "
+        legend = ("<p class='legend'>형식 · 제목 판정(무슨 얘긴지 알려주나 2점 만점 · 읽고 싶게 하나 2점 만점)에 "
                   "첫 문단·AI 티·헤지·문장 길이를 더한 점수입니다. 「약속 어김」은 본문이 제목이 말한 것을 "
                   "다루지 않았다는 뜻입니다. 인턴에게는 이 숫자만 보여주고 고치는 법은 알려주지 않습니다.</p>"
                   if lang == "ko" else
-                  "<p class='legend'>Form · a title judgment (does it tell you what this is about 0-2 · "
-                  "does it make you want to read 0-2) plus lead, AI tells, hedging and sentence length. "
+                  "<p class='legend'>Form · a title judgment (does it tell you what this is about, out of 2 · "
+                  "does it make you want to read, out of 2) plus lead, AI tells, hedging and sentence length. "
                   "Broke promise means the body did not deliver what the title said. "
                   "The intern is shown the numbers and never told how to fix them.</p>")
         g = (f"<p class='label'>{t['growth_title']}</p><h1>{'여섯 축' if lang == 'ko' else 'Six axes'}</h1>"

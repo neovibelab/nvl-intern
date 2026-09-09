@@ -187,7 +187,7 @@ def main() -> int:
             "form": dict(form.measure(j["title_ko"], ko, trace["cluster"]["items"]), title_check=tc),
             "wiki": mats["wiki"], "lexicon": mats["lexicon"]}
     trace["form"] = meta["form"]
-    print(f"  [form] 점수 {form.score(meta['form'])} · 제목 고유명사 {meta['form']['title_noun']}(기록만) · "
+    print(f"  [form] 점수 {form.score(meta['form'])}/100 · 제목 고유명사 {meta['form']['title_noun']}(기록만) · "
           f"리드 구체 {meta['form']['lead_concrete']} · AI tell {meta['form']['ai_tell']} · 문장중앙 {meta['form']['sent_med']}자")
     publish.record(args.date, slug, j, meta, ko, en, trace)
     publish.rule_candidates(last_issues if unresolved else [i for rv in reviews for i in rv.get("issues", [])], args.date)
