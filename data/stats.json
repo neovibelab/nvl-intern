@@ -149,5 +149,31 @@
       "calls": 21,
       "search_uses": 9
     }
+  },
+  {
+    "date": "2026-09-10",
+    "day": 6,
+    "slug": "2026-09-10-who-holds-the-ruler-for-ai-outputs",
+    "title_ko": "출력물을 재는 자를 누가 쥐나",
+    "title_en": "Who Holds the Ruler for AI Outputs",
+    "factor": "정책",
+    "from_stage": "생산",
+    "to_stage": "생산",
+    "tense": "vibe",
+    "radar_tense": "soon",
+    "agrees": true,
+    "claims_total": 4,
+    "claims_verified": 3,
+    "review_rounds": 2,
+    "unresolved": true,
+    "bet": true,
+    "wiki_used": 3,
+    "lexicon_used": 1,
+    "tokens": {
+      "input": 152125,
+      "output": 32524,
+      "calls": 21,
+      "search_uses": 8
+    }
   }
 ]

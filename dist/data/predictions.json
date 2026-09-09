@@ -53,5 +53,16 @@
     "check_en": "Distributor notices, revised terms of service, or platform submission guidelines in Korea",
     "factor": "정책",
     "status": "open"
+  },
+  {
+    "slug": "2026-09-10-who-holds-the-ruler-for-ai-outputs",
+    "date": "2026-09-10",
+    "by_date": "2027-03-09",
+    "claim_ko": "한국의 음악 신탁단체나 대형 기획사 중 최소 한 곳이 AI 생성물 유사도·어트리뷰션 측정 도구 도입 또는 관련 기업 제휴·투자를 공개한다.",
+    "claim_en": "At least one Korean music CMO or major label publicly adopts an AI output-similarity/attribution tool, or announces a partnership or investment in such a vendor.",
+    "check_ko": "KOMCA·함께하는음악저작인협회 보도자료, 하이브·SM·YG·카카오엔터 공시 및 기술 제휴 발표",
+    "check_en": "Press releases from KOMCA/KOSCAP and disclosures or tech-partnership announcements from HYBE, SM, YG, Kakao Entertainment",
+    "factor": "정책",
+    "status": "open"
   }
 ]
