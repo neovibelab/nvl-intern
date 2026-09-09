@@ -463,11 +463,11 @@ def _summary_cards(lang: str, stats: list, preds: list) -> list:
 def _duel_card(ko: bool) -> list[tuple[str, str]]:
     """지난 편과의 blind 비교 승률. 성장의 정의에 가장 가까운 숫자라 카드로 올린다(2026-09-10)."""
     from . import duel as _duel
+    out = []
     ds = publish._load(config.DATA_DIR / "duels.json", [])
-    if not ds:
-        return []
-    w, n = _duel.win_rate(ds)
-    out = [(f"{w}/{n}", "지난 편과 붙어 이긴 수" if ko else "wins vs earlier pieces")]
+    if ds:
+        w, n = _duel.win_rate(ds)
+        out.append((f"{w}/{n}", "지난 편과 붙어 이긴 수" if ko else "wins vs earlier pieces"))
     # 사람 기준선 - 상대 좌표(어제의 나)만으로는 어느 높이인지 모른다
     bl = [d for d in publish._load(config.DATA_DIR / "baseline.json", [])
           if d.get("winner") != "tie" and d.get("window", "match") == "match"]
