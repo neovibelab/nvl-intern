@@ -13,7 +13,7 @@ import os
 import urllib.parse
 import urllib.request
 
-from . import config, form, llm, publish
+from . import config, duel, form, llm, publish
 
 FB_KINDS_KO = {"agree": "맞는 말이다", "obvious": "뻔하다", "weak": "근거가 약하다", "off": "관점이 어긋난다"}
 FB_API = "https://nvl-vibe-radar.vercel.app/api/intern-feedback"
@@ -90,11 +90,12 @@ def _summarize_texts(texts: list[str]) -> list[dict]:
 
 def gather(date: str) -> dict:
     rows = week_slice(date)
-    issues, gates = [], []
+    issues, issue_dates, gates = [], [], []
     for s in rows:
         lg = _log(s["date"])
         for rv in lg.get("reviews", []):
             issues.extend(rv.get("issues", []))
+            issue_dates.extend([s["date"]] * len(rv.get("issues", [])))
         if lg.get("gate"):
             gates.append(lg["gate"])
     cells = {(s["factor"], s["to_stage"]) for s in rows}
@@ -115,12 +116,136 @@ def gather(date: str) -> dict:
         "no_brain": sum(1 for s in rows if (s.get("wiki_used") or 0) + (s.get("lexicon_used") or 0) == 0),
         "form": _form_summary(rows),
         "issues": issues,
+        "issue_types": group_issues(issues, issue_dates),
         "bets_new": [p for p in preds if p["date"] in {s["date"] for s in rows}],
         "bets_open": [p for p in preds if p.get("status") == "open"],
         "promoted": [k for k, c in cands.items() if c.get("promoted")],
         "pending_rules": [(k, c["count"]) for k, c in cands.items() if not c.get("promoted") and c["count"] >= 2],
         "signals": reader_signals([s["slug"] for s in rows]),
     }
+
+
+def run_duels(date: str, rows: list[dict], lang: str = "ko") -> list[dict]:
+    """이번 주 편을 **지난 편과 blind로 붙인다**(2026-09-10 신설).
+
+    절대 점수는 성장을 못 본다. 성장의 정의는 「지난달의 나보다 나은가」이고 그건 비교로만 답이 나온다.
+    판정자는 어느 쪽이 최신인지 모른다 - 날짜와 D+N을 지우고 순서도 섞는다.
+    승률 50%는 제자리, 그 위면 늘었다는 뜻이다. **표본이 작으니 한 주 숫자로 단정하지 않는다.**
+    """
+    stats = publish._load(config.DATA_DIR / "stats.json", [])
+    week_slugs = {s["slug"] for s in rows}
+    prior = [s for s in stats if s.get("type") != "weekly" and s["slug"] not in week_slugs]
+    if not prior or not rows:
+        print("  [duel] 붙일 지난 편이 없다 - 첫 주다")
+        return []
+
+    def load(s):
+        try:
+            md = io.open(config.CONTENT_DIR / lang / f"{s['slug']}.md", encoding="utf-8").read()
+        except FileNotFoundError:
+            return None
+        return {"slug": s["slug"], "title": s["title_ko"] if lang == "ko" else s["title_en"],
+                "md": md.split("---\n", 2)[-1]}
+
+    new = [x for x in (load(s) for s in rows) if x]
+    old = [x for x in (load(s) for s in prior) if x]
+    ds = duel.growth_duels(new, old, lang)
+    if ds:
+        log = publish._load(config.DATA_DIR / "duels.json", [])
+        log.extend(dict(d, date=date, lang=lang) for d in ds)
+        publish._dump(config.DATA_DIR / "duels.json", log)
+    return ds
+
+
+def _duel_line(ds: list[dict], lang: str) -> str:
+    """승률을 숫자로만 준다. 왜 졌는지는 판정자의 한 줄을 그대로 붙인다 - 해석은 인턴 몫이다."""
+    if not ds:
+        return "지난 편과의 비교: 아직 붙일 지난 편이 없다" if lang == "ko" else "No earlier pieces to compare against yet"
+    out = []
+    for axis in ("제목", "본문"):
+        w, n = duel.win_rate(ds, axis)
+        if n:
+            out.append(f"{axis} {w}/{n}" if lang == "ko" else f"{'title' if axis == '제목' else 'body'} {w}/{n}")
+    lost = [d["why"] for d in ds if d["winner"] == "old"][:3]
+    head = ("지난 편과 나란히 놓고 물었다(판정자는 어느 쪽이 최신인지 모른다). 이번 주가 이긴 횟수 - "
+            if lang == "ko" else
+            "Each piece was put beside an earlier one, blind. Times the newer one won - ")
+    tail = ("\n  진 편에 붙은 이유: " + " / ".join(lost)) if lost else ""
+    return head + " · ".join(out) + tail
+
+
+GROUPER = """검수 지적들을 **뜻이 같은 것끼리** 묶는다. 표현이 달라도 같은 결함이면 한 유형이다.
+유형 이름은 그 결함을 한 줄로 적은 것이어야 한다 - 「근거 부족」 같은 범주명이 아니라
+「각도가 약속한 것을 본문이 다루지 않는다」처럼 무엇이 잘못됐는지 알 수 있게.
+지적 원문을 인용하지 않는다. 안 묶이는 것은 묶지 않는다."""
+
+
+def group_issues(issues: list[str], dates: list[str]) -> list[dict]:
+    """지적을 뜻으로 묶는다. 문자열 일치로는 절대 안 묶인다(2026-09-10 실측: 35개 전부 count 1)."""
+    if len(issues) < 2:
+        return []
+    body = "\n".join(f"[{i}] ({d}) {t[:200]}" for i, (t, d) in enumerate(zip(issues, dates)))
+    try:
+        d = llm.ask_json(body + '\n\nJSON: {"types":[{"name":"유형 한 줄","idx":[0,3,7]}]}',
+                         system=GROUPER, model=config.MODEL_FAST, max_tokens=2000)
+    except Exception as e:  # noqa: BLE001
+        print(f"  [rules] 묶기 실패 {type(e).__name__}")
+        return []
+    out = []
+    for t in d.get("types", [])[:8]:
+        idx = [int(i) for i in (t.get("idx") or []) if isinstance(i, (int, str)) and str(i).isdigit()]
+        days = {dates[i] for i in idx if 0 <= i < len(dates)}
+        if t.get("name"):
+            out.append({"name": str(t["name"])[:120], "n": len(idx), "days": sorted(days)})
+    out.sort(key=lambda x: -len(x["days"]))
+    for t in out:
+        print(f"  [rules] {len(t['days'])}일 · {t['n']}건 · {t['name'][:60]}")
+    return out
+
+
+def promote(rule: str, date: str) -> bool:
+    """자기 규칙 한 줄을 올린다. 상한 20 - 넘으면 가장 오래된 것을 뺀다(규칙이 쌓이면 프롬프트가 굳는다)."""
+    rule = " ".join(rule.split())[:160]
+    if len(rule) < 10:
+        return False
+    txt = io.open(config.RULES_FILE, encoding="utf-8").read() if config.RULES_FILE.exists() else ""
+    lines = [l for l in txt.splitlines() if l.startswith("- ")]
+    if any(rule[:40] in l for l in lines):
+        return False
+    while len(lines) >= 20:
+        lines.pop(0)
+    lines.append(f"- ({date}) {rule}")
+    head = txt.split("\n- ")[0].rstrip() or "# 자기 규칙"
+    config.RULES_FILE.parent.mkdir(parents=True, exist_ok=True)
+    io.open(config.RULES_FILE, "w", encoding="utf-8", newline="\n").write(head + "\n\n" + "\n".join(lines) + "\n")
+    print(f"  [rules] 승격 · {rule[:60]}")
+    return True
+
+
+def harvest(date: str, g: dict, reflection: str) -> list[str]:
+    """회고가 나온 뒤에 규칙을 올린다. 재료는 둘 - **인턴이 쓴 한 줄**과 3일 이상 반복된 지적 유형.
+
+    인턴이 스스로 쓴 문장을 먼저 올린다. 남이 준 규칙은 학습이 아니라 지시다.
+    """
+    got = []
+    try:
+        d = llm.ask_json(f"""아래는 인턴이 방금 쓴 주간 회고다. **다음 주에 스스로 지키겠다고 한 것**을
+한 줄 규칙으로 뽑는다. 회고에 없는 것을 지어내지 않는다. 없으면 빈 값.
+
+JSON: {{"rule":"한 줄. 지킬 수 있는 크기. 없으면 빈 문자열"}}
+
+[회고]
+{reflection[:4000]}""", model=config.MODEL_FAST, max_tokens=800)
+        if promote(str(d.get("rule") or ""), date):
+            got.append(str(d.get("rule")))
+    except Exception as e:  # noqa: BLE001
+        print(f"  [rules] 회고에서 규칙 뽑기 실패 {type(e).__name__}")
+    for t in g.get("issue_types", []):
+        if len(t["days"]) >= 3 and promote(t["name"], date):
+            got.append(t["name"])
+    if not got:
+        print("  [rules] 이번 주 승격 없음")
+    return got
 
 
 def _form_summary(rows: list[dict]) -> dict:
@@ -191,22 +316,31 @@ REFLECT_KO = """[이번 주 내 기록]
 
 [형식·접근성 - 기계가 센 것. 고치는 법은 아무도 안 알려준다]
 {form_line}
+
+[지난 편과의 대결 - 절대 점수가 아니라 비교다]
+{duel_line}
 새 베팅 {bets_new}건 · 열린 베팅 {bets_open}건
 {signals}
 
 [검수자가 이번 주 지적한 것 - 그대로]
 {issues}
 
+[반복된 지적 - 뜻으로 묶은 것]
+{issue_types}
+
 [규칙]
-이미 올린 자기 규칙 {promoted}개 · 3회 재현을 못 채워 대기 중인 후보 {pending}개
+이미 올린 자기 규칙 {promoted}개
 
 위 기록만 재료다. 새 사건을 찾지 않는다. 한국어 800~1000자로 이번 주 회고를 쓴다.
 1문단: 이번 주 무엇을 봤나. 좌표와 시제 분포가 말하는 것.
 2문단: **무엇을 틀렸나.** 검수 지적에서 반복된 것을 지목한다. 변명하지 않는다.
 3문단: 독자 신호와 규칙. 무엇을 규칙으로 올렸고 무엇을 안 올렸는지, 안 올린 이유까지.
-4문단: **형식과 접근성.** 위 숫자를 그대로 읽는다. 제목이 무슨 얘긴지 알려주고 읽고 싶게 했나, 첫 문단이 사건을 세웠나,
-AI 티가 늘었나. **누가 고치는 법을 알려주지 않았다** - 숫자만 보고 스스로 판단한다.
+4문단: **형식과 접근성, 그리고 지난 편과의 대결.** 위 숫자를 그대로 읽는다. 지난 편을 이겼나 졌나,
+졌다면 판정자가 뭘 보고 그렇게 골랐나. 제목·첫 문단·AI 티도 같이 본다.
+**누가 고치는 법을 알려주지 않았다** - 숫자만 보고 스스로 판단한다.
+승률은 표본이 작다. 한 주 숫자를 추세로 읽지 않는다.
 5문단: **다음 주에 바꿀 것 하나.** 지킬 수 있는 크기로 구체적으로. 각오나 다짐으로 끝내지 않는다.
+이 한 줄은 다음 주 집필 프롬프트의 [자기 규칙]에 그대로 올라간다. 지킬 수 없는 문장을 쓰면 네가 지게 된다.
 
 {style}
 「저는」으로 시작하는 자기소개를 하지 않는다. 본문만 쓴다."""
@@ -221,21 +355,27 @@ Pieces written without the lab's own lenses: {no_brain}/{n}
 
 [Form and accessibility - counted by machine. Nobody tells you how to fix it]
 {form_line}
+
+[Head to head against earlier pieces - comparison, not a score]
+{duel_line}
 New bets {bets_new} · open bets {bets_open}
 {signals}
 
 [What the reviewer flagged this week, verbatim]
 {issues}
 
+[Recurring flags, grouped by meaning]
+{issue_types}
+
 [Rules]
-{promoted} self-rules promoted so far · {pending} candidates waiting for a third recurrence
+{promoted} self-rules promoted so far
 
 Only this record is material. Do not look for new events. Write 400 to 500 words.
 Paragraph 1: what I looked at, and what the grid and tense spread say.
 Paragraph 2: what I got wrong. Name the repeated review note. No excuses.
 Paragraph 3: reader signals and rules, including what I did not adopt and why.
-Paragraph 4: form and accessibility. Read the numbers above as they are. Did the titles say what the piece is about, did the leads set the event, did the AI tells go up. Nobody told me how to fix any of it.
-Paragraph 5: one thing I will change next week, small enough to keep.
+Paragraph 4: form, accessibility and the head to head. Did the newer pieces win or lose against the older ones, and what did the judge say made the difference. Read the form numbers as they are. Nobody told me how to fix any of it. The sample is small - do not read one week as a trend.
+Paragraph 5: one thing I will change next week, small enough to keep. This line goes straight into next week's writing prompt as one of my own rules.
 
 {style}
 Do not introduce yourself. Body only. **English only - no Korean sentences.**"""
@@ -265,9 +405,11 @@ def reflect(g: dict, lang: str) -> str:
         verified=g["verified"], claims=g["claims"], pass1=g["pass1"], unresolved=g["unresolved"],
         gate_hits=g["gate_hits"], no_brain=g["no_brain"], form_line=_form_line(g, lang),
         bets_new=len(g["bets_new"]), bets_open=len(g["bets_open"]),
-        signals=_signal_line(g, lang),
+        signals=_signal_line(g, lang), duel_line=_duel_line(g.get("duels") or [], lang),
         issues="\n".join(f"- {i}" for i in g["issues"][:12]) or "(없음)",
-        promoted=len(g["promoted"]), pending=len(g["pending_rules"]),
+        promoted=len(g["promoted"]),
+        issue_types="\n".join(f"- {len(t['days'])}일에 걸쳐 {t['n']}회 · {t['name']}"
+                              for t in g.get("issue_types", [])[:6]) or "(반복 없음)",
         style=steps.STYLE_KO if lang == "ko" else steps.STYLE_EN,
     )
     tmpl = REFLECT_KO if lang == "ko" else REFLECT_EN

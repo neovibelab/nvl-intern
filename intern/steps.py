@@ -315,7 +315,10 @@ def title_from_body(body: str, j: dict, lang: str, nouns: list[str] | None = Non
 
 참고 - 쓰기 전에 잡아 둔 임시 제목은 「{working}」이다. **본문이 그 제목대로 안 갔으면 버린다.**
 
-JSON: {{"source":"본문에서 고른 문장 그대로","title":"28자 안"}}
+**서로 다른 각도로 3안을 낸다.** 설명적인 것 하나, 당기는 것 하나, 나머지 하나는 네 판단으로.
+셋 다 본문 문장에서 나와야 한다.
+
+JSON: {{"candidates":[{{"source":"본문에서 고른 문장 그대로","title":"28자 안"}}, ... 3개]}}
 
 [본문]
 {body}"""
@@ -331,7 +334,10 @@ A title that is only a metaphor or a declaration scores 0 on the first. A title 
 
 The working title set before writing was "{working}". **Drop it if the body did not go there.**
 
-JSON: {{"source":"the sentence, verbatim","title":"short"}}
+**Give three, from different angles** - one explanatory, one that pulls, one your own call.
+All three must come out of body sentences.
+
+JSON: {{"candidates":[{{"source":"the sentence, verbatim","title":"short"}}, ... 3 of them]}}
 
 [Body]
 {body}"""
@@ -340,19 +346,25 @@ JSON: {{"source":"the sentence, verbatim","title":"short"}}
     except Exception as e:  # noqa: BLE001
         print(f"  [title] 실패 {type(e).__name__} · 임시 제목 유지")
         return {"title": working, "source": "", "from_body": False}
-    title = str(d.get("title") or "").strip().strip('"')
-    src = str(d.get("source") or "").strip()
-    if not title or (lang == "ko" and len(title) > 40):
-        print(f"  [title] 형식 이상({len(title)}자) · 임시 제목 유지")
-        return {"title": working, "source": src, "from_body": False}
-    # 고른 문장이 실제 본문에 있는지 확인한다. 없으면 지어낸 것이다.
-    key = re.sub(r"\s", "", src)[:18]
-    ok = bool(key) and key in re.sub(r"\s", "", body)
-    if not ok:
-        print("  [title] 고른 문장이 본문에 없다 · 임시 제목 유지")
-        return {"title": working, "source": src, "from_body": False}
-    print(f"  [title] {lang} 「{title}」 ← {src[:44]}")
-    return {"title": title, "source": src, "from_body": True}
+    raw = d.get("candidates") or ([d] if d.get("title") else [])
+    flat = re.sub(r"\s", "", body)
+    cands = []
+    for c in raw[:4]:
+        t = str(c.get("title") or "").strip().strip('"')
+        src = str(c.get("source") or "").strip()
+        if not t or (lang == "ko" and len(t) > 40):
+            continue
+        # 고른 문장이 실제 본문에 있는지 확인한다. 없으면 지어낸 것이다.
+        key = re.sub(r"\s", "", src)[:18]
+        if not key or key not in flat:
+            print(f"  [title] 후보 「{t}」의 문장이 본문에 없다 · 버린다")
+            continue
+        cands.append({"title": t, "source": src})
+    if not cands:
+        print("  [title] 쓸 후보가 없다 · 임시 제목 유지")
+        return {"title": working, "source": "", "from_body": False, "candidates": []}
+    print(f"  [title] {lang} 후보 {len(cands)}안: " + " / ".join(c["title"] for c in cands))
+    return {"title": cands[0]["title"], "source": cands[0]["source"], "from_body": True, "candidates": cands}
 
 
 TITLE_JUDGE = """너는 제목만 보고 판단하는 독자다. 글을 쓴 사람이 아니다.

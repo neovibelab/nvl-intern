@@ -13,7 +13,7 @@ import json
 import sys
 import time
 
-from intern import config, llm, radar, brain, steps, publish, build_site, mail, weekly, form
+from intern import config, duel, llm, radar, brain, steps, publish, build_site, mail, weekly, form
 
 MAX_REVIEW_ROUNDS = 2
 
@@ -151,17 +151,15 @@ def main() -> int:
     nouns = form.source_nouns(trace["cluster"]["items"], ko)
     tk = steps.title_from_body(ko, j, "ko", nouns); te = steps.title_from_body(en, j, "en", nouns)
     j["title_ko"], j["title_en"] = tk["title"], te["title"]
-    # 제목을 독자 자리에서 판정한다. 무슨 얘긴지 모르겠거나 낚시면 한 번만 다시 고른다.
-    tc = steps.title_check(j["title_ko"], ko, "ko")
-    if tc and (tc.get("clarity", 0) == 0 or not tc.get("kept_promise", True)):
-        print("  [title] 다시 고른다")
-        j2 = dict(j); j2["title_ko"] = tc.get("why", "")[:60]
-        tk2 = steps.title_from_body(ko, j2, "ko", nouns)
-        if tk2.get("from_body"):
-            tc2 = steps.title_check(tk2["title"], ko, "ko")
-            if tc2 and (tc2.get("clarity", 0) + tc2.get("pull", 0)) > (tc.get("clarity", 0) + tc.get("pull", 0)):
-                j["title_ko"], tk, tc = tk2["title"], tk2, tc2
-    trace["title"] = {"ko": tk, "en": te, "check": tc}
+    # 후보끼리 붙여 고른다. 절대 점수로는 변별이 안 됐다(2026-09-10 - 6편 전부 같은 점수).
+    dk = duel.pick_title(tk.get("candidates", []), ko, "ko")
+    de = duel.pick_title(te.get("candidates", []), en, "en")
+    if dk:
+        j["title_ko"] = dk["best"]["title"]; tk = dict(tk, **dk["best"])
+    if de:
+        j["title_en"] = de["best"]["title"]; te = dict(te, **de["best"])
+    tc = steps.title_check(j["title_ko"], ko, "ko")  # 절대 판정은 기록만 - 대조군으로 남긴다
+    trace["title"] = {"ko": tk, "en": te, "check": tc, "duel_ko": dk, "duel_en": de}
 
     outlets = [x.get("source") or "" for x in trace["cluster"]["items"]]
     last_issues_en = steps.issues_en(last_issues) if unresolved else []
@@ -184,7 +182,9 @@ def main() -> int:
             "last_issues_en": last_issues_en,
             "sources": trace["cluster"]["urls"], "source_items": trace["cluster"]["items"], "source_summary": src_sum,
             "name_map": name_maps, "title_source": {"ko": tk.get("source", ""), "en": te.get("source", "")},
-            "form": dict(form.measure(j["title_ko"], ko, trace["cluster"]["items"]), title_check=tc),
+            "form": dict(form.measure(j["title_ko"], ko, trace["cluster"]["items"]), title_check=tc,
+                          title_kept_first=dk.get("kept_first") if dk else None,
+                          title_cands=dk.get("n") if dk else 0),
             "wiki": mats["wiki"], "lexicon": mats["lexicon"]}
     trace["form"] = meta["form"]
     print(f"  [form] 점수 {form.score(meta['form'])}/100 · 제목 고유명사 {meta['form']['title_noun']}(기록만) · "
@@ -208,6 +208,7 @@ def run_weekly(args) -> int:
     t0 = time.time()
     week = weekly.week_number(args.date)
     g = weekly.gather(args.date)
+    g["duels"] = weekly.run_duels(args.date, g["rows"], "ko")  # 지난 편과 blind로 붙인다
     print(f"== 주간 회고 {week}주차 · {args.date} · 이번 주 {g['n']}편 · 격자 {g['cells']}칸 · "
           f"불일치 {g['disagree']}/{g['compared']} · 미해결 {g['unresolved']} · 검증 {g['verified']}/{g['claims']}")
     print(f"  [signals] {g['signals']}")
@@ -225,6 +226,7 @@ def run_weekly(args) -> int:
     if args.dry_run:
         print("\n" + "=" * 60 + "\n" + ko)
         return 0
+    trace["rules_new"] = weekly.harvest(args.date, g, ko)  # 인턴이 쓴 한 줄이 다음 주 프롬프트로 간다
     slug = weekly.record(args.date, week, g, ko, en, trace)
     build_site.build()
     print(f"  [publish] content/ko/{slug}.md · content/en/{slug}.md")

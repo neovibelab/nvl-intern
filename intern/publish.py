@@ -224,7 +224,9 @@ def rule_candidates(issues: list[str], date: str) -> None:
         if date not in c["dates"]:
             c["count"] += 1; c["dates"].append(date)
     _dump(p, cands)
-    promote = [k for k, c in cands.items() if c["count"] >= 3 and not c.get("promoted")]
+    # 문자열 일치 승격은 2026-09-10 폐기 - 같은 지적이 같은 문장으로 두 번 나오지 않아 6일간 0건이었다.
+    # 승격은 주간 회고가 뜻으로 묶은 뒤에 한다(weekly.harvest). 여기는 원자료만 쌓는다.
+    promote: list[str] = []
     if promote:
         rules = io.open(config.RULES_FILE, encoding="utf-8").read() if config.RULES_FILE.exists() else ""
         lines = [l for l in rules.splitlines() if l.startswith("- ")]

@@ -457,7 +457,17 @@ def _summary_cards(lang: str, stats: list, preds: list) -> list:
         (f"{cells}/21", "격자 칸" if ko else "grid cells"),
         (f"{with_brain}/{len(stats)}", "재료 붙은 편" if ko else "with materials"),
         (f"{form_avg}/100", "형식 점수" if ko else "form score"),
-    ]
+    ] + _duel_card(ko)
+
+
+def _duel_card(ko: bool) -> list[tuple[str, str]]:
+    """지난 편과의 blind 비교 승률. 성장의 정의에 가장 가까운 숫자라 카드로 올린다(2026-09-10)."""
+    from . import duel as _duel
+    ds = publish._load(config.DATA_DIR / "duels.json", [])
+    if not ds:
+        return []
+    w, n = _duel.win_rate(ds)
+    return [(f"{w}/{n}", "지난 편과 붙어 이긴 수" if ko else "wins vs earlier pieces")]
 
 
 def feed(lang: str, pieces: list) -> str:
