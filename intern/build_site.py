@@ -6,7 +6,7 @@ import json
 import re
 import shutil
 
-from . import config, publish
+from . import card, config, publish
 
 CSS = """:root{--lime:#D6FF92;--lime-dim:rgba(214,255,146,.10);--black:#0A0A0A;--card:#121212;--edge:#242424;--ink:#E4E4DC;--dim:#8C8C84;--line:rgba(255,255,255,.07);--white:#F5F5EF}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -303,7 +303,8 @@ def _inline(t: str) -> str:
     return t.replace("\n", "<br>")
 
 
-def page(lang: str, title: str, body: str, here: str = "", latest: str = "") -> str:
+def page(lang: str, title: str, body: str, here: str = "", latest: str = "",
+         og: str = "", desc: str = "", url: str = "") -> str:
     t = T[lang]
     root = "/" if lang == "ko" else "/en/"
     ab = config.ABOUT_URL + ("?lang=en" if lang == "en" else "")
@@ -317,7 +318,16 @@ def page(lang: str, title: str, body: str, here: str = "", latest: str = "") -> 
              + l("", t["other_href"], t["other"]))
     return f"""<!DOCTYPE html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)} · {t['label']}</title>
-<meta name="description" content="{html.escape(t['about_line'])}">
+<meta name="description" content="{html.escape(desc or t['about_line'])}">
+<meta property="og:type" content="{'article' if here == 'today' else 'website'}">
+<meta property="og:site_name" content="{t['label']}">
+<meta property="og:title" content="{html.escape(title)}">
+<meta property="og:description" content="{html.escape(desc or t['about_line'])}">
+<meta property="og:image" content="{config.SITE_URL}/og/{og or ('default-en.png' if lang == 'en' else 'default.png')}">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="{'ko_KR' if lang == 'ko' else 'en_US'}">
+{f'<meta property="og:url" content="{config.SITE_URL}{url}">' if url else ''}
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
 <style>{CSS}</style></head><body>
@@ -462,8 +472,12 @@ def build() -> None:
         pieces = _pieces(lang)
         # 개별 글 - 소개 상자는 두지 않는다. 본문 머리의 실험 프레임이 같은 말을 한다(2026-09-09)
         for fm, body, slug in pieces:
+            og_name = f"{slug}{'-en' if lang == 'en' else ''}.png"
+            card.render(fm, lang, config.DIST_DIR / "og" / og_name)
+            summary = (fm.get("source_summary") or t["about_line"]).strip()[:180]
             io.open(base / f"{slug}.html", "w", encoding="utf-8").write(
-                page(lang, fm.get("title", ""), render_piece(lang, fm, body), here="today", latest=pieces[0][2]))
+                page(lang, fm.get("title", ""), render_piece(lang, fm, body), here="today", latest=pieces[0][2],
+                     og=og_name, desc=summary, url=f"/{'en/' if lang == 'en' else ''}{slug}"))
 
         def _row(f: dict, slug: str) -> str:
             if f.get("type") == "weekly":
@@ -497,20 +511,21 @@ def build() -> None:
                     f'<span>{len({(x[0].get("factor"), x[0].get("to_stage")) for x in pieces if x[0].get("factor")})}/21 {t["grid_word"]}</span></p>'
                     f'<p class="hero-cta"><a class="btn" href="{ab}#subscribe">{t["sub_cta"]}</a>'
                     f'<a class="btn ghost" href="{ab}">{t["about"]}</a></p></section>')
-            card = (f'<a class="today-card" href="{latest_slug}"><span class="k">{t["latest"]}</span>{chip}'
+            today_card = (f'<a class="today-card" href="{latest_slug}"><span class="k">{t["latest"]}</span>{chip}'
                     f'<span class="t">{html.escape(fm0.get("title", ""))}</span>'
                     + (f'<span class="s">{html.escape(summary)}</span>' if summary else "")
                     + f'<span class="go">{t["read"]} →</span></a>')
             stat_cards = "".join(f"<div><b>{v}</b><span>{k}</span></div>" for v, k in _summary_cards(lang, stats, preds))
             lst = "".join(_row(f, s2) for f, _, s2 in pieces[1:])
-            main = (hero + card
+            main = (hero + today_card
                     + f'<div class="stats">{stat_cards}</div>'
                     + f'<p class="more"><a href="{"/" if lang == "ko" else "/en/"}growth">{t["growth_link"]} →</a></p>'
                     + (f'<h2 class="label" style="margin-top:44px">{t["list"]}</h2><div class="list">{lst}</div>' if lst else ""))
         else:
             main = f"<p>{t['empty']}</p>"
+        card.render_default(lang, config.DIST_DIR / "og" / ("default-en.png" if lang == "en" else "default.png"))
         io.open(base / "index.html", "w", encoding="utf-8").write(
-            page(lang, t["home"], main, here="home", latest=latest_slug))
+            page(lang, t["home"], main, here="home", latest=latest_slug, url="/en/" if lang == "en" else "/"))
         # 성장
         def _row_cells(s):
             if lang == "ko":
@@ -545,7 +560,7 @@ def build() -> None:
              + f"<div class='tw'><table><tr>{''.join(f'<th>{c}</th>' for c in t['cols'])}</tr>{rows}</table></div>"
              f"<h2 class='label' style='margin-top:44px'>{t['bets']}</h2>"
              f"<div class='tw'><table><tr>{''.join(f'<th>{c}</th>' for c in t['bet_cols'])}</tr>{bets or '<tr><td colspan=5>-</td></tr>'}</table></div>")
-        io.open(base / "growth.html", "w", encoding="utf-8").write(page(lang, t["growth"], g, here="growth", latest=latest_slug))
+        io.open(base / "growth.html", "w", encoding="utf-8").write(page(lang, t["growth"], g, here="growth", latest=latest_slug, url=f"/{"en/" if lang == "en" else ""}growth"))
         # 격자
         cells = {}
         for s in stats:
@@ -563,7 +578,8 @@ def build() -> None:
                  else "cells filled. An empty cell is a gap in coverage.</span></p>"))
         io.open(base / "grid.html", "w", encoding="utf-8").write(
             page(lang, t["grid"], f"<p class='label'>{t['grid_title']}</p><h1>{'21칸' if lang == 'ko' else '21 cells'}</h1>"
-                 + note + '<div class="tw">' + gh + "</div>", here="grid", latest=latest_slug))
+                 + note + '<div class="tw">' + gh + "</div>", here="grid", latest=latest_slug,
+                 url=f"/{"en/" if lang == "en" else ""}grid"))
     # 브랜드 자산 - 메일·아카이브가 이 URL을 쓴다(외부 호스팅 금지)
     src = config.ROOT / "assets"
     if src.exists():
