@@ -1,43 +1,31 @@
 [
  {
-  "key": "9c466740",
-  "title": "개임콤 2026 오프닝 나이트 라이브의 음악·게임 주요 발표",
+  "key": "c9a091bd",
+  "title": "Suno, 새로운 레이블 지원 모델 'v6'로 음악 메인스트림 진입 시도",
   "radar": "soon",
   "want": "vibe",
   "old": [
    "vibe*"
   ],
   "new": [
-   "vibe*"
+   "ERR:ValueError"
   ]
  },
  {
-  "key": "7fe7f1a8",
-  "title": "Sony·Warner vs Anthropic 저작권 소송, BMG·Concord 합병 완료",
-  "radar": "soon",
-  "want": "vibe",
+  "key": "092483f1",
+  "title": "2027 NAMM 쇼 등록 개시, 음악 산업의 필수 글로벌 행사",
+  "radar": "brief",
+  "want": "background",
   "old": [
    "vibe*"
   ],
   "new": [
-   "vibe*"
-  ]
- },
- {
-  "key": "056ef0c2",
-  "title": "문예청년들이 살려낸 블랙 바이닐 산업",
-  "radar": "now",
-  "want": "signal",
-  "old": [
    "signal"
-  ],
-  "new": [
-   "vibe*"
   ]
  },
  {
-  "key": "7c9df173",
-  "title": "Netflix, 에든버러 TV 페스티벌에서 신규 영국 제작물 공개",
+  "key": "177a1980",
+  "title": "WXPN 음악산업 네트워킹 이벤트 'Inside Hustle' 개최 안내",
   "radar": "brief",
   "want": "background",
   "old": [
@@ -48,8 +36,8 @@
   ]
  },
  {
-  "key": "8aabe653",
-  "title": "쇼트 애니 스타트업 Plott, 해외 전개 본격화: 2027년까지 영어판 월간 재생 수 8억 회(현재의 8배",
+  "key": "dd64c516",
+  "title": "AI 인식 기술을 활용한 차세대 큐시트 생성 방식, Digital Music News",
   "radar": "soon",
   "want": "vibe",
   "old": [
@@ -60,80 +48,8 @@
   ]
  },
  {
-  "key": "a0c2bfc4",
-  "title": "소니뮤직퍼블리싱 등 35사, 앤스로픽을 제소: AI의 수만 곡 무단 학습이 음악 저작권 침해",
-  "radar": "soon",
-  "want": "vibe",
-  "old": [
-   "vibe*"
-  ],
-  "new": [
-   "vibe*"
-  ]
- },
- {
-  "key": "5dbe0d8e",
-  "title": "U-NEXT × NBC유니버설 포괄 제휴: 'Universal+' 일본 독점 전개·USJ 연계·일본 콘텐츠 ",
-  "radar": "soon",
-  "want": "vibe",
-  "old": [
-   "vibe*"
-  ],
-  "new": [
-   "vibe*"
-  ]
- },
- {
-  "key": "b4d90460",
-  "title": "계약 분쟁 끝에 새 출발…이무진, 독립 레이블 '퀘스천 마크' 출범",
-  "radar": "brief",
-  "want": "background",
-  "old": [
-   "signal"
-  ],
-  "new": [
-   "signal"
-  ]
- },
- {
-  "key": "9e9d005d",
-  "title": "제니·리센느·더위켄드까지…유통업계 '아티스트 콜라보' 별들의 전쟁",
-  "radar": "now",
-  "want": "signal",
-  "old": [
-   "vibe*"
-  ],
-  "new": [
-   "vibe*"
-  ]
- },
- {
-  "key": "097e5274",
-  "title": "8회 공연에 1400억원…BTS, 세계 투어 시장 '큰손' 됐다",
-  "radar": "now",
-  "want": "signal",
-  "old": [
-   "vibe*"
-  ],
-  "new": [
-   "vibe*"
-  ]
- },
- {
-  "key": "40202b60",
-  "title": "돌리 파튼의 음악 카탈로그 가치는 얼마일까?",
-  "radar": "soon",
-  "want": "vibe",
-  "old": [
-   "vibe*"
-  ],
-  "new": [
-   "vibe*"
-  ]
- },
- {
-  "key": "00e3ad7d",
-  "title": "2026 여름 소비 3대 신호: 이구환신·100억 박스오피스·'奔县' 열풍",
+  "key": "a9983b3b",
+  "title": "노에미 람베르 튠코어 프랑스 지사 대표 임명, Music Business Worldwide",
   "radar": "brief",
   "want": "background",
   "old": [
@@ -144,8 +60,488 @@
   ]
  },
  {
-  "key": "87a68b2f",
-  "title": "'나의 찬란한 인생'이 애들레이드를 위해 쓴 새로운 장 — 과거를 경敬하며",
+  "key": "f2ae7ab4",
+  "title": "사운드 앤 씬, 음악과 모리 로버츠, 메이터스 피자가 남기는 흔적 (Jackson County Sentine",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "94dc9a34",
+  "title": "라이브 비즈니스는 여전히 유효한가? 리퍼반 페스티벌 디렉터 디틀레프 슈바르테와 함께 어려운 질문들에 답하다,",
+  "radar": "now",
+  "want": "signal",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "194afd25",
+  "title": "Carter Gregory, CAA와 계약 (단독)",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "background"
+  ]
+ },
+ {
+  "key": "e75084c6",
+  "title": "음악 산업 컨설팅 복합체란 무엇인가?",
+  "radar": "soon",
+  "want": "vibe",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "f3370a51",
+  "title": "인더스트리 잉크, Kane Brown, Warren Zeiders, Gabby Barrett, Carly P",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "f44d5ce8",
+  "title": "아시아 뮤직 이벤트 11월 홍콩에서 개최",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "dcf6c179",
+  "title": "인정하자, Spotify가 음악을 대중화했다",
+  "radar": "done",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "32fee1a2",
+  "title": "Superstruct Entertainment, 아티스틱 코드 출시로 페스티벌 공연자들 안심시키려 해, Mu",
+  "radar": "soon",
+  "want": "vibe",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "491469cd",
+  "title": "Merlin Engage, 2026 Women In Music Awards 후원",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "b53c34ea",
+  "title": "Martin and The New Songrise 인터뷰, RGM이 소개합니다",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "aca6019b",
+  "title": "알파세타, 스트리밍과 인간 중심의 음악 기술을 통해 DJ 문화 확대",
+  "radar": "soon",
+  "want": "vibe",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "6099d907",
+  "title": "톱 40 히스토리 이날의 기록, 9월 9일",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "d4416598",
+  "title": "FKA twigs, 음악 기술 분야 다양성 지원을 위해 영국 비영리단체 Saffron과 손잡다",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "fa8eb219",
+  "title": "Patrick Moxey의 Helix Records와 Payday Music Publishing, 런던 중심",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "3bfd9262",
+  "title": "SideM, 반다이남코뮤직라이브에서 음악을 감상하는 게임 '카미사비' SideM 11th에서 회장 판매 결정",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "08b11c95",
+  "title": "제주콘텐츠진흥원, AI 음원·숏폼 제작 무료교육… 도민 15명 모집",
+  "radar": "now",
+  "want": "signal",
+  "old": [
+   "ERR:ValueError"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "127df170",
+  "title": "LS증권, AI 콘텐츠 홍수에도 엔터 산업 해자 견조…4개사 목표가 ↓",
+  "radar": "soon",
+  "want": "vibe",
+  "old": [
+   "signal"
+  ],
+  "new": [
+   "signal"
+  ]
+ },
+ {
+  "key": "f9d5895d",
+  "title": "베트남 음악저작권보호센터(VCPMC), Vietnam.vn",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "3e4efcc0",
+  "title": "첫날부터 음악 산업에서 일하고 싶었어요, The Irish Times",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "background"
+  ]
+ },
+ {
+  "key": "8e0570f9",
+  "title": "D.D. MEC, 음악 뮤직비디오 7개 포함한 프랑코폰 앨범 '어 마 파송' 발매",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "5bf65457",
+  "title": "『전차 어택』의 사운드트랙을 들으면 당신도 훌륭한 게임음악 마니아, 초고퀄리티 고양이 밈 골프게임의 사운드트",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "0d5f33ff",
+  "title": "콘서트를 팬덤 입장시험으로 변모시키고 있는 건 아닐까, 그리고 분위기를 망치고 있는 건 아닐까? - The ",
+  "radar": "soon",
+  "want": "vibe",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "84726823",
+  "title": "Radiohead 투어팀의 정신건강 지원 접근성, 업계 표준이 될까?, MusicWeek",
+  "radar": "soon",
+  "want": "vibe",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "1c4b1f7f",
+  "title": "독립 레코딩 아티스트 조나 워킨스, 1위 확보, 독립 음악 싱크 라이선싱 작곡가의 부상",
+  "radar": "soon",
+  "want": "vibe",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "216637f8",
+  "title": "오토튠 영상이 바이럴 틱톡 포맷을 음악 비즈니스로 전환한 방법",
+  "radar": "soon",
+  "want": "vibe",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "7e149c00",
+  "title": "미국 아마존 8월 핫셀링 잇템 TOP10",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "33bf2d38",
+  "title": "벨스의 '손 오브 졸린' 돌리 파튼과의 콜래버레이션 라디오 차트 진입, MusicRow 보도",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "500e7b50",
+  "title": "Emma Ruth Rundle, 커뮤니티에서 희망을 찾다",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "dcc1fd68",
+  "title": "오스틴 뮤지션들, 변화하는 음악 씬에 실망 표현, '라이브 뮤직 캐피탈' 더 이상 아니라고 지적",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "974ee0d5",
+  "title": "스포티파이, R&B X 플레이리스트를 라이브 네이션 어반과 함께 댈러스 페스티벌로 확대, 공연 일부를 독점 ",
+  "radar": "soon",
+  "want": "vibe",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "d086f92d",
+  "title": "아이드리스 엘바, DJ 페르소나로 방콕 하우스 씬과 조우 — '사운드 인터내셔널 x 방콕'",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "031a8817",
+  "title": "빅뱅, 방콕을 폭발시키다 — 20주년 월드투어 'XX: Cosmos' 태국 공연 발표",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "d210f7ea",
+  "title": "AI 단막극 범람: 반년간 22만 부 신작, 90%는 손해",
+  "radar": "soon",
+  "want": "vibe",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "signal"
+  ]
+ },
+ {
+  "key": "908c0662",
+  "title": "Chess.com의 모바일 수익 100배 성장 비결, 10년 만에 달성",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "0c618e2c",
+  "title": "Roy Wood in Asia 밴드 이야기, Skrillex의 초기 더브스텝 제작 비화",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "5b08ce10",
+  "title": "로봇이 스포츠 산업을 점령한다, Amazon·Google·Apple의 야심",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "0700233c",
+  "title": "Andrew Garfield가 Sam Altman을 연기했다, 그 다음은 '농민 봉기'",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "d4654c39",
+  "title": "가을 영화제 시즌에서 만날 수 있는 6가지 최악의 사람들",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "70530cae",
+  "title": "마크롱의 방에서, 영화산업을 위해 목소리를 높이다",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "b361ee92",
+  "title": "Anthropic의 약점, OpenAI의 가격 전쟁",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "signal"
+  ]
+ },
+ {
+  "key": "f9dc40dc",
+  "title": "금리 인상 시 적금만이 아닌 금리 인상 수혜주로도 돈을 벌 수 있어요",
   "radar": "brief",
   "want": "background",
   "old": [
@@ -156,8 +552,236 @@
   ]
  },
  {
-  "key": "a5844c86",
-  "title": "음저협, 넷플릭스와 2021~2025년 음악 저작권 사용료 정산 합의 — OTT 정산 체계의 전환점",
+  "key": "a7494f40",
+  "title": "에이전트가 되살리는 130년 전 무성영화, VARCO Sound로 효과음 입히기",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "932695b3",
+  "title": "앨범 롤아웃 전략이 아티스트 커리어를 어떻게 바꾸는가",
+  "radar": "soon",
+  "want": "vibe",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "ea347950",
+  "title": "가짜 아티스트, 익숙한 얼굴",
+  "radar": "soon",
+  "want": "vibe",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "3d0b2e1b",
+  "title": "극장의 반란, 스트리밍 시대 함께 보는 즐거움은 어디까지 갈 수 있을까",
+  "radar": "soon",
+  "want": "vibe",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "00294afb",
+  "title": "스타트렉 60주년, 공화당 트럼프팰루자 개최, 캐나다 보복 관세 발효",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "0d29adaa",
+  "title": "엘레븐랩스, CFO 영입 후 2028년 IPO 추진",
+  "radar": "soon",
+  "want": "vibe",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "086bca40",
+  "title": "억만장자들의 이혼 분쟁, 대형 기업 지배구조 흔들다",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "signal"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "f92a7672",
+  "title": "GTA VI 트레일러, 음악 참여도 분석: 수록곡과 아티스트별 엔게이지먼트",
+  "radar": "soon",
+  "want": "vibe",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "bb444b0b",
+  "title": "Coachella 루머 돌기 시작, 올리비아 로드리고가 데이지 체인 필즈 페스티벌 폐막",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "d3ef8473",
+  "title": "Oasis: Don't Look Back In Anger, 록 음악 역사상 가장 뜻밖의 재결합을 감정적이고 ",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "15bd8ca7",
+  "title": "오아시스 테이프 경매 논란, 아일랜드 규제당국 티켓마스터 고소",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "3682b54c",
+  "title": "Chartmetric, AI 에이전트 Flow 출시, 월 60달러부터 가격 책정",
+  "radar": "soon",
+  "want": "vibe",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "1fa1bae0",
+  "title": "아시아 뷰티 브랜드를 시험하는 새로운 규칙",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "signal"
+  ]
+ },
+ {
+  "key": "6fff56f7",
+  "title": "게임은 너무 많아서 다 플레이할 수 없다",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "7409896c",
+  "title": "뉘니커, 대체 이게 왜 유행일까요?",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "signal"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "69a4ceb3",
+  "title": "호르무즈 파병, 가도 안 가도 문제, 나이키의 추락",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "19c1da1d",
+  "title": "GPT-6로 포토샵에 직접 초상화 그리기, Astra 버전 실험 결과",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "f18b2ada",
+  "title": "올여름 공포 트렌드",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "signal"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "fc3deb73",
+  "title": "혼자 있을 때 본 메일을 열지 마십시오, 포켓몬 카드 열풍과 AI 드라마의 부상",
+  "radar": "soon",
+  "want": "vibe",
+  "old": [
+   "signal"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "2e928c1e",
+  "title": "아이디어·지식재산(IP) 수익화 사업에 뭉칫돈, 2027년 지재처 예산안 7,106억원 편성",
   "radar": "now",
   "want": "signal",
   "old": [
@@ -165,6 +789,390 @@
   ],
   "new": [
    "signal"
+  ]
+ },
+ {
+  "key": "656edc86",
+  "title": "닌텐도 게임에서 배우는 리더십, 일이 저절로 돌아가는 조직의 비결",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "f796f930",
+  "title": "wave to earth 서울 공연, 티켓 오픈 즉시 매진…추가 공연 확정",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "signal"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "894e220d",
+  "title": "저출산에도 건재한 일본 완구시장…키덜트·노스탤지어 IP가 성인 소비를 견인",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "b5e0bbab",
+  "title": "AI 음악 쏟아지는데…저작권료 배분 기준은 '아직' 공백",
+  "radar": "now",
+  "want": "signal",
+  "old": [
+   "signal"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "f6081aa8",
+  "title": "임영웅, 콘서트 누적 관객 100만 명 달성…데뷔 10년의 '반복 가능한 수요' 증명",
+  "radar": "now",
+  "want": "signal",
+  "old": [
+   "signal"
+  ],
+  "new": [
+   "signal"
+  ]
+ },
+ {
+  "key": "3e24a0ba",
+  "title": "트루먼 쇼, 현대사회의 수동적 관람과 능동적 토론 사이의 불안을 다루다",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "94a15149",
+  "title": "AGI의 모호한 목표, 리더들에게는 이제 '영적 개념'",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "5472b1ce",
+  "title": "9월 2주 MZ세대 주류 트렌드 리포트 2026",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "signal"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "a8139175",
+  "title": "WIN과 Reeperbahn Festival, WIN Supporters 프로그램으로 파트너십 체결",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "78a628ce",
+  "title": "코첼라 루머 시작, 올리비아 로드리고의 데이지 체인 필즈 페스티벌 하이라이트",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "272c78bb",
+  "title": "Gabriel Jacoby의 음악 세계에 주목할 시간",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "17c9440c",
+  "title": "브렉시트 이후 투어링 진전 부족에 영국 의원들 '우려', SeatGeek 벌금",
+  "radar": "now",
+  "want": "signal",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "4a56fe81",
+  "title": "중국 국가안전부 후원 베이징 스파이 드라마, 타이완 해협 첩보전 소재로 높은 시청률 기록",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "26c753b0",
+  "title": "아이실 브랜드, 사바토 데 사르노를 크리에이티브 디렉터로 임명",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "480ee43d",
+  "title": "Suno, 전방위 저작권 포위망 속 다운로드 제한·워터마킹 정책 도입 발표",
+  "radar": "soon",
+  "want": "vibe",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "signal"
+  ]
+ },
+ {
+  "key": "5ecc968a",
+  "title": "캐나다 SOCAN, AI 음악 플랫폼 Suno 저작권 침해 소송 제기",
+  "radar": "soon",
+  "want": "vibe",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "21519c4b",
+  "title": "2026년 1~7월 중국 온라인 광고 투하 분석 리포트",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "feec023b",
+  "title": "빈지 릴리스는 죽지 않았다, 넷플릭스만의 것도 아니다",
+  "radar": "soon",
+  "want": "vibe",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "00a0c7d5",
+  "title": "2026년 8월 최애팬 인원수 - 치이카와 199만, VIVANT 30위에서 급등",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "0ae7a76a",
+  "title": "Z-알파세대 트렌드 리포트 2026",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "signal"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "e8a99681",
+  "title": "슈퍼팬을 상대하는 복잡성의 비용",
+  "radar": "now",
+  "want": "signal",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "1e5783e5",
+  "title": "컨트리 가수 2부, 살인 발라드",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "da1dcc96",
+  "title": "박스오피스, 새로운 여름 기록에 근접",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "04b7d628",
+  "title": "TV in 3, 'Adults' 거의 폐지될 뻔, 존 랜드그래프의 전략 전환으로 구원받다",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "28f8512d",
+  "title": "VAST의 4억 4,600만 달러 펀딩과 빌리빌리의 7억 달러 전환사채, Nexus Mods의 SteamDB",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "54e8de86",
+  "title": "박소령 전 퍼블리 대표, 다시 경기장에 들어가도 되겠다",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "signal"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "bd5973fd",
+  "title": "휴먼메이드 CEO에게 듣다, 브랜드의 신선도 높이는 '52주 리듬'의 비밀",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "c9f09991",
+  "title": "중국 엔터테인먼트 산업의 새로운 현실, AI 드라마가 골든타임 진출",
+  "radar": "soon",
+  "want": "vibe",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "01f972c3",
+  "title": "8개 벤처캐피탈이 할리우드에 베팅, TV 종합계약 재부팅, '백룸즈' 비화",
+  "radar": "soon",
+  "want": "vibe",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "9a1913d6",
+  "title": "우편 투표의 위협",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "2409e7a3",
+  "title": "AI 부정행위가 우리에게 가르쳐주는 것",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
+  ]
+ },
+ {
+  "key": "7800e2a2",
+  "title": "코첼라 루머 밀 돌아가고, 올리비아 로드리고가 데이지 체인 필즈 페스티벌 헤드라인",
+  "radar": "brief",
+  "want": "background",
+  "old": [
+   "vibe*"
+  ],
+  "new": [
+   "vibe*"
   ]
  }
 ]
