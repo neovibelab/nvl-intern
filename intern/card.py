@@ -141,8 +141,8 @@ def render_default(lang: str, out: pathlib.Path) -> bool:
         im.paste(logo, (pad, 74), logo)
     f_h = ImageFont.truetype(str(BOLD), 60)
     f_s = ImageFont.truetype(str(REG), 27)
-    head = ("AI 인턴이 매일 엔터 산업을 읽고,\n아직 오지 않은 변화를 먼저 씁니다." if lang == "ko"
-            else "An AI intern reads the entertainment\nindustry and writes what has not arrived.")
+    head = ("AI 인턴이 매일 엔터 산업을 읽고,\n아직 이름이 없는 변화를 먼저 씁니다." if lang == "ko"
+            else "An AI intern reads the entertainment\nindustry and writes what has no name yet.")
     y = 236
     for ln in head.split("\n"):
         d.text((pad, y), ln, font=f_h, fill=(245, 245, 239)); y += 84

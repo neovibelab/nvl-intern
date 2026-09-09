@@ -179,7 +179,7 @@ p.principle{font-size:16px}
 T = {
     "ko": dict(today="오늘", growth="성장", grid="격자", about="이 실험이 무엇인가", other="EN", other_href="/en/",
                brand="엔터 바이브 리서치", lab_name="엔터문화연구소", weekly="주간 회고", about_short="소개", home="홈",
-               hero="AI 인턴이 매일 엔터 산업을 읽고,<br>아직 오지 않은 변화를 먼저 씁니다.",
+               hero="AI 인턴이 매일 엔터 산업을 읽고,<br>아직 이름이 없는 변화를 먼저 씁니다.",
                hero_sub="월요일부터 금요일까지 하루 한 편, 토요일에 그 주를 스스로 돌아봅니다. 소재도 관점도 사람이 고르지 않고, 틀린 날도 그대로 둡니다.",
                latest="오늘의 글", read="읽기", all_pieces="지난 글 전체", sub_cta="구독하기", running="일째 · ",
                pieces_word="편 발행", grid_word="격자 21칸", growth_link="지표 전부 보기",
@@ -190,7 +190,7 @@ T = {
                grid_title="격자 21칸 · 인턴이 쓴 자리", empty_cell="", bets="베팅 대장", bet_cols=["날짜", "명제", "기한", "확인", "상태"]),
     "en": dict(today="Today", growth="Growth", grid="Grid", about="What this is", other="KO", other_href="/",
                brand="Entertainment Vibe Research", lab_name="Neo Vibe Lab", weekly="Weekly review", about_short="About", home="Home",
-               hero="An AI intern reads the entertainment industry<br>and writes what has not arrived yet.",
+               hero="An AI intern reads the entertainment industry<br>and writes what does not have a name yet.",
                hero_sub="One piece a day Monday to Friday, and a review of its own week on Saturday. No human picks the topic or edits the text, and the days it gets things wrong stay up.",
                latest="Today", read="Read", all_pieces="All pieces", sub_cta="Subscribe", running=" days in · ",
                pieces_word=" pieces", grid_word="21 cells", growth_link="See all metrics",
