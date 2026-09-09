@@ -647,7 +647,7 @@ def build() -> None:
                   "by a human at the lab. The judge knows neither which is newer nor which is human. "
                   "Pairs are matched by subject and cut to the same length. The win rate against the human "
                   "pieces is this experiment's absolute yardstick.</p>")
-        g = (f"<p class='label'>{t['growth_title']}</p><h1>{'여섯 축' if lang == 'ko' else 'Six axes'}</h1>"
+        g = (f"<p class='label'>{t['growth_title']}</p><h1>{f'{len(cards)}개 축' if lang == 'ko' else f'{len(cards)} axes'}</h1>"
              + '<div class="stats">' + "".join(f"<div><b>{v}</b><span>{k}</span></div>" for v, k in cards) + "</div>"
              + f"<div class='tw'><table><tr>{''.join(f'<th>{c}</th>' for c in t['cols'])}</tr>{rows}</table></div>"
              + legend

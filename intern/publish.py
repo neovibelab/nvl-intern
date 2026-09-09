@@ -213,7 +213,8 @@ def record(date: str, slug: str, j: dict, meta: dict, ko_body: str, en_body: str
 
 
 def rule_candidates(issues: list[str], date: str) -> None:
-    """검수 지적을 규칙 후보로 쌓는다. 3회 재현이면 승격(상한 30, 넣으려면 하나 뺀다). 표본 1로 규칙을 만들지 않는다."""
+    """검수 지적을 규칙 후보로 **쌓기만** 한다. 승격은 주간 회고가 뜻으로 묶은 뒤에 한다
+    (`weekly.harvest` - 2026-09-10 개편). 표본 1로 규칙을 만들지 않는다."""
     if not issues:
         return
     p = config.DATA_DIR / "rule_candidates.json"
@@ -235,6 +236,6 @@ def rule_candidates(issues: list[str], date: str) -> None:
                 lines.pop(0)
             lines.append(f"- ({date}) {k}")
             cands[k]["promoted"] = True
-        head = rules.split("\n- ")[0].rstrip() if rules else "# 자기 규칙\n\n검수 지적이 3회 재현되면 여기 올라온다. 상한 30. 넣으려면 하나 뺀다."
+        head = rules.split("\n- ")[0].rstrip() if rules else "# 자기 규칙"
         io.open(config.RULES_FILE, "w", encoding="utf-8", newline="\n").write(head + "\n\n" + "\n".join(lines) + "\n")
         _dump(p, cands)
