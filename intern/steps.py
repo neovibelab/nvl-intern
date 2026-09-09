@@ -334,6 +334,8 @@ A title that is only a metaphor or a declaration scores 0 on the first. A title 
 
 The working title set before writing was "{working}". **Drop it if the body did not go there.**
 
+**Write in English.** The system prompt is Korean; the title is not. A Korean title here is a failure.
+
 **Give three, from different angles** - one explanatory, one that pulls, one your own call.
 All three must come out of body sentences.
 
@@ -353,6 +355,10 @@ JSON: {{"candidates":[{{"source":"the sentence, verbatim","title":"short"}}, ...
         t = str(c.get("title") or "").strip().strip('"')
         src = str(c.get("source") or "").strip()
         if not t or (lang == "ko" and len(t) > 40):
+            continue
+        # 영문판 제목이 한국어로 나오는 일이 있다(2026-09-11 dry-run 실측). 그런 후보는 버린다.
+        if lang == "en" and re.search(r"[가-힣]", t):
+            print(f"  [title] 영문 후보가 한국어다 「{t}」 · 버린다")
             continue
         # 고른 문장이 실제 본문에 있는지 확인한다. 없으면 지어낸 것이다.
         key = re.sub(r"\s", "", src)[:18]
