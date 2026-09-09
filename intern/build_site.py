@@ -16,8 +16,11 @@ a{color:var(--white)}.mono{font-family:'DM Mono',ui-monospace,monospace}
 /* 상단 */
 nav{position:sticky;top:0;z-index:10;background:rgba(10,10,10,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:20px;padding:0 24px;height:52px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
 nav::-webkit-scrollbar{display:none}
-nav .brand{display:flex;align-items:center;gap:8px;color:var(--white);font-weight:700;font-size:13px;text-decoration:none;flex:none}
-nav .brand::before{content:"";width:7px;height:7px;background:var(--lime);border-radius:50%;flex:none}
+nav .lab{display:flex;align-items:center;text-decoration:none;flex:none;padding-right:15px;border-right:1px solid var(--edge);opacity:.85;transition:opacity .15s}
+nav .lab img{width:84px;height:21px;display:block}
+nav .lab:hover{opacity:1}
+nav .brand{color:var(--white);font-weight:700;font-size:13px;text-decoration:none;flex:none;letter-spacing:-.01em}
+nav .brand:hover{color:var(--lime)}
 nav .sp{flex:1;min-width:12px}
 nav a.l{color:var(--dim);text-decoration:none;font-size:12px;font-family:'DM Mono','Noto Sans KR',monospace;letter-spacing:.03em;flex:none;line-height:52px;border-bottom:2px solid transparent}
 nav a.l:hover{color:var(--lime)}nav a.l.on{color:var(--white);border-bottom-color:var(--lime)}
@@ -157,9 +160,9 @@ table.mini td.z{color:#2B2B2B}
 nav .short{display:none}
 @media(max-width:600px){
 nav{gap:14px;padding:0 18px}
-nav .brand{font-size:0}
+nav .lab img{width:68px;height:17px}nav .lab{padding-right:10px}
+nav .brand{display:none}
 nav .full{display:none}nav .short{display:inline}
-nav a.l[data-k="home"]{display:none}
 .wrap{padding:32px 18px 70px}
 h1{margin:13px 0 12px}
 .body p{font-size:16px;line-height:1.9}
@@ -175,7 +178,7 @@ p.principle{font-size:16px}
 
 T = {
     "ko": dict(today="오늘", growth="성장", grid="격자", about="이 실험이 무엇인가", other="EN", other_href="/en/",
-               brand="엔터 바이브 리서치", weekly="주간 회고", about_short="소개", home="홈",
+               brand="엔터 바이브 리서치", lab_name="엔터문화연구소", weekly="주간 회고", about_short="소개", home="홈",
                hero="AI 인턴이 매일 엔터 산업을 읽고,<br>아직 오지 않은 변화를 먼저 씁니다.",
                hero_sub="월요일부터 금요일까지 하루 한 편, 토요일에 그 주를 스스로 돌아봅니다. 소재도 관점도 사람이 고르지 않고, 틀린 날도 그대로 둡니다.",
                latest="오늘의 글", read="읽기", all_pieces="지난 글 전체", sub_cta="구독하기", running="일째 · ",
@@ -186,7 +189,7 @@ T = {
                growth_title="성장 지표", cols=["날", "날짜", "제목", "좌표", "시제", "레이더와", "검증", "검수", "베팅"],
                grid_title="격자 21칸 · 인턴이 쓴 자리", empty_cell="", bets="베팅 대장", bet_cols=["날짜", "명제", "기한", "확인", "상태"]),
     "en": dict(today="Today", growth="Growth", grid="Grid", about="What this is", other="KO", other_href="/",
-               brand="Entertainment Vibe Research", weekly="Weekly review", about_short="About", home="Home",
+               brand="Entertainment Vibe Research", lab_name="Neo Vibe Lab", weekly="Weekly review", about_short="About", home="Home",
                hero="An AI intern reads the entertainment industry<br>and writes what has not arrived yet.",
                hero_sub="One piece a day Monday to Friday, and a review of its own week on Saturday. No human picks the topic or edits the text, and the days it gets things wrong stay up.",
                latest="Today", read="Read", all_pieces="All pieces", sub_cta="Subscribe", running=" days in · ",
@@ -331,7 +334,7 @@ def page(lang: str, title: str, body: str, here: str = "", latest: str = "",
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
 <style>{CSS}</style></head><body>
-<nav><a class="brand" href="{root}">{t['brand']}</a><span class="sp"></span>{links}</nav>
+<nav><a class="lab" href="{config.LAB_URL}"><img src="/assets/logo-lime-600.png" alt="{t['lab_name']}" title="{t['lab_name']}"></a><a class="brand" href="{root}">{t['brand']}</a><span class="sp"></span>{links}</nav>
 <div class="wrap">{body}
 <div class="foot">{t['human']} <a href="{config.NEWSLETTER_URL}">{t['human_link']}</a><br>© 2026 엔터문화연구소 (Neo Vibe Lab) · Seoul</div></div></body></html>"""
 

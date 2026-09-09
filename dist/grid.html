@@ -20,8 +20,11 @@ a{color:var(--white)}.mono{font-family:'DM Mono',ui-monospace,monospace}
 /* 상단 */
 nav{position:sticky;top:0;z-index:10;background:rgba(10,10,10,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:20px;padding:0 24px;height:52px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
 nav::-webkit-scrollbar{display:none}
-nav .brand{display:flex;align-items:center;gap:8px;color:var(--white);font-weight:700;font-size:13px;text-decoration:none;flex:none}
-nav .brand::before{content:"";width:7px;height:7px;background:var(--lime);border-radius:50%;flex:none}
+nav .lab{display:flex;align-items:center;text-decoration:none;flex:none;padding-right:15px;border-right:1px solid var(--edge);opacity:.85;transition:opacity .15s}
+nav .lab img{width:84px;height:21px;display:block}
+nav .lab:hover{opacity:1}
+nav .brand{color:var(--white);font-weight:700;font-size:13px;text-decoration:none;flex:none;letter-spacing:-.01em}
+nav .brand:hover{color:var(--lime)}
 nav .sp{flex:1;min-width:12px}
 nav a.l{color:var(--dim);text-decoration:none;font-size:12px;font-family:'DM Mono','Noto Sans KR',monospace;letter-spacing:.03em;flex:none;line-height:52px;border-bottom:2px solid transparent}
 nav a.l:hover{color:var(--lime)}nav a.l.on{color:var(--white);border-bottom-color:var(--lime)}
@@ -161,9 +164,9 @@ table.mini td.z{color:#2B2B2B}
 nav .short{display:none}
 @media(max-width:600px){
 nav{gap:14px;padding:0 18px}
-nav .brand{font-size:0}
+nav .lab img{width:68px;height:17px}nav .lab{padding-right:10px}
+nav .brand{display:none}
 nav .full{display:none}nav .short{display:inline}
-nav a.l[data-k="home"]{display:none}
 .wrap{padding:32px 18px 70px}
 h1{margin:13px 0 12px}
 .body p{font-size:16px;line-height:1.9}
@@ -176,6 +179,6 @@ p.principle{font-size:16px}
 .today-card .t{font-size:20px}
 .hero-cta .btn{flex:1;text-align:center}
 }</style></head><body>
-<nav><a class="brand" href="/">엔터 바이브 리서치</a><span class="sp"></span><a class="l" data-k="home" href="/">홈</a><a class="l" data-k="today" href="2026-09-10-who-holds-the-ruler-for-ai-outputs">오늘</a><a class="l" data-k="growth" href="/growth">성장</a><a class="l on" data-k="grid" href="/grid">격자</a><a class="l" data-k="" href="https://www.neovibelab.com/lab/ai-intern"><span class="full">이 실험이 무엇인가</span><span class="short">소개</span></a><a class="l" data-k="" href="https://www.neovibelab.com/lab/ai-intern#subscribe">구독</a><a class="l" data-k="" href="/en/">EN</a></nav>
+<nav><a class="lab" href="https://www.neovibelab.com/"><img src="/assets/logo-lime-600.png" alt="엔터문화연구소" title="엔터문화연구소"></a><a class="brand" href="/">엔터 바이브 리서치</a><span class="sp"></span><a class="l" data-k="home" href="/">홈</a><a class="l" data-k="today" href="2026-09-10-who-holds-the-ruler-for-ai-outputs">오늘</a><a class="l" data-k="growth" href="/growth">성장</a><a class="l on" data-k="grid" href="/grid">격자</a><a class="l" data-k="" href="https://www.neovibelab.com/lab/ai-intern"><span class="full">이 실험이 무엇인가</span><span class="short">소개</span></a><a class="l" data-k="" href="https://www.neovibelab.com/lab/ai-intern#subscribe">구독</a><a class="l" data-k="" href="/en/">EN</a></nav>
 <div class="wrap"><p class='label'>격자 21칸 · 인턴이 쓴 자리</p><h1>21칸</h1><p class='meta' style='border:none;margin-top:6px'><span>5/21 칸이 찼습니다. 빈 칸이 곧 소재 공백입니다.</span></p><div class="tw"><div class='grid'><div class='h'>요인 / 단계</div><div class='h'>생산</div><div class='h'>유통</div><div class='h'>소비</div><div class='f'>IP</div><div><a href='2026-09-08-who-names-the-price-of-a-lyric'>D+4</a> </div><div><span class='z'>·</span></div><div><span class='z'>·</span></div><div class='f'>포맷</div><div><span class='z'>·</span></div><div><span class='z'>·</span></div><div><span class='z'>·</span></div><div class='f'>테크</div><div><span class='z'>·</span></div><div><span class='z'>·</span></div><div><span class='z'>·</span></div><div class='f'>자본</div><div><span class='z'>·</span></div><div><span class='z'>·</span></div><div><a href='2026-09-06-the-bottleneck-called-100m'>D+2</a> </div><div class='f'>정책</div><div><a href='2026-09-07-provenance-is-the-price-tag'>D+3</a> <a href='2026-09-10-who-holds-the-ruler-for-ai-outputs'>D+6</a> </div><div><a href='2026-09-09-whoever-holds-the-valve-wins'>D+5</a> </div><div><span class='z'>·</span></div><div class='f'>교차산업</div><div><span class='z'>·</span></div><div><span class='z'>·</span></div><div><span class='z'>·</span></div><div class='f'>교차정체성</div><div><span class='z'>·</span></div><div><span class='z'>·</span></div><div><a href='2026-09-05-friction-sells-identity'>D+1</a> </div></div></div>
 <div class="foot">AI가 매일 읽고 정리합니다. 관점은 사람이 씁니다. <a href="https://maily.so/draft.briefing?via=intern">엔터문화연구소 뉴스레터</a><br>© 2026 엔터문화연구소 (Neo Vibe Lab) · Seoul</div></div></body></html>

@@ -55,6 +55,7 @@ TENSE_KO = {"vibe": "바이브", "signal": "시그널", "background": "배경"}
 
 # 2026-09-10 DNS 확인(A 76.76.21.21 · 프록시 꺼짐 · HTTPS 200)으로 정식 주소 복귀.
 SITE_URL = os.environ.get("INTERN_SITE_URL", "https://intern.neovibelab.com")
+LAB_URL = "https://www.neovibelab.com/"          # 연구소 - 인턴 사이트 어디서나 한 번에 돌아간다
 ABOUT_URL = "https://www.neovibelab.com/lab/ai-intern"   # 2026-09-06 대표 지시 - 주소에서 「AI 인턴 실험」이 보여야 한다
 NEWSLETTER_URL = "https://maily.so/draft.briefing?via=intern"
 # 독자 신호는 레이더 서버를 경유한다. 정적 페이지에 Supabase 키를 심으면 레이더 표가 통째로 열린다.
