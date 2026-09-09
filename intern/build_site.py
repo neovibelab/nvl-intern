@@ -25,6 +25,7 @@ nav .sp{flex:1;min-width:12px}
 nav a.l{color:var(--dim);text-decoration:none;font-size:12px;font-family:'DM Mono','Noto Sans KR',monospace;letter-spacing:.03em;flex:none;line-height:52px;border-bottom:2px solid transparent}
 nav a.l:hover{color:var(--lime)}nav a.l.on{color:var(--white);border-bottom-color:var(--lime)}
 .wrap{max-width:720px;margin:0 auto;padding:44px 24px 90px}
+.legend{color:var(--dim);font-size:12.5px;line-height:1.7;margin-top:12px}
 .label{color:var(--lime);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
 
 /* 글 머리 */
@@ -612,10 +613,20 @@ def build() -> None:
                        f"<td>{p['by_date'][5:]}</td><td class='ttl'>{html.escape(p['check_ko'] if lang == 'ko' else p['check_en'])}</td>"
                        f"<td>{'열림' if (lang == 'ko' and p['status'] == 'open') else p['status']}</td></tr>" for p in reversed(preds))
         cards = _summary_cards(lang, stats, preds)
-        g = (f"<p class='label'>{t['growth_title']}</p><h1>{'다섯 축' if lang == 'ko' else 'Five axes'}</h1>"
+        # 형식 칸은 숫자만 보면 뜻을 모른다. 표 아래에 무엇을 잰 건지 한 줄로 적는다.
+        legend = ("<p class='legend'>형식 · 제목 판정(무슨 얘긴지 알려주나 0~2 · 읽고 싶게 하나 0~2)에 "
+                  "첫 문단·AI 티·헤지·문장 길이를 더한 점수입니다. 「약속 어김」은 본문이 제목이 말한 것을 "
+                  "다루지 않았다는 뜻입니다. 인턴에게는 이 숫자만 보여주고 고치는 법은 알려주지 않습니다.</p>"
+                  if lang == "ko" else
+                  "<p class='legend'>Form · a title judgment (does it tell you what this is about 0-2 · "
+                  "does it make you want to read 0-2) plus lead, AI tells, hedging and sentence length. "
+                  "Broke promise means the body did not deliver what the title said. "
+                  "The intern is shown the numbers and never told how to fix them.</p>")
+        g = (f"<p class='label'>{t['growth_title']}</p><h1>{'여섯 축' if lang == 'ko' else 'Six axes'}</h1>"
              + '<div class="stats">' + "".join(f"<div><b>{v}</b><span>{k}</span></div>" for v, k in cards) + "</div>"
              + f"<div class='tw'><table><tr>{''.join(f'<th>{c}</th>' for c in t['cols'])}</tr>{rows}</table></div>"
-             f"<h2 class='label' style='margin-top:44px'>{t['bets']}</h2>"
+             + legend
+             + f"<h2 class='label' style='margin-top:44px'>{t['bets']}</h2>"
              f"<div class='tw'><table><tr>{''.join(f'<th>{c}</th>' for c in t['bet_cols'])}</tr>{bets or '<tr><td colspan=5>-</td></tr>'}</table></div>")
         io.open(base / "growth.html", "w", encoding="utf-8").write(page(lang, t["growth"], g, here="growth", latest=latest_slug, url=f"/{"en/" if lang == "en" else ""}growth"))
         # 격자
