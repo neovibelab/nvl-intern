@@ -53,9 +53,8 @@ STAGES_EN = {"생산": "production", "유통": "distribution", "소비": "consum
 TENSE_FROM_RADAR = {"soon": "vibe", "now": "signal", "done": "background", "brief": "background", None: None}
 TENSE_KO = {"vibe": "바이브", "signal": "시그널", "background": "배경"}
 
-# DNS(intern.neovibelab.com A 76.76.21.21)가 붙기 전까지는 지금 열리는 주소를 쓴다.
-# 붙은 뒤 이 기본값만 되돌리면 새 글부터 반영된다(옛 글의 vercel.app 링크도 계속 열린다).
-SITE_URL = os.environ.get("INTERN_SITE_URL", "https://nvl-intern.vercel.app")
+# 2026-09-10 DNS 확인(A 76.76.21.21 · 프록시 꺼짐 · HTTPS 200)으로 정식 주소 복귀.
+SITE_URL = os.environ.get("INTERN_SITE_URL", "https://intern.neovibelab.com")
 ABOUT_URL = "https://www.neovibelab.com/lab/ai-intern"   # 2026-09-06 대표 지시 - 주소에서 「AI 인턴 실험」이 보여야 한다
 NEWSLETTER_URL = "https://maily.so/draft.briefing?via=intern"
 # 독자 신호는 레이더 서버를 경유한다. 정적 페이지에 Supabase 키를 심으면 레이더 표가 통째로 열린다.

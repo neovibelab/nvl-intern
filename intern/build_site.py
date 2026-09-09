@@ -452,6 +452,42 @@ def _summary_cards(lang: str, stats: list, preds: list) -> list:
     ]
 
 
+def feed(lang: str, pieces: list) -> str:
+    """RSS 2.0. 사이트가 발행 정본이므로 구독 경로 하나는 외부 서비스 밖에 둔다."""
+    import datetime as _dt
+    import email.utils as _eu
+    t = T[lang]
+    root = config.SITE_URL + ("/en" if lang == "en" else "")
+    items = []
+    for fm, _body, slug in pieces[:30]:
+        date = fm.get("date", "")
+        try:
+            y, m, d = map(int, date.split("-"))
+            pub = _eu.format_datetime(_dt.datetime(y, m, d, 8, 30, tzinfo=_dt.timezone(_dt.timedelta(hours=9))))
+        except Exception:
+            pub = ""
+        desc = (fm.get("source_summary") or "").strip() or t["about_line"]
+        link = f"{root}/{slug}"
+        items.append(
+            "  <item>\n"
+            f"    <title>{html.escape(fm.get('title', ''))}</title>\n"
+            f"    <link>{link}</link>\n"
+            f'    <guid isPermaLink="true">{link}</guid>\n'
+            f"    <pubDate>{pub}</pubDate>\n"
+            f"    <description>{html.escape(desc)}</description>\n"
+            "  </item>")
+    body = "\n".join(items)
+    return (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n<channel>\n'
+        f"  <title>{html.escape(t['label'])}</title>\n"
+        f"  <link>{root}/</link>\n"
+        f'  <atom:link href="{root}/feed.xml" rel="self" type="application/rss+xml"/>\n'
+        f"  <description>{html.escape(t['about_line'])}</description>\n"
+        f"  <language>{'ko' if lang == 'ko' else 'en'}</language>\n"
+        f"{body}\n</channel>\n</rss>\n")
+
+
 def build() -> None:
     keep = config.DIST_DIR / ".vercel"
     saved = None
@@ -524,6 +560,7 @@ def build() -> None:
         else:
             main = f"<p>{t['empty']}</p>"
         card.render_default(lang, config.DIST_DIR / "og" / ("default-en.png" if lang == "en" else "default.png"))
+        io.open(base / "feed.xml", "w", encoding="utf-8", newline=chr(10)).write(feed(lang, pieces))
         io.open(base / "index.html", "w", encoding="utf-8").write(
             page(lang, t["home"], main, here="home", latest=latest_slug, url="/en/" if lang == "en" else "/"))
         # 성장
