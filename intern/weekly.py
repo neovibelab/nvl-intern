@@ -133,6 +133,9 @@ def _form_summary(rows: list[dict]) -> dict:
         "n": n,
         "score": round(sum(form.score(f) for f in fs) / n),
         "title_noun": sum(1 for f in fs if f.get("title_noun")),
+        "clarity": round(sum((f.get("title_check") or {}).get("clarity", 0) for f in fs) / n, 1),
+        "pull": round(sum((f.get("title_check") or {}).get("pull", 0) for f in fs) / n, 1),
+        "broken": sum(1 for f in fs if (f.get("title_check") or {}) and not (f.get("title_check") or {}).get("kept_promise", True)),
         "lead_concrete": sum(1 for f in fs if f.get("lead_concrete")),
         "ai_tell": sum(f.get("ai_tell", 0) for f in fs),
         "hedge_10k": round(sum(f.get("hedge_10k", 0) for f in fs) / n, 1),
@@ -201,7 +204,7 @@ REFLECT_KO = """[이번 주 내 기록]
 1문단: 이번 주 무엇을 봤나. 좌표와 시제 분포가 말하는 것.
 2문단: **무엇을 틀렸나.** 검수 지적에서 반복된 것을 지목한다. 변명하지 않는다.
 3문단: 독자 신호와 규칙. 무엇을 규칙으로 올렸고 무엇을 안 올렸는지, 안 올린 이유까지.
-4문단: **형식과 접근성.** 위 숫자를 그대로 읽는다. 제목이 무슨 얘긴지 알려줬나, 첫 문단이 사건을 세웠나,
+4문단: **형식과 접근성.** 위 숫자를 그대로 읽는다. 제목이 무슨 얘긴지 알려주고 읽고 싶게 했나, 첫 문단이 사건을 세웠나,
 AI 티가 늘었나. **누가 고치는 법을 알려주지 않았다** - 숫자만 보고 스스로 판단한다.
 5문단: **다음 주에 바꿀 것 하나.** 지킬 수 있는 크기로 구체적으로. 각오나 다짐으로 끝내지 않는다.
 
@@ -243,10 +246,12 @@ def _form_line(g: dict, lang: str) -> str:
     if not f:
         return "(측정 없음)" if lang == "ko" else "(not measured)"
     if lang == "ko":
-        return (f"형식 점수 {f['score']}/100 · 제목에 소재 고유명사가 있던 편 {f['title_noun']}/{f['n']} · "
+        return (f"형식 점수 {f['score']}/100 · 제목이 무슨 얘긴지 알려준 정도 {f['clarity']}/2 · "
+                f"읽고 싶게 만든 정도 {f['pull']}/2 · 제목이 약속을 어긴 편 {f['broken']}/{f['n']} · "
                 f"첫 문단에 누가 무엇을 언제가 있던 편 {f['lead_concrete']}/{f['n']} · "
                 f"AI tell(대조 공식·메타 수사·줄표) 합계 {f['ai_tell']} · 헤지 만자당 {f['hedge_10k']} · 문장 중앙 {f['sent_med']}자")
-    return (f"Form score {f['score']}/100 · titles carrying a proper noun {f['title_noun']}/{f['n']} · "
+    return (f"Form score {f['score']}/100 · title clarity {f['clarity']}/2 · pull {f['pull']}/2 · "
+            f"titles that broke their promise {f['broken']}/{f['n']} · "
             f"leads with who/what/when {f['lead_concrete']}/{f['n']} · "
             f"AI tells {f['ai_tell']} · hedges per 10k {f['hedge_10k']} · median sentence {f['sent_med']}")
 

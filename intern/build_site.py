@@ -586,8 +586,16 @@ def build() -> None:
             f0 = s.get("form") or {}
             fm_cell = f"{form.score(f0)}" if f0 else "-"
             if f0:
-                marks = ("이름" if f0.get("title_noun") else "") + (" 리드" if f0.get("lead_concrete") else "")
-                fm_cell += f" <span style='color:var(--dim)'>{marks.strip() or '-'}</span>"
+                # 제목은 세는 게 아니라 판정한다(2026-09-10) - 알려주나·읽고 싶나, 그리고 낚시였나
+                tc = f0.get("title_check") or {}
+                marks = []
+                if tc:
+                    marks.append(("제목 %d·%d" if lang == "ko" else "title %d·%d") % (tc.get("clarity", 0), tc.get("pull", 0)))
+                    if not tc.get("kept_promise", True):
+                        marks.append("약속 어김" if lang == "ko" else "broke promise")
+                if f0.get("lead_concrete"):
+                    marks.append("리드" if lang == "ko" else "lead")
+                fm_cell += f" <span style='color:var(--dim)'>{' · '.join(marks) or '-'}</span>"
             return (f"<tr><td>{s['day']}</td><td>{s['date'][5:]}</td><td class='ttl'><a href='{s['slug']}'>{title}</a></td>"
                     f"<td>{html.escape(coord)}</td><td>{html.escape(tense)}</td><td>{radar}</td>"
                     f"<td>{s['claims_verified']}/{s['claims_total']}</td><td>{html.escape(rv)}</td>"

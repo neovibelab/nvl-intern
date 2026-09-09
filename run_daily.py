@@ -151,7 +151,17 @@ def main() -> int:
     nouns = form.source_nouns(trace["cluster"]["items"], ko)
     tk = steps.title_from_body(ko, j, "ko", nouns); te = steps.title_from_body(en, j, "en", nouns)
     j["title_ko"], j["title_en"] = tk["title"], te["title"]
-    trace["title"] = {"ko": tk, "en": te}
+    # 제목을 독자 자리에서 판정한다. 무슨 얘긴지 모르겠거나 낚시면 한 번만 다시 고른다.
+    tc = steps.title_check(j["title_ko"], ko, "ko")
+    if tc and (tc.get("clarity", 0) == 0 or not tc.get("kept_promise", True)):
+        print("  [title] 다시 고른다")
+        j2 = dict(j); j2["title_ko"] = tc.get("why", "")[:60]
+        tk2 = steps.title_from_body(ko, j2, "ko", nouns)
+        if tk2.get("from_body"):
+            tc2 = steps.title_check(tk2["title"], ko, "ko")
+            if tc2 and (tc2.get("clarity", 0) + tc2.get("pull", 0)) > (tc.get("clarity", 0) + tc.get("pull", 0)):
+                j["title_ko"], tk, tc = tk2["title"], tk2, tc2
+    trace["title"] = {"ko": tk, "en": te, "check": tc}
 
     outlets = [x.get("source") or "" for x in trace["cluster"]["items"]]
     last_issues_en = steps.issues_en(last_issues) if unresolved else []
@@ -174,10 +184,10 @@ def main() -> int:
             "last_issues_en": last_issues_en,
             "sources": trace["cluster"]["urls"], "source_items": trace["cluster"]["items"], "source_summary": src_sum,
             "name_map": name_maps, "title_source": {"ko": tk.get("source", ""), "en": te.get("source", "")},
-            "form": form.measure(j["title_ko"], ko, trace["cluster"]["items"]),
+            "form": dict(form.measure(j["title_ko"], ko, trace["cluster"]["items"]), title_check=tc),
             "wiki": mats["wiki"], "lexicon": mats["lexicon"]}
     trace["form"] = meta["form"]
-    print(f"  [form] 점수 {form.score(meta['form'])} · 제목 고유명사 {meta['form']['title_noun']} · "
+    print(f"  [form] 점수 {form.score(meta['form'])} · 제목 고유명사 {meta['form']['title_noun']}(기록만) · "
           f"리드 구체 {meta['form']['lead_concrete']} · AI tell {meta['form']['ai_tell']} · 문장중앙 {meta['form']['sent_med']}자")
     publish.record(args.date, slug, j, meta, ko, en, trace)
     publish.rule_candidates(last_issues if unresolved else [i for rv in reviews for i in rv.get("issues", [])], args.date)

@@ -289,24 +289,29 @@ def style_gate(text: str, lang: str = "ko") -> tuple[str, dict]:
 def title_from_body(body: str, j: dict, lang: str, nouns: list[str] | None = None) -> dict:
     """핵심 문장 하나를 고르고 그 문장의 말로 제목을 만든다. 근거 문장을 함께 돌려준다.
 
-    **고유명사를 넣는다** (2026-09-10 대표 지시) - 제목이 독자가 만나는 첫 관문이고,
-    회사·사람·작품 이름이 없으면 무슨 얘긴지 가늠할 수 없다.
+    **기준은 셋이다** (2026-09-10 대표 정정) - 내용을 알려주나 · 흥미로운가 · 읽고 싶게 하나.
+    고유명사는 그 셋을 이루는 흔한 수단이지 기준이 아니다. 이름 없이 알려주면 된 것이고,
+    이름을 넣고도 무슨 얘긴지 모르겠으면 안 된 것이다.
     """
     working = j.get("title_ko" if lang == "ko" else "title_en", "")
     names = " · ".join((nouns or [])[:6])
     hint = ""
     if names:
-        hint = (f"\n**제목에 소재의 고유명사를 넣는다** - 회사·사람·작품·기관 이름 중 하나. "
-                f"오늘 소재의 이름들: {names}. 그 이름이 들어간 본문 문장이 있으면 그 문장을 우선 고른다."
+        hint = (f"\n참고로 오늘 소재에 나오는 이름들: {names}. **억지로 넣지 않는다** - "
+                f"이름이 있어야 무슨 얘긴지 빨리 알려줄 때만 쓴다."
                 if lang == "ko" else
-                f"\n**Put a proper noun in the title** - a company, person, work or institution. "
-                f"Names in today's source: {names}. Prefer a body sentence that carries one.")
+                f"\nNames in today's source: {names}. **Do not force one in** - "
+                f"use a name only when it is what makes the subject legible fast.")
     if lang == "ko":
         prompt = f"""아래는 오늘 발행할 글의 최종 본문이다. 제목을 정한다.
 
 **본문에서 핵심 문장 하나를 그대로 고른다.** 논지를 가장 짧게 담은 문장, 또는 독자가 멈출 문장.
 그 문장의 **말을 써서** 제목을 만든다. 28자 안. 새 비유나 압축 문구를 지어내지 않는다.
-문장을 짧게 줄이거나 질문형으로 바꾸는 것까지가 허용 범위다.{hint}
+문장을 짧게 줄이거나 질문형으로 바꾸는 것까지가 허용 범위다.
+
+**제목은 셋으로 판정된다.** ①무슨 얘긴지 알려주나 ②흥미로운가 ③읽고 싶게 하나.
+비유나 선언으로 멋을 낸 제목은 ①에서 0점이다 - 「밸브를 쥔 쪽이 이겼다」로는 무슨 산업 얘긴지 모른다.
+반대로 설명만 하고 아무 당김이 없으면 ②③이 낮다. 셋을 같이 만족하는 문장을 고른다.{hint}
 
 참고 - 쓰기 전에 잡아 둔 임시 제목은 「{working}」이다. **본문이 그 제목대로 안 갔으면 버린다.**
 
@@ -319,7 +324,10 @@ JSON: {{"source":"본문에서 고른 문장 그대로","title":"28자 안"}}
 
 **Pick one sentence from the body, verbatim** - the one that carries the argument most compactly, or the one a reader stops on.
 Build the title **out of that sentence's own words**. Keep it short. Do not invent a new metaphor or a compressed slogan.
-Shortening the sentence or turning it into a question is the whole allowed range.{hint}
+Shortening the sentence or turning it into a question is the whole allowed range.
+
+**A title is judged on three things.** 1 does it tell the reader what this is about 2 is it interesting 3 does it make them want to read.
+A title that is only a metaphor or a declaration scores 0 on the first. A title that only explains scores low on the other two.{hint}
 
 The working title set before writing was "{working}". **Drop it if the body did not go there.**
 
@@ -345,6 +353,41 @@ JSON: {{"source":"the sentence, verbatim","title":"short"}}
         return {"title": working, "source": src, "from_body": False}
     print(f"  [title] {lang} 「{title}」 ← {src[:44]}")
     return {"title": title, "source": src, "from_body": True}
+
+
+TITLE_JUDGE = """너는 제목만 보고 판단하는 독자다. 글을 쓴 사람이 아니다.
+한국 엔터 업계에서 일하고, 하루에 제목 수십 개를 스치며 무엇을 열지 고른다.
+
+세 가지만 묻는다.
+1 **알려주나** - 이 제목만 보고 무슨 얘긴지 가늠되나. 0 전혀 / 1 대충 / 2 분명히
+2 **읽고 싶나** - 열어 보고 싶은가. 궁금하게 만드는가. 0 안 열겠다 / 1 지나칠 수도 / 2 연다
+3 **약속을 지키나** - 본문이 제목이 말한 것을 실제로 다루나. 낚시면 false
+
+**비유나 선언으로 멋을 낸 제목에 후하지 마라.** 「밸브를 쥔 쪽이 이겼다」처럼 무슨 산업 얘긴지
+알 수 없으면 1번은 0이다. 반대로 설명적이기만 하고 아무 당김이 없으면 2번이 낮다.
+둘 다 높은 제목이 좋은 제목이다."""
+
+
+def title_check(title: str, body: str, lang: str = "ko") -> dict:
+    """제목을 독자 자리에서 판정한다. 고치는 법은 주지 않는다 - 숫자와 이유만."""
+    try:
+        d = llm.ask_json(f"""[제목]
+{title}
+
+[본문]
+{body[:2600]}
+
+JSON: {{"clarity":0|1|2,"pull":0|1|2,"kept_promise":true|false,"why":"한 줄"}}""",
+                         system=TITLE_JUDGE, max_tokens=1200)
+    except Exception as e:  # noqa: BLE001
+        print(f"  [title-check] 실패 {type(e).__name__}")
+        return {}
+    out = {"clarity": int(d.get("clarity") or 0), "pull": int(d.get("pull") or 0),
+           "kept_promise": bool(d.get("kept_promise")), "why": str(d.get("why", ""))[:160]}
+    out["clarity"] = max(0, min(2, out["clarity"])); out["pull"] = max(0, min(2, out["pull"]))
+    print(f"  [title-check] {lang} 알려주나 {out['clarity']}/2 · 읽고싶나 {out['pull']}/2 · "
+          f"약속 {'지킴' if out['kept_promise'] else '어김'} · {out['why'][:60]}")
+    return out
 
 
 # ── ⑥ 자기 검수 (별도 컨텍스트) ────────────────────────────────────────────

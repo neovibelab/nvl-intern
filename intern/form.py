@@ -60,12 +60,20 @@ def measure(title: str, body: str, items: list[dict] | None = None) -> dict:
 
 
 def score(f: dict) -> int:
-    """0~100. 성장 페이지가 한 숫자로 보여주기 위한 것이고, 축별 원값이 정본이다."""
+    """0~100. 성장 페이지가 한 숫자로 보여주기 위한 것이고, 축별 원값이 정본이다.
+
+    **제목은 세는 게 아니라 판정한다** (2026-09-10 정정). 고유명사 포함 여부는 상관지표라
+    점수에서 뺐다 - 기준은 「알려주나·읽고 싶나·약속을 지키나」다. 판정이 없으면 그 40점은 비운다.
+    """
     pts = 0
-    pts += 30 if f.get("title_noun") else 0
-    pts += 25 if f.get("lead_concrete") else 0
+    t = f.get("title_check") or {}
+    if t:
+        pts += int(t.get("clarity", 0)) * 10          # 알려주나 0~20
+        pts += int(t.get("pull", 0)) * 7              # 읽고 싶나 0~14
+        pts += 6 if t.get("kept_promise") else 0      # 약속
+    pts += 20 if f.get("lead_concrete") else 0
     pts += max(0, 20 - int(f.get("ai_tell", 0)) * 7)
-    pts += max(0, 15 - int(f.get("hedge_10k", 0)))
+    pts += max(0, 10 - int(f.get("hedge_10k", 0) / 2))
     med = f.get("sent_med", 0)
     pts += 10 if 25 <= med <= 60 else (5 if med <= 75 else 0)
     return min(100, pts)
