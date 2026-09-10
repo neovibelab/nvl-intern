@@ -315,9 +315,14 @@ def title_from_body(body: str, j: dict, lang: str, nouns: list[str] | None = Non
 그 문장의 **말을 써서** 제목을 만든다. 28자 안. 새 비유나 압축 문구를 지어내지 않는다.
 문장을 짧게 줄이거나 질문형으로 바꾸는 것까지가 허용 범위다.
 
-**제목은 셋으로 판정된다.** ①무슨 얘긴지 알려주나 ②흥미로운가 ③읽고 싶게 하나.
-비유나 선언으로 멋을 낸 제목은 ①에서 0점이다 - 「밸브를 쥔 쪽이 이겼다」로는 무슨 산업 얘긴지 모른다.
-반대로 설명만 하고 아무 당김이 없으면 ②③이 낮다. 셋을 같이 만족하는 문장을 고른다.{hint}
+**제목은 셋으로 검사한다. 셋 다 통과해야 쓴다.**
+①**소재가 서 있나** - 회사·사람·작품·기관 이름, 또는 그 자리를 대신할 수치·제도·지역이 제목 안에 있나.
+「밸브」·「가사값」처럼 비유만 남으면 실격이다.
+②**사건이 보이나** - 무엇이 벌어졌는지 동사가 말하나. 「인수했다·제소했다·나눠줬다·기준을 바꿨다」.
+「~의 시대」·「~라는 질문」 같은 상태 서술은 사건이 아니다.
+③**긴장이 있나** - 셋 중 하나면 된다. **반전**(소송 상대가 학습 데이터 공급자가 됐다) ·
+**대비**(미국은 이렇게, 중국은 저렇게) · **미지수**(못 가려내면 누가 증명하나).
+**실격** - 지시어로 시작(「그 판」·「저쪽」) · 주어가 빠진 압축 대구(「같은 일이 세 곳에서」) · 본문에 없는 문구.{hint}
 
 참고 - 쓰기 전에 잡아 둔 임시 제목은 「{working}」이다. **본문이 그 제목대로 안 갔으면 버린다.**
 
@@ -335,8 +340,13 @@ JSON: {{"candidates":[{{"source":"본문에서 고른 문장 그대로","title":
 Build the title **out of that sentence's own words**. Keep it short. Do not invent a new metaphor or a compressed slogan.
 Shortening the sentence or turning it into a question is the whole allowed range.
 
-**A title is judged on three things.** 1 does it tell the reader what this is about 2 is it interesting 3 does it make them want to read.
-A title that is only a metaphor or a declaration scores 0 on the first. A title that only explains scores low on the other two.{hint}
+**A title has to pass three tests.**
+1 **Is the subject there** - a company, person, work or institution, or a number, rule or place standing in for one.
+A title that is only a metaphor fails.
+2 **Is there an event** - does a verb say what happened. "Bought", "sued", "paid out", "changed the rule".
+A state of affairs ("the age of ...", "the question of ...") is not an event.
+3 **Is there tension** - one of three. A **reversal**, a **contrast**, or an **open question**.
+**Disqualified** - starts with a demonstrative, drops its subject, or is not in the body.{hint}
 
 The working title set before writing was "{working}". **Drop it if the body did not go there.**
 
@@ -372,6 +382,13 @@ JSON: {{"candidates":[{{"source":"the sentence, verbatim","title":"short"}}, ...
             print(f"  [title] 후보 「{t}」의 문장이 본문에 없다 · 버린다")
             continue
         cands.append({"title": t, "source": src})
+    # ① 소재 게이트(2026-09-11) - 이름·수치가 있는 후보가 하나라도 있으면 그쪽만 남긴다.
+    # 점수가 아니라 거르개다. 전부 걸리면 버리지 않는다 - 후보가 0이 되는 게 더 나쁘다.
+    named = [c for c in cands if re.search(r"[A-Z][A-Za-z]|\d|[가-힣]{2,}(사|社|그룹|엔터|뮤직|레이블)", c["title"])
+             or any(x in c["title"] for x in (nouns or []))]
+    if named and len(named) < len(cands):
+        print(f"  [title] 소재 없는 후보 {len(cands) - len(named)}개 제외")
+        cands = named
     if not cands:
         print("  [title] 쓸 후보가 없다 · 임시 제목 유지")
         return {"title": working, "source": "", "from_body": False, "candidates": []}
@@ -382,14 +399,24 @@ JSON: {{"candidates":[{{"source":"the sentence, verbatim","title":"short"}}, ...
 TITLE_JUDGE = """너는 제목만 보고 판단하는 독자다. 글을 쓴 사람이 아니다.
 한국 엔터 업계에서 일하고, 하루에 제목 수십 개를 스치며 무엇을 열지 고른다.
 
-세 가지만 묻는다.
-1 **알려주나** - 이 제목만 보고 무슨 얘긴지 가늠되나. **2점 만점** - 0 전혀 / 1 대충 / 2 분명히
-2 **읽고 싶나** - 열어 보고 싶은가. 궁금하게 만드는가. **2점 만점** - 0 안 열겠다 / 1 지나칠 수도 / 2 연다
-3 **약속을 지키나** - 본문이 제목이 말한 것을 실제로 다루나. 낚시면 false
+**눈금이 있다. 인상으로 매기지 말고 아래 정의로 매긴다.**
 
-**비유나 선언으로 멋을 낸 제목에 후하지 마라.** 「밸브를 쥔 쪽이 이겼다」처럼 무슨 산업 얘긴지
-알 수 없으면 1번은 0이다. 반대로 설명적이기만 하고 아무 당김이 없으면 2번이 낮다.
-둘 다 높은 제목이 좋은 제목이다."""
+1 **알려주나** - 소재와 사건이 제목에 서 있나.
+  - 0 = **소재가 안 보인다.** 회사·사람·작품·기관 이름도, 그 자리를 대신할 수치·제도·지역도 없다.
+    비유만 남은 제목이 여기다 - 「밸브를 쥔 쪽이 이겼다」로는 무슨 산업 얘긴지 모른다.
+  - 1 = **소재는 보이나 사건이 없다.** 무슨 일이 벌어졌는지 동사가 말하지 않는다.
+    「~의 시대」·「~라는 질문」 같은 상태 서술이 여기다.
+  - 2 = **소재와 사건이 둘 다 보인다.** 누가 무엇을 했는지 제목만 읽고 안다.
+
+2 **읽고 싶나** - 긴장이 있나. 긴장은 셋 중 하나다 - **반전 · 대비 · 미지수**.
+  - 0 = 셋 중 아무것도 없다. 사실만 평평하게 적혀 있다.
+  - 1 = 있긴 하나 약하다. 다른 제목과 나란히 놓이면 묻힌다.
+  - 2 = 하나가 분명하다. 소송 상대가 공급자가 됐다(반전) · 미국은 이렇게 중국은 저렇게(대비) ·
+    못 가려내면 누가 증명하나(미지수).
+
+3 **약속을 지키나** - 본문이 제목이 말한 것을 실제로 다루나. 낚시면 false.
+
+**실격 신호** - 지시어로 시작하거나(「그 판」·「저쪽」) 주어가 빠진 압축 대구면 1번은 0이다."""
 
 
 def title_check(title: str, body: str, lang: str = "ko") -> dict:
