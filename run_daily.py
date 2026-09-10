@@ -13,7 +13,7 @@ import json
 import sys
 import time
 
-from intern import config, duel, llm, radar, brain, steps, publish, build_site, mail, weekly, form
+from intern import config, duel, llm, radar, brain, steps, publish, build_site, mail, weekly, form, learn
 
 MAX_REVIEW_ROUNDS = 2
 
@@ -108,7 +108,11 @@ def main() -> int:
     print(f"  [judge] 각도: {j['angle_ko'][:80]}")
 
     # ④ 집필 ko
-    ko = steps.write_ko(cluster_text, j, mats["text"])
+    recent = learn.recent_block(args.date)          # 어제의 나 - 본문·검수 지적·숫자
+    if recent:
+        print(f"  [learn] 지난 편 {len(recent)}자를 집필 자리에 붙였다")
+    trace["recent"] = recent[:400]
+    ko = steps.write_ko(cluster_text, j, mats["text"], recent)
     trace["draft_ko_v1"] = ko
     print(f"  [write] ko v1 {len(ko)}자")
 

@@ -116,7 +116,14 @@ def header_line(j: dict, lang: str) -> str:
 
 # ── ④ 집필 ──────────────────────────────────────────────────────────────────
 
-def write_ko(cluster_text: str, j: dict, materials: str) -> str:
+def write_ko(cluster_text: str, j: dict, materials: str, recent: str = "") -> str:
+    """오늘의 소재 · 두뇌 재료 · 자기 규칙 · **지난 편**을 놓고 쓴다.
+
+    지난 편은 2026-09-11에 붙였다(대표 지시). 그전까지 인턴은 자기가 쓴 글을 한 편도 안 읽고
+    매일 0에서 시작했다. 학습 경로가 주 1회 회고에서 나온 한 문장뿐이었다.
+    """
+    from . import learn  # noqa: PLC0415 - 순환 참조 회피
+    past = learn.RECENT_RULE_KO.format(recent=recent) if recent else ""
     prompt = f"""[오늘의 사건 무리]
 {cluster_text}
 
@@ -129,6 +136,8 @@ def write_ko(cluster_text: str, j: dict, materials: str) -> str:
 
 [자기 규칙]
 {_rules()[:3000]}
+
+{past}
 
 {STYLE_KO}
 
