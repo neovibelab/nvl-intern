@@ -13,6 +13,7 @@
 """
 import collections
 import io
+import os
 import json
 import pathlib
 import random
@@ -25,6 +26,7 @@ from intern import config, duel, publish, steps  # noqa: E402
 
 ARCHIVE = config.ROOT.parent / "claude-NeoVibeLab" / "ecri-newsletter" / "md-archive"
 OUT = config.ROOT / "reports" / "tense"
+TAG = os.environ.get("TITLE_EVAL_TAG", "")
 
 
 def human_titles(n: int) -> list[dict]:
@@ -67,7 +69,7 @@ def main() -> int:
         old = r.get("old") or {}
         was = f" (옛 눈금 {old.get('clarity')}·{old.get('pull')})" if old else ""
         print(f"  [{i}/{len(rows)}] {r['who']} {got.get('clarity')}·{got.get('pull')}{was} · {r['title'][:38]}")
-        io.open(OUT / "titlecheck.json", "w", encoding="utf-8", newline="\n").write(
+        io.open(OUT / f"titlecheck{TAG}.json", "w", encoding="utf-8", newline="\n").write(
             json.dumps(recs, ensure_ascii=False, indent=1))
 
     print()
