@@ -64,5 +64,16 @@
     "check_en": "Press releases from KOMCA/KOSCAP and disclosures or tech-partnership announcements from HYBE, SM, YG, Kakao Entertainment",
     "factor": "정책",
     "status": "open"
+  },
+  {
+    "slug": "2026-09-11-circle-chart-shows-the-top-400-albums-falling-from",
+    "date": "2026-09-11",
+    "by_date": "2027-03-10",
+    "claim_ko": "국내 엔터·미디어 기업이 10대를 겨냥한 물리 포맷(진·포토북형 잡지·카세트/LP 한정반)을 굿즈가 아닌 독립 상품으로 내놓는 사례가 최소 3건 나온다",
+    "claim_en": "At least three Korean entertainment or media companies will launch physical formats for teens - zines, magazine-style photobooks, limited cassette/vinyl - as standalone products rather than bundled merch.",
+    "check_ko": "주요 기획사·매거진의 신규 발매 공지와 온라인 스토어 단독 판매 페이지 개설 여부",
+    "check_en": "New release announcements from major agencies and magazines, and whether standalone product pages appear in their online stores",
+    "factor": "포맷",
+    "status": "open"
   }
 ]
