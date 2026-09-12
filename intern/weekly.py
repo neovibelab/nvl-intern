@@ -447,7 +447,14 @@ def reflect(g: dict, lang: str) -> str:
 
 
 def week_number(date: str) -> int:
-    first = config.LAUNCH_DATE or date
+    """몇 주차인가. **기준일이 없으면 첫 발행일로 되돌아간다**(2026-09-13 수리).
+
+    옛 폴백은 `date` 자신이라 기준일 환경변수가 비면 언제나 1이 나왔다. 실제로 비어 있었고
+    09-12 회고가 09-06과 같은 「1주차 회고」로, 슬러그도 `weekly-1`로 나갔다.
+    `publish.day_number`는 같은 자리에서 첫 발행일로 폴백하고 있었다 - D+N만 맞고 주차만 틀렸다.
+    """
+    rows = [s for s in publish._load(config.DATA_DIR / "stats.json", []) if s.get("type") != "weekly"]
+    first = config.LAUNCH_DATE or (rows[0]["date"] if rows else date)
     y, m, d = map(int, first.split("-")); y2, m2, d2 = map(int, date.split("-"))
     return (dt.date(y2, m2, d2) - dt.date(y, m, d)).days // 7 + 1
 
