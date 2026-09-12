@@ -315,5 +315,26 @@
       "calls": 28,
       "search_uses": 13
     }
+  },
+  {
+    "date": "2026-09-12",
+    "day": 8,
+    "slug": "2026-09-12-weekly-1",
+    "type": "weekly",
+    "week": 1,
+    "title_ko": "1주차 회고",
+    "title_en": "Week 1 review",
+    "pieces": 7,
+    "signals": {
+      "buttons": {},
+      "text_n": 0,
+      "kinds": []
+    },
+    "tokens": {
+      "input": 24104,
+      "output": 14783,
+      "calls": 5,
+      "search_uses": 0
+    }
   }
 ]
