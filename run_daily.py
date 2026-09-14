@@ -85,7 +85,9 @@ def main() -> int:
         print(f"  [brain] 재료 없음 - 두뇌를 못 읽었다({config.BRAIN_DIR}). 관점 렌즈 없이 쓴다")
 
     # ③ 판정
-    j = steps.judge(cluster_text, pick, mats["text"])
+    extra = steps.context_block(steps.context(cluster_text))   # ②' 그 뒤 무엇이 나왔나
+    trace["context"] = extra
+    j = steps.judge(cluster_text, pick, mats["text"], extra)
     if j["tense"] == "background":
         # 정본 규칙 - 「이미」만으로 된 편은 내지 않는다. 다음 후보로 한 번만 넘어간다.
         alt = radar.pick_today(clusters, radar.used_keys() | {pick["key"]})
@@ -104,7 +106,9 @@ def main() -> int:
                 x["title_en"] = te
             mats = {"text": "", "wiki": [], "lexicon": []} if args.no_brain else brain.retrieve(cluster_text)
             trace["materials"] = {"wiki": mats["wiki"], "lexicon": mats["lexicon"]}
-            j = steps.judge(cluster_text, pick, mats["text"])
+            extra = steps.context_block(steps.context(cluster_text))   # 소재가 바뀌었으니 다시 찾는다
+            trace["context"] = extra
+            j = steps.judge(cluster_text, pick, mats["text"], extra)
     trace["judgment"] = j
     print(f"  [judge] {steps.header_line(j, 'ko')} · 레이더 {j.get('radar_tense') or '미분류'}와 "
           f"{'일치' if j.get('agrees') else '비교 불가' if j.get('agrees') is None else '불일치'} · 베팅 {'있음' if j.get('bet') else '없음'}")
@@ -115,7 +119,7 @@ def main() -> int:
     if recent:
         print(f"  [learn] 지난 편 {len(recent)}자를 집필 자리에 붙였다")
     trace["recent"] = recent[:400]
-    ko = steps.write_ko(cluster_text, j, mats["text"], recent)
+    ko = steps.write_ko(cluster_text, j, mats["text"], recent, extra)
     trace["draft_ko_v1"] = ko
     print(f"  [write] ko v1 {len(ko)}자")
 

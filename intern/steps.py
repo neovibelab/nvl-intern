@@ -57,14 +57,70 @@ def _rules() -> str:
         return ""
 
 
+# ── ②' 추가 정보 - 그 뒤 무엇이 나왔나 ────────────────────────────────────
+# 속보를 쫓지 않기로 한 뒤(2026-09-14) 소재가 며칠 지난 것이 된다. 첫 기사만 읽으면
+# 그 사이 나온 후속을 통째로 놓친다. **판정 앞에** 두어 좌표·시제도 늘어난 재료 위에서 정해진다.
+
+CONTEXT_RULES = """너는 사건 하나를 놓고 **그 뒤에 무엇이 더 나왔는지** 찾는 조사자다. 글을 쓰지 않는다.
+
+넷을 찾는다. 없으면 없다고 한다 - **못 찾은 칸을 상상으로 채우지 않는다.**
+1 **후속** - 그 사건 이후 벌어진 일. 합의·철회·추가 제소·다른 사업자의 같은 움직임
+2 **반응** - 당사자·업계·규제 쪽이 공개적으로 한 말
+3 **수치** - 셀 수 있는 숫자. 금액·비율·건수·기한
+4 **선례** - 다른 산업이나 과거에 같은 구조로 벌어진 일
+
+**각 항목에 출처 매체와 URL을 단다.** 출처를 못 대면 그 항목은 버린다.
+검색으로 확인한 것만 쓴다. 기억으로 쓰지 않는다."""
+
+
+def context(cluster_text: str) -> dict:
+    """소재의 후속·반응·수치·선례를 모은다. 판정과 집필이 같은 재료를 쓴다."""
+    try:
+        d = llm.ask_json(f"""[사건]
+{cluster_text}
+
+이 사건에 대해 **기사 이후 나온 것**을 웹에서 찾는다. 오늘 기준이다.
+
+JSON: {{"followups":[{{"what":"한 줄","source":"매체","url":"..."}}],
+ "reactions":[{{"who":"누가","what":"한 줄","source":"매체","url":"..."}}],
+ "numbers":[{{"value":"수치","what":"무엇을 재나","source":"매체","url":"..."}}],
+ "precedents":[{{"what":"한 줄","source":"매체","url":"..."}}]}}""",
+                         system=CONTEXT_RULES, tools=llm.WEB_SEARCH_TOOL, max_tokens=4000)
+    except Exception as e:  # noqa: BLE001
+        print(f"  [context] 실패 {type(e).__name__} - 재료 없이 간다")
+        return {}
+    n = sum(len(d.get(k) or []) for k in ("followups", "reactions", "numbers", "precedents"))
+    print(f"  [context] 후속 {len(d.get('followups') or [])} · 반응 {len(d.get('reactions') or [])} · "
+          f"수치 {len(d.get('numbers') or [])} · 선례 {len(d.get('precedents') or [])}")
+    return d if n else {}
+
+
+def context_block(c: dict) -> str:
+    """프롬프트에 넣을 형태. 출처 없는 항목은 버린다 - 본문 인링크가 거기서 나온다."""
+    if not c:
+        return ""
+    out = []
+    for key, label in (("followups", "후속"), ("reactions", "반응"), ("numbers", "수치"), ("precedents", "선례")):
+        for x in (c.get(key) or [])[:4]:
+            if not x.get("source"):
+                continue
+            head = x.get("who") or x.get("value") or ""
+            line = " ".join(str(y) for y in (head, x.get("what", "")) if y)
+            out.append(f"- [{label}] {line} ({x['source']}{' ' + x['url'] if x.get('url') else ''})")
+    return "\n".join(out)
+
+
 # ── ③ 화살표 판정 ───────────────────────────────────────────────────────────
 
-def judge(cluster_text: str, radar: dict, materials: str) -> dict:
+def judge(cluster_text: str, radar: dict, materials: str, extra: str = "") -> dict:
     prompt = f"""[오늘의 사건 무리]
 {cluster_text}
 
 [재료 - 연구소 관점 렌즈·개념]
 {materials[:14000] or '(없음)'}
+
+[그 뒤 나온 것 - 후속·반응·수치·선례]
+{extra[:4000] or '(못 찾았다)'}
 
 좌표계로 판정한다.
 - 요인 하나: {' | '.join(config.FACTORS)}
@@ -116,7 +172,7 @@ def header_line(j: dict, lang: str) -> str:
 
 # ── ④ 집필 ──────────────────────────────────────────────────────────────────
 
-def write_ko(cluster_text: str, j: dict, materials: str, recent: str = "") -> str:
+def write_ko(cluster_text: str, j: dict, materials: str, recent: str = "", extra: str = "") -> str:
     """오늘의 소재 · 두뇌 재료 · 자기 규칙 · **지난 편**을 놓고 쓴다.
 
     지난 편은 2026-09-11에 붙였다(대표 지시). 그전까지 인턴은 자기가 쓴 글을 한 편도 안 읽고
@@ -134,6 +190,9 @@ def write_ko(cluster_text: str, j: dict, materials: str, recent: str = "") -> st
 [재료]
 {materials[:12000] or '(없음)'}
 
+[그 뒤 나온 것 - 후속·반응·수치·선례]
+{extra[:4000] or '(못 찾았다)'}
+
 [자기 규칙]
 {_rules()[:3000]}
 
@@ -143,7 +202,13 @@ def write_ko(cluster_text: str, j: dict, materials: str, recent: str = "") -> st
 
 한국어 논평 본문을 쓴다. 700~1000자. 제목·헤더·마지막 원리 줄은 코드가 붙이므로 본문만 쓴다.
 첫 문장은 사건의 구체(누가 무엇을 언제)로 연다. 각도를 따라 논지를 세우고, 베팅이 있으면 본문 안에 「무엇이 언제까지」를 자기 문장으로 넣는다.
-사실은 사건 무리와 재료에 있는 것만 쓴다. 없는 수치·발언을 만들지 않는다."""
+사실은 사건 무리와 재료에 있는 것만 쓴다. 없는 수치·발언을 만들지 않는다.
+
+**분량은 늘리지 않는다. 자리를 바꾼다.** 재료가 늘었다고 글이 길어지면 독자에게는 그냥 긴 글이다.
+- **일반 배경 설명을 줄인다.** 독자가 검색하면 나오는 것을 요약하는 데 자리를 쓰지 않는다.
+- **그 자리에 「그 뒤 나온 것」을 넣는다.** 후속·반응·수치가 있으면 그것이 이 글의 값이다.
+  기사 하나만 읽고는 못 쓰는 문장이 한 단락은 있어야 한다.
+- **선례가 있으면 비교는 한 번만.** 같은 구조가 다른 산업에서 어떻게 끝났는지가 원리로 이어진다."""
     return llm.ask(prompt, system=PERSONA, max_tokens=6000)
 
 
