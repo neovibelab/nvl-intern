@@ -5,6 +5,8 @@ import os
 import urllib.error
 import urllib.request
 
+import datetime as dt
+
 from . import config
 
 API = "https://api.buttondown.com/v1"
@@ -25,6 +27,22 @@ def _call(method: str, path: str, body: dict | None = None, live: bool = False) 
         return e.code, e.read().decode(errors="replace")[:400]
 
 
+SEND_HOUR = 8            # 독자 도착 시각(KST). 회전이 언제 끝나든 여기로 모은다.
+
+
+def next_slot(now: dt.datetime | None = None) -> dt.datetime | None:
+    """다음 발송 시각. **이미 지났으면 None**을 돌려 즉시 발송으로 떨어뜨린다.
+
+    회전은 오전 10시 무렵에 끝나므로 보통 **다음 날 08:00**이 잡힌다.
+    속보를 쫓지 않기로 했으므로(2026-09-14) 하루 묵는 것이 비용이 아니다.
+    """
+    now = now or dt.datetime.now(config.KST)
+    slot = (now + dt.timedelta(days=1)).replace(hour=SEND_HOUR, minute=0, second=0, microsecond=0)
+    if now.hour < SEND_HOUR:                      # 새벽에 돌았으면 같은 날 아침으로
+        slot = now.replace(hour=SEND_HOUR, minute=0, second=0, microsecond=0)
+    return slot if slot > now + dt.timedelta(minutes=5) else None
+
+
 def send_piece(lang: str, day: int, title: str, body_md: str, slug: str, send: bool = False) -> dict:
     """구독자는 언어만 고른다. 매일 한 편과 일요일 회고가 같은 리스트로 간다(2026-09-05 대표: 주기 구분 폐지)."""
     weekly = "주차 회고" in title or title.startswith("Week ")
@@ -43,7 +61,12 @@ def send_piece(lang: str, day: int, title: str, body_md: str, slug: str, send: b
     ]}
     payload = {"subject": subject, "body": body_md + footer, "status": "about_to_send" if send else "draft",
                "archival_mode": "disabled", "filters": filters}
+    when = next_slot() if send else None
+    if when:
+        payload["status"] = "scheduled"
+        payload["publish_date"] = when.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     st, resp = _call("POST", "/emails", payload, live=send)
     ok = st in (200, 201)
-    print(f"  [mail] {lang} {'발송' if send else '초안'} → HTTP {st}" + ("" if ok else f" {str(resp)[:120]}"))
+    how = ("초안" if not send else (f"{when:%m-%d %H:%M} 예약" if when else "즉시 발송"))
+    print(f"  [mail] {lang} {how} → HTTP {st}" + ("" if ok else f" {str(resp)[:120]}"))
     return {"lang": lang, "status": st, "id": resp.get("id") if isinstance(resp, dict) else None, "sent": send and ok}
