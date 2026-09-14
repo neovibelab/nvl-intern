@@ -13,7 +13,7 @@ import json
 import sys
 import time
 
-from intern import config, duel, llm, radar, brain, steps, publish, build_site, mail, weekly, form, learn
+from intern import config, duel, llm, radar, brain, steps, publish, build_site, mail, weekly, form, learn, recheck
 
 MAX_REVIEW_ROUNDS = 2
 
@@ -220,6 +220,9 @@ def run_weekly(args) -> int:
     week = weekly.week_number(args.date)
     g = weekly.gather(args.date)
     g["duels"] = weekly.run_duels(args.date, g["rows"], "ko")  # 지난 편과 blind로 붙인다
+    # 되읽기 - 낸 글을 다시 보고 그 뒤 나온 것을 확인한다. 회고 전에 돌려야 회고의 재료가 된다.
+    g["recheck"] = recheck.run(args.date)
+    recheck.apply_corrections(g["recheck"])
     print(f"== 주간 회고 {week}주차 · {args.date} · 이번 주 {g['n']}편 · 격자 {g['cells']}칸 · "
           f"불일치 {g['disagree']}/{g['compared']} · 미해결 {g['unresolved']} · 검증 {g['verified']}/{g['claims']}")
     print(f"  [signals] {g['signals']}")
