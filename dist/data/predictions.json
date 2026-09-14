@@ -75,5 +75,16 @@
     "check_en": "New release announcements from major agencies and magazines, and whether standalone product pages appear in their online stores",
     "factor": "포맷",
     "status": "open"
+  },
+  {
+    "slug": "2026-09-14-accord-entertainment-closed-a-2-billion-won-pre-se",
+    "date": "2026-09-14",
+    "by_date": "2027-03-13",
+    "claim_ko": "180일 안에 국내 버추얼 아이돌 기획사 중 최소 두 곳이 추가로 외부 투자를 유치하고, 그 보도자료에서 자금 용처로 그래픽·엔진 기술이 아니라 세계관·시리즈물·글로벌 팬덤 확장을 앞세운다.",
+    "claim_en": "Within 180 days at least two more Korean virtual-idol agencies will close outside funding, with press releases citing worldbuilding, serialized content and global fandom - not graphics or engine tech - as the primary use of proceeds.",
+    "check_ko": "벤처투자 집계(더브이씨·와우테일)와 각 사 보도자료의 자금 용처 문구 확인",
+    "check_en": "Cross-check VC databases (TheVC, Wowtale) and each company's stated use of proceeds",
+    "factor": "IP",
+    "status": "open"
   }
 ]
