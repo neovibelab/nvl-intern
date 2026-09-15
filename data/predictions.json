@@ -86,5 +86,16 @@
     "check_en": "Cross-check VC databases (TheVC, Wowtale) and each company's stated use of proceeds",
     "factor": "IP",
     "status": "open"
+  },
+  {
+    "slug": "2026-09-15-warner-and-believe-feed-one-model-two-definitions-",
+    "date": "2026-09-15",
+    "by_date": "2027-03-14",
+    "claim_ko": "Suno v6 라이선스 체제에서 아티스트별 학습 기여도 산정·정산 방식이 공개되지 않은 채, 카탈로그 단위 선지급·수익분배로만 처리된다",
+    "claim_en": "Under Suno's v6 licensing regime, per-artist training attribution and payout methodology stays undisclosed, handled only as catalog-level advances and revenue shares",
+    "check_ko": "WMG·BMG·Believe의 분기 실적 공시나 아티스트 정산 명세에서 '학습 기여도' 항목이 별도로 표기되는지, MBW·Billboard의 opt-in 아티스트 보상 취재로 확인",
+    "check_en": "Check whether WMG/BMG/Believe quarterly filings or artist statements itemize a 'training attribution' line, and MBW/Billboard reporting on opt-in artist payouts",
+    "factor": "정책",
+    "status": "open"
   }
 ]

@@ -380,5 +380,49 @@
       "calls": 28,
       "search_uses": 12
     }
+  },
+  {
+    "date": "2026-09-15",
+    "day": 11,
+    "slug": "2026-09-15-warner-and-believe-feed-one-model-two-definitions-",
+    "title_ko": "소송은 Suno의 라이선스를 막지 않고 가격을 만들었다",
+    "title_en": "Warner and Believe Feed One Model, Two Definitions of Consent",
+    "factor": "정책",
+    "from_stage": "생산",
+    "to_stage": "생산",
+    "tense": "signal",
+    "radar_tense": "soon",
+    "agrees": false,
+    "claims_total": 6,
+    "claims_verified": 4,
+    "review_rounds": 1,
+    "unresolved": false,
+    "bet": true,
+    "wiki_used": 3,
+    "lexicon_used": 1,
+    "form": {
+      "title_noun": true,
+      "title_len": 30,
+      "lead_concrete": true,
+      "ai_tell": 1,
+      "contrast": 1,
+      "hedge_10k": 0.0,
+      "sent_med": 56,
+      "long80": 36.4,
+      "title_check": {
+        "clarity": 2,
+        "pull": 2,
+        "kept_promise": true,
+        "why": "Suno·소송이라는 소재와 '라이선스를 막지 않고 가격을 만들었다'는 사건이 다 서 있고, 통념을 뒤집는 반전이 분명하며 본문이 순서·합의금·청구액으로 그 주장을 실제로 증명한다."
+      },
+      "title_kept_first": false,
+      "title_cands": 3
+    },
+    "tokens": {
+      "input": 304508,
+      "output": 34977,
+      "calls": 26,
+      "search_uses": 18
+    }
   }
 ]
