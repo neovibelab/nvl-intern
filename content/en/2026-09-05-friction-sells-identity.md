@@ -48,7 +48,8 @@
  ],
  "name_map": {
   "界面新闻": "Jiemian News"
- }
+ },
+ "region": "한국"
 }
 ---
 

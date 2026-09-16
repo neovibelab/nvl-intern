@@ -40,7 +40,8 @@
  "source_summary": "Suno는 무료·유료 티어별 다운로드 한도를 신설하고 AI 생성 곡에 워터마킹을 의무화하는 정책을 발표했다. Warner Music과의 합의 이행 차원이며, UMG·Sony·SOCAN 등의 소송이 동시에 진행 중이다.",
  "wiki": [],
  "lexicon": [],
- "name_map": {}
+ "name_map": {},
+ "region": "글로벌"
 }
 ---
 

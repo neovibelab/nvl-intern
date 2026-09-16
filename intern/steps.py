@@ -130,17 +130,21 @@ def judge(cluster_text: str, radar: dict, materials: str, extra: str = "") -> di
 - 이 판정은 **네가 먼저 찍는다.** 레이더가 따로 찍어 둔 값이 있지만 보여주지 않는다. 일치 여부는 코드가 뒤에 계산한다.
 - `tense_why`에 그 시제로 본 이유를 한 줄 적는다.
 - 베팅: 시제가 vibe이거나, signal이지만 vibe 가설이 서면 「무엇이 · 언제까지(30|90|180일) · 무엇으로 확인」 세 칸을 채운다. 못 채우면 null. 채점 가능한 문장만 쓴다.
+- 지역(region): 이 소재가 **어디 이야기인가** 하나 고른다: {' | '.join(config.REGIONS)}. 기사가 어느 매체에 실렸는지가 아니라
+  **사건이 벌어진 곳**이다. 여러 지역이 걸쳐 있으면 「글로벌」.
 - 각도(angle): 이 사건에서 무엇을 말할지 한 줄. 뻔한 것(누구나 아는 요약)이면 다른 각도를 찾는다.
 - 원리(principle): 다른 업종이 이 사례에서 가져갈 원리 한 문장.
 
 JSON:
-{{"factor":"...","from_stage":"...","to_stage":"...","tense":"vibe|signal|news","tense_why":"한 줄",
+{{"factor":"...","from_stage":"...","to_stage":"...","region":"...","tense":"vibe|signal|news","tense_why":"한 줄",
  "vibe_evidence":"vibe일 때만. 지금 관측되는 조짐 한 줄. 아니면 빈 문자열",
  "vibe_evidence_en":"같은 조짐을 영어로. vibe가 아니면 빈 문자열",
  "angle_ko":"...","angle_en":"...","title_ko":"...(20자 안)","title_en":"...",
  "bet": {{"claim_ko":"...","claim_en":"...","by_days":90,"check_ko":"무엇으로 확인","check_en":"..."}} 또는 null,
  "principle_ko":"...","principle_en":"..."}}"""
     d = llm.ask_json(prompt, system=PERSONA, max_tokens=3000)
+    if d.get("region") not in config.REGIONS:
+        d["region"] = "글로벌"          # 못 고르면 넓은 쪽. 한국이라고 우기지 않는다
     if d.get("factor") not in config.FACTORS:
         d["factor"] = radar.get("factor") or "자본"
     for k in ("from_stage", "to_stage"):

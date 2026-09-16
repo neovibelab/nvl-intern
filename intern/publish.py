@@ -128,6 +128,7 @@ def piece_markdown(lang: str, date: str, slug: str, j: dict, body: str, meta: di
     fm = {
         "title": title, "date": date, "slug": slug, "lang": lang, "day": meta["day"],
         "factor": j["factor"], "from_stage": j["from_stage"], "to_stage": j["to_stage"], "tense": j["tense"],
+        "region": j.get("region", "글로벌"),
         "radar_tense": meta.get("radar_tense"), "agrees": j.get("agrees"),
         "tense_why": j.get("tense_why", ""), "vibe_evidence": j.get("vibe_evidence", ""),
         "title_source": (meta.get("title_source") or {}).get(lang, ""),
@@ -190,6 +191,7 @@ def record(date: str, slug: str, j: dict, meta: dict, ko_body: str, en_body: str
     stats.append({
         "date": date, "day": meta["day"], "slug": slug, "title_ko": j["title_ko"], "title_en": j["title_en"],
         "factor": j["factor"], "from_stage": j["from_stage"], "to_stage": j["to_stage"], "tense": j["tense"],
+        "region": j.get("region", "글로벌"),
         "radar_tense": meta.get("radar_tense"), "agrees": j.get("agrees"),
         "claims_total": meta.get("claims_total", 0), "claims_verified": meta.get("claims_verified", 0),
         "review_rounds": meta.get("review_rounds", 0), "unresolved": bool(meta.get("unresolved")),

@@ -47,7 +47,8 @@
  "lexicon": [
   "industry.md#copyright"
  ],
- "name_map": {}
+ "name_map": {},
+ "region": "북미"
 }
 ---
 

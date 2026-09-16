@@ -46,7 +46,8 @@
   "industry.md#live; live performance - 라이브·라이브 공연",
   "fandom.md#fandom tourism - 팬덤 관광"
  ],
- "name_map": {}
+ "name_map": {},
+ "region": "한국"
 }
 ---
 

@@ -71,7 +71,8 @@
   "한국음악저작권협회": "Korea Music Copyright Association",
   "서울경제": "Seoul Economic Daily",
   "이데일리": "Edaily"
- }
+ },
+ "region": "글로벌"
 }
 ---
 

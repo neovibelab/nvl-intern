@@ -43,31 +43,51 @@ def _log(date: str) -> dict:
 
 
 def reader_signals(slugs: list[str]) -> dict:
-    """버튼은 공개 집계 엔드포인트에서, 자유 텍스트는 유형·건수로만 줄여서."""
+    """버튼은 공개 집계 엔드포인트에서, 자유 텍스트는 유형·건수로만 줄여서.
+
+    **경로를 갈라 센다**(2026-09-16). `mail`은 메일을 받아 보는 사람이 누른 것이고 `web`은
+    사이트 방문자다. 구독 여부를 묻는 장치가 없으므로 이 둘이 우리가 가진 유일한 구분이다.
+    """
     counts: collections.Counter = collections.Counter()
+    via: dict = {"mail": collections.Counter(), "web": collections.Counter()}
     for s in slugs:
         try:
             with urllib.request.urlopen(f"{FB_API}?slug={urllib.parse.quote(s)}", timeout=20) as r:
-                for k, v in (json.load(r).get("counts") or {}).items():
-                    counts[k] += int(v)
+                d = json.load(r)
+            for k, v in (d.get("counts") or {}).items():
+                counts[k] += int(v)
+            for vk, kk in (d.get("by_via") or {}).items():
+                for k, v in (kk or {}).items():
+                    via.setdefault(vk, collections.Counter())[k] += int(v)
         except Exception as e:  # noqa: BLE001
             print(f"  [weekly] 버튼 집계 실패 {s[:20]}: {type(e).__name__}")
-    texts = _free_texts(slugs)
+    rows = _free_texts(slugs)
+    texts = [r["text"] for r in rows]
     kinds = _summarize_texts(texts) if texts else []
-    return {"buttons": dict(counts), "text_n": len(texts), "kinds": kinds}
+    text_via = collections.Counter(r["via"] for r in rows)
+    return {"buttons": dict(counts), "by_via": {k: dict(v) for k, v in via.items() if v},
+            "text_n": len(texts), "text_via": dict(text_via), "kinds": kinds}
 
 
-def _free_texts(slugs: list[str]) -> list[str]:
-    """Supabase에서 그 주의 자유 텍스트만. 여기서 나온 문자열은 절대 본문 프롬프트로 가지 않는다."""
+def _free_texts(slugs: list[str]) -> list[dict]:
+    """Supabase에서 그 주의 자유 텍스트만. 여기서 나온 문자열은 절대 본문 프롬프트로 가지 않는다.
+
+    경로(`via`)를 같이 받는다 - 메일을 받고 남긴 것과 사이트에서 남긴 것은 갈라 봐야 안다.
+    """
     url = os.environ.get("SUPABASE_URL", "").rstrip("/")
     key = os.environ.get("SUPABASE_KEY", "")
     if not url or not key or not slugs:
         return []
-    q = f"{url}/rest/v1/intern_feedback?select=slug,text&kind=eq.text&slug=in.({','.join(slugs)})"
+    q = f"{url}/rest/v1/intern_feedback?select=slug,text,via&kind=eq.text&slug=in.({','.join(slugs)})"
     req = urllib.request.Request(q, headers={"apikey": key, "Authorization": f"Bearer {key}"})
     try:
         with urllib.request.urlopen(req, timeout=25) as r:
-            return [str(x.get("text") or "").strip() for x in json.load(r) if str(x.get("text") or "").strip()]
+            out = []
+            for x in json.load(r):
+                t = str(x.get("text") or "").strip()
+                if t:
+                    out.append({"text": t, "via": str(x.get("via") or "web")})
+            return out
     except Exception as e:  # noqa: BLE001
         print(f"  [weekly] 자유 텍스트 조회 실패: {type(e).__name__}")
         return []
@@ -320,25 +340,47 @@ def _table(g: dict, lang: str) -> str:
     return head + "\n" + "\n".join(lines)
 
 
+def _via_tail(sig: dict, k: str, lang: str) -> str:
+    """그 버튼의 표가 어디서 왔는지. 둘 다 0이면 아무것도 붙이지 않는다."""
+    bv = sig.get("by_via") or {}
+    m = int((bv.get("mail") or {}).get(k, 0))
+    w = int((bv.get("web") or {}).get(k, 0))
+    if not m and not w:
+        return ""
+    bits = []
+    if m:
+        bits.append(f"메일 {m}" if lang == "ko" else f"mail {m}")
+    if w:
+        bits.append(f"웹 {w}" if lang == "ko" else f"web {w}")
+    return "(" + "·".join(bits) + ")"
+
+
 def _signal_line(g: dict, lang: str) -> str:
-    b = g["signals"]["buttons"]
-    if not b and not g["signals"]["text_n"]:
+    """경로를 갈라 적는다(2026-09-16). 메일 표와 웹 표를 합치면 인턴이 독자를 잘못 읽는다."""
+    sig = g["signals"]
+    b = sig["buttons"]
+    if not b and not sig["text_n"]:
         return ("**독자 신호** · 이번 주는 없었습니다." if lang == "ko" else "**Reader signals** · none this week.")
+    tv = sig.get("text_via") or {}
     if lang == "ko":
-        parts = [f"{FB_KINDS_KO.get(k, k)} {v}" for k, v in b.items() if k != "text"]
+        parts = [f"{FB_KINDS_KO.get(k, k)} {v}{_via_tail(sig, k, lang)}" for k, v in b.items() if k != "text"]
         line = "**독자 신호** · " + (" · ".join(parts) if parts else "버튼 없음")
-        if g["signals"]["text_n"]:
-            line += f" · 자유 지적 {g['signals']['text_n']}건"
-            if g["signals"]["kinds"]:
-                line += " (" + ", ".join(f"{k['kind']} {k['n']}" for k in g["signals"]["kinds"]) + ")"
-        return line
-    parts = [f"{k} {v}" for k, v in b.items() if k != "text"]
+        if sig["text_n"]:
+            line += f" · 자유 지적 {sig['text_n']}건"
+            if tv:
+                line += "(" + "·".join(f"{'메일' if k == 'mail' else '웹'} {v}" for k, v in tv.items()) + ")"
+            if sig["kinds"]:
+                line += " (" + ", ".join(f"{k['kind']} {k['n']}" for k in sig["kinds"]) + ")"
+        return line + "\n  메일 = 메일을 받아 보는 사람, 웹 = 사이트에서 읽은 사람. 같은 무게의 한 표가 아니다."
+    parts = [f"{k} {v}{_via_tail(sig, k, lang)}" for k, v in b.items() if k != "text"]
     line = "**Reader signals** · " + (" · ".join(parts) if parts else "no buttons")
-    if g["signals"]["text_n"]:
-        line += f" · {g['signals']['text_n']} written notes"
-        if g["signals"]["kinds"]:
-            line += " (" + ", ".join(f"{k['kind']} {k['n']}" for k in g["signals"]["kinds"]) + ")"
-    return line
+    if sig["text_n"]:
+        line += f" · {sig['text_n']} written notes"
+        if tv:
+            line += "(" + "·".join(f"{k} {v}" for k, v in tv.items()) + ")"
+        if sig["kinds"]:
+            line += " (" + ", ".join(f"{k['kind']} {k['n']}" for k in sig["kinds"]) + ")"
+    return line + "\n  mail = someone on the list, web = someone who read it on the site. Not the same weight."
 
 
 REFLECT_KO = """[이번 주 내 기록]

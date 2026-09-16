@@ -122,6 +122,7 @@ table.mini td.z{color:#2B2B2B}
 .list .t{font-size:17px;font-weight:700;color:var(--white);line-height:1.4;margin-bottom:5px}
 .list .m{color:var(--dim);font-size:11.5px;font-family:'DM Mono','Noto Sans KR',monospace}
 .list .m .t2{color:var(--lime)}
+.list .m .t3{color:var(--white)}
 .list .d{color:var(--dim);font-size:11px;font-family:'DM Mono',monospace;flex:none;white-space:nowrap}
 
 /* 성장 요약 */
@@ -140,6 +141,17 @@ table.mini td.z{color:#2B2B2B}
 .grid .z{color:#1C1C1C}
 
 /* 독자 신호 */
+.rg{display:inline-block;font-family:'DM Mono','Noto Sans KR',monospace;font-size:11px;padding:4px 9px;margin-right:7px;border:1px solid var(--edge);color:var(--dim);vertical-align:middle}
+.rg.ko{background:var(--lime);border-color:var(--lime);color:var(--black);font-weight:700}
+.sub{margin:30px 0 12px;border:1px solid var(--edge);border-left:2px solid var(--lime);background:var(--card);padding:18px}
+.sub h3{font-size:15px;color:var(--white);margin:0 0 5px}
+.sub .hint{font-size:12px;color:var(--dim);line-height:1.7;margin:0 0 13px}
+.sub form{display:flex;gap:8px;flex-wrap:wrap}
+.sub input[type=email]{flex:1;min-width:190px;background:var(--black);color:var(--ink);border:1px solid var(--edge);padding:10px 12px;font-family:inherit;font-size:13px}
+.sub input[type=email]:focus{outline:none;border-color:var(--lime)}
+.sub button{font-family:'DM Mono','Noto Sans KR',monospace;font-size:12.5px;padding:10px 20px;background:var(--lime);color:var(--black);border:1px solid var(--lime);cursor:pointer;font-weight:700}
+.sub button:hover{opacity:.85}
+.sub .fine{font-size:11px;color:var(--dim);margin:10px 0 0;line-height:1.65}
 .fb{margin:36px 0 12px;border:1px solid var(--edge);background:var(--card);padding:17px 18px}
 .fb .q{font-size:13.5px;color:var(--white);margin-bottom:11px;font-weight:700}
 .fb .q span{color:var(--dim);font-size:11.5px;margin-left:9px;font-weight:400}
@@ -188,7 +200,9 @@ T = {
                about_line="AI 인턴 1호가 매일 엔터 산업을 읽고 씁니다. 사람이 고르지도 고치지도 않습니다. 이 실험이 무엇인지는",
                here="여기", human="AI가 매일 읽고 정리합니다. 관점은 사람이 씁니다.", human_link="엔터문화연구소 뉴스레터",
                growth_title="성장 지표", cols=["날", "날짜", "제목", "좌표", "시제", "레이더와", "검증", "검수", "베팅", "형식"],
-               grid_title="격자 21칸 · 인턴이 쓴 자리", empty_cell="", bets="베팅 대장", bet_cols=["날짜", "명제", "기한", "확인", "상태"]),
+               grid_title="격자 21칸 · 인턴이 쓴 자리", empty_cell="", bets="베팅 대장", bet_cols=["날짜", "명제", "기한", "확인", "상태"],
+               sub_h="매일 아침 받아 보기", sub_hint="월~금 한 편, 토요일엔 그 주 회고. 아침 8시에 갑니다.",
+               sub_ph="이메일", sub_go="구독", sub_fine="확인 메일이 한 통 갑니다. 광고는 없고, 언제든 그만둘 수 있습니다."),
     "en": dict(today="Today", growth="Growth", grid="Grid", about="What this is", other="KO", other_href="/",
                brand="Entertainment Vibe Research", lab_name="Neo Vibe Lab", weekly="Weekly review", about_short="About", home="Home",
                hero="An AI intern reads the entertainment industry<br>and writes what does not have a name yet.",
@@ -199,7 +213,9 @@ T = {
                about_line="AI Intern 01 reads and writes about the entertainment industry every day. No human picks or edits. What this experiment is:",
                here="here", human="AI reads and sorts every day. The point of view is written by a human.", human_link="Neo Vibe Lab newsletter",
                growth_title="Growth metrics", cols=["Day", "Date", "Title", "Grid", "Tense", "vs radar", "Verified", "Review", "Bet", "Form"],
-               grid_title="21 cells · where the intern has written", empty_cell="", bets="Bets", bet_cols=["Date", "Claim", "By", "Check", "Status"]),
+               grid_title="21 cells · where the intern has written", empty_cell="", bets="Bets", bet_cols=["Date", "Claim", "By", "Check", "Status"],
+               sub_h="Get it every morning", sub_hint="One piece Monday to Friday, a review of the week on Saturday. Sent at 8am KST.",
+               sub_ph="Email", sub_go="Subscribe", sub_fine="One confirmation email. No ads, and you can stop any time."),
 }
 
 
@@ -390,6 +406,23 @@ counts();
 </script>"""
 
 
+def subscribe_box(lang: str) -> str:
+    """글 끝의 구독 칸. 버튼다운 embed로 바로 던진다 - 중간에 우리 서버가 끼지 않는다.
+
+    언어는 그 페이지가 이미 안다. 라디오로 다시 묻지 않고 숨은 값으로 실어 보낸다.
+    """
+    t = T[lang]
+    return (f'<div class="sub"><h3>{t["sub_h"]}</h3><p class="hint">{t["sub_hint"]}</p>'
+            f'<form action="https://buttondown.com/api/emails/embed-subscribe/{config.BUTTONDOWN_USER}" '
+            f'method="post" target="_blank">'
+            f'<input type="email" name="email" placeholder="{t["sub_ph"]}" required>'
+            f'<button type="submit">{t["sub_go"]}</button>'
+            f'<input type="hidden" name="metadata__lang" value="{lang}">'
+            f'<input type="hidden" name="metadata__from" value="piece">'
+            f'<input type="hidden" name="embed" value="1">'
+            f'</form><p class="fine">{t["sub_fine"]}</p></div>')
+
+
 def _pieces(lang: str) -> list[tuple[dict, str, str]]:
     out = []
     for p in sorted((config.CONTENT_DIR / lang).glob("*.md"), reverse=True):
@@ -413,8 +446,20 @@ def _chip(lang: str, fm: dict) -> str:
         word = tense
         factor = config.FACTORS_EN.get(fm["factor"], fm["factor"])
     on = " vibe" if tense == "vibe" else ""
-    return (f'<span class="chip{on}"><b>{html.escape(factor)}</b>{html.escape(arrow)}'
+    return (f'{_region_tag(lang, fm)}<span class="chip{on}"><b>{html.escape(factor)}</b>{html.escape(arrow)}'
             f'<span class="tn">{html.escape(word)}</span></span>')
+
+
+def _region_tag(lang: str, fm: dict) -> str:
+    """소재가 어디 이야기인가. **한국이냐 아니냐가 한눈에 보여야 한다**(2026-09-16 대표 지시).
+
+    한국은 채운 칩, 나머지는 테두리만. 지역이 없는 옛 편은 아무것도 붙이지 않는다.
+    """
+    r = (fm.get("region") or "").strip()
+    if r not in config.REGIONS:
+        return ""
+    word = r if lang == "ko" else config.REGIONS_EN.get(r, r)
+    return f'<span class="rg{" ko" if r == "한국" else ""}">{html.escape(word)}</span>'
 
 
 def _meta_line(lang: str, fm: dict) -> str:
@@ -445,7 +490,7 @@ def render_piece(lang: str, fm: dict, body: str) -> str:
     widget = feedback_widget(lang, fm.get("slug", ""))
     inner = (inner[:k] + widget + inner[k:]) if k >= 0 else inner + widget
     return (f"{_chip(lang, fm)}<h1>{html.escape(fm.get('title', ''))}</h1>{_meta_line(lang, fm)}"
-            f'<div class="body">{inner}</div>')
+            f'<div class="body">{inner}</div>' + subscribe_box(lang))
 
 
 def _summary_cards(lang: str, stats: list, preds: list) -> list:
@@ -558,7 +603,10 @@ def build() -> None:
                 if lang == "en":
                     a, b2 = config.STAGES_EN.get(a, ""), config.STAGES_EN.get(b2, "")
                 word = config.TENSE_KO.get(f.get("tense", ""), f.get("tense", "")) if lang == "ko" else f.get("tense", "")
-                meta = f'{html.escape(factor)} {html.escape(a)} → {html.escape(b2)} · <span class="t2">{html.escape(word)}</span>'
+                rg = (f.get("region") or "")
+                rg = (rg if lang == "ko" else config.REGIONS_EN.get(rg, rg)) if rg in config.REGIONS else ""
+                meta = ((f'<span class="t3">{html.escape(rg)}</span> · ' if rg else "")
+                        + f'{html.escape(factor)} {html.escape(a)} → {html.escape(b2)} · <span class="t2">{html.escape(word)}</span>')
                 right = (f'D+{f.get("day")} · {f.get("date", "")[5:]}' if lang == "ko"
                          else f'Day {f.get("day")} · {f.get("date", "")[5:]}')
             return (f'<a href="{slug}"><span class="c"><span class="t">{html.escape(f.get("title", ""))}</span>'

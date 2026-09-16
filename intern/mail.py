@@ -27,19 +27,24 @@ def _call(method: str, path: str, body: dict | None = None, live: bool = False) 
         return e.code, e.read().decode(errors="replace")[:400]
 
 
-SEND_HOUR = 8            # 독자 도착 시각(KST). 회전이 언제 끝나든 여기로 모은다.
+# 독자 도착 시각(KST). **언어마다 다르다**(2026-09-16 대표 제안) - 같은 시각은 한쪽을
+# 반드시 죽은 시간에 꽂는다. 08:00 KST는 영어권에서 전날 밤 11시(ET)다.
+# 22:00 KST = 09:00 ET · 14:00 런던 · 15:00 베를린.
+SEND_HOUR = {"ko": 8, "en": 22}
 
 
-def next_slot(now: dt.datetime | None = None) -> dt.datetime | None:
+def next_slot(lang: str = "ko", now: dt.datetime | None = None) -> dt.datetime | None:
     """다음 발송 시각. **이미 지났으면 None**을 돌려 즉시 발송으로 떨어뜨린다.
 
-    회전은 오전 10시 무렵에 끝나므로 보통 **다음 날 08:00**이 잡힌다.
-    속보를 쫓지 않기로 했으므로(2026-09-14) 하루 묵는 것이 비용이 아니다.
+    회전은 오전 10시 무렵에 끝나므로 보통 **다음 날**이 잡힌다. 속보를 쫓지 않기로 했으므로
+    (2026-09-14) 하루 묵는 것이 비용이 아니다.
+
+    **기준일은 한국어 슬롯이 잡히는 날이고 영어는 그날 밤이다.** 두 언어가 같은 날에 묶이고
+    영어가 한국어보다 먼저 나가지 않는다.
     """
     now = now or dt.datetime.now(config.KST)
-    slot = (now + dt.timedelta(days=1)).replace(hour=SEND_HOUR, minute=0, second=0, microsecond=0)
-    if now.hour < SEND_HOUR:                      # 새벽에 돌았으면 같은 날 아침으로
-        slot = now.replace(hour=SEND_HOUR, minute=0, second=0, microsecond=0)
+    day = now.date() if now.hour < SEND_HOUR["ko"] else (now + dt.timedelta(days=1)).date()
+    slot = dt.datetime.combine(day, dt.time(SEND_HOUR.get(lang, 8)), tzinfo=config.KST)
     return slot if slot > now + dt.timedelta(minutes=5) else None
 
 
@@ -61,7 +66,7 @@ def send_piece(lang: str, day: int, title: str, body_md: str, slug: str, send: b
     ]}
     payload = {"subject": subject, "body": body_md + footer, "status": "about_to_send" if send else "draft",
                "archival_mode": "disabled", "filters": filters}
-    when = next_slot() if send else None
+    when = next_slot(lang) if send else None
     if when:
         payload["status"] = "scheduled"
         payload["publish_date"] = when.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")

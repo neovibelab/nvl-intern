@@ -49,7 +49,8 @@
  ],
  "name_map": {
   "한국음악저작권협회": "Korea Music Copyright Association"
- }
+ },
+ "region": "북미"
 }
 ---
 

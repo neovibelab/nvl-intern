@@ -50,7 +50,8 @@
   "media.md#record formats - 레코드 포맷",
   "fandom.md#interest-based identity - 관심사 기반 정체성"
  ],
- "name_map": {}
+ "name_map": {},
+ "region": "한국"
 }
 ---
 

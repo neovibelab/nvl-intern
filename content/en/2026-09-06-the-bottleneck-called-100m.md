@@ -49,7 +49,8 @@
  "name_map": {
   "아시아경제": "Asia Economic Daily",
   "아리랑": "Arirang"
- }
+ },
+ "region": "한국"
 }
 ---
 

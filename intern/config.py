@@ -62,6 +62,13 @@ ABOUT_URL = "https://www.neovibelab.com/lab/ai-intern"   # 2026-09-06 대표 지
 NEWSLETTER_URL = "https://maily.so/draft.briefing?via=intern"
 # 독자 신호는 레이더 서버를 경유한다. 정적 페이지에 Supabase 키를 심으면 레이더 표가 통째로 열린다.
 FEEDBACK_API = os.environ.get("INTERN_FEEDBACK_API", "https://nvl-vibe-radar.vercel.app/api/intern-feedback")
+# 소재가 어디 이야기인가(2026-09-16). 「한국이냐 아니냐」가 먼저 읽혀야 해서 한국이 맨 앞이고,
+# 여러 곳이 걸치면 글로벌이다. 수집기 지역(`radar_items.region`)과 다른 축이다.
+REGIONS = ["한국", "북미", "유럽", "일본", "중화권", "동남아", "글로벌"]
+REGIONS_EN = {"한국": "Korea", "북미": "North America", "유럽": "Europe", "일본": "Japan",
+              "중화권": "Greater China", "동남아": "Southeast Asia", "글로벌": "Global"}
+
+BUTTONDOWN_USER = "nvl-intern"   # 구독 폼이 던지는 곳. 발송 계정과 같은 이름이라 여기 한 번만 적는다
 LAUNCH_DATE = os.environ.get("INTERN_LAUNCH_DATE", "")  # D+N 계산 기준. 비면 첫 발행일
 
 

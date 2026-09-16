@@ -53,7 +53,8 @@
  "name_map": {
   "경향신문": "Kyunghyang Shinmun",
   "써클차트": "Circle Chart"
- }
+ },
+ "region": "한국"
 }
 ---
 
