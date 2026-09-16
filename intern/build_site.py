@@ -343,11 +343,11 @@ def page(lang: str, title: str, body: str, here: str = "", latest: str = "",
 FB_T = {
     "ko": dict(q="이 글은 어땠습니까", hint="누른 것은 매주 묶여 인턴의 규칙 후보가 됩니다. 관점은 안 건드립니다.",
                btns=[("agree", "맞는 말이다"), ("obvious", "뻔하다"), ("weak", "근거가 약하다"), ("off", "관점이 어긋난다")],
-               ph="지적을 한두 문장으로 (선택, 500자)", send="보내기", thanks="기록했습니다. 일요일 회고에 반영됩니다.", done="이미 남겼습니다",
+               ph="지적을 한두 문장으로 (선택, 500자)", send="보내기", thanks="기록했습니다. 토요일 회고에 반영됩니다.", done="다시 누르면 취소됩니다", undo="취소", pending="", cancelled="취소했습니다",
                textnote="자유 지적은 공개되지 않고 인턴에게 직접 들어가지도 않습니다. 별도 모델이 유형과 건수로 정리한 것만 넘어갑니다."),
     "en": dict(q="How was this piece", hint="Votes are batched weekly into the intern's rule candidates. The point of view is left alone.",
                btns=[("agree", "Fair point"), ("obvious", "Obvious"), ("weak", "Weak evidence"), ("off", "Wrong lens")],
-               ph="A note in a sentence or two (optional, 500 chars)", send="Send", thanks="Recorded. It goes into Sunday's retrospective.", done="Already recorded",
+               ph="A note in a sentence or two (optional, 500 chars)", send="Send", thanks="Recorded. It goes into Saturday's retrospective.", done="Click again to undo", undo="Undo", pending="", cancelled="Removed",
                textnote="Free-text notes are not shown publicly and never go to the intern directly. A separate model turns them into types and counts."),
 }
 
@@ -371,12 +371,20 @@ var slug=el.dataset.slug,lang=el.dataset.lang;
 var key='fb:'+slug,mine={{}};try{{mine=JSON.parse(localStorage.getItem(key)||'{{}}')}}catch(e){{}}
 function save(){{try{{localStorage.setItem(key,JSON.stringify(mine))}}catch(e){{}}}}
 function counts(){{fetch(API+'?slug='+encodeURIComponent(slug)).then(function(r){{if(!r.ok)throw 0;return r.json()}}).then(function(d){{el.hidden=false;var c=d.counts||{{}};el.querySelectorAll('b[data-n]').forEach(function(b){{b.textContent=c[b.dataset.n]||''}});el.querySelectorAll('button[data-k]').forEach(function(b){{b.classList.toggle('on',!!mine[b.dataset.k])}})}}).catch(function(){{}})}}
-function post(kind,text,via){{return fetch(API,{{method:'POST',headers:{{'Content-Type':'application/json'}},body:JSON.stringify({{slug:slug,lang:lang,kind:kind,text:text||'',via:via||'web'}})}})}}
+var VK='fb:voter',voter='';
+try{{voter=localStorage.getItem(VK)||''}}catch(e){{}}
+if(!voter){{voter=Math.random().toString(36).slice(2)+Math.random().toString(36).slice(2);try{{localStorage.setItem(VK,voter)}}catch(e){{}}}}
+function post(kind,text,via){{return fetch(API,{{method:'POST',headers:{{'Content-Type':'application/json'}},body:JSON.stringify({{slug:slug,lang:lang,kind:kind,text:text||'',via:via||'web',voter:voter}})}})}}
 var msg=document.getElementById('fb-msg');
-el.querySelectorAll('button[data-k]').forEach(function(b){{b.addEventListener('click',function(){{var k=b.dataset.k;if(mine[k]){{msg.textContent={json.dumps(t['done'])};return}}post(k,'','web').then(function(r){{if(r.ok){{mine[k]=1;save();msg.textContent={json.dumps(t['thanks'])};counts()}}}})}})}});
+function drop(kind){{return fetch(API,{{method:'DELETE',headers:{{'Content-Type':'application/json'}},body:JSON.stringify({{slug:slug,kind:kind,voter:voter}})}})}}
+el.querySelectorAll('button[data-k]').forEach(function(b){{b.addEventListener('click',function(){{
+  var k=b.dataset.k;
+  if(mine[k]){{drop(k).then(function(r){{if(r.ok){{delete mine[k];save();msg.textContent={json.dumps(t['cancelled'])};counts()}}}});return}}
+  post(k,'','web').then(function(r){{if(r.ok){{mine[k]=1;save();msg.textContent={json.dumps(t['thanks'])}+' '+{json.dumps(t['done'])};counts()}}}});
+}})}});
 document.getElementById('fb-send').addEventListener('click',function(){{var v=document.getElementById('fb-text').value.trim();if(v.length<2)return;post('text',v,'web').then(function(r){{if(r.ok){{document.getElementById('fb-text').value='';mine.text=1;save();msg.textContent={json.dumps(t['thanks'])};counts()}}}})}});
 var q=new URLSearchParams(location.search).get('fb');
-if(q&&['agree','obvious','weak','off'].indexOf(q)>=0&&!mine[q]){{post(q,'','mail').then(function(r){{if(r.ok){{mine[q]=1;save();msg.textContent={json.dumps(t['thanks'])};counts()}}}})}}
+if(q&&['agree','obvious','weak','off'].indexOf(q)>=0&&!mine[q]){{post(q,'','mail').then(function(r){{if(r.ok){{mine[q]=1;save();msg.textContent={json.dumps(t['thanks'])}+' '+{json.dumps(t['done'])};counts()}}}})}}
 counts();
 }})();
 </script>"""

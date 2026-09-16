@@ -206,12 +206,20 @@ var slug=el.dataset.slug,lang=el.dataset.lang;
 var key='fb:'+slug,mine={};try{mine=JSON.parse(localStorage.getItem(key)||'{}')}catch(e){}
 function save(){try{localStorage.setItem(key,JSON.stringify(mine))}catch(e){}}
 function counts(){fetch(API+'?slug='+encodeURIComponent(slug)).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){el.hidden=false;var c=d.counts||{};el.querySelectorAll('b[data-n]').forEach(function(b){b.textContent=c[b.dataset.n]||''});el.querySelectorAll('button[data-k]').forEach(function(b){b.classList.toggle('on',!!mine[b.dataset.k])})}).catch(function(){})}
-function post(kind,text,via){return fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({slug:slug,lang:lang,kind:kind,text:text||'',via:via||'web'})})}
+var VK='fb:voter',voter='';
+try{voter=localStorage.getItem(VK)||''}catch(e){}
+if(!voter){voter=Math.random().toString(36).slice(2)+Math.random().toString(36).slice(2);try{localStorage.setItem(VK,voter)}catch(e){}}
+function post(kind,text,via){return fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({slug:slug,lang:lang,kind:kind,text:text||'',via:via||'web',voter:voter})})}
 var msg=document.getElementById('fb-msg');
-el.querySelectorAll('button[data-k]').forEach(function(b){b.addEventListener('click',function(){var k=b.dataset.k;if(mine[k]){msg.textContent="Already recorded";return}post(k,'','web').then(function(r){if(r.ok){mine[k]=1;save();msg.textContent="Recorded. It goes into Sunday's retrospective.";counts()}})})});
-document.getElementById('fb-send').addEventListener('click',function(){var v=document.getElementById('fb-text').value.trim();if(v.length<2)return;post('text',v,'web').then(function(r){if(r.ok){document.getElementById('fb-text').value='';mine.text=1;save();msg.textContent="Recorded. It goes into Sunday's retrospective.";counts()}})});
+function drop(kind){return fetch(API,{method:'DELETE',headers:{'Content-Type':'application/json'},body:JSON.stringify({slug:slug,kind:kind,voter:voter})})}
+el.querySelectorAll('button[data-k]').forEach(function(b){b.addEventListener('click',function(){
+  var k=b.dataset.k;
+  if(mine[k]){drop(k).then(function(r){if(r.ok){delete mine[k];save();msg.textContent="Removed";counts()}});return}
+  post(k,'','web').then(function(r){if(r.ok){mine[k]=1;save();msg.textContent="Recorded. It goes into Saturday's retrospective."+' '+"Click again to undo";counts()}});
+})});
+document.getElementById('fb-send').addEventListener('click',function(){var v=document.getElementById('fb-text').value.trim();if(v.length<2)return;post('text',v,'web').then(function(r){if(r.ok){document.getElementById('fb-text').value='';mine.text=1;save();msg.textContent="Recorded. It goes into Saturday's retrospective.";counts()}})});
 var q=new URLSearchParams(location.search).get('fb');
-if(q&&['agree','obvious','weak','off'].indexOf(q)>=0&&!mine[q]){post(q,'','mail').then(function(r){if(r.ok){mine[q]=1;save();msg.textContent="Recorded. It goes into Sunday's retrospective.";counts()}})}
+if(q&&['agree','obvious','weak','off'].indexOf(q)>=0&&!mine[q]){post(q,'','mail').then(function(r){if(r.ok){mine[q]=1;save();msg.textContent="Recorded. It goes into Saturday's retrospective."+' '+"Click again to undo";counts()}})}
 counts();
 })();
 </script></div>

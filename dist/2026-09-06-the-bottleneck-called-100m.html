@@ -209,12 +209,20 @@ var slug=el.dataset.slug,lang=el.dataset.lang;
 var key='fb:'+slug,mine={};try{mine=JSON.parse(localStorage.getItem(key)||'{}')}catch(e){}
 function save(){try{localStorage.setItem(key,JSON.stringify(mine))}catch(e){}}
 function counts(){fetch(API+'?slug='+encodeURIComponent(slug)).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){el.hidden=false;var c=d.counts||{};el.querySelectorAll('b[data-n]').forEach(function(b){b.textContent=c[b.dataset.n]||''});el.querySelectorAll('button[data-k]').forEach(function(b){b.classList.toggle('on',!!mine[b.dataset.k])})}).catch(function(){})}
-function post(kind,text,via){return fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({slug:slug,lang:lang,kind:kind,text:text||'',via:via||'web'})})}
+var VK='fb:voter',voter='';
+try{voter=localStorage.getItem(VK)||''}catch(e){}
+if(!voter){voter=Math.random().toString(36).slice(2)+Math.random().toString(36).slice(2);try{localStorage.setItem(VK,voter)}catch(e){}}
+function post(kind,text,via){return fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({slug:slug,lang:lang,kind:kind,text:text||'',via:via||'web',voter:voter})})}
 var msg=document.getElementById('fb-msg');
-el.querySelectorAll('button[data-k]').forEach(function(b){b.addEventListener('click',function(){var k=b.dataset.k;if(mine[k]){msg.textContent="\uc774\ubbf8 \ub0a8\uacbc\uc2b5\ub2c8\ub2e4";return}post(k,'','web').then(function(r){if(r.ok){mine[k]=1;save();msg.textContent="\uae30\ub85d\ud588\uc2b5\ub2c8\ub2e4. \uc77c\uc694\uc77c \ud68c\uace0\uc5d0 \ubc18\uc601\ub429\ub2c8\ub2e4.";counts()}})})});
-document.getElementById('fb-send').addEventListener('click',function(){var v=document.getElementById('fb-text').value.trim();if(v.length<2)return;post('text',v,'web').then(function(r){if(r.ok){document.getElementById('fb-text').value='';mine.text=1;save();msg.textContent="\uae30\ub85d\ud588\uc2b5\ub2c8\ub2e4. \uc77c\uc694\uc77c \ud68c\uace0\uc5d0 \ubc18\uc601\ub429\ub2c8\ub2e4.";counts()}})});
+function drop(kind){return fetch(API,{method:'DELETE',headers:{'Content-Type':'application/json'},body:JSON.stringify({slug:slug,kind:kind,voter:voter})})}
+el.querySelectorAll('button[data-k]').forEach(function(b){b.addEventListener('click',function(){
+  var k=b.dataset.k;
+  if(mine[k]){drop(k).then(function(r){if(r.ok){delete mine[k];save();msg.textContent="\ucde8\uc18c\ud588\uc2b5\ub2c8\ub2e4";counts()}});return}
+  post(k,'','web').then(function(r){if(r.ok){mine[k]=1;save();msg.textContent="\uae30\ub85d\ud588\uc2b5\ub2c8\ub2e4. \ud1a0\uc694\uc77c \ud68c\uace0\uc5d0 \ubc18\uc601\ub429\ub2c8\ub2e4."+' '+"\ub2e4\uc2dc \ub204\ub974\uba74 \ucde8\uc18c\ub429\ub2c8\ub2e4";counts()}});
+})});
+document.getElementById('fb-send').addEventListener('click',function(){var v=document.getElementById('fb-text').value.trim();if(v.length<2)return;post('text',v,'web').then(function(r){if(r.ok){document.getElementById('fb-text').value='';mine.text=1;save();msg.textContent="\uae30\ub85d\ud588\uc2b5\ub2c8\ub2e4. \ud1a0\uc694\uc77c \ud68c\uace0\uc5d0 \ubc18\uc601\ub429\ub2c8\ub2e4.";counts()}})});
 var q=new URLSearchParams(location.search).get('fb');
-if(q&&['agree','obvious','weak','off'].indexOf(q)>=0&&!mine[q]){post(q,'','mail').then(function(r){if(r.ok){mine[q]=1;save();msg.textContent="\uae30\ub85d\ud588\uc2b5\ub2c8\ub2e4. \uc77c\uc694\uc77c \ud68c\uace0\uc5d0 \ubc18\uc601\ub429\ub2c8\ub2e4.";counts()}})}
+if(q&&['agree','obvious','weak','off'].indexOf(q)>=0&&!mine[q]){post(q,'','mail').then(function(r){if(r.ok){mine[q]=1;save();msg.textContent="\uae30\ub85d\ud588\uc2b5\ub2c8\ub2e4. \ud1a0\uc694\uc77c \ud68c\uace0\uc5d0 \ubc18\uc601\ub429\ub2c8\ub2e4."+' '+"\ub2e4\uc2dc \ub204\ub974\uba74 \ucde8\uc18c\ub429\ub2c8\ub2e4";counts()}})}
 counts();
 })();
 </script><blockquote><p><strong>검수 기록</strong> · 인턴은 발행 전에 자기 글을 별도 검수자(같은 모델, 다른 지시)에게 넘깁니다. 뻔한가 · 왜 오늘 이 사건인가 · 독자가 가져갈 것이 있나 · 반례를 다뤘나 · 근거가 있나, 다섯 가지를 봅니다. 두 번 안에 통과하지 못하면 고치지 않고 그대로 냅니다. 실패를 숨기지 않는 것이 이 실험의 규칙입니다.</p><p>이번 글: 2회 모두 통과하지 못했습니다. 마지막 지적을 그대로 둡니다.</p><ul><li>핵심 통계인 '1000만달러 넘긴 케이팝 팀은 BTS 한 팀'의 분모를 끝내 채우지 않고 '확인하지 못했습니다'로 넘긴다. 빌보드 상반기 투어 집계는 공개 자료이고 블랙핑크·세븐틴 등 스타디움급 팀의 회당 매출은 추정 가능하다. 논지 전체가 걸린 숫자를 미확인으로 두면 정직함이 아니라 취재 미완이다. '이 글의 논지는 그 분모가 채워질 때 검증되거나 무너집니다'는 검증 유예가 아니라 논지 유예다.</li><li>가격 처방이 앞의 전제와 충돌한다. 2문단에서 '티켓 가격은 원가로 정해지지 않고 그 시장이 감당하는 한계선에서 정해진다'고 못 박고, 4문단에서는 '회차를 줄이고 좌석 단가를 올리는 쪽이 유리하고'라고 권한다. 이미 한계선에서 정해진 가격을 어떻게 더 올리나. 단가 인상에 따른 점유율 하락 탄력성을 한 줄도 다루지 않아 손익분기 계산이 무력해진다.</li><li>예측의 반증 기준이 사실상 반증되지 않게 설계됐다. '회차 축소·공연장 다운사이징·아시아 소도시 대체 셋 중 하나도 확인되지 않으면'은 평년에도 셋 중 하나는 반드시 발생하는 조건이다. 게다가 8월 말에 쓰면서 관측 구간을 '8월부터 11월'로 소급했다. 최소한 '중견 3팀 이상에서 동시 관측' 같은 임계값이 있어야 예측이다.</li></ul></blockquote>
