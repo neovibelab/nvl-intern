@@ -53,6 +53,9 @@ p.frame a{text-decoration:none;color:var(--ink)}p.frame a:hover{color:var(--lime
 /* 오늘의 소재 */
 p.src{background:var(--card);border:1px solid var(--edge);padding:15px 18px 13px;margin:0;font-size:14.5px;line-height:1.85;color:var(--ink)}
 p.src.joined{border-bottom:none;padding-bottom:10px}
+p.srcs{background:var(--card);border:1px solid var(--edge);padding:14px 18px 12px;margin:0}
+p.srcs.joined{border-bottom:none;padding-bottom:4px}
+p.srcs strong{display:block;color:var(--dim);font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
 p.src strong{display:block;color:var(--lime);font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:7px;font-weight:500}
 ul.src-list{background:var(--card);border:1px solid var(--edge);border-top:none;margin:0 0 26px;padding:0 18px 13px;list-style:none}
 ul.src-list li{font-size:12.5px;color:var(--dim);font-family:'DM Mono','Noto Sans KR',monospace;line-height:1.75;padding-left:15px;position:relative}
@@ -157,6 +160,7 @@ table.mini td.z{color:#2B2B2B}
 .sub button{font-family:'DM Mono','Noto Sans KR',monospace;font-size:12.5px;padding:10px 20px;background:var(--lime);color:var(--black);border:1px solid var(--lime);cursor:pointer;font-weight:700}
 .sub button:hover{opacity:.85}
 .sub .fine{font-size:11px;color:var(--dim);margin:10px 0 0;line-height:1.65}
+.body hr.sep{border:0;border-top:1px solid var(--line);margin:34px 0}
 .fb{margin:36px 0 12px;border:1px solid var(--edge);background:var(--card);padding:17px 18px}
 .fb .q{font-size:13.5px;color:var(--white);margin-bottom:11px;font-weight:700}
 .fb .q span{color:var(--dim);font-size:11.5px;margin-left:9px;font-weight:400}
@@ -228,6 +232,7 @@ T = {
 BLOCK_KINDS = [
     ("frame", ("**엔터문화연구소의 AI 실험**", "**A Neo Vibe Lab AI experiment**")),
     ("src", ("**오늘의 소재**", "**Today's source**")),
+    ("srcs", ("**읽은 기사**", "**What it read**")),
     ("evidence", ("**조짐**", "**What is showing**")),
     ("bet", ("**베팅**", "**Bet**")),
     ("principle", ("**원리**", "**Principle**")),
@@ -251,6 +256,9 @@ def md_to_html(md: str) -> str:
             continue  # 제목은 따로
         if b.startswith("`") and b.endswith("`") and "\n" not in b:
             continue  # 헤더 줄은 따로
+        if b in ("---", "***", "___"):
+            # 덩어리 구분선(2026-09-16). 안 잡으면 마크다운 그대로 `<p>---</p>`가 찍힌다.
+            out.append('<hr class="sep">'); prev = "sep"; continue
         if b.startswith("> "):
             out.append(_quote(b)); prev = "quote"; continue
         if b.startswith("<sub>"):
@@ -258,7 +266,7 @@ def md_to_html(md: str) -> str:
         if b.startswith("| "):
             out.append('<div class="tw">' + _table(b) + "</div>"); prev = "table"; continue
         if b.startswith("- "):
-            cls = ' class="src-list"' if prev == "src" else ""
+            cls = ' class="src-list"' if prev in ("src", "srcs") else ""
             out.append(f"<ul{cls}>" + "".join(f"<li>{_inline(l[2:])}</li>" for l in b.splitlines() if l.startswith("- ")) + "</ul>")
             prev = "list"; continue
         k = _kind(b)
@@ -270,7 +278,9 @@ def md_to_html(md: str) -> str:
         out.append(f"<p>{_inline(b)}</p>"); prev = "p"
     res = "\n".join(out)
     # 소재 문단 뒤에 출처 목록이 붙으면 한 덩어리로 보이게 아래 테두리를 뗀다
-    return res.replace('<p class="src">', '<p class="src joined">') if 'class="src-list"' in res else res
+    # 「오늘의 소재」 상자는 이제 목록과 떨어져 있다(2026-09-16 순서 개편). 아래를 열어 두면
+    # 박스가 끊긴 채 끝난다. 목록이 바로 뒤에 붙는 것은 「읽은 기사」 쪽이다.
+    return res.replace('<p class="srcs">', '<p class="srcs joined">') if 'class="src-list"' in res else res
 
 
 def _quote(b: str) -> str:
@@ -543,9 +553,12 @@ def _meta_line(lang: str, fm: dict) -> str:
 
 def render_piece(lang: str, fm: dict, body: str) -> str:
     inner = md_to_html(body)
-    # 독자 신호 위젯은 검수 기록 앞(원리 뒤)에 들어간다
-    k = inner.rfind("<blockquote>")
+    # 독자 신호 위젯은 **원리를 읽은 직후**, 근거 묶음(읽은 기사·격자·검수 기록)이 시작되기 전에 선다.
+    # 판단이 서는 자리가 거기다. 구분선이 없는 옛 편은 검수 기록 앞으로 물러난다.
     widget = feedback_widget(lang, fm.get("slug", ""))
+    k = inner.rfind('<hr class="sep">')
+    if k < 0:
+        k = inner.rfind("<blockquote>")
     inner = (inner[:k] + widget + inner[k:]) if k >= 0 else inner + widget
     return (f"{_chip(lang, fm)}<h1>{html.escape(fm.get('title', ''))}</h1>{_meta_line(lang, fm)}"
             f'<div class="body">{inner}</div>')

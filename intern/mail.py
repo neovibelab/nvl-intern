@@ -2,6 +2,7 @@
 """Buttondown 발송. 언어는 metadata.lang 필터. 실측 2026-09-04: 무료 플랜에서 API 발송·metadata 필터 작동."""
 import json
 import os
+import re
 import urllib.error
 import urllib.request
 
@@ -48,6 +49,19 @@ def next_slot(lang: str = "ko", now: dt.datetime | None = None) -> dt.datetime |
     return slot if slot > now + dt.timedelta(minutes=5) else None
 
 
+GRID_TABLE = re.compile(r"\n\|\s*\|[^\n]*\n\|[-:| ]+\|\n(?:\|[^\n]*\n)+\n?<sub>[^<]*</sub>\n?")
+
+
+def strip_grid(body: str, lang: str) -> str:
+    """21칸 표를 한 줄로 바꾼다. 표가 없으면 그대로 돌려준다."""
+    line = ("<sub>오늘 찍은 칸은 [격자 21칸](%s)에서 봅니다.</sub>" % f"{config.SITE_URL}/grid" if lang == "ko"
+            else "<sub>Today's cell is on the [21-cell grid](%s).</sub>" % f"{config.SITE_URL}/en/grid")
+    out, n = GRID_TABLE.subn("\n" + line + "\n", body, count=1)
+    if not n:
+        print("  [mail] 격자 표를 못 찾았다 - 본문 그대로 보낸다")
+    return out
+
+
 def send_piece(lang: str, day: int, title: str, body_md: str, slug: str, send: bool = False) -> dict:
     """구독자는 언어만 고른다. 매일 한 편과 일요일 회고가 같은 리스트로 간다(2026-09-05 대표: 주기 구분 폐지)."""
     # `archival_mode` - 버튼다운 아카이브에 쌓을지(2026-09-16). 골격 커밋부터 `disabled`였고
@@ -83,7 +97,7 @@ def send_piece(lang: str, day: int, title: str, body_md: str, slug: str, send: b
         filters = {"predicate": "and", "groups": [], "filters": [
             {"field": "subscriber.metadata.lang", "operator": "equals", "value": "en"},
         ]}
-    payload = {"subject": subject, "body": body_md + footer, "status": "about_to_send" if send else "draft",
+    payload = {"subject": subject, "body": strip_grid(body_md, lang) + footer, "status": "about_to_send" if send else "draft",
                "archival_mode": "enabled" if lang == "ko" else "disabled", "filters": filters}
     when = next_slot(lang) if send else None
     if when:

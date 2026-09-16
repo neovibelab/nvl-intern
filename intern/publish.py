@@ -44,8 +44,12 @@ def review_block(lang: str, meta: dict) -> str:
     return f"> {head}\n>\n> This piece: failed all {rounds} rounds. The last notes stay as written.\n>\n" + "\n".join(f"> - {i}" for i in issues)
 
 
-def sources_block(lang: str, summary: str, items: list[dict]) -> str:
-    """오늘의 소재 - 사건·기사 요약 + 원문 인링크."""
+def sources_block(lang: str, summary: str, items: list[dict]) -> tuple[str, str]:
+    """오늘의 소재를 **둘로 나눠** 돌려준다 - (요약 한 문단, 원문 링크 목록).
+
+    요약은 제목 바로 밑에 있어야 무슨 사건인지 알고 본문에 들어간다. **링크 목록은 근거라서 뒤에 간다**
+    (2026-09-16 대표 지적 - 본문에 닿기 전에 6줄을 지나야 했다).
+    """
     head = "**오늘의 소재**" if lang == "ko" else "**Today's source**"
     lines = []
     for x in items:
@@ -55,8 +59,10 @@ def sources_block(lang: str, summary: str, items: list[dict]) -> str:
         title = ((x.get("title_en") if lang == "en" else None) or x.get("title") or "").strip().replace("]", "］").replace("[", "［")
         date = (x.get("published_date") or "")[:10]
         lines.append(f"- [{(outlet + ' · ') if outlet else ''}{title}]({x['url']})" + (f" · {date}" if date else ""))
-    first = f"{head} · {summary.strip()}" if summary.strip() else head
-    return first + ("\n\n" + "\n".join(lines) if lines else "")
+    first = f"{head} · {summary.strip()}" if summary.strip() else ""
+    link_head = "**읽은 기사**" if lang == "ko" else "**What it read**"
+    links = (link_head + "\n\n" + "\n".join(lines)) if lines else ""
+    return first, links
 
 
 def no_em_dash(t: str) -> str:
@@ -153,16 +159,25 @@ def piece_markdown(lang: str, date: str, slug: str, j: dict, body: str, meta: di
             f"관점은 사람이 씁니다: [엔터문화연구소 뉴스레터]({config.NEWSLETTER_URL})." if lang == "ko" else
             f"{label} The call, fact checks and review notes stay on the [growth page]({u['growth']}); bets are self-scored when due. "
             f"The point of view is written by a human: the [Neo Vibe Lab newsletter]({config.NEWSLETTER_URL}).")
-    srcs = sources_block(lang, fm["source_summary"], fm["source_items"]) if (fm["source_summary"] or fm["source_items"]) else ""
+    src_sum, src_links = sources_block(lang, fm["source_summary"], fm["source_items"])
     nm = (meta.get("name_map") or {}).get(lang) or {}
     fm["name_map"] = nm
-    doc = (f"{frame_block(lang, meta['day'])}\n\n"
-            f"`{header}`\n\n# {title}\n\n"
-            + (f"{srcs}\n\n" if srcs else "")
-            + f"{grid_table(lang, j)}\n\n"
+    # 지역을 좌표 줄에 붙인다(2026-09-16). 사이트 칩에만 있어서 메일 독자는 「한국 얘기인가」를 몰랐다.
+    region = fm.get("region") or ""
+    if lang == "en":
+        region = config.REGIONS_EN.get(region, region)
+    coord = f"`{header}`" + (f" · `{region}`" if region else "")
+    hr = "\n\n---\n\n"
+    doc = (f"{frame_block(lang, meta['day'])}" + hr
+            + f"{coord}\n\n# {title}\n\n"
+            + (f"{src_sum}\n\n" if src_sum else "")
             + (f"{vibe_line(lang, j)}\n\n" if vibe_line(lang, j) else "")
+            + hr.lstrip("\n")
             + f"{body.strip()}{bet_line}\n\n"
-            + f"**{'원리' if lang == 'ko' else 'Principle'}** · {principle}{unresolved_line}\n\n"
+            + f"**{'원리' if lang == 'ko' else 'Principle'}** · {principle}" + hr
+            + (f"{src_links}\n\n" if src_links else "")
+            + f"{grid_table(lang, j)}"
+            + f"{unresolved_line}\n\n"
             + f"<sub>{tail}</sub>\n")
     doc = no_em_dash(steps.apply_names(doc, nm, lang))
     return f"---\n{json.dumps(fm, ensure_ascii=False, indent=1)}\n---\n\n" + doc
