@@ -13,7 +13,7 @@ import json
 import sys
 import time
 
-from intern import config, duel, llm, radar, brain, steps, publish, build_site, mail, weekly, form, learn, recheck
+from intern import config, duel, llm, radar, brain, steps, publish, build_site, mail, weekly, form, learn, recheck, style
 
 MAX_REVIEW_ROUNDS = 2
 
@@ -193,11 +193,14 @@ def main() -> int:
             "last_issues_en": last_issues_en,
             "sources": trace["cluster"]["urls"], "source_items": trace["cluster"]["items"], "source_summary": src_sum,
             "name_map": name_maps, "title_source": {"ko": tk.get("source", ""), "en": te.get("source", "")},
+            "style": style.measure(ko),
             "form": dict(form.measure(j["title_ko"], ko, trace["cluster"]["items"]), title_check=tc,
                           title_kept_first=dk.get("kept_first") if dk else None,
                           title_cands=dk.get("n") if dk else 0),
             "wiki": mats["wiki"], "lexicon": mats["lexicon"]}
     trace["form"] = meta["form"]
+    _off = style.off_axes(meta["style"])
+    print(f"  [style] 사람 분포 밖 {len(_off)}개" + (f" · {' · '.join(_off)}" if _off else ""))
     print(f"  [form] 점수 {form.score(meta['form'])}/100 · 제목 고유명사 {meta['form']['title_noun']}(기록만) · "
           f"리드 구체 {meta['form']['lead_concrete']} · AI tell {meta['form']['ai_tell']} · 문장중앙 {meta['form']['sent_med']}자")
     publish.record(args.date, slug, j, meta, ko, en, trace)

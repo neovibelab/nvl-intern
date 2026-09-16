@@ -17,7 +17,7 @@
 import io
 import json
 
-from . import config, form, publish
+from . import config, form, publish, style
 
 
 def _log(date: str) -> dict:
@@ -58,6 +58,10 @@ def _scores(s: dict) -> str:
     if t:
         bits.append(f"제목 - 무슨 얘긴지 알려주나 {t.get('clarity')}/2 · 읽고 싶게 하나 {t.get('pull')}/2"
                     + ("" if t.get("kept_promise", True) else " · **본문이 제목의 약속을 어겼다**"))
+    st = s.get("style") or {}
+    if st:
+        off = style.off_axes(st)
+        bits.append("문체 - 사람 분포 밖 " + (f"{len(off)}개({', '.join(off)})" if off else "0개"))
     bits.append(f"형식 {form.score(f)}/100 · 첫 문단에 누가 무엇을 언제 {'있음' if f.get('lead_concrete') else '없음'}"
                 f" · AI tell {f.get('ai_tell')} · 헤지 만자당 {f.get('hedge_10k')} · 문장 중앙 {f.get('sent_med')}자")
     return " / ".join(bits)

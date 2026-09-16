@@ -13,7 +13,7 @@ import os
 import urllib.parse
 import urllib.request
 
-from . import config, duel, form, llm, publish
+from . import config, duel, form, llm, publish, style
 
 FB_KINDS_KO = {"agree": "맞는 말이다", "obvious": "뻔하다", "weak": "근거가 약하다", "off": "관점이 어긋난다"}
 FB_API = "https://nvl-vibe-radar.vercel.app/api/intern-feedback"
@@ -271,6 +271,16 @@ def _baseline_line(lang: str) -> str:
     return head + " · ".join(parts) + tail
 
 
+def _style_line(g: dict, lang: str) -> str:
+    """한 주 문체 거리. **고치는 법은 주지 않는다** - 어느 축이 사람 분포 밖인지와 그 값만 준다.
+    「수식어를 써라」 같은 지시를 넣는 순간 자기 문장이 아니라 우리 자를 맞추게 된다."""
+    rows = [r["style"] for r in g["rows"] if r.get("style")]
+    if not rows:
+        return "측정 없음" if lang == "ko" else "not measured"
+    avg = {k: round(sum(r.get(k, 0) for r in rows) / len(rows), 2) for k in style.AXES}
+    return style.line(avg, style.percentiles(avg), lang)
+
+
 def _form_summary(rows: list[dict]) -> dict:
     """형식 지표 한 주치. 인턴에게 고치는 법을 주지 않고 숫자만 준다."""
     fs = [r["form"] for r in rows if r.get("form")]
@@ -348,6 +358,9 @@ REFLECT_KO = """[이번 주 내 기록]
 
 [되읽기 - 네가 낸 글을 다시 읽고 그 뒤 나온 것을 확인했다]
 {recheck_line}
+
+[문체 - 사람이 쓴 글 60편의 분포를 자로 놓았다]
+{style_line}
 새 베팅 {bets_new}건 · 열린 베팅 {bets_open}건
 {signals}
 
@@ -396,6 +409,9 @@ Pieces written without the lab's own lenses: {no_brain}/{n}
 
 [Re-read - what came out after the pieces you already published]
 {recheck_line}
+
+[Style - measured against the distribution of 60 pieces written by a human]
+{style_line}
 New bets {bets_new} · open bets {bets_open}
 {signals}
 
@@ -446,6 +462,7 @@ def reflect(g: dict, lang: str) -> str:
         signals=_signal_line(g, lang), duel_line=_duel_line(g.get("duels") or [], lang),
         baseline_line=_baseline_line(lang),
         recheck_line=recheck.summary(g.get("recheck") or [], lang),
+        style_line=_style_line(g, lang),
         issues="\n".join(f"- {i}" for i in g["issues"][:12]) or "(없음)",
         promoted=len(g["promoted"]),
         issue_types="\n".join(f"- {len(t['days'])}일에 걸쳐 {t['n']}회 · {t['name']}"
