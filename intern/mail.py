@@ -53,8 +53,10 @@ def send_piece(lang: str, day: int, title: str, body_md: str, slug: str, send: b
     # `archival_mode = enabled` - 버튼다운 아카이브에도 쌓인다(2026-09-16). 골격 커밋부터 `disabled`였고
     # 판단해서 끈 것이 아니었다. 그 주소가 구독 창구인데 빈 페이지라 죽은 레터로 보였다.
     # 발행 정본은 여전히 intern.neovibelab.com이고 우리 링크는 전부 그쪽을 가리킨다.
-    weekly = "주차 회고" in title or title.startswith("Week ")
-    subject = title if weekly else (f"D+{day} · {title}" if lang == "ko" else f"Day {day} · {title}")
+    # 제목에 회차를 붙이지 않는다(2026-09-16 대표 지적). 제목 줄은 **열지 말지를 정하는 자리**이고
+    # 앞 대여섯 글자를 우리 쪽 회차 번호가 먹는다. 수신함에서 제목이 잘리면 잘리는 쪽은 늘 뒷부분이다.
+    # D+N은 읽기로 마음먹은 뒤에 의미가 생기는 값이라 본문 머리와 사이트에만 둔다.
+    subject = title
     url = f"{config.SITE_URL}/{'' if lang == 'ko' else 'en/'}{slug}"
     if lang == "ko":
         fb = ("**이 글은 어땠습니까** · [맞는 말이다](%s?fb=agree) · [뻔하다](%s?fb=obvious) · [근거가 약하다](%s?fb=weak) · [관점이 어긋난다](%s?fb=off)"
