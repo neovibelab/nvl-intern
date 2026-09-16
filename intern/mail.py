@@ -50,9 +50,13 @@ def next_slot(lang: str = "ko", now: dt.datetime | None = None) -> dt.datetime |
 
 def send_piece(lang: str, day: int, title: str, body_md: str, slug: str, send: bool = False) -> dict:
     """구독자는 언어만 고른다. 매일 한 편과 일요일 회고가 같은 리스트로 간다(2026-09-05 대표: 주기 구분 폐지)."""
-    # `archival_mode = enabled` - 버튼다운 아카이브에도 쌓인다(2026-09-16). 골격 커밋부터 `disabled`였고
+    # `archival_mode` - 버튼다운 아카이브에 쌓을지(2026-09-16). 골격 커밋부터 `disabled`였고
     # 판단해서 끈 것이 아니었다. 그 주소가 구독 창구인데 빈 페이지라 죽은 레터로 보였다.
     # 발행 정본은 여전히 intern.neovibelab.com이고 우리 링크는 전부 그쪽을 가리킨다.
+    #
+    # **한국어만 쌓는다** - 한 리스트라 켜 두면 D+12 다음에 Day 12가 오는 식으로 두 언어가
+    # 번갈아 선다. 목록이 어지럽고 어느 언어인지는 제목을 읽어야 안다. 영문 독자에게는
+    # 사이트 `/en`이 더 낫다 - 격자·성장 기록까지 거기 있다.
     # 제목에 회차를 붙이지 않는다(2026-09-16 대표 지적). 제목 줄은 **열지 말지를 정하는 자리**이고
     # 앞 대여섯 글자를 우리 쪽 회차 번호가 먹는다. 수신함에서 제목이 잘리면 잘리는 쪽은 늘 뒷부분이다.
     # D+N은 읽기로 마음먹은 뒤에 의미가 생기는 값이라 본문 머리와 사이트에만 둔다.
@@ -70,7 +74,7 @@ def send_piece(lang: str, day: int, title: str, body_md: str, slug: str, send: b
         {"field": "subscriber.metadata.lang", "operator": "equals", "value": lang},
     ]}
     payload = {"subject": subject, "body": body_md + footer, "status": "about_to_send" if send else "draft",
-               "archival_mode": "enabled", "filters": filters}
+               "archival_mode": "enabled" if lang == "ko" else "disabled", "filters": filters}
     when = next_slot(lang) if send else None
     if when:
         payload["status"] = "scheduled"

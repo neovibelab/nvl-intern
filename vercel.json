@@ -15,5 +15,18 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "nvl-intern.vercel.app"
+        }
+      ],
+      "destination": "https://intern.neovibelab.com/:path*",
+      "permanent": true
+    }
   ]
 }
