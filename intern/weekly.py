@@ -13,7 +13,7 @@ import os
 import urllib.parse
 import urllib.request
 
-from . import config, duel, form, llm, publish, style
+from . import ablation, config, duel, form, llm, publish, style
 
 FB_KINDS_KO = {"agree": "맞는 말이다", "obvious": "뻔하다", "weak": "근거가 약하다", "off": "관점이 어긋난다"}
 FB_API = "https://nvl-vibe-radar.vercel.app/api/intern-feedback"
@@ -388,6 +388,7 @@ REFLECT_KO = """[이번 주 내 기록]
 레이더와 비교 가능했던 {compared}건 중 {disagree}건 불일치
 사실 검증 {verified}/{claims} · 검수 1회 통과 {pass1}/{n} · 미해결 {unresolved} · 기계 게이트 작동 {gate_hits}회
 두뇌 재료 없이 쓴 편 {no_brain}/{n} (0이 아니면 연구소 관점 렌즈 없이 쓴 날이다)
+{brain_line}
 
 [형식·접근성 - 기계가 센 것. 고치는 법은 아무도 안 알려준다]
 {form_line}
@@ -439,6 +440,7 @@ REFLECT_EN = """**Write in English.** The system prompt is in Korean; the piece 
 {disagree} of {compared} comparable calls differed from the radar
 Facts verified {verified}/{claims} · passed review on first round {pass1}/{n} · unresolved {unresolved} · style gate fired {gate_hits}
 Pieces written without the lab's own lenses: {no_brain}/{n}
+{brain_line}
 
 [Form and accessibility - counted by machine. Nobody tells you how to fix it]
 {form_line}
@@ -502,6 +504,7 @@ def reflect(g: dict, lang: str) -> str:
         gate_hits=g["gate_hits"], no_brain=g["no_brain"], form_line=_form_line(g, lang),
         bets_new=len(g["bets_new"]), bets_open=len(g["bets_open"]),
         signals=_signal_line(g, lang), duel_line=_duel_line(g.get("duels") or [], lang),
+        brain_line=ablation.summary(lang),
         baseline_line=_baseline_line(lang),
         recheck_line=recheck.summary(g.get("recheck") or [], lang),
         style_line=_style_line(g, lang),

@@ -1,0 +1,84 @@
+[
+  {
+    "date": "2026-09-16",
+    "lang": "ko",
+    "winner": "brain",
+    "why": "1번은 '규칙에 들어오면 동료, 안 들어오면 피고'라는 구도까지만 가는데, 2번은 심사 비용이 월정액 무제한 업로드 사업자의 단가 구조를 깨고 물량이 느슨한 지역으로 흐른다는 경제적 귀결까지 밀고 가고, 실무 준비물도 ISRC·세션 크레딧·작업 파일 이력처럼 다른 업종이 그대로 가져갈 ",
+    "wiki": [
+      "2026-07-25-자발적-라이선싱-AI권리프레임.md",
+      "2026-07-24-슬롭은-인풋의-문제.md",
+      "2026-05-29-저작권의-자산화.md"
+    ],
+    "lexicon": [
+      "industry.md#copyright",
+      "industry.md#payola",
+      "industry.md#확장된 권리; 권리의 분화 - expanded rights & rights fragmentation"
+    ],
+    "chars": {
+      "brain": 1474,
+      "bare": 1543,
+      "materials": 19331
+    }
+  },
+  {
+    "date": "2026-09-15",
+    "lang": "ko",
+    "winner": "brain",
+    "why": "소송을 '가격 발견 절차'로 규정하고 뮌헨 판결·유디오 선례·옵트인과 계수권의 분리까지 끌어와 '라이선스에 들어가면 세는 능력을 잃는다'는 인과를 사건 밖으로 연결한 반면, 1번은 같은 계수 권한 논지를 사실 나열 수준에서 멈춘다",
+    "wiki": [
+      "2026-07-25-자발적-라이선싱-AI권리프레임.md",
+      "2026-07-24-슬롭은-인풋의-문제.md",
+      "2026-05-29-저작권의-자산화.md"
+    ],
+    "lexicon": [
+      "industry.md#copyright",
+      "industry.md#확장된 권리; 권리의 분화 - expanded rights & rights fragmentation"
+    ],
+    "chars": {
+      "brain": 2326,
+      "bare": 1662,
+      "materials": 18855
+    }
+  },
+  {
+    "date": "2026-09-14",
+    "lang": "ko",
+    "winner": "brain",
+    "why": "증원을 '팬덤이 정지 권한을 쥔 자리'로 규정하고 승한 사례·20억이라는 금액 규모의 한계·멤버 교체 시 IP 귀속 조항까지 사건 밖 근거와 타업종이 가져갈 계약 실무로 이었다",
+    "wiki": [
+      "2026-05-29-IP-비즈니스-구조.md",
+      "2026-08-24-팬덤-OS-파이프라인-매핑.md",
+      "2026-05-29-저작권의-자산화.md"
+    ],
+    "lexicon": [
+      "industry.md#copyright"
+    ],
+    "chars": {
+      "brain": 1371,
+      "bare": 1289,
+      "materials": 20645
+    }
+  },
+  {
+    "date": "2026-09-11",
+    "lang": "ko",
+    "winner": "bare",
+    "why": "1번은 가부키 우키요에라는 외부 선례를 붙였지만 그 뒤 판단은 '희소성을 만들라'는 익숙한 결론으로 닫히는 반면, 2번은 국내 물리 포맷이 랜덤 포토카드·초동 집계라는 부착물 경제로 이미 살아 있었다는 업계 고유 조건을 끌어와 반증 조건(대형 본진 아닌 신인 레이블부터)과 검증 지표(재",
+    "wiki": [
+      "2026-09-15-마이크로미디어-희소성의-이동.md",
+      "2026-07-24-모노컬처-두-불안.md",
+      "2026-06-03-콘텐츠비즈니스-4W.md"
+    ],
+    "lexicon": [
+      "media.md#cassette; cassette culture - 카세트·카세트 문화",
+      "media.md#record formats - 레코드 포맷",
+      "theory.md#taste; taste cultures - 취향·취향문화",
+      "fandom.md#interest-based identity - 관심사 기반 정체성"
+    ],
+    "chars": {
+      "brain": 1154,
+      "bare": 1033,
+      "materials": 16078
+    }
+  }
+]

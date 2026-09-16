@@ -13,7 +13,7 @@ import json
 import sys
 import time
 
-from intern import config, duel, llm, radar, brain, steps, publish, build_site, mail, weekly, form, learn, recheck, style
+from intern import ablation, config, duel, llm, radar, brain, steps, publish, build_site, mail, weekly, form, learn, recheck, style
 
 MAX_REVIEW_ROUNDS = 2
 
@@ -223,6 +223,12 @@ def run_weekly(args) -> int:
     week = weekly.week_number(args.date)
     g = weekly.gather(args.date)
     g["duels"] = weekly.run_duels(args.date, g["rows"], "ko")  # 지난 편과 blind로 붙인다
+    # 두뇌 재료가 값을 하는지 **매주 2편씩 대조군으로 쌓는다**(2026-09-16 대표 지시).
+    # 한 번의 실험이 아니라 누적으로 본다 - 표본이 작을 때 한 주 숫자는 동전 던지기와 구분이 안 된다.
+    try:
+        ablation.run(ablation.pick_dates(g["rows"], 2), "ko")
+    except Exception as e:  # noqa: BLE001
+        print(f"  [ablation] 건너뜀 {type(e).__name__}")
     # 되읽기 - 낸 글을 다시 보고 그 뒤 나온 것을 확인한다. 회고 전에 돌려야 회고의 재료가 된다.
     g["recheck"] = recheck.run(args.date)
     recheck.apply_corrections(g["recheck"])
