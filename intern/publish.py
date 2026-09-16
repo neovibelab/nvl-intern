@@ -197,6 +197,10 @@ def record(date: str, slug: str, j: dict, meta: dict, ko_body: str, en_body: str
         "review_rounds": meta.get("review_rounds", 0), "unresolved": bool(meta.get("unresolved")),
         "bet": bool(j.get("bet")), "wiki_used": len(meta.get("wiki", [])), "lexicon_used": len(meta.get("lexicon", [])),
         "form": meta.get("form", {}),
+        # 문체는 재고 기록하지 않고 버려지고 있었다(2026-09-16 실측). 회전마다 화면에만 찍혔다.
+        # 회고(`weekly._style_line`)와 지난 편 되읽기(`learn._scores`)가 둘 다 이 칸을 읽으므로
+        # 여기서 빠지면 **인턴이 자기 문체를 한 번도 못 본다.**
+        "style": meta.get("style", {}),
         "tokens": trace.get("usage", {}),
     })
     stats.sort(key=lambda s: s["date"])
