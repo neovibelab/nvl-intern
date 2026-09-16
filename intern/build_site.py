@@ -183,7 +183,7 @@ table.mini td.z{color:#2B2B2B}
 
 nav .short{display:none}
 @media(max-width:600px){
-nav{gap:14px;padding:0 18px}
+nav{gap:13px;padding:0 15px;background:linear-gradient(to right,rgba(10,10,10,.93) 30%,rgba(10,10,10,0)),linear-gradient(to right,rgba(10,10,10,0),rgba(10,10,10,.93) 70%) 100% 0,radial-gradient(farthest-side at 100% 50%,rgba(214,255,146,.3),rgba(214,255,146,0)) 100% 0;background-repeat:no-repeat;background-size:28px 100%,28px 100%,11px 100%;background-attachment:local,local,scroll}
 nav .lab img{width:68px;height:17px}nav .lab{padding-right:10px}
 nav .brand{display:none}
 nav .full{display:none}nav .short{display:inline}
@@ -376,6 +376,7 @@ def page(lang: str, title: str, body: str, here: str = "", latest: str = "",
 <nav><a class="lab" href="{config.LAB_URL}"><img src="/assets/logo-lime-600.png" alt="{t['lab_name']}" title="{t['lab_name']}"></a><a class="brand" href="{root}">{t['brand']}</a><span class="sp"></span>{links}</nav>
 <div class="wrap">{body}
 {subscribe_box(lang) if sub else ''}
+<script>(function(){{function f(){{document.querySelectorAll('.tw').forEach(function(t){{var h=t.nextElementSibling;if(h&&h.classList.contains('tw-hint'))h.style.display=(t.scrollWidth>t.clientWidth+2)?'':'none'}})}}addEventListener('resize',f);f()}})();</script>
 <div class="foot">{t['human']} <a href="{config.NEWSLETTER_URL}">{t['human_link']}</a><br>© 2026 엔터문화연구소 (Neo Vibe Lab) · Seoul</div></div></body></html>"""
 
 
