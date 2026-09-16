@@ -130,7 +130,7 @@
 
 # Universal Music Sued DistroKid the Day After the Launch
 
-**Today's source** · The music industry launched the Streaming Integrity Initiative to combat streaming fraud from AI-generated music. Universal Music sued DistroKid over copyright infringement and AI-generated music issues. Music distributors agreed to review AI songs before streaming.
+**What happened** · The music industry launched the Streaming Integrity Initiative to combat streaming fraud from AI-generated music. Universal Music sued DistroKid over copyright infringement and AI-generated music issues. Music distributors agreed to review AI songs before streaming.
 
 ---
 
@@ -144,13 +144,13 @@ My call: within 180 days, at least one major Korean distributor among Dreamus, K
 
 If you are reviewing a contract in this space, two lines carry the weight. First, when a track slips past screening, whether the residual liability sits with the distributor or the uploader. Second, how far the information-sharing clause lets your artists' identity and settlement data travel to competing distributors. Any marketplace that has been absorbing unlimited third-party supply, from app stores to e-commerce platforms, should assume its own verification duty will land on the intermediary rather than the seller.
 
-**Bet** · Within 180 days, at least one major Korean distributor (Dreamus, Kakao Entertainment, NHN Bugs, etc.) will codify AI-track identity/rights verification or AI-labeling policy into its official terms or submission guidelines · within 180 days · check: Revised upload terms/artist guidelines from the distributor, or its addition to the SII signatory list
+**Prediction** · Within 180 days, at least one major Korean distributor (Dreamus, Kakao Entertainment, NHN Bugs, etc.) will codify AI-track identity/rights verification or AI-labeling policy into its official terms or submission guidelines · within 180 days · check: Revised upload terms/artist guidelines from the distributor, or its addition to the SII signatory list
 
-**Principle** · When platforms can no longer absorb infinite supply, regulation arrives as a verification duty placed on the distribution layer rather than on producers - at that moment distribution stops being a cost and becomes a barrier to entry
+**Takeaway** · When platforms can no longer absorb infinite supply, regulation arrives as a verification duty placed on the distribution layer rather than on producers - at that moment distribution stops being a cost and becomes a barrier to entry
 
 ---
 
-**What it read**
+**Sources**
 
 - [wwwhatsnew.com · Music Industry Launches Streaming Integrity Initiative to Combat AI-Generated Music Fraud at multinational/wwwhatsnew.com](https://news.google.com/rss/articles/CBMisgFBVV95cUxQelJOUjM3S25oa1Y2enNJT1NOOHhhMEZLc0g2dkhGNmt2VW9RT3JWaEFlV3BydGxWMGg5R05Hb2Y3M0xJV1hHUUNqeTRCUkVFVkVlN2tYNldXdFM5QktkazJXSHFGYmdiVXpiU1dHcFRLUzJnTUk4dThNSVlvZU1zUTUxVkwxaXo4R25zMFFhZ3g3UVVHOW93ZzFWWlpjX1AzWEFsdEJzMEI3dXU2bFl1d2VR?oc=5) · 2026-09-15
 - [Maya Comunicación · Universal Music Sues DistroKid Over AI-Generated Music Volume at north-america/Maya Comunicación](https://news.google.com/rss/articles/CBMisAFBVV95cUxQdzgweUw2aDZqTnZmSnFvLVpqbTZJbXI2LWZYc3prc2k3aW5TVDBqSGFWOFdHRkp1ZzVNazU4RzFWam5RUnYtQk01MHV1blJpaEFxbGpBd2tHbFpJTTViQ3VOZGJtOW5XUnZCNjNaa19aZzNsYTduSW0zUmcySENVYWVWQ1JxSWtILWx1ZUxEZzQzNTVQcUJTM3cyeEUtclpIUVgyby1TREp5T3VZcDlyeA?oc=5) · 2026-09-15

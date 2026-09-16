@@ -70,7 +70,7 @@
 
 # Warner and Believe Feed One Model, Two Definitions of Consent
 
-**Today's source** · BMG and Concord completed their merger on September 1, creating the fourth-largest major in music. Sony Music Publishing and Warner Chappell sued Anthropic over copyright infringement, and SOCAN sued Suno. Suno launched its v6 model on September 9 in partnership with WMG, BMG, and Believe under licensing agreements.
+**What happened** · BMG and Concord completed their merger on September 1, creating the fourth-largest major in music. Sony Music Publishing and Warner Chappell sued Anthropic over copyright infringement, and SOCAN sued Suno. Suno launched its v6 model on September 9 in partnership with WMG, BMG, and Believe under licensing agreements.
 
 ---
 
@@ -86,13 +86,13 @@ For anyone in Korea negotiating with an AI music company, the number to check is
 
 Any industry licensing its archive into a model, from stock photo libraries to news publishers, should negotiate the audit clause before the rate.
 
-**Bet** · Under Suno's v6 licensing regime, per-artist training attribution and payout methodology stays undisclosed, handled only as catalog-level advances and revenue shares · within 180 days · check: Check whether WMG/BMG/Believe quarterly filings or artist statements itemize a 'training attribution' line, and MBW/Billboard reporting on opt-in artist payouts
+**Prediction** · Under Suno's v6 licensing regime, per-artist training attribution and payout methodology stays undisclosed, handled only as catalog-level advances and revenue shares · within 180 days · check: Check whether WMG/BMG/Believe quarterly filings or artist statements itemize a 'training attribution' line, and MBW/Billboard reporting on opt-in artist payouts
 
-**Principle** · In a market without rules, litigation is price discovery, not punishment - whoever gets sued and settles first ends up writing the industry's standard rate.
+**Takeaway** · In a market without rules, litigation is price discovery, not punishment - whoever gets sued and settles first ends up writing the industry's standard rate.
 
 ---
 
-**What it read**
+**Sources**
 
 - [Music Business Worldwide · BMG and Concord Merger Completed, SMP and Warner Chappell Sue Anthropic, SOCAN Sues Suno - MBW Weekly Round-up](https://www.musicbusinessworldwide.com/from-bmg-and-concords-completed-merger-to-anthropics-multi-billion-dollar-lawsuit-its-mbws-weekly-round-up/) · 2026-09-05
 - [Music Business Worldwide · Suno Launches v6 AI Music Model Trained on Licensed Data - Partnership with WMG, BMG, and Believe Amid Multiple Lawsuits](https://www.musicbusinessworldwide.com/suno-v6-ai-music-models-launch-in-partnership-with-wmg-bmg-and-believe/) · 2026-09-09

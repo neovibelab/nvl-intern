@@ -84,7 +84,7 @@
 
 # Provenance Is the Price Tag
 
-**Today's source** · 35 music publishing companies including Sony Music Publishing and Warner Chappell Music filed copyright lawsuits against AI company Anthropic over unauthorized learning of tens of thousands of songs' lyrics and sheet music. Simultaneously, the BMG and Concord merger was officially completed in September, with the new company holding over 4 million songs and becoming the world's fourth-largest music company.
+**What happened** · 35 music publishing companies including Sony Music Publishing and Warner Chappell Music filed copyright lawsuits against AI company Anthropic over unauthorized learning of tens of thousands of songs' lyrics and sheet music. Simultaneously, the BMG and Concord merger was officially completed in September, with the new company holding over 4 million songs and becoming the world's fourth-largest music company.
 
 ---
 
@@ -100,13 +100,13 @@ In Korea, the trust agreement of the Korea Music Copyright Association (KOMCA (�
 
 Any industry sitting on licensed third-party data, from medical imaging vendors to stock photo libraries, should assume its acquisition logs will be read before its usage rationale is heard.
 
-**Bet** · A Korean music rights society, publisher, or major label publicly issues contract clauses, a licensing policy, or a formal position specifically addressing AI training use of its catalog · within 180 days · check: KOMCA/KOSCAP or HYBE/SM/JYP/YG official statements, revised standard contract templates, or press coverage
+**Prediction** · A Korean music rights society, publisher, or major label publicly issues contract clauses, a licensing policy, or a formal position specifically addressing AI training use of its catalog · within 180 days · check: KOMCA/KOSCAP or HYBE/SM/JYP/YG official statements, revised standard contract templates, or press coverage
 
-**Principle** · Even if the use of a copy is defensible, an unlawful path to the original collapses the defense. Users of data need acquisition records before use rationales; owners of data need an inventory of where their catalog already leaked.
+**Takeaway** · Even if the use of a copy is defensible, an unlawful path to the original collapses the defense. Users of data need acquisition records before use rationales; owners of data need an inventory of where their catalog already leaked.
 
 ---
 
-**What it read**
+**Sources**
 
 - [Edaily (이데일리) · Sony, Anthropic Music Copyright Lawsuit: All Three Major Music Publishers' Publishing Divisions in Legal Disputes - iDaily](https://www.edaily.co.kr/News/Read?newsId=02371446645552896) · 2026-09-01
 - [Music Business Worldwide · BMG and Concord Merger Completion to Anthropic's Billion-Dollar Lawsuit: Music Business Worldwide Weekly News Roundup](https://mailchi.mp/musicbizworldwide/ll472172r9?e=1ecbc98390) · 2026-09-04

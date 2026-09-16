@@ -64,7 +64,7 @@
 
 # Who Names the Price of a Lyric
 
-**Today's source** · Sony Music Publishing and Warner Chappell filed a multi-billion dollar copyright infringement lawsuit against Anthropic on August 28, 2024 at California federal court. All three major music publishers are suing Anthropic over unauthorized use of songs in AI training data.
+**What happened** · Sony Music Publishing and Warner Chappell filed a multi-billion dollar copyright infringement lawsuit against Anthropic on August 28, 2024 at California federal court. All three major music publishers are suing Anthropic over unauthorized use of songs in AI training data.
 
 ---
 
@@ -80,13 +80,13 @@ Baseline date is 3 September 2025. My bet is that within 180 days, by 2 March 20
 
 Any licensor with fragmented rights should read its own mandate document before reading the market, because the clause list is the ceiling on what it can charge.
 
-**Bet** · KOMCA or a major Korean music publisher issues a formal licensing policy or usage terms specifically covering AI training and generative use. · within 180 days · check: KOMCA notices/rule amendments or an official Korean publisher press release on AI licensing
+**Prediction** · KOMCA or a major Korean music publisher issues a formal licensing policy or usage terms specifically covering AI training and generative use. · within 180 days · check: KOMCA notices/rule amendments or an official Korean publisher press release on AI licensing
 
-**Principle** · When rights are finely fragmented, no one is standing to object when they are taken - an ownership split is a blueprint for bargaining power before it is a revenue table.
+**Takeaway** · When rights are finely fragmented, no one is standing to object when they are taken - an ownership split is a blueprint for bargaining power before it is a revenue table.
 
 ---
 
-**What it read**
+**Sources**
 
 - [CMU · Sony, Warner Music Sue Anthropic Over Copyright, BMG-Concord Merger Completes](https://completemusicupdate.com/the-sony-and-warner-music-publishers-finally-get-round-to-suing-anthropic/?attribution_id=6a968fbc37ab480001b4942a&attribution_type=post) · 2026-09-01
 - [Music Business Worldwide · Sony Music Publishing and Warner Chappell Sue Anthropic in Multi-Billion Dollar Lawsuit](https://www.musicbusinessworldwide.com/now-sony-music-publishing-and-warner-chappell-sue-anthropic-in-multi-billion-dollar-lawsuit-one-of-the-largest-and-most-blatant-ongoing-thefts-of-intellectual-property-in-history/) · 2026-08-29

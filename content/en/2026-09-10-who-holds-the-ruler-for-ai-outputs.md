@@ -62,7 +62,7 @@
 
 # Who Holds the Ruler for AI Outputs
 
-**Today's source** · Canada's SOCAN filed a lawsuit against AI music platform Suno in federal court on September 2. SOCAN claimed that 150 songs, including Joni Mitchell's 'Both Sides Now' and Avril Lavigne's 'Sk8er Boi', were illegally copied.
+**What happened** · Canada's SOCAN filed a lawsuit against AI music platform Suno in federal court on September 2. SOCAN claimed that 150 songs, including Joni Mitchell's 'Both Sides Now' and Avril Lavigne's 'Sk8er Boi', were illegally copied.
 
 ---
 
@@ -80,13 +80,13 @@ Korea runs on a three-rights structure covering authors, performers and producer
 
 Any industry facing generative substitutes should ask who is building the similarity scale before arguing about the rate.
 
-**Bet** · At least one Korean music CMO or major label publicly adopts an AI output-similarity/attribution tool, or announces a partnership or investment in such a vendor. · within 180 days · check: Press releases from KOMCA/KOSCAP and disclosures or tech-partnership announcements from HYBE, SM, YG, Kakao Entertainment
+**Prediction** · At least one Korean music CMO or major label publicly adopts an AI output-similarity/attribution tool, or announces a partnership or investment in such a vendor. · within 180 days · check: Press releases from KOMCA/KOSCAP and disclosures or tech-partnership announcements from HYBE, SM, YG, Kakao Entertainment
 
-**Principle** · When a dispute shifts to 'how similar is it,' whoever owns the measurement tool-not the rate card-writes the rules of the negotiating table.
+**Takeaway** · When a dispute shifts to 'how similar is it,' whoever owns the measurement tool-not the rate card-writes the rules of the negotiating table.
 
 ---
 
-**What it read**
+**Sources**
 
 - [Music Business Worldwide · Music Business Worldwide: Canada SOCAN Sues AI Music Platform Suno for Copyright Infringement](https://www.musicbusinessworldwide.com/now-canada-socan-sues-suno-claiming-it-illegally-copied-hits-like-both-sides-now-and-sk8er-boi/) · 2026-09-04
 

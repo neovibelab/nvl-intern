@@ -71,7 +71,7 @@
 
 # Accord Entertainment (어코드엔터테인먼트) Closed a 2 Billion Won Pre-Series A
 
-**Today's source** · Accord Entertainment, which operates virtual boy group Miracle (미라클), raised 2 billion won in investment from Smilegate and SM Culture Partners. The company was reported by edaily.
+**What happened** · Accord Entertainment, which operates virtual boy group Miracle (미라클), raised 2 billion won in investment from Smilegate and SM Culture Partners. The company was reported by edaily.
 
 ---
 
@@ -89,13 +89,13 @@ Anyone planning a lineup change in a virtual act has one thing to verify first. 
 
 Serialized game studios face the same audit when they add a playable character mid-franchise, and the question investors should ask there is identical: does the existing content still count.
 
-**Bet** · Within 180 days at least two more Korean virtual-idol agencies will close outside funding, with press releases citing worldbuilding, serialized content and global fandom - not graphics or engine tech - as the primary use of proceeds. · within 180 days · check: Cross-check VC databases (TheVC, Wowtale) and each company's stated use of proceeds
+**Prediction** · Within 180 days at least two more Korean virtual-idol agencies will close outside funding, with press releases citing worldbuilding, serialized content and global fandom - not graphics or engine tech - as the primary use of proceeds. · within 180 days · check: Cross-check VC databases (TheVC, Wowtale) and each company's stated use of proceeds
 
-**Principle** · Once production tech commoditizes, investors stop asking what you can build and start asking whether your world keeps running after its cast changes.
+**Takeaway** · Once production tech commoditizes, investors stop asking what you can build and start asking whether your world keeps running after its cast changes.
 
 ---
 
-**What it read**
+**Sources**
 
 - [Edaily (이데일리) · Virtual Too Comes Down to IP Battle...Accord Entertainment, Miracle's Agency, Attracts 2 Billion Won Investment](https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=05120086645579136) · 2026-09-11
 

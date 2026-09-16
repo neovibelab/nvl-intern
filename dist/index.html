@@ -82,7 +82,9 @@ p.principle strong{display:block;color:var(--lime);font-family:'DM Mono',monospa
 .body blockquote li{margin-bottom:6px}
 
 /* 표 */
-.tw{overflow-x:auto;margin:0 0 26px;-webkit-overflow-scrolling:touch}
+.tw{overflow-x:auto;margin:0 0 26px;-webkit-overflow-scrolling:touch;background:linear-gradient(to right,var(--black) 30%,rgba(10,10,10,0)),linear-gradient(to right,rgba(10,10,10,0),var(--black) 70%) 100% 0,radial-gradient(farthest-side at 0 50%,rgba(214,255,146,.22),rgba(214,255,146,0)),radial-gradient(farthest-side at 100% 50%,rgba(214,255,146,.22),rgba(214,255,146,0)) 100% 0;background-repeat:no-repeat;background-size:36px 100%,36px 100%,13px 100%,13px 100%;background-attachment:local,local,scroll,scroll}
+.tw-hint{display:none;font-size:11px;color:var(--dim);margin:-20px 0 24px;font-family:'DM Mono','Noto Sans KR',monospace}
+@media(max-width:700px){.tw-hint{display:block}}
 table{width:100%;border-collapse:collapse;font-size:13px}
 th{color:var(--lime);font-family:'DM Mono','Noto Sans KR',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;text-align:left;padding:9px 10px 9px 0;border-bottom:1px solid var(--edge);font-weight:500;white-space:nowrap}
 td{padding:9px 10px 9px 0;border-bottom:1px solid var(--line);color:var(--dim);white-space:nowrap}

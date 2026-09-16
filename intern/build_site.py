@@ -78,7 +78,9 @@ p.principle strong{display:block;color:var(--lime);font-family:'DM Mono',monospa
 .body blockquote li{margin-bottom:6px}
 
 /* 표 */
-.tw{overflow-x:auto;margin:0 0 26px;-webkit-overflow-scrolling:touch}
+.tw{overflow-x:auto;margin:0 0 26px;-webkit-overflow-scrolling:touch;background:linear-gradient(to right,var(--black) 30%,rgba(10,10,10,0)),linear-gradient(to right,rgba(10,10,10,0),var(--black) 70%) 100% 0,radial-gradient(farthest-side at 0 50%,rgba(214,255,146,.22),rgba(214,255,146,0)),radial-gradient(farthest-side at 100% 50%,rgba(214,255,146,.22),rgba(214,255,146,0)) 100% 0;background-repeat:no-repeat;background-size:36px 100%,36px 100%,13px 100%,13px 100%;background-attachment:local,local,scroll,scroll}
+.tw-hint{display:none;font-size:11px;color:var(--dim);margin:-20px 0 24px;font-family:'DM Mono','Noto Sans KR',monospace}
+@media(max-width:700px){.tw-hint{display:block}}
 table{width:100%;border-collapse:collapse;font-size:13px}
 th{color:var(--lime);font-family:'DM Mono','Noto Sans KR',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;text-align:left;padding:9px 10px 9px 0;border-bottom:1px solid var(--edge);font-weight:500;white-space:nowrap}
 td{padding:9px 10px 9px 0;border-bottom:1px solid var(--line);color:var(--dim);white-space:nowrap}
@@ -208,8 +210,8 @@ T = {
                list="지난 글", subscribe="구독", empty="아직 글이 없습니다.", label="엔터 바이브 리서치 · AI 인턴 1호",
                about_line="AI 인턴 1호가 매일 엔터 산업을 읽고 씁니다. 사람이 고르지도 고치지도 않습니다. 이 실험이 무엇인지는",
                here="여기", human="AI가 매일 읽고 정리합니다. 관점은 사람이 씁니다.", human_link="엔터문화연구소 뉴스레터",
-               growth_title="성장 지표", cols=["날", "날짜", "제목", "좌표", "시제", "레이더와", "검증", "검수", "베팅", "형식"],
-               grid_title="격자 21칸 · 인턴이 쓴 자리", empty_cell="", bets="베팅 대장", bet_cols=["날짜", "명제", "기한", "확인", "상태"],
+               growth_title="성장 지표", cols=["날", "날짜", "제목", "좌표", "시제", "레이더와", "검증", "검사", "예측", "형식"],
+               grid_title="격자 21칸 · 인턴이 쓴 자리", empty_cell="", bets="예측 기록", bet_cols=["날짜", "명제", "기한", "확인", "상태"],
                sub_h="매일 아침 받아 보기", sub_hint="월~금 한 편, 토요일엔 그 주 회고. 아침 8시에 갑니다.",
                sub_ph="이메일", sub_go="구독", sub_fine="확인 메일이 한 통 갑니다. 광고는 없고, 언제든 그만둘 수 있습니다."),
     "en": dict(today="Today", growth="Growth", grid="Grid", about="What this is", other="KO", other_href="/",
@@ -221,8 +223,8 @@ T = {
                list="Earlier pieces", subscribe="Subscribe", empty="No pieces yet.", label="Entertainment Vibe Research · AI Intern 01",
                about_line="AI Intern 01 reads and writes about the entertainment industry every day. No human picks or edits. What this experiment is:",
                here="here", human="AI reads and sorts every day. The point of view is written by a human.", human_link="Neo Vibe Lab newsletter",
-               growth_title="Growth metrics", cols=["Day", "Date", "Title", "Grid", "Tense", "vs radar", "Verified", "Review", "Bet", "Form"],
-               grid_title="21 cells · where the intern has written", empty_cell="", bets="Bets", bet_cols=["Date", "Claim", "By", "Check", "Status"],
+               growth_title="Growth metrics", cols=["Day", "Date", "Title", "Grid", "Tense", "vs radar", "Verified", "Checked", "Prediction", "Form"],
+               grid_title="21 cells · where the intern has written", empty_cell="", bets="Predictions", bet_cols=["Date", "Claim", "By", "Check", "Status"],
                sub_h="Get it every morning", sub_hint="One piece Monday to Friday, a review of the week on Saturday. Sent at 8am KST.",
                sub_ph="Email", sub_go="Subscribe", sub_fine="One confirmation email. No ads, and you can stop any time."),
 }
@@ -231,11 +233,11 @@ T = {
 # 문단 머리말 → 블록 종류. 한 편의 고정 구조를 눈으로 구분되게 한다(2026-09-09 UI 개편).
 BLOCK_KINDS = [
     ("frame", ("**엔터문화연구소의 AI 실험**", "**A Neo Vibe Lab AI experiment**")),
-    ("src", ("**오늘의 소재**", "**Today's source**")),
-    ("srcs", ("**읽은 기사**", "**What it read**")),
+    ("src", ("**무슨 일이 있었나**", "**What happened**")),
+    ("srcs", ("**원문**", "**Sources**")),
     ("evidence", ("**조짐**", "**What is showing**")),
-    ("bet", ("**베팅**", "**Bet**")),
-    ("principle", ("**원리**", "**Principle**")),
+    ("bet", ("**예측**", "**Prediction**")),
+    ("principle", ("**가져갈 것**", "**Takeaway**")),
 ]
 
 
@@ -244,6 +246,9 @@ def _kind(b: str) -> str:
         if any(b.startswith(h) for h in heads):
             return name
     return ""
+
+
+_LANG = ["ko"]          # 렌더 중인 언어. md_to_html이 인자를 안 받아서 여기 담아 둔다
 
 
 def md_to_html(md: str) -> str:
@@ -264,7 +269,9 @@ def md_to_html(md: str) -> str:
         if b.startswith("<sub>"):
             out.append(_inline_keep_tags(b)); prev = "sub"; continue
         if b.startswith("| "):
-            out.append('<div class="tw">' + _table(b) + "</div>"); prev = "table"; continue
+            out.append('<div class="tw">' + _table(b) + "</div>"
+                       + f'<p class="tw-hint">{"표는 옆으로 밀어서 봅니다" if _LANG[0] == "ko" else "Swipe the table sideways"}</p>')
+            prev = "table"; continue
         if b.startswith("- "):
             cls = ' class="src-list"' if prev in ("src", "srcs") else ""
             out.append(f"<ul{cls}>" + "".join(f"<li>{_inline(l[2:])}</li>" for l in b.splitlines() if l.startswith("- ")) + "</ul>")
@@ -453,7 +460,7 @@ WELCOME = {
 <h2>한 편의 생김새</h2>
 <p>맨 위에 좌표가 한 줄 붙습니다. 「[자본] 유통 → 소비 · 바이브」처럼, 7가지 요인과 3단계로 나눈
 21칸 격자에서 그날 찍은 한 칸입니다. 소재가 한국 이야기인지 아닌지도 그 줄에 적힙니다.
-본문 아래에는 인턴이 건 예측과 그 기한, 다른 업종이 가져갈 원리 한 문장이 붙습니다.
+본문 아래에는 기한이 붙은 예측과, 다른 업종이 가져갈 것 한 문장이 옵니다.
 예측은 기한이 지나면 인턴이 스스로 채점합니다.</p>
 
 <h2>틀린 날도 그대로 옵니다</h2>
@@ -552,6 +559,7 @@ def _meta_line(lang: str, fm: dict) -> str:
 
 
 def render_piece(lang: str, fm: dict, body: str) -> str:
+    _LANG[0] = lang
     inner = md_to_html(body)
     # 독자 신호 위젯은 **원리를 읽은 직후**, 근거 묶음(읽은 기사·격자·검수 기록)이 시작되기 전에 선다.
     # 판단이 서는 자리가 거기다. 구분선이 없는 옛 편은 검수 기록 앞으로 물러난다.
@@ -559,6 +567,8 @@ def render_piece(lang: str, fm: dict, body: str) -> str:
     k = inner.rfind('<hr class="sep">')
     if k < 0:
         k = inner.rfind("<blockquote>")
+    if k < 0:                       # 회고 편은 구분선도 인용문도 없다. 푸터 앞에 세운다.
+        k = inner.rfind("<sub>")
     inner = (inner[:k] + widget + inner[k:]) if k >= 0 else inner + widget
     return (f"{_chip(lang, fm)}<h1>{html.escape(fm.get('title', ''))}</h1>{_meta_line(lang, fm)}"
             f'<div class="body">{inner}</div>')
@@ -781,9 +791,11 @@ def build() -> None:
         g = (f"<p class='label'>{t['growth_title']}</p><h1>{f'{len(cards)}개 축' if lang == 'ko' else f'{len(cards)} axes'}</h1>"
              + '<div class="stats">' + "".join(f"<div><b>{v}</b><span>{k}</span></div>" for v, k in cards) + "</div>"
              + f"<div class='tw'><table><tr>{''.join(f'<th>{c}</th>' for c in t['cols'])}</tr>{rows}</table></div>"
+             + ('<p class="tw-hint">표는 옆으로 밀어서 봅니다</p>' if lang == "ko" else '<p class="tw-hint">Swipe the table sideways</p>')
              + legend
              + f"<h2 class='label' style='margin-top:44px'>{t['bets']}</h2>"
-             f"<div class='tw'><table><tr>{''.join(f'<th>{c}</th>' for c in t['bet_cols'])}</tr>{bets or '<tr><td colspan=5>-</td></tr>'}</table></div>")
+             f"<div class='tw'><table><tr>{''.join(f'<th>{c}</th>' for c in t['bet_cols'])}</tr>{bets or '<tr><td colspan=5>-</td></tr>'}</table></div>"
+             + ('<p class="tw-hint">표는 옆으로 밀어서 봅니다</p>' if lang == "ko" else '<p class="tw-hint">Swipe the table sideways</p>'))
         io.open(base / "growth.html", "w", encoding="utf-8").write(page(lang, t["growth"], g, here="growth", latest=latest_slug, url=f"/{"en/" if lang == "en" else ""}growth"))
         # 격자
         cells = {}

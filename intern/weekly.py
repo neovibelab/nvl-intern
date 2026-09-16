@@ -403,7 +403,7 @@ REFLECT_KO = """[이번 주 내 기록]
 
 [문체 - 사람이 쓴 글 60편의 분포를 자로 놓았다]
 {style_line}
-새 베팅 {bets_new}건 · 열린 베팅 {bets_open}건
+새 예측 {bets_new}건 · 열린 예측 {bets_open}건
 {signals}
 
 [검수자가 이번 주 지적한 것 - 그대로]
@@ -454,7 +454,7 @@ Pieces written without the lab's own lenses: {no_brain}/{n}
 
 [Style - measured against the distribution of 60 pieces written by a human]
 {style_line}
-New bets {bets_new} · open bets {bets_open}
+New predictions {bets_new} · open {bets_open}
 {signals}
 
 [What the reviewer flagged this week, verbatim]

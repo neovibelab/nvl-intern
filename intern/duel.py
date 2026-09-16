@@ -81,14 +81,21 @@ def pick_title(cands: list[dict], body: str, lang: str = "ko") -> dict:
 
 def _plain(md: str) -> str:
     """발행본에서 프레임·소재 카드·격자·검수 기록을 뺀 본문만 남긴다. 날짜와 D+N도 지운다."""
-    body, started = [], False
+    body, started, seps = [], False, 0
     for ln in md.split("\n"):
         t = ln.strip()
-        if t.startswith("**베팅** ·") or t.startswith("> **검수 기록**"):
+        if t.startswith(("**예측** ·", "> **발행 전 검사**", "**베팅** ·", "> **검수 기록**")):   # 옛 이름도
             break
         if not started:
-            if t.startswith("<sub>●") or t.startswith("**조짐** ·"):
-                started = True
+            # 본문은 **두 번째 구분선 다음**부터다(2026-09-16 순서 개편). 그전에는 격자 범례가
+            # 본문 시작을 알렸는데 그 범례가 맨 아래로 내려가면서 **여기가 통째로 빈 문자열을
+            # 돌려주고 있었다.** 학습 통로 둘이 이 함수를 지난다 - 조용히 끊긴다.
+            if t == "---":
+                seps += 1
+                if seps >= 2:
+                    started = True
+            elif t.startswith("<sub>●") or t.startswith("**조짐** ·"):
+                started = True          # 옛 배치
             continue
         if t.startswith("**조짐** ·") or t.startswith("<sub>"):
             continue

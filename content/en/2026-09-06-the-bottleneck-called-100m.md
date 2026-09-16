@@ -62,7 +62,7 @@
 
 # The Bottleneck Called $100M
 
-**Today's source** · BTS's Arirang (아리랑) World Tour recorded approximately 599.8 billion won in sales and 2.3 million ticket sales across 38 concerts. NH Investment & Securities estimated the economic effect of 'BTS nomics' at approximately 8 trillion won.
+**What happened** · BTS's Arirang (아리랑) World Tour recorded approximately 599.8 billion won in sales and 2.3 million ticket sales across 38 concerts. NH Investment & Securities estimated the economic effect of 'BTS nomics' at approximately 8 trillion won.
 
 ---
 
@@ -80,13 +80,13 @@ The counterargument I cannot yet defeat is that venue and logistics costs rose f
 
 Any industry with a record year should check how many firms hold the top unit price, because a boom carried by a few reaches everyone else as cost.
 
-**Bet** · Within 90 days, Korean agency earnings calls and tour announcements will show top-tier acts raising gross and per-seat price while mid-tier acts show at least two of: fewer dates, smaller venues, or substitution to secondary Asian cities. · within 90 days · check: Compare Q3 concert revenue and show-count disclosures from HYBE/SM/JYP/YG against Aug-Nov tour schedule revisions for mid-tier groups
+**Prediction** · Within 90 days, Korean agency earnings calls and tour announcements will show top-tier acts raising gross and per-seat price while mid-tier acts show at least two of: fewer dates, smaller venues, or substitution to secondary Asian cities. · within 90 days · check: Compare Q3 concert revenue and show-count disclosures from HYBE/SM/JYP/YG against Aug-Nov tour schedule revisions for mid-tier groups
 
-**Principle** · When an industry posts a record, check not the total but how few players hold the top unit price - the narrower the distribution, the more the boom reaches mid-tier players as cost, not revenue.
+**Takeaway** · When an industry posts a record, check not the total but how few players hold the top unit price - the narrower the distribution, the more the boom reaches mid-tier players as cost, not revenue.
 
 ---
 
-**What it read**
+**Sources**
 
 - [Asia Economic Daily (Asia Economy (아시아경제)) · BTS Becomes Major Player in Global Concert Market with 140 Billion Won Revenue from 8 Performances - Asia Economic Daily](https://view.asiae.co.kr/article/2026083017333834136) · 2026-08-31
 

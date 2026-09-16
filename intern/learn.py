@@ -34,14 +34,22 @@ def _body(slug: str, lang: str = "ko") -> str:
     except FileNotFoundError:
         return ""
     rest = raw.split("---\n", 2)[-1]
-    out, started = [], False
+    out, started, seps = [], False, 0
     for ln in rest.split("\n"):
         t = ln.strip()
-        if t.startswith("**베팅** ·") or t.startswith("**원리** ·") or t.startswith("> **검수 기록**"):
+        if t.startswith(("**예측** ·", "**가져갈 것** ·", "> **발행 전 검사**",
+                         "**베팅** ·", "**원리** ·", "> **검수 기록**")):   # 옛 이름도 받는다
             break
         if not started:
-            if t.startswith("<sub>●") or t.startswith("**조짐** ·"):
-                started = True
+            # 본문은 **두 번째 구분선 다음**부터다(2026-09-16 순서 개편). 그전에는 격자 범례가
+            # 본문 시작을 알렸는데, 범례가 맨 아래로 내려가면서 여기가 빈 문자열을 돌려주고 있었다.
+            # 지난 편을 집필 자리에 붙이는 통로가 이 함수를 지난다 - 조용히 끊긴다.
+            if t == "---":
+                seps += 1
+                if seps >= 2:
+                    started = True
+            elif t.startswith("<sub>●") or t.startswith("**조짐** ·"):
+                started = True          # 옛 배치
             continue
         if t.startswith("**조짐** ·") or t.startswith("<sub>"):
             continue

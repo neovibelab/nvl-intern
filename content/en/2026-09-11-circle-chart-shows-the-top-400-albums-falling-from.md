@@ -66,7 +66,7 @@
 
 # Circle Chart (써클차트) Shows the Top 400 Albums Falling from 119 Million to 98 Million
 
-**Today's source** · According to a Kyunghyang Shinmun (경향신문) report, Gen Z is re-consuming analog products such as paper magazines, vinyl records, and film cameras. In a W Magazine survey, 71% of Gen Z respondents said paper magazines are more authentic than digital.
+**What happened** · According to a Kyunghyang Shinmun (경향신문) report, Gen Z is re-consuming analog products such as paper magazines, vinyl records, and film cameras. In a W Magazine survey, 71% of Gen Z respondents said paper magazines are more authentic than digital.
 
 ---
 
@@ -86,13 +86,13 @@ A practical test for tomorrow. Delete the member names and the free-gift notice 
 
 Any manufacturer competing against infinitely copyable alternatives should start writing the production process into the product page, because that is the part a copy cannot carry.
 
-**Bet** · At least three Korean entertainment or media companies will launch physical formats for teens - zines, magazine-style photobooks, limited cassette/vinyl - as standalone products rather than bundled merch. · within 180 days · check: New release announcements from major agencies and magazines, and whether standalone product pages appear in their online stores
+**Prediction** · At least three Korean entertainment or media companies will launch physical formats for teens - zines, magazine-style photobooks, limited cassette/vinyl - as standalone products rather than bundled merch. · within 180 days · check: New release announcements from major agencies and magazines, and whether standalone product pages appear in their online stores
 
-**Principle** · When frictionless infinite copies become the default, consumers start paying for the time and handprints behind the object rather than the object itself - for the first time, there's a reason to make products less smooth.
+**Takeaway** · When frictionless infinite copies become the default, consumers start paying for the time and handprints behind the object rather than the object itself - for the first time, there's a reason to make products less smooth.
 
 ---
 
-**What it read**
+**Sources**
 
 - [Kyunghyang Shinmun · khan.co.kr: Instagram Alternative - Gen Z Rediscovering Paper Magazines and Vinyl Records](https://www.khan.co.kr/article/202609091104001/) · 2026-09-09
 

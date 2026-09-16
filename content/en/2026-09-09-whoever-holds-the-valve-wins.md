@@ -58,7 +58,7 @@
 
 # Whoever Holds the Valve Wins
 
-**Today's source** · Suno announced download caps for free and paid tiers and mandatory watermarking for AI-generated music. The policy implements an agreement with Warner Music while lawsuits from UMG, Sony, and SOCAN are ongoing.
+**What happened** · Suno announced download caps for free and paid tiers and mandatory watermarking for AI-generated music. The policy implements an agreement with Warner Music while lawsuits from UMG, Sony, and SOCAN are ongoing.
 
 ---
 
@@ -74,13 +74,13 @@ For K pop producers, the asset worth building is documentation rather than scarc
 
 Any industry facing incoming rules should note that the party who builds the counter, not the party who obeys it, writes the next contract.
 
-**Bet** · At least one Korean music distributor or chart body will formally require AI-generation disclosure or provenance watermark verification as a condition of distribution intake. · within 180 days · check: Distributor notices, revised terms of service, or platform submission guidelines in Korea
+**Prediction** · At least one Korean music distributor or chart body will formally require AI-generation disclosure or provenance watermark verification as a condition of distribution intake. · within 180 days · check: Distributor notices, revised terms of service, or platform submission guidelines in Korea
 
-**Principle** · When regulation closes in, draw the line not at what gets made but at how much gets out. Production is hard to police; distribution volume is countable and throttleable - and whoever counts it owns the negotiating table.
+**Takeaway** · When regulation closes in, draw the line not at what gets made but at how much gets out. Production is hard to police; distribution volume is countable and throttleable - and whoever counts it owns the negotiating table.
 
 ---
 
-**What it read**
+**Sources**
 
 - [Variety · Suno Unveils Download Caps for Free, Paid Tiers and Generator Watermarking Amid Copyright Lawsuits](https://variety.com/2026/music/news/suno-unveils-download-caps-for-free-paid-tiers-generator-1236831589/) · 2026-09-08
 

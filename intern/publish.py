@@ -32,7 +32,7 @@ def review_block(lang: str, meta: dict) -> str:
     rounds = int(meta.get("review_rounds") or 0)
     unresolved = bool(meta.get("unresolved"))
     if lang == "ko":
-        head = "**검수 기록** · 인턴은 발행 전에 자기 글을 별도 검수자(같은 모델, 다른 지시)에게 넘깁니다. 뻔한가 · 왜 오늘 이 사건인가 · 독자가 가져갈 것이 있나 · 반례를 다뤘나 · 근거가 있나, 다섯 가지를 봅니다. 두 번 안에 통과하지 못하면 고치지 않고 그대로 냅니다. 실패를 숨기지 않는 것이 이 실험의 규칙입니다."
+        head = "**발행 전 검사** · 인턴은 발행 전에 자기 글을 별도 검수자(같은 모델, 다른 지시)에게 넘깁니다. 뻔한가 · 왜 오늘 이 사건인가 · 독자가 가져갈 것이 있나 · 반례를 다뤘나 · 근거가 있나, 다섯 가지를 봅니다. 두 번 안에 통과하지 못하면 고치지 않고 그대로 냅니다. 실패를 숨기지 않는 것이 이 실험의 규칙입니다."
         if not unresolved:
             return f"> {head}\n>\n> 이번 글: {rounds}회차에 통과."
         issues = ((meta.get("last_issues") or [])[:3])
@@ -50,7 +50,7 @@ def sources_block(lang: str, summary: str, items: list[dict]) -> tuple[str, str]
     요약은 제목 바로 밑에 있어야 무슨 사건인지 알고 본문에 들어간다. **링크 목록은 근거라서 뒤에 간다**
     (2026-09-16 대표 지적 - 본문에 닿기 전에 6줄을 지나야 했다).
     """
-    head = "**오늘의 소재**" if lang == "ko" else "**Today's source**"
+    head = "**무슨 일이 있었나**" if lang == "ko" else "**What happened**"
     lines = []
     for x in items:
         if not x.get("url"):
@@ -60,7 +60,7 @@ def sources_block(lang: str, summary: str, items: list[dict]) -> tuple[str, str]
         date = (x.get("published_date") or "")[:10]
         lines.append(f"- [{(outlet + ' · ') if outlet else ''}{title}]({x['url']})" + (f" · {date}" if date else ""))
     first = f"{head} · {summary.strip()}" if summary.strip() else ""
-    link_head = "**읽은 기사**" if lang == "ko" else "**What it read**"
+    link_head = "**원문**" if lang == "ko" else "**Sources**"
     links = (link_head + "\n\n" + "\n".join(lines)) if lines else ""
     return first, links
 
@@ -149,13 +149,13 @@ def piece_markdown(lang: str, date: str, slug: str, j: dict, body: str, meta: di
     bet_line = ""
     if bet:
         if lang == "ko":
-            bet_line = f"\n\n**베팅** · {bet['claim_ko']} · {bet['by_days']}일 안 · 확인: {bet['check_ko']}"
+            bet_line = f"\n\n**예측** · {bet['claim_ko']} · {bet['by_days']}일 안 · 확인: {bet['check_ko']}"
         else:
-            bet_line = f"\n\n**Bet** · {bet['claim_en']} · within {bet['by_days']} days · check: {bet['check_en']}"
+            bet_line = f"\n\n**Prediction** · {bet['claim_en']} · within {bet['by_days']} days · check: {bet['check_en']}"
     else:
-        bet_line = "\n\n**베팅** · 오늘은 없음" if lang == "ko" else "\n\n**Bet** · none today"
+        bet_line = "\n\n**예측** · 오늘은 없음" if lang == "ko" else "\n\n**Prediction** · none today"
     u = _urls(lang)
-    tail = (f"{label} 판정·검증·검수 기록은 [성장 페이지]({u['growth']})에 남고, 베팅은 기한 뒤 스스로 채점합니다. "
+    tail = (f"{label} 판정·검증·검사 기록은 [성장 페이지]({u['growth']})에 남고, 예측은 기한이 지나면 스스로 채점합니다. "
             f"관점은 사람이 씁니다: [엔터문화연구소 뉴스레터]({config.NEWSLETTER_URL})." if lang == "ko" else
             f"{label} The call, fact checks and review notes stay on the [growth page]({u['growth']}); bets are self-scored when due. "
             f"The point of view is written by a human: the [Neo Vibe Lab newsletter]({config.NEWSLETTER_URL}).")
@@ -174,7 +174,7 @@ def piece_markdown(lang: str, date: str, slug: str, j: dict, body: str, meta: di
             + (f"{vibe_line(lang, j)}\n\n" if vibe_line(lang, j) else "")
             + hr.lstrip("\n")
             + f"{body.strip()}{bet_line}\n\n"
-            + f"**{'원리' if lang == 'ko' else 'Principle'}** · {principle}" + hr
+            + f"**{'가져갈 것' if lang == 'ko' else 'Takeaway'}** · {principle}" + hr
             + (f"{src_links}\n\n" if src_links else "")
             + f"{grid_table(lang, j)}"
             + f"{unresolved_line}\n\n"

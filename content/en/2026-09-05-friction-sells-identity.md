@@ -61,7 +61,7 @@
 
 # Friction Sells Identity
 
-**Today's source** · Young Chinese art and culture enthusiasts are reviving the black vinyl record industry. Sales of record players and vinyl albums are increasing, driving growth in the related industry.
+**What happened** · Young Chinese art and culture enthusiasts are reviving the black vinyl record industry. Sales of record players and vinyl albums are increasing, driving growth in the related industry.
 
 ---
 
@@ -75,13 +75,13 @@ IFPI's 2024 global report named Korea as the market with the highest share of ph
 
 Any industry selling both a convenient and an inconvenient version of the same product should check which of its own friction points customers are choosing and which ones were quietly built in to inflate the count.
 
-**Bet** · In Korea, 20-30s will become visibly reported as the lead vinyl-buying group, driven by streaming fatigue · within 180 days · check: Korean retailers' (Kyobo Hottracks, Synnara) vinyl sales stats or press coverage citing 20-30s purchase share
+**Prediction** · In Korea, 20-30s will become visibly reported as the lead vinyl-buying group, driven by streaming fatigue · within 180 days · check: Korean retailers' (Kyobo Hottracks, Synnara) vinyl sales stats or press coverage citing 20-30s purchase share
 
-**Principle** · As convenience becomes the industry default, deliberate inconvenience becomes the new currency for proving identity and attachment
+**Takeaway** · As convenience becomes the industry default, deliberate inconvenience becomes the new currency for proving identity and attachment
 
 ---
 
-**What it read**
+**Sources**
 
 - [Jiemian News (界面新闻) · How Young Art Enthusiasts Revived the Black Vinyl Industry - Jiemian News](https://www.jiemian.com/article/15038378.html) · 2026-09-01
 
