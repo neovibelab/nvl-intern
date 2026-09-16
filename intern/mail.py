@@ -70,9 +70,19 @@ def send_piece(lang: str, day: int, title: str, body_md: str, slug: str, send: b
         fb = ("**How was this piece** · [Fair point](%s?fb=agree) · [Obvious](%s?fb=obvious) · [Weak evidence](%s?fb=weak) · [Wrong lens](%s?fb=off)"
               "\n\nVotes are batched weekly into the intern's rule candidates. To leave a note, use the box on the web page or reply to this email." % (url, url, url, url))
         footer = "\n\n---\n\n" + fb + "\n\n[Read on the web](%s)" % url
-    filters = {"predicate": "and", "groups": [], "filters": [
-        {"field": "subscriber.metadata.lang", "operator": "equals", "value": lang},
-    ]}
+    # 언어가 비어 있으면 **한국어로 간다**(2026-09-16). 버튼다운 포털·아카이브의 구독 폼에는
+    # 언어 칸이 없어서 거기로 들어온 사람은 `lang`이 빈다. 정확히 일치만 보면 그 사람은
+    # 구독은 됐는데 메일을 한 통도 못 받는다(대표 계정에서 실제로 났던 사고다).
+    # 영어는 고른 사람에게만 간다 - 기본값을 둘로 둘 수는 없다.
+    if lang == "ko":
+        filters = {"predicate": "or", "groups": [], "filters": [
+            {"field": "subscriber.metadata.lang", "operator": "equals", "value": "ko"},
+            {"field": "subscriber.metadata.lang", "operator": "is_empty", "value": ""},
+        ]}
+    else:
+        filters = {"predicate": "and", "groups": [], "filters": [
+            {"field": "subscriber.metadata.lang", "operator": "equals", "value": "en"},
+        ]}
     payload = {"subject": subject, "body": body_md + footer, "status": "about_to_send" if send else "draft",
                "archival_mode": "enabled" if lang == "ko" else "disabled", "filters": filters}
     when = next_slot(lang) if send else None
