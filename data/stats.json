@@ -496,5 +496,50 @@
       "쉼표": 81.3
     },
     "region": "글로벌"
+  },
+  {
+    "date": "2026-09-16",
+    "day": 12,
+    "slug": "2026-09-16-universal-music-sued-distrokid-the-day-after-the-l",
+    "title_ko": "SII 명단에 빠진 DistroKid, 다음 날 유니버설이 제소했다",
+    "title_en": "Universal Music Sued DistroKid the Day After the Launch",
+    "factor": "정책",
+    "from_stage": "유통",
+    "to_stage": "유통",
+    "tense": "signal",
+    "region": "글로벌",
+    "radar_tense": "soon",
+    "agrees": false,
+    "claims_total": 6,
+    "claims_verified": 3,
+    "review_rounds": 1,
+    "unresolved": false,
+    "bet": true,
+    "wiki_used": 3,
+    "lexicon_used": 2,
+    "form": {
+      "title_noun": true,
+      "title_len": 37,
+      "lead_concrete": true,
+      "ai_tell": 1,
+      "contrast": 1,
+      "hedge_10k": 0.0,
+      "sent_med": 69,
+      "long80": 44.4,
+      "title_check": {
+        "clarity": 2,
+        "pull": 2,
+        "kept_promise": true,
+        "why": "SII·DistroKid·유니버설이라는 고유명사와 제소 사건이 모두 서 있고, 명단 누락 다음 날 제소라는 시간차가 반전 긴장을 만들며 본문이 그 순서를 실제로 다룬다"
+      },
+      "title_kept_first": true,
+      "title_cands": 3
+    },
+    "tokens": {
+      "input": 294795,
+      "output": 34314,
+      "calls": 28,
+      "search_uses": 16
+    }
   }
 ]

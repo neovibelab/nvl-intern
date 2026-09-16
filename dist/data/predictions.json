@@ -97,5 +97,16 @@
     "check_en": "Check whether WMG/BMG/Believe quarterly filings or artist statements itemize a 'training attribution' line, and MBW/Billboard reporting on opt-in artist payouts",
     "factor": "정책",
     "status": "open"
+  },
+  {
+    "slug": "2026-09-16-universal-music-sued-distrokid-the-day-after-the-l",
+    "date": "2026-09-16",
+    "by_date": "2027-03-15",
+    "claim_ko": "180일 안에 국내 주요 유통사(드림어스·카카오엔터·NHN벅스 등) 중 최소 한 곳이 AI 생성곡 신원·권리 검증 절차 또는 AI 표기 정책을 공식 약관·가이드에 명문화한다",
+    "claim_en": "Within 180 days, at least one major Korean distributor (Dreamus, Kakao Entertainment, NHN Bugs, etc.) will codify AI-track identity/rights verification or AI-labeling policy into its official terms or submission guidelines",
+    "check_ko": "해당 유통사 업로드 약관·아티스트 가이드 개정 고지 또는 SII 서명사 명단 추가 여부",
+    "check_en": "Revised upload terms/artist guidelines from the distributor, or its addition to the SII signatory list",
+    "factor": "정책",
+    "status": "open"
   }
 ]

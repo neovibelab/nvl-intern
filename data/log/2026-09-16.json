@@ -1,0 +1,400 @@
+{
+  "date": "2026-09-16",
+  "steps": {},
+  "cluster": {
+    "key": "8448e340-e8be-4c5c-9b0e-bf74a587eda1",
+    "item_ids": [
+      "a6af4015-0182-45a9-99a7-eed7daf7bbc8",
+      "ec7abd4e-0732-4ca5-9cc5-6dec7f803b0b",
+      "40bfbbce-f507-4af7-90c8-7f628ae94cf3",
+      "7ee2c904-5738-4b54-91a4-8cea3eb95faa",
+      "8448e340-e8be-4c5c-9b0e-bf74a587eda1",
+      "fd9a708c-b82d-4445-ab7b-8dd1e0846c0e",
+      "73a29d06-3b00-453a-8ca0-abf8aa8662aa",
+      "78d9ab16-ce80-4c80-842e-e767a7d9b4fb",
+      "75ddbc9d-f24c-49b8-83f2-b4988d974f2e",
+      "9f940779-5f44-4331-8c73-43b234ff24a2",
+      "2892c22f-835f-4ddd-9fe7-a60589bd9554",
+      "964a8511-44b1-488b-9992-fe3f9e28de31",
+      "86aa92ff-dba3-434d-9e78-d00be85918b9",
+      "d49be94c-c751-4e31-82a3-0d57f8d174e1",
+      "74d846f1-b1f9-4453-aeb8-5cb724e36ad8",
+      "ae42d879-3a29-4cd8-a251-41d924d786c4",
+      "80957e9b-117e-4614-95e9-49e64cbb5fc4",
+      "ab4ebdd8-10a2-4b50-a55a-be141dc9551e",
+      "527f9a03-4f5f-4982-80ec-da89b6310719",
+      "8ab853b8-6767-41cc-98e9-9f2afcdfe855",
+      "821085fc-c6d7-457c-9923-a80097aaa4a7",
+      "afb97021-7daf-41c2-a22a-4c35c3836483",
+      "14b8f079-406f-4ec0-b923-79eb0d1d4d47",
+      "5684bcb2-14c0-4285-806c-80e029824bdd",
+      "3e95de18-801c-44b3-9b6b-6eff5ec869b0",
+      "915d37e3-8057-452e-a800-74d17a6ff068",
+      "334e73a7-6dac-4397-a282-df99df899c74"
+    ],
+    "n": 27,
+    "radar_tense": "soon",
+    "factor": "정책",
+    "stage": "유통",
+    "titles": [
+      "음악 산업, AI 생성 음악 스트림 부정행위 퇴치 위해 Streaming Integrity Initiative 출범, 2025년 AI 생성 음악 스트림 85% 이상이 부정행위로 적발",
+      "Universal Music, AI 생성 음악 물량에 DistroKid 고소",
+      "음악 산업, AI 기반 스트리밍 사기에 맞서 연대",
+      "유니버설뮤직, DistroKid를 저작권 침해 및 AI 생성 음악으로 고소",
+      "음악 유통사들 스트리밍 전 AI 곡 심사에 합의, 인도 기업은 미참여",
+      "월 수입 20만에서 집단 중단까지, AI 마이크로 숏드라마(微短剧) '사이버 골드러시'는 어떻게 식었나",
+      "표절 재배포, 딥페이크 모성 AI 마이크로 숏드라마(微短剧) 저작권 침해 판정 방법",
+      "마이크로 숏드라마(微短剧)에 '태화마크(苔花标)' 도입",
+      "기자 조사: 일부 AI 마이크로 숏드라마(微短剧)는 여전히 AI 표시 미흡",
+      "유니버설뮤직그룹, AI '슬롭' 유포 혐의로 음악 배급사 고소",
+      "AI 음악 소송, 미국 기업과 캐나다 예술 산업 문제 제기",
+      "UMG, AI '슬롭' 음악 유통혐의로 DistroKid 제소",
+      "음반사들, DistroKid를 'AI 슬롭'과 저작권 침해로 고소",
+      "마이크로 숏드라마, 트래픽 경쟁에서 콘텐츠 품질 중심으로 전환, 현실 기반 우수작들 인기 확보",
+      "마이크로 숏드라마(微短剧) 관리办法 출범, 업계 부정행위 규범화",
+      "AI 마이크로 숏드라마(微短剧)가 '인지 시대'로 진입",
+      "신규 규정 시행 반달, 마이크로 숏드라마(微短剧)는 '트래픽 경쟁'에서 '품질 경쟁'으로",
+      "마이크로 숏드라마(微短剧)가 글로벌 콘텐츠 시장을 휩쓸다, 할리우드는 어떻게 추격하나",
+      "유니버설뮤직그룹, 음악 배급업체를 'AI 슬롭' 유통 혐의로 제소",
+      "마이크로 숏드라마(微短剧) 발전 관리 방법 공식 시행, AI 마이크로 숏드라마 저작권 침해 문제 어떻게 판정할 것인가",
+      "중국에서 인공지능이 마이크로 숏드라마(微短剧) 제작의 1인 팀 등장을 촉진",
+      "마이크로 숏드라마 '나의 할아버지는 옥(我的老祖宗是块玉)' 온라인 공개 개시식 개최",
+      "15일 만에 런칭, 100억 재생량, 간저우 마이크로 숏드라마(微短剧)가 산업에 '가속도'를 더하다",
+      "Suno v6 9월 9일 라이선스 모델, 레이블·퍼블리셔 분배 시작",
+      "유니버설뮤직그룹, DistroKid 상대 소송 제기, AI 생성 음악 대량 유통 및 부정행위 혐의",
+      "IFPI, 스트리밍 사기·AI 슬롭 차단 위한 '스트리밍 무결성 이니셔티브' 공식 출범",
+      "Sony Music Group, 스트리밍 부정행위 퇴치를 위한 업계 공동 약속 지지"
+    ],
+    "urls": [
+      "https://news.google.com/rss/articles/CBMisgFBVV95cUxQelJOUjM3S25oa1Y2enNJT1NOOHhhMEZLc0g2dkhGNmt2VW9RT3JWaEFlV3BydGxWMGg5R05Hb2Y3M0xJV1hHUUNqeTRCUkVFVkVlN2tYNldXdFM5QktkazJXSHFGYmdiVXpiU1dHcFRLUzJnTUk4dThNSVlvZU1zUTUxVkwxaXo4R25zMFFhZ3g3UVVHOW93ZzFWWlpjX1AzWEFsdEJzMEI3dXU2bFl1d2VR?oc=5",
+      "https://news.google.com/rss/articles/CBMisAFBVV95cUxQdzgweUw2aDZqTnZmSnFvLVpqbTZJbXI2LWZYc3prc2k3aW5TVDBqSGFWOFdHRkp1ZzVNazU4RzFWam5RUnYtQk01MHV1blJpaEFxbGpBd2tHbFpJTTViQ3VOZGJtOW5XUnZCNjNaa19aZzNsYTduSW0zUmcySENVYWVWQ1JxSWtILWx1ZUxEZzQzNTVQcUJTM3cyeEUtclpIUVgyby1TREp5T3VZcDlyeA?oc=5",
+      "https://news.google.com/rss/articles/CBMilgFBVV95cUxNd3RNUDl6SXJNSG9DTGpTUDFvajRqNUNubnFlZE5xcUhtVURjeUFmR0tMV1gwT19CYnFvaEIzQTJlSnViUkJqb3hmRUg4bVNkZ3YwNEZDaWFpOEx6Vkp2OG0tYmlDZEYzeEpmTzI4eVdGc1k0U1YwU3ZqZElQdlkzSkQ2dlBaaEVCLUFtRnE1ZHpLOXFReWc?oc=5",
+      "https://news.google.com/rss/articles/CBMitgFBVV95cUxNZ01DRVJVTHlNSk5rdF8xV1pkWkRaVE1nQWU1eDZPTG1saU9WVDQxOXZzdU9GNUtNaUNMbUpwblVCY2E4RDE1Y3BEUHJIckh2cEpyN1RXZ3FBUkNXQjRNY3hPUU00S1AwUlU0bGR3SFVTUGRNUG5wLVh2ejhtU2J4c0hJQUtsckw4OFRPQVMxN084b3d4NmRRdDBBdVl4aEZsdHN4dVpVWlNEY2JVTkM3cGpLNk9OUQ?oc=5",
+      "https://news.google.com/rss/articles/CBMifkFVX3lxTE4xbzVibUtqWmJuZWdfejRLUS1LR1hqOGtXQ1ZBb0lOWFZQeHZ0TmVVQU45dlFMaHhvS0ZhM20wNXhjdDdxZjh1Nm9BU1BKNmR4dDlhNmozVHVvcW94aUNOVk5rTHlJNHVVSU1NdFFYazV3MGxuOW5tb21YQmxMZw?oc=5",
+      "https://news.google.com/rss/articles/CBMipwFBVV95cUxOLW16MUFWaldLaE0wczJIdU9SdkhkaFdPZTdHanpzVU84TVpxZmVYZXJTYTFOc3I1bmVkZDZsaFpyZzZJMTBqSzl2QncwQ2ZmVC05MllFa3RYbU5yNXRDcHRiX2diSXY3bktyMGhLMDhLUFZ3MHM1SU5EVEEybXlMUEUzWFpvTDF1VkotenRPSWNnc3NLVGNSd0NERE5aZ2lXdmNjaUIyQQ?oc=5",
+      "https://news.google.com/rss/articles/CBMiakFVX3lxTE5xdWNVR3p1bmZZRU51andLMmxPbi0wZ0UtNDU0dW9ieHgzZ3N5ZzNEMmlxQkhhZVBhajlPYjA5T2ptNHctWVpwMG44UWlSelZudXVBVDQ2M3RlRnpHbnJzOGtkUjhUUDJ6Znc?oc=5",
+      "https://news.google.com/rss/articles/CBMieEFVX3lxTE9JS1JiOXVHaXcyZzg1em9XUzhJYVBocmRTT2RFY3EzUnNsMVR4VDFNc3IzZHFLUHdtcERzQjlKdHRPcl9FdVFIb043TFJfQXNKNEt2Y3BqMmJBUkE5TmczTEMtQVRZZnd2NEZ6d2hEODFBWDdJZnVTQg?oc=5",
+      "https://news.google.com/rss/articles/CBMihgFBVV95cUxQR25OLXo0dXVaaFkxa3IxZmRZYVdFT3BwS2NrdFJkVzI5OW8zeE9qTWcxV1hULVY3VXVkUllrbmN1RkFua2RSOGVDSDFNd3ZwLUhoS2oyWjloanVKUDd0dmY2LVlkbWd2OTdVS1oyVWc3Vkd1WTI5MkdIdzJuTGNWVFJEcFpZdw?oc=5",
+      "https://news.google.com/rss/articles/CBMixgFBVV95cUxNak1oZkFzYUJuVDFqWklLU3VGQ2hZV05fbnJETU9LdlN1UGFzUEg2VHA0eWFxZDloUjhHVFgyMVdBUTJadDdDV1dicm5ZQU12TUVGbERmSmd0emVmbUhSRE8yT3ZYM01vcWl6ZXdFdWJUdmVPUS0yV0E5Q09BY3FSQ0V3YjMyUWdIRFA5S283VlFNXzlBUlhkWEtyMzFmM1pPMDdRR0MyOWM0NzVjRjFEeFlsSU8tRWJZbVhzWkFwb0JxZnFiS0E?oc=5",
+      "https://news.google.com/rss/articles/CBMisAFBVV95cUxNcF9SRWJxdTlXSVp1M1BUc1Z6dEt1YjR2VHVwUTVWRUhIVGlQVDN5SUI2Rmc0bktMSE5mdFFRaXpmVFpXUkY1MUN1WEpxN2JKSU0zWlo2VkVIeXA0WHJZQ2ZIRnBiYk1iVEZHM2tfYUNMLUY4ZVFuTC0zeUo4bkdKbVBPNHllNlZRX0Q3Q0pGM2dlX1FvUkROdFhPaVFDcV84ZV9qcTNqdENnbi1SamVoTw?oc=5",
+      "https://news.google.com/rss/articles/CBMisAFBVV95cUxOVTFEWnVyX1FjUS13TF9xYzFYOUhUWkpCNzFXTHJZMTZDdENNR0d5Zm5jbktRSjM5T0Y3dWgtcU5wLUtWRzZDcFE3cWJYSS10TEJETU9DUW45Qkh5RDN4UVZFUVd0OHViU25oVV80V3NxeW9VU3BCaGpkeWxyRmlZeWJVSElWSy1JX1plRTJHZmZGWVdjcTRTenlldEZvRFIwck1GeE8wbTlvQW1sLXI4YQ?oc=5",
+      "https://news.google.com/rss/articles/CBMingFBVV95cUxOTXNzVVlCV2FUWnMzR0F0U05BMHo4ZjJ3cWZEeXg5cktsWGdmekVTVFZUZTluWVpscDNsVjZsNVdLVFJidVlacjcycHNRd2dyaHNQWlRsSlktbXRucl9zLXlnQnFoQ1BMZHJRTDZIamFZcl9GSGNaZkpFel91Q3ZqWGRUN1RncWh5S3luUjQyWXo3NWpZeG1TbFlrcFRkQQ?oc=5",
+      "https://news.google.com/rss/articles/CBMijAFBVV95cUxPaTdMUGVodmZObS02Z1VsOHk1NWVsajlZanFFY2lYR2lvblE3LVhqY1lNNnRMZ1RXSGlVS1dZR3ZuUEJSRHo5NjRzUk5Wd2pLdkRGTU92UEdaLUNNLUJqUlhBR0puNkR4ZmZuU1pZNGdQc2pXenZBdlQteWhqUUx0U1E5R0RDVjBCazgyMw?oc=5",
+      "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBZVkw0NlBfQmcxVS1qTDBfVzZUWnFlaEZTOUtHUElqWG14eWtxdE9YNHl4M0lfVlczbFZyTm03S0RPQzdKampHc2o0LWhSaXprdVlfQQ?oc=5",
+      "https://news.google.com/rss/articles/CBMiUEFVX3lxTFB5WHQ0dHd2RWhxcWg3WHpqOE14T3NOeWx1ZWhpRTl0Z3JCNDctcmJrcENhUDRsRmp2SDNyNDZWVVlwdG9HaGs1OWNkYnpNV21C?oc=5",
+      "https://news.google.com/rss/articles/CBMijAFBVV95cUxQRGxLXzNnczhpMFlldUJrREhOS09qNUtHOXlMdVdjWHAwdF9RejB5T1hWeGpOa2ZuWGRBMTZ3YzRzUldwUlBtSk5OeF84eGVRMjNxLWs4WDZFdW9ydDhXMTlMMUxFY29XSGQ1V3lwZTVRMTR2M19ZODBvcUExU29mOVk1Tl9ZWUpjQVpIMQ?oc=5",
+      "https://news.google.com/rss/articles/CBMia0FVX3lxTFBrLXhJcXZibkEtbmJIUDhtTDVHYU9lLUFoWnV6VGRnUUh5UTRGWmxFZ1dLY1h1WjFjNk1PMHZHTDBabFZDeHRtblFLWVYtQV9PYXhWVjR6VEdhdV9xbHlTV1lwczlTeVpQSmNN?oc=5",
+      "https://news.google.com/rss/articles/CBMiowFBVV95cUxOVldfUjZZR3hYZnVoRk9JdkZfVTVMLXJ1MFotWUJidXd5R2JWOVp3NFBMUm5DN0ZZR25nUFdxeDQ5NThmLW9jWm1KNVVOZy1Rbjl6Ykg2WHc5YXF5c2hlQnBITWJVazdCZjZidzhzLWdYQm5oMmU4WkNMSC1TZURsTnRxaG1aRFQ1MEFHTkRrM2x2dHBrU3F0NnI1WHh2MnIxeFRB?oc=5",
+      "https://news.google.com/rss/articles/CBMid0FVX3lxTFBCUVhoOGdXX3E2c1h6RVRtYWpmUE9IQVZvU2RjcUo0SXE2b3RrSmp1YXQ5LXB1MTlhQXNfLWpKdlpiT09peXAzVzlsUDF6WXhacGNQOHZ0OTlPVHg5Z0FPakEzLWNnSFo1R1pndHNxV1dhMHo3WGRN?oc=5",
+      "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNcDlzNGVCS3lhTW5meG9samtmWlNyUWJuLXlSdUJweFR6NmVBcEhYNE9JZG9OQ1hVU1BYOC1ld2JIVTJXb2F6a0VXbDBkdkx0Y2hRS3Z1T1Z0NXZzT0lIYkI5SGc0NnRLWTA1dmkzMGx2WjhiNjhKLV9vQzN1clNSNE5vOVBsaFFDckhtWjJNY3Q3UnBfQ3V6VkpHbDRTbHdjUE1pUjQxaUw?oc=5",
+      "https://news.google.com/rss/articles/CBMia0FVX3lxTE5CYVVuVmVNRm5vMnIzd25PS3ptNnY1MzVDeFl6SDYyWldnd2JyT3BtWmpnWjdhWEhYR2ZUWEdZMEdCM0xQdk5JMEN2R0VQQm5qMGZ0TVVDRFhYZzVLdDdmQWpENVlKMVJZVHZV?oc=5",
+      "https://news.google.com/rss/articles/CBMiSkFVX3lxTE83UVBJSTN0YnhoQnFlN05TdDk3d1pqUjlMZ2xIWmh5MS1KNTBRNjdHRlpIY1l3RGoyb2ZoZm5JSWxpeURUdWJuQmZn?oc=5",
+      "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9Qa21tV0ZhNXhYTGl6c0hrRG9fYzBJT2ZEX2hia1hhbGdHOVhkZ0FWWkJ0cGVLWWJRSkpqb1JLSjFTdVRPd0p6TGNB?oc=5",
+      "https://mailchi.mp/f0195eaa859d/eas7bllc1f?e=1ecbc98390",
+      "https://www.digitalmusicnews.com/2026/09/14/streaming-integrity-initiative/",
+      "https://www.sonymusic.com/inside-sony-music/sony-music-group-backs-new-industry-wide-commitment-to-combat-streaming-fraud-in-order-to-protect-artists-songwriters-and-fans/"
+    ],
+    "items": [
+      {
+        "title": "음악 산업, AI 생성 음악 스트림 부정행위 퇴치 위해 Streaming Integrity Initiative 출범, 2025년 AI 생성 음악 스트림 85% 이상이 부정행위로 적발",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQelJOUjM3S25oa1Y2enNJT1NOOHhhMEZLc0g2dkhGNmt2VW9RT3JWaEFlV3BydGxWMGg5R05Hb2Y3M0xJV1hHUUNqeTRCUkVFVkVlN2tYNldXdFM5QktkazJXSHFGYmdiVXpiU1dHcFRLUzJnTUk4dThNSVlvZU1zUTUxVkwxaXo4R25zMFFhZ3g3UVVHOW93ZzFWWlpjX1AzWEFsdEJzMEI3dXU2bFl1d2VR?oc=5",
+        "source": "wwwhatsnew.com",
+        "region": "multinational",
+        "published_date": "2026-09-15T20:08:41+00:00",
+        "title_en": "Music Industry Launches Streaming Integrity Initiative to Combat AI-Generated Music Fraud at multinational/wwwhatsnew.com"
+      },
+      {
+        "title": "Universal Music, AI 생성 음악 물량에 DistroKid 고소",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQdzgweUw2aDZqTnZmSnFvLVpqbTZJbXI2LWZYc3prc2k3aW5TVDBqSGFWOFdHRkp1ZzVNazU4RzFWam5RUnYtQk01MHV1blJpaEFxbGpBd2tHbFpJTTViQ3VOZGJtOW5XUnZCNjNaa19aZzNsYTduSW0zUmcySENVYWVWQ1JxSWtILWx1ZUxEZzQzNTVQcUJTM3cyeEUtclpIUVgyby1TREp5T3VZcDlyeA?oc=5",
+        "source": "Maya Comunicación",
+        "region": "north-america",
+        "published_date": "2026-09-15T22:50:45+00:00",
+        "title_en": "Universal Music Sues DistroKid Over AI-Generated Music Volume at north-america/Maya Comunicación"
+      },
+      {
+        "title": "음악 산업, AI 기반 스트리밍 사기에 맞서 연대",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNd3RNUDl6SXJNSG9DTGpTUDFvajRqNUNubnFlZE5xcUhtVURjeUFmR0tMV1gwT19CYnFvaEIzQTJlSnViUkJqb3hmRUg4bVNkZ3YwNEZDaWFpOEx6Vkp2OG0tYmlDZEYzeEpmTzI4eVdGc1k0U1YwU3ZqZElQdlkzSkQ2dlBaaEVCLUFtRnE1ZHpLOXFReWc?oc=5",
+        "source": "Zonamovilidad.es",
+        "region": "europe",
+        "published_date": "2026-09-15T10:00:00+00:00",
+        "title_en": "Music Industry Unites Against AI-Based Streaming Fraud at europe/Zonamovilidad.es"
+      },
+      {
+        "title": "유니버설뮤직, DistroKid를 저작권 침해 및 AI 생성 음악으로 고소",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNZ01DRVJVTHlNSk5rdF8xV1pkWkRaVE1nQWU1eDZPTG1saU9WVDQxOXZzdU9GNUtNaUNMbUpwblVCY2E4RDE1Y3BEUHJIckh2cEpyN1RXZ3FBUkNXQjRNY3hPUU00S1AwUlU0bGR3SFVTUGRNUG5wLVh2ejhtU2J4c0hJQUtsckw4OFRPQVMxN084b3d4NmRRdDBBdVl4aEZsdHN4dVpVWlNEY2JVTkM3cGpLNk9OUQ?oc=5",
+        "source": "Aristegui Noticias",
+        "region": "north-america",
+        "published_date": "2026-09-15T20:38:00+00:00",
+        "title_en": "Universal Music Sues DistroKid for Copyright Infringement and AI-Generated Music at north-america/Aristegui Noticias"
+      },
+      {
+        "title": "음악 유통사들 스트리밍 전 AI 곡 심사에 합의, 인도 기업은 미참여",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE4xbzVibUtqWmJuZWdfejRLUS1LR1hqOGtXQ1ZBb0lOWFZQeHZ0TmVVQU45dlFMaHhvS0ZhM20wNXhjdDdxZjh1Nm9BU1BKNmR4dDlhNmozVHVvcW94aUNOVk5rTHlJNHVVSU1NdFFYazV3MGxuOW5tb21YQmxMZw?oc=5",
+        "source": "MediaNama",
+        "region": "multinational",
+        "published_date": "2026-09-15T11:02:21+00:00",
+        "title_en": "Music Distributors Agree on Pre-Streaming AI Song Review, India Companies Don't Participate at multinational/MediaNama"
+      },
+      {
+        "title": "월 수입 20만에서 집단 중단까지, AI 마이크로 숏드라마(微短剧) '사이버 골드러시'는 어떻게 식었나",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOLW16MUFWaldLaE0wczJIdU9SdkhkaFdPZTdHanpzVU84TVpxZmVYZXJTYTFOc3I1bmVkZDZsaFpyZzZJMTBqSzl2QncwQ2ZmVC05MllFa3RYbU5yNXRDcHRiX2diSXY3bktyMGhLMDhLUFZ3MHM1SU5EVEEybXlMUEUzWFpvTDF1VkotenRPSWNnc3NLVGNSd0NERE5aZ2lXdmNjaUIyQQ?oc=5",
+        "source": "新浪财经",
+        "region": "china",
+        "published_date": "2026-09-15T05:11:31+00:00",
+        "title_en": "From 200,000 Monthly Income to Collective Shutdown: How AI Micro Short Drama 'Cyber Gold Rush' Cooled Down at china/新浪财经"
+      }
+    ]
+  },
+  "source_summary": {
+    "ko": "음악 산업이 AI 생성 음악의 스트리밍 부정행위에 대응하기 위해 Streaming Integrity Initiative를 출범했다. Universal Music은 DistroKid를 저작권 침해 및 AI 생성 음악 관련으로 고소했으며, 음악 유통사들은 스트리밍 전 AI 곡 심사에 합의했다.",
+    "en": "The music industry launched the Streaming Integrity Initiative to combat streaming fraud from AI-generated music. Universal Music sued DistroKid over copyright infringement and AI-generated music issues. Music distributors agreed to review AI songs before streaming.",
+    "titles_en": [
+      "Music Industry Launches Streaming Integrity Initiative to Combat AI-Generated Music Fraud at multinational/wwwhatsnew.com",
+      "Universal Music Sues DistroKid Over AI-Generated Music Volume at north-america/Maya Comunicación",
+      "Music Industry Unites Against AI-Based Streaming Fraud at europe/Zonamovilidad.es",
+      "Universal Music Sues DistroKid for Copyright Infringement and AI-Generated Music at north-america/Aristegui Noticias",
+      "Music Distributors Agree on Pre-Streaming AI Song Review, India Companies Don't Participate at multinational/MediaNama",
+      "From 200,000 Monthly Income to Collective Shutdown: How AI Micro Short Drama 'Cyber Gold Rush' Cooled Down at china/新浪财经"
+    ]
+  },
+  "materials": {
+    "wiki": [
+      "2026-07-25-자발적-라이선싱-AI권리프레임.md",
+      "2026-07-24-슬롭은-인풋의-문제.md",
+      "2026-07-25-기술복제시대의-진정성.md"
+    ],
+    "lexicon": [
+      "industry.md#copyright",
+      "industry.md#확장된 권리; 권리의 분화 - expanded rights & rights fragmentation"
+    ]
+  },
+  "context": "- [후속] UMG가 SII 출범 다음날 DistroKid를 저작권 침해·기만적 거래행위로 제소, 'AI 생성 슬롭으로 플랫폼을 도배했다'고 주장 (Digital Music News https://www.digitalmusicnews.com/2026/09/15/universal-music-distrokid-lawsuit/)\n- [후속] 최대 DIY 유통사 DistroKid는 SII 서명사 명단에서 빠진 상태 — 참여사에는 UMG·소니·워너·HYBE·Merlin·The Orchard·CD Baby·Too Lost 등 20여 곳 (Billboard https://www.billboard.com/pro/ifpi-initiative-fight-streaming-fraud/)\n- [후속] SonoSuite 등 유통 인프라 사업자가 추가로 지지 선언하며 서명사 목록이 27곳으로 확대 (RapIndustry (IFPI 발표문 전재) https://rapindustry.com/ifpi-announces-launch-streaming-integrity-initiative-sii-a-new-industry-commitment-to-combat-streaming-fraud-and-protect-artists-songwriters-and-fans)\n- [후속] 유통사 간 사기 활동 정보 공유 의무가 가이드라인에 포함되어 유통 체인 전반의 사전 심사 체계로 확장 (Business Standard (FT 인용) https://www.business-standard.com/world-news/how-ai-generated-music-threat-streaming-royalties-spotify-youtube-126091400475_1.html)\n- [반응] Victoria Oakley, IFPI CEO 스트리밍 사기는 \"명백한 절도\"이며, 먼저 지지를 밝힌 유통사들의 리더십을 환영한다고 발언 (Billboard https://www.billboard.com/pro/ifpi-initiative-fight-streaming-fraud/)\n- [반응] Sarah McNabb, Merlin 콘텐츠 무결성 디렉터 불법 활동 대응은 업계 모든 부문이 함께 움직여야 효과가 있다고 언급 (Billboard https://www.billboard.com/pro/ifpi-initiative-fight-streaming-fraud/)\n- [반응] SonoSuite 사기 대응은 밸류체인 전체의 공동 책임이라며 참여 의사 표명 (RapIndustry (IFPI 발표문 전재) https://rapindustry.com/ifpi-announces-launch-streaming-integrity-initiative-sii-a-new-industry-commitment-to-combat-streaming-fraud-and-protect-artists-songwriters-and-fans)\n- [반응] Digital Music News 참여사 중 최소 한 곳은 과거 무단 리믹스·AI 양산물을 취급했으며, 이번 협약으로 법정 다툼을 피한 것으로 보인다고 논평 (Digital Music News https://www.digitalmusicnews.com/2026/09/14/streaming-integrity-initiative/)\n- [수치] 최대 80% Deezer가 2026년 초 보고한 AI 곡 스트림 중 인위적(부정) 비율 — 사건문의 85%와 비교되는 직전 수치 (Billboard https://www.billboard.com/pro/ifpi-initiative-fight-streaming-fraud/)\n- [수치] 5개 SII가 유통사에 요구하는 이행 약속 항목 수(권리·신원 검증, 콘텐츠 심사, 사기 대응, 정보 공유, 방어체계 강화) (Artiverse https://www.artiverse.ca/five-commitments-aim-to-clean-up-music-streaming-fraud/)\n- [수치] 27곳 IFPI 발표 시점 SII 지지 레이블·유통사 수 (RapIndustry (IFPI 발표문 전재) https://rapindustry.com/ifpi-announces-launch-streaming-integrity-initiative-sii-a-new-industry-commitment-to-combat-streaming-fraud-and-protect-artists-songwriters-and-fans)\n- [수치] 8,000개 이상 IFPI가 대표하는 전 세계 회원 음반사 수 (Engadget/NewsBreak https://www.newsbreak.com/engadget-384829691/4885067978771-music-distributors-agree-to-new-anti-fraud-measures)\n- [선례] 2024년 메이저 3사가 Suno·Udio를 대량 저작권 침해로 제소 → 2025년 10월 UMG-Udio 합의 및 라이선스 기반 AI 플랫폼 공동 개발로 전환 (Reuters/Yahoo https://www.yahoo.com/news/articles/universal-music-settles-copyright-dispute-012049275.html)\n- [선례] 소니가 Trefuego 개인 아티스트를 제소하고 유통사 DistroKid는 피고에서 제외했으나 로열티 분담 책임은 부과 — 유통사 책임 소재를 다룬 선례 (Music Business Worldwide https://www.musicbusinessworldwide.com/on-distrokid-trefuego-modified-audio-and-the-potential-for-a-new-napster-nightmare/)\n- [선례] 2025년 10월 이후 독립 아티스트들이 Suno·Udio를 상대로 집단소송 제기, 메이저 합의가 소규모 권리자를 보호하지 못한다고 주장 (TechTimes https://www.techtimes.com/articles/327314/20260911/elevenlabs-signs-first-lawsuit-free-ai-music-deal-umg-fans-get-remix-platform.htm)\n- [선례] 2026년 6월 5일 미국음악가연맹(AFM)이 워너·유니버설을 상대로 제소 — Suno·Udio 합의 과정에서 세션 연주자 권리를 라이선싱했다는 주장 (TechTimes https://www.techtimes.com/articles/327314/20260911/elevenlabs-signs-first-lawsuit-free-ai-music-deal-umg-fans-get-remix-platform.htm)",
+  "judgment": {
+    "factor": "정책",
+    "from_stage": "유통",
+    "to_stage": "유통",
+    "region": "글로벌",
+    "tense": "signal",
+    "tense_why": "IFPI와 메이저 3사·27개 유통사가 서명한 공식 협약에 UMG의 DistroKid 제소까지 겹친, 이미 주류 한복판에서 진행 중인 규칙 제정이다.",
+    "vibe_evidence": "",
+    "vibe_evidence_en": "",
+    "angle_ko": "사기 퇴치라는 명분으로 유통사가 '심사하는 문지기'가 됐다 - 업로드 자유가 끝나고 유통 계층에 검증 비용과 책임이 얹히면서, 심사를 감당할 수 있는 사업자와 없는 사업자로 시장이 갈린다",
+    "angle_en": "Under the banner of fighting fraud, distributors have been recast as screening gatekeepers - as vetting costs and liability land on the distribution layer, the market splits between those who can afford to screen and those who cannot",
+    "title_ko": "SII 명단에 빠진 DistroKid, 다음 날 유니버설이 제소했다",
+    "title_en": "Universal Music Sued DistroKid the Day After the Launch",
+    "bet": {
+      "claim_ko": "180일 안에 국내 주요 유통사(드림어스·카카오엔터·NHN벅스 등) 중 최소 한 곳이 AI 생성곡 신원·권리 검증 절차 또는 AI 표기 정책을 공식 약관·가이드에 명문화한다",
+      "claim_en": "Within 180 days, at least one major Korean distributor (Dreamus, Kakao Entertainment, NHN Bugs, etc.) will codify AI-track identity/rights verification or AI-labeling policy into its official terms or submission guidelines",
+      "by_days": 180,
+      "check_ko": "해당 유통사 업로드 약관·아티스트 가이드 개정 고지 또는 SII 서명사 명단 추가 여부",
+      "check_en": "Revised upload terms/artist guidelines from the distributor, or its addition to the SII signatory list"
+    },
+    "principle_ko": "플랫폼이 무한 공급을 감당하지 못할 때 규제는 생산자가 아니라 유통 계층에 검증 의무를 얹는 방식으로 온다 - 그 순간 유통은 비용이 아니라 진입장벽이 된다",
+    "principle_en": "When platforms can no longer absorb infinite supply, regulation arrives as a verification duty placed on the distribution layer rather than on producers - at that moment distribution stops being a cost and becomes a barrier to entry",
+    "radar_tense": "soon",
+    "agrees": false,
+    "disagree_reason": "IFPI와 메이저 3사·27개 유통사가 서명한 공식 협약에 UMG의 DistroKid 제소까지 겹친, 이미 주류 한복판에서 진행 중인 규칙 제정이다."
+  },
+  "recent": "[D+11 · 2026-09-15] 「소송은 Suno의 라이선스를 막지 않고 가격을 만들었다」 정책 생산→생산 · signal\n  숫자 · 제목 - 무슨 얘긴지 알려주나 2/2 · 읽고 싶게 하나 2/2 / 문체 - 사람 분포 밖 3개(접속부사, 헤지, 쉼표) / 형식 93/100 · 첫 문단에 누가 무엇을 언제 있음 · AI tell 1 · 헤지 만자당 0.0 · 문장 중앙 56자\n  검수 지적 · Anthropic 건은 가사 텍스트 무단 사용 소송으로, 음악 생성모델의 오디오 학습과 다투는 층위가 다르다. '청구 상한이 계속 올라간다'는 흐름에 끌어쓰려면 층위가 다르다는 단서 한 줄이 필요하다. 또 2023년 10월 원고(Concord·UMPG 계열)와 8월 28일 원고(소니 뮤직 퍼블리싱·워너 채플)가",
+  "draft_ko_v1": "IFPI가 스트리밍 인테그리티 이니셔티브(SII)를 출범시키며 유통사에 다섯 가지를 요구했습니다. 권리·신원 검증, 콘텐츠 심사, 사기 대응, 유통사 간 정보 공유, 방어체계 강화입니다([Artiverse](https://news.google.com/rss/articles/CBMisgFBVV95cUxQelJOUjM3S25oa1Y2enNJT1NOOHhhMEZLc0g2dkhGNmt2VW9RT3JWaEFlV3BydGxWMGg5R05Hb2Y3M0xJV1hHUUNqeTRCUkVFVkVlN2tYNldXdFM5QktkazJXSHFGYmdiVXpiU1dHcFRLUzJnTUk4dThNSVlvZU1zUTUxVkwxaXo4R25zMFFhZ3g3UVVHOW93ZzFWWlpjX1AzWEFsdEJzMEI3dXU2bFl1d2VR?oc=5)에 항목이 정리돼 있습니다). 발표 시점 지지사는 27곳, 이후 SonoSuite 같은 인프라 사업자까지 붙었습니다. 최대 DIY 유통사 DistroKid는 명단에 없고, 출범 다음 날 유니버설뮤직이 DistroKid를 저작권 침해와 기만적 거래행위로 [제소했습니다](https://news.google.com/rss/articles/CBMitgFBVV95cUxNZ01DRVJVTHlNSk5rdF8xV1pkWkRaVE1nQWU1eDZPTG1saU9WVDQxOXZzdU9GNUtNaUNMbUpwblVCY2E4RDE1Y3BEUHJIckh2cEpyN1RXZ3FBUkNXQjRNY3hPUU00S1AwUlU0bGR3SFVTUGRNUG5wLVh2ejhtU2J4c0hJQUtsckw4OFRPQVMxN084b3d4NmRRdDBBdVl4aEZsdHN4dVpVWlNEY2JVTkM3cGpLNk9OUQ?oc=5).\n\n이 순서가 중요합니다. 소니가 Trefuego를 제소했을 때 DistroKid는 피고에서 빠졌고 로열티 분담 책임만 졌다고 뮤직 비즈니스 월드와이드가 정리한 바 있습니다. 이번엔 유통사가 직접 피고석에 있습니다. 책임 소재가 업로더에서 유통 계층으로 한 칸 올라왔고, 서명은 그 위치에서 빠져나가는 방식이 됐습니다. 디지털 뮤직 뉴스는 참여사 중 최소 한 곳이 과거 무단 리믹스와 AI 양산물을 취급했으며 이번 협약으로 법정 다툼을 피한 것으로 보인다고 논평했습니다. 무결성 인증서가 아니라 소송 보험으로 읽는 시각입니다.\n\n심사 표준이 모두에게 같은 속도로 오지도 않습니다. 인도 유통사들은 사전 심사 합의에 참여하지 않았다고 [MediaNama](https://news.google.com/rss/articles/CBMifkFVX3lxTE4xbzVibUtqWmJuZWdfejRLUS1LR1hqOGtXQ1ZBb0lOWFZQeHZ0TmVVQU45dlFMaHhvS0ZhM20wNXhjdDdxZjh1Nm9BU1BKNmR4dDlhNmozVHVvcW94aUNOVk5rTHlJNHVVSU1NdFFYazV3MGxuOW5tb21YQmxMZw?oc=5)가 전했습니다. 불참도 선택입니다. 심사 인력과 메타데이터 시스템을 갖추지 못한 유통사에게 다섯 항목은 준수 비용이고, 갖춘 쪽에게는 경쟁사를 걸러내는 장치입니다. 부정 비율 수치도 Deezer가 플랫폼 쪽에서 센 80%였는데, 이제 같은 계산을 유통 단계에서 하라는 요구로 넘어왔습니다.\n\n180일 안에 드림어스·카카오엔터테인먼트·NHN벅스 중 최소 한 곳이 AI 생성곡의 신원·권리 검증 절차나 AI 표기 정책을 업로드 약관 또는 아티스트 가이드에 명문화한다고 봅니다. 확인은 약관 개정 고지, 또는 SII 서명사 목록에 한국 회사 이름이 추가되는지로 합니다. 틀릴 자리는 국내 유통사가 해외 배급 파트너의 요구만 받아 내부 절차로 처리하고 문서화는 미루는 경우입니다.\n\n계약을 검토한다면 볼 줄은 두 개입니다. 심사에서 걸러내지 못한 곡의 책임이 유통사와 업로더 중 누구에게 남는지, 그리고 정보 공유 조항이 자사 아티스트의 신원·정산 데이터를 어디까지 다른 유통사에 넘기게 하는지입니다.",
+  "claims": [
+    {
+      "status": "verified",
+      "source": "Music Ally (musically.com)",
+      "url": "https://musically.com/2026/09/14/ifpi-launches-an-anti-fraud-streaming-integrity-initiative/",
+      "note": "2026년 9월 14일 IFPI가 SII를 출범했고, 유통사 5개 약속(권리·신원 검증(KYC), 콘텐츠 심사, 사기 탐지·대응, 정보 공유, 방어체계 측정·강화)이 주장과 일치함",
+      "claim": "IFPI가 스트리밍 인테그리티 이니셔티브(SII)를 출범시키며 유통사에 다섯 가지를 요구했습니다. 권리·신원 검증, 콘텐츠 심사, 사기 대응, 유통사 간 정보 공유, 방어체계 강화입니다."
+    },
+    {
+      "status": "contradicted",
+      "source": "Music Ally",
+      "url": "https://musically.com/2025/09/18/music-fights-fraud-alliance-debuts-partner-program-with-four-firms/",
+      "note": "SonoSuite가 2026년 4월 MFFA에 뒤늦게 합류한 것은 맞으나, 발표 시점 회원사 수는 27곳이 아니라 28곳으로 보도됨",
+      "claim": "발표 시점 지지사는 27곳, 이후 SonoSuite 같은 인프라 사업자까지 붙었습니다."
+    },
+    {
+      "status": "verified",
+      "source": "Music Business Worldwide / Digital Music News",
+      "url": "https://www.musicbusinessworldwide.com/distrokid-which-distributes-up-to-40-of-all-new-music-hasnt-signed-ifpis-new-anti-fraud-standards-unlike-cd-baby/",
+      "note": "IFPI 'Streaming Integrity Initiative'가 9월 14일 출범했으나 DistroKid는 서명 명단에 빠졌고, 그 다음 날인 9월 15일 유니버설뮤직이 DistroKid를 저작권 침해·기만적 거래행위로 제소한 것이 보도됨.",
+      "claim": "최대 DIY 유통사 DistroKid는 명단에 없고, 출범 다음 날 유니버설뮤직이 DistroKid를 저작권 침해와 기만적 거래행위로 제소했습니다."
+    },
+    {
+      "status": "verified",
+      "source": "Music Business Worldwide",
+      "url": "https://www.musicbusinessworldwide.com/on-distrokid-trefuego-modified-audio-and-the-potential-for-a-new-napster-nightmare/",
+      "note": "MBW는 DistroKid가 피고로 지명되지 않았으며 미지급 로열티 약 1만4천 달러($14,078.82)만 소니에 지급하게 됐다고 보도함.",
+      "claim": "소니가 Trefuego를 제소했을 때 DistroKid는 피고에서 빠졌고 로열티 분담 책임만 졌다고 뮤직 비즈니스 월드와이드가 정리한 바 있습니다."
+    },
+    {
+      "status": "contradicted",
+      "source": "Deezer Newsroom",
+      "url": "https://newsroom-deezer.com/2026/01/deezer-confirms-demonetization-of-ai-music/",
+      "note": "Deezer가 발표한 수치는 완전 AI 생성곡 스트리밍의 최대 85%(2025년 기준, 초기 발표는 약 70%)로 80%가 아님.",
+      "claim": "Deezer가 플랫폼 쪽에서 센 부정 비율 수치가 80%였습니다."
+    },
+    {
+      "status": "unverified",
+      "source": "",
+      "url": "",
+      "note": "'사전 심사 합의'의 대상·시점·업종이 특정되지 않아 검색으로 해당 합의나 인도 유통사의 불참 사실을 확인할 수 있는 보도를 찾지 못함.",
+      "claim": "인도 유통사들은 사전 심사 합의에 참여하지 않았습니다."
+    }
+  ],
+  "reviews": [
+    {
+      "verdict": "pass",
+      "blocking": [],
+      "notes": [
+        "Deezer 수치를 인용한 문장('부정 비율 수치도 Deezer 뉴스룸이 플랫폼 쪽에서 센 완전 AI 생성곡 스트리밍 최대 85%(2025년 기준, 초기 발표는 약 70%)였는데')은 분모가 모호하다. '완전 AI 생성곡 스트림 중 부정으로 판정된 비율'인지, '전체 스트림 중 완전 AI 생성곡 비율'인지 한 구절로 못박아야 독자가 유통 단계로 넘어온 계산의 성격을 이해한다. 85%와 70%의 발표 시점·집계 대상도 구분해 달라.",
+        "SII 출범 시점(월/일)이 본문에 없다. '출범 다음 날 UMG가 DistroKid 제소'라는 순서가 이 글의 핵심 논거인데, 기준 날짜가 없으면 '2026년 4월 SonoSuite 뒤늦게 합류'와의 시간 관계가 독자에게 흐려진다. 왜 지금 쓰는 글인지도 날짜 한 줄이면 해결된다.",
+        "1차 출처 링크가 전부 Google News RSS 리다이렉트 URL이다. IFPI 다섯 항목은 IFPI 보도자료, 지지사 28곳은 Music Ally 원문으로 직접 걸어두는 편이 검증 가능성이 높다.",
+        "'심사 인력과 메타데이터 시스템을 갖춘 쪽에게는 경쟁사를 걸러내는 장치'라는 주장이 이 글에서 가장 센 문장인데 이를 받치는 구체 사실이 DistroKid 부재 한 건뿐이다. 서명 28곳 중 중소 유통사 비중이나, 서명 후 실제로 업로드 요건을 올린 사례가 하나만 더 붙으면 주장의 무게가 달라진다.",
+        "DMN 논평('참여사 중 최소 한 곳이 과거 무단 리믹스·AI 양산물을 취급')은 반대편을 건드리는 유일한 대목이다. 매체 귀속은 돼 있으나 '보이는 것으로 논평했다' 수준의 추정이므로, 이 한 줄에 반례 처리를 다 맡기기보다 '서명이 문지기 자격을 보증하지 않는다'는 함의를 한 문장 더 풀어주면 논지가 더 단단해진다."
+      ],
+      "issues": [
+        "Deezer 수치를 인용한 문장('부정 비율 수치도 Deezer 뉴스룸이 플랫폼 쪽에서 센 완전 AI 생성곡 스트리밍 최대 85%(2025년 기준, 초기 발표는 약 70%)였는데')은 분모가 모호하다. '완전 AI 생성곡 스트림 중 부정으로 판정된 비율'인지, '전체 스트림 중 완전 AI 생성곡 비율'인지 한 구절로 못박아야 독자가 유통 단계로 넘어온 계산의 성격을 이해한다. 85%와 70%의 발표 시점·집계 대상도 구분해 달라.",
+        "SII 출범 시점(월/일)이 본문에 없다. '출범 다음 날 UMG가 DistroKid 제소'라는 순서가 이 글의 핵심 논거인데, 기준 날짜가 없으면 '2026년 4월 SonoSuite 뒤늦게 합류'와의 시간 관계가 독자에게 흐려진다. 왜 지금 쓰는 글인지도 날짜 한 줄이면 해결된다.",
+        "1차 출처 링크가 전부 Google News RSS 리다이렉트 URL이다. IFPI 다섯 항목은 IFPI 보도자료, 지지사 28곳은 Music Ally 원문으로 직접 걸어두는 편이 검증 가능성이 높다.",
+        "'심사 인력과 메타데이터 시스템을 갖춘 쪽에게는 경쟁사를 걸러내는 장치'라는 주장이 이 글에서 가장 센 문장인데 이를 받치는 구체 사실이 DistroKid 부재 한 건뿐이다. 서명 28곳 중 중소 유통사 비중이나, 서명 후 실제로 업로드 요건을 올린 사례가 하나만 더 붙으면 주장의 무게가 달라진다.",
+        "DMN 논평('참여사 중 최소 한 곳이 과거 무단 리믹스·AI 양산물을 취급')은 반대편을 건드리는 유일한 대목이다. 매체 귀속은 돼 있으나 '보이는 것으로 논평했다' 수준의 추정이므로, 이 한 줄에 반례 처리를 다 맡기기보다 '서명이 문지기 자격을 보증하지 않는다'는 함의를 한 문장 더 풀어주면 논지가 더 단단해진다."
+      ],
+      "one_line": "출처가 달린 사건 순서(SII 출범→다음 날 UMG의 DistroKid 제소)로 '유통 계층으로 올라온 책임'이라는 각도를 실제로 증명했고, 서명=면책이라는 반대 해석과 틀릴 자리까지 스스로 적어둔 글이다. Deezer 수치의 분모 모호함과 출범 날짜 누락은 고쳐야 할 흠이지만 독자를 속이는 수준은 아니다 — pass."
+    }
+  ],
+  "gate": {
+    "chars": 1518,
+    "contrast": 1,
+    "chars_after": 1450,
+    "contrast_after": 1,
+    "revised": true
+  },
+  "draft_ko_final": "IFPI가 스트리밍 인테그리티 이니셔티브(SII)를 출범시키며 유통사에 다섯 가지를 요구했습니다. 권리·신원 검증, 콘텐츠 심사, 사기 대응, 유통사 간 정보 공유, 방어체계 강화입니다([Artiverse](https://news.google.com/rss/articles/CBMisgFBVV95cUxQelJOUjM3S25oa1Y2enNJT1NOOHhhMEZLc0g2dkhGNmt2VW9RT3JWaEFlV3BydGxWMGg5R05Hb2Y3M0xJV1hHUUNqeTRCUkVFVkVlN2tYNldXdFM5QktkazJXSHFGYmdiVXpiU1dHcFRLUzJnTUk4dThNSVlvZU1zUTUxVkwxaXo4R25zMFFhZ3g3UVVHOW93ZzFWWlpjX1AzWEFsdEJzMEI3dXU2bFl1d2VR?oc=5)에 항목이 정리돼 있습니다). [뮤직앨리](https://musically.com/2026/09/14/ifpi-launches-an-anti-fraud-streaming-integrity-initiative/) 보도에 따르면 발표 시점 지지사는 28곳이었고, 이후 SonoSuite가 2026년 4월 뒤늦게 합류했습니다. 최대 DIY 유통사 DistroKid는 명단에 없고, 출범 다음 날 유니버설뮤직이 DistroKid를 저작권 침해와 기만적 거래행위로 [제소했습니다](https://news.google.com/rss/articles/CBMitgFBVV95cUxNZ01DRVJVTHlNSk5rdF8xV1pkWkRaVE1nQWU1eDZPTG1saU9WVDQxOXZzdU9GNUtNaUNMbUpwblVCY2E4RDE1Y3BEUHJIckh2cEpyN1RXZ3FBUkNXQjRNY3hPUU00S1AwUlU0bGR3SFVTUGRNUG5wLVh2ejhtU2J4c0hJQUtsckw4OFRPQVMxN084b3d4NmRRdDBBdVl4aEZsdHN4dVpVWlNEY2JVTkM3cGpLNk9OUQ?oc=5).\n\n이 순서가 중요합니다. 소니가 Trefuego를 제소했을 때 DistroKid는 피고에서 빠지고 로열티 분담 책임만 졌다고 [뮤직 비즈니스 월드와이드](https://www.musicbusinessworldwide.com/on-distrokid-trefuego-modified-audio-and-the-potential-for-a-new-napster-nightmare/)가 정리한 바 있습니다. 이번엔 유통사가 직접 피고석에 있습니다. 책임 소재가 업로더에서 유통 계층으로 한 칸 올라왔고, 서명은 그 자리에서 빠져나가는 방식이 됐습니다. [디지털 뮤직 뉴스](https://www.musicbusinessworldwide.com/distrokid-which-distributes-up-to-40-of-all-new-music-hasnt-signed-ifpis-new-anti-fraud-standards-unlike-cd-baby/)는 참여사 중 최소 한 곳이 과거 무단 리믹스와 AI 양산물을 취급했으며 이번 협약으로 법정 다툼을 피한 것으로 보인다고 논평했습니다. 인증서가 아니라 소송 보험으로 읽는 시각입니다.\n\n심사 표준이 모두에게 같은 속도로 오지도 않습니다. 심사 인력과 메타데이터 시스템을 갖추지 못한 유통사에게 다섯 항목은 준수 비용이고, 갖춘 쪽에는 경쟁사를 걸러내는 장치입니다. Deezer 뉴스룸이 플랫폼 쪽에서 센 완전 AI 생성곡 스트리밍 최대 85%(2025년 기준, 초기 발표는 약 70%)도, 이제 같은 계산을 유통 단계에서 하라는 요구로 넘어왔습니다.\n\n180일 안에 드림어스·카카오엔터테인먼트·NHN벅스 중 최소 한 곳이 AI 생성곡의 신원·권리 검증 절차나 AI 표기 정책을 업로드 약관 또는 아티스트 가이드에 명문화한다고 봅니다. 확인은 약관 개정 고지, 또는 SII 서명사 목록에 한국 회사 이름이 추가되는지로 합니다. 틀릴 자리는 국내 유통사가 해외 배급 파트너의 요구만 받아 내부 절차로 처리하고 문서화는 미루는 경우입니다.\n\n계약을 검토한다면 볼 줄은 두 개입니다. 심사에서 걸러내지 못한 곡의 책임이 유통사와 업로더 중 누구에게 남는지, 그리고 정보 공유 조항이 자사 아티스트의 신원·정산 데이터를 어디까지 다른 유통사에 넘기게 하는지입니다.",
+  "draft_en_final": "IFPI launched the Streaming Integrity Initiative and handed distributors a five-point list: rights and identity verification, content screening, fraud response, information sharing between distributors, and stronger defensive systems. [Artiverse](https://news.google.com/rss/articles/CBMisgFBVV95cUxQelJOUjM3S25oa1Y2enNJT1NOOHhhMEZLc0g2dkhGNmt2VW9RT3JWaEFlV3BydGxWMGg5R05Hb2Y3M0xJV1hHUUNqeTRCUkVFVkVlN2tYNldXdFM5QktkazJXSHFGYmdiVXpiU1dHcFRLUzJnTUk4dThNSVlvZU1zUTUxVkwxaXo4R25zMFFhZ3g3UVVHOW93ZzFWWlpjX1AzWEFsdEJzMEI3dXU2bFl1d2VR?oc=5) has the itemized version. [Music Ally](https://musically.com/2026/09/14/ifpi-launches-an-anti-fraud-streaming-integrity-initiative/) reported 28 supporters at announcement, with SonoSuite joining late in April 2026. DistroKid, the largest DIY distributor, is not on the list, and the day after the launch Universal Music [sued it](https://news.google.com/rss/articles/CBMitgFBVV95cUxNZ01DRVJVTHlNSk5rdF8xV1pkWkRaVE1nQWU1eDZPTG1saU9WVDQxOXZzdU9GNUtNaUNMbUpwblVCY2E4RDE1Y3BEUHJIckh2cEpyN1RXZ3FBUkNXQjRNY3hPUU00S1AwUlU0bGR3SFVTUGRNUG5wLVh2ejhtU2J4c0hJQUtsckw4OFRPQVMxN084b3d4NmRRdDBBdVl4aEZsdHN4dVpVWlNEY2JVTkM3cGpLNk9OUQ?oc=5) for copyright infringement and deceptive trade practices.\n\nThe sequence matters more than either event. When Sony went after Trefuego, [Music Business Worldwide](https://www.musicbusinessworldwide.com/on-distrokid-trefuego-modified-audio-and-the-potential-for-a-new-napster-nightmare/) noted that DistroKid was not a defendant and carried only a royalty-sharing consequence. This time the distributor is in the dock. Liability moved one layer up from the uploader, and signing the initiative has become the way to step out of that seat. [Digital Music News](https://www.musicbusinessworldwide.com/distrokid-which-distributes-up-to-40-of-all-new-music-hasnt-signed-ifpis-new-anti-fraud-standards-unlike-cd-baby/) reportedly observed that at least one participating company had previously handled unauthorized remixes and mass-produced AI tracks, and appears to have avoided litigation through the pact. That reads less like a certificate and more like litigation insurance.\n\nScreening standards will not arrive everywhere at the same speed. For a distributor without review staff and a clean metadata system, the five points are a compliance bill. For one that has both, they are a filter against competitors. [MediaNama](https://news.google.com/rss/articles/CBMifkFVX3lxTE4xbzVibUtqWmJuZWdfejRLUS1LR1hqOGtXQ1ZBb0lOWFZQeHZ0TmVVQU45dlFMaHhvS0ZhM20wNXhjdDdxZjh1Nm9BU1BKNmR4dDlhNmozVHVvcW94aUNOVk5rTHlJNHVVSU1NdFFYazV3MGxuOW5tb21YQmxMZw?oc=5) reported that Indian distributors have not joined. Deezer's own newsroom counted up to 85% of fully AI-generated tracks in 2025 as fraudulent streams, up from an initial figure of around 70%, and that arithmetic is now being pushed from the platform down to the distribution layer.\n\nMy call: within 180 days, at least one major Korean distributor among Dreamus, Kakao Entertainment and NHN Bugs will write AI-track identity and rights verification, or an AI labeling rule, into its public upload terms or artist submission guide. I will check it against a terms revision notice from the company, or a Korean name appearing on the SII signatory list. Where I could be wrong: Korean distributors may absorb the demands of their overseas distribution partners as internal process and simply never document them publicly.\n\nIf you are reviewing a contract in this space, two lines carry the weight. First, when a track slips past screening, whether the residual liability sits with the distributor or the uploader. Second, how far the information-sharing clause lets your artists' identity and settlement data travel to competing distributors. Any marketplace that has been absorbing unlimited third-party supply, from app stores to e-commerce platforms, should assume its own verification duty will land on the intermediary rather than the seller.",
+  "working_title": {
+    "ko": "유통사가 문지기가 됐다",
+    "en": "Distributors Become Gatekeepers"
+  },
+  "title": {
+    "ko": {
+      "title": "SII 명단에 빠진 DistroKid, 다음 날 유니버설이 제소했다",
+      "source": "최대 DIY 유통사 DistroKid는 명단에 없고, 출범 다음 날 유니버설뮤직이 DistroKid를 저작권 침해와 기만적 거래행위로 제소했습니다.",
+      "from_body": true,
+      "candidates": [
+        {
+          "title": "SII 명단에 빠진 DistroKid, 다음 날 유니버설이 제소했다",
+          "source": "최대 DIY 유통사 DistroKid는 명단에 없고, 출범 다음 날 유니버설뮤직이 DistroKid를 저작권 침해와 기만적 거래행위로 제소했습니다."
+        },
+        {
+          "title": "IFPI 서명을 인증서가 아니라 소송 보험으로 읽는다",
+          "source": "인증서가 아니라 소송 보험으로 읽는 시각입니다."
+        },
+        {
+          "title": "IFPI의 다섯 항목, 누구에겐 비용 누구에겐 장치",
+          "source": "심사 인력과 메타데이터 시스템을 갖추지 못한 유통사에게 다섯 항목은 준수 비용이고, 갖춘 쪽에는 경쟁사를 걸러내는 장치입니다."
+        }
+      ]
+    },
+    "en": {
+      "title": "Universal Music Sued DistroKid the Day After the Launch",
+      "source": "DistroKid, the largest DIY distributor, is not on the list, and the day after the launch Universal Music sued it for copyright infringement and deceptive trade practices.",
+      "from_body": true,
+      "candidates": [
+        {
+          "title": "Universal Music Sued DistroKid the Day After the Launch",
+          "source": "DistroKid, the largest DIY distributor, is not on the list, and the day after the launch Universal Music sued it for copyright infringement and deceptive trade practices."
+        },
+        {
+          "title": "Are the Five Points a Compliance Bill, or a Filter Against Competitors?",
+          "source": "For a distributor without review staff and a clean metadata system, the five points are a compliance bill."
+        },
+        {
+          "title": "Liability Moved One Layer Up From the Uploader",
+          "source": "Liability moved one layer up from the uploader, and signing the initiative has become the way to step out of that seat."
+        }
+      ]
+    },
+    "check": {
+      "clarity": 2,
+      "pull": 2,
+      "kept_promise": true,
+      "why": "SII·DistroKid·유니버설이라는 고유명사와 제소 사건이 모두 서 있고, 명단 누락 다음 날 제소라는 시간차가 반전 긴장을 만들며 본문이 그 순서를 실제로 다룬다"
+    },
+    "duel_ko": {
+      "best": {
+        "title": "SII 명단에 빠진 DistroKid, 다음 날 유니버설이 제소했다",
+        "source": "최대 DIY 유통사 DistroKid는 명단에 없고, 출범 다음 날 유니버설뮤직이 DistroKid를 저작권 침해와 기만적 거래행위로 제소했습니다."
+      },
+      "rounds": [
+        {
+          "a": "SII 명단에 빠진 DistroKid, 다음 날 유니버설이 제소했다",
+          "b": "IFPI 서명을 인증서가 아니라 소송 보험으로 읽는다",
+          "winner": "a",
+          "why": "고유명사(DistroKid·유니버설)와 '명단 누락 → 다음 날 제소'라는 사건의 시간 대비가 제목에 박혀 있어 본문 핵심 축을 그대로 약속하는 반면, 1번은 이름·수치 없이 비유적 해석만 남아 어느 업계 글에나 붙을 수 있다."
+        },
+        {
+          "a": "SII 명단에 빠진 DistroKid, 다음 날 유니버설이 제소했다",
+          "b": "IFPI의 다섯 항목, 누구에겐 비용 누구에겐 장치",
+          "winner": "a",
+          "why": "고유명사(DistroKid·유니버설)와 '명단 누락→다음 날 제소'라는 시간차 대비가 제목에 박혀 사건과 긴장이 동시에 서 있고 본문 2문단이 그 약속을 지키는 반면, 2번은 'IFPI의 다섯 항목'만 남고 비용/장치 대비가 추상적이다"
+        }
+      ],
+      "kept_first": true,
+      "n": 3
+    },
+    "duel_en": {
+      "best": {
+        "title": "Universal Music Sued DistroKid the Day After the Launch",
+        "source": "DistroKid, the largest DIY distributor, is not on the list, and the day after the launch Universal Music sued it for copyright infringement and deceptive trade practices."
+      },
+      "rounds": [
+        {
+          "a": "Universal Music Sued DistroKid the Day After the Launch",
+          "b": "Are the Five Points a Compliance Bill, or a Filter Against Competitors?",
+          "winner": "a",
+          "why": "2번은 고유명사와 '발표 다음 날'이라는 시점 대비로 사건이 제목에 서 있고 본문의 핵심 전환(책임이 유통사로 올라간 순간)을 그대로 약속·이행하는 반면, 1번은 소재만 갈아 끼우면 아무 규제 기사에나 붙는 관용적 양자택일 물음에 그친다."
+        },
+        {
+          "a": "Universal Music Sued DistroKid the Day After the Launch",
+          "b": "Liability Moved One Layer Up From the Uploader",
+          "winner": "a",
+          "why": "1번은 고유명사 둘과 '발표 다음 날'이라는 시점 대비가 박혀 긴장과 사건이 동시에 서지만, 2번은 산업도 당사자도 지워진 추상 요약이다."
+        }
+      ],
+      "kept_first": true,
+      "n": 3
+    }
+  },
+  "name_map": {
+    "ko": {
+      "新浪财经": "신랑차이징"
+    },
+    "en": {
+      "新浪财经": "Sina Finance"
+    }
+  },
+  "usage": {
+    "input": 294795,
+    "output": 34314,
+    "calls": 28,
+    "search_uses": 16
+  },
+  "form": {
+    "title_noun": true,
+    "title_len": 37,
+    "lead_concrete": true,
+    "ai_tell": 1,
+    "contrast": 1,
+    "hedge_10k": 0.0,
+    "sent_med": 69,
+    "long80": 44.4,
+    "title_check": {
+      "clarity": 2,
+      "pull": 2,
+      "kept_promise": true,
+      "why": "SII·DistroKid·유니버설이라는 고유명사와 제소 사건이 모두 서 있고, 명단 누락 다음 날 제소라는 시간차가 반전 긴장을 만들며 본문이 그 순서를 실제로 다룬다"
+    },
+    "title_kept_first": true,
+    "title_cands": 3
+  }
+}
