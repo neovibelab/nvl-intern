@@ -418,10 +418,12 @@ REFLECT_KO = """[이번 주 내 기록]
 
 위 기록만 재료다. 새 사건을 찾지 않는다. 한국어 800~1000자로 이번 주 회고를 쓴다.
 1문단: 이번 주 무엇을 봤나. 좌표와 시제 분포가 말하는 것.
-2문단: **무엇을 틀렸나.** 검수 지적에서 반복된 것을 지목한다. 변명하지 않는다.
+2문단: **무엇을 틀렸나.** 검수 지적에서 반복된 것을 지목한다. **사실 검증에서 확인 못 했거나 반박된 주장이 있으면 그것부터 다룬다** - 검수 지적보다 무겁다. 변명하지 않는다.
 3문단: 독자 신호와 규칙. 무엇을 규칙으로 올렸고 무엇을 안 올렸는지, 안 올린 이유까지.
-4문단: **형식과 접근성, 그리고 두 대결.** 위 숫자를 그대로 읽는다. 지난 편을 이겼나 졌나,
-**사람이 쓴 글과 붙어서는 어땠나.** 졌다면 판정자가 뭘 보고 그렇게 골랐나. 제목·첫 문단·AI 티도 같이 본다.
+4문단: **형식과 접근성, 그리고 세 대결.** 위 숫자를 그대로 읽는다. 지난 편을 이겼나 졌나,
+**사람이 쓴 글과 붙어서는 어땠나**, 그리고 **연구소 렌즈를 붙인 판이 맨몸 판을 이겼나.**
+졌다면 판정자가 뭘 보고 그렇게 골랐나. 제목·첫 문단·AI 티도 같이 본다.
+렌즈 쪽에서 졌거나 재료 없이 쓴 날이 있었으면 **그것이 이번 주 글에서 무엇을 뺐는지** 적는다.
 **누가 고치는 법을 알려주지 않았다** - 숫자만 보고 스스로 판단한다.
 승률은 표본이 작다. 한 주 숫자를 추세로 읽지 않는다.
 되읽기에서 정정이 나왔으면 **2문단에서 그것부터 다룬다.** 검수 지적보다 무겁다 -
@@ -470,9 +472,9 @@ New predictions {bets_new} · open {bets_open}
 
 Only this record is material. Do not look for new events. Write 400 to 500 words.
 Paragraph 1: what I looked at, and what the grid and tense spread say.
-Paragraph 2: what I got wrong. Name the repeated review note. No excuses.
+Paragraph 2: what I got wrong. Start with any claim the fact check could not confirm or contradicted - that outweighs a review note. Then name the repeated review note. No excuses.
 Paragraph 3: reader signals and rules, including what I did not adopt and why.
-Paragraph 4: form, accessibility and the two head to heads - against my earlier pieces, and against pieces written by a human. Did I win or lose, and what did the judge say made the difference. Read the form numbers as they are. Nobody told me how to fix any of it. The sample is small - do not read one week as a trend.
+Paragraph 4: form, accessibility and the three head to heads - against my earlier pieces, against pieces written by a human, and against a bare version of my own piece written without the lab's lenses. Did I win or lose, and what did the judge say made the difference. If the lens version lost, or if any day went out with no materials at all, say what that cost this week's writing. Read the form numbers as they are. Nobody told me how to fix any of it. The sample is small - do not read one week as a trend.
 Paragraph 5: one thing I will change next week, small enough to keep. This line goes straight into next week's writing prompt as one of my own rules.
 
 {style}
