@@ -143,7 +143,7 @@ table.mini td.z{color:#2B2B2B}
 /* 독자 신호 */
 .rg{display:inline-block;font-family:'DM Mono','Noto Sans KR',monospace;font-size:11px;padding:4px 9px;margin-right:7px;border:1px solid var(--edge);color:var(--dim);vertical-align:middle}
 .rg.ko{background:var(--lime);border-color:var(--lime);color:var(--black);font-weight:700}
-.sub{margin:30px 0 12px;border:1px solid var(--edge);border-left:2px solid var(--lime);background:var(--card);padding:18px}
+.sub{margin:30px 0 12px;scroll-margin-top:68px;border:1px solid var(--edge);border-left:2px solid var(--lime);background:var(--card);padding:18px}
 .sub h3{font-size:15px;color:var(--white);margin:0 0 5px}
 .sub .hint{font-size:12px;color:var(--dim);line-height:1.7;margin:0 0 13px}
 .sub form{display:flex;gap:8px;flex-wrap:wrap}
@@ -334,7 +334,7 @@ def page(lang: str, title: str, body: str, here: str = "", latest: str = "",
         return f'<a class="l{" on" if here == key else ""}" data-k="{key}" href="{href}">{label}</a>'
     links = (l("home", root, t["home"]) + l("today", latest or root, t["today"])
              + l("growth", f"{root}growth", t["growth"]) + l("grid", f"{root}grid", t["grid"])
-             + l("", ab, t["about"], t["about_short"]) + l("", ab + "#subscribe", t["subscribe"])
+             + l("", ab, t["about"], t["about_short"]) + l("", "#subscribe", t["subscribe"])
              + l("", t["other_href"], t["other"]))
     return f"""<!DOCTYPE html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)} · {t['label']}</title>
@@ -353,6 +353,7 @@ def page(lang: str, title: str, body: str, here: str = "", latest: str = "",
 <style>{CSS}</style></head><body>
 <nav><a class="lab" href="{config.LAB_URL}"><img src="/assets/logo-lime-600.png" alt="{t['lab_name']}" title="{t['lab_name']}"></a><a class="brand" href="{root}">{t['brand']}</a><span class="sp"></span>{links}</nav>
 <div class="wrap">{body}
+{subscribe_box(lang)}
 <div class="foot">{t['human']} <a href="{config.NEWSLETTER_URL}">{t['human_link']}</a><br>© 2026 엔터문화연구소 (Neo Vibe Lab) · Seoul</div></div></body></html>"""
 
 
@@ -412,7 +413,7 @@ def subscribe_box(lang: str) -> str:
     언어는 그 페이지가 이미 안다. 라디오로 다시 묻지 않고 숨은 값으로 실어 보낸다.
     """
     t = T[lang]
-    return (f'<div class="sub"><h3>{t["sub_h"]}</h3><p class="hint">{t["sub_hint"]}</p>'
+    return (f'<div class="sub" id="subscribe"><h3>{t["sub_h"]}</h3><p class="hint">{t["sub_hint"]}</p>'
             f'<form action="https://buttondown.com/api/emails/embed-subscribe/{config.BUTTONDOWN_USER}" '
             f'method="post" target="_blank">'
             f'<input type="email" name="email" placeholder="{t["sub_ph"]}" required>'
@@ -490,7 +491,7 @@ def render_piece(lang: str, fm: dict, body: str) -> str:
     widget = feedback_widget(lang, fm.get("slug", ""))
     inner = (inner[:k] + widget + inner[k:]) if k >= 0 else inner + widget
     return (f"{_chip(lang, fm)}<h1>{html.escape(fm.get('title', ''))}</h1>{_meta_line(lang, fm)}"
-            f'<div class="body">{inner}</div>' + subscribe_box(lang))
+            f'<div class="body">{inner}</div>')
 
 
 def _summary_cards(lang: str, stats: list, preds: list) -> list:
@@ -626,7 +627,7 @@ def build() -> None:
                     f'<h1>{t["hero"]}</h1><p class="hero-sub">{t["hero_sub"]}</p>'
                     f'<p class="hero-run"><span>{run}</span><span>{len(pieces)}{t["pieces_word"]}</span>'
                     f'<span>{len({(x[0].get("factor"), x[0].get("to_stage")) for x in pieces if x[0].get("factor")})}/21 {t["grid_word"]}</span></p>'
-                    f'<p class="hero-cta"><a class="btn" href="{ab}#subscribe">{t["sub_cta"]}</a>'
+                    f'<p class="hero-cta"><a class="btn" href="#subscribe">{t["sub_cta"]}</a>'
                     f'<a class="btn ghost" href="{ab}">{t["about"]}</a></p></section>')
             today_card = (f'<a class="today-card" href="{latest_slug}"><span class="k">{t["latest"]}</span>{chip}'
                     f'<span class="t">{html.escape(fm0.get("title", ""))}</span>'
