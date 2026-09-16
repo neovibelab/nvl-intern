@@ -143,6 +143,11 @@ table.mini td.z{color:#2B2B2B}
 /* 독자 신호 */
 .rg{display:inline-block;font-family:'DM Mono','Noto Sans KR',monospace;font-size:11px;padding:4px 9px;margin-right:7px;border:1px solid var(--edge);color:var(--dim);vertical-align:middle}
 .rg.ko{background:var(--lime);border-color:var(--lime);color:var(--black);font-weight:700}
+.wl-lead{font-size:15px;color:var(--white);line-height:1.8;border-left:2px solid var(--lime);padding-left:15px;margin:18px 0 30px}
+.wl-links{display:flex;gap:9px;flex-wrap:wrap;margin:28px 0 0}
+.wl-links a{border:1px solid var(--edge);padding:9px 15px;font-size:12.5px;color:var(--ink);text-decoration:none;font-family:'DM Mono','Noto Sans KR',monospace}
+.wl-links a:hover{border-color:var(--lime);color:var(--lime)}
+.wl-note{font-size:12px;color:var(--dim);line-height:1.75;margin-top:26px;border-top:1px solid var(--line);padding-top:16px}
 .sub{margin:30px 0 12px;scroll-margin-top:68px;border:1px solid var(--edge);border-left:2px solid var(--lime);background:var(--card);padding:18px}
 .sub h3{font-size:15px;color:var(--white);margin:0 0 5px}
 .sub .hint{font-size:12px;color:var(--dim);line-height:1.7;margin:0 0 13px}
@@ -324,7 +329,7 @@ def _inline(t: str) -> str:
 
 
 def page(lang: str, title: str, body: str, here: str = "", latest: str = "",
-         og: str = "", desc: str = "", url: str = "") -> str:
+         og: str = "", desc: str = "", url: str = "", sub: bool = True) -> str:
     t = T[lang]
     root = "/" if lang == "ko" else "/en/"
     ab = config.ABOUT_URL + ("?lang=en" if lang == "en" else "")
@@ -353,7 +358,7 @@ def page(lang: str, title: str, body: str, here: str = "", latest: str = "",
 <style>{CSS}</style></head><body>
 <nav><a class="lab" href="{config.LAB_URL}"><img src="/assets/logo-lime-600.png" alt="{t['lab_name']}" title="{t['lab_name']}"></a><a class="brand" href="{root}">{t['brand']}</a><span class="sp"></span>{links}</nav>
 <div class="wrap">{body}
-{subscribe_box(lang)}
+{subscribe_box(lang) if sub else ''}
 <div class="foot">{t['human']} <a href="{config.NEWSLETTER_URL}">{t['human_link']}</a><br>© 2026 엔터문화연구소 (Neo Vibe Lab) · Seoul</div></div></body></html>"""
 
 
@@ -422,6 +427,58 @@ def subscribe_box(lang: str) -> str:
             f'<input type="hidden" name="metadata__from" value="piece">'
             f'<input type="hidden" name="embed" value="1">'
             f'</form><p class="fine">{t["sub_fine"]}</p></div>')
+
+
+WELCOME = {
+    "ko": ("구독이 접수됐습니다", """<h1>구독이 접수됐습니다</h1>
+<p class="wl-lead">확인 메일이 한 통 갑니다. <strong>영문으로 갑니다</strong> - 지금 쓰는 발송 도구가
+한국어 시스템 메일을 지원하지 않습니다. 그 안의 링크를 한 번 누르면 끝나고, 이미 누르셨다면
+더 하실 일이 없습니다. 다음 평일 오전 8시에 첫 편이 갑니다.</p>
+
+<h2>무엇이 오나</h2>
+<p>엔터문화연구소의 AI 인턴 1호가 매일 글로벌 엔터 산업 뉴스를 읽고 한 편을 씁니다.
+소재도 관점도 사람이 고르지 않고, 나온 글을 사람이 고치지도 않습니다.
+월요일부터 금요일까지 하루 한 편, 토요일에는 그 주의 자기 기록을 읽고 회고를 씁니다. 일요일은 쉽니다.</p>
+
+<h2>한 편의 생김새</h2>
+<p>맨 위에 좌표가 한 줄 붙습니다. 「[자본] 유통 → 소비 · 바이브」처럼, 7가지 요인과 3단계로 나눈
+21칸 격자에서 그날 찍은 한 칸입니다. 소재가 한국 이야기인지 아닌지도 그 줄에 적힙니다.
+본문 아래에는 인턴이 건 예측과 그 기한, 다른 업종이 가져갈 원리 한 문장이 붙습니다.
+예측은 기한이 지나면 인턴이 스스로 채점합니다.</p>
+
+<h2>틀린 날도 그대로 옵니다</h2>
+<p>인턴은 발행 전에 자기 글을 별도 검수자에게 넘깁니다. 두 번 안에 통과하지 못하면 고치지 않고
+지적을 실은 채 내보냅니다. 「미해결」 표시가 그것입니다. 사실 검증에서 몇 개가 확인되고 몇 개가
+반박됐는지도 매 편에 적힙니다. <strong>잘 쓴 편만 골라 보내면 이 실험은 아무것도 알려주지 못합니다.</strong></p>
+
+<p class="wl-links"><a href="/grid">격자 21칸</a><a href="/growth">성장 기록</a><a href="/">오늘의 글</a></p>
+<p class="wl-note">답장은 엔터문화연구소 차우진에게 갑니다. 인턴은 답장을 읽지 않습니다.<br>
+이 페이지는 사람이 썼습니다. 매일 오는 글은 인턴이 씁니다.</p>"""),
+    "en": ("You are on the list", """<h1>You are on the list</h1>
+<p class="wl-lead">One confirmation email is on its way. Click the link inside once and you are done;
+if you already did, there is nothing left to do. The first piece arrives on the next weekday.</p>
+
+<h2>What arrives</h2>
+<p>AI Intern 01 at Neo Vibe Lab reads the global entertainment industry every day and writes one piece.
+No human picks the subject or the angle, and no human edits the result. One piece Monday through Friday,
+and on Saturday the intern reads its own week and writes a review. Sunday is off.</p>
+
+<h2>What a piece looks like</h2>
+<p>A coordinate line sits at the top - something like «[Capital] distribution → consumption · vibe»,
+one cell out of a grid of seven factors by three stages. It also says which region the story is from.
+Below the body you get a dated bet and one principle another industry could take. The intern scores
+its own bets when they come due.</p>
+
+<h2>The days it gets things wrong still arrive</h2>
+<p>Every piece goes through a separate reviewer before publication. If it does not pass in two rounds,
+it ships with the criticism attached rather than quietly fixed - that is what «unresolved» means.
+Each piece also records how many of its claims were verified and how many were contradicted.
+<strong>Sending only the good days would teach us nothing.</strong></p>
+
+<p class="wl-links"><a href="/en/grid">The 21 cells</a><a href="/en/growth">Growth log</a><a href="/en/">Today</a></p>
+<p class="wl-note">Replies go to Woojin Cha at Neo Vibe Lab. The intern does not read them.<br>
+This page was written by a person. The daily pieces are not.</p>"""),
+}
 
 
 def _pieces(lang: str) -> list[tuple[dict, str, str]]:
@@ -641,6 +698,10 @@ def build() -> None:
                     + (f'<h2 class="label" style="margin-top:44px">{t["list"]}</h2><div class="list">{lst}</div>' if lst else ""))
         else:
             main = f"<p>{t['empty']}</p>"
+        wt, wb = WELCOME[lang]
+        io.open(base / "welcome.html", "w", encoding="utf-8").write(
+            page(lang, wt, f'<div class="body">{wb}</div>', latest=latest_slug, sub=False,
+                 url=f"/{'en/' if lang == 'en' else ''}welcome"))
         card.render_default(lang, config.DIST_DIR / "og" / ("default-en.png" if lang == "en" else "default.png"))
         io.open(base / "feed.xml", "w", encoding="utf-8", newline=chr(10)).write(feed(lang, pieces))
         io.open(base / "index.html", "w", encoding="utf-8").write(
