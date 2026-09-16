@@ -6,7 +6,7 @@ import json
 import re
 import shutil
 
-from . import card, config, form, publish
+from . import card, config, form, publish, steps
 
 CSS = """:root{--lime:#D6FF92;--lime-dim:rgba(214,255,146,.10);--black:#0A0A0A;--card:#121212;--edge:#242424;--ink:#E4E4DC;--dim:#8C8C84;--line:rgba(255,255,255,.07);--white:#F5F5EF}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -162,6 +162,13 @@ table.mini td.z{color:#2B2B2B}
 .sub button{font-family:'DM Mono','Noto Sans KR',monospace;font-size:12.5px;padding:10px 20px;background:var(--lime);color:var(--black);border:1px solid var(--lime);cursor:pointer;font-weight:700}
 .sub button:hover{opacity:.85}
 .sub .fine{font-size:11px;color:var(--dim);margin:10px 0 0;line-height:1.65}
+.coord-say{font-size:13.5px;color:var(--dim);margin:10px 0 0;line-height:1.7}
+.gmap{display:grid;grid-template-columns:auto repeat(3,1fr);gap:4px;max-width:430px;margin:28px auto 10px}
+.gmap .mh{font-family:'DM Mono',monospace;font-size:10px;color:var(--dim);text-align:center;padding-bottom:4px;letter-spacing:.06em}
+.gmap .gf{font-size:11.5px;color:var(--dim);text-align:right;padding-right:10px;line-height:24px}
+.gmap .gc{height:24px;border:1px solid var(--edge);background:var(--card)}
+.gmap .gc.on{background:var(--lime);border-color:var(--lime)}
+.gmap+sub{display:block;text-align:center;margin:0 0 30px}
 .body hr.sep{border:0;border-top:1px solid var(--line);margin:34px 0}
 .fb{margin:36px 0 12px;border:1px solid var(--edge);background:var(--card);padding:17px 18px}
 .fb .q{font-size:13.5px;color:var(--white);margin-bottom:11px;font-weight:700}
@@ -251,6 +258,27 @@ def _kind(b: str) -> str:
 _LANG = ["ko"]          # 렌더 중인 언어. md_to_html이 인자를 안 받아서 여기 담아 둔다
 
 
+def _gridmap(block: str) -> str:
+    """21칸 격자를 **지도**로 그린다(2026-09-17). 표 장식을 벗기고 칸만 남긴다.
+
+    다른 표는 건드리지 않는다 - 주간 회고의 그 주 목록처럼 **정말 읽어야 하는 표**가 있다.
+    여기만 지도인 이유는 잴 것이 없고 「어디」만 말하기 때문이다.
+    """
+    rows = [r.strip() for r in block.splitlines() if r.strip().startswith("|")]
+    if len(rows) < 3:
+        return '<div class="tw">' + _table(block) + "</div>"
+    head = [c.strip() for c in rows[0].strip("|").split("|")]
+    out = ['<div class="mh"></div>'] + [f'<div class="mh">{html.escape(h)}</div>' for h in head[1:]]
+    for r in rows[2:]:
+        cs = [c.strip() for c in r.strip("|").split("|")]
+        if not cs:
+            continue
+        out.append(f'<div class="gf">{html.escape(cs[0])}</div>')
+        for c in cs[1:]:
+            out.append('<div class="gc%s"></div>' % (" on" if "●" in c else ""))
+    return '<div class="gmap">' + "".join(out) + "</div>"
+
+
 def md_to_html(md: str) -> str:
     out, prev = [], ""
     for block in re.split(r"\n\s*\n", md.strip()):
@@ -268,6 +296,8 @@ def md_to_html(md: str) -> str:
             out.append(_quote(b)); prev = "quote"; continue
         if b.startswith("<sub>"):
             out.append(_inline_keep_tags(b)); prev = "sub"; continue
+        if b.startswith("| |") and "생산" in b.split(chr(10))[0] + b.split(chr(10))[0]:
+            out.append(_gridmap(b)); prev = "map"; continue
         if b.startswith("| "):
             out.append('<div class="tw">' + _table(b) + "</div>"
                        + f'<p class="tw-hint">{"표는 옆으로 밀어서 봅니다" if _LANG[0] == "ko" else "Swipe the table sideways"}</p>')
@@ -514,11 +544,13 @@ def _chip(lang: str, fm: dict) -> str:
         return ""
     tense = fm.get("tense", "")
     if lang == "ko":
-        arrow = f"{fm['from_stage']} → {fm['to_stage']}"
+        arrow = (fm["from_stage"] if fm["from_stage"] == fm["to_stage"]
+                 else f"{fm['from_stage']} → {fm['to_stage']}")
         word = config.TENSE_KO.get(tense, tense)
         factor = fm["factor"]
     else:
-        arrow = f"{config.STAGES_EN.get(fm['from_stage'], '')} → {config.STAGES_EN.get(fm['to_stage'], '')}"
+        arrow = (config.STAGES_EN.get(fm["from_stage"], "") if fm["from_stage"] == fm["to_stage"]
+                 else f"{config.STAGES_EN.get(fm['from_stage'], '')} → {config.STAGES_EN.get(fm['to_stage'], '')}")
         word = tense
         factor = config.FACTORS_EN.get(fm["factor"], fm["factor"])
     on = " vibe" if tense == "vibe" else ""
@@ -571,7 +603,9 @@ def render_piece(lang: str, fm: dict, body: str) -> str:
     if k < 0:                       # 회고 편은 구분선도 인용문도 없다. 푸터 앞에 세운다.
         k = inner.rfind("<sub>")
     inner = (inner[:k] + widget + inner[k:]) if k >= 0 else inner + widget
-    return (f"{_chip(lang, fm)}<h1>{html.escape(fm.get('title', ''))}</h1>{_meta_line(lang, fm)}"
+    say = steps.coord_say(fm, lang) if fm.get("factor") else ""
+    say_html = f'<p class="coord-say">{html.escape(say)}</p>' if say else ""
+    return (f"{_chip(lang, fm)}<h1>{html.escape(fm.get('title', ''))}</h1>{say_html}{_meta_line(lang, fm)}"
             f'<div class="body">{inner}</div>')
 
 
@@ -684,11 +718,12 @@ def build() -> None:
                 a, b2 = f.get("from_stage", ""), f.get("to_stage", "")
                 if lang == "en":
                     a, b2 = config.STAGES_EN.get(a, ""), config.STAGES_EN.get(b2, "")
+                stage = a if a == b2 else f"{a} → {b2}"      # 같은 단계를 두 번 쓰지 않는다
                 word = config.TENSE_KO.get(f.get("tense", ""), f.get("tense", "")) if lang == "ko" else f.get("tense", "")
                 rg = (f.get("region") or "")
                 rg = (rg if lang == "ko" else config.REGIONS_EN.get(rg, rg)) if rg in config.REGIONS else ""
                 meta = ((f'<span class="t3">{html.escape(rg)}</span> · ' if rg else "")
-                        + f'{html.escape(factor)} {html.escape(a)} → {html.escape(b2)} · <span class="t2">{html.escape(word)}</span>')
+                        + f'{html.escape(factor)} {html.escape(stage)} · <span class="t2">{html.escape(word)}</span>')
                 right = (f'D+{f.get("day")} · {f.get("date", "")[5:]}' if lang == "ko"
                          else f'Day {f.get("day")} · {f.get("date", "")[5:]}')
             return (f'<a href="{slug}"><span class="c"><span class="t">{html.escape(f.get("title", ""))}</span>'

@@ -71,9 +71,14 @@ def check(date: str) -> int:
         leftover = [x for x in OLD if x in body]
         ok(not leftover, "옛 라벨 없음", ("남음: " + ", ".join(leftover)) if leftover else "")
         ok(body.count("\n---\n") >= 3, "구분선 셋", f"{body.count(chr(10) + '---' + chr(10))}개")
+        # 좌표는 2026-09-17부터 코드 스팬 한 줄에 사람 말로 들어간다.
+        # 지역도 그 줄 안에 있고 따로 백틱을 갖지 않는다.
         region = fm.get("region") or ""
         shown = config.REGIONS_EN.get(region, region) if lang == "en" else region
-        ok(bool(shown) and f"`{shown}`" in body, "지역이 좌표 줄에", shown)
+        coord = next((l for l in body.split(chr(10)) if l.startswith("`") and l.endswith("`")), "")
+        ok(bool(shown) and shown in coord, "지역이 좌표 줄에", coord.strip("`")[:52])
+        ok("→" not in coord or fm.get("from_stage") != fm.get("to_stage"),
+           "같은 단계를 두 번 쓰지 않는다", coord.strip("`")[:52])
 
         d = duel._plain(body)
         ok(len(d) > 300, "duel 본문 추출", f"{len(d)}자")

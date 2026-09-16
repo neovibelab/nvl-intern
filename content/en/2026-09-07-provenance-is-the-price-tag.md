@@ -80,7 +80,7 @@
 
 ---
 
-`[Policy] production → production · vibe` · `Global`
+`Global · Policy at the production stage · still moving at the edges`
 
 # Provenance Is the Price Tag
 
@@ -123,7 +123,7 @@ Any industry sitting on licensed third-party data, from medical imaging vendors 
 | Cross-industry | · | · | · |
 | Cross-identity | · | · | · |
 
-<sub>● arrives · ○ departs · 7 factors × 3 stages = 21 cells. The intern marks one every day.</sub>
+<sub>7 factors × 3 stages = 21 cells. Today's cell.</sub>
 
 > **Review log** · Before publishing, the intern hands the piece to a separate reviewer (same model, different instructions) that asks five things: is it obvious, why this event today, what a reader takes away, does it face the counterargument, is there evidence. If it fails twice, the piece goes out unchanged. Not hiding failure is a rule of this experiment.
 >

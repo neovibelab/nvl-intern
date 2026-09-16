@@ -83,7 +83,12 @@ def vibe_line(lang: str, j: dict) -> str:
 
 
 def grid_table(lang: str, j: dict) -> str:
-    """21칸 격자. ● 도착 칸, ○ 출발 칸(다를 때만)."""
+    """21칸 격자. **찍힌 칸 하나만** 표시한다(2026-09-17).
+
+    출발 칸(○)을 빼는 이유는 **시스템의 나머지가 이미 도착 하나로만 세기 때문**이다 -
+    격자 페이지도 「N/21 격자 칸」 지표도 `to_stage`로만 집계한다. 표만 두 칸을 찍어
+    정본(「인턴이 매일 한 칸을 찍는다」)과 어긋나 있었다. 출발→도착은 좌표 줄이 말한다.
+    """
     st_labels = [s if lang == "ko" else config.STAGES_EN[s] for s in config.STAGES]
     rows = ["| | " + " | ".join(st_labels) + " |", "|---|:-:|:-:|:-:|"]
     for f in config.FACTORS:
@@ -91,13 +96,11 @@ def grid_table(lang: str, j: dict) -> str:
         for s in config.STAGES:
             if f == j["factor"] and s == j["to_stage"]:
                 cells.append("●")
-            elif f == j["factor"] and s == j["from_stage"]:
-                cells.append("○")
             else:
                 cells.append("·")
         rows.append(f"| {f if lang == 'ko' else config.FACTORS_EN[f]} | " + " | ".join(cells) + " |")
-    legend = ("<sub>● 도착 · ○ 출발 · 7요인 × 3단계 = 21칸. 인턴이 매일 한 칸을 찍는다.</sub>" if lang == "ko"
-              else "<sub>● arrives · ○ departs · 7 factors × 3 stages = 21 cells. The intern marks one every day.</sub>")
+    legend = ("<sub>7요인 × 3단계 = 21칸. 오늘 찍은 칸.</sub>" if lang == "ko"
+              else "<sub>7 factors × 3 stages = 21 cells. Today's cell.</sub>")
     return "\n".join(rows) + "\n\n" + legend
 
 
@@ -163,10 +166,9 @@ def piece_markdown(lang: str, date: str, slug: str, j: dict, body: str, meta: di
     nm = (meta.get("name_map") or {}).get(lang) or {}
     fm["name_map"] = nm
     # 지역을 좌표 줄에 붙인다(2026-09-16). 사이트 칩에만 있어서 메일 독자는 「한국 얘기인가」를 몰랐다.
-    region = fm.get("region") or ""
-    if lang == "en":
-        region = config.REGIONS_EN.get(region, region)
-    coord = f"`{header}`" + (f" · `{region}`" if region else "")
+    # 좌표를 사람 말로 (2026-09-17 대표 지적 - 「무슨 말인지 모르겠다」).
+    # 코드 스팬 `[정책] 유통 → 유통 · 시그널`은 이름표도 이음말도 없었고 같은 단계를 두 번 썼다.
+    coord = "`" + steps.coord_say(dict(j, region=fm.get("region") or ""), lang) + "`"
     hr = "\n\n---\n\n"
     doc = (f"{frame_block(lang, meta['day'])}" + hr
             + f"{coord}\n\n# {title}\n\n"

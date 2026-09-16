@@ -169,6 +169,47 @@ JSON:
     return d
 
 
+TENSE_SAY_KO = {"vibe": "아직 주변에서 도는 중", "signal": "이미 주류에서 벌어지는 중",
+                "news": "흐름이 아니라 그날의 사건"}
+TENSE_SAY_EN = {"vibe": "still moving at the edges", "signal": "already happening in the mainstream",
+                "news": "a single event, not a trend"}
+
+
+def _batchim(w: str) -> bool:
+    """받침이 있나. 조사를 고르는 데만 쓴다."""
+    w = w.strip()
+    if not w:
+        return False
+    c = w[-1]
+    if "가" <= c <= "힣":
+        return (ord(c) - 0xAC00) % 28 != 0
+    return c.upper() in "LMNRP"        # IP·MP 같은 영문 약어는 받침처럼 읽는다
+
+
+def coord_say(j: dict, lang: str) -> str:
+    """좌표를 사람 말로 한 줄 (2026-09-17 대표 지적 - 「무슨 말인지 모르겠다」).
+
+    **값을 늘리지 않는다.** 요인·단계·시제·지역 넷을 그대로 쓰되 읽히게 잇는다.
+    시제 설명은 `TENSE_BLOCK` 정의를 줄인 것이고 새로 지어낸 말이 아니다.
+    """
+    f, a0, b0 = j["factor"], j["from_stage"], j["to_stage"]
+    region = j.get("region", "")
+    if lang == "ko":
+        if a0 == b0:
+            what = f"{a0} 단계의 {f}"
+        else:
+            to = b0 + ("으로" if _batchim(b0) else "로")
+            what = f"{a0}에서 {to} 가는 {f}"
+        say = TENSE_SAY_KO.get(j.get("tense"), j.get("tense", ""))
+        return " · ".join(x for x in (region, what, say) if x)
+    fe = config.FACTORS_EN.get(f, f)
+    ae, be = config.STAGES_EN.get(a0, a0), config.STAGES_EN.get(b0, b0)
+    what = f"{fe} at the {ae} stage" if a0 == b0 else f"{fe} moving from {ae} to {be}"
+    say = TENSE_SAY_EN.get(j.get("tense"), j.get("tense", ""))
+    reg = config.REGIONS_EN.get(region, region)
+    return " · ".join(x for x in (reg, what, say) if x)
+
+
 def header_line(j: dict, lang: str) -> str:
     if lang == "ko":
         return f"[{j['factor']}] {j['from_stage']} → {j['to_stage']} · {config.TENSE_KO[j['tense']]}"
