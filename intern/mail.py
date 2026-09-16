@@ -53,9 +53,20 @@ GRID_TABLE = re.compile(r"\n\|\s*\|[^\n]*\n\|[-:| ]+\|\n(?:\|[^\n]*\n)+\n?<sub>[
 
 
 def strip_grid(body: str, lang: str) -> str:
-    """21칸 표를 한 줄로 바꾼다. 표가 없으면 그대로 돌려준다."""
-    line = ("<sub>오늘 찍은 칸은 [격자 21칸](%s)에서 봅니다.</sub>" % f"{config.SITE_URL}/grid" if lang == "ko"
-            else "<sub>Today's cell is on the [21-cell grid](%s).</sub>" % f"{config.SITE_URL}/en/grid")
+    """21칸 표를 한 줄로 바꾼다. 표가 없으면 그대로 돌려준다.
+
+    **범례에 적힌 칸 이름을 살려서 옮긴다**(2026-09-17). 표를 빼면서 「어느 칸인지」까지
+    같이 빠지면 메일 독자는 격자 이야기만 듣고 결과를 못 듣는다.
+    """
+    m = re.search(r"<sub>((?:오늘 찍은 칸|Today's cell)[^<]*?)·\s*7[^<]*</sub>", body)
+    cell = m.group(1).strip(" ·") if m else ""
+    grid = f"{config.SITE_URL}/grid" if lang == "ko" else f"{config.SITE_URL}/en/grid"
+    if lang == "ko":
+        line = (f"<sub>{cell} · [격자 21칸에서 보기]({grid})</sub>" if cell
+                else f"<sub>오늘 찍은 칸은 [격자 21칸]({grid})에서 봅니다.</sub>")
+    else:
+        line = (f"<sub>{cell} · [see it on the 21-cell grid]({grid})</sub>" if cell
+                else f"<sub>Today's cell is on the [21-cell grid]({grid}).</sub>")
     out, n = GRID_TABLE.subn("\n" + line + "\n", body, count=1)
     if not n:
         print("  [mail] 격자 표를 못 찾았다 - 본문 그대로 보낸다")

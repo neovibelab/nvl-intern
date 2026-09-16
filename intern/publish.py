@@ -99,8 +99,15 @@ def grid_table(lang: str, j: dict) -> str:
             else:
                 cells.append("·")
         rows.append(f"| {f if lang == 'ko' else config.FACTORS_EN[f]} | " + " | ".join(cells) + " |")
-    legend = ("<sub>7요인 × 3단계 = 21칸. 오늘 찍은 칸.</sub>" if lang == "ko"
-              else "<sub>7 factors × 3 stages = 21 cells. Today's cell.</sub>")
+    # 범례가 **어느 칸인지 말로 한다**(2026-09-17 대표 지적). 본문을 한참 내려온 자리라
+    # 위의 좌표 줄은 이미 기억에서 빠졌고, 행과 열을 눈으로 따라가게 두면 지도가 제 일을 못 한다.
+    # 지역과 시제는 넣지 않는다 - 지도가 담고 있는 축이 아니다.
+    if lang == "ko":
+        legend = f"<sub>오늘 찍은 칸 · {j['to_stage']} 단계의 {j['factor']} · 7요인 × 3단계 = 21칸</sub>"
+    else:
+        fe = config.FACTORS_EN.get(j["factor"], j["factor"])
+        se = config.STAGES_EN.get(j["to_stage"], j["to_stage"])
+        legend = f"<sub>Today's cell · {fe} at the {se} stage · 7 factors × 3 stages = 21 cells</sub>"
     return "\n".join(rows) + "\n\n" + legend
 
 
