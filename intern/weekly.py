@@ -540,16 +540,19 @@ def markdown(lang: str, date: str, week: int, g: dict, body: str) -> str:
           "unresolved": g["unresolved"], "disagree": g["disagree"], "signals": g["signals"]}
     day = publish.day_number(date)
     head = ("**주간 회고** · 인턴은 월요일부터 금요일까지 하루 한 편을 쓰고, 토요일에 그 주의 자기 기록을 읽습니다. "
-            "새 사건을 찾지 않습니다. 판정·검증·검수·베팅·독자 신호가 재료입니다." if lang == "ko" else
+            "새 사건을 찾지 않습니다. 판정·검증·발행 전 검사·예측·독자 신호가 재료입니다." if lang == "ko" else
             "**Weekly review** · The intern writes one piece a day from Monday to Friday, then reads its own record on Saturday. "
-            "No new events. The material is its own calls, fact checks, review notes, bets and reader signals.")
+            "No new events. The material is its own calls, fact checks, review notes, predictions and reader signals.")
     tail = (publish.AI_LABEL_KO if lang == "ko" else publish.AI_LABEL_EN)
-    doc = (f"{publish.frame_block(lang, day)}\n\n"
-           f"# {fm['title']}\n\n{head}\n\n"
-           f"{_table(g, lang)}\n\n"
-           f"{_signal_line(g, lang)}\n\n"
-           f"{body.strip()}\n\n"
-           f"<sub>{tail}</sub>\n")
+    # 평일 편과 같은 순서를 쓴다(2026-09-17 대표 지시). 그 주의 표와 독자 신호는
+    # **기록이지 본문이 아니다** - 회고를 읽으러 온 사람이 열 줄짜리 표를 지나야 첫 문장에 닿고 있었다.
+    hr = "\n\n---\n\n"
+    doc = (f"{publish.frame_block(lang, day)}" + hr
+           + f"# {fm['title']}\n\n{head}" + hr
+           + f"{body.strip()}" + hr
+           + f"{_table(g, lang)}\n\n"
+           + f"{_signal_line(g, lang)}\n\n"
+           + f"<sub>{tail}</sub>\n")
     return f"---\n{json.dumps(fm, ensure_ascii=False, indent=1)}\n---\n\n" + publish.no_em_dash(doc)
 
 
