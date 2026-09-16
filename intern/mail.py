@@ -50,6 +50,9 @@ def next_slot(lang: str = "ko", now: dt.datetime | None = None) -> dt.datetime |
 
 def send_piece(lang: str, day: int, title: str, body_md: str, slug: str, send: bool = False) -> dict:
     """구독자는 언어만 고른다. 매일 한 편과 일요일 회고가 같은 리스트로 간다(2026-09-05 대표: 주기 구분 폐지)."""
+    # `archival_mode = enabled` - 버튼다운 아카이브에도 쌓인다(2026-09-16). 골격 커밋부터 `disabled`였고
+    # 판단해서 끈 것이 아니었다. 그 주소가 구독 창구인데 빈 페이지라 죽은 레터로 보였다.
+    # 발행 정본은 여전히 intern.neovibelab.com이고 우리 링크는 전부 그쪽을 가리킨다.
     weekly = "주차 회고" in title or title.startswith("Week ")
     subject = title if weekly else (f"D+{day} · {title}" if lang == "ko" else f"Day {day} · {title}")
     url = f"{config.SITE_URL}/{'' if lang == 'ko' else 'en/'}{slug}"
@@ -65,7 +68,7 @@ def send_piece(lang: str, day: int, title: str, body_md: str, slug: str, send: b
         {"field": "subscriber.metadata.lang", "operator": "equals", "value": lang},
     ]}
     payload = {"subject": subject, "body": body_md + footer, "status": "about_to_send" if send else "draft",
-               "archival_mode": "disabled", "filters": filters}
+               "archival_mode": "enabled", "filters": filters}
     when = next_slot(lang) if send else None
     if when:
         payload["status"] = "scheduled"
