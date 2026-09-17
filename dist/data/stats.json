@@ -548,5 +548,57 @@
       "수식어": 0.0,
       "쉼표": 113.9
     }
+  },
+  {
+    "date": "2026-09-17",
+    "day": 13,
+    "slug": "2026-09-17-umg-confirmed-the-new-platform-will-be-distinct-an",
+    "title_ko": "UMG가 라이선스 대가로 받아낸 건 제품 분리였다",
+    "title_en": "UMG Confirmed the New Platform Will Be 'Distinct and Separate' From ElevenLabs' Own",
+    "factor": "테크",
+    "from_stage": "생산",
+    "to_stage": "소비",
+    "tense": "signal",
+    "region": "글로벌",
+    "radar_tense": "soon",
+    "agrees": false,
+    "claims_total": 6,
+    "claims_verified": 5,
+    "review_rounds": 1,
+    "unresolved": false,
+    "bet": true,
+    "wiki_used": 3,
+    "lexicon_used": 2,
+    "form": {
+      "title_noun": false,
+      "title_len": 27,
+      "lead_concrete": true,
+      "ai_tell": 0,
+      "contrast": 0,
+      "hedge_10k": 0.0,
+      "sent_med": 66,
+      "long80": 18.8,
+      "title_check": {
+        "clarity": 2,
+        "pull": 2,
+        "kept_promise": true,
+        "why": "UMG라는 고유명사와 '받아냈다'는 사건 동사가 서 있고, 라이선스 대가가 돈이 아니라 '제품 분리'였다는 반전이 본문의 핵심과 일치한다."
+      },
+      "title_kept_first": false,
+      "title_cands": 3
+    },
+    "style": {
+      "문장 리듬": 0.541,
+      "접속부사": 12.3,
+      "헤지": 0.0,
+      "수식어": 0.0,
+      "쉼표": 85.9
+    },
+    "tokens": {
+      "input": 270257,
+      "output": 28278,
+      "calls": 27,
+      "search_uses": 15
+    }
   }
 ]

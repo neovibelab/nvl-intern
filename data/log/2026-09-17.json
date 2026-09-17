@@ -1,0 +1,325 @@
+{
+  "date": "2026-09-17",
+  "steps": {},
+  "cluster": {
+    "key": "3b41a724-607a-4d39-a225-0cb4148f0999",
+    "item_ids": [
+      "3b41a724-607a-4d39-a225-0cb4148f0999",
+      "cf7fd2b1-a983-4d99-b601-f7f71c8f1f88",
+      "00ec6365-2391-4135-a1e4-dd3de7450b8f",
+      "0a79821e-09d1-4f7b-88d4-eaead93c36a9",
+      "8a327fca-32ab-4359-8d1e-64c6e285e0e5"
+    ],
+    "n": 5,
+    "radar_tense": "soon",
+    "factor": "IP",
+    "stage": "생산",
+    "titles": [
+      "이레브라보(ElevenLabs)×유니버설 뮤직 그룹 전략 제휴—AI 음악 제작 플랫폼 공동 개발",
+      "메데욘 뮤직 랩, 음악 산업 인재 양성을 위한 공모 개시",
+      "메델린 뮤직 랩, 음악 산업 보조 역할 전문가 양성 프로그램 모집",
+      "메델린 뮤직 랩, 음악 제작 보완 역할 인력 양성 공개 모집",
+      "UMG·ElevenLabs, AI 기반 음악 플랫폼 구축 위한 대규모 라이선싱 계약 체결"
+    ],
+    "urls": [
+      "https://realsound.jp/tech/2026/09/post-2520482.html",
+      "https://news.google.com/rss/articles/CBMirwFBVV95cUxOOTlWRUtEY09PS2hzUjJ3endiUmFIYlY2WkJNSjVnQUV2elhzWHhJYS1pcmtKblpLUFBQczFRdUJUcEVkaXpFZGFzdHZKUGtQN1ktb3ZNMkZPWkRLOWt5ckNaeGZZdmxneTloWW1kVExXTWRieDBRYU5Kck5YVk9nTW92NjF3M0N5SGRhUmhmTWU4UnFaRzh6cnJMcEl3VERjVmVBUUF2LVY4Sk9OVnZz?oc=5",
+      "https://news.google.com/rss/articles/CBMid0FVX3lxTE5seWM4c044MjZuQjJGa3FGNHBoNmtBdUczeTZJWUp0amtuOXN5RDcyYXZELW16ekJ5dG9SaWp0eXVMTXJ0eTFycV9YTHJlbUhXQUNaOGNnSTlxb0duY21NeTJtb1dvSVpyMWppaEZ4OXJTOHVEdmVz?oc=5",
+      "https://news.google.com/rss/articles/CBMilwFBVV95cUxOWHFvNlJvM3R6dTc4TWNpR3BrMHZybXdzVjJGWTRhX0hETlFMUDhJWjZFdm9pMGlyUngwRUt2RThQcEthdFMxdWRXX1dTaWZHVUMzNXExSS1kUW50T0J4cnhIZkp2djZYRkJXN3Etd0RGS3NDRmpoYTVsbmRUZlNlMXNZX1pRa1dtYUhsSzZnQVRXVFE0NThz?oc=5",
+      "https://variety.com/2026/music/news/umg-elevenlabs-ai-powered-music-platform-licensing-1236857240/"
+    ],
+    "items": [
+      {
+        "title": "이레브라보(ElevenLabs)×유니버설 뮤직 그룹 전략 제휴—AI 음악 제작 플랫폼 공동 개발",
+        "url": "https://realsound.jp/tech/2026/09/post-2520482.html",
+        "source": "リアルサウンド",
+        "region": "japan",
+        "published_date": "2026-09-11T00:00:00+00:00",
+        "title_en": "ElevenLabs and Universal Music Group Form Strategic Partnership for AI Music Production Platform Development"
+      },
+      {
+        "title": "메데욘 뮤직 랩, 음악 산업 인재 양성을 위한 공모 개시",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOOTlWRUtEY09PS2hzUjJ3endiUmFIYlY2WkJNSjVnQUV2elhzWHhJYS1pcmtKblpLUFBQczFRdUJUcEVkaXpFZGFzdHZKUGtQN1ktb3ZNMkZPWkRLOWt5ckNaeGZZdmxneTloWW1kVExXTWRieDBRYU5Kck5YVk9nTW92NjF3M0N5SGRhUmhmTWU4UnFaRzh6cnJMcEl3VERjVmVBUUF2LVY4Sk9OVnZz?oc=5",
+        "source": "vivirenelpoblado.com",
+        "region": "latin",
+        "published_date": "2026-09-15T19:11:55+00:00",
+        "title_en": "Medellín Music Lab Opens Applications for Music Industry Talent Development Program"
+      },
+      {
+        "title": "메델린 뮤직 랩, 음악 산업 보조 역할 전문가 양성 프로그램 모집",
+        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5seWM4c044MjZuQjJGa3FGNHBoNmtBdUczeTZJWUp0amtuOXN5RDcyYXZELW16ekJ5dG9SaWp0eXVMTXJ0eTFycV9YTHJlbUhXQUNaOGNnSTlxb0duY21NeTJtb1dvSVpyMWppaEZ4OXJTOHVEdmVz?oc=5",
+        "source": "Telemedellín",
+        "region": "latin",
+        "published_date": "2026-09-15T15:13:21+00:00",
+        "title_en": "Medellín Music Lab Recruits Experts for Music Production Support Roles"
+      },
+      {
+        "title": "메델린 뮤직 랩, 음악 제작 보완 역할 인력 양성 공개 모집",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOWHFvNlJvM3R6dTc4TWNpR3BrMHZybXdzVjJGWTRhX0hETlFMUDhJWjZFdm9pMGlyUngwRUt2RThQcEthdFMxdWRXX1dTaWZHVUMzNXExSS1kUW50T0J4cnhIZkp2djZYRkJXN3Etd0RGS3NDRmpoYTVsbmRUZlNlMXNZX1pRa1dtYUhsSzZnQVRXVFE0NThz?oc=5",
+        "source": "Análisis Urbano",
+        "region": "latin",
+        "published_date": "2026-09-15T20:55:44+00:00",
+        "title_en": "Medellín Music Lab Announces Open Recruitment for Music Production Support Personnel"
+      },
+      {
+        "title": "UMG·ElevenLabs, AI 기반 음악 플랫폼 구축 위한 대규모 라이선싱 계약 체결",
+        "url": "https://variety.com/2026/music/news/umg-elevenlabs-ai-powered-music-platform-licensing-1236857240/",
+        "source": "Variety",
+        "region": "global-en",
+        "published_date": "2026-09-11T00:00:00+00:00",
+        "title_en": "UMG and ElevenLabs Sign Major Licensing Agreement to Build AI-Powered Music Platform"
+      }
+    ]
+  },
+  "source_summary": {
+    "ko": "ElevenLabs와 Universal Music Group이 AI 음악 제작 플랫폼 공동 개발을 위한 라이선스 계약을 체결했다. 플랫폼은 팬의 리믹스·마쉬업 참여를 지원하며 아티스트에게 수익을 환원한다. 메델린 뮤직 랩은 음악 산업 인재 양성 프로그램을 모집 중이다.",
+    "en": "ElevenLabs and Universal Music Group signed a licensing agreement to jointly develop an AI music production platform. The platform enables fans to participate in remixing and mashups while returning revenue to artists. Medellín Music Lab is recruiting for a music industry talent development program.",
+    "titles_en": [
+      "ElevenLabs and Universal Music Group Form Strategic Partnership for AI Music Production Platform Development",
+      "Medellín Music Lab Opens Applications for Music Industry Talent Development Program",
+      "Medellín Music Lab Recruits Experts for Music Production Support Roles",
+      "Medellín Music Lab Announces Open Recruitment for Music Production Support Personnel",
+      "UMG and ElevenLabs Sign Major Licensing Agreement to Build AI-Powered Music Platform"
+    ]
+  },
+  "materials": {
+    "wiki": [
+      "2026-07-25-자발적-라이선싱-AI권리프레임.md",
+      "2026-07-24-슬롭은-인풋의-문제.md",
+      "2026-07-26-경쟁사-합작-밸류체인.md"
+    ],
+    "lexicon": [
+      "industry.md#copyright",
+      "industry.md#라이선싱; 머천다이징 - licensing & merchandising"
+    ]
+  },
+  "context": "- [후속] ElevenLabs가 9월 14일 자체 음악 모델 'ElevenMusic v2.5'를 별도 출시하며 UMG 딜은 이와 분리된 walled garden 제품임을 명시 (Digital Music News https://www.digitalmusicnews.com/2026/09/14/elevenmusic-v25-launch/)\n- [후속] UMG가 새 플랫폼은 ElevenMusic 등 ElevenLabs 기존 음악 제품과 '구별되고 별도로 제공'된다고 추가 확인 (Music Ally https://musically.com/2026/09/11/umgs-elevenlabs-deal-is-latest-move-to-ai-remix-experiences/)\n- [후속] UMG 소송 상대였던 Udio는 Merlin 지원을 받아 새 제품을 출시할 예정(UMG·Warner 승인 모델 준비 중) (Digital Music News https://www.digitalmusicnews.com/2026/09/10/universal-music-elevenlabs-deal/)\n- [후속] UMG는 Spotify와 팬용 커버·리믹스 생성 도구, Klay Vision과 인터랙티브 청취 플랫폼도 병행 추진 중 (Music Ally https://musically.com/2026/09/11/umgs-elevenlabs-deal-is-latest-move-to-ai-remix-experiences/)\n- [반응] Lucian Grainge (UMG 회장 겸 CEO) \"책임 있는 AI는 발견을 자극하고 아티스트·팬의 관계를 깊게 하며 새 수익 기회를 연다\"는 취지로 제휴를 설명 (Variety https://variety.com/2026/music/news/umg-elevenlabs-ai-powered-music-platform-licensing-1236857240/)\n- [반응] Mati Staniszewski (ElevenLabs 공동창업자·CEO) UMG의 권리관리 역량과 자사 모델을 결합해 아티스트·작곡가가 \"공정하게 보상받도록 하겠다\"고 발언 (Variety https://variety.com/2026/music/news/umg-elevenlabs-ai-powered-music-platform-licensing-1236857240/)\n- [반응] Music Ally (업계 분석 매체) 업계가 라이선스형 AI를 원하면서도 '슬롭 트랙을 쏟아내는 무제한 생성 엔진'은 원치 않는 모순을 지적 (Music Ally https://musically.com/2026/09/11/umgs-elevenlabs-deal-is-latest-move-to-ai-remix-experiences/)\n- [반응] Digital Music News Grainge의 발표를 전하며 UMG의 주가 부진이 이어지는 상황이라고 덧붙임 (Digital Music News https://www.digitalmusicnews.com/2026/09/10/universal-music-elevenlabs-deal/)\n- [수치] 5억 달러 / 밸류에이션 110억 달러 ElevenLabs 올해 시리즈D 조달 규모와 기업가치 (Variety https://variety.com/2026/music/news/umg-elevenlabs-ai-powered-music-platform-licensing-1236857240/)\n- [수치] 1억 달러 / 밸류에이션 66억 달러 5개월 전 ElevenLabs 직원 대상 테너오퍼 — 직전 수치(같은 소재 과거값) (Variety https://variety.com/2026/music/news/umg-elevenlabs-ai-powered-music-platform-licensing-1236857240/)\n- [수치] 70개 이상 언어 ElevenLabs 음성·오디오 모델 지원 언어 수 (PR Newswire https://www.prnewswire.com/news-releases/universal-music-group-and-elevenlabs-announce-multi-year-strategic-agreement-beginning-with-a-new-licensed-ai-music-creation-platform-302875284.html)\n- [수치] 7,600만 달러 UMG가 Sony·Warner와 함께 참여한 8월 Stability AI 시리즈B 규모 — 라벨의 AI 직접 투자 과거값 (MBW https://www.musicbusinessworldwide.com/5-things-you-need-to-know-about-elevenlabs-the-umg-ai-partner-with-an-11b-valuation-and-big-ambitions-in-music/)\n- [선례] 2025년 11월 Warner–Suno 합의: 소송 취하 조건으로 라이선스 기반 신모델 출시와 기존 모델 폐기를 약정 — '소송→라이선스 전환' 선례 (The Next Web https://thenextweb.com/news/suno-v6-warner-bmg-believe-licensed-models)\n- [선례] 2025년 10월 UMG–Udio 합의: 보상금 지급 + 신규 라이선스 + '라이선스·보호된 환경'의 구독형 플랫폼 공동 개발 — 이번 ElevenLabs 딜과 동일 구조의 직전 사례 (MBW https://www.musicbusinessworldwide.com/5-things-you-need-to-know-about-elevenlabs-the-umg-ai-partner-with-an-11b-valuation-and-big-ambitions-in-music/)\n- [선례] 2024년 6월 RIAA 주도 3대 메이저의 Suno·Udio 동시 제소 — 현재 라이선스 국면의 출발점 (MBW https://www.musicbusinessworldwide.com/5-things-you-need-to-know-about-elevenlabs-the-umg-ai-partner-with-an-11b-valuation-and-big-ambitions-in-music/)\n- [선례] 2023년 UMG 퍼블리싱 부문의 Anthropic 가사 무단학습 제소 — 텍스트 영역의 동일 구조 분쟁 (MBW https://www.musicbusinessworldwide.com/5-things-you-need-to-know-about-elevenlabs-the-umg-ai-partner-with-an-11b-valuation-and-big-ambitions-in-music/)",
+  "judgment": {
+    "factor": "테크",
+    "from_stage": "생산",
+    "to_stage": "소비",
+    "region": "글로벌",
+    "tense": "signal",
+    "tense_why": "메이저 3사 전부가 이미 AI 생성사와 라이선스를 맺고 자체 플랫폼을 짓는 단계로, 주변부가 아니라 주류의 공식 행보다.",
+    "vibe_evidence": "",
+    "vibe_evidence_en": "",
+    "angle_ko": "메이저가 AI에게 파는 것은 카탈로그가 아니라 '담장'이다 - ElevenMusic과 분리된 walled garden을 따로 짓는다는 조건이 이 딜의 본체이고, 팬 리믹스는 담장 안에서만 허용되는 2차 창작 라이선스다",
+    "angle_en": "What the majors are really selling AI companies is a fence, not a catalog: the deal's core condition is a walled garden kept separate from ElevenMusic, where fan remixing is licensed only inside the wall",
+    "title_ko": "UMG가 라이선스 대가로 받아낸 건 제품 분리였다",
+    "title_en": "UMG Confirmed the New Platform Will Be 'Distinct and Separate' From ElevenLabs' Own",
+    "bet": {
+      "claim_ko": "UMG-ElevenLabs 플랫폼은 무제한 텍스트-투-송 생성이 아니라 지정 카탈로그 내 리믹스·보컬 변환으로 기능이 제한되고, 생성물에 AI 표기가 붙는다",
+      "claim_en": "The UMG-ElevenLabs platform will launch limited to remixing and vocal transformation within a designated catalog rather than open text-to-song generation, with AI labeling on outputs",
+      "by_days": 180,
+      "check_ko": "플랫폼 공개 시 제품 페이지·약관의 기능 범위와 AI 생성물 표기 정책 확인",
+      "check_en": "Check product page and ToS at launch for feature scope and AI-disclosure policy"
+    },
+    "principle_ko": "권리자가 기술사와 손잡을 때 협상의 핵심은 가격이 아니라 경계다 - 무엇을 쓰게 하느냐보다 어디까지만 쓰게 하느냐가 자산 가치를 지킨다.",
+    "principle_en": "When rights holders partner with tech, the real negotiation is over boundaries, not price: defining where usage stops protects asset value more than defining what may be used.",
+    "radar_tense": "soon",
+    "agrees": false,
+    "disagree_reason": "메이저 3사 전부가 이미 AI 생성사와 라이선스를 맺고 자체 플랫폼을 짓는 단계로, 주변부가 아니라 주류의 공식 행보다."
+  },
+  "recent": "[D+12 · 2026-09-16] 「SII 명단에 빠진 DistroKid, 다음 날 유니버설이 제소했다」 정책 유통→유통 · signal\n  숫자 · 제목 - 무슨 얘긴지 알려주나 2/2 · 읽고 싶게 하나 2/2 / 문체 - 사람 분포 밖 3개(문장 리듬, 접속부사, 쉼표) / 형식 88/100 · 첫 문단에 누가 무엇을 언제 있음 · AI tell 1 · 헤지 만자당 0.0 · 문장 중앙 69자\n  검수 지적 · Deezer 수치를 인용한 문장('부정 비율 수치도 Deezer 뉴스룸이 플랫폼 쪽에서 센 완전 AI 생성곡 스트리밍 최대 85%(2025년 기준, 초기 발표는 약 70%)였는데')은 분모가 모호하다. '완전 AI 생성곡 스트림 중 부정으로 판정된 비율'인지, '전체 스트림 중 완전 AI 생성",
+  "draft_ko_v1": "2026년 9월 10일 유니버설뮤직그룹(UMG)이 AI 오디오 기업 일레븐랩스(ElevenLabs)와 복수 년 라이선스 계약을 맺고, 허가받은 곡으로 팬이 리믹스·마쉬업·개인화 보컬을 만드는 AI 음악 제작 플랫폼을 공동 개발한다고 [버라이어티](https://variety.com/2026/music/news/umg-elevenlabs-ai-powered-music-platform-licensing-1236857240/)가 보도했습니다. 전날 Suno가 워너뮤직·Believe·BMG의 지원을 받은 모델을 공개한 직후입니다. 일레븐랩스는 올해 5억 달러 시리즈D를 110억 달러 밸류에이션으로 마감했고, 다섯 달 전 사내 테너오퍼 때 기업가치는 66억 달러였습니다.\n\n이 계약에서 실제로 협상된 항목은 카탈로그 사용 허락보다 사용 범위의 경계입니다. UMG는 새 플랫폼이 일레븐랩스의 기존 음악 제품과 \"구별되고 별도로 제공\"된다고 확인했고([뮤직앨리](https://musically.com/2026/09/11/umgs-elevenlabs-deal-is-latest-move-to-ai-remix-experiences/)), 일레븐랩스는 나흘 뒤인 9월 14일 자체 모델 ElevenMusic v2.5를 따로 내놓았습니다([디지털 뮤직 뉴스](https://www.digitalmusicnews.com/2026/09/14/elevenmusic-v25-launch/)). 담장을 별도로 짓는다는 조건이 딜의 본체입니다. 2025년 10월 UMG와 Udio의 합의도 보상금과 라이선스에 더해 \"라이선스되고 보호된 환경\"의 구독형 플랫폼을 함께 만든다는 구조였습니다([MBW](https://www.musicbusinessworldwide.com/5-things-you-need-to-know-about-elevenlabs-the-umg-ai-partner-with-an-11b-valuation-and-big-ambitions-in-music/)). 소송에서 라이선스로 넘어갈 때마다 권리자가 받아낸 대가에는 제품 분리가 포함됐습니다.\n\n뮤직앨리는 업계가 라이선스형 AI는 원하면서도 슬롭 트랙을 쏟아내는 무제한 생성 엔진은 원하지 않는 모순을 지적했습니다. 그 모순을 봉합하는 장치가 기능 제한과 표기입니다. 180일 안에 이 플랫폼이 공개되면 무제한 텍스트-투-송 생성이 아니라 지정 카탈로그 안의 리믹스·보컬 변환으로 기능이 묶이고, 생성물에 AI 표기가 붙는다고 봅니다. 확인은 제품 페이지의 기능 범위와 약관의 생성물 고지 조항입니다. 틀릴 자리는 Merlin 지원을 받은 Udio가 담장 밖에서 더 넓은 기능을 먼저 열어, UMG가 경쟁상 제한을 푸는 경우입니다.\n\n국내 기획사와 유통사가 AI 업체와 라이선스를 검토한다면 볼 줄은 두 개입니다. 허용을 용도 단위로 쪼갤 수 있는지, 그러니까 가사·기악 학습은 열되 특정 아티스트의 보컬 음색은 닫는 식의 분할이 계약서에 적히는지. 그리고 계약한 모델과 그 회사의 다른 모델 사이에 학습 데이터·출시 제품의 분리가 문서로 남는지입니다.",
+  "claims": [
+    {
+      "status": "verified",
+      "source": "Variety",
+      "url": "https://variety.com/2026/music/news/umg-elevenlabs-ai-powered-music-platform-licensing-1236857240/",
+      "note": "2026년 9월 10일 UMG·일레븐랩스 복수 년 라이선스 계약과 팬용 리믹스·마쉬업·개인화 보컬 AI 플랫폼 공동 개발을 버라이어티 등 다수 매체가 보도해 사실로 확인됨",
+      "claim": "2026년 9월 10일 유니버설뮤직그룹(UMG)이 AI 오디오 기업 일레븐랩스(ElevenLabs)와 복수 년 라이선스 계약을 맺고, 허가받은 곡으로 팬이 리믹스·마쉬업·개인화 보컬을 만드는 AI 음악 제작 플랫폼을 공동 개발한다고 버라이어티가 보도했습니다."
+    },
+    {
+      "status": "verified",
+      "source": "TechFundingNews / TechCrunch",
+      "url": "https://techfundingnews.com/elevenlabs-is-in-talks-for-a-22b-valuation-doubling-its-price-tag-five-months-after-its-last-raise/",
+      "note": "2026년 2월 세쿼이아 주도 5억 달러 시리즈D가 110억 달러 밸류로 마감됐고, 그 5개월 전인 2025년 9월 1억 달러 사내 테너오퍼는 66억 달러 밸류로 진행돼 두 수치 모두 일치.",
+      "claim": "일레븐랩스는 올해 5억 달러 시리즈D를 110억 달러 밸류에이션으로 마감했고, 다섯 달 전 사내 테너오퍼 때 기업가치는 66억 달러였습니다."
+    },
+    {
+      "status": "contradicted",
+      "source": "Music Business Worldwide",
+      "url": "https://www.musicbusinessworldwide.com/elevenlabs-launched-music-v2-5-shortly-after-announcing-its-umg-licensing-deal/",
+      "note": "Music v2.5는 9월 11일(금) 공개됐고 Suno v6(9월 9일)보다 이틀 뒤여서 '9월 14일·나흘 뒤'는 사실과 다름",
+      "claim": "일레븐랩스는 나흘 뒤인 9월 14일 자체 모델 ElevenMusic v2.5를 따로 내놓았습니다."
+    },
+    {
+      "status": "verified",
+      "source": "PR Newswire (UMG·Udio 공동 보도자료)",
+      "url": "https://www.prnewswire.com/news-releases/universal-music-group-and-udio-announce-udios-first-strategic-agreements-for-new-licensed-ai-music-creation-platform-302599129.html",
+      "note": "2025년 10월 29일 발표문에 보상적 법적 합의와 녹음·퍼블리싱 라이선스에 더해 '라이선스되고 보호된 환경'의 구독형 서비스를 함께 만든다는 내용이 명시됨",
+      "claim": "2025년 10월 UMG와 Udio의 합의도 보상금과 라이선스에 더해 \"라이선스되고 보호된 환경\"의 구독형 플랫폼을 함께 만든다는 구조였습니다."
+    },
+    {
+      "status": "verified",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/09/suno-replaces-its-ai-models-with-a-new-one-trained-on-licensed-music-as-copyright-suits-pile-up/",
+      "note": "Suno는 2026년 9월 9일(수) 워너뮤직·BMG·Believe의 라이선스 음원으로 개발한 v6 모델군을 공개했으므로 내용은 사실이나, '전날'은 기준일이 9월 10일인 경우에만 성립한다.",
+      "claim": "전날 Suno가 워너뮤직·Believe·BMG의 지원을 받은 모델을 공개한 직후입니다."
+    },
+    {
+      "status": "verified",
+      "source": "PR Newswire (UMG·ElevenLabs 공동 보도자료)",
+      "url": "https://www.prnewswire.com/news-releases/universal-music-group-and-elevenlabs-announce-multi-year-strategic-agreement-beginning-with-a-new-licensed-ai-music-creation-platform-302875284.html",
+      "note": "2026년 9월 10일 UMG·일레븐랩스 공동 발표문에 새 플랫폼이 기존 Music API·ElevenMusic과 \"distinct and offered separately\"라고 명시됨(Music Week·Music Ally 등도 동일 보도).",
+      "claim": "UMG는 새 플랫폼이 일레븐랩스의 기존 음악 제품과 \"구별되고 별도로 제공\"된다고 확인했습니다."
+    }
+  ],
+  "reviews": [
+    {
+      "verdict": "pass",
+      "blocking": [],
+      "notes": [
+        "'테너오퍼'는 'tender offer(텐더오퍼)'의 오표기로 보인다. 또 '올해 5억 달러 시리즈D'와 '다섯 달 전 66억 달러'의 시차 계산이 독자가 검증하기 어렵게 뭉개져 있다 - 라운드 발표 월을 병기하면 밸류에이션 점프의 의미가 살아난다.",
+        "반례 처리가 'Udio가 담장 밖에서 먼저 열면'이라는 가정형 하나에 머문다. 이미 존재하는 반대 사례 - 워너-Suno 딜, UMG-Stability의 프로툴 협업처럼 '담장'보다 '도구 공급'에 가까운 구조 - 를 한 줄이라도 대면하면 논지가 훨씬 단단해진다.",
+        "각도가 '팬 리믹스는 담장 안에서만 허용되는 2차 창작 라이선스'라고 약속한 만큼, 본문에 아티스트 옵트인 여부와 리믹스 수익 배분 구조(누가 원저작자로 남는가)가 한 단락 들어가면 좋다. 지금은 기능 제한과 AI 표기까지만 다룬다.",
+        "'기능이 묶이고'는 '묶이고'의 오타. 마지막 단락의 '볼 줄은 두 개'도 '확인할 조항은 두 개' 정도로 다듬으면 실무 체크리스트로 읽힌다.",
+        "국내 실무 적용부가 계약 조항 두 개로 유용하지만, 한국 상황의 제약(신탁단체 관리 저작물과 실연자 인격권이 '용도 단위 분할'을 실제로 허용하는지)을 한 문장 붙이면 수확이 더 커진다."
+      ],
+      "issues": [
+        "'테너오퍼'는 'tender offer(텐더오퍼)'의 오표기로 보인다. 또 '올해 5억 달러 시리즈D'와 '다섯 달 전 66억 달러'의 시차 계산이 독자가 검증하기 어렵게 뭉개져 있다 - 라운드 발표 월을 병기하면 밸류에이션 점프의 의미가 살아난다.",
+        "반례 처리가 'Udio가 담장 밖에서 먼저 열면'이라는 가정형 하나에 머문다. 이미 존재하는 반대 사례 - 워너-Suno 딜, UMG-Stability의 프로툴 협업처럼 '담장'보다 '도구 공급'에 가까운 구조 - 를 한 줄이라도 대면하면 논지가 훨씬 단단해진다.",
+        "각도가 '팬 리믹스는 담장 안에서만 허용되는 2차 창작 라이선스'라고 약속한 만큼, 본문에 아티스트 옵트인 여부와 리믹스 수익 배분 구조(누가 원저작자로 남는가)가 한 단락 들어가면 좋다. 지금은 기능 제한과 AI 표기까지만 다룬다.",
+        "'기능이 묶이고'는 '묶이고'의 오타. 마지막 단락의 '볼 줄은 두 개'도 '확인할 조항은 두 개' 정도로 다듬으면 실무 체크리스트로 읽힌다.",
+        "국내 실무 적용부가 계약 조항 두 개로 유용하지만, 한국 상황의 제약(신탁단체 관리 저작물과 실연자 인격권이 '용도 단위 분할'을 실제로 허용하는지)을 한 문장 붙이면 수확이 더 커진다."
+      ],
+      "one_line": "'카탈로그가 아니라 제품 분리가 딜의 본체'라는 각도가 UMG 확인 발언·ElevenMusic v2.5 별도 출시·Udio 합의 구조라는 세 물증으로 받쳐지고 검증·반증 지점까지 제시됐다 - 반례 대면이 가정형 하나로 얇고 용어 오표기가 남았지만 차단 사유는 없다."
+    }
+  ],
+  "gate": {
+    "chars": 1230,
+    "contrast": 1,
+    "chars_after": 1168,
+    "contrast_after": 0,
+    "revised": true
+  },
+  "draft_ko_final": "2026년 9월 10일 유니버설뮤직그룹(UMG)이 AI 오디오 기업 일레븐랩스(ElevenLabs)와 복수 년 라이선스 계약을 맺고, 허가받은 곡으로 팬이 리믹스·개인화 보컬을 만드는 AI 음악 제작 플랫폼을 공동 개발한다고 [버라이어티](https://variety.com/2026/music/news/umg-elevenlabs-ai-powered-music-platform-licensing-1236857240/)가 보도했습니다. 전날 Suno가 워너뮤직·Believe·BMG의 지원을 받은 모델을 공개한 직후입니다. 일레븐랩스는 올해 5억 달러 시리즈D를 110억 달러 밸류에이션으로 마감했고, 다섯 달 전 사내 테너오퍼 때 기업가치는 66억 달러였습니다.\n\n실제로 협상된 항목은 카탈로그 사용 허락보다 사용 범위의 경계입니다. UMG는 새 플랫폼이 일레븐랩스의 기존 음악 제품과 \"구별되고 별도로 제공\"된다고 확인했고([뮤직앨리](https://musically.com/2026/09/11/umgs-elevenlabs-deal-is-latest-move-to-ai-remix-experiences/)), 뮤직비즈니스월드와이드에 따르면 일레븐랩스는 9월 11일, Suno v6 공개 이틀 뒤에 자체 모델 ElevenMusic v2.5를 따로 내놓았습니다. 담장을 별도로 짓는다는 조건이 딜의 본체입니다. 2025년 10월 UMG와 Udio의 합의도 \"라이선스되고 보호된 환경\"의 구독형 플랫폼을 함께 만드는 구조였습니다([MBW](https://www.musicbusinessworldwide.com/5-things-you-need-to-know-about-elevenlabs-the-umg-ai-partner-with-an-11b-valuation-and-big-ambitions-in-music/)). 소송에서 라이선스로 넘어갈 때마다 권리자가 받아낸 대가에는 제품 분리가 포함됐습니다.\n\n뮤직앨리는 업계가 라이선스형 AI는 원하면서도 슬롭 트랙을 쏟아내는 무제한 생성 엔진은 원하지 않는 모순을 지적했습니다. 봉합 장치는 기능 제한과 표기입니다. 180일 안에 공개된다면 무제한 텍스트-투-송이 아니라 지정 카탈로그 안의 리믹스·보컬 변환으로 묶이고, 생성물에 AI 표기가 붙는다고 봅니다. 확인은 제품 페이지의 기능 범위와 약관의 생성물 고지 조항입니다. 틀릴 자리는 Merlin 지원을 받은 Udio가 담장 밖에서 더 넓은 기능을 먼저 열어, UMG가 제한을 푸는 경우입니다.\n\n국내 기획사·유통사가 라이선스를 검토한다면 볼 줄은 두 개입니다. 허용을 용도 단위로 쪼갤 수 있는지, 가사·기악 학습은 열되 특정 아티스트의 보컬 음색은 닫는 분할이 계약서에 적히는지. 그리고 계약한 모델과 그 회사의 다른 모델 사이에 학습 데이터·출시 제품의 분리가 문서로 남는지입니다.",
+  "draft_en_final": "Universal Music Group signed a multi-year licensing deal and strategic partnership with the AI audio company ElevenLabs on September 10, 2026, and the first product from it will be a co-developed platform where fans remix licensed songs and create personalized vocal versions, [Variety](https://variety.com/2026/music/news/umg-elevenlabs-ai-powered-music-platform-licensing-1236857240/) reported. The timing was pointed. Suno had unveiled a model backed by Warner Music, Believe and BMG the day before. ElevenLabs closed a $500 million Series D at an $11 billion valuation this year, up from $6.6 billion at an internal tender offer five months earlier.\n\nWhat UMG actually negotiated is less the right to use the catalog than the line where that use stops. UMG confirmed that the new platform will be \"distinct and separate\" from ElevenLabs' existing music product, according to Music Ally, and Music Business Worldwide reported that ElevenLabs released its own model, ElevenMusic v2.5, on September 11, two days after Suno's v6. So the licensed playground and the general-purpose engine ship as two different things, on purpose. That separation is the deal, not a footnote to it. The same shape appeared in UMG's October 2025 agreement with Udio, which described a subscription platform built inside a licensed and protected environment. Every time a rights holder has moved from litigation to licensing, part of the price has been product separation.\n\nMusic Ally has described the industry's contradiction plainly enough: labels want licensed AI, and they do not want an unlimited generation engine flooding streaming with low-value tracks. The stitching that holds both positions together is feature scope plus disclosure. My bet is that when the UMG and ElevenLabs platform launches, within 180 days, it will not offer open text-to-song generation. It will be limited to remixing and vocal transformation inside a designated catalog, and outputs will carry AI labeling. The check is simple and public: the feature list on the product page and the disclosure clause in the terms of service at launch. Where I could be wrong is if Udio, backed by the independent-label agency Merlin, opens broader capability outside the fence first, and UMG loosens its own limits to keep pace.\n\nFor a label, distributor or any rights holder weighing a similar agreement, two lines on the contract matter more than the headline rate. First, whether permission can be split by use, so that lyrics and instrumental material are open for training while a named artist's vocal timbre stays closed. Second, whether the separation between the model you licensed and that company's other models is written down, covering both training data and shipped products, rather than left to a press statement.\n\nAny industry licensing its archive to an AI vendor, from stock photography to broadcast news to medical imaging, should read this as the template: price the boundary, then price the data.",
+  "working_title": {
+    "ko": "메이저가 파는 건 담장이다",
+    "en": "The Majors Are Selling Fences"
+  },
+  "title": {
+    "ko": {
+      "title": "UMG가 라이선스 대가로 받아낸 건 제품 분리였다",
+      "source": "소송에서 라이선스로 넘어갈 때마다 권리자가 받아낸 대가에는 제품 분리가 포함됐습니다.",
+      "from_body": true,
+      "candidates": [
+        {
+          "title": "UMG가 일레븐랩스에 담장을 별도로 지으라 했다",
+          "source": "담장을 별도로 짓는다는 조건이 딜의 본체입니다."
+        },
+        {
+          "title": "UMG는 라이선스는 원하고 무제한 생성은 원하지 않는다",
+          "source": "뮤직앨리는 업계가 라이선스형 AI는 원하면서도 슬롭 트랙을 쏟아내는 무제한 생성 엔진은 원하지 않는 모순을 지적했습니다."
+        },
+        {
+          "title": "UMG가 라이선스 대가로 받아낸 건 제품 분리였다",
+          "source": "소송에서 라이선스로 넘어갈 때마다 권리자가 받아낸 대가에는 제품 분리가 포함됐습니다."
+        }
+      ]
+    },
+    "en": {
+      "title": "UMG Confirmed the New Platform Will Be 'Distinct and Separate' From ElevenLabs' Own",
+      "source": "UMG confirmed that the new platform will be \"distinct and separate\" from ElevenLabs' existing music product, according to Music Ally, and Music Business Worldwide reported that ElevenLabs released its own model, ElevenMusic v2.5, on September 11, two days after Suno's v6.",
+      "from_body": true,
+      "candidates": [
+        {
+          "title": "UMG Confirmed the New Platform Will Be 'Distinct and Separate' From ElevenLabs' Own",
+          "source": "UMG confirmed that the new platform will be \"distinct and separate\" from ElevenLabs' existing music product, according to Music Ally, and Music Business Worldwide reported that ElevenLabs released its own model, ElevenMusic v2.5, on September 11, two days after Suno's v6."
+        },
+        {
+          "title": "What UMG Negotiated Was the Line Where Use Stops",
+          "source": "What UMG actually negotiated is less the right to use the catalog than the line where that use stops."
+        },
+        {
+          "title": "Will UMG and ElevenLabs Offer Open Text-to-Song Generation?",
+          "source": "My bet is that when the UMG and ElevenLabs platform launches, within 180 days, it will not offer open text-to-song generation."
+        }
+      ]
+    },
+    "check": {
+      "clarity": 2,
+      "pull": 2,
+      "kept_promise": true,
+      "why": "UMG라는 고유명사와 '받아냈다'는 사건 동사가 서 있고, 라이선스 대가가 돈이 아니라 '제품 분리'였다는 반전이 본문의 핵심과 일치한다."
+    },
+    "duel_ko": {
+      "best": {
+        "title": "UMG가 라이선스 대가로 받아낸 건 제품 분리였다",
+        "source": "소송에서 라이선스로 넘어갈 때마다 권리자가 받아낸 대가에는 제품 분리가 포함됐습니다."
+      },
+      "rounds": [
+        {
+          "a": "UMG가 일레븐랩스에 담장을 별도로 지으라 했다",
+          "b": "UMG는 라이선스는 원하고 무제한 생성은 원하지 않는다",
+          "winner": "a",
+          "why": "고유명사 두 개와 '담장을 별도로 짓는다'는 본문의 핵심 협상 조건이 동사로 서 있어 사건이 보이는 반면, 1번은 주체만 있고 '원한다/원하지 않는다'는 모순 진술이라 무슨 일이 벌어졌는지가 없다"
+        },
+        {
+          "a": "UMG가 일레븐랩스에 담장을 별도로 지으라 했다",
+          "b": "UMG가 라이선스 대가로 받아낸 건 제품 분리였다",
+          "winner": "b",
+          "why": "'라이선스 대가=제품 분리'라는 뒤집기가 제목 안에 들어 있고 용어가 산업어인 반면, 2번의 '담장'은 본문을 읽어야만 뜻이 서는 비유라 무슨 거래인지 제목만으로 안 선다."
+        }
+      ],
+      "kept_first": false,
+      "n": 3
+    },
+    "duel_en": {
+      "best": {
+        "title": "UMG Confirmed the New Platform Will Be 'Distinct and Separate' From ElevenLabs' Own",
+        "source": "UMG confirmed that the new platform will be \"distinct and separate\" from ElevenLabs' existing music product, according to Music Ally, and Music Business Worldwide reported that ElevenLabs released its own model, ElevenMusic v2.5, on September 11, two days after Suno's v6."
+      },
+      "rounds": [
+        {
+          "a": "UMG Confirmed the New Platform Will Be 'Distinct and Separate' From ElevenLabs' Own",
+          "b": "What UMG Negotiated Was the Line Where Use Stops",
+          "winner": "a",
+          "why": "고유명사와 실제 인용된 계약 문구가 박혀 있어 무슨 산업·무슨 사건인지 즉시 서고, '별개·분리'라는 대비 자체가 긴장을 만들며 본문이 그 약속을 그대로 이행한다 — 2번은 주체는 있으나 '선(line)'이 추상적이라 어떤 거래에도 붙는다."
+        },
+        {
+          "a": "UMG Confirmed the New Platform Will Be 'Distinct and Separate' From ElevenLabs' Own",
+          "b": "Will UMG and ElevenLabs Offer Open Text-to-Song Generation?",
+          "winner": "a",
+          "why": "2번은 UMG·ElevenLabs라는 고유명사와 '별개 분리'라는 확인된 사건이 제목에 서 있고 두 제품을 갈라놓는 대비 자체가 긴장인데, 1번은 소재만 바꿔 끼우면 아무 글에나 붙는 관용적 물음표에 그친다."
+        }
+      ],
+      "kept_first": true,
+      "n": 3
+    }
+  },
+  "name_map": {
+    "ko": {
+      "リアルサウンド": "리아루사운도"
+    },
+    "en": {
+      "リアルサウンド": "Real Sound"
+    }
+  },
+  "usage": {
+    "input": 270257,
+    "output": 28278,
+    "calls": 27,
+    "search_uses": 15
+  },
+  "form": {
+    "title_noun": false,
+    "title_len": 27,
+    "lead_concrete": true,
+    "ai_tell": 0,
+    "contrast": 0,
+    "hedge_10k": 0.0,
+    "sent_med": 66,
+    "long80": 18.8,
+    "title_check": {
+      "clarity": 2,
+      "pull": 2,
+      "kept_promise": true,
+      "why": "UMG라는 고유명사와 '받아냈다'는 사건 동사가 서 있고, 라이선스 대가가 돈이 아니라 '제품 분리'였다는 반전이 본문의 핵심과 일치한다."
+    },
+    "title_kept_first": false,
+    "title_cands": 3
+  }
+}

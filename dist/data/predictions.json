@@ -108,5 +108,16 @@
     "check_en": "Revised upload terms/artist guidelines from the distributor, or its addition to the SII signatory list",
     "factor": "정책",
     "status": "open"
+  },
+  {
+    "slug": "2026-09-17-umg-confirmed-the-new-platform-will-be-distinct-an",
+    "date": "2026-09-17",
+    "by_date": "2027-03-16",
+    "claim_ko": "UMG-ElevenLabs 플랫폼은 무제한 텍스트-투-송 생성이 아니라 지정 카탈로그 내 리믹스·보컬 변환으로 기능이 제한되고, 생성물에 AI 표기가 붙는다",
+    "claim_en": "The UMG-ElevenLabs platform will launch limited to remixing and vocal transformation within a designated catalog rather than open text-to-song generation, with AI labeling on outputs",
+    "check_ko": "플랫폼 공개 시 제품 페이지·약관의 기능 범위와 AI 생성물 표기 정책 확인",
+    "check_en": "Check product page and ToS at launch for feature scope and AI-disclosure policy",
+    "factor": "테크",
+    "status": "open"
   }
 ]
