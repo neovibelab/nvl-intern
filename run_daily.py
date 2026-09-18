@@ -249,6 +249,11 @@ def run_weekly(args) -> int:
     print(f"  [weekly] en {len(en.split())} words")
     trace = {"date": args.date, "weekly": week, "gather": {k: v for k, v in g.items() if k != "rows"},
              "rows": [s["slug"] for s in g["rows"]], "gate": gate, "ko": ko, "en": en, "usage": dict(llm.USAGE)}
+    # 단계별 내역 (2026-09-18). 회고는 데일리와 단계 구성이 다르다 - 새 소재를
+    # 안 찾는 대신 되읽기·대조군·듀얼이 붙는다. dry-run이 아래에서 일찍 돌아가므로
+    # 여기서 찍어야 두 경로 다 보인다.
+    trace["usage_by_step"] = {f"{s}|{m}": v for (s, m), v in llm.USAGE_BY_STEP.items()}
+    print(llm.step_report())
     if args.dry_run:
         print("\n" + "=" * 60 + "\n" + ko)
         return 0
