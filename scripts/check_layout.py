@@ -50,6 +50,11 @@ def check(date: str) -> int:
         print(f"{date} 기록이 없다 - 회전이 아직 안 돌았거나 날짜가 틀렸다")
         return 2
     slug = row["slug"]
+    # 회고 편(`type: weekly`)은 소재 편의 레이아웃을 안 쓴다 - 요약·예측·격자·좌표가
+    # 애초에 없다. 그걸 모르고 같은 기준을 대면 **멀쥰한 회고가 매주 실패 12건으로
+    # 뜼다**(2026-09-18 실측 - 09-17 소재 편은 전부 통과였는데 검사 기본값이 오늘이라
+    # 회고를 봤다). 회고에도 유효한 것 셋만 본다 - 옇 라벨·본문 추출·메일 격자 제거.
+    weekly = row.get("type") == "weekly"
     print(f"== {date} · {row.get('title_ko', '')[:44]}\n")
 
     for lang, news in (("ko", NEW_KO), ("en", NEW_EN)):
@@ -64,10 +69,12 @@ def check(date: str) -> int:
         i_body = body.find("---", body.find("---") + 3)
         i_src = body.find(news[3])
         i_grid = body.find("| |")
-        ok(0 <= i_sum < i_body, "요약이 본문보다 앞")
-        ok(i_src > i_body, "원문 목록이 본문보다 뒤")
-        ok(i_grid > i_body, "격자가 본문보다 뒤")
-        ok(all(x in body for x in news), "새 라벨 전부", " · ".join(x.strip("*") for x in news))
+        if not weekly:
+            ok(0 <= i_sum < i_body, "요약이 본문보다 앞")
+            ok(i_src > i_body, "원문 목록이 본문보다 뒤")
+            ok(i_grid > i_body, "격자가 본문보다 뒤")
+        if not weekly:
+            ok(all(x in body for x in news), "새 라벨 전부", " · ".join(x.strip("*") for x in news))
         leftover = [x for x in OLD if x in body]
         ok(not leftover, "옛 라벨 없음", ("남음: " + ", ".join(leftover)) if leftover else "")
         ok(body.count("\n---\n") >= 3, "구분선 셋", f"{body.count(chr(10) + '---' + chr(10))}개")
@@ -76,9 +83,11 @@ def check(date: str) -> int:
         region = fm.get("region") or ""
         shown = config.REGIONS_EN.get(region, region) if lang == "en" else region
         coord = next((l for l in body.split(chr(10)) if l.startswith("`") and l.endswith("`")), "")
-        ok(bool(shown) and shown in coord, "지역이 좌표 줄에", coord.strip("`")[:52])
-        ok("→" not in coord or fm.get("from_stage") != fm.get("to_stage"),
-           "같은 단계를 두 번 쓰지 않는다", coord.strip("`")[:52])
+        if not weekly:
+            ok(bool(shown) and shown in coord, "지역이 좌표 줄에", coord.strip("`")[:52])
+        if not weekly:
+            ok("→" not in coord or fm.get("from_stage") != fm.get("to_stage"),
+               "같은 단계를 두 번 쓰지 않는다", coord.strip("`")[:52])
 
         d = duel._plain(body)
         ok(len(d) > 300, "duel 본문 추출", f"{len(d)}자")
@@ -87,7 +96,8 @@ def check(date: str) -> int:
             ok(len(l) > 300, "learn 본문 추출", f"{len(l)}자")
         m = mail.strip_grid(body.strip(), lang)
         ok("| |" not in m, "메일에서 격자 표 제거")
-        ok("격자 21칸" in m or "21-cell grid" in m, "메일에 격자 링크 한 줄")
+        if not weekly:
+            ok("격자 21칸" in m or "21-cell grid" in m, "메일에 격자 링크 한 줄")
         print()
 
     print("전부 통과" if not bad else f"실패 {len(bad)}건 · " + " / ".join(bad))
