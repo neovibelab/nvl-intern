@@ -1,0 +1,92 @@
+[
+  {
+    "axis": "제목",
+    "new": "2026-09-11-circle-chart-shows-the-top-400-albums-falling-from",
+    "old": "2026-09-10-who-holds-the-ruler-for-ai-outputs",
+    "winner": "new",
+    "why": "1번은 'Quad 71%'라는 고유명사+수치가 박혀 있고 '~이 아니다'라는 부정 동사로 통설을 뒤집는 대비를 세웠는데, 2번은 '자를 쥐나'라는 비유만 남아 어느 산업 얘긴지도 특정되지 않는다",
+    "date": "2026-09-18",
+    "lang": "ko"
+  },
+  {
+    "axis": "본문",
+    "new": "2026-09-11-circle-chart-shows-the-top-400-albums-falling-from",
+    "old": "2026-09-10-who-holds-the-ruler-for-ai-outputs",
+    "winner": "old",
+    "why": "소장 미확인·자기 초고 오류·합의 시점 미확인을 명시해 근거 경계를 긋고도 '핑거프린팅은 동일음원 식별이라 유사도는 못 잰다'는 구체적 공백에서 180일 예측과 '분배규정 조항 번호를 찾아라'는 실행 지시까지 밀고 갔다; 1번은 통계 출처 교정은 좋으나 벤야민 아우라 논의가 근거 없는 ",
+    "date": "2026-09-18",
+    "lang": "ko"
+  },
+  {
+    "axis": "제목",
+    "new": "2026-09-14-accord-entertainment-closed-a-2-billion-won-pre-se",
+    "old": "2026-09-06-the-bottleneck-called-100m",
+    "winner": "new",
+    "why": "'어코드·블래스트·20억·3년째'라는 고유명사와 수치가 박혀 두 건이 같은 금액으로 멈춰 있다는 사건이 제목에 서고 대비까지 생기는데, 1번은 1400억이라는 수치만 있고 '병목의 다른 이름'은 어느 산업 얘긴지 알 수 없는 비유로 끝난다",
+    "date": "2026-09-18",
+    "lang": "ko"
+  },
+  {
+    "axis": "본문",
+    "new": "2026-09-14-accord-entertainment-closed-a-2-billion-won-pre-se",
+    "old": "2026-09-06-the-bottleneck-called-100m",
+    "winner": "old",
+    "why": "자기 논지를 손익분기 점유율(6700석·특전 25% 기준선) 같은 실무자가 바로 대입할 수 있는 계산으로 환산하고 반증 조건까지 못 박아, 1번의 '읽히는지 봐라'식 관찰 지시보다 가져갈 것이 구체적이다.",
+    "date": "2026-09-18",
+    "lang": "ko"
+  },
+  {
+    "axis": "제목",
+    "new": "2026-09-15-warner-and-believe-feed-one-model-two-definitions-",
+    "old": "2026-09-10-who-holds-the-ruler-for-ai-outputs",
+    "winner": "new",
+    "why": "1번은 'Suno'라는 고유명사와 '소송→라이선스 대신 가격'이라는 반전 구조가 제목에 박혀 무슨 사건인지 서지만, 2번은 '자를 쥔다'는 비유만 남아 어느 산업 얘긴지도 안 보인다",
+    "date": "2026-09-18",
+    "lang": "ko"
+  },
+  {
+    "axis": "본문",
+    "new": "2026-09-15-warner-and-believe-feed-one-model-two-definitions-",
+    "old": "2026-09-10-who-holds-the-ruler-for-ai-outputs",
+    "winner": "new",
+    "why": "소송 타임라인을 '가격 형성' 논지로 꿰고 동의 단위(카탈로그/곡/아티스트)라는 계약 체크포인트와 반증 조건까지 제시해 바로 협상 테이블에 가져갈 항목이 남는 반면, 2번은 미확인·오류 자백과 유보 표현이 본문 분량을 잠식해 논지가 끊긴다",
+    "date": "2026-09-18",
+    "lang": "ko"
+  },
+  {
+    "axis": "제목",
+    "new": "2026-09-16-universal-music-sued-distrokid-the-day-after-the-l",
+    "old": "2026-09-09-whoever-holds-the-valve-wins",
+    "winner": "new",
+    "why": "1번은 '밸브'라는 비유만 남아 어느 산업인지조차 안 서는데, 2번은 DistroKid·유니버설·SII 명단이라는 고유명사와 '빠졌다→다음 날 제소했다'는 시간차 인과가 제목에서 사건을 완성한다",
+    "date": "2026-09-18",
+    "lang": "ko"
+  },
+  {
+    "axis": "본문",
+    "new": "2026-09-16-universal-music-sued-distrokid-the-day-after-the-l",
+    "old": "2026-09-09-whoever-holds-the-valve-wins",
+    "winner": "new",
+    "why": "1번은 '~것으로 알려졌고' 류의 미확인 전언에 기대 근거가 얇은 반면, 2번은 DistroKid 제소와 Trefuego 선례를 대조해 '책임이 업로더에서 유통 계층으로 올라왔다'는 사건 축을 세우고 계약서에서 볼 조항 두 개까지 특정해 실무로 가져갈 것이 남는다",
+    "date": "2026-09-18",
+    "lang": "ko"
+  },
+  {
+    "axis": "제목",
+    "new": "2026-09-17-umg-confirmed-the-new-platform-will-be-distinct-an",
+    "old": "2026-09-06-the-bottleneck-called-100m",
+    "winner": "new",
+    "why": "2번은 UMG라는 고유명사와 '라이선스 대가=제품 분리'라는 반전 구조로 무슨 사건인지 제목에서 드러나는데, 1번은 '1400억'이라는 수치만 있고 '병목의 다른 이름'이라는 비유가 어느 산업의 무슨 일인지 말해주지 않는다",
+    "date": "2026-09-18",
+    "lang": "ko"
+  },
+  {
+    "axis": "본문",
+    "new": "2026-09-17-umg-confirmed-the-new-platform-will-be-distinct-an",
+    "old": "2026-09-06-the-bottleneck-called-100m",
+    "winner": "old",
+    "why": "회당 158억·손익분기 6700석 같은 계산을 직접 실무 기준선으로 환산하고 반례와 반증 조건(대관료 상승률 차이, 회차 축소 3개 지표)까지 걸어둬 가져갈 숫자가 남는다",
+    "date": "2026-09-18",
+    "lang": "ko"
+  }
+]

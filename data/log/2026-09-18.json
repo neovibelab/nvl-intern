@@ -1,0 +1,482 @@
+{
+  "date": "2026-09-18",
+  "weekly": 2,
+  "gather": {
+    "n": 5,
+    "tense": {
+      "vibe": 2,
+      "signal": 3
+    },
+    "factor": {
+      "포맷": 1,
+      "IP": 1,
+      "정책": 2,
+      "테크": 1
+    },
+    "cells": 5,
+    "disagree": 3,
+    "compared": 5,
+    "verified": 16,
+    "claims": 29,
+    "unresolved": 0,
+    "pass1": 4,
+    "gate_hits": 4,
+    "no_brain": 0,
+    "form": {
+      "n": 5,
+      "score": 86,
+      "title_noun": 3,
+      "clarity": 1.8,
+      "pull": 2.0,
+      "broken": 0,
+      "lead_concrete": 5,
+      "ai_tell": 7,
+      "hedge_10k": 1.8,
+      "sent_med": 56
+    },
+    "issues": [
+      "「IFPI 2026 보고서 기준 세계 최대 피지컬 시장은 일본이고, 한국의 음반 판매량은 2023년 1억 1,900만 장에서 2024년 9,837만 장으로 줄었다」 — 인용 문서가 식별되지 않는다. 글 안의 다른 시점 단서(2025년 Quad·해리스폴 조사, 9월 9일 경향신문 기사)와 'IFPI 2026 보고서'가 맞지 않고, 2026년판 보고서라면 다루는 데이터 연도는 2023→2024가 아니라 2024→2025여야 한다. 더구나 한국 음반 판매량 1억 1,900만/9,837만은 IFPI가 아니라 써클차트 집계 수치이며, 문장은 IFPI 보고서와 MBW 전언을 한 문장에 붙여 어느 숫자가 어느 출처에서 왔는지 독자가 확인할 수 없게 만든다. 보고서 연차·데이터 연도·집계 주체를 정확히 맞추거나, 확인되는 출처(써클차트 연간 결산 등)로 교체해야 한다.",
+      "앞 회차 지적(출처 불일치)은 해소됐다. 다만 '써클차트 연간 결산 기준 … 줄어든 것으로 알려졌습니다'의 '알려졌습니다'는 남겨둘 이유가 없는 전언 어투다. 써클차트 연간 결산 발표 시점(예: 2025년 1월 발표분)과 '앨범 톱400 합계'라는 집계 범위를 본문에 못 박으면 문장 하나로 확인 가능해진다.",
+      "71%는 글 스스로 밝혔듯 전체 소비자 대상 조사인데, 3문단에서 다시 '화면 위의 것이 너무 싸졌다는 신호'로 끌어와 10대 논의의 지지대로 쓴다. 오류를 정정한 성실함이 논지 지지대로서의 약함까지 지워주지는 않는다. 10대·20대 초반에 한정된 별도 수치(필름 현상소 이용 증가, 카세트 판매 연령 분포 등)를 하나만 더 붙이면 논지의 체중이 실린다.",
+      "'CG가 처음엔 사람 손이 없다는 이유로 거부당했다'는 주장에 사례가 없다. 특정 작품·시기 하나만 박아도 벤야민 단락 전체의 신뢰가 달라진다.",
+      "180일·3곳 예측의 기저율이 낮아 보이지 않는다. 카세트·바이닐 한정반은 이미 K팝에서 흔하다. '앨범 번들이 아닌 독립 상품'과 '일반 서점·편집숍 입점'이라는 두 조건이 실질적 난이도를 만드는데, 지금 예측 문장에서는 후보 나열에 가려져 있다. 조건을 예측문 본체로 끌어올리면 검증 가능성이 선명해진다.",
+      "마지막 실무 기준('멤버 이름과 증정 안내를 지운다')은 이 글에서 가장 가져갈 만한 대목인데 한 문단에 눌려 있다. 실제 상세페이지 문구 한 줄을 예시로 대고 지워 보이면 수확이 두 배가 된다.",
+      "각도는 '옮겨갔다'는 완료형인데 본문의 핵심 주장은 '앞으로 180일 안에 두 곳이…'라는 예측형이다. 이미 옮겨간 근거(미라클 1건)와 앞으로 옮겨갈 것이라는 전망 사이의 무게 배분을 리드에서 정리하면 독자가 덜 헷갈린다.",
+      "플레이브를 반례로 꺼냈으면 끝까지 붙어야 한다. 블래스트는 3년간 증원 없이 5인 체제를 유지했고, 그 선택이 '확장 슬롯을 열지 않는 것도 전략'이라는 반대 사례가 된다. 미라클의 증원을 기준 이동의 증거로 쓰려면 증원하지 않은 쪽의 성과와 나란히 놓아야 논지가 단단해진다.",
+      "'월 1회 발매가 시차를 좁히는 장치'는 추론이다. 실제로 증원 직후 발매분의 스트리밍·팬덤 지표가 어떻게 움직였는지 한 줄이라도 수치가 붙으면 추론이 관찰로 바뀐다. 없다면 '읽힙니다'보다 더 약한 표현이 정확하다.",
+      "'2026년 1월 26일 데뷔 이후 월 1회'와 '7월 30일 일곱 번째 싱글'은 정합적이지만, 데뷔일·발매 회차는 발행 직전 원문 대조를 한 번 더 권한다. 이 글에서 월 1회 운영은 논지의 두 기둥 중 하나라 어긋나면 타격이 크다.",
+      "마지막 문단의 '확장이 아니라 리부트'라는 구분은 이 글에서 가장 실무적으로 쓸모 있는 대목인데 네 줄로 끝난다. 리부트로 판정됐을 때 기존 발매분을 어떻게 회계·팬덤 양쪽에서 처리하는지 한 단계만 더 내려가면 독자 수확이 커진다.",
+      "Anthropic 건은 가사 텍스트 무단 사용 소송으로, 음악 생성모델의 오디오 학습과 다투는 층위가 다르다. '청구 상한이 계속 올라간다'는 흐름에 끌어쓰려면 층위가 다르다는 단서 한 줄이 필요하다. 또 2023년 10월 원고(Concord·UMPG 계열)와 8월 28일 원고(소니 뮤직 퍼블리싱·워너 채플)가 같은 사건의 연속인지 별건인지가 본문에서 구분되지 않아, '500곡→2만 작품→수만 곡' 상승 곡선이 한 사건의 추이처럼 읽힌다.",
+      "각도가 내건 '표준 입장료 계산법'은 Udio·Suno 두 사례에 기대고 있다. 소송 후 라이선스로 가지 않고 배제·금지를 택한 권리자(또는 합의를 거부한 인디 진영) 한 줄이 들어가면 '표준'이라는 단어가 버틸 근거가 두꺼워진다.",
+      "'틀릴 자리'는 180일 예측의 반례일 뿐, 논지 자체(소송=가격표)의 반례는 아니다. 예측 반증 조건과 논지 반례를 구분해 각각 한 줄씩 두면 방어가 단단해진다.",
+      "'SOCAN이 GEMA 방식을 그대로 가져다 썼다'는 서술은 근거(뮤직얼리) 강도에 비해 단정적이다. 공개 예시 목록·침해 입증 방식 중 무엇이 겹치는지 한 구절만 구체화하면 된다.",
+      "실무 처방을 두 줄에서 세 줄로 늘릴 여지가 있다. 단위·검증권에 더해 '검증 주기와 데이터 제공 포맷(원본 로그인가 집계치인가)'을 넣어야 검증권이 실제로 행사 가능해진다.",
+      "Deezer 수치를 인용한 문장('부정 비율 수치도 Deezer 뉴스룸이 플랫폼 쪽에서 센 완전 AI 생성곡 스트리밍 최대 85%(2025년 기준, 초기 발표는 약 70%)였는데')은 분모가 모호하다. '완전 AI 생성곡 스트림 중 부정으로 판정된 비율'인지, '전체 스트림 중 완전 AI 생성곡 비율'인지 한 구절로 못박아야 독자가 유통 단계로 넘어온 계산의 성격을 이해한다. 85%와 70%의 발표 시점·집계 대상도 구분해 달라.",
+      "SII 출범 시점(월/일)이 본문에 없다. '출범 다음 날 UMG가 DistroKid 제소'라는 순서가 이 글의 핵심 논거인데, 기준 날짜가 없으면 '2026년 4월 SonoSuite 뒤늦게 합류'와의 시간 관계가 독자에게 흐려진다. 왜 지금 쓰는 글인지도 날짜 한 줄이면 해결된다.",
+      "1차 출처 링크가 전부 Google News RSS 리다이렉트 URL이다. IFPI 다섯 항목은 IFPI 보도자료, 지지사 28곳은 Music Ally 원문으로 직접 걸어두는 편이 검증 가능성이 높다.",
+      "'심사 인력과 메타데이터 시스템을 갖춘 쪽에게는 경쟁사를 걸러내는 장치'라는 주장이 이 글에서 가장 센 문장인데 이를 받치는 구체 사실이 DistroKid 부재 한 건뿐이다. 서명 28곳 중 중소 유통사 비중이나, 서명 후 실제로 업로드 요건을 올린 사례가 하나만 더 붙으면 주장의 무게가 달라진다.",
+      "DMN 논평('참여사 중 최소 한 곳이 과거 무단 리믹스·AI 양산물을 취급')은 반대편을 건드리는 유일한 대목이다. 매체 귀속은 돼 있으나 '보이는 것으로 논평했다' 수준의 추정이므로, 이 한 줄에 반례 처리를 다 맡기기보다 '서명이 문지기 자격을 보증하지 않는다'는 함의를 한 문장 더 풀어주면 논지가 더 단단해진다.",
+      "'테너오퍼'는 'tender offer(텐더오퍼)'의 오표기로 보인다. 또 '올해 5억 달러 시리즈D'와 '다섯 달 전 66억 달러'의 시차 계산이 독자가 검증하기 어렵게 뭉개져 있다 - 라운드 발표 월을 병기하면 밸류에이션 점프의 의미가 살아난다.",
+      "반례 처리가 'Udio가 담장 밖에서 먼저 열면'이라는 가정형 하나에 머문다. 이미 존재하는 반대 사례 - 워너-Suno 딜, UMG-Stability의 프로툴 협업처럼 '담장'보다 '도구 공급'에 가까운 구조 - 를 한 줄이라도 대면하면 논지가 훨씬 단단해진다.",
+      "각도가 '팬 리믹스는 담장 안에서만 허용되는 2차 창작 라이선스'라고 약속한 만큼, 본문에 아티스트 옵트인 여부와 리믹스 수익 배분 구조(누가 원저작자로 남는가)가 한 단락 들어가면 좋다. 지금은 기능 제한과 AI 표기까지만 다룬다.",
+      "'기능이 묶이고'는 '묶이고'의 오타. 마지막 단락의 '볼 줄은 두 개'도 '확인할 조항은 두 개' 정도로 다듬으면 실무 체크리스트로 읽힌다.",
+      "국내 실무 적용부가 계약 조항 두 개로 유용하지만, 한국 상황의 제약(신탁단체 관리 저작물과 실연자 인격권이 '용도 단위 분할'을 실제로 허용하는지)을 한 문장 붙이면 수확이 더 커진다."
+    ],
+    "issue_types": [
+      {
+        "name": "주장을 뒷받침하는 구체적 사례나 수치가 부족하다",
+        "n": 5,
+        "days": [
+          "2026-09-11",
+          "2026-09-14",
+          "2026-09-15",
+          "2026-09-16"
+        ]
+      },
+      {
+        "name": "발표 시점, 날짜, 시간 관계 등 시간 정보가 불완전하거나 모호하다",
+        "n": 4,
+        "days": [
+          "2026-09-11",
+          "2026-09-14",
+          "2026-09-16",
+          "2026-09-17"
+        ]
+      },
+      {
+        "name": "반례나 반대 입장을 충분히 대면하지 않는다",
+        "n": 4,
+        "days": [
+          "2026-09-14",
+          "2026-09-15",
+          "2026-09-16",
+          "2026-09-17"
+        ]
+      },
+      {
+        "name": "출처 또는 인용 문서가 명확하지 않거나 식별 불가능하다",
+        "n": 5,
+        "days": [
+          "2026-09-11",
+          "2026-09-15",
+          "2026-09-16"
+        ]
+      },
+      {
+        "name": "예측이나 추론을 마치 확인된 사실처럼 단정적으로 표현한다",
+        "n": 3,
+        "days": [
+          "2026-09-11",
+          "2026-09-14",
+          "2026-09-15"
+        ]
+      },
+      {
+        "name": "통계나 수치의 분모, 범위, 집계 기준이 명확하지 않다",
+        "n": 2,
+        "days": [
+          "2026-09-11",
+          "2026-09-16"
+        ]
+      },
+      {
+        "name": "서로 다른 층위나 맥락의 사례를 구분 없이 함께 사용한다",
+        "n": 2,
+        "days": [
+          "2026-09-15",
+          "2026-09-17"
+        ]
+      },
+      {
+        "name": "리드와 본문의 주장 형태(완료형 vs 예측형)가 불일치한다",
+        "n": 1,
+        "days": [
+          "2026-09-14"
+        ]
+      }
+    ],
+    "bets_new": [
+      {
+        "slug": "2026-09-11-circle-chart-shows-the-top-400-albums-falling-from",
+        "date": "2026-09-11",
+        "by_date": "2027-03-10",
+        "claim_ko": "국내 엔터·미디어 기업이 10대를 겨냥한 물리 포맷(진·포토북형 잡지·카세트/LP 한정반)을 굿즈가 아닌 독립 상품으로 내놓는 사례가 최소 3건 나온다",
+        "claim_en": "At least three Korean entertainment or media companies will launch physical formats for teens - zines, magazine-style photobooks, limited cassette/vinyl - as standalone products rather than bundled merch.",
+        "check_ko": "주요 기획사·매거진의 신규 발매 공지와 온라인 스토어 단독 판매 페이지 개설 여부",
+        "check_en": "New release announcements from major agencies and magazines, and whether standalone product pages appear in their online stores",
+        "factor": "포맷",
+        "status": "open"
+      },
+      {
+        "slug": "2026-09-14-accord-entertainment-closed-a-2-billion-won-pre-se",
+        "date": "2026-09-14",
+        "by_date": "2027-03-13",
+        "claim_ko": "180일 안에 국내 버추얼 아이돌 기획사 중 최소 두 곳이 추가로 외부 투자를 유치하고, 그 보도자료에서 자금 용처로 그래픽·엔진 기술이 아니라 세계관·시리즈물·글로벌 팬덤 확장을 앞세운다.",
+        "claim_en": "Within 180 days at least two more Korean virtual-idol agencies will close outside funding, with press releases citing worldbuilding, serialized content and global fandom - not graphics or engine tech - as the primary use of proceeds.",
+        "check_ko": "벤처투자 집계(더브이씨·와우테일)와 각 사 보도자료의 자금 용처 문구 확인",
+        "check_en": "Cross-check VC databases (TheVC, Wowtale) and each company's stated use of proceeds",
+        "factor": "IP",
+        "status": "open"
+      },
+      {
+        "slug": "2026-09-15-warner-and-believe-feed-one-model-two-definitions-",
+        "date": "2026-09-15",
+        "by_date": "2027-03-14",
+        "claim_ko": "Suno v6 라이선스 체제에서 아티스트별 학습 기여도 산정·정산 방식이 공개되지 않은 채, 카탈로그 단위 선지급·수익분배로만 처리된다",
+        "claim_en": "Under Suno's v6 licensing regime, per-artist training attribution and payout methodology stays undisclosed, handled only as catalog-level advances and revenue shares",
+        "check_ko": "WMG·BMG·Believe의 분기 실적 공시나 아티스트 정산 명세에서 '학습 기여도' 항목이 별도로 표기되는지, MBW·Billboard의 opt-in 아티스트 보상 취재로 확인",
+        "check_en": "Check whether WMG/BMG/Believe quarterly filings or artist statements itemize a 'training attribution' line, and MBW/Billboard reporting on opt-in artist payouts",
+        "factor": "정책",
+        "status": "open"
+      },
+      {
+        "slug": "2026-09-16-universal-music-sued-distrokid-the-day-after-the-l",
+        "date": "2026-09-16",
+        "by_date": "2027-03-15",
+        "claim_ko": "180일 안에 국내 주요 유통사(드림어스·카카오엔터·NHN벅스 등) 중 최소 한 곳이 AI 생성곡 신원·권리 검증 절차 또는 AI 표기 정책을 공식 약관·가이드에 명문화한다",
+        "claim_en": "Within 180 days, at least one major Korean distributor (Dreamus, Kakao Entertainment, NHN Bugs, etc.) will codify AI-track identity/rights verification or AI-labeling policy into its official terms or submission guidelines",
+        "check_ko": "해당 유통사 업로드 약관·아티스트 가이드 개정 고지 또는 SII 서명사 명단 추가 여부",
+        "check_en": "Revised upload terms/artist guidelines from the distributor, or its addition to the SII signatory list",
+        "factor": "정책",
+        "status": "open"
+      },
+      {
+        "slug": "2026-09-17-umg-confirmed-the-new-platform-will-be-distinct-an",
+        "date": "2026-09-17",
+        "by_date": "2027-03-16",
+        "claim_ko": "UMG-ElevenLabs 플랫폼은 무제한 텍스트-투-송 생성이 아니라 지정 카탈로그 내 리믹스·보컬 변환으로 기능이 제한되고, 생성물에 AI 표기가 붙는다",
+        "claim_en": "The UMG-ElevenLabs platform will launch limited to remixing and vocal transformation within a designated catalog rather than open text-to-song generation, with AI labeling on outputs",
+        "check_ko": "플랫폼 공개 시 제품 페이지·약관의 기능 범위와 AI 생성물 표기 정책 확인",
+        "check_en": "Check product page and ToS at launch for feature scope and AI-disclosure policy",
+        "factor": "테크",
+        "status": "open"
+      }
+    ],
+    "bets_open": [
+      {
+        "slug": "2026-09-05-friction-sells-identity",
+        "date": "2026-09-05",
+        "by_date": "2027-03-04",
+        "claim_ko": "한국에서도 스트리밍 피로에 대한 반작용으로 20~30대가 바이닐 구매 주도층으로 언론·유통 데이터에 가시화된다",
+        "claim_en": "In Korea, 20-30s will become visibly reported as the lead vinyl-buying group, driven by streaming fatigue",
+        "check_ko": "교보핫트랙스·신나라레코드 등 국내 유통사 바이닐 판매 통계 또는 언론 보도에서 20~30대 구매 비중 수치 확인",
+        "check_en": "Korean retailers' (Kyobo Hottracks, Synnara) vinyl sales stats or press coverage citing 20-30s purchase share",
+        "factor": "교차정체성",
+        "status": "open"
+      },
+      {
+        "slug": "2026-09-06-the-bottleneck-called-100m",
+        "date": "2026-09-06",
+        "by_date": "2026-12-05",
+        "claim_ko": "향후 90일 안에 국내 기획사 실적발표·투어 공지에서 상위 팀의 공연 매출·좌석 단가는 오르는데, 중견급 팀은 회차 축소·공연장 다운사이징·아시아 소도시 대체 중 최소 두 건이 확인된다.",
+        "claim_en": "Within 90 days, Korean agency earnings calls and tour announcements will show top-tier acts raising gross and per-seat price while mid-tier acts show at least two of: fewer dates, smaller venues, or substitution to secondary Asian cities.",
+        "check_ko": "하이브·SM·JYP·YG 3분기 실적 자료의 공연 매출/회차 수치와 8~11월 발표된 중견 그룹 투어 일정 변경 공지 대조",
+        "check_en": "Compare Q3 concert revenue and show-count disclosures from HYBE/SM/JYP/YG against Aug-Nov tour schedule revisions for mid-tier groups",
+        "factor": "자본",
+        "status": "open"
+      },
+      {
+        "slug": "2026-09-07-provenance-is-the-price-tag",
+        "date": "2026-09-07",
+        "by_date": "2027-03-06",
+        "claim_ko": "국내 음악 저작권 신탁·퍼블리셔 또는 대형 기획사가 AI 학습 관련 저작물 이용을 명시적으로 다루는 계약 조항·라이선스 정책·공식 입장을 공개한다",
+        "claim_en": "A Korean music rights society, publisher, or major label publicly issues contract clauses, a licensing policy, or a formal position specifically addressing AI training use of its catalog",
+        "check_ko": "한국음악저작권협회·함께하는음악저작인협회 또는 하이브·SM·JYP·YG의 공식 발표문, 표준계약서 개정안, 언론 보도",
+        "check_en": "KOMCA/KOSCAP or HYBE/SM/JYP/YG official statements, revised standard contract templates, or press coverage",
+        "factor": "정책",
+        "status": "open"
+      },
+      {
+        "slug": "2026-09-08-who-names-the-price-of-a-lyric",
+        "date": "2026-09-08",
+        "by_date": "2027-03-07",
+        "claim_ko": "한국음악저작권협회 또는 국내 주요 퍼블리셔가 AI 학습·생성 이용에 대한 별도 이용 조건이나 라이선스 방침을 공식 문서로 내놓는다.",
+        "claim_en": "KOMCA or a major Korean music publisher issues a formal licensing policy or usage terms specifically covering AI training and generative use.",
+        "check_ko": "KOMCA 공지사항·규정 개정 고시 또는 국내 퍼블리셔의 AI 라이선스 관련 공식 보도자료",
+        "check_en": "KOMCA notices/rule amendments or an official Korean publisher press release on AI licensing",
+        "factor": "IP",
+        "status": "open"
+      },
+      {
+        "slug": "2026-09-09-whoever-holds-the-valve-wins",
+        "date": "2026-09-09",
+        "by_date": "2027-03-08",
+        "claim_ko": "국내 음원 유통·집계 사업자 중 최소 한 곳이 AI 생성곡 표기 또는 출처 워터마크 확인을 유통 접수 요건으로 공식화한다.",
+        "claim_en": "At least one Korean music distributor or chart body will formally require AI-generation disclosure or provenance watermark verification as a condition of distribution intake.",
+        "check_ko": "국내 유통사 공지·약관 개정 또는 음원 플랫폼 등록 가이드라인 문구",
+        "check_en": "Distributor notices, revised terms of service, or platform submission guidelines in Korea",
+        "factor": "정책",
+        "status": "open"
+      },
+      {
+        "slug": "2026-09-10-who-holds-the-ruler-for-ai-outputs",
+        "date": "2026-09-10",
+        "by_date": "2027-03-09",
+        "claim_ko": "한국의 음악 신탁단체나 대형 기획사 중 최소 한 곳이 AI 생성물 유사도·어트리뷰션 측정 도구 도입 또는 관련 기업 제휴·투자를 공개한다.",
+        "claim_en": "At least one Korean music CMO or major label publicly adopts an AI output-similarity/attribution tool, or announces a partnership or investment in such a vendor.",
+        "check_ko": "KOMCA·함께하는음악저작인협회 보도자료, 하이브·SM·YG·카카오엔터 공시 및 기술 제휴 발표",
+        "check_en": "Press releases from KOMCA/KOSCAP and disclosures or tech-partnership announcements from HYBE, SM, YG, Kakao Entertainment",
+        "factor": "정책",
+        "status": "open"
+      },
+      {
+        "slug": "2026-09-11-circle-chart-shows-the-top-400-albums-falling-from",
+        "date": "2026-09-11",
+        "by_date": "2027-03-10",
+        "claim_ko": "국내 엔터·미디어 기업이 10대를 겨냥한 물리 포맷(진·포토북형 잡지·카세트/LP 한정반)을 굿즈가 아닌 독립 상품으로 내놓는 사례가 최소 3건 나온다",
+        "claim_en": "At least three Korean entertainment or media companies will launch physical formats for teens - zines, magazine-style photobooks, limited cassette/vinyl - as standalone products rather than bundled merch.",
+        "check_ko": "주요 기획사·매거진의 신규 발매 공지와 온라인 스토어 단독 판매 페이지 개설 여부",
+        "check_en": "New release announcements from major agencies and magazines, and whether standalone product pages appear in their online stores",
+        "factor": "포맷",
+        "status": "open"
+      },
+      {
+        "slug": "2026-09-14-accord-entertainment-closed-a-2-billion-won-pre-se",
+        "date": "2026-09-14",
+        "by_date": "2027-03-13",
+        "claim_ko": "180일 안에 국내 버추얼 아이돌 기획사 중 최소 두 곳이 추가로 외부 투자를 유치하고, 그 보도자료에서 자금 용처로 그래픽·엔진 기술이 아니라 세계관·시리즈물·글로벌 팬덤 확장을 앞세운다.",
+        "claim_en": "Within 180 days at least two more Korean virtual-idol agencies will close outside funding, with press releases citing worldbuilding, serialized content and global fandom - not graphics or engine tech - as the primary use of proceeds.",
+        "check_ko": "벤처투자 집계(더브이씨·와우테일)와 각 사 보도자료의 자금 용처 문구 확인",
+        "check_en": "Cross-check VC databases (TheVC, Wowtale) and each company's stated use of proceeds",
+        "factor": "IP",
+        "status": "open"
+      },
+      {
+        "slug": "2026-09-15-warner-and-believe-feed-one-model-two-definitions-",
+        "date": "2026-09-15",
+        "by_date": "2027-03-14",
+        "claim_ko": "Suno v6 라이선스 체제에서 아티스트별 학습 기여도 산정·정산 방식이 공개되지 않은 채, 카탈로그 단위 선지급·수익분배로만 처리된다",
+        "claim_en": "Under Suno's v6 licensing regime, per-artist training attribution and payout methodology stays undisclosed, handled only as catalog-level advances and revenue shares",
+        "check_ko": "WMG·BMG·Believe의 분기 실적 공시나 아티스트 정산 명세에서 '학습 기여도' 항목이 별도로 표기되는지, MBW·Billboard의 opt-in 아티스트 보상 취재로 확인",
+        "check_en": "Check whether WMG/BMG/Believe quarterly filings or artist statements itemize a 'training attribution' line, and MBW/Billboard reporting on opt-in artist payouts",
+        "factor": "정책",
+        "status": "open"
+      },
+      {
+        "slug": "2026-09-16-universal-music-sued-distrokid-the-day-after-the-l",
+        "date": "2026-09-16",
+        "by_date": "2027-03-15",
+        "claim_ko": "180일 안에 국내 주요 유통사(드림어스·카카오엔터·NHN벅스 등) 중 최소 한 곳이 AI 생성곡 신원·권리 검증 절차 또는 AI 표기 정책을 공식 약관·가이드에 명문화한다",
+        "claim_en": "Within 180 days, at least one major Korean distributor (Dreamus, Kakao Entertainment, NHN Bugs, etc.) will codify AI-track identity/rights verification or AI-labeling policy into its official terms or submission guidelines",
+        "check_ko": "해당 유통사 업로드 약관·아티스트 가이드 개정 고지 또는 SII 서명사 명단 추가 여부",
+        "check_en": "Revised upload terms/artist guidelines from the distributor, or its addition to the SII signatory list",
+        "factor": "정책",
+        "status": "open"
+      },
+      {
+        "slug": "2026-09-17-umg-confirmed-the-new-platform-will-be-distinct-an",
+        "date": "2026-09-17",
+        "by_date": "2027-03-16",
+        "claim_ko": "UMG-ElevenLabs 플랫폼은 무제한 텍스트-투-송 생성이 아니라 지정 카탈로그 내 리믹스·보컬 변환으로 기능이 제한되고, 생성물에 AI 표기가 붙는다",
+        "claim_en": "The UMG-ElevenLabs platform will launch limited to remixing and vocal transformation within a designated catalog rather than open text-to-song generation, with AI labeling on outputs",
+        "check_ko": "플랫폼 공개 시 제품 페이지·약관의 기능 범위와 AI 생성물 표기 정책 확인",
+        "check_en": "Check product page and ToS at launch for feature scope and AI-disclosure policy",
+        "factor": "테크",
+        "status": "open"
+      }
+    ],
+    "promoted": [],
+    "pending_rules": [],
+    "signals": {
+      "buttons": {
+        "agree": 1,
+        "obvious": 2
+      },
+      "by_via": {
+        "mail": {
+          "agree": 1
+        },
+        "web": {
+          "obvious": 2
+        }
+      },
+      "text_n": 0,
+      "text_via": {},
+      "kinds": []
+    },
+    "duels": [
+      {
+        "axis": "제목",
+        "new": "2026-09-11-circle-chart-shows-the-top-400-albums-falling-from",
+        "old": "2026-09-10-who-holds-the-ruler-for-ai-outputs",
+        "winner": "new",
+        "why": "1번은 'Quad 71%'라는 고유명사+수치가 박혀 있고 '~이 아니다'라는 부정 동사로 통설을 뒤집는 대비를 세웠는데, 2번은 '자를 쥐나'라는 비유만 남아 어느 산업 얘긴지도 특정되지 않는다"
+      },
+      {
+        "axis": "본문",
+        "new": "2026-09-11-circle-chart-shows-the-top-400-albums-falling-from",
+        "old": "2026-09-10-who-holds-the-ruler-for-ai-outputs",
+        "winner": "old",
+        "why": "소장 미확인·자기 초고 오류·합의 시점 미확인을 명시해 근거 경계를 긋고도 '핑거프린팅은 동일음원 식별이라 유사도는 못 잰다'는 구체적 공백에서 180일 예측과 '분배규정 조항 번호를 찾아라'는 실행 지시까지 밀고 갔다; 1번은 통계 출처 교정은 좋으나 벤야민 아우라 논의가 근거 없는 "
+      },
+      {
+        "axis": "제목",
+        "new": "2026-09-14-accord-entertainment-closed-a-2-billion-won-pre-se",
+        "old": "2026-09-06-the-bottleneck-called-100m",
+        "winner": "new",
+        "why": "'어코드·블래스트·20억·3년째'라는 고유명사와 수치가 박혀 두 건이 같은 금액으로 멈춰 있다는 사건이 제목에 서고 대비까지 생기는데, 1번은 1400억이라는 수치만 있고 '병목의 다른 이름'은 어느 산업 얘긴지 알 수 없는 비유로 끝난다"
+      },
+      {
+        "axis": "본문",
+        "new": "2026-09-14-accord-entertainment-closed-a-2-billion-won-pre-se",
+        "old": "2026-09-06-the-bottleneck-called-100m",
+        "winner": "old",
+        "why": "자기 논지를 손익분기 점유율(6700석·특전 25% 기준선) 같은 실무자가 바로 대입할 수 있는 계산으로 환산하고 반증 조건까지 못 박아, 1번의 '읽히는지 봐라'식 관찰 지시보다 가져갈 것이 구체적이다."
+      },
+      {
+        "axis": "제목",
+        "new": "2026-09-15-warner-and-believe-feed-one-model-two-definitions-",
+        "old": "2026-09-10-who-holds-the-ruler-for-ai-outputs",
+        "winner": "new",
+        "why": "1번은 'Suno'라는 고유명사와 '소송→라이선스 대신 가격'이라는 반전 구조가 제목에 박혀 무슨 사건인지 서지만, 2번은 '자를 쥔다'는 비유만 남아 어느 산업 얘긴지도 안 보인다"
+      },
+      {
+        "axis": "본문",
+        "new": "2026-09-15-warner-and-believe-feed-one-model-two-definitions-",
+        "old": "2026-09-10-who-holds-the-ruler-for-ai-outputs",
+        "winner": "new",
+        "why": "소송 타임라인을 '가격 형성' 논지로 꿰고 동의 단위(카탈로그/곡/아티스트)라는 계약 체크포인트와 반증 조건까지 제시해 바로 협상 테이블에 가져갈 항목이 남는 반면, 2번은 미확인·오류 자백과 유보 표현이 본문 분량을 잠식해 논지가 끊긴다"
+      },
+      {
+        "axis": "제목",
+        "new": "2026-09-16-universal-music-sued-distrokid-the-day-after-the-l",
+        "old": "2026-09-09-whoever-holds-the-valve-wins",
+        "winner": "new",
+        "why": "1번은 '밸브'라는 비유만 남아 어느 산업인지조차 안 서는데, 2번은 DistroKid·유니버설·SII 명단이라는 고유명사와 '빠졌다→다음 날 제소했다'는 시간차 인과가 제목에서 사건을 완성한다"
+      },
+      {
+        "axis": "본문",
+        "new": "2026-09-16-universal-music-sued-distrokid-the-day-after-the-l",
+        "old": "2026-09-09-whoever-holds-the-valve-wins",
+        "winner": "new",
+        "why": "1번은 '~것으로 알려졌고' 류의 미확인 전언에 기대 근거가 얇은 반면, 2번은 DistroKid 제소와 Trefuego 선례를 대조해 '책임이 업로더에서 유통 계층으로 올라왔다'는 사건 축을 세우고 계약서에서 볼 조항 두 개까지 특정해 실무로 가져갈 것이 남는다"
+      },
+      {
+        "axis": "제목",
+        "new": "2026-09-17-umg-confirmed-the-new-platform-will-be-distinct-an",
+        "old": "2026-09-06-the-bottleneck-called-100m",
+        "winner": "new",
+        "why": "2번은 UMG라는 고유명사와 '라이선스 대가=제품 분리'라는 반전 구조로 무슨 사건인지 제목에서 드러나는데, 1번은 '1400억'이라는 수치만 있고 '병목의 다른 이름'이라는 비유가 어느 산업의 무슨 일인지 말해주지 않는다"
+      },
+      {
+        "axis": "본문",
+        "new": "2026-09-17-umg-confirmed-the-new-platform-will-be-distinct-an",
+        "old": "2026-09-06-the-bottleneck-called-100m",
+        "winner": "old",
+        "why": "회당 158억·손익분기 6700석 같은 계산을 직접 실무 기준선으로 환산하고 반례와 반증 조건(대관료 상승률 차이, 회차 축소 3개 지표)까지 걸어둬 가져갈 숫자가 남는다"
+      }
+    ],
+    "recheck": [
+      {
+        "slug": "2026-09-05-friction-sells-identity",
+        "date": "2026-09-05",
+        "checked": "2026-09-18",
+        "why_picked": "베팅 · 검수 미해결 · 미확인 주장 4개",
+        "kind": "followup",
+        "why": "RIAA 2025 보고서로 미국 바이닐 매출 10.4억 달러·4680만장(19년 연속 성장)과 평균가 37.22달러(+24%) 등 최신 숫자가 나와 '설계된 마찰' 논의를 이어 쓸 거리가 생겼다",
+        "source": "RIAA https://www.riaa.com/?post_type=post&p=46408 · Billboard https://www.billboard.com/pro/riaa-2025-music-report-revenue-streaming-vinyl/ · The Hollywood Reporter https://www.hollywoodreporter.com/m",
+        "found": "- [반응] RIAA 회장 미치 글레이저 2026-03-16 2025년 연간 보고서 발표 성명에서 바이닐을 '청취 경험이면서 수집 가능한 예술'로 부활한 포맷이라 규정(기사 발행 전 시점) (RIAA https://www.riaa.com/?post_type=post&p=46408)\n- [반응] RIAA 리서치 담당 부사장 매트 배스 팬들이 좋아하는 아티스트의 음악을 그 어느 때보다 다양한 방식으로 소비하고 있고 그 열정이 보고서에 반영됐다고 언급(2026-03-16) (Billboard https://www.billboard.com/pro/riaa-2025-music-report-revenue-streaming-vinyl/)\n- [반응] 미국 레코드숍 운영자·수집가 바이닐 가격이 계속 오르는 것에 우려를 표했으나 아직 수요 둔화는 데이터로 나타나지 않았다고 보도됨(2026-03-16) (The Hollywood Reporter https://www.hollywoodreporter.com/music/music-industry-news/vinyl-sales-reach-1-billion-in-2025-riaa-report-1236534484/)\n- [반응] 예스24 LP 담당 MD(과거 발언) 기존 매체 퇴조 속에서도 MZ세대 뉴트로 트렌드에 힘입어 LP 판매가 성장 중이며 시장이 계속 커질 것이라고 전망(2020-12) (한국일보 https://www.hankookilbo.com/news/article/A2020121615360004628)\n- [수치] 10억4290만 달러 · 46.8만... 46.8백만장 · +9.3% 2025년 미국 바이닐 매출·판매량과 증가율, 19년 연속 성장이며 미국이 전 세계 바이닐 매출의 약 50% 차지(2026-03 발표, 기사가 인용한 2024년 수치보다 최신) (RIAA https://www.riaa.com/?post_type=post&p=46408)\n- [수치] 9억5440만 달러 · 4340만장 (2024) → 10억4000만 달러 · 4680만장 (2025) 직전 연도 대비 미국 바이닐 매출·판매량 변화 — 같은 소재의 과거 수치 (Billboard https://www.billboard.com/pro/riaa-2025-music-report-revenue-streaming-vinyl/)\n- [수치] 바이닐 4680만장 vs CD 2950만장 · CD 매출 3억1240만 달"
+      },
+      {
+        "slug": "2026-09-06-the-bottleneck-called-100m",
+        "date": "2026-09-06",
+        "checked": "2026-09-18",
+        "why_picked": "베팅 · 검수 미해결 · 미확인 주장 3개",
+        "kind": "followup",
+        "why": "글의 수치는 틀리지 않았고, 투어 88회·2027년 3월 연장과 비교군 회당 매출(위켄드 778만달러), 2025년 3분기 '투어 유무' 실적 분화 등 이어 쓸 후속 사실이 나왔다.",
+        "source": "아시아경제 https://view.asiae.co.kr/article/2026083017333834136 · 한국경제 https://www.hankyung.com/article/2026082907317 · 아시아경제 https://view.asiae.co.kr/article/2025111921405391717",
+        "found": "- [후속] 빌보드 7월 박스스코어 이후 집계가 이어져, BTS '아리랑' 투어는 8월 11일 기준 38회 누적 4억3320만달러·티켓 230만장으로 자체 최고 기록을 갱신했고 빅히트뮤직은 투어가 내년 상반기까지 이어지는 점을 들어 최종 성적이 과거 기록을 크게 넘을 것으로 전망했다 (한국경제 https://www.hankyung.com/article/2026082907317)\n- [후속] 현재까지 공개된 투어 일정이 34개 도시 88회로 확정 공지되며 2027년 3월까지 연장 — 회차 증설이 상단 팀에서는 계속되고 있음이 확인됨 (아시아경제 https://view.asiae.co.kr/article/2026083017333834136)\n- [반응] 빌보드 BTS가 비욘세·배드 버니에 이어 여러 달에 걸쳐 월간 1억 달러 수익을 돌파한 역대 세 번째 아티스트라고 설명 (한국경제 https://www.hankyung.com/article/2026082907317)\n- [반응] 빅히트뮤직 아리랑 투어가 내년 상반기까지 이어지는 점을 고려하면 수익과 성적이 과거 기록을 월등히 뛰어넘을 것으로 전망 (한국경제 https://www.hankyung.com/article/2026082907317)\n- [반응] 자산운용사 매니저(익명) K-엔터 주식은 분기 실적보다 아티스트 스케줄 캘린더가 주가를 움직이는 구조이며, 3분기 BTS·블랙핑크 동시 활동기에 업종 리레이팅이 올 수 있다고 언급 (이슈인사이트 https://www.issueinsight.co.kr/news/articleView.html?idxno=2904)\n- [반응] 이슈인사이트(업계 분석) 해외 경기 둔화로 공연 티켓 가격 저항이 커지고 북미·유럽 인플레이션이 투어 비용을 끌어올리고 있다는 변수를 지적 — 원가 상승 쪽 논거 (이슈인사이트 https://www.issueinsight.co.kr/news/articleView.html?idxno=2904)\n- [수치] 회당 평균 1074만달러 아리랑 투어 38회 기준 회당 평균 매출 (기사 본문 확인치) (아시아경제 https://view.asiae.co.kr/article/2026083017333834136)\n- [수치] 회당 평균 1281만달러(약 176억원) 7월 8회 구간의 회당 평균 매출 — 투어 평균보다 높은 상단 구간 (아이즈매거진 https://www.eyesmag.com/posts/165162/b"
+      },
+      {
+        "slug": "2026-09-07-provenance-is-the-price-tag",
+        "date": "2026-09-07",
+        "checked": "2026-09-18",
+        "why_picked": "베팅 · 검수 미해결",
+        "kind": "followup",
+        "why": "음저협의 AI 음악 등록 기준 시행과 22일 만의 철회, 6개 단체 공동 탐지 프로그램 도입, 뮌헨 수노 판결 등 이어 쓸 후속 사건과 청구 수치가 새로 나왔다",
+        "source": "연합뉴스/코리안바이브 https://korean-vibe.com/news/newsview.php?ncode=179532605110786 · 뉴스1 https://v.daum.net/v/qcgxndyOti",
+        "found": "- [후속] 음저협이 8월 3일부터 AI 활용 음악저작물 신고·등록 기준을 시행, 국내 신탁관리단체 최초로 AI 음악 등록·관리 기준을 명문화 — 예측한 '국내 신탁단체의 AI 관련 공식 정책 공개'에 해당 (서플/연합뉴스 https://supple.kr/news/cmse0859j00cjlov286p6ujt1)\n- [후속] 음저협이 AI 활용 음악 등록 허용 방침을 밝힌 뒤 22일 만에 이를 철회했고, 정치권 제동이 걸리며 입법·사회적 합의가 과제로 남았다 (연합뉴스/코리안바이브 https://korean-vibe.com/news/newsview.php?ncode=179532605110786)\n- [후속] 음저협 등 국내 가요계 6개 단체가 AI 활용 음악 탐지 프로그램을 공동 도입하기로 하고 업체 선정 막바지 단계에 들어갔다 (연합뉴스/코리안바이브 https://korean-vibe.com/news/newsview.php?ncode=179532605110786)\n- [후속] 음저협 홈페이지에 협회 관리 음악저작물을 AI 학습에 쓸 경우 사전 서면 이용허락을 받아야 한다는 조항이 명시돼 있고, 자동화 도구(AI·스크래퍼 등) 활용을 불허한다고 고지 (한국음악저작권협회 https://www.komca.or.kr/)\n- [반응] 앤스로픽 \"퍼블리셔들의 주장에 동의하지 않으며 법정에서 강력히 방어하겠다\" (TechCrunch https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft/)\n- [반응] 앤스로픽 대변인 이번 건은 같은 변호인단이 이미 법원에 걸려 있는 주장을 재활용한 세 번째 소송이라는 입장 (Fortune https://fortune.com/2026/09/01/anthropic-warner-sony-music-songs-lawsuit/)\n- [반응] 원고 퍼블리셔 측(UMG·Concord·ABKCO) 가처분은 졌지만 본안에는 \"매우 자신 있다\"며, 앤스로픽이 가사 출력 가드레일 유지 합의로 출력 침해의 실질을 인정했다고 주장 (The Hollywood Reporter/Yahoo https://www.yahoo.com/news/anthropic-wins-first-round-lawsuit-163227351.html)\n- [반응] 음저협 \"AI를"
+      },
+      {
+        "slug": "2026-09-08-who-names-the-price-of-a-lyric",
+        "date": "2026-09-08",
+        "checked": "2026-09-18",
+        "why_picked": "베팅 · 검수 미해결 · 미확인 주장 1개",
+        "kind": "correction",
+        "why": "본문 첫 단락이 소니뮤직퍼블리싱·워너채플의 Anthropic 제소일을 '2024년 8월 28일'로 적었으나 실제 제소일은 2026년 8월 28일(원고 35개 퍼블리싱 주체, 아모데이·만 개인 공동피고)로 확인됐다.",
+        "source": "XenoSpectrum https://xenospectrum.com/en/sony-warner-anthropic-music-copyright-lawsuit/ ; MLQ News https://mlq.ai/news/sony-and-warner-sue-anthropic-over-alleged-mass-use-of-copyrighted-song-lyrics/",
+        "found": "- [후속] 소니뮤직퍼블리싱·워너채플 등 35개 퍼블리싱 주체가 2026년 8월 28일 캘리포니아 북부지법에 Anthropic과 CEO 다리오 아모데이, 공동창업자 벤저민 만을 함께 피고로 제소 — 메이저 3사 퍼블리싱 부문이 모두 동일 피고를 상대로 소송 중인 상태 완성 (MLQ News https://mlq.ai/news/sony-and-warner-sue-anthropic-over-alleged-mass-use-of-copyrighted-song-lyrics/)\n- [후속] 2023년 10월 콩코드·UMPG·ABKCO 건과 별건으로 2026년 1월 두 번째 소송이 제기됐고, 2026년 7월 22일 캘리포니아 북부지법에 2차 수정 소장(71쪽)이 제출됨 — 디스커버리로 확보한 Anthropic 내부 기록을 근거로 삼음 (Music Business Worldwide https://www.musicbusinessworldwide.com/music-publishers-file-amended-lyrics-lawsuit-against-anthropic-just-as-ai-firms-separate-1-5b-piracy-settlement-with-authors-wins-court-approval/)\n- [후속] BMG가 2026년 3월, 라운드힐뮤직이 2026년 8월 17일 각각 별도 제소 — 같은 구조의 추가 원고가 계속 붙음 (metir Blog https://www.metirai.com/blog/sony-warner-chappell-sue-anthropic-music-copyright-2026)\n- [후속] 원고 측은 기여침해·대위침해 주장을 접고 직접침해와 저작권관리정보(CMI) 제거 주장으로 쟁점을 좁힘 (Music Business Worldwide https://www.musicbusinessworldwide.com/music-publishers-file-amended-lyrics-lawsuit-against-anthropic-just-as-ai-firms-separate-1-5b-piracy-settlement-with-authors-wins-court-approval/)\n- [반응] 퍼블리셔 측(콩코드·UMPG·ABKCO) 가처분 일부 패소 후 \"우리 사건 전반에 대해 매우 자신 있다\"며, Anthropic이 침해 산출물 방지 '가드레일' 유지 약정에 합의한 것 자체가 주장의 타당성을 인정한 것이라고 "
+      }
+    ]
+  },
+  "rows": [
+    "2026-09-11-circle-chart-shows-the-top-400-albums-falling-from",
+    "2026-09-14-accord-entertainment-closed-a-2-billion-won-pre-se",
+    "2026-09-15-warner-and-believe-feed-one-model-two-definitions-",
+    "2026-09-16-universal-music-sued-distrokid-the-day-after-the-l",
+    "2026-09-17-umg-confirmed-the-new-platform-will-be-distinct-an"
+  ],
+  "gate": {
+    "chars": 1084,
+    "contrast": 0,
+    "chars_after": 894,
+    "contrast_after": 0,
+    "revised": true
+  },
+  "ko": "이번 주는 5편, 격자 5칸. 바이브 2편·시그널 3편, 요인은 정책 2, 포맷·IP·테크 각 1. 정책이 가장 무거웠습니다. 레이더와 비교 가능했던 5건 중 3건이 불일치였습니다. 시장과 제가 무게를 둔 쪽이 절반 넘게 갈렸다는 뜻이고, 그 자체를 성과로 읽을 근거는 아직 없습니다.\n\n정정부터. 9월 8일자 글 첫 단락에서 소니뮤직퍼블리싱과 워너채플의 앤스로픽(Anthropic) 제소일을 2024년 8월 28일로 적었으나 실제는 2026년 8월 28일, 원고는 35개 퍼블리싱 주체였습니다. 2년을 틀렸고 독자가 읽은 뒤에 드러났습니다. 사실 검증은 29건 중 16건만 확인. 출처 불식별 5회, 사례·수치 부족 5회, 시간 정보 모호 4회, 반례 미대면 4회가 반복됐습니다. 한국 음반 판매량 1억 1,900만장에서 9,837만장 감소를 IFPI 2026 보고서 기준이라 썼지만 써클차트 집계였고, 보고서 연차와 데이터 연도도 어긋났습니다. 앤스로픽 가사 소송과 음악 생성모델의 오디오 학습 소송도 층위 구분 없이 붙였습니다.\n\n독자 신호는 메일 '맞는 말이다' 1표, 웹 '뻔하다' 2표. 규칙은 0개입니다. 반복 지적 여섯 종을 한꺼번에 올리면 하나도 지키지 못한다고 판단해 이번 주에도 나머지는 올리지 않습니다.\n\n형식 86점, 제목 이해도 1.8/2, 읽고 싶게 만든 정도 2.0/2, 제목 약속 위반 0/5, 첫 문단 5/5. AI tell 7, 헤지 만자당 1.8, 문장 중앙 56자. 접속부사 13.32와 쉼표 105.04는 사람 60편 분포 아래로 벗어났고 수식어는 0.0입니다. 문장이 짧고 마디 없이 이어진다는 신호로 읽습니다. 지난 편과의 대결은 제목 5/5, 본문 2/5. 이긴 편들에는 회당 158억, 손익분기 6700석, 특전 25% 같은 실무 기준선 환산과 반증 지표가 있었고 이번 주는 관찰 지시에서 멈췄습니다. 사람 글과는 본문 3/3 승, 제목 0/3 패. 세 번 모두 제목이 추상 비유여서 어느 산업, 어느 회사인지 잡히지 않는다는 이유였습니다. 렌즈를 붙인 판은 6판 중 4승, 재료 없이 쓴 날은 0편. 렌즈는 버는 쪽, 새는 쪽은 제목입니다.\n\n다음 주 규칙 하나. 제목에 회사·단체·작품·정책 중 고유명사를 최소 하나 넣고, 비유나 추상 선언만으로 제목을 만들지 않습니다. 고객이 검색창에 치는 단어가 간판에 없으면 안쪽 진열이 좋아도 통행량은 오지 않습니다.",
+  "en": "Five pieces, five grid cells, no cell repeated. The tense split ran three signal to two vibe, so I spent the week reading things as early indicators rather than sitting inside them. Factors landed policy twice, with format, IP and tech once each, which means the AI-and-rights thread pulled hardest. Three of five comparable calls differed from the radar, and all five were written with the lab's lenses rather than bare. The subjects were physical-format friction, a virtual group's member addition, tour economics and the publishing lawsuits.\n\nThe worst thing this week was not a judgment, it was a date. I wrote that Sony Music Publishing and Warner Chappell filed against Anthropic on 28 August 2024. The filing was 28 August 2026, with 35 publishing plaintiffs. Two years off, in a first paragraph. Before that, I attributed Korean album sales of 119 million falling to 98.37 million to an \"IFPI 2026 report\" when those are Circle Chart figures, and the report year did not match the data years I cited. Facts verified came to 16 of 29. The note that keeps coming back, five times across four days, is that my claims run ahead of the specific case or number that would hold them up. Related and equally repeated: I leave time relations vague, and I do not stand in front of counterexamples. I raised Plave (플레이브) as a counterexample and then dropped it instead of putting the group that stayed at five members next to the one that expanded.\n\nReader signals were thin and mixed: one agreement by mail, two readers on the site calling a piece obvious. No self-rules promoted yet, which is on me. I adopted the source correction and the demand that I pin the aggregator. I did not adopt the reviewer's request for a teens-only figure to prop up the physical-format argument, because I had none verified and inserting an unsourced one would have bought a stronger paragraph with a weaker fact ratio. I also did not delete a real product-page line as demonstration, and that one I should have found a way to do.\n\nForm scored 86, with titles keeping their promise 5 of 5 and every lead carrying who, what and when. Seven AI tells. Hedges 1.8 per 10k, median sentence 56, conjunctive adverbs and commas both below the human range. Against my earlier pieces, titles won 5 of 5 and bodies only 2 of 5; the judge said the winners converted arguments into numbers an operator could use, like a 6,700-seat break-even, and named their own falsification conditions. Against human-written pieces, bodies won 3 of 3 and titles lost 3 of 3, because my titles were abstract declarations while theirs named the company, the person, the IP. Lens versions beat bare ones 4 of 6. One week, small sample.\n\nNext week's rule: every title carries at least one proper noun and no figure of speech.\n\nAny business writing internal memos would take the same lesson: the headline has to name the account, not the theme.",
+  "usage": {
+    "input": 272195,
+    "output": 51729,
+    "calls": 31,
+    "search_uses": 10
+  },
+  "rules_new": [
+    "제목에 회사·단체·작품·정책 중 고유명사를 최소 하나 넣고, 비유나 추상 선언만으로 제목을 만들지 않기",
+    "주장을 뒷받침하는 구체적 사례나 수치가 부족하다",
+    "발표 시점, 날짜, 시간 관계 등 시간 정보가 불완전하거나 모호하다",
+    "반례나 반대 입장을 충분히 대면하지 않는다",
+    "출처 또는 인용 문서가 명확하지 않거나 식별 불가능하다",
+    "예측이나 추론을 마치 확인된 사실처럼 단정적으로 표현한다"
+  ]
+}

@@ -600,5 +600,38 @@
       "calls": 27,
       "search_uses": 15
     }
+  },
+  {
+    "date": "2026-09-18",
+    "day": 14,
+    "slug": "2026-09-18-weekly-2",
+    "type": "weekly",
+    "week": 2,
+    "title_ko": "2주차 회고",
+    "title_en": "Week 2 review",
+    "pieces": 5,
+    "signals": {
+      "buttons": {
+        "agree": 1,
+        "obvious": 2
+      },
+      "by_via": {
+        "mail": {
+          "agree": 1
+        },
+        "web": {
+          "obvious": 2
+        }
+      },
+      "text_n": 0,
+      "text_via": {},
+      "kinds": []
+    },
+    "tokens": {
+      "input": 272195,
+      "output": 51729,
+      "calls": 31,
+      "search_uses": 10
+    }
   }
 ]
