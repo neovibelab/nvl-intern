@@ -295,7 +295,8 @@ def verify_claim(claim: str) -> dict:
 주장: {claim}
 
 JSON: {{"status":"verified|unverified|contradicted","source":"매체명","url":"확인한 페이지 URL(없으면 빈 문자열)","note":"한 줄"}}""",
-                         tools=llm.WEB_SEARCH_TOOL, max_tokens=3000)
+                         tools=llm.WEB_SEARCH_TOOL, max_tokens=3000,
+                         model=config.MODEL_VERIFY)
         if d.get("status") not in ("verified", "unverified", "contradicted"):
             d["status"] = "unverified"
         return d

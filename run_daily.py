@@ -181,6 +181,9 @@ def main() -> int:
     print(f"  [write] en {len(en.split())} words")
 
     trace["usage"] = dict(llm.USAGE)
+    # 단계별 내역 (2026-09-18). 어느 단계가 값을 먹는지 합계로는 안 보인다.
+    trace["usage_by_step"] = {f"{s}|{m}": v for (s, m), v in llm.USAGE_BY_STEP.items()}
+    print(llm.step_report())
     print(f"  [llm] calls {llm.USAGE['calls']} · in {llm.USAGE['input']} · out {llm.USAGE['output']} · search {llm.USAGE['search_uses']} · {time.time()-t0:.0f}s")
     if args.dry_run:
         print("\n" + "=" * 60 + "\n" + steps.header_line(j, "ko") + "\n# " + j["title_ko"] + "\n\n" + ko + "\n\n원리 · " + j["principle_ko"])

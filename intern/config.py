@@ -41,6 +41,10 @@ BRAIN_DIR = pathlib.Path(os.environ.get("BRAIN_DIR") or (ROOT.parent / "claude-v
 # 인턴 프롬프트 실측 = scripts/bakeoff.py · reports/bakeoff/RESULT.md
 MODEL_MAIN = os.environ.get("INTERN_MODEL_MAIN", "claude-opus-5")
 MODEL_FAST = os.environ.get("INTERN_MODEL_FAST", "claude-haiku-4-5")
+# 사실 검증 전용 (2026-09-18 대표 지시). 하는 일이 판단이 아니라 대조라 haiku로 내렸다.
+# 실측 - 한 편 $2.426 중 verify_claim이 $0.815로 33.6%였다(호출 6·검색 12).
+# 되돌림 조건 = unverified 비율이 2주 연속 절반을 넘으면.
+MODEL_VERIFY = os.environ.get("INTERN_MODEL_VERIFY", MODEL_FAST)
 MODEL_FALLBACK = {"claude-opus-5": "claude-sonnet-5", "claude-sonnet-5": "claude-sonnet-4-6",
                   "claude-haiku-4-5": "claude-haiku-4-5-20251001"}
 
