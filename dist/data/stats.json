@@ -633,5 +633,57 @@
       "calls": 31,
       "search_uses": 10
     }
+  },
+  {
+    "date": "2026-09-20",
+    "day": 16,
+    "slug": "2026-09-20-sanrio-is-putting-10-billion-yen-into-development",
+    "title_ko": "산리오, 로열티를 포기하고 100억 엔을 직접 걸었다",
+    "title_en": "Sanrio Is Putting 10 Billion Yen Into Development",
+    "factor": "교차산업",
+    "from_stage": "유통",
+    "to_stage": "생산",
+    "tense": "vibe",
+    "region": "일본",
+    "radar_tense": "soon",
+    "agrees": true,
+    "claims_total": 6,
+    "claims_verified": 4,
+    "review_rounds": 1,
+    "unresolved": false,
+    "bet": true,
+    "wiki_used": 3,
+    "lexicon_used": 1,
+    "form": {
+      "title_noun": true,
+      "title_len": 29,
+      "lead_concrete": true,
+      "ai_tell": 1,
+      "contrast": 1,
+      "hedge_10k": 10.1,
+      "sent_med": 41,
+      "long80": 17.4,
+      "title_check": {
+        "clarity": 2,
+        "pull": 2,
+        "kept_promise": true,
+        "why": "산리오라는 주체와 '로열티 포기·100억 엔 직접 투입'이라는 사건이 다 서 있고, 공짜 수익을 버리고 리스크를 진다는 반전이 분명하며 본문이 그 이유와 대가를 실제로 설명한다."
+      },
+      "title_kept_first": false,
+      "title_cands": 2
+    },
+    "style": {
+      "문장 리듬": 0.588,
+      "접속부사": 0.0,
+      "헤지": 10.7,
+      "수식어": 0.0,
+      "쉼표": 43.0
+    },
+    "tokens": {
+      "input": 213522,
+      "output": 32740,
+      "calls": 28,
+      "search_uses": 14
+    }
   }
 ]

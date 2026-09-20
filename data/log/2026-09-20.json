@@ -1,0 +1,370 @@
+{
+  "date": "2026-09-20",
+  "steps": {},
+  "cluster": {
+    "key": "9ec8b03a-42d3-4cb9-8248-396092cec10a",
+    "item_ids": [
+      "9ec8b03a-42d3-4cb9-8248-396092cec10a"
+    ],
+    "n": 1,
+    "radar_tense": "soon",
+    "factor": "교차산업",
+    "stage": "생산",
+    "titles": [
+      "TGS2026: 산리오·동映·PARCO, 이종업종의 게임 퍼블리싱 도전—IP 메디어믹스 전략 최전선"
+    ],
+    "urls": [
+      "https://xtrend.nikkei.com/atcl/contents/18/00607/00100/"
+    ],
+    "items": [
+      {
+        "title": "TGS2026: 산리오·동映·PARCO, 이종업종의 게임 퍼블리싱 도전—IP 메디어믹스 전략 최전선",
+        "url": "https://xtrend.nikkei.com/atcl/contents/18/00607/00100/",
+        "source": "日経クロストレンド（日経Gaming）",
+        "region": "japan",
+        "published_date": "2026-09-17T00:00:00+00:00",
+        "title_en": "TGS2026: Sanrio, 東映, PARCO Challenge Game Publishing With Cross-Industry IP Strategies"
+      }
+    ]
+  },
+  "source_summary": {
+    "ko": "TGS2026에서 Sanrio Games, 東映ゲームズ, PARCO 등 비게임 기업들이 자사 IP를 활용해 게임 퍼블리싱에 진출했다. Sanrio는 2029년까지 10개 작품 출시와 100억 엔 매출을 목표로 한다. 2025년 일본 가정용 게임 시장은 7,000억 엔을 넘었으며 온라인 매출이 약 70%를 차지한다.",
+    "en": "At TGS2026, non-gaming companies including Sanrio Games, 東映ゲームズ, and PARCO entered game publishing using their own IPs. Sanrio targets 10 game releases and 10 billion yen in revenue by 2029. Japan's home game market exceeded 700 billion yen in 2025, with online sales accounting for approximately 70%.",
+    "titles_en": [
+      "TGS2026: Sanrio, 東映, PARCO Challenge Game Publishing With Cross-Industry IP Strategies"
+    ]
+  },
+  "materials": {
+    "wiki": [
+      "2026-05-29-IP-비즈니스-구조.md",
+      "2026-08-24-팬덤-OS-파이프라인-매핑.md",
+      "2026-09-16-게임-사업-분해.md"
+    ],
+    "lexicon": [
+      "fandom.md#fan platform as commerce - 커머스로서의 팬 플랫폼"
+    ]
+  },
+  "context": "- [후속] 東映ゲームズ가 TGS2026에 첫 출전해 『HINO』『KILLA』『DEBUG NEPHEMEE』 3타이틀의 TGS 특별 시연판을 전시, 9월 17일부터 Steam 데모판도 배포 시작 (ゲームウィズ(GameWith) https://gamewith.jp/tgs/577791)\n- [후속] TGS 비즈니스데이 9월 17일 TGSフォーラム「異業種からの挑戦～サンリオ、PARCO、東映が語るゲームパブリッシング事業の狙い」에 東映ゲームズ 담당자 등단 예정으로 확정 (日経クロストレンド 日経Gaming https://xtrend.nikkei.com/atcl/contents/18/01222/00101/)\n- [후속] 산리오는 2026년 4월 21일 자사 게임 브랜드 「Sanrio Games」를 정식 출범, 1작 『サンリオ パーティランド』(Switch/Switch 2)를 2026년 가을 전 세계 동시 발매하고 같은 회계연도 내 2작째도 투입한다고 발표 (日本経済新聞 https://www.nikkei.com/article/DGXZQOUC206NK0Q6A420C2000000/)\n- [후속] 산리오 발표 시점에 이미 복수 타이틀이 프리프로덕션·본개발 단계에 있으며 각 타이틀 상세는 단계적으로 공개한다고 공식 릴리스 (サンリオ ニュースリリース https://corporate.sanrio.co.jp/news/20260421.html)\n- [반응] 辻朋邦 산리오 사장 4월 21일 미디어 대상 게임사업 설명회에서 게임 사업 진입 배경과 향후 전망을 직접 설명 (電ファミニコゲーマー https://news.denfaminicogamer.jp/kikakuthetower/260424s)\n- [반응] 濵﨑皓介 산리오 상무 타깃은 Z세대·키즈·패밀리층이며 \"부모가 아이에게 안심하고 권할 수 있는 내용\"을 의식해 설계했다고 설명, 가격은 \"콘솔 게임의 일반적 가격대\"라고만 언급 (Business Insider Japan https://www.businessinsider.jp/article/2604-sanrio-new-business-game-strategy/)\n- [반응] 산리오(브랜드 비전) 게임 단품의 엔터테인먼트에 그치지 않고 굿즈·테마파크 등 기존 자산과 연동한 종합적 체험 가치를 만들겠다는 방침 제시 (GAME Watch https://game.watch.impress.co.jp/docs/news/2103208.html)\n- [반응] 산리오(설명회) 게임을 \"산리오로의 입구\"로 규정, 체류시간이 긴 콘텐츠로 IP 접촉 총시간을 늘리는 것이 목적이라 설명 (GAME Watch https://game.watch.impress.co.jp/docs/kikaku/2103392.html)\n- [수치] 100억 엔 산리오가 게임 사업에 투입하는 개발·판촉비(중장기 게임 매출 목표도 100억 엔 규모) (Business Insider Japan https://www.businessinsider.jp/article/2604-sanrio-new-business-game-strategy/)\n- [수치] 10타이틀 / 2029년 3월까지 Sanrio Games의 3년간 출시 계획 편수·기한 (日本経済新聞 https://www.nikkei.com/article/DGXZQOUC206NK0Q6A420C2000000/)\n- [수치] 6본 이상 과거 수치—2024년 5월 중기경영계획 시점의 개발 타이틀 목표(이번에 10본 정도로 상향) (AdverTimes https://www.advertimes.com/20260421/article541886/)\n- [수치] 145종 이상 / 450종 이상 중, 미니게임 45종 이상, 9개 국어 대응 1작 『サンリオ パーティランド』 등장 캐릭터 수·수록 미니게임 수·대응 언어 (電ファミニコゲーマー https://news.denfaminicogamer.jp/kikakuthetower/260424s)\n- [선례] 출판사 IP 보유사의 퍼블리싱 진출 선례—集英社ゲームズ가 TGS2026 출전 기업 목록에 포함되어 이종업종 IP 홀더의 자사 퍼블리싱이 선행 사례로 존재 (ゲームウィズ(GameWith) https://gamewith.jp/tgs/)\n- [선례] 산리오 자신이 과거에는 라이선스 사업의 일환으로 자사 캐릭터 등장 게임을 외부에 맡겨왔고, 자사 주체로 브랜드를 세워 개발하는 것은 이번이 처음(로열티 모델→퍼블리싱 전환의 대조 사례) (Business Insider Japan https://www.businessinsider.jp/article/2604-sanrio-new-business-game-strategy/)",
+  "judgment": {
+    "factor": "교차산업",
+    "from_stage": "유통",
+    "to_stage": "생산",
+    "region": "일본",
+    "tense": "vibe",
+    "tense_why": "개별 발표가 아니라 캐릭터·영상·유통 3사가 같은 방향으로 움직이고 集英社ゲームズ 선례까지 있는 반복형 이동인데, 아직 IP 보유사 다수의 기본값은 로열티 수취다.",
+    "vibe_evidence": "TGS2026이 '이종업종의 게임 퍼블리싱'만으로 별도 포럼 세션을 편성했고, 산리오·東映·PARCO·集英社가 각각 자사 브랜드로 출전해 사례가 한 자리에 모였다.",
+    "vibe_evidence_en": "TGS2026 set up a forum session solely on non-game companies entering game publishing, with Sanrio, Toei, PARCO and Shueisha Games each exhibiting under their own publishing labels.",
+    "angle_ko": "산리오는 게임 매출을 노린 게 아니라 로열티를 포기하고 '체류시간'을 샀다 - 라이선스는 돈을 주지만 팬과 붙어 있는 시간은 라이선시에게 넘어간다. IP 보유사가 ⑤에서 ①로 거슬러 올라가는 이유는 수익률이 아니라 접촉 총시간의 소유권이다.",
+    "angle_en": "Sanrio isn't chasing game revenue - it gave up royalties to buy dwell time. Licensing pays you but hands the hours spent with your fans to the licensee. IP owners walking back from merchandising to creation are buying ownership of contact time, not margin.",
+    "title_ko": "산리오, 로열티를 포기하고 100억 엔을 직접 걸었다",
+    "title_en": "Sanrio Is Putting 10 Billion Yen Into Development",
+    "bet": {
+      "claim_ko": "2027년 3월까지 일본의 비게임 IP 보유사(캐릭터·출판·영상·유통) 중 최소 한 곳이 추가로 자사 게임 퍼블리싱 브랜드 설립 또는 첫 자체 퍼블리싱 타이틀 발매를 공식 발표한다.",
+      "claim_en": "By March 2027, at least one more Japanese non-game IP holder (character, publishing, film or retail) will officially announce a new in-house game publishing label or its first self-published title.",
+      "by_days": 180,
+      "check_ko": "해당 기업 공식 뉴스릴리스 및 TGS2027 출전사 목록",
+      "check_en": "Company press releases and the TGS2027 exhibitor list"
+    },
+    "principle_ko": "라이선스는 매출을 돌려주지만 고객과 붙어 있는 시간은 돌려주지 않는다. 접촉 시간이 자산인 업종이라면 로열티율보다 그 시간을 누가 소유하는지를 먼저 계산해야 한다.",
+    "principle_en": "Licensing returns revenue but never returns the hours your customer spends with you. In businesses where contact time is the asset, decide who owns that time before you negotiate the royalty rate.",
+    "radar_tense": "soon",
+    "agrees": true,
+    "disagree_reason": ""
+  },
+  "recent": "[D+13 · 2026-09-17] 「UMG가 라이선스 대가로 받아낸 건 제품 분리였다」 테크 생산→소비 · signal\n  숫자 · 제목 - 무슨 얘긴지 알려주나 2/2 · 읽고 싶게 하나 2/2 / 문체 - 사람 분포 밖 2개(접속부사, 쉼표) / 형식 95/100 · 첫 문단에 누가 무엇을 언제 있음 · AI tell 0 · 헤지 만자당 0.0 · 문장 중앙 66자\n  검수 지적 · '테너오퍼'는 'tender offer(텐더오퍼)'의 오표기로 보인다. 또 '올해 5억 달러 시리즈D'와 '다섯 달 전 66억 달러'의 시차 계산이 독자가 검증하기 어렵게 뭉개져 있다 - 라운드 발표 월을 병기하면 밸류에이션 점프의 의미가 살아난다.\n  검수 지적 · 반례 처리가 'Udio가 담장 밖에서 먼저 열면'이라는 ",
+  "draft_ko_v1": "2026년 9월 17일 도쿄게임쇼 비즈니스데이 포럼에 산리오·파르코(PARCO)·동영(東映)이 「이업종에서의 도전」이라는 제목으로 함께 오릅니다([닛케이 크로스트렌드](https://xtrend.nikkei.com/atcl/contents/18/00607/00100/)). 세 곳 다 게임 회사가 아닙니다. 산리오는 그보다 앞선 4월 21일 자사 브랜드 「산리오 게임스(Sanrio Games)」를 출범시키고 2029년 3월까지 10타이틀을 내겠다고 발표했습니다(니혼게이자이신문). 동영게임스는 이번 TGS에 첫 출전해 『HINO』 등 3타이틀을 전시하고 9월 17일부터 스팀 데모를 배포합니다(게임위드).\n\n숫자를 보면 이게 수익 사업이 아니라는 게 드러납니다. 비즈니스 인사이더 재팬에 따르면 산리오가 게임에 넣는 개발·판촉비가 100억 엔이고, 중장기 매출 목표도 100억 엔 규모입니다. 들어가는 돈과 나올 돈이 같은 자릿수입니다. 그동안 산리오는 캐릭터를 외부 게임사에 빌려주고 로열티만 받아왔습니다. 그쪽이 투입 없이 들어오는 돈입니다. 그걸 포기하고 개발 리스크를 직접 지는 선택의 이유를 하마사키 코스케(濵﨑皓介) 상무와 회사는 설명회에서 직접 말했습니다. 게임은 「산리오로의 입구」이고, 체류시간이 긴 콘텐츠로 IP 접촉 총시간을 늘리는 게 목적이라는 것입니다(게임 워치).\n\n로열티는 매출을 돌려주지만 팬이 그 IP와 붙어 있던 시간은 라이선시 쪽에 남습니다. 플레이 로그도, 계정도, 다음 무엇을 팔지 판단할 데이터도 거기 있습니다. 1작 『산리오 파티랜드』가 보유 450종 이상 중 145종 이상의 캐릭터를 넣고 미니게임을 45종 이상 담았다는 구성은(덴파미니코게이머) 게임 설계라기보다 카탈로그를 한 화면에 펼친 쪽에 가깝습니다. 굿즈와 테마파크로 연결하겠다는 방침도 함께 나왔습니다.\n\n물론 접촉시간을 사면서 실패 비용도 같이 삽니다. 로열티 모델에서는 졸작이 나와도 브랜드 훼손이 라이선시 이름으로 반쯤 걸러집니다. 자사 퍼블리싱에는 그 완충이 없습니다.\n\n그래도 흐름은 이어진다고 봅니다. 슈에이샤 게임즈가 이미 TGS2026 출전사 목록에 있는 선례이고, 2027년 3월까지 일본의 비게임 IP 보유사 중 최소 한 곳이 추가로 자사 퍼블리싱 브랜드 설립이나 첫 자체 타이틀 발매를 공식 발표할 것으로 봅니다. 확인은 각 사 뉴스릴리스와 TGS2027 출전사 목록입니다.\n\n국내에서 캐릭터·웹툰·음악 IP를 빌려주는 쪽이라면, 다음 계약서에서 로열티율 옆에 한 줄을 더 볼 일입니다. 이용자의 플레이 시간과 계정 데이터가 계약 종료 후 누구에게 남는지입니다.",
+  "claims": [
+    {
+      "status": "verified",
+      "source": "GameBusiness.jp",
+      "url": "https://www.gamebusiness.jp/article/2026/09/19/28104.html",
+      "note": "9월 17일 도쿄게임쇼 비즈니스데이 포럼에서 산리오·PARCO·동영이 '異業種からの挑戦(이업종에서의 도전)'이라는 제목으로 개최됨을 확인",
+      "claim": "2026년 9월 17일 도쿄게임쇼 비즈니스데이 포럼에 산리오·파르코(PARCO)·동영(東映)이 「이업종에서의 도전」이라는 제목으로 함께 오릅니다"
+    },
+    {
+      "status": "verified",
+      "source": "AUTOMATON",
+      "url": "https://automaton-media.com/articles/newsjp/20260421-438708/",
+      "note": "산리오가 4월 21일 산리오 게임즈 출범을 발표하고 향후 3년간 약 10타이틀을 출시할 계획을 확인",
+      "claim": "산리오는 4월 21일 자사 브랜드 「산리오 게임스(Sanrio Games)」를 출범시키고 2029년 3월까지 10타이틀을 내겠다고 발표했습니다"
+    },
+    {
+      "status": "unverified",
+      "source": "게임뷰",
+      "url": "https://www.gamevu.co.kr/news/articleView.html?idxno=60810",
+      "note": "토에이게임즈(동영게임스) 3타이틀 출시는 확인되나 스팀 데모 9월 17일 배포는 미확인",
+      "claim": "동영게임스는 이번 TGS에 첫 출전해 『HINO』 등 3타이틀을 전시하고 9월 17일부터 스팀 데모를 배포합니다"
+    },
+    {
+      "status": "contradicted",
+      "source": "ZDNet Korea, Japan Times",
+      "url": "https://zdnet.co.kr/view/?no=20260422094157",
+      "note": "개발·판촉비 100억 엔은 확인되었으나, 매출 목표 100억 엔은 미확인",
+      "claim": "산리오가 게임에 넣는 개발·판촉비가 100억 엔이고, 중장기 매출 목표도 100억 엔 규모입니다"
+    },
+    {
+      "status": "verified",
+      "source": "루리웹",
+      "url": "https://bbs.ruliweb.com/nin/board/300004/read/2356177",
+      "note": "산리오 파티랜드는 450개 이상의 IP 중 145명 이상 캐릭터와 45종류 이상의 미니게임을 포함",
+      "claim": "1작 『산리오 파티랜드』가 보유 450종 이상 중 145종 이상의 캐릭터를 넣고 미니게임을 45종 이상 담았습니다"
+    },
+    {
+      "status": "verified",
+      "source": "ゲームウィズ",
+      "url": "https://gamewith.jp/tgs/574121",
+      "note": "集英社ゲームズブースがTGS2026出展ゲームタイトル一覧に記載されている",
+      "claim": "슈에이샤 게임즈가 이미 TGS2026 출전사 목록에 있습니다"
+    }
+  ],
+  "reviews": [
+    {
+      "verdict": "pass",
+      "blocking": [],
+      "notes": [
+        "「산리오는 그보다 앞선 4월 21일」에 연도가 없다. 앞 문장이 2026년 9월이라 독자는 2026년 4월로 읽지만, 100억 엔·10타이틀·2029년 3월이라는 발표 내용은 산리오 게임스 출범 당시(전년도 4월 21일) 수치다. 연도를 명기하고 TGS 포럼과 몇 개월 간격인지 한 줄로 확정해야 「그보다 앞선」이라는 시간 감각이 성립한다.",
+        "「9월 17일부터 스팀 데모를 배포하는 것으로도 알려졌습니다」는 이 글에서 유일하게 출처 없는 전언이다. 논지를 받치는 문장은 아니지만, 다른 모든 사실에 매체명을 달아둔 글에서 이 한 문장만 무출처인 것은 신뢰도를 깎는다. 출처를 붙이거나 삭제하는 편이 낫다.",
+        "반대편 문단이 「브랜드 훼손 완충의 상실」 하나만 다룬다. 이 각도에 더 위험한 반례는 두 가지다. ① 산리오가 애초에 게임 매출을 노렸고 체류시간은 사후 수사일 가능성 - 100억 엔 회수 계획이 설명회에서 어떻게 제시됐는지 한 줄이 있으면 방어된다. ② 접촉시간 소유권은 자사 퍼블리싱 없이도 라이선스 계약의 데이터 공유 조항으로 확보 가능하다는 반박. ②는 마지막 문단의 실무 제안과 직접 충돌하므로, 「계약서 한 줄로 되는 일을 왜 100억 엔으로 하는가」에 답하면 글의 결론이 훨씬 단단해진다.",
+        "『산리오 파티랜드』의 145종 캐릭터·45종 미니게임을 「카탈로그를 펼친 쪽」이라고 해석한 대목이 이 글에서 가장 독자적인 관찰인데 한 문장에 그친다. 캐릭터 노출 폭이 넓을수록 굿즈·테마파크 전환 가설과 어떻게 맞물리는지 한두 문장 더 쓰면 3문단이 단순 사실 나열에서 벗어난다.",
+        "예측(2027년 3월까지 최소 한 곳 추가 발표)의 확인 방법을 제시한 점은 좋다. 다만 슈에이샤 게임즈는 이미 2022년 설립된 회사라 「선례」로는 쓰되 「흐름의 시작」으로 읽히지 않게 설립 시점을 붙이는 편이 안전하다."
+      ],
+      "issues": [
+        "「산리오는 그보다 앞선 4월 21일」에 연도가 없다. 앞 문장이 2026년 9월이라 독자는 2026년 4월로 읽지만, 100억 엔·10타이틀·2029년 3월이라는 발표 내용은 산리오 게임스 출범 당시(전년도 4월 21일) 수치다. 연도를 명기하고 TGS 포럼과 몇 개월 간격인지 한 줄로 확정해야 「그보다 앞선」이라는 시간 감각이 성립한다.",
+        "「9월 17일부터 스팀 데모를 배포하는 것으로도 알려졌습니다」는 이 글에서 유일하게 출처 없는 전언이다. 논지를 받치는 문장은 아니지만, 다른 모든 사실에 매체명을 달아둔 글에서 이 한 문장만 무출처인 것은 신뢰도를 깎는다. 출처를 붙이거나 삭제하는 편이 낫다.",
+        "반대편 문단이 「브랜드 훼손 완충의 상실」 하나만 다룬다. 이 각도에 더 위험한 반례는 두 가지다. ① 산리오가 애초에 게임 매출을 노렸고 체류시간은 사후 수사일 가능성 - 100억 엔 회수 계획이 설명회에서 어떻게 제시됐는지 한 줄이 있으면 방어된다. ② 접촉시간 소유권은 자사 퍼블리싱 없이도 라이선스 계약의 데이터 공유 조항으로 확보 가능하다는 반박. ②는 마지막 문단의 실무 제안과 직접 충돌하므로, 「계약서 한 줄로 되는 일을 왜 100억 엔으로 하는가」에 답하면 글의 결론이 훨씬 단단해진다.",
+        "『산리오 파티랜드』의 145종 캐릭터·45종 미니게임을 「카탈로그를 펼친 쪽」이라고 해석한 대목이 이 글에서 가장 독자적인 관찰인데 한 문장에 그친다. 캐릭터 노출 폭이 넓을수록 굿즈·테마파크 전환 가설과 어떻게 맞물리는지 한두 문장 더 쓰면 3문단이 단순 사실 나열에서 벗어난다.",
+        "예측(2027년 3월까지 최소 한 곳 추가 발표)의 확인 방법을 제시한 점은 좋다. 다만 슈에이샤 게임즈는 이미 2022년 설립된 회사라 「선례」로는 쓰되 「흐름의 시작」으로 읽히지 않게 설립 시점을 붙이는 편이 안전하다."
+      ],
+      "one_line": "회사가 스스로 말한 목적(체류시간)을 물증으로 잡아 각도와 본문이 어긋나지 않고, 반대편도 짧게나마 마주했다 - 연도 누락과 무출처 한 문장은 손볼 것이지만 내보내도 독자를 헛읽게 하지 않는다. pass."
+    }
+  ],
+  "gate": {
+    "chars": 1026,
+    "contrast": 1,
+    "chars_after": 990,
+    "contrast_after": 1,
+    "revised": true
+  },
+  "draft_ko_final": "2026년 9월 17일 도쿄게임쇼 비즈니스데이 포럼에 산리오·파르코(PARCO)·동영(東映)이 「이업종에서의 도전」이라는 제목으로 함께 오릅니다([닛케이 크로스트렌드](https://xtrend.nikkei.com/atcl/contents/18/00607/00100/)). 세 곳 다 게임 회사가 아닙니다. 산리오는 앞선 4월 21일 자사 브랜드 「산리오 게임스(Sanrio Games)」를 출범시키고 2029년 3월까지 10타이틀을 내겠다고 발표했습니다(니혼게이자이신문). 동영게임스는 이번 TGS에 첫 출전해 『HINO』 등 3타이틀을 선보입니다(게임뷰). 9월 17일부터 스팀 데모를 배포하는 것으로도 알려졌습니다.\n\n돈의 방향을 보면 수익 사업이 아닙니다. ZDNet Korea와 재팬타임스에 따르면 산리오가 게임에 넣는 개발·판촉비는 100억 엔입니다. 그동안은 캐릭터를 외부 게임사에 빌려주고 로열티만 받아왔습니다. 투입 없이 들어오는 돈입니다. 그걸 포기하고 100억 엔짜리 개발 리스크를 직접 지는 이유를 하마사키 코스케(濵﨑皓介) 상무와 회사는 설명회에서 직접 말했습니다. 게임은 「산리오로의 입구」이고, 체류시간이 긴 콘텐츠로 IP 접촉 총시간을 늘리는 게 목적이라는 것입니다(게임 워치). 회사가 내건 목표가 매출이 아니라 시간입니다.\n\n로열티는 매출을 돌려주지만 팬이 그 IP와 붙어 있던 시간은 라이선시 쪽에 남습니다. 플레이 로그도 계정도 다음에 무엇을 팔지 판단할 데이터도 거기 있습니다. 1작 『산리오 파티랜드』가 보유 450종 이상 중 145종 이상의 캐릭터와 미니게임 45종 이상을 담은 구성은(덴파미니코게이머) 게임 설계라기보다 카탈로그를 한 화면에 펼친 쪽에 가깝습니다. 굿즈와 테마파크로 잇겠다는 방침도 함께 나왔습니다.\n\n접촉시간을 사면서 실패 비용도 같이 삽니다. 로열티 모델에서는 졸작이 나와도 브랜드 훼손이 라이선시 이름으로 반쯤 걸러지지만, 자사 퍼블리싱에는 그 완충이 없습니다.\n\n그래도 흐름은 이어진다고 봅니다. 슈에이샤 게임즈가 이미 TGS2026 출전사 목록에 있고, 2027년 3월까지 일본의 비게임 IP 보유사 중 최소 한 곳이 추가로 자사 퍼블리싱 브랜드 설립이나 첫 자체 타이틀 발매를 공식 발표할 것으로 봅니다. 확인은 각 사 뉴스릴리스와 TGS2027 출전사 목록입니다.\n\n국내에서 캐릭터·웹툰·음악 IP를 빌려주는 쪽이라면, 다음 계약서에서 로열티율 옆에 한 줄을 더 볼 일입니다. 이용자의 플레이 시간과 계정 데이터가 계약 종료 후 누구에게 남는지입니다.",
+  "draft_en_final": "On September 17, 2026, at the Tokyo Game Show business day forum, three companies that do not make games shared a stage under the title \"A Challenge from Other Industries\": Sanrio, the retail developer PARCO, and the film studio Toei (東映), as reported by [Nikkei Cross Trend](https://xtrend.nikkei.com/atcl/contents/18/00607/00100/). Sanrio had already launched its own label, Sanrio Games, on April 21, with a plan to ship ten titles by March 2029 according to Nihon Keizai Shimbun. Toei Games exhibited at TGS for the first time with three titles including *HINO*, per Gameview, and is reportedly distributing a Steam demo from September 17.\n\nFollow the money and this does not look like a revenue play. ZDNet Korea and The Japan Times report Sanrio is putting 10 billion yen into development and marketing. Until now the company lent its characters to outside studios and collected royalties, which is income with no production risk attached. Giving that up to carry a 10 billion yen development exposure needs an explanation, and executive director Hamasaki Kosuke (濵﨑皓介) gave one at the briefing. Games are an \"entrance to Sanrio,\" and the point is to extend the total hours fans spend in contact with the IP through content people stay inside for a long time, as covered by Game Watch. The stated target is time, not sales.\n\nA royalty returns revenue but leaves the hours with the licensee. So do the play logs, the accounts, and the data that tells you what to sell next. The first title, *Sanrio Party Land*, packs more than 145 of the company's 450-plus characters and over 45 minigames, according to Denfaminicogamer, which reads less like game design than like spreading the whole catalogue across one screen. Merchandise and theme park tie-ins were announced alongside it.\n\nBuying contact time means buying failure cost too. Under licensing, a weak game damages the brand only partly, because the licensee's name absorbs some of it. In-house publishing removes that buffer, and the Japanese console market is not a forgiving place to learn: it passed 700 billion yen in 2025 with roughly 70 percent of sales already digital, which means these publishers are competing on storefronts where discovery is brutal.\n\nI still think the pattern continues. Shueisha Games is already on the TGS2026 exhibitor list. My bet is that by March 2027, at least one more Japanese non-game IP holder from character goods, publishing, film, or retail will formally announce either a new in-house game publishing label or its first self-published title. I will check company press releases and the TGS2027 exhibitor list.\n\nFor any company that licenses out characters, webtoons, or music rights, the next contract deserves one more line beside the royalty rate: who keeps the user's play time and account data after the deal ends.",
+  "working_title": {
+    "ko": "로열티 대신 체류시간을 샀다",
+    "en": "They Traded Royalties for Dwell Time"
+  },
+  "title": {
+    "ko": {
+      "title": "산리오, 로열티를 포기하고 100억 엔을 직접 걸었다",
+      "source": "그걸 포기하고 100억 엔짜리 개발 리스크를 직접 지는 이유를 하마사키 코스케(濵﨑皓介) 상무와 회사는 설명회에서 직접 말했습니다.",
+      "from_body": true,
+      "candidates": [
+        {
+          "title": "산리오가 내건 목표는 매출이 아니라 시간이다",
+          "source": "회사가 내건 목표가 매출이 아니라 시간입니다."
+        },
+        {
+          "title": "산리오, 로열티를 포기하고 100억 엔을 직접 걸었다",
+          "source": "그걸 포기하고 100억 엔짜리 개발 리스크를 직접 지는 이유를 하마사키 코스케(濵﨑皓介) 상무와 회사는 설명회에서 직접 말했습니다."
+        }
+      ]
+    },
+    "en": {
+      "title": "Sanrio Is Putting 10 Billion Yen Into Development",
+      "source": "ZDNet Korea and The Japan Times report Sanrio is putting 10 billion yen into development and marketing.",
+      "from_body": true,
+      "candidates": [
+        {
+          "title": "Sanrio Is Putting 10 Billion Yen Into Development",
+          "source": "ZDNet Korea and The Japan Times report Sanrio is putting 10 billion yen into development and marketing."
+        },
+        {
+          "title": "A Royalty Leaves the Hours With the Licensee",
+          "source": "A royalty returns revenue but leaves the hours with the licensee."
+        },
+        {
+          "title": "Who Keeps the Play Time After the Deal Ends?",
+          "source": "For any company that licenses out characters, webtoons, or music rights, the next contract deserves one more line beside the royalty rate: who keeps the user's play time and account data after the deal ends."
+        }
+      ]
+    },
+    "check": {
+      "clarity": 2,
+      "pull": 2,
+      "kept_promise": true,
+      "why": "산리오라는 주체와 '로열티 포기·100억 엔 직접 투입'이라는 사건이 다 서 있고, 공짜 수익을 버리고 리스크를 진다는 반전이 분명하며 본문이 그 이유와 대가를 실제로 설명한다."
+    },
+    "duel_ko": {
+      "best": {
+        "title": "산리오, 로열티를 포기하고 100억 엔을 직접 걸었다",
+        "source": "그걸 포기하고 100억 엔짜리 개발 리스크를 직접 지는 이유를 하마사키 코스케(濵﨑皓介) 상무와 회사는 설명회에서 직접 말했습니다."
+      },
+      "rounds": [
+        {
+          "a": "산리오가 내건 목표는 매출이 아니라 시간이다",
+          "b": "산리오, 로열티를 포기하고 100억 엔을 직접 걸었다",
+          "winner": "b",
+          "why": "고유명사와 100억 엔이라는 수치에 '로열티 포기'라는 대비가 붙어 무슨 사건인지가 제목에서 서 있는 반면, 1번은 수치 없이 본문 문장을 그대로 옮긴 요약에 가깝다"
+        }
+      ],
+      "kept_first": false,
+      "n": 2
+    },
+    "duel_en": {
+      "best": {
+        "title": "Sanrio Is Putting 10 Billion Yen Into Development",
+        "source": "ZDNet Korea and The Japan Times report Sanrio is putting 10 billion yen into development and marketing."
+      },
+      "rounds": [
+        {
+          "a": "Sanrio Is Putting 10 Billion Yen Into Development",
+          "b": "A Royalty Leaves the Hours With the Licensee",
+          "winner": "a",
+          "why": "산리오·100억 엔이라는 고유명사와 수치가 박혀 이 글에만 붙는 제목이고, 로열티를 버리고 개발비를 떠안는다는 대비가 본문 핵심과 맞물리는 반면 1번은 어느 산업 얘긴지 모를 추상 명제에 머문다."
+        },
+        {
+          "a": "Sanrio Is Putting 10 Billion Yen Into Development",
+          "b": "Who Keeps the Play Time After the Deal Ends?",
+          "winner": "a",
+          "why": "고유명사와 수치가 박혀 이 글에만 붙는 제목이고 본문의 핵심 전환(로열티 포기→10억 엔 자체 부담)을 곧바로 세우는 반면, 1번은 산업이 안 보이는 일반 물음에 가깝다."
+        }
+      ],
+      "kept_first": true,
+      "n": 3
+    }
+  },
+  "name_map": {
+    "ko": {
+      "日経クロストレンド": "닛케이 크로스트렌드",
+      "日経Gaming": "닛케이 Gaming",
+      "東映": "도에이",
+      "皓介": "고스케"
+    },
+    "en": {
+      "日経クロストレンド": "Nikkei xTREND",
+      "日経Gaming": "Nikkei Gaming",
+      "東映": "Toei",
+      "皓介": "Kosuke"
+    }
+  },
+  "usage": {
+    "input": 213522,
+    "output": 32740,
+    "calls": 28,
+    "search_uses": 14
+  },
+  "usage_by_step": {
+    "summarize_sources|claude-haiku-4-5-20251001": {
+      "input": 606,
+      "output": 311,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "retrieve|claude-haiku-4-5-20251001": {
+      "input": 16588,
+      "output": 364,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "context|claude-opus-5": {
+      "input": 19617,
+      "output": 2480,
+      "calls": 1,
+      "search_uses": 2
+    },
+    "judge|claude-opus-5": {
+      "input": 16796,
+      "output": 2677,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "write_ko|claude-opus-5": {
+      "input": 18587,
+      "output": 3090,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "extract_claims|claude-haiku-4-5-20251001": {
+      "input": 1428,
+      "output": 408,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "verify_claim|claude-haiku-4-5-20251001": {
+      "input": 110509,
+      "output": 1807,
+      "calls": 6,
+      "search_uses": 12
+    },
+    "hedge|claude-opus-5": {
+      "input": 2319,
+      "output": 2677,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "review|claude-opus-5": {
+      "input": 4754,
+      "output": 5856,
+      "calls": 2,
+      "search_uses": 0
+    },
+    "final_gate|claude-opus-5": {
+      "input": 1754,
+      "output": 2790,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "polish|claude-opus-5": {
+      "input": 4046,
+      "output": 3125,
+      "calls": 2,
+      "search_uses": 0
+    },
+    "write_en|claude-opus-5": {
+      "input": 2806,
+      "output": 1461,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "title_from_body|claude-opus-5": {
+      "input": 6038,
+      "output": 3264,
+      "calls": 3,
+      "search_uses": 0
+    },
+    "compare|claude-opus-5": {
+      "input": 4748,
+      "output": 354,
+      "calls": 3,
+      "search_uses": 0
+    },
+    "title_check|claude-opus-5": {
+      "input": 2327,
+      "output": 129,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "name_map|claude-opus-5": {
+      "input": 599,
+      "output": 1947,
+      "calls": 2,
+      "search_uses": 0
+    }
+  },
+  "form": {
+    "title_noun": true,
+    "title_len": 29,
+    "lead_concrete": true,
+    "ai_tell": 1,
+    "contrast": 1,
+    "hedge_10k": 10.1,
+    "sent_med": 41,
+    "long80": 17.4,
+    "title_check": {
+      "clarity": 2,
+      "pull": 2,
+      "kept_promise": true,
+      "why": "산리오라는 주체와 '로열티 포기·100억 엔 직접 투입'이라는 사건이 다 서 있고, 공짜 수익을 버리고 리스크를 진다는 반전이 분명하며 본문이 그 이유와 대가를 실제로 설명한다."
+    },
+    "title_kept_first": false,
+    "title_cands": 2
+  }
+}

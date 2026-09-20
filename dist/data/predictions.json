@@ -119,5 +119,16 @@
     "check_en": "Check product page and ToS at launch for feature scope and AI-disclosure policy",
     "factor": "테크",
     "status": "open"
+  },
+  {
+    "slug": "2026-09-20-sanrio-is-putting-10-billion-yen-into-development",
+    "date": "2026-09-20",
+    "by_date": "2027-03-19",
+    "claim_ko": "2027년 3월까지 일본의 비게임 IP 보유사(캐릭터·출판·영상·유통) 중 최소 한 곳이 추가로 자사 게임 퍼블리싱 브랜드 설립 또는 첫 자체 퍼블리싱 타이틀 발매를 공식 발표한다.",
+    "claim_en": "By March 2027, at least one more Japanese non-game IP holder (character, publishing, film or retail) will officially announce a new in-house game publishing label or its first self-published title.",
+    "check_ko": "해당 기업 공식 뉴스릴리스 및 TGS2027 출전사 목록",
+    "check_en": "Company press releases and the TGS2027 exhibitor list",
+    "factor": "교차산업",
+    "status": "open"
   }
 ]
