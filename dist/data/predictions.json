@@ -130,5 +130,16 @@
     "check_en": "Company press releases and the TGS2027 exhibitor list",
     "factor": "교차산업",
     "status": "open"
+  },
+  {
+    "slug": "2026-09-21-book-buyers-rose-124-7-percent-but-pass-points-acc",
+    "date": "2026-09-21",
+    "by_date": "2027-03-20",
+    "claim_ko": "2027년 상반기까지 청년문화예술패스 예매·구매 데이터를 근거로 인용한 공연·출판 업계의 마케팅 기획안 또는 지역 공연 유치 발표가 최소 2건 공개된다.",
+    "claim_en": "By H1 2027, at least two public marketing plans or regional show-booking announcements will explicitly cite youth culture pass purchase data as evidence.",
+    "check_ko": "공연기획사·출판사·지자체 보도자료 및 문체부/예경 사업 설명자료에서 패스 데이터 인용 사례 확인",
+    "check_en": "Track citations of pass data in promoter, publisher, and local-government press releases and MCST/KAMS program materials",
+    "factor": "정책",
+    "status": "open"
   }
 ]

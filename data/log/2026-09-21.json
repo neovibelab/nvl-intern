@@ -1,0 +1,335 @@
+{
+  "date": "2026-09-21",
+  "steps": {},
+  "cluster": {
+    "key": "b9063067-1351-443e-ba44-065bcfc19cca",
+    "item_ids": [
+      "b9063067-1351-443e-ba44-065bcfc19cca"
+    ],
+    "n": 1,
+    "radar_tense": "soon",
+    "factor": "정책",
+    "stage": "소비",
+    "titles": [
+      "공연은 페스티벌, 책은 문학…청년문화예술패스로 본 '스무 살의 취향'"
+    ],
+    "urls": [
+      "https://www.fnnews.com/news/202609170634026663"
+    ],
+    "items": [
+      {
+        "title": "공연은 페스티벌, 책은 문학…청년문화예술패스로 본 '스무 살의 취향'",
+        "url": "https://www.fnnews.com/news/202609170634026663",
+        "source": "파이낸셜뉴스",
+        "region": "korea",
+        "published_date": "2026-09-17T00:00:00+00:00",
+        "title_en": "Performances as festivals, books as literature...Youth culture and arts pass shows 'tastes of the twenty-year-olds'"
+      }
+    ]
+  },
+  "source_summary": {
+    "ko": "청년문화예술패스 예매 데이터 분석 결과, 19~20세는 공연에서 힙합플레이야, 워터밤 등 페스티벌을 6개월 연속 1위로 선택했고, 도서는 소설·시 등 문학을 45%로 압도적으로 선호했다. 도서 지원 시작 후 한 달간 구매자가 124.7% 증가했으며 비수도권 거주자가 55.5%를 차지했다.",
+    "en": "An analysis of youth culture and arts pass booking data showed that ages 19-20 selected festivals such as Hip Hop Playlist and Water Bomb as their top choice for performances for six consecutive months, and overwhelmingly preferred literature including novels and poetry at 45% for books. Buyers increased by 124.7% one month after book support began, with non-capital region residents accounting for 55.5%.",
+    "titles_en": [
+      "Performances as festivals, books as literature...Youth culture and arts pass shows 'tastes of the twenty-year-olds'"
+    ]
+  },
+  "materials": {
+    "wiki": [
+      "2026-09-15-마이크로미디어-희소성의-이동.md",
+      "2026-09-02-사업모델-성립조건-6종.md",
+      "2026-06-03-콘텐츠비즈니스-4W.md"
+    ],
+    "lexicon": []
+  },
+  "context": "- [후속] 9월 '독서의 달'을 맞아 청년문화예술패스 도서 구매 한도가 최대 7만원으로 확대(수도권 5만원·비수도권 7만원) (용인신문 https://www.yonginilbo.com/news/article.html?no=110776)\n- [후속] 예스24가 2026년 청년문화예술패스 도서 구매 전용 페이지를 열고 2006·2007년생 대상 별도 쿠폰 이벤트를 운영 중 (예스24 이벤트 페이지 https://event.yes24.com/youthculturepass/2026)\n- [후속] 도서 분야 협력 판매처 확대에 따라 발급 시 제3자 정보제공 동의 약관 개정(2026.08.10 시행) 공지 (청년문화예술패스 누리집 https://youthculturepass.or.kr/)\n- [후속] 같은 예스24 분석이 이투데이·여성신문·전남일보 등으로 확산 보도, 도서 1위 양귀자 '모순'이 보도 초점으로 부각 (전남일보 https://www.jnilbo.com/news/articleView.html?idxno=90000066652)\n- [반응] 예스24 2024년부터 3년째 청년문화예술패스 협력 판매처로 참여 중이라고 밝힘 (이투데이 https://www.etoday.co.kr/news/view/2626223)\n- [반응] 전남일보(업계 해석) 여러 아티스트를 한자리에서 보는 '경험형 콘텐츠' 선호가 드러난 것이라며, 다만 한 달여 변화라 장기 흐름으로 단정하기는 이르다고 평가 (전남일보 https://www.jnilbo.com/news/articleView.html?idxno=90000066652)\n- [수치] 124.7% 증가 / 그중 66.1%가 패스 포인트 결제 8월 10일~9월 8일 예스24 19~20세 도서 구매자 수 전년 동기 대비 증감 (이투데이 https://www.etoday.co.kr/news/view/2626223)\n- [수치] 45% vs 15.7% / 12.1% / 9.6% 패스 도서 구매 장르 비중(소설·시·희곡, 만화·라이트노벨, 인문, 에세이) (여성신문 https://www.womennews.co.kr/news/articleView.html?idxno=282281)\n- [수치] 15.5%(2016) → 20.9%(2026), 5.4%p 상승 20대 전체 도서 구매 중 소설·시·희곡 비중의 10년 전 대비 변화 (이투데이 https://www.etoday.co.kr/news/view/2626223)\n- [수치] 26종 → 36종(문학), 29종 → 15종(에세이·자기계발) 20대 베스트셀러 100위 내 분야별 종수 2016년 대비 2026년 (이투데이 https://www.etoday.co.kr/news/view/2626223)\n- [선례] 같은 사업이 앞서 영화를 사용처로 편입한 뒤 2026년 8월 도서까지 확대된 단계적 사용처 확장 전례 (용인신문 https://www.yonginilbo.com/news/article.html?no=110776)",
+  "judgment": {
+    "factor": "정책",
+    "from_stage": "유통",
+    "to_stage": "소비",
+    "region": "한국",
+    "tense": "vibe",
+    "tense_why": "정책 바우처가 취향 데이터를 생성하는 관측 장치로 작동하기 시작한 초기 조짐이고, 사용처 확장이 단계적으로 반복되는 종류다.",
+    "vibe_evidence": "영화에 이어 도서로 사용처가 늘고 한도까지 비수도권 7만원으로 차등 확대되면서, 바우처가 지원 수단을 넘어 19~20세의 장르·지역별 소비를 월 단위로 읽는 표준 계측기로 굳어가는 중이다.",
+    "vibe_evidence_en": "After film, books were added as an eligible category and the cap was raised with a non-metro premium — the youth voucher is quietly turning from a subsidy into a monthly, standardized meter of what 19–20-year-olds actually buy, by genre and by region.",
+    "angle_ko": "청년패스의 진짜 산출물은 지원금이 아니라 3자가 집계하는 취향 실측 데이터다. 힙합플레이야 6개월 연속 1위와 비수도권 55.5%는 그동안 업계가 감으로 말하던 두 가지를 숫자로 바꿔 놨다.",
+    "angle_en": "The real output of Korea's youth culture pass isn't the subsidy — it's third-party measured taste data. Six straight months of hip-hop festivals at No.1 and 55.5% non-metro share turn two industry hunches into numbers.",
+    "title_ko": "바우처가 차트가 될 때",
+    "title_en": "Book Buyers Rose 124.7 Percent, But Pass Points Accounted for 66.1",
+    "bet": {
+      "claim_ko": "2027년 상반기까지 청년문화예술패스 예매·구매 데이터를 근거로 인용한 공연·출판 업계의 마케팅 기획안 또는 지역 공연 유치 발표가 최소 2건 공개된다.",
+      "claim_en": "By H1 2027, at least two public marketing plans or regional show-booking announcements will explicitly cite youth culture pass purchase data as evidence.",
+      "by_days": 180,
+      "check_ko": "공연기획사·출판사·지자체 보도자료 및 문체부/예경 사업 설명자료에서 패스 데이터 인용 사례 확인",
+      "check_en": "Track citations of pass data in promoter, publisher, and local-government press releases and MCST/KAMS program materials"
+    },
+    "principle_ko": "보조금을 설계할 때 결제 경로를 하나로 모으면, 지원 효과와 별개로 그 산업에 없던 3자 실측 지표가 공짜로 생긴다 — 돈보다 데이터가 더 오래 남는다.",
+    "principle_en": "When a subsidy routes all spending through one rail, it produces something the industry never had: third-party measurement. The money runs out; the data doesn't.",
+    "radar_tense": "soon",
+    "agrees": true,
+    "disagree_reason": ""
+  },
+  "recent": "[D+16 · 2026-09-20] 「산리오, 로열티를 포기하고 100억 엔을 직접 걸었다」 교차산업 유통→생산 · vibe\n  숫자 · 제목 - 무슨 얘긴지 알려주나 2/2 · 읽고 싶게 하나 2/2 / 문체 - 사람 분포 밖 2개(접속부사, 쉼표) / 형식 88/100 · 첫 문단에 누가 무엇을 언제 있음 · AI tell 1 · 헤지 만자당 10.1 · 문장 중앙 41자\n  검수 지적 · 「산리오는 그보다 앞선 4월 21일」에 연도가 없다. 앞 문장이 2026년 9월이라 독자는 2026년 4월로 읽지만, 100억 엔·10타이틀·2029년 3월이라는 발표 내용은 산리오 게임스 출범 당시(전년도 4월 21일) 수치다. 연도를 명기하고 TGS 포럼과 몇 개월 간격인지 한 줄로 확정해야 「그보다 앞선」이라는 ",
+  "draft_ko_v1": "2026년 9월 17일 파이낸셜뉴스가 청년문화예술패스 예매·구매 데이터 분석을 보도했습니다([파이낸셜뉴스](https://www.fnnews.com/news/202609170634026663)). 19~20세가 공연에서는 힙합플레이야와 워터밤 같은 페스티벌을 6개월 연속 1위로 골랐고, 도서에서는 소설·시·희곡이 45%로 만화·라이트노벨 15.7%, 인문 12.1%, 에세이 9.6%를 크게 앞섰습니다(여성신문).\n\n이 사업이 남기는 것은 지원금 집행 실적만이 아닙니다. 결제 경로를 하나로 모으면 그 산업에 없던 관측치가 따라옵니다. 1991년 빌보드가 판매시점 집계로 차트를 바꾼 뒤 장르 순위가 통째로 흔들린 일이 같은 구조였습니다. 공연 예매와 도서 구매에서 19~20세만 따로 떼어 6개월 연속으로 읽을 수 있는 자료는 그동안 업계에 없었습니다.\n\n다만 이번 수치를 재는 쪽이 중립 집계 기관은 아닙니다. 예스24는 2024년부터 3년째 도서 협력 판매처이고(이투데이), 같은 기간에 패스 전용 페이지와 2006·2007년생 대상 쿠폰 이벤트를 운영 중입니다. 8월 10일부터 9월 8일까지 19~20세 도서 구매자가 전년 동기 대비 124.7% 늘었지만 그중 패스 포인트 결제는 66.1%입니다(이투데이). 나머지 3분의 1은 다른 결제 수단이고, 판매처 프로모션 효과가 섞여 있습니다. 도서 한도도 9월 독서의 달을 맞아 수도권 5만원·비수도권 7만원으로 차등 확대됐습니다([용인신문](https://www.yonginilbo.com/news/article.html?no=110776)). 비수도권 55.5%를 취향의 지역 확산으로 읽기 전에 한도 설계가 만든 몫을 빼야 합니다. 전남일보도 한 달여의 변화라 장기 흐름으로 단정하기는 이르다고 했습니다.\n\n그래도 이 숫자는 인용됩니다. 20대 베스트셀러 100위 안에서 문학이 26종에서 36종으로 늘고 에세이·자기계발이 29종에서 15종으로 준 2016년 대비 2026년 비교(이투데이)와 붙으면 기획안의 근거로 쓰기에 충분합니다. 2027년 상반기까지 공연기획사·출판사·지자체 보도자료나 문체부·예술경영지원센터 사업 자료에서 패스 구매 데이터를 명시적으로 인용한 마케팅 기획안 또는 지역 공연 유치 발표가 최소 2건 공개된다고 봅니다.\n\n인용할 실무자는 두 줄을 같이 적는 편이 안전합니다. 집계 기간에 걸린 한도 변경일과, 그 데이터를 낸 곳이 동시에 판매자인지 여부입니다.",
+  "claims": [
+    {
+      "status": "verified",
+      "source": "파이낸셜뉴스",
+      "url": "https://www.fnnews.com/news/202609170634026663",
+      "note": "파이낸셜뉴스가 2026년 9월 17일 청년문화예술패스 예매 및 구매 데이터 분석 보도",
+      "claim": "2026년 9월 17일 파이낸셜뉴스가 청년문화예술패스 예매·구매 데이터 분석을 보도했습니다"
+    },
+    {
+      "status": "verified",
+      "source": "메트로서울",
+      "url": "https://www.metroseoul.co.kr/article/20260920500080",
+      "note": "공연 페스티벌 6개월 1위, 도서 소설·시·희곡 45%, 만화·라이트노벨 15.7%, 인문 12.1%, 에세이 9.6% 모두 일치",
+      "claim": "19~20세가 공연에서는 힙합플레이야와 워터밤 같은 페스티벌을 6개월 연속 1위로 골랐고, 도서에서는 소설·시·희곡이 45%로 만화·라이트노벨 15.7%, 인문 12.1%, 에세이 9.6%를 크게 앞섰습니다"
+    },
+    {
+      "status": "verified",
+      "source": "Billboard",
+      "url": "https://www.billboard.com/pro/billboard-chart-history-evolution-milestones/",
+      "note": "1991년 5월 25일 판매시점 집계(SoundScan) 도입 후 랩, 하드록, 컨트리 앨범 순위가 높게 올라옴",
+      "claim": "1991년 빌보드가 판매시점 집계로 차트를 바꾼 뒤 장르 순위가 통째로 흔들린 일이 같은 구조였습니다"
+    },
+    {
+      "status": "unverified",
+      "source": "",
+      "url": "",
+      "note": "관련 정보를 웹에서 확인할 수 없습니다",
+      "claim": "예스24는 2024년부터 3년째 도서 협력 판매처입니다"
+    },
+    {
+      "status": "verified",
+      "source": "이투데이",
+      "url": "https://www.etoday.co.kr/news/view/2626223",
+      "note": "8월 10일~9월 8일 19~20세 도서 구매자 124.7% 증가, 그 중 66.1%가 패스 포인트 결제",
+      "claim": "8월 10일부터 9월 8일까지 19~20세 도서 구매자가 전년 동기 대비 124.7% 늘었지만 그중 패스 포인트 결제는 66.1%입니다"
+    },
+    {
+      "status": "unverified",
+      "source": "",
+      "url": "",
+      "note": "구체적인 수치를 뒷받침하는 공식 출처를 찾을 수 없음",
+      "claim": "20대 베스트셀러 100위 안에서 문학이 26종에서 36종으로 늘고 에세이·자기계발이 29종에서 15종으로 준 2016년 대비 2026년 비교"
+    }
+  ],
+  "reviews": [
+    {
+      "verdict": "pass",
+      "blocking": [],
+      "notes": [
+        "각도의 두 축 중 하나인 '비수도권 55.5%'가 본문에서 출처 표기 없이 등장하고, 무엇에 대한 55.5%인지(도서 구매자 비중인지 예매 건수 비중인지, 전체 대비인지 증가분 대비인지)도 밝히지 않는다. 1문단 파이낸셜뉴스 인용 범위 안이라면 그 자리에서 함께 제시하고 분모를 한 줄로 정의해야 독자가 '한도 설계가 만든 몫'이라는 반박을 검증할 수 있다.",
+        "각도는 '감으로 말하던 것을 숫자로 바꿔 놨다'고 선언했는데 본문 3문단은 그 숫자를 취향 지표로 읽지 말라고 되돌린다. 결과적으로 글의 실제 주장은 '이 숫자는 부정확하지만 어차피 인용된다'에 가깝다. 각도 문장을 본문의 실제 결론에 맞춰 조정하면 독자가 덜 헷갈린다.",
+        "각도의 '3자가 집계하는'이라는 조건을 본문이 끝까지 붙들지 않는다. 마지막 줄에서 '데이터를 낸 곳이 동시에 판매자인지'를 경고하면서도, 이번 데이터의 집계 주체(문체부·예술경영지원센터인지 인터파크·예스24 등 판매처인지)를 특정하지 않는다. 주체를 명시하면 마지막 경고가 실무 지침으로 살아난다.",
+        "1991년 빌보드 사운드스캔 비유는 유효하지만 결정적 차이가 빠져 있다. 사운드스캔은 전수에 가까운 판매 집계였고 청년패스는 특정 연령·특정 예산 안의 표본이다. 이 차이를 한 줄 넣으면 비유가 논증으로 바뀐다.",
+        "예측(2027년 상반기까지 인용 사례 2건)이 검증 가능한 형태로 제시된 점은 좋다. 다만 '최소 2건'은 문턱이 낮아 사실상 자동 적중에 가깝다. 건수보다 '한도 변경일을 함께 밝힌 인용인지'를 판정 기준으로 삼으면 글의 마지막 실무 조언과 맞물린다."
+      ],
+      "issues": [
+        "각도의 두 축 중 하나인 '비수도권 55.5%'가 본문에서 출처 표기 없이 등장하고, 무엇에 대한 55.5%인지(도서 구매자 비중인지 예매 건수 비중인지, 전체 대비인지 증가분 대비인지)도 밝히지 않는다. 1문단 파이낸셜뉴스 인용 범위 안이라면 그 자리에서 함께 제시하고 분모를 한 줄로 정의해야 독자가 '한도 설계가 만든 몫'이라는 반박을 검증할 수 있다.",
+        "각도는 '감으로 말하던 것을 숫자로 바꿔 놨다'고 선언했는데 본문 3문단은 그 숫자를 취향 지표로 읽지 말라고 되돌린다. 결과적으로 글의 실제 주장은 '이 숫자는 부정확하지만 어차피 인용된다'에 가깝다. 각도 문장을 본문의 실제 결론에 맞춰 조정하면 독자가 덜 헷갈린다.",
+        "각도의 '3자가 집계하는'이라는 조건을 본문이 끝까지 붙들지 않는다. 마지막 줄에서 '데이터를 낸 곳이 동시에 판매자인지'를 경고하면서도, 이번 데이터의 집계 주체(문체부·예술경영지원센터인지 인터파크·예스24 등 판매처인지)를 특정하지 않는다. 주체를 명시하면 마지막 경고가 실무 지침으로 살아난다.",
+        "1991년 빌보드 사운드스캔 비유는 유효하지만 결정적 차이가 빠져 있다. 사운드스캔은 전수에 가까운 판매 집계였고 청년패스는 특정 연령·특정 예산 안의 표본이다. 이 차이를 한 줄 넣으면 비유가 논증으로 바뀐다.",
+        "예측(2027년 상반기까지 인용 사례 2건)이 검증 가능한 형태로 제시된 점은 좋다. 다만 '최소 2건'은 문턱이 낮아 사실상 자동 적중에 가깝다. 건수보다 '한도 변경일을 함께 밝힌 인용인지'를 판정 기준으로 삼으면 글의 마지막 실무 조언과 맞물린다."
+      ],
+      "one_line": "핵심 수치 하나의 출처·분모가 비어 있는 점이 걸리지만 1문단 인용 범위 안에서 읽히고, 반례(한도 차등·프로모션·단기 표본)를 글이 스스로 정면으로 마주했으며 실무자가 가져갈 검증 항목까지 남겼다 — 차단 없이 pass."
+    }
+  ],
+  "gate": {
+    "chars": 873,
+    "contrast": 0,
+    "chars_after": 873,
+    "contrast_after": 0,
+    "revised": false
+  },
+  "draft_ko_final": "2026년 9월 17일 파이낸셜뉴스가 청년문화예술패스 예매·구매 데이터 분석을 보도했습니다([파이낸셜뉴스](https://www.fnnews.com/news/202609170634026663)). 19~20세가 공연에서는 힙합플레이야와 워터밤 같은 페스티벌을 6개월 연속 1위로 골랐고, 도서에서는 소설·시·희곡이 45%로 만화·라이트노벨 15.7%, 인문 12.1%, 에세이 9.6%를 크게 앞섰습니다(여성신문).\n\n이 사업이 남기는 것은 지원금 집행 실적만이 아닙니다. 결제 경로를 하나로 모으면 그 산업에 없던 관측치가 따라옵니다. 1991년 [빌보드](https://www.billboard.com/pro/billboard-chart-history-evolution-milestones/)가 판매시점 집계로 차트를 바꾼 뒤 장르 순위가 통째로 흔들린 일이 같은 구조였습니다. 공연 예매와 도서 구매에서 19~20세만 따로 떼어 6개월 연속으로 읽을 수 있는 자료는 그동안 업계에 없었습니다.\n\n다만 이번 수치를 취향의 지표로 그대로 읽기는 어렵습니다. 8월 10일부터 9월 8일까지 19~20세 도서 구매자가 전년 동기 대비 124.7% 늘었지만 그중 패스 포인트 결제는 66.1%입니다([이투데이](https://www.etoday.co.kr/news/view/2626223)). 나머지 3분의 1은 다른 결제 수단이고, 판매처 프로모션 효과가 섞여 있습니다. 도서 한도도 9월 독서의 달을 맞아 수도권 5만원·비수도권 7만원으로 차등 확대됐습니다([용인신문](https://www.yonginilbo.com/news/article.html?no=110776)). 비수도권 55.5%를 취향의 지역 확산으로 읽기 전에 한도 설계가 만든 몫을 빼야 합니다. 전남일보도 한 달여의 변화라 장기 흐름으로 단정하기는 이르다고 했습니다.\n\n그래도 이 숫자는 인용됩니다. 19~20세만 떼어 6개월 연속으로 읽히는 예매·구매 자료가 달리 없고, 한 달 사이 두 배 넘게 늘어난 구매자 수는 그 자체로 기획안에 붙일 만한 크기입니다. 2027년 상반기까지 공연기획사·출판사·지자체 보도자료나 문체부·예술경영지원센터 사업 자료에서 패스 구매 데이터를 명시적으로 인용한 마케팅 기획안 또는 지역 공연 유치 발표가 최소 2건 공개된다고 봅니다.\n\n인용할 실무자는 두 줄을 같이 적는 편이 안전합니다. 집계 기간에 걸린 한도 변경일과, 그 데이터를 낸 곳이 동시에 판매자인지 여부입니다.",
+  "draft_en_final": "On September 17, 2026, Financial News (파이낸셜뉴스) [reported](https://www.fnnews.com/news/202609170634026663) an analysis of booking and purchase data from Korea's youth culture pass (청년문화예술패스), a government program that gives 19 and 20 year olds a fixed credit to spend on live performances and, more recently, books. In the performance category, festivals led by Hiphopplaya (힙합플레이야) and Waterbomb (워터밤) held the top spot for six consecutive months. In books, novels, poetry and plays took 45 percent, ahead of comics and light novels at 15.7 percent, humanities at 12.1 percent and essays at 9.6 percent, according to Women's News (여성신문).\n\nThe subsidy is not the durable output here. When a program routes an entire age cohort's spending through a single payment rail, it generates measurement the industry never had. The closest analogue is what happened to [Billboard](https://www.billboard.com/pro/billboard-chart-history-evolution-milestones/) in 1991, when the chart switched to point-of-sale scanning and genre rankings reordered overnight because retailers were no longer reporting what they thought was selling. Korean promoters and publishers have long assumed that 19 and 20 year olds prefer festivals to single-artist concerts and fiction to nonfiction. Until now, nobody had a six-month series isolating that cohort across both ticketing and book purchases.\n\nThe numbers deserve caution before they become slides. [Etoday (이투데이)](https://www.etoday.co.kr/news/view/2626223) reported that book buyers aged 19 and 20 rose 124.7 percent year on year between August 10 and September 8, but pass-point payments accounted for 66.1 percent of that activity. The remaining third came through other payment methods, mixed with retailer promotions. The book allowance was also expanded on a tiered basis for September, designated as reading month, to 50,000 won in the capital region and 70,000 won outside it, according to Yongin Ilbo (용인신문). So the 55.5 percent non-metro share reflects allowance design as much as geographic taste diffusion. Jeonnam Ilbo (전남일보) noted that roughly a month of change is too short to read as a long-term trend.\n\nThe data will still get cited, because nothing comparable exists and a doubling of buyers in a month is the kind of figure that survives a slide deck. My bet is that by the first half of 2027, at least two public documents will explicitly cite youth culture pass purchase data as evidence. These would be marketing plans from promoters or publishers, or regional show-booking announcements from local governments, or program materials from the Ministry of Culture, Sports and Tourism and the Korea Arts Management Service. That is 180 days from today.\n\nAnyone citing it should attach two lines. First, the date the allowance changed inside the measurement window. Second, whether the organization publishing the data is also selling the product being measured.\n\nAny industry running a voucher, a loyalty rail or a government-backed payment scheme should assume the spending record outlives the budget line, and should decide now who gets to read it.",
+  "working_title": {
+    "ko": "바우처가 차트가 될 때",
+    "en": "When a Voucher Becomes a Chart"
+  },
+  "title": {
+    "ko": {
+      "title": "바우처가 차트가 될 때",
+      "source": "",
+      "from_body": false
+    },
+    "en": {
+      "title": "Book Buyers Rose 124.7 Percent, But Pass Points Accounted for 66.1",
+      "source": "[Etoday (이투데이)](https://www.etoday.co.kr/news/view/2626223) reported that book buyers aged 19 and 20 rose 124.7 percent year on year between August 10 and September 8, but pass-point payments accounted for 66.1 percent of that activity.",
+      "from_body": true,
+      "candidates": [
+        {
+          "title": "In 1991 Billboard Switched to Scanning, and Rankings Reordered Overnight",
+          "source": "The closest analogue is what happened to [Billboard](https://www.billboard.com/pro/billboard-chart-history-evolution-milestones/) in 1991, when the chart switched to point-of-sale scanning and genre rankings reordered overnight because retailers were no longer reporting what they thought was selling."
+        },
+        {
+          "title": "Book Buyers Rose 124.7 Percent, But Pass Points Accounted for 66.1",
+          "source": "[Etoday (이투데이)](https://www.etoday.co.kr/news/view/2626223) reported that book buyers aged 19 and 20 rose 124.7 percent year on year between August 10 and September 8, but pass-point payments accounted for 66.1 percent of that activity."
+        },
+        {
+          "title": "Will Two Public Documents Cite Youth Culture Pass Data by 2027?",
+          "source": "My bet is that by the first half of 2027, at least two public documents will explicitly cite youth culture pass purchase data as evidence."
+        }
+      ]
+    },
+    "check": {
+      "clarity": 0,
+      "pull": 1,
+      "kept_promise": true,
+      "why": "'바우처'·'차트'는 비유적 일반명사로 청년문화예술패스라는 소재도 사건도 제목에 서지 않고, 은유적 전환 구도가 약한 긴장만 만든다."
+    },
+    "duel_ko": {},
+    "duel_en": {
+      "best": {
+        "title": "Book Buyers Rose 124.7 Percent, But Pass Points Accounted for 66.1",
+        "source": "[Etoday (이투데이)](https://www.etoday.co.kr/news/view/2626223) reported that book buyers aged 19 and 20 rose 124.7 percent year on year between August 10 and September 8, but pass-point payments accounted for 66.1 percent of that activity."
+      },
+      "rounds": [
+        {
+          "a": "In 1991 Billboard Switched to Scanning, and Rankings Reordered Overnight",
+          "b": "Book Buyers Rose 124.7 Percent, But Pass Points Accounted for 66.1",
+          "winner": "b",
+          "why": "1번은 이 기사에만 붙는 수치 두 개로 '급증'과 '그 절반 이상이 보조금'이라는 반전을 한 줄에 세웠고 본문이 그대로 지키는 반면, 2번은 1991년 빌보드라는 비유 사례만 남아 한국 청년문화예술패스 기사라는 걸 알 수 없다."
+        },
+        {
+          "a": "Book Buyers Rose 124.7 Percent, But Pass Points Accounted for 66.1",
+          "b": "Will Two Public Documents Cite Youth Culture Pass Data by 2027?",
+          "winner": "a",
+          "why": "1번은 고유 수치 두 개로 사건과 반전(급증 대 보조금 의존)을 제목에 세웠고, 2번은 본문의 곁가지 예측을 관용적 의문형으로 떠 있게 만들어 무슨 산업 얘긴지도 덜 잡힌다."
+        }
+      ],
+      "kept_first": false,
+      "n": 3
+    }
+  },
+  "name_map": {
+    "ko": {},
+    "en": {
+      "힙합플레이야": "Hiphopplaya",
+      "파이낸셜뉴스": "Financial News",
+      "용인신문": "Yongin Sinmun",
+      "이투데이": "Etoday",
+      "전남일보": "Jeonnam Ilbo",
+      "여성신문": "Womennews",
+      "워터밤": "Waterbomb"
+    }
+  },
+  "usage": {
+    "input": 223812,
+    "output": 27309,
+    "calls": 24,
+    "search_uses": 14
+  },
+  "usage_by_step": {
+    "summarize_sources|claude-haiku-4-5-20251001": {
+      "input": 541,
+      "output": 307,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "retrieve|claude-haiku-4-5-20251001": {
+      "input": 16523,
+      "output": 364,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "context|claude-opus-5": {
+      "input": 24677,
+      "output": 2117,
+      "calls": 1,
+      "search_uses": 2
+    },
+    "judge|claude-opus-5": {
+      "input": 15015,
+      "output": 983,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "write_ko|claude-opus-5": {
+      "input": 17797,
+      "output": 4120,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "extract_claims|claude-haiku-4-5-20251001": {
+      "input": 1262,
+      "output": 438,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "verify_claim|claude-haiku-4-5-20251001": {
+      "input": 125758,
+      "output": 1806,
+      "calls": 6,
+      "search_uses": 12
+    },
+    "hedge|claude-opus-5": {
+      "input": 2059,
+      "output": 3222,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "review|claude-opus-5": {
+      "input": 2066,
+      "output": 2950,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "polish|claude-opus-5": {
+      "input": 3829,
+      "output": 2637,
+      "calls": 2,
+      "search_uses": 0
+    },
+    "write_en|claude-opus-5": {
+      "input": 2539,
+      "output": 1560,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "title_from_body|claude-opus-5": {
+      "input": 6479,
+      "output": 5785,
+      "calls": 3,
+      "search_uses": 0
+    },
+    "compare|claude-opus-5": {
+      "input": 2835,
+      "output": 264,
+      "calls": 2,
+      "search_uses": 0
+    },
+    "title_check|claude-opus-5": {
+      "input": 2137,
+      "output": 105,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "name_map|claude-opus-5": {
+      "input": 295,
+      "output": 651,
+      "calls": 1,
+      "search_uses": 0
+    }
+  },
+  "form": {
+    "title_noun": false,
+    "title_len": 12,
+    "lead_concrete": true,
+    "ai_tell": 0,
+    "contrast": 0,
+    "hedge_10k": 0.0,
+    "sent_med": 49,
+    "long80": 41.2,
+    "title_check": {
+      "clarity": 0,
+      "pull": 1,
+      "kept_promise": true,
+      "why": "'바우처'·'차트'는 비유적 일반명사로 청년문화예술패스라는 소재도 사건도 제목에 서지 않고, 은유적 전환 구도가 약한 긴장만 만든다."
+    },
+    "title_kept_first": null,
+    "title_cands": 0
+  }
+}

@@ -685,5 +685,57 @@
       "calls": 28,
       "search_uses": 14
     }
+  },
+  {
+    "date": "2026-09-21",
+    "day": 17,
+    "slug": "2026-09-21-book-buyers-rose-124-7-percent-but-pass-points-acc",
+    "title_ko": "바우처가 차트가 될 때",
+    "title_en": "Book Buyers Rose 124.7 Percent, But Pass Points Accounted for 66.1",
+    "factor": "정책",
+    "from_stage": "유통",
+    "to_stage": "소비",
+    "tense": "vibe",
+    "region": "한국",
+    "radar_tense": "soon",
+    "agrees": true,
+    "claims_total": 6,
+    "claims_verified": 4,
+    "review_rounds": 1,
+    "unresolved": false,
+    "bet": true,
+    "wiki_used": 3,
+    "lexicon_used": 0,
+    "form": {
+      "title_noun": false,
+      "title_len": 12,
+      "lead_concrete": true,
+      "ai_tell": 0,
+      "contrast": 0,
+      "hedge_10k": 0.0,
+      "sent_med": 49,
+      "long80": 41.2,
+      "title_check": {
+        "clarity": 0,
+        "pull": 1,
+        "kept_promise": true,
+        "why": "'바우처'·'차트'는 비유적 일반명사로 청년문화예술패스라는 소재도 사건도 제목에 서지 않고, 은유적 전환 구도가 약한 긴장만 만든다."
+      },
+      "title_kept_first": null,
+      "title_cands": 0
+    },
+    "style": {
+      "문장 리듬": 0.515,
+      "접속부사": 13.1,
+      "헤지": 0.0,
+      "수식어": 13.1,
+      "쉼표": 78.4
+    },
+    "tokens": {
+      "input": 223812,
+      "output": 27309,
+      "calls": 24,
+      "search_uses": 14
+    }
   }
 ]
