@@ -28,6 +28,7 @@ STYLE_EN = """Style rules (must):
 - No bullet points, numbered lists or tables. Paragraphs only.
 - No meta phrasing like "the real question is" or "what's interesting is".
 - Do not explain unfamiliar things with metaphors; compare them to things the reader already knows.
+- Assume no industry background. The first time an industry term appears (a collecting society, a distributor, a catalogue sale, a sync licence, a pre-sale), say in one clause what it is. Never send the reader off to look it up.
 - Name the outlet inside the sentence for figures and quotes. Hedge anything unverified with "reportedly".
 - End with one sentence on what another industry would take from this case. No slogans.
 - Proper nouns in non-Latin scripts (Chinese, Japanese, Korean, Cyrillic) appear on first mention as "Romanized (original)", e.g. Cai Xukun (蔡徐坤), 36Kr (36氪). Romanized only after that.
@@ -266,7 +267,7 @@ def write_en(cluster_text: str, j: dict, ko_final: str) -> str:
 [Bet] {json.dumps(j.get('bet'), ensure_ascii=False) if j.get('bet') else 'none'}
 [Principle] {j['principle_en']}
 
-[The Korean piece, already fact-checked. Use the same facts and the same call. Do not translate it; write the English piece for a global business reader who does not know Korean entertainment.]
+[The Korean piece, already fact-checked. Use the same facts and the same call. Do not translate it; write the English piece for a general reader with no background in the music or entertainment industry.]
 {ko_final}
 
 {STYLE_EN}
