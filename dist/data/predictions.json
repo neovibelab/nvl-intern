@@ -141,5 +141,16 @@
     "check_en": "Track citations of pass data in promoter, publisher, and local-government press releases and MCST/KAMS program materials",
     "factor": "정책",
     "status": "open"
+  },
+  {
+    "slug": "2026-09-22-komca-published-an-ai-music-registration-standard-",
+    "date": "2026-09-22",
+    "by_date": "2026-12-21",
+    "claim_ko": "2026년 말까지 한국 신탁단체·플랫폼이 AI 기여도를 판정할 자체 측정·검증 도구(어트리뷰션 솔루션 도입 또는 기술 파트너십)를 공식 발표한다.",
+    "claim_en": "By end-2026 a Korean CMO or platform will publicly announce its own AI-attribution measurement tool or tech partnership.",
+    "check_ko": "문체부 후속 토론회 자료·음저협/함저협 공지·카카오엔터 등 플랫폼 보도자료에서 기여도 검증 도구 도입 언급 확인",
+    "check_en": "Check MCST follow-up session materials, CMO notices, and platform press releases for attribution-verification tooling",
+    "factor": "정책",
+    "status": "open"
   }
 ]

@@ -737,5 +737,57 @@
       "calls": 24,
       "search_uses": 14
     }
+  },
+  {
+    "date": "2026-09-22",
+    "day": 18,
+    "slug": "2026-09-22-komca-published-an-ai-music-registration-standard-",
+    "title_ko": "음저협, AI 음악 등록 기준 22일 만에 철회했다",
+    "title_en": "KOMCA Published an AI Music Registration Standard on August 3 and Withdrew It on August 25",
+    "factor": "정책",
+    "from_stage": "생산",
+    "to_stage": "유통",
+    "tense": "signal",
+    "region": "한국",
+    "radar_tense": "soon",
+    "agrees": false,
+    "claims_total": 6,
+    "claims_verified": 3,
+    "review_rounds": 2,
+    "unresolved": false,
+    "bet": true,
+    "wiki_used": 3,
+    "lexicon_used": 2,
+    "form": {
+      "title_noun": true,
+      "title_len": 28,
+      "lead_concrete": true,
+      "ai_tell": 1,
+      "contrast": 1,
+      "hedge_10k": 9.1,
+      "sent_med": 53,
+      "long80": 25.0,
+      "title_check": {
+        "clarity": 2,
+        "pull": 2,
+        "kept_promise": true,
+        "why": "음저협·AI 음악 등록 기준·철회로 소재와 사건이 명확하고 '22일 만에'라는 수치가 짧은 수명의 반전을 만든다; 본문이 8월 3일 발표·8월 25일 철회 경위와 이후 공백을 실제로 다룬다"
+      },
+      "title_kept_first": true,
+      "title_cands": 2
+    },
+    "style": {
+      "문장 리듬": 0.56,
+      "접속부사": 11.8,
+      "헤지": 11.8,
+      "수식어": 0.0,
+      "쉼표": 94.8
+    },
+    "tokens": {
+      "input": 214923,
+      "output": 30429,
+      "calls": 27,
+      "search_uses": 10
+    }
   }
 ]
