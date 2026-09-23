@@ -152,5 +152,16 @@
     "check_en": "Check MCST follow-up session materials, CMO notices, and platform press releases for attribution-verification tooling",
     "factor": "정책",
     "status": "open"
+  },
+  {
+    "slug": "2026-09-23-every-opening-act-on-ed-sheeran-s-tour-walked-away",
+    "date": "2026-09-23",
+    "by_date": "2027-03-22",
+    "claim_ko": "180일 안에 북미 스타디움·아레나 투어에서 공연장 소유주 또는 프로모터의 요구로 서포트 액트가 하차·교체된 사례가 최소 1건 더 보도되고, 서포트 액트 계약의 발언 조항이 업계 이슈로 공개 논의된다",
+    "claim_en": "Within 180 days, at least one more North American stadium/arena tour will see a support act dropped or replaced at a venue owner's or promoter's demand, and speech clauses in support-act contracts will surface as a publicly discussed industry issue",
+    "check_ko": "Billboard·Variety·Pollstar의 하차 보도 1건 이상, 그리고 아티스트 매니지먼트·공연장 운영사·노조 측의 계약 조항 관련 공개 발언",
+    "check_en": "At least one drop-out report in Billboard/Variety/Pollstar, plus public statements from artist management, venue operators, or unions about contract speech clauses",
+    "factor": "자본",
+    "status": "open"
   }
 ]

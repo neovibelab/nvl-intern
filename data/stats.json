@@ -789,5 +789,57 @@
       "calls": 27,
       "search_uses": 10
     }
+  },
+  {
+    "date": "2026-09-23",
+    "day": 19,
+    "slug": "2026-09-23-every-opening-act-on-ed-sheeran-s-tour-walked-away",
+    "title_ko": "9월 15일까지 시런 투어 오프닝 액트가 전원 떠났다",
+    "title_en": "Every Opening Act on Ed Sheeran's Tour Walked Away",
+    "factor": "자본",
+    "from_stage": "유통",
+    "to_stage": "생산",
+    "tense": "signal",
+    "region": "북미",
+    "radar_tense": "soon",
+    "agrees": false,
+    "claims_total": 6,
+    "claims_verified": 3,
+    "review_rounds": 1,
+    "unresolved": false,
+    "bet": true,
+    "wiki_used": 3,
+    "lexicon_used": 2,
+    "form": {
+      "title_noun": true,
+      "title_len": 29,
+      "lead_concrete": true,
+      "ai_tell": 0,
+      "contrast": 0,
+      "hedge_10k": 8.5,
+      "sent_med": 51,
+      "long80": 29.4,
+      "title_check": {
+        "clarity": 2,
+        "pull": 2,
+        "kept_promise": true,
+        "why": "시런 투어라는 소재와 '오프닝 액트 전원 하차'라는 사건이 날짜와 함께 서 있고, '전원'이라는 이례적 사실 자체가 이유를 묻게 만드는 미지수이며 본문이 그 경위를 끝까지 다룬다."
+      },
+      "title_kept_first": false,
+      "title_cands": 2
+    },
+    "style": {
+      "문장 리듬": 0.564,
+      "접속부사": 0.0,
+      "헤지": 10.8,
+      "수식어": 0.0,
+      "쉼표": 119.3
+    },
+    "tokens": {
+      "input": 215642,
+      "output": 32375,
+      "calls": 25,
+      "search_uses": 12
+    }
   }
 ]
