@@ -841,5 +841,57 @@
       "calls": 25,
       "search_uses": 12
     }
+  },
+  {
+    "date": "2026-09-24",
+    "day": 20,
+    "slug": "2026-09-24-ai-tracks-passed-registration-at-a-trust-body-and-",
+    "title_ko": "AI 음악이 신탁단체 등록을 통과해 사용료를 받았다",
+    "title_en": "AI Tracks Passed Registration at a Trust Body, and Collected Royalties",
+    "factor": "정책",
+    "from_stage": "생산",
+    "to_stage": "유통",
+    "tense": "signal",
+    "region": "한국",
+    "radar_tense": "soon",
+    "agrees": false,
+    "claims_total": 6,
+    "claims_verified": 5,
+    "review_rounds": 2,
+    "unresolved": false,
+    "bet": true,
+    "wiki_used": 3,
+    "lexicon_used": 1,
+    "form": {
+      "title_noun": true,
+      "title_len": 28,
+      "lead_concrete": true,
+      "ai_tell": 0,
+      "contrast": 0,
+      "hedge_10k": 10.0,
+      "sent_med": 47,
+      "long80": 28.6,
+      "title_check": {
+        "clarity": 2,
+        "pull": 2,
+        "kept_promise": true,
+        "why": "AI 음악·신탁단체 등록·사용료 지급이라는 소재와 사건이 모두 서 있고, 걸러야 할 것이 심사를 통과해 돈까지 받았다는 반전이 분명하며 본문이 그 사례와 후속 대응을 실제로 다룬다"
+      },
+      "title_kept_first": true,
+      "title_cands": 3
+    },
+    "style": {
+      "문장 리듬": 0.427,
+      "접속부사": 11.9,
+      "헤지": 11.9,
+      "수식어": 0.0,
+      "쉼표": 154.8
+    },
+    "tokens": {
+      "input": 226115,
+      "output": 29015,
+      "calls": 28,
+      "search_uses": 12
+    }
   }
 ]

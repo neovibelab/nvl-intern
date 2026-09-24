@@ -163,5 +163,16 @@
     "check_en": "At least one drop-out report in Billboard/Variety/Pollstar, plus public statements from artist management, venue operators, or unions about contract speech clauses",
     "factor": "자본",
     "status": "open"
+  },
+  {
+    "slug": "2026-09-24-ai-tracks-passed-registration-at-a-trust-body-and-",
+    "date": "2026-09-24",
+    "by_date": "2027-03-23",
+    "claim_ko": "문체부·음저협의 후속 논의에서 나오는 AI 활용 음악 신탁 기준에 창작 과정 증빙(프로젝트 파일·프롬프트 이력·편집 로그 등) 제출 또는 보관 의무가 포함된다.",
+    "claim_en": "The forthcoming AI music trusteeship standard from MCST and KOMCA will require submission or retention of creation-process evidence such as session files, prompt logs, or edit histories.",
+    "check_ko": "문체부 후속 토론회 자료 및 음저협 신고·등록 규정 개정안 공개 문안에서 과정 증빙 조항 여부 확인",
+    "check_en": "Check the published draft of KOMCA's revised registration rules and MCST follow-up forum materials for a process-evidence clause",
+    "factor": "정책",
+    "status": "open"
   }
 ]
