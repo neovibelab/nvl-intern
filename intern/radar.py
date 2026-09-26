@@ -96,28 +96,44 @@ def used_keys() -> set:
     return used
 
 
-def pick_today(clusters: list[dict], exclude: set) -> dict | None:
-    """「곧」(soon) 우선, 그다음 「지금」(now)·미분류. 소스 수·최신순. 이미 쓴 사건은 뺀다.
+def _public(c: dict) -> bool:
+    return any((x.get("url") or "").startswith("http") and "mail.google.com" not in (x.get("url") or "") for x in c["items"])
 
+
+def _score(c: dict) -> tuple:
+    tense_rank = {"soon": 3, "now": 2, None: 1, "done": 0, "brief": -1}.get(c["radar_tense"], 1)
+    coord = 1 if (c["factor"] and c["stage"]) else 0
+    col = max({"vibe_search": 3, "gnews": 2, "newsroom": 2, "newsletter": 1}.get(x.get("collector"), 1) for x in c["items"])
+    return (tense_rank, coord, col, c["n"], c["latest"])
+
+
+def candidates(clusters: list[dict], exclude: set, n: int = 5) -> list[dict]:
+    """오늘의 후보 n개. **여기까지만 코드가 한다** (2026-09-26).
+
+    전에는 정렬 맨 위를 그대로 썼다(`pick_today`) - 소재를 인턴이 고른 적이 없었다.
+    대표가 세운 첫 물음이 「AI가 직접 뉴스를 셀렉할 수 있나」였는데 그 물음이 한 번도 시험되지 않았다.
+    이제 코드는 쓸 수 없는 것(이미 쓴 것·끝난 것·원문 없는 것)을 걸러 다섯으로 좁히고,
+    **고르는 것은 인턴이 한다**(`steps.select`). 정렬은 후보를 좁히는 데만 쓴다.
+    """
+    cands = [c for c in clusters if c["key"] not in exclude
+             and not any(x["id"] in exclude for x in c["items"])
+             and c["radar_tense"] not in ("brief", "done") and _public(c)]
+    cands.sort(key=_score, reverse=True)
+    out = cands[:n]
+    for c in out:
+        c["item_ids"] = [x["id"] for x in c["items"]]
+    return out
+
+
+def pick_today(clusters: list[dict], exclude: set) -> dict | None:
+    """정렬 맨 위 하나. **선정이 실패했을 때의 대체**로만 쓴다(2026-09-26).
+
+    「곧」(soon) 우선, 그다음 「지금」(now)·미분류. 소스 수·최신순. 이미 쓴 사건은 뺀다.
     2026-09-06 뒤집음. 전에는 now가 위였고 D+1·D+2가 둘 다 signal로 나왔다. 레이더 기본 화면이
     바이브이고 소개 페이지가 「아직 오지 않은 변화」를 약속하는데 선택이 반대를 향하고 있었다.
     """
-    def public(c):
-        return any((x.get("url") or "").startswith("http") and "mail.google.com" not in (x.get("url") or "") for x in c["items"])
-    def score(c):
-        tense_rank = {"soon": 3, "now": 2, None: 1, "done": 0, "brief": -1}.get(c["radar_tense"], 1)
-        coord = 1 if (c["factor"] and c["stage"]) else 0
-        col = max({"vibe_search": 3, "gnews": 2, "newsroom": 2, "newsletter": 1}.get(x.get("collector"), 1) for x in c["items"])
-        return (tense_rank, coord, col, c["n"], c["latest"])
-    cands = [c for c in clusters if c["key"] not in exclude
-             and not any(x["id"] in exclude for x in c["items"])
-             and c["radar_tense"] not in ("brief", "done") and public(c)]
-    if not cands:
-        return None
-    cands.sort(key=score, reverse=True)
-    top = cands[0]
-    top["item_ids"] = [x["id"] for x in top["items"]]
-    return top
+    c = candidates(clusters, exclude, n=1)
+    return c[0] if c else None
 
 
 def describe(c: dict, max_items: int = 6) -> str:

@@ -6,6 +6,8 @@ import re
 
 from . import config, llm
 
+NL = chr(10)
+
 PERSONA = """너는 엔터문화연구소의 AI 인턴 1호다. 이름은 아직 없다. 매일 글로벌 엔터 산업을 읽고 한 편 쓴다.
 음악에서 바이브를 찾는다. 케이팝·팬덤·IP·공연·리테일의 변화가 다른 산업의 미래를 먼저 보여준다고 본다.
 사람이 고르지도 고치지도 않는다. 틀린 날도 남긴다. 화자는 인턴이고 연구소 대표의 이름으로 말하지 않는다.
@@ -127,6 +129,105 @@ def context_block(c: dict) -> str:
     return "\n".join(out)
 
 
+# ── ①' 고르기 ─────────────────────────────────────────────────────────────────
+# 2026-09-26 신설. 전에는 코드가 정렬 맨 위를 그대로 썼다 - 인턴은 소재를 고른 적이 없다.
+# 대표가 세운 첫 물음 「AI가 직접 뉴스를 셀렉할 수 있나」가 여기서 처음 시험된다.
+# **안 고른 후보에도 이유를 남긴다.** 30·90일 뒤 고른 것과 안 고른 것의 후속을 비교해야
+# 선정이 맞았는지 잴 수 있다(`scripts/selection_followup.py`).
+
+SELECT = """오늘 쓸 사건을 **네가** 고른다. 아래 후보는 코드가 쓸 수 없는 것(이미 쓴 것·끝난 것·원문 없는 것)을
+걸러 다섯으로 좁혀 둔 것이다. 순서에 뜻은 없다.
+
+{reader}
+
+**연구원이 고를 때 저울질하는 것** - 점수표가 아니다. 사건마다 무게가 다르다.
+- **소재 층의 판단에 쓰이나.** 음악업계에서 새 사업이나 확장을 고민하는 사람이 이걸 읽고 뭔가를 다르게 결정할 수 있나.
+  통념을 뒤집는 이야기라는 것만으로는 부족하다.
+- **관점을 얹을 여지가 있나.** 신선도는 기준이 아니다. 며칠 지났어도 후속·반응·수치가 붙었으면 재료가 많다.
+  누가 써도 같은 요약밖에 안 나올 사건은 고르지 않는다.
+- **아직 주변에서 도는 변화인가.** 이미 주류에서 벌어지는 일은 누구나 찾는다. 조짐이 보이는 쪽이 값이 크다.
+- **이미 쫓고 있는 판에 새 국면이 왔나.** 아래 「쫓고 있는 이슈」에 이어지는 사건이면 흩어진 조각을 잇는 글이 된다.
+  다만 같은 판만 계속 고르면 시야가 좁아진다 - **이어 갈 이유가 분명할 때만** 잇는다.
+
+[쫓고 있는 이슈 - 네가 지금까지 쓴 편을 판별로 묶은 것]
+{issues}
+
+[오늘의 후보]
+{cands}
+
+고른 사건이 위 이슈 중 하나에 이어지면 그 id를 쓴다. 새 판이면 id는 null로 두고 이름을 짓는다.
+**이름은 독자가 한 번에 알아듣는 말로** - 당사자와 쟁점이 드러나게, 비유 없이. 너무 넓게 묶지 않는다
+(「음악 권리」는 넓다. 「AI 음악과 메이저 음반사의 라이선스」 정도가 한 판이다).
+
+`reason_ko`는 **독자가 본문 위에서 읽는 문장**이다. 「왜 오늘 이 사건인가」를 한두 문장, 140자 안으로.
+「이 사건은 중요하다」 같은 말 대신 **무엇이 달라지는지**를 쓴다. 메타 수사·격언조 금지.
+
+JSON:
+{{"chosen": 0,
+ "reason_ko": "...", "reason_en": "...",
+ "rejected": [{{"i": 1, "why": "한 줄"}}, {{"i": 2, "why": "..."}}],
+ "issue": {{"id": "기존 id 또는 null", "label_ko": "새 판일 때만", "label_en": "..."}}}}
+rejected에는 고르지 않은 후보 **전부**를 넣는다."""
+
+
+def describe_candidates(cands: list[dict], per: int = 4) -> str:
+    """후보를 짧게. 레이더가 찍은 시제는 **보여주지 않는다** - 판정과 마찬가지로 인턴이 먼저 본다."""
+    out = []
+    for i, c in enumerate(cands):
+        items = c["items"][:per]
+        regions = sorted({x.get("region") for x in c["items"] if x.get("region")})
+        head = f"[{i}] 기사 {c['n']}건 · 지역 {', '.join(regions) or '-'} · 최신 {str(c.get('latest', ''))[:10]}"
+        lines = [head]
+        for x in items:
+            lines.append(f"  - [{x.get('source') or '-'}] {x.get('title', '')}")
+            s = (x.get("summary") or "").strip()
+            if s:
+                lines.append("    " + " ".join(s.split())[:220])
+        out.append("\n".join(lines))
+    return "\n\n".join(out)
+
+
+def select(cands: list[dict], issues_text: str) -> dict | None:
+    """후보 중 하나를 고른다. 실패하면 None - 호출하는 쪽이 정렬 맨 위로 대신한다(회전은 멈추지 않는다)."""
+    if not cands:
+        return None
+    if len(cands) == 1:
+        return {"chosen": 0, "reason_ko": "", "reason_en": "", "rejected": [], "issue": {}, "only_one": True}
+    try:
+        d = llm.ask_json(SELECT.format(reader=READER_KO, issues=issues_text, cands=describe_candidates(cands)),
+                         system=PERSONA, max_tokens=2500)
+    except Exception as e:  # noqa: BLE001
+        print(f"  [select] 실패 → 정렬 맨 위로 대신한다: {type(e).__name__} {str(e)[:80]}")
+        return None
+    try:
+        k = int(d.get("chosen"))
+    except (TypeError, ValueError):
+        k = -1
+    if not 0 <= k < len(cands):
+        print(f"  [select] 고른 번호가 범위 밖({d.get('chosen')}) → 정렬 맨 위로 대신한다")
+        return None
+    d["chosen"] = k
+    d["reason_ko"] = no_dash(str(d.get("reason_ko") or "").strip())
+    d["reason_en"] = no_dash(str(d.get("reason_en") or "").strip())
+    rej = []
+    for r in d.get("rejected") or []:
+        try:
+            i = int(r.get("i"))
+        except (TypeError, ValueError, AttributeError):
+            continue
+        if 0 <= i < len(cands) and i != k:
+            rej.append({"i": i, "why": str(r.get("why") or "").strip()})
+    d["rejected"] = rej
+    iss = d.get("issue") or {}
+    d["issue"] = {"id": (iss.get("id") or None) if str(iss.get("id") or "").lower() not in ("null", "none", "") else None,
+                  "label_ko": str(iss.get("label_ko") or "").strip(), "label_en": str(iss.get("label_en") or "").strip()}
+    return d
+
+
+def no_dash(t: str) -> str:
+    return t.replace(" — ", " - ").replace("—", "-").replace(" – ", " - ").replace("–", "-")
+
+
 # ── ③ 화살표 판정 ───────────────────────────────────────────────────────────
 
 def judge(cluster_text: str, radar: dict, materials: str, extra: str = "") -> dict:
@@ -145,7 +246,7 @@ def judge(cluster_text: str, radar: dict, materials: str, extra: str = "") -> di
 {TENSE_BLOCK}
 - 이 판정은 **네가 먼저 찍는다.** 레이더가 따로 찍어 둔 값이 있지만 보여주지 않는다. 일치 여부는 코드가 뒤에 계산한다.
 - `tense_why`에 그 시제로 본 이유를 한 줄 적는다.
-- 베팅: 시제가 vibe이거나, signal이지만 vibe 가설이 서면 「무엇이 · 언제까지(30|90|180일) · 무엇으로 확인」 세 칸을 채운다. 못 채우면 null. 채점 가능한 문장만 쓴다.
+- 베팅: **시제가 vibe일 때만** 「무엇이 · 언제까지(30|90|180일) · 무엇으로 확인」 세 칸을 채운다. signal·news면 null. 못 채우면 null. 채점 가능한 문장만 쓴다. 베팅은 본문에 싣지 않고 예측 대장에만 쌓인다 - 기한이 오면 채점하고, 같은 판을 종합할 때 되읽는다.
 - 지역(region): 이 소재가 **어디 이야기인가** 하나 고른다: {' | '.join(config.REGIONS)}. 기사가 어느 매체에 실렸는지가 아니라
   **사건이 벌어진 곳**이다. 여러 지역이 걸쳐 있으면 「글로벌」.
 - 각도(angle): 이 사건에서 무엇을 말할지 한 줄. 뻔한 것(누구나 아는 요약)이면 다른 각도를 찾는다.
@@ -181,6 +282,10 @@ JSON:
     d["disagree_reason"] = "" if d["agrees"] is not False else str(d.get("tense_why") or "").strip()
     b = d.get("bet")
     if b and not (b.get("claim_ko") and b.get("check_ko") and b.get("by_days")):
+        d["bet"] = None
+    # 예측은 바이브 편에만(2026-09-26). 전에는 「signal이지만 vibe 가설이 서면」도 받아서 16편 전부에 붙었다.
+    # 소개 페이지는 「바이브에는 세 칸이 붙는다」고 약속하는데 구현은 조건이 없었다.
+    if d.get("tense") != "vibe":
         d["bet"] = None
     return d
 
@@ -234,7 +339,77 @@ def header_line(j: dict, lang: str) -> str:
 
 # ── ④ 집필 ──────────────────────────────────────────────────────────────────
 
-def write_ko(cluster_text: str, j: dict, materials: str, recent: str = "", extra: str = "") -> str:
+THREAD_RULE_KO = """[같은 판의 이전 편 - 네가 이 이슈로 먼저 쓴 것]
+{thread}
+
+**오늘 사건은 위 흐름의 한 조각이다.**
+- 이전 편에서 이미 한 말을 되풀이하지 않는다. 오늘 사건이 **흐름에 무엇을 더하거나 바꾸는지**를 쓴다.
+- 이어지는 지점이 있으면 한 문장으로 짚는다. 억지로 잇지 않는다 - 안 이어지면 안 이어지는 대로 쓴다.
+- 「그 뒤 드러난 것」에 정정이 있으면 오늘 글이 그 틀린 전제 위에 서지 않게 한다."""
+
+
+SPLIT = "=== 되읽기 ==="
+SPLIT_EN = "=== RECHECK ==="
+
+
+def split_reread(text: str, marker: str) -> tuple[str, list[str]]:
+    """종합 편 원고에서 본문과 되읽기 줄을 가른다. 표시가 없으면 되읽기 없이 본문만."""
+    if marker not in text:
+        return text.strip(), []
+    body, rr = text.split(marker, 1)
+    lines = [no_dash(ln.strip().lstrip("-*•· ").strip()) for ln in rr.strip().split(NL)]
+    return body.strip(), [ln for ln in lines if len(ln) > 8][:5]
+
+
+def write_synth_ko(cluster_text: str, j: dict, materials: str, thread: str, extra: str = "",
+                   label: str = "", n_prior: int = 0) -> tuple[str, list[str]]:
+    """종합 편(2026-09-26 신설). 사건 하나가 아니라 **흩어진 조각을 이어 판을 읽는 글**.
+
+    대표가 세운 목표 둘째 - 「하나의 이슈에 연결된 여러 맥락을 파악하고 거기서 인사이트를 전한다」 - 의 실물이다.
+    예측은 여기서 **되읽는다.** 매 편 본문에 새 예측을 걸던 것을 걷고, 쌓인 판단을 한자리에서 비춰 본다.
+    """
+    prompt = f"""[이 판의 흐름 - 「{label}」 · 네가 이 이슈로 쓴 {n_prior}편과 그때의 판단, 그 뒤 드러난 것]
+{thread}
+
+[오늘 더해진 사건]
+{cluster_text}
+
+[판정] {header_line(j, 'ko')} · 각도: {j['angle_ko']}
+[원리] {j['principle_ko']}
+
+[재료]
+{materials[:9000] or '(없음)'}
+
+[그 뒤 나온 것 - 후속·반응·수치·선례]
+{extra[:3000] or '(못 찾았다)'}
+
+[자기 규칙]
+{_rules()[:2500]}
+
+{READER_KO}
+
+{STYLE_KO}
+
+오늘은 **종합 편**이다. 사건 하나를 다루는 글이 아니라 **흩어진 조각을 이어 판을 읽는 글**이다.
+소제목은 쓰지 않는다. 흐름으로 쓴다.
+- **첫 단락** - 오늘 사건의 구체(누가 무엇을 언제)로 연다. 그리고 이것이 몇 주째 이어진 한 판의 새 국면이라는 것을 밝힌다.
+- **가운데** - **조각을 이으면 무엇이 보이나.** 편마다 따로 볼 때는 안 보이던 구조·방향·당사자의 움직임을 쓴다.
+  날짜·당사자·금액을 박아서 잇는다. **편 목록을 순서대로 요약하는 글이 아니다** - 개별 편은 독자가 링크로 읽는다.
+- **끝** - 이 판이 지금 어디에 와 있고, 소재 층 독자가 무엇을 다르게 판단해야 하나.
+
+1200~1600자. 예측을 본문에 새로 걸지 않는다. 사실은 위에 있는 것만 쓴다.
+
+본문을 다 쓴 뒤 다음 줄에 정확히 `{SPLIT}` 를 쓰고, 그 아래에 **지난 판단 되읽기**를 쓴다.
+- 위 흐름의 「그때 건 예측」과 「그때 뽑은 것」 가운데 **지금 사실로 비춰 볼 수 있는 것**만 2~4개 고른다.
+- 한 줄에 하나. 그때 무엇이라 봤고 지금 드러난 것으로는 어떤지. **맞았다 · 틀렸다 · 아직 모른다** 중 하나를 분명히 쓴다.
+- 기한이 안 온 예측은 채점하지 않는다. 「아직 모른다」로 두고 지금 어느 쪽으로 기울었는지만 쓴다.
+- 「그 뒤 드러난 것」에 정정이 있으면 **반드시** 넣는다. 틀린 것을 감추지 않는 게 이 실험의 규칙이다.
+- 목록 기호 없이 한 줄씩 쓴다."""
+    out = llm.ask(prompt, system=PERSONA, max_tokens=7000)
+    return split_reread(out, SPLIT)
+
+
+def write_ko(cluster_text: str, j: dict, materials: str, recent: str = "", extra: str = "", thread: str = "") -> str:
     """오늘의 소재 · 두뇌 재료 · 자기 규칙 · **지난 편**을 놓고 쓴다.
 
     지난 편은 2026-09-11에 붙였다(대표 지시). 그전까지 인턴은 자기가 쓴 글을 한 편도 안 읽고
@@ -242,12 +417,14 @@ def write_ko(cluster_text: str, j: dict, materials: str, recent: str = "", extra
     """
     from . import learn  # noqa: PLC0415 - 순환 참조 회피
     past = learn.RECENT_RULE_KO.format(recent=recent) if recent else ""
+    thr = THREAD_RULE_KO.format(thread=thread) if thread else ""
     prompt = f"""[오늘의 사건 무리]
 {cluster_text}
 
 [판정] {header_line(j, 'ko')} · 각도: {j['angle_ko']}
-[베팅] {json.dumps(j.get('bet'), ensure_ascii=False) if j.get('bet') else '없음'}
 [원리] {j['principle_ko']}
+
+{thr}
 
 [재료]
 {materials[:12000] or '(없음)'}
@@ -265,7 +442,8 @@ def write_ko(cluster_text: str, j: dict, materials: str, recent: str = "", extra
 {STYLE_KO}
 
 한국어 논평 본문을 쓴다. 700~1000자. 제목·헤더·마지막 원리 줄은 코드가 붙이므로 본문만 쓴다.
-첫 문장은 사건의 구체(누가 무엇을 언제)로 연다. 각도를 따라 논지를 세우고, 베팅이 있으면 본문 안에 「무엇이 언제까지」를 자기 문장으로 넣는다.
+첫 문장은 사건의 구체(누가 무엇을 언제)로 연다. 각도를 따라 논지를 세운다.
+**예측을 본문에 쓰지 않는다**(2026-09-26). 「앞으로 N일 안에 무엇이 일어날 것이다」 같은 문장은 판정 단계에서 예측 대장으로 따로 가고 기한이 오면 채점된다. 본문은 **지금 무엇이 짜이고 있는지**를 읽는 자리다.
 사실은 사건 무리와 재료에 있는 것만 쓴다. 없는 수치·발언을 만들지 않는다.
 
 **분량은 늘리지 않는다. 자리를 바꾼다.** 재료가 늘었다고 글이 길어지면 독자에게는 그냥 긴 글이다.
@@ -278,12 +456,19 @@ def write_ko(cluster_text: str, j: dict, materials: str, recent: str = "", extra
     return llm.ask(prompt, system=PERSONA, max_tokens=6000)
 
 
-def write_en(cluster_text: str, j: dict, ko_final: str) -> str:
+def write_en(cluster_text: str, j: dict, ko_final: str, synth: bool = False, reread_ko: list | None = None) -> str:
+    """영문판. 종합 편이면 되읽기도 같이 쓰고 `=== RECHECK ===` 아래로 돌려준다(`split_reread`)."""
+    size = ("550 to 800 words. This is a synthesis piece: it connects earlier pieces on the same thread"
+            if synth else "350 to 500 words")
+    rr = ""
+    if synth and reread_ko:
+        rr = (NL + NL + "[The Korean \"checking earlier calls\" lines]" + NL + NL.join(reread_ko) + NL + NL
+              + "After the body, write a line that is exactly `" + SPLIT_EN + "` and then the same lines in English, "
+                "one per line, no bullets. Keep each verdict (right / wrong / too early to tell) exactly as in the Korean.")
     prompt = f"""[Today's event cluster]
 {cluster_text}
 
 [Call] {header_line(j, 'en')} · angle: {j['angle_en']}
-[Bet] {json.dumps(j.get('bet'), ensure_ascii=False) if j.get('bet') else 'none'}
 [Principle] {j['principle_en']}
 
 [The Korean piece, already fact-checked. Use the same facts and the same call. Do not translate it; write the English piece for a general reader with no background in the music or entertainment industry.]
@@ -291,10 +476,10 @@ def write_en(cluster_text: str, j: dict, ko_final: str) -> str:
 
 {STYLE_EN}
 
-Write the English body only, 350 to 500 words. Title, header line and the closing principle are added by code.
-Open with the concrete event (who, what, when). Follow the angle. If there is a bet, state what and by when in your own words.
-Only facts that appear in the cluster or the Korean piece. Invent no figures or quotes."""
-    return llm.ask(prompt, system=PERSONA, max_tokens=6000)
+Write the English body only, {size}. Title, header line and the closing principle are added by code.
+Open with the concrete event (who, what, when). Follow the angle. Do not put a forecast in the body ("within N days X will happen"). Forecasts go to a separate ledger and are scored when due. The body reads what is taking shape now.
+Only facts that appear in the cluster or the Korean piece. Invent no figures or quotes.{rr}"""
+    return llm.ask(prompt, system=PERSONA, max_tokens=7000)
 
 
 # ── ⑤ 팩트 검증 ─────────────────────────────────────────────────────────────
