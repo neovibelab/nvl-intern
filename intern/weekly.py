@@ -404,6 +404,8 @@ REFLECT_KO = """[이번 주 내 기록]
 
 [문체 - 사람이 쓴 글 60편의 분포를 자로 놓았다]
 {style_line}
+
+{judgment_line}
 새 예측 {bets_new}건 · 열린 예측 {bets_open}건
 {signals}
 
@@ -417,11 +419,14 @@ REFLECT_KO = """[이번 주 내 기록]
 이미 올린 자기 규칙 {promoted}개
 
 위 기록만 재료다. 새 사건을 찾지 않는다. 한국어 800~1000자로 이번 주 회고를 쓴다.
-1문단: 이번 주 무엇을 봤나. 좌표와 시제 분포가 말하는 것.
+1문단: 이번 주 무엇을 봤나. 좌표와 시제 분포가 말하는 것. 그리고 **무엇을 골랐고 왜 골랐나** -
+위 [고르는 판단]의 고른 이유를 다시 읽고, **안 고른 후보 중에 지금 보니 더 컸어야 할 것이 있었나** 한 문장으로 짚는다.
+선정 후속 판정이 있으면(30일 뒤 고른 것과 안 고른 것의 후속 매체 수) 그 숫자를 그대로 읽는다.
 2문단: **무엇을 틀렸나.** 검수 지적에서 반복된 것을 지목한다. **사실 검증에서 확인 못 했거나 반박된 주장이 있으면 그것부터 다룬다** - 검수 지적보다 무겁다. 변명하지 않는다.
 3문단: 독자 신호와 규칙. 무엇을 규칙으로 올렸고 무엇을 안 올렸는지, 안 올린 이유까지.
 4문단: **형식과 접근성, 그리고 세 대결.** 위 숫자를 그대로 읽는다. 지난 편을 이겼나 졌나,
 **사람이 쓴 글과 붙어서는 어땠나**, 그리고 **연구소 렌즈를 붙인 판이 맨몸 판을 이겼나.**
+종합 편을 썼으면 **이어 읽은 쪽이 개별 요약을 이겼나**도 본다 - 졌다면 잇는 글이 따로 읽는 것보다 보탠 게 없었다는 뜻이다.
 졌다면 판정자가 뭘 보고 그렇게 골랐나. 제목·첫 문단·AI 티도 같이 본다.
 렌즈 쪽에서 졌거나 재료 없이 쓴 날이 있었으면 **그것이 이번 주 글에서 무엇을 뺐는지** 적는다.
 **누가 고치는 법을 알려주지 않았다** - 숫자만 보고 스스로 판단한다.
@@ -458,6 +463,8 @@ Pieces written without the lab's own lenses: {no_brain}/{n}
 
 [Style - measured against the distribution of 60 pieces written by a human]
 {style_line}
+
+{judgment_line}
 New predictions {bets_new} · open {bets_open}
 {signals}
 
@@ -496,6 +503,45 @@ def _form_line(g: dict, lang: str) -> str:
             f"AI tells {f['ai_tell']} · hedges per 10k {f['hedge_10k']} · median sentence {f['sent_med']}")
 
 
+def _judgment_line(g: dict, lang: str) -> str:
+    """고르는 판단·잇는 판단 (2026-09-26). 이번 주 고른 이유 · 선정 후속 · 이어 쓴 판 · 종합 편 대결."""
+    from . import duel, followup, issues  # noqa: PLC0415
+    ko = lang == "ko"
+    picks = []
+    for s_ in g["rows"]:
+        if s_.get("selected_by") != "intern":
+            continue
+        try:
+            lg = json.loads(io.open(config.LOG_DIR / f"{s_['date']}.json", encoding="utf-8").read())
+        except Exception:  # noqa: BLE001
+            continue
+        sel = lg.get("selection") or {}
+        why = sel.get("reason_ko" if ko else "reason_en") or ""
+        rej = "; ".join(f"「{r.get('title', '')[:30]}」 - {r.get('why', '')[:60]}" for r in (sel.get("rejected") or [])[:4])
+        picks.append(f"- {s_['date']} 「{s_.get('title_ko' if ko else 'title_en', '')}」 · "
+                     + ("고른 이유: " if ko else "why: ") + why
+                     + (("\n  안 고른 것: " if ko else "\n  passed over: ") + rej if rej else ""))
+    h, n = followup.rate(30)
+    fu = (f"선정 후속(30일) 맞음 {h}/{n}" if ko else f"Selection follow-up (30 days) hit {h}/{n}") if n else \
+         ("선정 후속 - 첫 판정은 고른 날로부터 30일 뒤다" if ko else "Selection follow-up - first verdict 30 days after the pick")
+    d = issues.load()
+    week = {s_["slug"] for s_ in g["rows"]}
+    threads = []
+    for iid in d["issues"]:
+        ms = issues.members(d, iid)
+        k = sum(1 for m in ms if m["slug"] in week)
+        if k:
+            threads.append(f"- 「{issues.label(d, iid, lang)}」 이번 주 {k}편 · 전체 {len(ms)}편 · 종합 전 {len(issues.unsynth(d, iid))}편"
+                           if ko else
+                           f"- \"{issues.label(d, iid, lang)}\" {k} this week · {len(ms)} total · {len(issues.unsynth(d, iid))} unsynthesized")
+    w, t = duel.synth_rate()
+    sy = (f"종합 편 대결 {w}/{t}" if ko else f"Synthesis duels {w}/{t}") if t else ("종합 편 아직 없음" if ko else "No synthesis piece yet")
+    head1 = "[고르는 판단 - 네가 고른 사건과 안 고른 후보]" if ko else "[Picking - what you chose and what you passed over]"
+    head2 = "[잇는 판단 - 네가 이어 쓴 판]" if ko else "[Connecting - the threads you wrote on]"
+    return (head1 + "\n" + ("\n".join(picks) or ("(이번 주는 코드가 골랐다)" if ko else "(code picked this week)")) + "\n" + fu
+            + "\n\n" + head2 + "\n" + ("\n".join(threads) or "-") + "\n" + sy)
+
+
 def reflect(g: dict, lang: str) -> str:
     from . import recheck, steps
     args = dict(
@@ -510,6 +556,7 @@ def reflect(g: dict, lang: str) -> str:
         baseline_line=_baseline_line(lang),
         recheck_line=recheck.summary(g.get("recheck") or [], lang),
         style_line=_style_line(g, lang),
+        judgment_line=_judgment_line(g, lang),
         issues="\n".join(f"- {i}" for i in g["issues"][:12]) or "(없음)",
         promoted=len(g["promoted"]),
         issue_types="\n".join(f"- {len(t['days'])}일에 걸쳐 {t['n']}회 · {t['name']}"

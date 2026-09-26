@@ -116,7 +116,7 @@ def main() -> int:
         if alt:
             trace["selection"] = _selection_trace(rest, sel2, alt, skipped=pick)
         print(f"  [judge] 뉴스 판정 → 다음 후보로: {(alt['items'][0]['title'][:60] if alt else '없음')}")
-        trace["skipped"] = {"key": pick["key"], "reason": "background", "judgment": j}
+        trace["skipped"] = {"key": pick["key"], "reason": "news", "judgment": j}
         if alt:
             pick = alt
             cluster_text = radar.describe(pick)
