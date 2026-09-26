@@ -7,6 +7,8 @@ from datetime import timedelta
 
 from . import config, steps
 
+NL = chr(10)
+
 AI_LABEL_KO = "이 글은 엔터문화연구소의 AI 인턴 1호가 사람 개입 없이 썼습니다."
 AI_LABEL_EN = "Written by AI Intern 01 at Neo Vibe Lab with no human in the loop."
 
@@ -135,6 +137,78 @@ def day_number(date: str) -> int:
     return (D(y2, m2, d2) - D(y, m, d)).days + 1
 
 
+L = {  # 라벨. 사이트 렌더러(build_site.BLOCK_KINDS)가 이 머리말로 블록을 알아본다 - 바꾸면 거기도 바꾼다
+    "ko": {"what": "무슨 일이 있었나", "why": "왜 이걸 골랐나", "thread": "이어지는 흐름", "span": "이어 본 판",
+           "added": "오늘 더해진 것", "take": "가져갈 것", "reread": "지난 판단 되읽기", "past": "이 판의 지난 글"},
+    "en": {"what": "What happened", "why": "Why this one", "thread": "Part of a thread", "span": "Reading the thread",
+           "added": "What today adds", "take": "Takeaway", "reread": "Checking earlier calls", "past": "Earlier on this thread"},
+}
+
+
+def _thread_count(meta: dict, date: str) -> tuple[int, str]:
+    """이 판에서 몇 번째 글인가, 첫 글은 언제인가. 이슈 대장에서 센다."""
+    iid = (meta.get("issue") or {}).get("id")
+    if not iid:
+        return 0, ""
+    from . import issues  # noqa: PLC0415 - 순환 참조 회피
+    ms = issues.members(issues.load(), iid, before=date)
+    return len(ms) + 1, (ms[0]["date"] if ms else "")
+
+
+def _kdate(d: str, lang: str) -> str:
+    if not d:
+        return ""
+    y, m, dd = d.split("-")
+    return f"{int(m)}월 {int(dd)}일" if lang == "ko" else f"{['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][int(m)-1]} {int(dd)}"
+
+
+def why_line(lang: str, meta: dict) -> str:
+    sel = meta.get("selection") or {}
+    r = (sel.get("reason_ko") if lang == "ko" else sel.get("reason_en")) or ""
+    return f"**{L[lang]['why']}** · {r.strip()}" if r.strip() else ""
+
+
+def thread_line(lang: str, meta: dict, date: str) -> str:
+    """머리의 「이어지는 흐름」 한 줄. 이 판의 두 번째 글부터 붙는다."""
+    n, first = _thread_count(meta, date)
+    if n < 2:
+        return ""
+    lab = (meta.get("issue") or {}).get("label_ko" if lang == "ko" else "label_en") or ""
+    if lang == "ko":
+        return f"**{L[lang]['thread']}** · 「{lab}」 {n}번째 글입니다. {_kdate(first, lang)}부터 이어 쓰고 있습니다. 지난 글은 아래에 있습니다."
+    return f"**{L[lang]['thread']}** · Piece {n} on \"{lab}\", a thread running since {_kdate(first, lang)}. Earlier pieces are listed below."
+
+
+def span_line(lang: str, meta: dict, date: str) -> str:
+    """종합 편 머리 - 무엇을 이어 읽었나."""
+    n, first = _thread_count(meta, date)
+    k = int(meta.get("synth_n") or max(n - 1, 0))
+    lab = (meta.get("issue") or {}).get("label_ko" if lang == "ko" else "label_en") or ""
+    if lang == "ko":
+        return (f"**{L[lang]['span']}** · 「{lab}」 · {_kdate(first, lang)}부터 쓴 {k}편을 오늘 사건과 이어 읽습니다. "
+                "사건 하나가 아니라 흩어진 조각이 어떤 판을 짜고 있는지를 보는 글입니다.")
+    return (f"**{L[lang]['span']}** · \"{lab}\" · this reads the {k} earlier pieces since {_kdate(first, lang)} "
+            "together with today's event. It is about the shape the pieces make, not a single event.")
+
+
+def reread_block(lang: str, meta: dict) -> str:
+    lines = (meta.get("reread") or {}).get(lang) or []
+    if not lines:
+        return ""
+    head = (f"**{L[lang]['reread']}** · 이 판에서 그동안 내린 판단을 지금 드러난 사실로 다시 봅니다."
+            if lang == "ko" else
+            f"**{L[lang]['reread']}** · Earlier calls on this thread, checked against what has come out since.")
+    return head + NL + NL + NL.join(f"- {x}" for x in lines)
+
+
+def past_list(lang: str, meta: dict) -> str:
+    links = (meta.get("thread_links") or {}).get(lang) or []
+    if not links:
+        return ""
+    rows = [f"- [{_kdate(d, lang)} · {t.replace(']', '］').replace('[', '［')}]({u})" for d, t, u in links]
+    return f"**{L[lang]['past']}**" + NL + NL + NL.join(rows)
+
+
 def piece_markdown(lang: str, date: str, slug: str, j: dict, body: str, meta: dict) -> str:
     title = j["title_ko"] if lang == "ko" else j["title_en"]
     header = steps.header_line(j, lang)
@@ -154,18 +228,18 @@ def piece_markdown(lang: str, date: str, slug: str, j: dict, body: str, meta: di
         "sources": meta.get("sources", []), "source_items": meta.get("source_items", []),
         "source_summary": (meta.get("source_summary") or {}).get(lang, ""),
         "wiki": meta.get("wiki", []), "lexicon": meta.get("lexicon", []),
+        # 2026-09-26 - 누가 골랐나 · 어느 판인가 · 종합 편인가
+        "selected_by": (meta.get("selection") or {}).get("by", ""),
+        "why": (meta.get("selection") or {}).get("reason_ko" if lang == "ko" else "reason_en", ""),
+        "issue": (meta.get("issue") or {}).get("id") or "",
+        "issue_label": (meta.get("issue") or {}).get("label_ko" if lang == "ko" else "label_en") or "",
+        "synth": bool(meta.get("synth")),
     }
     unresolved_line = "\n\n" + review_block(lang, meta)
-    bet_line = ""
-    if bet:
-        if lang == "ko":
-            bet_line = f"\n\n**예측** · {bet['claim_ko']} · {bet['by_days']}일 안 · 확인: {bet['check_ko']}"
-        else:
-            bet_line = f"\n\n**Prediction** · {bet['claim_en']} · within {bet['by_days']} days · check: {bet['check_en']}"
-    else:
-        bet_line = "\n\n**예측** · 오늘은 없음" if lang == "ko" else "\n\n**Prediction** · none today"
+    # 예측은 본문에 싣지 않는다(2026-09-26 대표 지시 - 「모든 레터에 예측이 등장하니 어색하다」).
+    # 대장(predictions.json)에만 쌓이고, 성장 페이지 「예측 기록」에 보이며, 같은 판을 종합할 때 되읽는다.
     u = _urls(lang)
-    tail = (f"{label} 판정·검증·검사 기록은 [성장 페이지]({u['growth']})에 남고, 예측은 기한이 지나면 스스로 채점합니다. "
+    tail = (f"{label} 판정·검증·검사 기록과 예측 대장은 [성장 페이지]({u['growth']})에 남고, 예측은 기한이 지나면 스스로 채점합니다. "
             f"관점은 사람이 씁니다: [엔터문화연구소 뉴스레터]({config.NEWSLETTER_URL})." if lang == "ko" else
             f"{label} The call, fact checks and review notes stay on the [growth page]({u['growth']}); bets are self-scored when due. "
             f"The point of view is written by a human: the [Neo Vibe Lab newsletter]({config.NEWSLETTER_URL}).")
@@ -177,13 +251,26 @@ def piece_markdown(lang: str, date: str, slug: str, j: dict, body: str, meta: di
     # 코드 스팬 `[정책] 유통 → 유통 · 시그널`은 이름표도 이음말도 없었고 같은 단계를 두 번 썼다.
     coord = "`" + steps.coord_say(dict(j, region=fm.get("region") or ""), lang) + "`"
     hr = "\n\n---\n\n"
+    synth = bool(meta.get("synth"))
+    # 머리 - 무엇이 있었나 · 왜 골랐나 · (바이브면) 조짐 · 어느 판의 몇 번째인가. **전부 한 덩어리씩, 짧게.**
+    if synth:
+        added = src_sum.replace(f"**{L[lang]['what']}**", f"**{L[lang]['added']}**", 1) if src_sum else ""
+        head_blocks = [span_line(lang, meta, date), added, why_line(lang, meta), vibe_line(lang, j)]
+    else:
+        head_blocks = [src_sum, why_line(lang, meta), vibe_line(lang, j), thread_line(lang, meta, date)]
+    head = "".join(f"{b}\n\n" for b in head_blocks if b)
+    # 본문 - 본문 · 가져갈 것 · (종합 편이면) 지난 판단 되읽기
+    rr = reread_block(lang, meta) if synth else ""
+    # 꼬리 - 이 판의 지난 글 · 원문 · 격자 · 검사
+    past = past_list(lang, meta)
     doc = (f"{frame_block(lang, meta['day'])}" + hr
             + f"{coord}\n\n# {title}\n\n"
-            + (f"{src_sum}\n\n" if src_sum else "")
-            + (f"{vibe_line(lang, j)}\n\n" if vibe_line(lang, j) else "")
+            + head
             + hr.lstrip("\n")
-            + f"{body.strip()}{bet_line}\n\n"
-            + f"**{'가져갈 것' if lang == 'ko' else 'Takeaway'}** · {principle}" + hr
+            + f"{body.strip()}\n\n"
+            + f"**{L[lang]['take']}** · {principle}"
+            + (f"\n\n{rr}" if rr else "") + hr
+            + (f"{past}\n\n" if past else "")
             + (f"{src_links}\n\n" if src_links else "")
             + f"{grid_table(lang, j)}"
             + f"{unresolved_line}\n\n"
@@ -225,6 +312,11 @@ def record(date: str, slug: str, j: dict, meta: dict, ko_body: str, en_body: str
         # 회고(`weekly._style_line`)와 지난 편 되읽기(`learn._scores`)가 둘 다 이 칸을 읽으므로
         # 여기서 빠지면 **인턴이 자기 문체를 한 번도 못 본다.**
         "style": meta.get("style", {}),
+        # 2026-09-26 - 고르는 판단·잇는 판단의 자리. 성장 페이지와 회고가 읽는다.
+        "selected_by": (meta.get("selection") or {}).get("by", ""),
+        "candidates": (meta.get("selection") or {}).get("n", 0),
+        "issue": (meta.get("issue") or {}).get("id") or "",
+        "synth": bool(meta.get("synth")),
         "tokens": trace.get("usage", {}),
     })
     stats.sort(key=lambda s: s["date"])

@@ -249,8 +249,9 @@ def main() -> int:
     meta.update(selection=trace.get("selection") or {}, synth=synth, synth_n=len(prior),
                 issue={"id": iid, "label_ko": issues.label(iss, iid, "ko"), "label_en": issues.label(iss, iid, "en")},
                 reread={"ko": reread_ko, "en": reread_en},
-                thread_links={"ko": issues.thread_links(iss, iid, args.date, "ko"),
-                              "en": issues.thread_links(iss, iid, args.date, "en")})
+                # 종합 편은 이어 읽은 편을 전부 건다 - 평소처럼 넷에서 자르면 목록과 본문이 어긋난다
+                thread_links={lg: issues.thread_links(iss, iid, args.date, lg, n=max(4, len(prior)))
+                              for lg in ("ko", "en")})
     trace["form"] = meta["form"]
     _off = style.off_axes(meta["style"])
     print(f"  [style] 사람 분포 밖 {len(_off)}개" + (f" · {' · '.join(_off)}" if _off else ""))
@@ -389,8 +390,9 @@ def rebuild(args) -> int:
                 issue={"id": iid, "label_ko": issues.label(iss, iid, "ko") if iid else "",
                        "label_en": issues.label(iss, iid, "en") if iid else ""},
                 reread={"ko": trace.get("reread_ko") or [], "en": trace.get("reread_en") or []},
-                thread_links={"ko": issues.thread_links(iss, iid, args.date, "ko"),
-                              "en": issues.thread_links(iss, iid, args.date, "en")})
+                thread_links={lg: issues.thread_links(iss, iid, args.date, lg,
+                                                      n=max(4, len((trace.get("issue") or {}).get("prior") or [])))
+                              for lg in ("ko", "en")})
     trace["usage_rebuild"] = dict(llm.USAGE)
     publish.record(args.date, slug, j, meta, ko, en, trace)
     build_site.build()

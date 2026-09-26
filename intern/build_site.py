@@ -6,7 +6,7 @@ import json
 import re
 import shutil
 
-from . import card, config, form, publish, steps
+from . import card, config, duel, form, publish, steps
 
 CSS = """:root{--lime:#D6FF92;--lime-dim:rgba(214,255,146,.10);--black:#0A0A0A;--card:#121212;--edge:#242424;--ink:#E4E4DC;--dim:#8C8C84;--line:rgba(255,255,255,.07);--white:#F5F5EF}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -68,6 +68,22 @@ p.evidence{border-left-color:var(--lime)}
 p.evidence strong,p.bet strong{display:block;margin-bottom:6px;color:var(--lime);font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
 p.principle{font-size:17px;line-height:1.8;color:var(--white);border-left:2px solid var(--lime);padding:2px 0 2px 18px;margin:30px 0 22px;font-weight:500}
 p.principle strong{display:block;color:var(--lime);font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:7px;font-weight:500}
+
+/* 왜 골랐나 · 이어지는 흐름 · 이어 본 판 · 되읽기 · 지난 글 (2026-09-26)
+   머리는 한 줄짜리 블록만 쌓는다 - 본문에 닿기 전에 지치지 않게(2026-09-16 대표 지적). */
+p.why,p.thread{font-size:14px;line-height:1.8;color:var(--ink);background:var(--card);border-left:2px solid var(--edge);padding:11px 16px;margin:12px 0 0}
+p.why{border-left-color:var(--lime)}
+p.thread{color:var(--dim)}
+p.span{font-size:15px;line-height:1.85;color:var(--white);background:var(--lime-dim);border:1px solid rgba(214,255,146,.35);padding:15px 18px 13px;margin:0 0 12px}
+p.added{background:var(--card);border:1px solid var(--edge);padding:15px 18px 13px;margin:0;font-size:14.5px;line-height:1.85;color:var(--ink)}
+p.why strong,p.thread strong,p.span strong,p.added strong,p.reread strong,p.past strong{display:block;margin-bottom:6px;color:var(--lime);font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+p.thread strong,p.past strong{color:var(--dim)}
+p.reread{font-size:14px;line-height:1.8;color:var(--ink);margin:26px 0 8px}
+ul.reread-list{list-style:none;margin:0 0 22px;padding:0;border-left:2px solid var(--edge)}
+ul.reread-list li{font-size:14.5px;line-height:1.8;color:var(--ink);padding:7px 0 7px 16px;border-bottom:1px solid var(--edge)}
+ul.reread-list li:last-child{border-bottom:none}
+p.past{background:var(--card);border:1px solid var(--edge);padding:14px 18px 12px;margin:0}
+p.past.joined{border-bottom:none;padding-bottom:4px}
 
 /* 검수 기록 */
 .body blockquote{border:1px solid var(--edge);background:var(--card);padding:14px 17px;margin:26px 0;font-size:12.5px;line-height:1.8;color:var(--dim)}
@@ -245,6 +261,13 @@ BLOCK_KINDS = [
     ("evidence", ("**조짐**", "**What is showing**")),
     ("bet", ("**예측**", "**Prediction**")),
     ("principle", ("**가져갈 것**", "**Takeaway**")),
+    # 2026-09-26 - 고르는 판단·잇는 판단이 독자에게 보이는 자리
+    ("why", ("**왜 이걸 골랐나**", "**Why this one**")),
+    ("thread", ("**이어지는 흐름**", "**Part of a thread**")),
+    ("span", ("**이어 본 판**", "**Reading the thread**")),
+    ("added", ("**오늘 더해진 것**", "**What today adds**")),
+    ("reread", ("**지난 판단 되읽기**", "**Checking earlier calls**")),
+    ("past", ("**이 판의 지난 글**", "**Earlier on this thread**")),
 ]
 
 
@@ -303,7 +326,8 @@ def md_to_html(md: str) -> str:
                        + f'<p class="tw-hint">{"표는 옆으로 밀어서 봅니다" if _LANG[0] == "ko" else "Swipe the table sideways"}</p>')
             prev = "table"; continue
         if b.startswith("- "):
-            cls = ' class="src-list"' if prev in ("src", "srcs") else ""
+            cls = (' class="src-list"' if prev in ("src", "srcs", "past")
+                   else ' class="reread-list"' if prev == "reread" else "")
             out.append(f"<ul{cls}>" + "".join(f"<li>{_inline(l[2:])}</li>" for l in b.splitlines() if l.startswith("- ")) + "</ul>")
             prev = "list"; continue
         k = _kind(b)
@@ -317,7 +341,9 @@ def md_to_html(md: str) -> str:
     # 소재 문단 뒤에 출처 목록이 붙으면 한 덩어리로 보이게 아래 테두리를 뗀다
     # 「오늘의 소재」 상자는 이제 목록과 떨어져 있다(2026-09-16 순서 개편). 아래를 열어 두면
     # 박스가 끊긴 채 끝난다. 목록이 바로 뒤에 붙는 것은 「읽은 기사」 쪽이다.
-    return res.replace('<p class="srcs">', '<p class="srcs joined">') if 'class="src-list"' in res else res
+    if 'class="src-list"' in res:
+        res = res.replace('<p class="srcs">', '<p class="srcs joined">').replace('<p class="past">', '<p class="past joined">')
+    return res
 
 
 def _quote(b: str) -> str:
@@ -626,7 +652,21 @@ def _summary_cards(lang: str, stats: list, preds: list) -> list:
         (f"{cells}/21", "격자 칸" if ko else "grid cells"),
         (f"{with_brain}/{len(stats)}", "재료 붙은 편" if ko else "with materials"),
         (f"{form_avg}/100", "형식 점수" if ko else "form score"),
-    ] + _duel_card(ko)
+    ] + _duel_card(ko) + _judgment_cards(ko, stats)
+
+
+def _judgment_cards(ko: bool, stats: list) -> list[tuple[str, str]]:
+    """고르는 판단·잇는 판단 (2026-09-26). **데이터가 생긴 뒤에만 띄운다** -
+    전환 전 16편은 코드가 골랐으므로 「0/16」을 띄우면 전환 전 기록을 실패처럼 읽게 된다."""
+    out = []
+    picked = [s for s in stats if s.get("selected_by")]
+    if picked:
+        n = sum(1 for s in picked if s["selected_by"] == "intern")
+        out.append((f"{n}/{len(picked)}", "인턴이 고른 편" if ko else "picked by the intern"))
+    w, t = duel.synth_rate()
+    if t:
+        out.append((f"{w}/{t}", "종합 편이 이긴 수" if ko else "synthesis wins"))
+    return out
 
 
 def _duel_card(ko: bool) -> list[tuple[str, str]]:
@@ -680,6 +720,74 @@ def feed(lang: str, pieces: list) -> str:
         f"  <description>{html.escape(t['about_line'])}</description>\n"
         f"  <language>{'ko' if lang == 'ko' else 'en'}</language>\n"
         f"{body}\n</channel>\n</rss>\n")
+
+
+def _selection_section(lang: str) -> str:
+    """고른 것과 안 고른 것 (2026-09-26). 30·90일 뒤 후속이 붙으면 선정이 맞았는지가 여기 쌓인다."""
+    ko = lang == "ko"
+    fu = {x["date"]: x for x in publish._load(config.DATA_DIR / "selection_followup.json", [])}
+    rows = []
+    for s in reversed(publish._load(config.DATA_DIR / "stats.json", [])):
+        if s.get("selected_by") != "intern":
+            continue
+        try:
+            tr = json.loads(io.open(config.LOG_DIR / f"{s['date']}.json", encoding="utf-8").read())
+        except Exception:  # noqa: BLE001
+            continue
+        sel = tr.get("selection") or {}
+        why = sel.get("reason_ko" if ko else "reason_en") or ""
+        f = fu.get(s["date"]) or {}
+        verdict = f.get("verdict_ko" if ko else "verdict_en") or ("대기" if ko else "pending")
+        rows.append(f"<tr><td>{s['date'][5:]}</td><td class='ttl'><a href='{s['slug']}'>"
+                    f"{html.escape(s['title_ko'] if ko else s['title_en'])}</a></td>"
+                    f"<td class='ttl'>{html.escape(why)}</td><td>{len(sel.get('rejected') or [])}</td>"
+                    f"<td>{html.escape(verdict)}</td></tr>")
+    cols = (["날짜", "고른 사건", "왜 골랐나", "안 고른 후보", "30일 뒤"] if ko
+            else ["Date", "Picked", "Why", "Passed over", "30 days on"])
+    note = ("<p class='legend'>2026년 9월 26일부터 소재는 인턴이 고릅니다. 코드는 후보를 다섯으로 좁히기까지만 합니다. "
+            "안 고른 후보에도 이유를 남기고, 30일·90일 뒤 <strong>고른 것과 안 고른 것에 후속 보도가 얼마나 붙었는지</strong>를 "
+            "비교합니다. 안 고른 쪽이 더 커졌다면 그날의 판단이 빗나간 것입니다. 그 전 편은 코드가 골랐습니다.</p>" if ko else
+            "<p class='legend'>From Sep 26, 2026 the intern picks the story. Code only narrows the field to five. "
+            "The intern gives a reason for each one it passes over, and 30 and 90 days later we compare how much "
+            "follow-up coverage the picked and passed-over stories drew. If a passed-over story grew bigger, the call was off. "
+            "Earlier pieces were picked by code.</p>")
+    body = "".join(rows) or f"<tr><td colspan=5>{'아직 없습니다' if ko else 'None yet'}</td></tr>"
+    return (f"<h2 class='label' style='margin-top:44px'>{'고른 것과 안 고른 것' if ko else 'What it picked and passed over'}</h2>"
+            f"<div class='tw'><table><tr>{''.join(f'<th>{c}</th>' for c in cols)}</tr>{body}</table></div>" + note)
+
+
+def _thread_section(lang: str) -> str:
+    """이어 쓰는 판 (2026-09-26). 흩어진 편이 어떤 판으로 묶였고 몇 번 종합했나."""
+    from . import issues  # noqa: PLC0415
+    ko = lang == "ko"
+    d = issues.load()
+    sd = {x["slug"]: x for x in publish._load(config.DATA_DIR / "synth_duels.json", []) if x.get("lang") == "ko"}
+    rows = []
+    for iid, x in d["issues"].items():
+        ms = issues.members(d, iid)
+        if len(ms) < 2 and not x.get("synth"):
+            continue          # 한 편짜리 판은 아직 흐름이 아니다
+        syn = x.get("synth") or []
+        cell = ""
+        for y in syn:
+            r = sd.get(y["slug"]) or {}
+            mark = {"synth": "이김" if ko else "won", "parts": "짐" if ko else "lost", "tie": "비김" if ko else "tie"}.get(r.get("winner"), "")
+            cell += f"<a href='{y['slug']}'>{y['date'][5:]}</a>{(' · ' + mark) if mark else ''} "
+        rows.append(f"<tr><td class='ttl'>{html.escape(x.get('label_ko' if ko else 'label_en', iid))}</td>"
+                    f"<td>{len(ms)}</td><td>{ms[0]['date'][5:] if ms else ''}</td><td>{ms[-1]['date'][5:] if ms else ''}</td>"
+                    f"<td>{len(issues.unsynth(d, iid))}</td><td>{cell or '-'}</td></tr>")
+    cols = (["판", "편", "첫 글", "마지막", "종합 전", "종합 편 · 대결"] if ko
+            else ["Thread", "Pieces", "First", "Latest", "Unsynthesized", "Synthesis · duel"])
+    note = ("<p class='legend'>인턴은 글마다 어느 판에 속하는지 정하고, 같은 판의 지난 글을 읽고 씁니다. "
+            f"종합하지 않은 글이 {issues.RIPE}편 쌓인 판에 새 사건이 오면 그날 글을 <strong>종합 편</strong>으로 씁니다. "
+            "종합 편은 지난 글들의 요약을 이어 읽은 것과 블라인드로 붙여, 이어 읽는 쪽이 실제로 더 알려주는지를 잽니다.</p>" if ko else
+            "<p class='legend'>For each piece the intern decides which thread it belongs to and reads the earlier pieces on it. "
+            f"Once {issues.RIPE} pieces on a thread are still unsynthesized, the next event on that thread is written as a "
+            "<strong>synthesis piece</strong>. Each synthesis is put blind against the earlier pieces' summaries read in a row, "
+            "to test whether connecting them actually tells the reader more.</p>")
+    body = "".join(rows) or f"<tr><td colspan=6>{'아직 없습니다' if ko else 'None yet'}</td></tr>"
+    return (f"<h2 class='label' style='margin-top:44px'>{'이어 쓰는 판' if ko else 'Threads'}</h2>"
+            f"<div class='tw'><table><tr>{''.join(f'<th>{c}</th>' for c in cols)}</tr>{body}</table></div>" + note)
 
 
 def build() -> None:
@@ -831,7 +939,8 @@ def build() -> None:
              + legend
              + f"<h2 class='label' style='margin-top:44px'>{t['bets']}</h2>"
              f"<div class='tw'><table><tr>{''.join(f'<th>{c}</th>' for c in t['bet_cols'])}</tr>{bets or '<tr><td colspan=5>-</td></tr>'}</table></div>"
-             + ('<p class="tw-hint">표는 옆으로 밀어서 봅니다</p>' if lang == "ko" else '<p class="tw-hint">Swipe the table sideways</p>'))
+             + ('<p class="tw-hint">표는 옆으로 밀어서 봅니다</p>' if lang == "ko" else '<p class="tw-hint">Swipe the table sideways</p>')
+             + _selection_section(lang) + _thread_section(lang))
         io.open(base / "growth.html", "w", encoding="utf-8").write(page(lang, t["growth"], g, here="growth", latest=latest_slug, url=f"/{"en/" if lang == "en" else ""}growth"))
         # 격자
         cells = {}
