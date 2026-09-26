@@ -38,7 +38,10 @@ def _body(slug: str, lang: str = "ko") -> str:
     for ln in rest.split("\n"):
         t = ln.strip()
         if t.startswith(("**예측** ·", "**가져갈 것** ·", "> **발행 전 검사**",
-                         "**베팅** ·", "**원리** ·", "> **검수 기록**")):   # 옛 이름도 받는다
+                         "**베팅** ·", "**원리** ·", "> **검수 기록**",   # 옛 이름도 받는다
+                         "**지난 판단 되읽기** ·", "**Takeaway** ·", "**Checking earlier calls** ·")):
+            break
+        if started and t == "---":
             break
         if not started:
             # 본문은 **두 번째 구분선 다음**부터다(2026-09-16 순서 개편). 그전에는 격자 범례가
@@ -48,7 +51,9 @@ def _body(slug: str, lang: str = "ko") -> str:
                 seps += 1
                 if seps >= 2:
                     started = True
-            elif t.startswith("<sub>●") or t.startswith("**조짐** ·"):
+            elif seps == 0 and (t.startswith("<sub>●") or t.startswith("**조짐** ·")):
+                # 옛 배치(09-16 이전)만. 지금 배치에서 조짐은 머리 구역에 있다 - 여기서 시작하면
+                # 바이브 편이 다음 구분선에서 끊겨 0자가 된다(2026-09-26 실측, 09-20·09-21).
                 started = True          # 옛 배치
             continue
         if t.startswith("**조짐** ·") or t.startswith("<sub>"):

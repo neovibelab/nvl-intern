@@ -84,7 +84,13 @@ def _plain(md: str) -> str:
     body, started, seps = [], False, 0
     for ln in md.split("\n"):
         t = ln.strip()
-        if t.startswith(("**예측** ·", "> **발행 전 검사**", "**베팅** ·", "> **검수 기록**")):   # 옛 이름도
+        if t.startswith(("**예측** ·", "> **발행 전 검사**", "**베팅** ·", "> **검수 기록**",   # 옛 이름도
+                         "**지난 판단 되읽기** ·", "**Checking earlier calls** ·")):
+            break
+        # **세 번째 구분선에서 멈춘다** (2026-09-26). 전에는 여기를 넘어 원문 링크 목록과 격자 표까지
+        # 대결 본문에 넣고 있었다. 종합 편은 스레드 목록이 더 붙어 비대칭이 커진다.
+        # 대결은 매번 파일에서 다시 읽으므로 옛 편과 새 편이 같은 기준으로 잘린다.
+        if started and t == "---":
             break
         if not started:
             # 본문은 **두 번째 구분선 다음**부터다(2026-09-16 순서 개편). 그전에는 격자 범례가
@@ -94,7 +100,9 @@ def _plain(md: str) -> str:
                 seps += 1
                 if seps >= 2:
                     started = True
-            elif t.startswith("<sub>●") or t.startswith("**조짐** ·"):
+            elif seps == 0 and (t.startswith("<sub>●") or t.startswith("**조짐** ·")):
+                # 옛 배치(09-16 이전)만. 지금 배치에서 조짐은 머리 구역에 있다 - 여기서 시작하면
+                # 바이브 편이 다음 구분선에서 끊겨 0자가 된다(2026-09-26 실측, 09-20·09-21).
                 started = True          # 옛 배치
             continue
         if t.startswith("**조짐** ·") or t.startswith("<sub>"):
@@ -124,6 +132,56 @@ def growth_duels(new_pieces: list[dict], old_pieces: list[dict], lang: str = "ko
                         "winner": {"a": "new", "b": "old", "tie": "tie"}[r["winner"]], "why": r["why"]})
         print(f"  [duel] {np_['slug'][:28]} vs {op['slug'][:28]} · 제목 {out[-2]['winner']} · 본문 {out[-1]['winner']}")
     return out
+
+
+SYNTH_Q = """이 판을 처음 접하는 업계 독자에게 어느 쪽이 나은가.
+**읽고 나서 이 판이 어디로 가고 있는지, 무엇을 다르게 판단해야 하는지를 더 알게 되는 쪽**이다.
+사건을 많이 나열한다고 낫지 않다. 사건 사이의 관계가 드러나는지, 따로 읽을 때는 안 보이던 것이 보이는지를 본다.
+길이가 비슷하게 잘려 있다. 문장이 매끄러운 쪽에 후하지 마라 - 알게 되는 것이 기준이다."""
+
+
+def synthesis_duel(synth_slug: str, part_slugs: list[str], lang: str = "ko") -> dict | None:
+    """종합 편과 **개별 편들을 이어 읽은 것**을 블라인드로 붙인다 (2026-09-26 신설).
+
+    「잇는 판단」이 글을 낫게 하는지 재는 자다. 기준선이 공정해야 한다 - 개별 편마다 「무슨 일이 있었나」
+    요약과 그 편의 결론(가져갈 것)을 날짜 순으로 이어 붙이고, 종합 편과 같은 길이로 자른다.
+    종합 편이 이걸 못 이기면 **따로 읽는 것보다 보탠 게 없다.**
+
+    되돌림 조건(issues.py) - 표본 6에서 종합 편이 과반을 못 이기면 종합 모드를 끈다.
+    """
+    import io  # noqa: PLC0415
+    from . import config, issues, publish  # noqa: PLC0415 - 순환 참조 회피
+    p = config.CONTENT_DIR / lang / f"{synth_slug}.md"
+    if not p.exists() or not part_slugs:
+        return None
+    a = _plain(io.open(p, encoding="utf-8").read().split("---" + chr(10), 2)[-1])   # 앞머리를 뗀다
+    parts = []
+    for s in part_slugs:
+        fm, body = issues._piece(s, lang)
+        if not fm:
+            continue
+        summ = (fm.get("source_summary") or "").strip()
+        prin = issues._principle(body, lang)
+        parts.append(f"[{fm.get('date', '')}] {fm.get('title', '')}\n{summ}" + (f"\n→ {prin}" if prin else ""))
+    b = "\n\n".join(parts)
+    n = min(len(a), len(b), 3500)
+    if n < 300:
+        return None
+    r = compare(a[:n], b[:n], SYNTH_Q, lang)
+    row = {"slug": synth_slug, "parts": part_slugs, "lang": lang, "chars": n,
+           "winner": {"a": "synth", "b": "parts", "tie": "tie"}[r["winner"]], "why": r["why"]}
+    path = config.DATA_DIR / "synth_duels.json"
+    rows = [x for x in publish._load(path, []) if not (x.get("slug") == synth_slug and x.get("lang") == lang)]
+    rows.append(row)
+    publish._dump(path, rows)
+    return row
+
+
+def synth_rate() -> tuple[int, int]:
+    """(종합 편이 이긴 수, 비김 제외 전체)."""
+    from . import config, publish  # noqa: PLC0415
+    rows = [x for x in publish._load(config.DATA_DIR / "synth_duels.json", []) if x.get("winner") != "tie"]
+    return sum(1 for x in rows if x["winner"] == "synth"), len(rows)
 
 
 def win_rate(duels: list[dict], axis: str | None = None) -> tuple[int, int]:

@@ -13,7 +13,7 @@ import json
 import sys
 import time
 
-from intern import ablation, config, duel, llm, radar, brain, steps, publish, build_site, mail, weekly, form, learn, recheck, style
+from intern import ablation, config, duel, llm, radar, brain, steps, publish, build_site, mail, weekly, form, learn, recheck, style, issues
 
 MAX_REVIEW_ROUNDS = 2
 
@@ -57,8 +57,18 @@ def main() -> int:
     # ① 소재 읽기
     rows = radar.fetch_live(args.hours)
     clusters = radar.cluster(rows)
-    pick = radar.pick_today(clusters, radar.used_keys())
     print(f"  [radar] 살아있는 행 {len(rows)} · 무리 {len(clusters)}")
+    # ①' 고르기 (2026-09-26) - 전에는 정렬 맨 위를 그대로 썼다. 인턴이 소재를 고른 적이 없었다.
+    iss = issues.load()
+    cands = radar.candidates(clusters, radar.used_keys())
+    sel = steps.select(cands, issues.open_text(iss, args.date)) if cands else None
+    pick = cands[sel["chosen"]] if sel else (cands[0] if cands else None)
+    trace["selection"] = _selection_trace(cands, sel, pick)
+    if sel and not sel.get("only_one"):
+        print(f"  [select] 후보 {len(cands)} 중 [{sel['chosen']}] · {sel['reason_ko'][:70]}")
+        print(f"  [select] 이슈 {(sel.get('issue') or {}).get('id') or '새 판 · ' + (sel.get('issue') or {}).get('label_ko', '')}")
+    elif cands:
+        print(f"  [select] 인턴 선정 없음(후보 {len(cands)}) → 정렬 맨 위로 대신했다")
     if not pick:
         print("  [radar] 오늘 쓸 사건이 없다. 「오늘은 없음」으로 기록만.")
         trace["steps"]["radar"] = {"rows": len(rows), "picked": None}
@@ -88,10 +98,16 @@ def main() -> int:
     extra = steps.context_block(steps.context(cluster_text))   # ②' 그 뒤 무엇이 나왔나
     trace["context"] = extra
     j = steps.judge(cluster_text, pick, mats["text"], extra)
-    if j["tense"] == "background":
-        # 정본 규칙 - 「이미」만으로 된 편은 내지 않는다. 다음 후보로 한 번만 넘어간다.
-        alt = radar.pick_today(clusters, radar.used_keys() | {pick["key"]})
-        print(f"  [judge] 배경 판정 → 다음 후보로: {(alt['items'][0]['title'][:60] if alt else '없음')}")
+    # 정본 규칙 - 「이미」만으로 된 편은 내지 않는다. 다음 후보로 한 번만 넘어간다.
+    # **2026-09-10부터 이 가드가 꺼져 있었다.** 시제 이름이 「배경→뉴스」로 바뀌면서 판정기는 news를
+    # 돌려주는데 여기는 background를 찾았다(2026-09-26 발견). 그동안 뉴스 판정이 한 편도 없어 피해는 없었다.
+    if j["tense"] in ("news", "background"):
+        rest = [c for c in cands if c["key"] != pick["key"]]
+        sel2 = steps.select(rest, issues.open_text(iss, args.date)) if rest else None
+        alt = rest[sel2["chosen"]] if sel2 else (rest[0] if rest else None)
+        if alt:
+            trace["selection"] = _selection_trace(rest, sel2, alt, skipped=pick)
+        print(f"  [judge] 뉴스 판정 → 다음 후보로: {(alt['items'][0]['title'][:60] if alt else '없음')}")
         trace["skipped"] = {"key": pick["key"], "reason": "background", "judgment": j}
         if alt:
             pick = alt
@@ -119,9 +135,25 @@ def main() -> int:
     if recent:
         print(f"  [learn] 지난 편 {len(recent)}자를 집필 자리에 붙였다")
     trace["recent"] = recent[:400]
-    ko = steps.write_ko(cluster_text, j, mats["text"], recent, extra)
+    # ④ 잇는 판단 (2026-09-26) - 같은 이슈의 이전 편. 직전 두 편(문체·지적 학습)과 별개 통로다.
+    sel_iss = (trace.get("selection") or {}).get("issue") or {}
+    iid = sel_iss.get("id") if sel_iss.get("id") in iss["issues"] else None
+    synth = issues.ripe(iss, iid, args.date)
+    prior = issues.unsynth(iss, iid, before=args.date) if synth else []
+    thread = issues.thread_block(iss, iid, args.date, "ko", full=synth) if iid else ""
+    trace["issue"] = {"id": iid, "hint": sel_iss, "synth": synth, "prior": [x["slug"] for x in prior],
+                      "thread_chars": len(thread)}
+    if thread:
+        print(f"  [issue] 「{issues.label(iss, iid)}」 이전 편 {len(thread)}자를 붙였다" + (" · **종합 편**" if synth else ""))
+    reread_ko: list = []
+    if synth:
+        ko, reread_ko = steps.write_synth_ko(cluster_text, j, mats["text"], thread, extra,
+                                             issues.label(iss, iid, "ko"), len(prior))
+    else:
+        ko = steps.write_ko(cluster_text, j, mats["text"], recent, extra, thread)
     trace["draft_ko_v1"] = ko
-    print(f"  [write] ko v1 {len(ko)}자")
+    trace["reread_ko"] = reread_ko
+    print(f"  [write] ko v1 {len(ko)}자" + (f" · 되읽기 {len(reread_ko)}줄" if synth else ""))
 
     # ⑤ 검증
     claims = steps.extract_claims(ko)
@@ -147,14 +179,17 @@ def main() -> int:
         ko = steps.revise(ko, rv["issues"])
     trace["reviews"] = reviews
     # ⑥' 기계 게이트 - 분량 규격과 대조 공식. 수정 루프가 끝난 뒤라야 되돌려지지 않는다
-    ko, trace["gate"] = steps.final_gate(ko, "ko")
+    # 종합 편은 문턱이 다르다 - 기본값(700~1000)으로 두면 1,400자 글이 1,000자로 잘린다(2026-09-26).
+    ko, trace["gate"] = steps.final_gate(ko, "ko", *((1200, 1600) if synth else ()))
     # ⑥'' 표기·인링크 정리 (논지는 안 건드린다)
     links = steps.link_sources(trace["cluster"]["items"], results)
     ko = steps.polish(ko, "ko", links)
     trace["draft_ko_final"] = ko
 
     # ④' 집필 en (검증된 ko를 딛고 따로 쓴다)
-    en = steps.write_en(cluster_text, j, ko)
+    en = steps.write_en(cluster_text, j, ko, synth=synth, reread_ko=reread_ko)
+    en, reread_en = steps.split_reread(en, steps.SPLIT_EN) if synth else (en, [])
+    trace["reread_en"] = reread_en
     en = steps.polish(en, "en", links)
     trace["draft_en_final"] = en
     # ⑦' 제목 - 최종 본문에서 뽑는다(판정 단계 제목은 임시였다)
@@ -186,7 +221,12 @@ def main() -> int:
     print(llm.step_report())
     print(f"  [llm] calls {llm.USAGE['calls']} · in {llm.USAGE['input']} · out {llm.USAGE['output']} · search {llm.USAGE['search_uses']} · {time.time()-t0:.0f}s")
     if args.dry_run:
-        print("\n" + "=" * 60 + "\n" + steps.header_line(j, "ko") + "\n# " + j["title_ko"] + "\n\n" + ko + "\n\n원리 · " + j["principle_ko"])
+        sl = trace.get("selection") or {}
+        print("\n" + "=" * 60 + "\n" + steps.header_line(j, "ko") + "\n# " + j["title_ko"]
+              + ("\n\n왜 이걸 골랐나 · " + sl.get("reason_ko", "") if sl.get("reason_ko") else "")
+              + ("\n[종합 편 · 이전 " + str(len(prior)) + "편]" if synth else "")
+              + "\n\n" + ko + "\n\n원리 · " + j["principle_ko"]
+              + ("\n\n지난 판단 되읽기\n" + "\n".join("- " + x for x in reread_ko) if reread_ko else ""))
         return 0
 
     # ⑦ 발행·기록
@@ -201,15 +241,37 @@ def main() -> int:
                           title_kept_first=dk.get("kept_first") if dk else None,
                           title_cands=dk.get("n") if dk else 0),
             "wiki": mats["wiki"], "lexicon": mats["lexicon"]}
+    # 선정·이슈·종합 (2026-09-26)
+    # 없는 id를 인턴이 지어내면 그대로 새 이슈 id가 된다 - 기존 이슈에 있는 id만 받고, 아니면 라벨로 새로 연다.
+    # 라벨마저 없으면 편 제목을 이슈 이름으로 쓴다(한 편짜리 판으로 시작).
+    iid = issues.assign(iss, slug, args.date, iid,
+                        sel_iss.get("label_ko") or j["title_ko"], sel_iss.get("label_en") or j["title_en"])
+    meta.update(selection=trace.get("selection") or {}, synth=synth, synth_n=len(prior),
+                issue={"id": iid, "label_ko": issues.label(iss, iid, "ko"), "label_en": issues.label(iss, iid, "en")},
+                reread={"ko": reread_ko, "en": reread_en},
+                thread_links={"ko": issues.thread_links(iss, iid, args.date, "ko"),
+                              "en": issues.thread_links(iss, iid, args.date, "en")})
     trace["form"] = meta["form"]
     _off = style.off_axes(meta["style"])
     print(f"  [style] 사람 분포 밖 {len(_off)}개" + (f" · {' · '.join(_off)}" if _off else ""))
     print(f"  [form] 점수 {form.score(meta['form'])}/100 · 제목 고유명사 {meta['form']['title_noun']}(기록만) · "
           f"리드 구체 {meta['form']['lead_concrete']} · AI tell {meta['form']['ai_tell']} · 문장중앙 {meta['form']['sent_med']}자")
     publish.record(args.date, slug, j, meta, ko, en, trace)
+    # 이슈는 기록이 성공한 뒤에 저장한다 - 기록이 실패하면 없는 편이 스레드에 매달린다
+    if synth:
+        issues.mark_synth(iss, iid, slug, args.date)
+    issues.save(iss)
     publish.rule_candidates(last_issues if unresolved else [i for rv in reviews for i in rv.get("issues", [])], args.date)
+    # 종합 편이면 개별 편 요약과 블라인드로 붙인다 - 「잇는 판단」이 글을 낫게 하는지 재는 자
+    if synth:
+        try:
+            r = duel.synthesis_duel(slug, [x["slug"] for x in prior], "ko")
+            if r:
+                print(f"  [duel] 종합 편 vs 개별 요약 · {'종합 승' if r.get('winner') == 'synth' else '개별 승' if r.get('winner') == 'parts' else '비김'}")
+        except Exception as e:  # noqa: BLE001
+            print(f"  [duel] 종합 대결 건너뜀 {type(e).__name__}")
     build_site.build()
-    print(f"  [publish] content/ko/{slug}.md · content/en/{slug}.md · D+{meta['day']}")
+    print(f"  [publish] content/ko/{slug}.md · content/en/{slug}.md · D+{meta['day']}" + (" · 종합 편" if synth else ""))
 
     # 메일
     ko_md = io_piece("ko", slug); en_md = io_piece("en", slug)
@@ -301,7 +363,8 @@ def rebuild(args) -> int:
     unresolved = bool(reviews) and reviews[-1].get("verdict") != "pass"
     last_issues = reviews[-1].get("issues", []) if unresolved else []
     links = steps.link_sources(items, results)
-    ko, trace["gate"] = steps.final_gate(trace["draft_ko_final"], "ko")
+    synth = bool((trace.get("issue") or {}).get("synth"))
+    ko, trace["gate"] = steps.final_gate(trace["draft_ko_final"], "ko", *((1200, 1600) if synth else ()))
     ko = steps.polish(ko, "ko", links)
     en = steps.polish(trace["draft_en_final"], "en", links)
     trace["draft_ko_final"], trace["draft_en_final"] = ko, en
@@ -318,6 +381,16 @@ def rebuild(args) -> int:
             "unresolved": unresolved, "last_issues": last_issues, "last_issues_en": last_issues_en,
             "sources": cl.get("urls", []), "source_items": items,
             "source_summary": src_sum, "name_map": name_maps, "wiki": mats.get("wiki", []), "lexicon": mats.get("lexicon", [])}
+    # 선정·이슈 (2026-09-26). 옛 로그에는 없다 - 없으면 비워 두고, 이슈는 소급 대장(issues.json)에서 읽는다.
+    iss = issues.load()
+    iid = iss["pieces"].get(slug) or (trace.get("issue") or {}).get("id")
+    meta.update(selection=trace.get("selection") or {}, synth=synth,
+                synth_n=len((trace.get("issue") or {}).get("prior") or []),
+                issue={"id": iid, "label_ko": issues.label(iss, iid, "ko") if iid else "",
+                       "label_en": issues.label(iss, iid, "en") if iid else ""},
+                reread={"ko": trace.get("reread_ko") or [], "en": trace.get("reread_en") or []},
+                thread_links={"ko": issues.thread_links(iss, iid, args.date, "ko"),
+                              "en": issues.thread_links(iss, iid, args.date, "en")})
     trace["usage_rebuild"] = dict(llm.USAGE)
     publish.record(args.date, slug, j, meta, ko, en, trace)
     build_site.build()
@@ -326,6 +399,23 @@ def rebuild(args) -> int:
         title = j["title_ko"] if lang == "ko" else j["title_en"]
         mail.send_piece(lang, meta["day"], title, io_piece(lang, slug), slug, send=args.send)
     return 0
+
+
+def _selection_trace(cands: list, sel: dict | None, pick: dict | None, skipped: dict | None = None) -> dict:
+    """선정 기록. **안 고른 후보의 기사 id까지 남긴다** - 30·90일 뒤 후속 비교가 이걸 읽는다."""
+    def brief(c):
+        return {"key": c["key"], "title": c["items"][0].get("title", "") if c.get("items") else "",
+                "n": c.get("n"), "item_ids": c.get("item_ids") or [x["id"] for x in c.get("items", [])],
+                "titles": [x.get("title", "") for x in c.get("items", [])[:6]]}
+    why = {r["i"]: r["why"] for r in ((sel or {}).get("rejected") or [])}
+    out = {"n": len(cands), "by": "intern" if sel and not sel.get("only_one") else "code",
+           "chosen": brief(pick) if pick else None,
+           "reason_ko": (sel or {}).get("reason_ko", ""), "reason_en": (sel or {}).get("reason_en", ""),
+           "issue": (sel or {}).get("issue") or {},
+           "rejected": [dict(brief(c), why=why.get(i, "")) for i, c in enumerate(cands) if pick is None or c["key"] != pick["key"]]}
+    if skipped:
+        out["skipped_news"] = brief(skipped)
+    return out
 
 
 def io_piece(lang: str, slug: str) -> str:
