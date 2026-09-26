@@ -13,7 +13,7 @@ import json
 import sys
 import time
 
-from intern import ablation, config, duel, llm, radar, brain, steps, publish, build_site, mail, weekly, form, learn, recheck, style, issues
+from intern import ablation, config, duel, llm, radar, brain, steps, publish, build_site, mail, weekly, form, learn, recheck, style, issues, followup
 
 MAX_REVIEW_ROUNDS = 2
 
@@ -58,6 +58,14 @@ def main() -> int:
     rows = radar.fetch_live(args.hours)
     clusters = radar.cluster(rows)
     print(f"  [radar] 살아있는 행 {len(rows)} · 무리 {len(clusters)}")
+    # 선정 후속 - 레이더 행은 10일 뒤 지워지므로 매일 불러온 행으로 쌓는다. 회전을 멈추지 않는다.
+    if not args.dry_run:
+        try:
+            n = followup.update(args.date, rows)
+            if n:
+                print(f"  [followup] 선정 판정 {n}건 새로 냈다")
+        except Exception as e:  # noqa: BLE001
+            print(f"  [followup] 건너뜀 {type(e).__name__} {str(e)[:60]}")
     # ①' 고르기 (2026-09-26) - 전에는 정렬 맨 위를 그대로 썼다. 인턴이 소재를 고른 적이 없었다.
     iss = issues.load()
     cands = radar.candidates(clusters, radar.used_keys())
