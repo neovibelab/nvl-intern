@@ -73,6 +73,22 @@ p.evidence strong,p.bet strong{display:block;margin-bottom:6px;color:var(--lime)
 p.principle{font-size:17px;line-height:1.8;color:var(--white);border-left:2px solid var(--lime);padding:2px 0 2px 18px;margin:30px 0 22px;font-weight:500}
 p.principle strong{display:block;color:var(--lime);font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:7px;font-weight:500}
 
+/* 왜 골랐나 · 이어지는 흐름 · 이어 본 판 · 되읽기 · 지난 글 (2026-09-26)
+   머리는 한 줄짜리 블록만 쌓는다 - 본문에 닿기 전에 지치지 않게(2026-09-16 대표 지적). */
+p.why,p.thread{font-size:14px;line-height:1.8;color:var(--ink);background:var(--card);border-left:2px solid var(--edge);padding:11px 16px;margin:12px 0 0}
+p.why{border-left-color:var(--lime)}
+p.thread{color:var(--dim)}
+p.span{font-size:15px;line-height:1.85;color:var(--white);background:var(--lime-dim);border:1px solid rgba(214,255,146,.35);padding:15px 18px 13px;margin:0 0 12px}
+p.added{background:var(--card);border:1px solid var(--edge);padding:15px 18px 13px;margin:0;font-size:14.5px;line-height:1.85;color:var(--ink)}
+p.why strong,p.thread strong,p.span strong,p.added strong,p.reread strong,p.past strong{display:block;margin-bottom:6px;color:var(--lime);font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+p.thread strong,p.past strong{color:var(--dim)}
+p.reread{font-size:14px;line-height:1.8;color:var(--ink);margin:26px 0 8px}
+ul.reread-list{list-style:none;margin:0 0 22px;padding:0;border-left:2px solid var(--edge)}
+ul.reread-list li{font-size:14.5px;line-height:1.8;color:var(--ink);padding:7px 0 7px 16px;border-bottom:1px solid var(--edge)}
+ul.reread-list li:last-child{border-bottom:none}
+p.past{background:var(--card);border:1px solid var(--edge);padding:14px 18px 12px;margin:0}
+p.past.joined{border-bottom:none;padding-bottom:4px}
+
 /* 검수 기록 */
 .body blockquote{border:1px solid var(--edge);background:var(--card);padding:14px 17px;margin:26px 0;font-size:12.5px;line-height:1.8;color:var(--dim)}
 .body blockquote p{font-size:12.5px;line-height:1.8;color:var(--dim);margin:0 0 9px}
