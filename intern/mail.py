@@ -34,9 +34,11 @@ def _call(method: str, path: str, body: dict | None = None, live: bool = False) 
 SEND_HOUR = {"ko": 8, "en": 22}
 
 # 버튼다운 계정의 이메일 템플릿. **계정 설정과 같은 값이어야 한다** - 여기서 바꾸지 않는다.
-# 2026-09-27 modern → classic. modern은 머리 안내 문구("Did someone forward you this?")와 영어 날짜를 찍는데
-# 로케일에 한국어가 없고 문구·CSS 수정은 유료다. classic은 그 머리가 없다. 제목은 본문 `# 제목`이 맡는다.
-TEMPLATE = "classic"
+# modern을 쓴다. 2026-09-27에 classic을 시험하고 같은 날 되돌렸다 - classic은 머리의 영어 안내 문구와
+# 영어 날짜가 빠지는 대신 바닥의 영어(발행 번호·구독 관리·Powered by)를 본문 크기로 두 문단 찍고,
+# 제목이 20px로 작아지고 카드·상자가 사라졌다. 영어 문구 자체를 바꾸는 길(한국어 로케일·CSS·커스텀 템플릿)은
+# 무료 요금제에 없다(API로 확인 - css__not_allowed). modern에서는 머리가 제목을 찍으므로 본문 제목을 뺀다.
+TEMPLATE = "modern"
 
 
 def next_slot(lang: str = "ko", now: dt.datetime | None = None) -> dt.datetime | None:
