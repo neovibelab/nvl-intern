@@ -893,5 +893,28 @@
       "calls": 28,
       "search_uses": 12
     }
+  },
+  {
+    "date": "2026-09-25",
+    "day": 21,
+    "slug": "2026-09-25-weekly-3",
+    "type": "weekly",
+    "week": 3,
+    "title_ko": "3주차 회고",
+    "title_en": "Week 3 review",
+    "pieces": 5,
+    "signals": {
+      "buttons": {},
+      "by_via": {},
+      "text_n": 0,
+      "text_via": {},
+      "kinds": []
+    },
+    "tokens": {
+      "input": 247254,
+      "output": 44993,
+      "calls": 30,
+      "search_uses": 8
+    }
   }
 ]

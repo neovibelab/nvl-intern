@@ -38,5 +38,45 @@
     "why": "본문 첫 단락이 소니뮤직퍼블리싱·워너채플의 Anthropic 제소일을 '2024년 8월 28일'로 적었으나 실제 제소일은 2026년 8월 28일(원고 35개 퍼블리싱 주체, 아모데이·만 개인 공동피고)로 확인됐다.",
     "source": "XenoSpectrum https://xenospectrum.com/en/sony-warner-anthropic-music-copyright-lawsuit/ ; MLQ News https://mlq.ai/news/sony-and-warner-sue-anthropic-over-alleged-mass-use-of-copyrighted-song-lyrics/",
     "found": "- [후속] 소니뮤직퍼블리싱·워너채플 등 35개 퍼블리싱 주체가 2026년 8월 28일 캘리포니아 북부지법에 Anthropic과 CEO 다리오 아모데이, 공동창업자 벤저민 만을 함께 피고로 제소 — 메이저 3사 퍼블리싱 부문이 모두 동일 피고를 상대로 소송 중인 상태 완성 (MLQ News https://mlq.ai/news/sony-and-warner-sue-anthropic-over-alleged-mass-use-of-copyrighted-song-lyrics/)\n- [후속] 2023년 10월 콩코드·UMPG·ABKCO 건과 별건으로 2026년 1월 두 번째 소송이 제기됐고, 2026년 7월 22일 캘리포니아 북부지법에 2차 수정 소장(71쪽)이 제출됨 — 디스커버리로 확보한 Anthropic 내부 기록을 근거로 삼음 (Music Business Worldwide https://www.musicbusinessworldwide.com/music-publishers-file-amended-lyrics-lawsuit-against-anthropic-just-as-ai-firms-separate-1-5b-piracy-settlement-with-authors-wins-court-approval/)\n- [후속] BMG가 2026년 3월, 라운드힐뮤직이 2026년 8월 17일 각각 별도 제소 — 같은 구조의 추가 원고가 계속 붙음 (metir Blog https://www.metirai.com/blog/sony-warner-chappell-sue-anthropic-music-copyright-2026)\n- [후속] 원고 측은 기여침해·대위침해 주장을 접고 직접침해와 저작권관리정보(CMI) 제거 주장으로 쟁점을 좁힘 (Music Business Worldwide https://www.musicbusinessworldwide.com/music-publishers-file-amended-lyrics-lawsuit-against-anthropic-just-as-ai-firms-separate-1-5b-piracy-settlement-with-authors-wins-court-approval/)\n- [반응] 퍼블리셔 측(콩코드·UMPG·ABKCO) 가처분 일부 패소 후 \"우리 사건 전반에 대해 매우 자신 있다\"며, Anthropic이 침해 산출물 방지 '가드레일' 유지 약정에 합의한 것 자체가 주장의 타당성을 인정한 것이라고 "
+  },
+  {
+    "slug": "2026-09-11-circle-chart-shows-the-top-400-albums-falling-from",
+    "date": "2026-09-11",
+    "checked": "2026-09-25",
+    "why_picked": "베팅 · 미확인 주장 4개",
+    "kind": "followup",
+    "why": "글이 지적한 71% 출처·대상 문제가 원조사로 확인됐고, 81%·73% vs 65%·52% 등 세대별 수치와 홀리데이 2차 조사·리테일 사례가 새로 더해져 이어 쓸 거리가 생겼다",
+    "source": "Quad/PR Newswire https://www.prnewswire.com/news-releases/81-of-gen-z-report-wishing-it-was-easier-to-disconnect-from-digital-devices-302453853.html · Quad Insights https://www.quad.com/insights/consu",
+    "found": "- [수치] 71% Quad·해리스폴 'Return of Touch'(2025)에서 '인쇄 카탈로그/잡지가 디지털 캠페인보다 진정성 있다'고 답한 비율 — 대상은 Z세대가 아닌 전체 소비자 2,000명 이상 (Quad/PR Newswire https://www.prnewswire.com/news-releases/81-of-gen-z-report-wishing-it-was-easier-to-disconnect-from-digital-devices-302453853.html)\n- [수치] 73% vs 65% 브랜드 카탈로그 수령을 기대한다는 응답 — Z세대·밀레니얼 73%, 전체 소비자 65% (같은 조사 내 세대 격차) (Quad Insights https://www.quad.com/insights/why-consumers-want-more-irl-and-tactile-brand-experiences)\n- [수치] 81% Z세대 중 '디지털 기기에서 더 쉽게 벗어나고 싶다'고 답한 비율 (같은 조사) (The Harris Poll https://theharrispoll.com/articles/the-return-of-touch-federal-student-loan-borrowers-working-parents-prioritize-child-care-benefits-marketing-leaders-are-pivoting/)\n- [수치] 52% / 50% vs 41% 2025년 10월 2차 조사(홀리데이 편)에서 '인쇄 카탈로그가 리테일러와의 연결감을 높인다' — Z세대 52%, 밀레니얼 50%, 전 연령 평균 41% (Quad Insights https://www.quad.com/insights/consumer-insights/inside-the-return-of-touch-three-waves-of-research)\n- [선례] 10대 대상 종이잡지는 이미 한 차례 붕괴했다 — '틴 보그'는 보그닷컴에 통합됐고 '사시', '타이거 비트'는 폐간. 성인 패션지도 종이 발행 횟수를 줄여옴(느리고 비싸고 반응 측정이 어렵다는 이유) (경향신문 https://v.daum.net/v/20260909110607947)\n- [선례] 같은 구조가 리테일에서 먼저 나타남 — 2025년 10월 홀리데이 조사에서 '선물 중 상당수를 매장에서 우연히 발견했다'는 응답이 전체 66%, Z세대 71%로, 물리적 접점이 발견·신뢰 채널로 "
+  },
+  {
+    "slug": "2026-09-14-accord-entertainment-closed-a-2-billion-won-pre-se",
+    "date": "2026-09-14",
+    "checked": "2026-09-25",
+    "why_picked": "베팅 · 미확인 주장 3개",
+    "kind": "followup",
+    "why": "어코드 건 외에 AMA 69억·23세기아이들 누적 90억·스콘 20억 등 버추얼 기획사 투자 선례와 투자사 평가 근거가 추가로 확인돼 'IP 명분 반복' 논지를 이어 쓸 재료가 생겼다",
+    "source": "와우테일 https://wowtale.net/2026/04/24/257615/ · 데모데이 https://demoday.co.kr/funding/insights/94 · 아시아경제 https://view.asiae.co.kr/article/2026042216141343381",
+    "found": "- [반응] 최지이 어코드엔터테인먼트 대표 \"버추얼 콘텐츠 시장은 기술보다 결국 IP가 경쟁력이 되는 산업\"이라며 자체 IP 고도화와 글로벌 시장 경쟁력을 내세움 (와우테일 https://wowtale.net/2026/09/01/263767/)\n- [반응] 투자사(스마일게이트·씨엔티테크·SM컬처파트너스) 버추얼 아티스트 IP의 성장성·콘텐츠 기획력·제작 역량·글로벌 K팝 확장 가능성을 평가해 전략적 투자를 결정했다고 밝힘 (한국아이닷컴(스포츠한국) https://www.hankooki.com/news/articleView.html?idxno=342321)\n- [반응] SBVA 관계자(버추얼 기획사 AMA 투자 건) 기획·제작 전반을 리드하는 역량을 근거로 버추얼 IP 중심 확장 가능성에 주목해 투자했다고 설명 (아시아경제 https://view.asiae.co.kr/article/2026042216141343381)\n- [수치] 20억원 어코드엔터테인먼트 프리시리즈A 투자 규모(2026-09-01 발표) (와우테일 https://wowtale.net/2026/09/01/263767/)\n- [수치] 69억원 버추얼 걸그룹 OWIS 기획사 올마이애닉도츠(AMA) 시드 라운드 규모(2026-04-24) — 같은 해 앞선 버추얼 기획사 투자 수치 (와우테일 https://wowtale.net/2026/04/24/257615/)\n- [수치] 40억원 / 누적 약 90억원 23세기아이들 시리즈A(2026-04) 및 2024-09 시드 12억·2025-06 38억을 더한 누적 조달액 (데모데이 https://demoday.co.kr/funding/insights/94)\n- [수치] 20억원 버튜버 엔터 스타트업 스콘의 2024년 프리시리즈A 규모(SM컬처파트너스·쿼드벤처스·에스비파트너스 참여) — 어코드 건과 동일 액수·동일 라운드 명칭 (아시아경제 https://view.asiae.co.kr/article/2026042216141343381)\n- [선례] SM컬처파트너스는 2024년 버튜버 기획사 스콘의 20억 프리시리즈A에도 참여 — 대형 엔터 CVC가 신생 버추얼 기획사에 같은 규모로 반복 투자한 구조 (아시아경제 https://view.asiae.co.kr/article/2026042216141343381)\n- [선례] 23세기아이들은 2024-09 시드 12억 → 2025-06 38억 → 2026-04 시리즈A 4"
+  },
+  {
+    "slug": "2026-09-15-warner-and-believe-feed-one-model-two-definitions-",
+    "date": "2026-09-15",
+    "checked": "2026-09-25",
+    "why_picked": "베팅 · 미확인 주장 2개",
+    "kind": "followup",
+    "why": "글의 사실관계는 틀리지 않았고, UMG·Sony의 6만 곡 신규 소송과 수정 소장, WMG·BMG 라이선스가 fair use 방어를 약화시키는 역방향 인용 등 이어 쓸 후속 사건이 나왔다",
+    "source": "Law Commentary https://www.lawcommentary.com/articles/suno-ai-music-copyright-lawsuit-licensing-deals · Music Business Worldwide https://www.musicbusinessworldwide.com/suno-inks-global-licensing-deal-",
+    "found": "- [후속] Universal Music Group과 Sony Music이 v6 출시 직후 매사추세츠 연방법원에 6만 곡 이상 침해를 주장하는 새 소송을 제기했다 — 라이선스 체결사(WMG·BMG·Believe)와 미체결사의 분리가 굳어졌다 (Law Commentary https://www.lawcommentary.com/articles/suno-ai-music-copyright-lawsuit-licensing-deals)\n- [후속] UMG·Sony가 8월 25일 매사추세츠 연방법원에 수정 소장을 내고 기술적 보호조치 우회 주장을 추가했다 (Music Business Worldwide https://www.musicbusinessworldwide.com/suno-inks-global-licensing-deal-with-believe/)\n- [후속] 8월 이후 Round Hill, Gerencia 360, SOCAN, 아티스트들의 신규 소송이 잇따랐고, Suno는 별도의 아티스트 집단소송 각하 신청에서 패했다 (Digital Music News https://www.digitalmusicnews.com/2026/09/08/suno-believe-deal/)\n- [후속] UMG·Sony가 Suno의 WMG·BMG 라이선스 계약 자체를 '학습용 라이선스 시장이 존재한다'는 증거로 법정에서 인용하기 시작했다 — 계약이 fair use 방어를 약화시키는 역방향 효과 (Law Commentary https://www.lawcommentary.com/articles/suno-ai-music-copyright-lawsuit-licensing-deals)\n- [반응] Jennifer Brown, SOCAN CEO \"there are consequences when you steal music\"라며 제소 목적을 밝혔다 (Soundstock https://www.soundstock.com/news/2026-09-07-socan-sues-ai-music-platform-suno-over-copyright-infringement)\n- [반응] SOCAN 최고법무책임자 목표는 AI 기업이 창작자·퍼블리셔의 권리를 존중해야 함을 확립하는 것이라고 말했다 (Music Ally https://musically.com/2026/09/03/canadas-socan-files-latest-music-industry-lawsuit-against-"
+  },
+  {
+    "slug": "2026-09-16-universal-music-sued-distrokid-the-day-after-the-l",
+    "date": "2026-09-16",
+    "checked": "2026-09-25",
+    "why_picked": "베팅 · 미확인 주장 3개",
+    "kind": "followup",
+    "why": "소송 주체·청구 내용·침해 트랙 수 등 구체 수치와 DistroKid·IFPI 반박 입장, Believe/TuneCore 선행 소송 종결, 미가입 유통사 추가 집계가 새로 나왔다",
+    "source": "Music Business Worldwide https://www.musicbusinessworldwide.com/universal-music-group-sues-distrokid-ai-generated-slop/ , Variety https://variety.com/2026/music/news/universal-music-group-sues-distrok",
+    "found": "- [후속] UMG가 2026년 9월 15일 델라웨어 연방법원에 DistroKid·Kid Distro Holdings·DK Holdco를 상대로 '기만적 거래행위 및 저작권 침해' 소송을 제기 — 원고에 UMG Recordings, Capitol Records, Capitol CMG가 함께 이름을 올림 (HITS Daily Double https://www.hitsdailydouble.com/news/legal/umg-sues-distrokid-2026-09-15)\n- [후속] UMG는 법정손해배상 외에 침해물 금지명령과 'DistroKid가 유통하는 음원 다수가 아티스트 기반 발매'라는 인상을 주지 못하게 하는 금지명령까지 청구 (Music Week https://www.musicweek.com/labels/read/universal-music-group-sues-distrokid-over-alleged-copyright-infringement/094995)\n- [후속] 같은 구조의 선행 소송인 UMG·ABKCO·Concord 대 Believe/TuneCore 건은 2026년 4월 양측이 '재소 금지(with prejudice)' 공동 취하 합의서를 제출하며 종결 (Music Business Worldwide https://www.musicbusinessworldwide.com/universal-music-group-sues-distrokid-ai-generated-slop/)\n- [후속] SII 출범 명단에서 빠진 곳은 DistroKid만이 아니며 Believe/TuneCore, TikTok의 SoundOn, UnitedMasters, ONErpm, Stem, LANDR, Amuse도 불참 상태로 집계됨 (Hypebot https://www.hypebot.com/ifpi-unites-cd-baby-sony-umg-and-more-to-fight-ai-streams/)\n- [반응] DistroKid UMG 주장에 강하게 동의하지 않으며 소송이 아닌 기존 업계 절차를 택하지 않은 점이 실망스럽다, 자사 관행에 자신 있고 적극 방어하겠다고 반박 (Variety https://variety.com/2026/music/news/universal-music-group-sues-distrokid-ai-slop-pipeline-1236863076/)\n- [반응] DistroKid 전 세계 수백만 독립 아티스트를 알리는 데"
   }
 ]
