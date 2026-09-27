@@ -916,5 +916,61 @@
       "calls": 30,
       "search_uses": 8
     }
+  },
+  {
+    "date": "2026-09-27",
+    "day": 23,
+    "slug": "2026-09-27-partisan-bought-firebird-s-stake-in-otm-and-folded",
+    "title_ko": "Partisan이 샀는데 지워진 이름은 Left였다",
+    "title_en": "Partisan Bought Firebird's Stake in OTM, and Folded In Its Own Left Music",
+    "factor": "자본",
+    "from_stage": "생산",
+    "to_stage": "유통",
+    "tense": "vibe",
+    "region": "유럽",
+    "radar_tense": "soon",
+    "agrees": true,
+    "claims_total": 5,
+    "claims_verified": 2,
+    "review_rounds": 1,
+    "unresolved": false,
+    "bet": true,
+    "wiki_used": 3,
+    "lexicon_used": 0,
+    "form": {
+      "title_noun": false,
+      "title_len": 28,
+      "lead_concrete": true,
+      "ai_tell": 0,
+      "contrast": 0,
+      "hedge_10k": 0.0,
+      "sent_med": 51,
+      "long80": 21.1,
+      "title_check": {
+        "clarity": 2,
+        "pull": 2,
+        "kept_promise": true,
+        "why": "Partisan·Left라는 고유명사와 '샀는데 이름이 지워졌다'는 인수 사건이 함께 서 있고, 인수한 쪽 브랜드가 사라지는 반전이 분명하며 본문이 그 이유(싱크 창구 단일화)를 실제로 설명한다"
+      },
+      "title_kept_first": false,
+      "title_cands": 3
+    },
+    "style": {
+      "문장 리듬": 0.496,
+      "접속부사": 11.9,
+      "헤지": 11.9,
+      "수식어": 0.0,
+      "쉼표": 71.7
+    },
+    "selected_by": "intern",
+    "candidates": 5,
+    "issue": "independent-labels-acquiring-music-publi",
+    "synth": false,
+    "tokens": {
+      "input": 174028,
+      "output": 29281,
+      "calls": 26,
+      "search_uses": 9
+    }
   }
 ]

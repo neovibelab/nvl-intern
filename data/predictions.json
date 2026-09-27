@@ -174,5 +174,16 @@
     "check_en": "Check the published draft of KOMCA's revised registration rules and MCST follow-up forum materials for a process-evidence clause",
     "factor": "정책",
     "status": "open"
+  },
+  {
+    "slug": "2026-09-27-partisan-bought-firebird-s-stake-in-otm-and-folded",
+    "date": "2026-09-27",
+    "by_date": "2026-12-26",
+    "claim_ko": "90일 안에 또 다른 독립 레이블·퍼블리셔가 메이저 어드민 계약 갱신 대신 자체 퍼블리싱 창구 설립 또는 인디 퍼블리셔 인수를 공식 발표한다.",
+    "claim_en": "Within 90 days another independent label or publisher will announce it is building its own publishing vehicle or acquiring an indie publisher instead of renewing a major admin deal.",
+    "check_ko": "MBW·Music Week·Billboard Pro의 인디 퍼블리싱 인수/설립 보도 한 건 이상",
+    "check_en": "At least one MBW / Music Week / Billboard Pro report of an indie publishing acquisition or in-house launch",
+    "factor": "자본",
+    "status": "open"
   }
 ]
