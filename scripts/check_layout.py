@@ -100,6 +100,14 @@ def check(date: str) -> int:
             ok(len(blocks) <= HEAD_MAX, "머리 블록 넷 이하", f"{len(blocks)}개")
             if row.get("selected_by") == "intern":
                 ok(("**왜 이걸 골랐나**" if lang == "ko" else "**Why this one**") in head, "왜 이걸 골랐나가 머리에")
+            # 이 글의 사전(2026-09-27) - 「무슨 일이 있었나」(종합 편은 「오늘 더해진 것」) 상자 바로 뒤에 붙는다
+            if fm.get("cast"):
+                hb = head.split(chr(10) + chr(10))
+                lab = news[1] if synth else news[0]
+                k = next((i for i, b in enumerate(hb) if b.strip().startswith(lab)), -1)
+                nxt = hb[k + 1].strip() if 0 <= k < len(hb) - 1 else ""
+                cl = [ln for ln in nxt.split(chr(10)) if ln.startswith("- **")]
+                ok(len(cl) == len(fm["cast"]), "사전이 소재 상자 안에", f"{len(cl)}/{len(fm['cast'])}")
             if synth:
                 rr = [ln for ln in main.split(chr(10)) if ln.startswith("- ")]
                 ok(len(rr) >= 2, "되읽기 두 줄 이상", f"{len(rr)}줄")

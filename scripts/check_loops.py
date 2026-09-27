@@ -129,6 +129,12 @@ def main() -> int:
     picked = [s for s in stats if s.get("selected_by") == "intern"]
     print(f"  선정 후속     인턴이 고른 편 {len(picked)} · 30일 판정 {sum(1 for x in fu if x.get('verdict'))}건"
           + ("" if fu else "   ← 첫 판정은 고른 날로부터 30일 뒤"))
+    # 이 글의 사전 (2026-09-27) - 편에 붙은 수와 대장 크기. 대장이 자라면 새로 찾는 수가 줄어야 한다
+    from intern import entities  # noqa: PLC0415
+    n_all, n_con = entities.rate()
+    with_cast = [s for s in stats if "cast" in s]
+    print(f"  이 글의 사전  대장 {n_all}개(개념 {n_con})" + (f" · 붙은 편 {sum(1 for s in with_cast if s['cast'])}/{len(with_cast)}"
+          if with_cast else "   ← 아직 붙은 편이 없다") + ("   · 렉시콘 결번 후보 = python scripts/lexicon_gaps.py" if n_con else ""))
 
     print("\n" + ("전부 돈다" if not dead else f"끊긴 자리 {len(dead)}건\n  - " + "\n  - ".join(dead)))
     return 0 if not dead else 1

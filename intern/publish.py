@@ -234,6 +234,8 @@ def piece_markdown(lang: str, date: str, slug: str, j: dict, body: str, meta: di
         "issue": (meta.get("issue") or {}).get("id") or "",
         "issue_label": (meta.get("issue") or {}).get("label_ko" if lang == "ko" else "label_en") or "",
         "synth": bool(meta.get("synth")),
+        # 2026-09-27 - 이 글의 사전. 풀이는 대장(entities.json)에 있고 편에는 key만 남긴다
+        "cast": [x["key"] for x in (meta.get("cast") or [])],
     }
     unresolved_line = "\n\n" + review_block(lang, meta)
     # 예측은 본문에 싣지 않는다(2026-09-26 대표 지시 - 「모든 레터에 예측이 등장하니 어색하다」).
@@ -253,10 +255,18 @@ def piece_markdown(lang: str, date: str, slug: str, j: dict, body: str, meta: di
     hr = "\n\n---\n\n"
     synth = bool(meta.get("synth"))
     # 머리 - 무엇이 있었나 · 왜 골랐나 · (바이브면) 조짐 · 어느 판의 몇 번째인가. **전부 한 덩어리씩, 짧게.**
+    # 사전은 새 블록이 아니라 「무슨 일이 있었나」 상자 안의 목록이다(2026-09-27) - 머리 블록 넷을 지키고,
+    # 사건을 읽는 자리에서 모르는 이름을 바로 푼다.
+    from . import entities  # noqa: PLC0415 - entities가 publish를 읽는다(순환 회피)
+    cast = entities.lines(meta.get("cast") or [], lang)
     if synth:
         added = src_sum.replace(f"**{L[lang]['what']}**", f"**{L[lang]['added']}**", 1) if src_sum else ""
+        if added and cast:
+            added += NL + NL + cast
         head_blocks = [span_line(lang, meta, date), added, why_line(lang, meta), vibe_line(lang, j)]
     else:
+        if src_sum and cast:
+            src_sum += NL + NL + cast
         head_blocks = [src_sum, why_line(lang, meta), vibe_line(lang, j), thread_line(lang, meta, date)]
     head = "".join(f"{b}\n\n" for b in head_blocks if b)
     # 본문 - 본문 · 가져갈 것 · (종합 편이면) 지난 판단 되읽기
@@ -317,6 +327,7 @@ def record(date: str, slug: str, j: dict, meta: dict, ko_body: str, en_body: str
         "candidates": (meta.get("selection") or {}).get("n", 0),
         "issue": (meta.get("issue") or {}).get("id") or "",
         "synth": bool(meta.get("synth")),
+        "cast": len(meta.get("cast") or []),
         "tokens": trace.get("usage", {}),
     })
     stats.sort(key=lambda s: s["date"])

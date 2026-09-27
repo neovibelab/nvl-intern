@@ -13,7 +13,7 @@ import json
 import sys
 import time
 
-from intern import ablation, config, duel, llm, radar, brain, steps, publish, build_site, mail, weekly, form, learn, recheck, style, issues, followup
+from intern import ablation, config, duel, llm, radar, brain, steps, publish, build_site, mail, weekly, form, learn, recheck, style, issues, followup, entities
 
 MAX_REVIEW_ROUNDS = 2
 
@@ -215,10 +215,15 @@ def main() -> int:
     tc = steps.title_check(j["title_ko"], ko, "ko")  # 절대 판정은 기록만 - 대조군으로 남긴다
     trace["title"] = {"ko": tk, "en": te, "check": tc, "duel_ko": dk, "duel_en": de}
 
+    # ⑦'' 이 글의 사전 (2026-09-27) - 설명 층 독자가 모를 이름·개념을 몇 줄로 푼다. 슬러그가 아직 없어
+    # 편 연결은 발행 직전에 한다(entities.link). 풀이 확인이 안 된 항목은 빠진다.
+    cast = entities.cast(ko, en, src_sum.get("ko", ""), date=args.date, write=not args.dry_run)
+    trace["cast"] = cast
     outlets = [x.get("source") or "" for x in trace["cluster"]["items"]]
     last_issues_en = steps.issues_en(last_issues) if unresolved else []
-    name_maps = {"ko": steps.name_map([ko, src_sum["ko"], " ".join(outlets)] + last_issues, "ko"),
-                 "en": steps.name_map([en, src_sum["en"], " ".join(outlets)] + last_issues_en, "en")}
+    cast_ko = entities.lines(cast, "ko"); cast_en = entities.lines(cast, "en")
+    name_maps = {"ko": steps.name_map([ko, src_sum["ko"], " ".join(outlets), cast_ko] + last_issues, "ko"),
+                 "en": steps.name_map([en, src_sum["en"], " ".join(outlets), cast_en] + last_issues_en, "en")}
     trace["name_map"] = name_maps
     print(f"  [names] ko {len(name_maps['ko'])} · en {len(name_maps['en'])}")
     print(f"  [write] en {len(en.split())} words")
@@ -259,13 +264,14 @@ def main() -> int:
                 reread={"ko": reread_ko, "en": reread_en},
                 # 종합 편은 이어 읽은 편을 전부 건다 - 평소처럼 넷에서 자르면 목록과 본문이 어긋난다
                 thread_links={lg: issues.thread_links(iss, iid, args.date, lg, n=max(4, len(prior)))
-                              for lg in ("ko", "en")})
+                              for lg in ("ko", "en")}, cast=cast)
     trace["form"] = meta["form"]
     _off = style.off_axes(meta["style"])
     print(f"  [style] 사람 분포 밖 {len(_off)}개" + (f" · {' · '.join(_off)}" if _off else ""))
     print(f"  [form] 점수 {form.score(meta['form'])}/100 · 제목 고유명사 {meta['form']['title_noun']}(기록만) · "
           f"리드 구체 {meta['form']['lead_concrete']} · AI tell {meta['form']['ai_tell']} · 문장중앙 {meta['form']['sent_med']}자")
     publish.record(args.date, slug, j, meta, ko, en, trace)
+    entities.link(cast, slug)
     # 이슈는 기록이 성공한 뒤에 저장한다 - 기록이 실패하면 없는 편이 스레드에 매달린다
     if synth:
         issues.mark_synth(iss, iid, slug, args.date)
@@ -377,10 +383,15 @@ def rebuild(args) -> int:
     ko = steps.polish(ko, "ko", links)
     en = steps.polish(trace["draft_en_final"], "en", links)
     trace["draft_ko_final"], trace["draft_en_final"] = ko, en
+    # 사전 - 로그에 있으면 그대로, 없으면(09-27 이전 편) 지금 만든다
+    cast = trace.get("cast")
+    if cast is None:
+        cast = entities.cast(ko, en, src_sum.get("ko", ""), date=args.date)
+    trace["cast"] = cast
     outlets = [x.get("source") or "" for x in items]
     last_issues_en = steps.issues_en(last_issues) if unresolved else []
-    name_maps = {"ko": steps.name_map([ko, src_sum["ko"], " ".join(outlets)] + last_issues, "ko"),
-                 "en": steps.name_map([en, src_sum["en"], " ".join(outlets)] + last_issues_en, "en")}
+    name_maps = {"ko": steps.name_map([ko, src_sum["ko"], " ".join(outlets), entities.lines(cast, "ko")] + last_issues, "ko"),
+                 "en": steps.name_map([en, src_sum["en"], " ".join(outlets), entities.lines(cast, "en")] + last_issues_en, "en")}
     trace["name_map"] = name_maps
     print(f"  [names] ko {name_maps['ko']} · en {name_maps['en']}")
     slug = publish.slugify(j.get("title_en", ""), args.date)
@@ -400,9 +411,10 @@ def rebuild(args) -> int:
                 reread={"ko": trace.get("reread_ko") or [], "en": trace.get("reread_en") or []},
                 thread_links={lg: issues.thread_links(iss, iid, args.date, lg,
                                                       n=max(4, len((trace.get("issue") or {}).get("prior") or [])))
-                              for lg in ("ko", "en")})
+                              for lg in ("ko", "en")}, cast=cast)
     trace["usage_rebuild"] = dict(llm.USAGE)
     publish.record(args.date, slug, j, meta, ko, en, trace)
+    entities.link(cast, slug)
     build_site.build()
     print(f"  [rebuild] content/ko/{slug}.md · content/en/{slug}.md · D+{meta['day']}")
     for lang in ("ko", "en"):

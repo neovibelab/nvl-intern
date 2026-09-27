@@ -76,12 +76,25 @@ p.why{border-left-color:var(--lime)}
 p.thread{color:var(--dim)}
 p.span{font-size:15px;line-height:1.85;color:var(--white);background:var(--lime-dim);border:1px solid rgba(214,255,146,.35);padding:15px 18px 13px;margin:0 0 12px}
 p.added{background:var(--card);border:1px solid var(--edge);padding:15px 18px 13px;margin:0;font-size:14.5px;line-height:1.85;color:var(--ink)}
+p.added.joined{border-bottom:none;padding-bottom:10px}
 p.why strong,p.thread strong,p.span strong,p.added strong,p.reread strong,p.past strong{display:block;margin-bottom:6px;color:var(--lime);font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
 p.thread strong,p.past strong{color:var(--dim)}
 p.reread{font-size:14px;line-height:1.8;color:var(--ink);margin:26px 0 8px}
 ul.reread-list{list-style:none;margin:0 0 22px;padding:0;border-left:2px solid var(--edge)}
 ul.reread-list li{font-size:14.5px;line-height:1.8;color:var(--ink);padding:7px 0 7px 16px;border-bottom:1px solid var(--edge)}
 ul.reread-list li:last-child{border-bottom:none}
+/* 이 글의 사전 (2026-09-27) - 「무슨 일이 있었나」 상자 안에 붙는다. 새 블록이 아니다 */
+ul.cast-list{background:var(--card);border:1px solid var(--edge);border-top:none;margin:0;padding:0 18px 13px;list-style:none}
+ul.cast-list li{font-size:13.5px;line-height:1.75;color:var(--dim);padding:7px 0 0}
+ul.cast-list li:first-child{border-top:1px solid var(--edge);padding-top:11px}
+ul.cast-list li strong{color:var(--white);font-weight:700}
+.who-lede{font-size:14px;line-height:1.8;color:var(--dim);margin:6px 0 0}
+.who h2{margin:34px 0 10px}
+.who dl{margin:0;border-top:1px solid var(--edge)}
+.who dt{color:var(--white);font-weight:700;font-size:15px;padding:14px 0 3px}
+.who dd{margin:0;color:var(--ink);font-size:14.5px;line-height:1.8;padding:0 0 14px;border-bottom:1px solid var(--edge)}
+.who dd .w-src,.who dd .w-in{display:block;font-size:12px;color:var(--dim);font-family:'DM Mono','Noto Sans KR',monospace;margin-top:4px}
+.who dd a{color:var(--ink)}.who dd a:hover{color:var(--lime)}
 p.past{background:var(--card);border:1px solid var(--edge);padding:14px 18px 12px;margin:0}
 p.past.joined{border-bottom:none;padding-bottom:4px}
 
@@ -224,7 +237,7 @@ p.principle{font-size:16px}
 }"""
 
 T = {
-    "ko": dict(today="오늘", growth="성장", grid="격자", about="이 실험이 무엇인가", other="EN", other_href="/en/",
+    "ko": dict(today="오늘", growth="성장", grid="격자", who="사전", about="이 실험이 무엇인가", other="EN", other_href="/en/",
                brand="AI 엔터 바이브 리서치", lab_name="엔터문화연구소", weekly="주간 회고", about_short="소개", home="홈",
                hero="AI 인턴이 매일 엔터 산업을 읽고,<br>아직 이름이 없는 변화를 먼저 씁니다.",
                hero_sub="월요일부터 금요일까지 하루 한 편, 토요일에 그 주를 스스로 돌아봅니다. 소재도 관점도 사람이 고르지 않고, 틀린 날도 그대로 둡니다.",
@@ -237,7 +250,7 @@ T = {
                grid_title="격자 21칸 · 인턴이 쓴 자리", empty_cell="", bets="예측 기록", bet_cols=["날짜", "명제", "기한", "확인", "상태"],
                sub_h="매일 아침 받아 보기", sub_hint="월요일부터 금요일까지 한 편, 토요일엔 그 주 회고. 아침 8시에 갑니다.",
                sub_ph="이메일", sub_go="구독", sub_fine="확인 메일이 한 통 갑니다. 광고는 없고, 언제든 그만둘 수 있습니다."),
-    "en": dict(today="Today", growth="Growth", grid="Grid", about="What this is", other="KO", other_href="/",
+    "en": dict(today="Today", growth="Growth", grid="Grid", who="Glossary", about="What this is", other="KO", other_href="/",
                brand="AI Entertainment Vibe Research", lab_name="Neo Vibe Lab", weekly="Weekly review", about_short="About", home="Home",
                hero="An AI intern reads the entertainment industry<br>and writes what does not have a name yet.",
                hero_sub="One piece a day Monday to Friday, and a review of its own week on Saturday. No human picks the topic or edits the text, and the days it gets things wrong stay up.",
@@ -325,6 +338,12 @@ def md_to_html(md: str) -> str:
             out.append('<div class="tw">' + _table(b) + "</div>"
                        + f'<p class="tw-hint">{"표는 옆으로 밀어서 봅니다" if _LANG[0] == "ko" else "Swipe the table sideways"}</p>')
             prev = "table"; continue
+        if b.startswith("- ") and prev in ("src", "added"):
+            # 사전 목록 - 위 상자와 한 덩어리로 보이게 상자 아래 테두리를 뗀다
+            if out and out[-1].startswith(f'<p class="{prev}">'):
+                out[-1] = out[-1].replace(f'<p class="{prev}">', f'<p class="{prev} joined">', 1)
+            out.append('<ul class="cast-list">' + "".join(f"<li>{_inline(l[2:])}</li>" for l in b.splitlines() if l.startswith("- ")) + "</ul>")
+            prev = "cast"; continue
         if b.startswith("- "):
             cls = (' class="src-list"' if prev in ("src", "srcs", "past")
                    else ' class="reread-list"' if prev == "reread" else "")
@@ -401,6 +420,12 @@ def _inline(t: str) -> str:
     return t.replace("\n", "<br>")
 
 
+def _has_who() -> bool:
+    """사전에 항목이 생긴 뒤에만 메뉴에 올린다 - 빈 페이지로 안내하지 않는다."""
+    from . import entities  # noqa: PLC0415
+    return bool(entities.load()["entries"])
+
+
 def page(lang: str, title: str, body: str, here: str = "", latest: str = "",
          og: str = "", desc: str = "", url: str = "", sub: bool = True) -> str:
     t = T[lang]
@@ -411,7 +436,7 @@ def page(lang: str, title: str, body: str, here: str = "", latest: str = "",
         label = (f'<span class="full">{text}</span><span class="short">{short}</span>') if short else text
         return f'<a class="l{" on" if here == key else ""}" data-k="{key}" href="{href}">{label}</a>'
     links = (l("home", root, t["home"]) + l("today", latest or root, t["today"])
-             + l("growth", f"{root}growth", t["growth"]) + l("grid", f"{root}grid", t["grid"])
+             + l("growth", f"{root}growth", t["growth"]) + l("grid", f"{root}grid", t["grid"]) + (l("who", f"{root}who", t["who"]) if _has_who() else "")
              + l("", ab, t["about"], t["about_short"]) + l("", "#subscribe", t["subscribe"])
              + l("", t["other_href"], t["other"]))
     return f"""<!DOCTYPE html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -633,6 +658,41 @@ def render_piece(lang: str, fm: dict, body: str) -> str:
     say_html = f'<p class="coord-say">{html.escape(say)}</p>' if say else ""
     return (f"{_chip(lang, fm)}<h1>{html.escape(fm.get('title', ''))}</h1>{say_html}{_meta_line(lang, fm)}"
             f'<div class="body">{inner}</div>')
+
+
+def who_page(lang: str, pieces: list) -> str:
+    """이 레터의 사전 - 편마다 붙은 풀이를 한 장에 모은다(2026-09-27). 종류별, 이름 순."""
+    from . import entities  # noqa: PLC0415
+    ko = lang == "ko"
+    titles = {slug: fm.get("title", "") for fm, _b, slug in pieces}
+    es = entities.load()["entries"]
+    head = (f"<p class='label'>{'이 레터의 사전' if ko else 'Glossary'}</p><h1>{'처음 보는 이름' if ko else 'Names you may not know'}</h1>"
+            + ("<p class='who-lede'>인턴이 글에 붙인 풀이를 모았습니다. 풀이는 웹에서 확인한 것만 싣고, "
+               "확인이 안 된 이름은 빠집니다.</p>" if ko else
+               "<p class='who-lede'>Every explainer the intern has attached to a piece. "
+               "Only what it could confirm on the web is kept.</p>"))
+    if not es:
+        return head + f"<p>{'아직 항목이 없습니다.' if ko else 'Nothing here yet.'}</p>"
+    out = [head, '<div class="who">']
+    for kind in entities.KINDS:
+        rows = sorted(((k, e) for k, e in es.items() if e.get("kind") == kind),
+                      key=lambda kv: (kv[1].get("name_ko" if ko else "name_en") or "").lower())
+        if not rows:
+            continue
+        out.append(f"<h2 class='label'>{entities.KIND_KO[kind] if ko else entities.KIND_EN[kind]}</h2><dl>")
+        for k, e in rows:
+            name = e.get("name_ko") if ko else e.get("name_en")
+            if ko and e.get("name_en") and e["name_en"] != name:
+                name = f"{name} ({e['name_en']})"
+            src = (f'<span class="w-src"><a href="{html.escape(e["url"])}" rel="noopener">{html.escape(e.get("source") or e["url"])}</a></span>'
+                   if e.get("url") else "")
+            ins = [f'<a href="{s2}">{html.escape(titles[s2])}</a>' for s2 in e.get("pieces", []) if s2 in titles]
+            inn = (f'<span class="w-in">{"나온 글" if ko else "In"} · ' + " · ".join(ins) + "</span>") if ins else ""
+            out.append(f'<dt id="{html.escape(k)}">{html.escape(name or k)}</dt>'
+                       f'<dd>{html.escape(e.get("ko" if ko else "en", ""))}{src}{inn}</dd>')
+        out.append("</dl>")
+    out.append("</div>")
+    return "".join(out)
 
 
 def _summary_cards(lang: str, stats: list, preds: list) -> list:
@@ -961,6 +1021,9 @@ def build() -> None:
             page(lang, t["grid"], f"<p class='label'>{t['grid_title']}</p><h1>{'21칸' if lang == 'ko' else '21 cells'}</h1>"
                  + note + '<div class="tw">' + gh + "</div>", here="grid", latest=latest_slug,
                  url=f"/{"en/" if lang == "en" else ""}grid"))
+        io.open(base / "who.html", "w", encoding="utf-8").write(
+            page(lang, t["who"], who_page(lang, pieces), here="who", latest=latest_slug,
+                 url=f"/{"en/" if lang == "en" else ""}who"))
     # 브랜드 자산 - 메일·아카이브가 이 URL을 쓴다(외부 호스팅 금지)
     src = config.ROOT / "assets"
     if src.exists():
