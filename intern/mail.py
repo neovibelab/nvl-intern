@@ -33,6 +33,11 @@ def _call(method: str, path: str, body: dict | None = None, live: bool = False) 
 # 22:00 KST = 09:00 ET · 14:00 런던 · 15:00 베를린.
 SEND_HOUR = {"ko": 8, "en": 22}
 
+# 버튼다운 계정의 이메일 템플릿. **계정 설정과 같은 값이어야 한다** - 여기서 바꾸지 않는다.
+# 2026-09-27 modern → classic. modern은 머리 안내 문구("Did someone forward you this?")와 영어 날짜를 찍는데
+# 로케일에 한국어가 없고 문구·CSS 수정은 유료다. classic은 그 머리가 없다. 제목은 본문 `# 제목`이 맡는다.
+TEMPLATE = "classic"
+
 
 def next_slot(lang: str = "ko", now: dt.datetime | None = None) -> dt.datetime | None:
     """다음 발송 시각. **이미 지났으면 None**을 돌려 즉시 발송으로 떨어뜨린다.
@@ -126,7 +131,10 @@ def send_piece(lang: str, day: int, title: str, body_md: str, slug: str, send: b
         ]}
     # 꼬리 문구는 본문 끝의 AI 표시 하나만 둔다. 버튼다운 계정 푸터는 2026-09-27에 비웠다 -
     # 한국어 한 벌이라 영문 메일에도 한국어로 붙었고, 한국어 메일에서는 본문 꼬리와 같은 말을 두 번 했다.
-    payload = {"subject": subject, "body": drop_title(strip_grid(body_md, lang)) + footer, "status": "about_to_send" if send else "draft",
+    body = strip_grid(body_md, lang)
+    if TEMPLATE == "modern":      # 머리에 제목을 찍는 템플릿일 때만 본문 제목을 뺀다
+        body = drop_title(body)
+    payload = {"subject": subject, "body": body + footer, "status": "about_to_send" if send else "draft",
                "archival_mode": "enabled" if lang == "ko" else "disabled", "filters": filters}
     when = next_slot(lang) if send else None
     if when:
