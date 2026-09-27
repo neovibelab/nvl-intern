@@ -73,6 +73,22 @@ def strip_grid(body: str, lang: str) -> str:
     return out
 
 
+def drop_title(body: str) -> str:
+    """본문의 첫 `# 제목` 한 줄을 뺀다. 메일에서만 쓴다(2026-09-27 대표 지적).
+
+    버튼다운 템플릿이 머리에 제목(subject)을 이미 크게 찍는다. 본문 제목까지 두면 같은 제목을
+    두 번 읽는다. 사이트는 머리가 따로 없어 본문 제목이 유일한 제목이므로 발행본은 건드리지 않는다.
+    """
+    lines = body.split("\n")
+    for i, ln in enumerate(lines):
+        if ln.startswith("# "):
+            j = i + 1
+            while j < len(lines) and not lines[j].strip():
+                j += 1
+            return "\n".join(lines[:i] + lines[j:])
+    return body
+
+
 def send_piece(lang: str, day: int, title: str, body_md: str, slug: str, send: bool = False) -> dict:
     """구독자는 언어만 고른다. 매일 한 편과 일요일 회고가 같은 리스트로 간다(2026-09-05 대표: 주기 구분 폐지)."""
     # `archival_mode` - 버튼다운 아카이브에 쌓을지(2026-09-16). 골격 커밋부터 `disabled`였고
@@ -108,7 +124,9 @@ def send_piece(lang: str, day: int, title: str, body_md: str, slug: str, send: b
         filters = {"predicate": "and", "groups": [], "filters": [
             {"field": "subscriber.metadata.lang", "operator": "equals", "value": "en"},
         ]}
-    payload = {"subject": subject, "body": strip_grid(body_md, lang) + footer, "status": "about_to_send" if send else "draft",
+    # 꼬리 문구는 본문 끝의 AI 표시 하나만 둔다. 버튼다운 계정 푸터는 2026-09-27에 비웠다 -
+    # 한국어 한 벌이라 영문 메일에도 한국어로 붙었고, 한국어 메일에서는 본문 꼬리와 같은 말을 두 번 했다.
+    payload = {"subject": subject, "body": drop_title(strip_grid(body_md, lang)) + footer, "status": "about_to_send" if send else "draft",
                "archival_mode": "enabled" if lang == "ko" else "disabled", "filters": filters}
     when = next_slot(lang) if send else None
     if when:
