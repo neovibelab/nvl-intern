@@ -53,6 +53,12 @@
       "label_en": "Independent labels acquiring music publishers",
       "created": "2026-09-27",
       "synth": []
+    },
+    "the-shift-in-entertainment-legal-demand": {
+      "label_ko": "엔터 법률 수요의 이동",
+      "label_en": "The Shift in Entertainment Legal Demand",
+      "created": "2026-09-28",
+      "synth": []
     }
   },
   "pieces": {
@@ -72,6 +78,7 @@
     "2026-09-20-sanrio-is-putting-10-billion-yen-into-development": "non-game-ip-into-game-publishing",
     "2026-09-21-book-buyers-rose-124-7-percent-but-pass-points-acc": "youth-culture-pass-data",
     "2026-09-23-every-opening-act-on-ed-sheeran-s-tour-walked-away": "artists-leaving-tours-over-politics",
-    "2026-09-27-partisan-bought-firebird-s-stake-in-otm-and-folded": "independent-labels-acquiring-music-publi"
+    "2026-09-27-partisan-bought-firebird-s-stake-in-otm-and-folded": "independent-labels-acquiring-music-publi",
+    "2026-09-28-the-korea-fair-trade-commission-built-it-not-any-t": "the-shift-in-entertainment-legal-demand"
   }
 }

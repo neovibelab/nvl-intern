@@ -972,5 +972,62 @@
       "calls": 26,
       "search_uses": 9
     }
+  },
+  {
+    "date": "2026-09-28",
+    "day": 24,
+    "slug": "2026-09-28-the-korea-fair-trade-commission-built-it-not-any-t",
+    "title_ko": "공정위가 추천·보증 주체에 '가상인물'을 더했다",
+    "title_en": "The Korea Fair Trade Commission Built It, Not Any Talent Agency",
+    "factor": "정책",
+    "from_stage": "생산",
+    "to_stage": "소비",
+    "tense": "vibe",
+    "region": "한국",
+    "radar_tense": "soon",
+    "agrees": true,
+    "claims_total": 6,
+    "claims_verified": 5,
+    "review_rounds": 1,
+    "unresolved": false,
+    "bet": true,
+    "wiki_used": 3,
+    "lexicon_used": 1,
+    "form": {
+      "title_noun": true,
+      "title_len": 26,
+      "lead_concrete": true,
+      "ai_tell": 1,
+      "contrast": 1,
+      "hedge_10k": 0.0,
+      "sent_med": 47,
+      "long80": 8.3,
+      "title_check": {
+        "clarity": 2,
+        "pull": 1,
+        "kept_promise": true,
+        "why": "주체와 행위가 제목에 서 있고 본문이 그 개정을 정면으로 다루나, 긴장은 '가상인물'이라는 낯선 항목의 의외성에 기대는 정도라 약하다."
+      },
+      "title_kept_first": true,
+      "title_cands": 2
+    },
+    "style": {
+      "문장 리듬": 0.476,
+      "접속부사": 21.9,
+      "헤지": 10.9,
+      "수식어": 0.0,
+      "쉼표": 76.6
+    },
+    "selected_by": "intern",
+    "candidates": 5,
+    "issue": "the-shift-in-entertainment-legal-demand",
+    "synth": false,
+    "cast": 3,
+    "tokens": {
+      "input": 238879,
+      "output": 29001,
+      "calls": 32,
+      "search_uses": 14
+    }
   }
 ]
