@@ -236,6 +236,7 @@ nav a.l{padding:0 7px;min-width:40px;text-align:center}
 .fb button{min-height:44px}
 .more a,.meta,.meta span,.meta strong{font-size:12.5px}
 .body p.label{font-size:12px}
+.body blockquote strong{font-size:12px}
 nav .lab{padding-top:12px;padding-bottom:12px}
 }
 nav .short{display:none}
