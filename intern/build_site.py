@@ -178,6 +178,15 @@ table.mini td.z{color:#2B2B2B}
 .rg{display:inline-block;font-family:'DM Mono','Noto Sans KR',monospace;font-size:11px;padding:4px 9px;margin-right:7px;border:1px solid var(--edge);color:var(--dim);vertical-align:middle}
 .rg.ko{background:var(--lime);border-color:var(--lime);color:var(--black);font-weight:700}
 .wl-lead{font-size:15px;color:var(--white);line-height:1.8;border-left:2px solid var(--lime);padding-left:15px;margin:18px 0 30px}
+.body p.label{font-size:11px;line-height:1.6;margin:0 0 8px}
+.wl-steps{list-style:none;margin:0 0 38px;padding:0;border:1px solid var(--edge);border-left:2px solid var(--lime);background:var(--card)}
+.wl-steps li{display:flex;gap:14px;padding:16px 18px;border-bottom:1px solid var(--edge)}
+.wl-steps li:last-child{border-bottom:none}
+.wl-steps b{flex:none;width:26px;height:26px;border-radius:50%;background:var(--lime);color:var(--black);font-family:'DM Mono',monospace;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.wl-steps div{font-size:14px;line-height:1.75;color:var(--dim)}
+.wl-steps strong{display:block;color:var(--white);font-size:15.5px;margin-bottom:3px}
+.wl-mail{display:block;background:var(--black);border:1px solid var(--edge);padding:10px 12px;margin:8px 0;font-family:'DM Mono','Noto Sans KR',monospace;font-size:12.5px;color:var(--ink);line-height:1.8;word-break:break-word}
+.wl-mail em{font-style:normal;color:var(--dim);display:inline-block;min-width:62px}
 .wl-links{display:flex;gap:9px;flex-wrap:wrap;margin:28px 0 0}
 .wl-links a{border:1px solid var(--edge);padding:9px 15px;font-size:12.5px;color:var(--ink);text-decoration:none;font-family:'DM Mono','Noto Sans KR',monospace}
 .wl-links a:hover{border-color:var(--lime);color:var(--lime)}
@@ -190,7 +199,8 @@ table.mini td.z{color:#2B2B2B}
 .sub input[type=email]:focus{outline:none;border-color:var(--lime)}
 .sub button{font-family:'DM Mono','Noto Sans KR',monospace;font-size:12.5px;padding:10px 20px;background:var(--lime);color:var(--black);border:1px solid var(--lime);cursor:pointer;font-weight:700}
 .sub button:hover{opacity:.85}
-.sub .fine{font-size:11px;color:var(--dim);margin:10px 0 0;line-height:1.65}
+.sub .fine{font-size:12px;color:var(--dim);margin:11px 0 0;line-height:1.7}
+.sub .fine strong{color:var(--ink);font-weight:700}
 .coord-say{font-size:13.5px;color:var(--dim);margin:10px 0 0;line-height:1.7}
 .gmap{display:grid;grid-template-columns:auto repeat(3,1fr);gap:4px;max-width:430px;margin:28px auto 10px}
 .gmap .mh{font-family:'DM Mono',monospace;font-size:10px;color:var(--dim);text-align:center;padding-bottom:4px;letter-spacing:.06em}
@@ -249,7 +259,7 @@ T = {
                growth_title="성장 지표", cols=["날", "날짜", "제목", "좌표", "시제", "레이더와", "검증", "검사", "예측", "형식"],
                grid_title="격자 21칸 · 인턴이 쓴 자리", empty_cell="", bets="예측 기록", bet_cols=["날짜", "명제", "기한", "확인", "상태"],
                sub_h="매일 받아 보기", sub_hint="월요일부터 금요일까지 한 편, 토요일엔 그 주 회고. 인턴이 다 쓰는 대로 보냅니다(보통 오전 11시 안팎).",
-               sub_ph="이메일", sub_go="구독", sub_fine="확인 메일이 한 통 갑니다. 광고는 없고, 언제든 그만둘 수 있습니다."),
+               sub_ph="이메일", sub_go="구독", sub_fine="<strong>구독을 누르면 확인 메일(영문)이 갑니다. 그 안의 링크를 눌러야 구독이 끝납니다.</strong> 광고는 없고, 언제든 그만둘 수 있습니다."),
     "en": dict(today="Today", growth="Growth", grid="Grid", who="Glossary", about="What this is", other="KO", other_href="/",
                brand="AI Entertainment Vibe Research", lab_name="Neo Vibe Lab", weekly="Weekly review", about_short="About", home="Home",
                hero="An AI intern reads the entertainment industry<br>and writes what does not have a name yet.",
@@ -262,7 +272,7 @@ T = {
                growth_title="Growth metrics", cols=["Day", "Date", "Title", "Grid", "Tense", "vs radar", "Verified", "Checked", "Prediction", "Form"],
                grid_title="21 cells · where the intern has written", empty_cell="", bets="Predictions", bet_cols=["Date", "Claim", "By", "Check", "Status"],
                sub_h="Get it every morning", sub_hint="One piece Monday to Friday, a review of the week on Saturday. Sent at 10pm KST, 9am in New York.",
-               sub_ph="Email", sub_go="Subscribe", sub_fine="One confirmation email. No ads, and you can stop any time."),
+               sub_ph="Email", sub_go="Subscribe", sub_fine="<strong>You will get one confirmation email. Your subscription starts when you click the link in it.</strong> No ads, and you can stop any time."),
 }
 
 
@@ -528,11 +538,25 @@ def subscribe_box(lang: str) -> str:
             f'</form><p class="fine">{t["sub_fine"]}</p></div>')
 
 
+# 구독 안내 페이지 (2026-09-28 개편 - 대표 지시 「확인 메일을 더 잘 보이게, 안내 페이지 UX 우선」).
+# 구독은 확인 링크를 눌러야 끝나는데 그 말이 첫 문단 속에 묻혀 있었다. 확인 메일은 **영문**이다 -
+# 버튼다운의 확인 메일 수정은 유료(Standard)라 API가 거절했다(custom_transactional_emails).
+# 그래서 메일이 어떻게 생겼는지(보낸 사람·제목·버튼 문구)를 그대로 보여 줘서 받은편지함에서 알아보게 한다.
 WELCOME = {
-    "ko": ("구독이 접수됐습니다", """<h1>구독이 접수됐습니다</h1>
-<p class="wl-lead">확인 메일이 한 통 갑니다. <strong>영문으로 갑니다</strong> - 지금 쓰는 발송 도구가
-한국어 시스템 메일을 지원하지 않습니다. 그 안의 링크를 한 번 누르면 끝나고, 이미 누르셨다면
-더 하실 일이 없습니다. 다음 평일, 인턴이 그날 글을 다 쓰면 첫 편이 갑니다.</p>
+    "ko": ("구독 확인이 한 번 남았습니다", """<p class="label">구독 신청을 받았습니다</p>
+<h1>확인 메일의 링크를 한 번 눌러 주세요</h1>
+<p class="wl-lead">링크를 누르기 전에는 구독이 시작되지 않습니다. 확인 메일은 <strong>영문으로</strong> 갑니다.
+지금 쓰는 발송 도구가 한국어 시스템 메일을 지원하지 않아서, 이 한 통만 영어입니다.</p>
+
+<ol class="wl-steps">
+<li><b>1</b><div><strong>메일함에서 이 메일을 찾습니다</strong>
+<span class="wl-mail"><em>보낸 사람</em> AI 인턴 01<br><em>제목</em> Confirm your subscription to AI 엔터 바이브 리서치</span>
+몇 분 안에 안 보이면 스팸함이나 프로모션함을 봐 주세요.</div></li>
+<li><b>2</b><div><strong>「Click here to confirm your subscription」을 누릅니다</strong>
+메일 본문의 링크입니다. 한 번이면 됩니다.</div></li>
+<li><b>3</b><div><strong>끝입니다</strong>
+다음 평일부터 인턴이 그날 글을 다 쓰는 대로 받습니다. 보통 오전 11시 안팎입니다.</div></li>
+</ol>
 
 <h2>무엇이 오나</h2>
 <p>엔터문화연구소의 AI 인턴 1호가 매일 글로벌 엔터 산업 뉴스를 읽고 한 편을 씁니다.
@@ -540,22 +564,32 @@ WELCOME = {
 월요일부터 금요일까지 하루 한 편, 토요일에는 그 주의 자기 기록을 읽고 회고를 씁니다. 일요일은 쉽니다.</p>
 
 <h2>한 편의 생김새</h2>
-<p>맨 위에 좌표가 한 줄 붙습니다. 「[자본] 유통 → 소비 · 바이브」처럼, 7가지 요인과 3단계로 나눈
-21칸 격자에서 그날 찍은 한 칸입니다. 소재가 한국 이야기인지 아닌지도 그 줄에 적힙니다.
-본문 아래에는 기한이 붙은 예측과, 다른 업종이 가져갈 것 한 문장이 옵니다.
-예측은 기한이 지나면 인턴이 스스로 채점합니다.</p>
+<p>맨 위에 좌표가 한 줄 붙습니다. 「한국 · 생산에서 소비로 가는 정책 · 아직 주변에서 도는 중」처럼,
+어느 지역의 이야기인지와 7가지 요인 × 3단계 격자에서 어느 칸인지를 사람 말로 적습니다.
+그 아래 「무슨 일이 있었나」에 사건 요약과 낯선 회사·사람·용어 풀이가 붙고, 「왜 이걸 골랐나」에 인턴이
+후보 다섯 가운데 이 사건을 고른 이유가 옵니다. 본문 뒤에는 다른 업종이 가져갈 것 한 문장이 있습니다.</p>
 
 <h2>틀린 날도 그대로 옵니다</h2>
 <p>인턴은 발행 전에 자기 글을 별도 검수자에게 넘깁니다. 두 번 안에 통과하지 못하면 고치지 않고
 지적을 실은 채 내보냅니다. 「미해결」 표시가 그것입니다. 사실 검증에서 몇 개가 확인되고 몇 개가
 반박됐는지도 매 편에 적힙니다. <strong>잘 쓴 편만 골라 보내면 이 실험은 아무것도 알려주지 못합니다.</strong></p>
 
-<p class="wl-links"><a href="/grid">격자 21칸</a><a href="/growth">성장 기록</a><a href="/">오늘의 글</a></p>
+<p class="wl-links"><a href="/">오늘의 글</a><a href="/grid">격자 21칸</a><a href="/growth">성장 기록</a></p>
 <p class="wl-note">답장은 엔터문화연구소 차우진에게 갑니다. 인턴은 답장을 읽지 않습니다.<br>
 이 페이지는 사람이 썼습니다. 매일 오는 글은 인턴이 씁니다.</p>"""),
-    "en": ("You are on the list", """<h1>You are on the list</h1>
-<p class="wl-lead">One confirmation email is on its way. Click the link inside once and you are done;
-if you already did, there is nothing left to do. The first piece arrives on the next weekday.</p>
+    "en": ("One click left to confirm", """<p class="label">We got your sign-up</p>
+<h1>Click the link in the confirmation email</h1>
+<p class="wl-lead">Your subscription does not start until you click it. It takes one click, once.</p>
+
+<ol class="wl-steps">
+<li><b>1</b><div><strong>Find this email in your inbox</strong>
+<span class="wl-mail"><em>From</em> AI 인턴 01<br><em>Subject</em> Confirm your subscription to AI 엔터 바이브 리서치</span>
+The sender and newsletter names are in Korean. If it has not arrived in a few minutes, check spam or promotions.</div></li>
+<li><b>2</b><div><strong>Click “Click here to confirm your subscription”</strong>
+It is the link in the body of the email.</div></li>
+<li><b>3</b><div><strong>That is it</strong>
+Pieces start on the next weekday, at 10pm KST (9am in New York).</div></li>
+</ol>
 
 <h2>What arrives</h2>
 <p>AI Intern 01 at Neo Vibe Lab reads the global entertainment industry every day and writes one piece.
@@ -563,18 +597,19 @@ No human picks the subject or the angle, and no human edits the result. One piec
 and on Saturday the intern reads its own week and writes a review. Sunday is off.</p>
 
 <h2>What a piece looks like</h2>
-<p>A coordinate line sits at the top - something like «[Capital] distribution → consumption · vibe»,
-one cell out of a grid of seven factors by three stages. It also says which region the story is from.
-Below the body you get a dated bet and one principle another industry could take. The intern scores
-its own bets when they come due.</p>
+<p>A coordinate line sits at the top, something like “Korea · Policy moving from production to consumption ·
+still moving at the edges”: which region the story is from, and which cell it lands in on a grid of seven
+factors by three stages. Under “What happened” you get a short summary and a few lines on unfamiliar
+companies, people and terms; under “Why this one”, why the intern picked this story out of five candidates.
+The piece ends with one principle another industry could take.</p>
 
 <h2>The days it gets things wrong still arrive</h2>
 <p>Every piece goes through a separate reviewer before publication. If it does not pass in two rounds,
-it ships with the criticism attached rather than quietly fixed - that is what «unresolved» means.
+it ships with the criticism attached rather than quietly fixed; that is what “unresolved” means.
 Each piece also records how many of its claims were verified and how many were contradicted.
 <strong>Sending only the good days would teach us nothing.</strong></p>
 
-<p class="wl-links"><a href="/en/grid">The 21 cells</a><a href="/en/growth">Growth log</a><a href="/en/">Today</a></p>
+<p class="wl-links"><a href="/en/">Today</a><a href="/en/grid">The 21 cells</a><a href="/en/growth">Growth log</a></p>
 <p class="wl-note">Replies go to Woojin Cha at Neo Vibe Lab. The intern does not read them.<br>
 This page was written by a person. The daily pieces are not.</p>"""),
 }

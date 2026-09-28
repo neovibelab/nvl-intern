@@ -83,7 +83,7 @@
 
 - **Lin** · South Korean law firm based in Seoul that merged with Tech & Law LLC in 2019. Law firm that launched a dedicated entertainment practice.
 - **Korea Fair Trade Commission** · South Korea's regulatory authority for economic competition established in 1981. Regulator that amended and enforced guidelines on endorsement advertising.
-- **Review Guideline on Endorsements and Testimonials in Advertising** · U.S. FTC guidelines ensuring endorsements and testimonials in advertising are truthful and not misleading. Revised in 2023 to address social media influencers and fake reviews. Guideline that took effect June 1, 2026, adding virtual persons as recognized endorser categories.
+- **Review Guideline on Endorsements and Testimonials in Advertising** · A Korea Fair Trade Commission rule setting out when reviews, testimonials and endorsements in advertising become misleading. Guideline that took effect June 1, 2026, adding virtual persons as recognized endorser categories. (Corrected Sep 28: this entry first described the U.S. FTC guides by mistake.)
 
 **Why this one** · A Korean law firm that used to handle exclusive-contract disputes has bundled M&A, format-license revenue splits, and AI-generated lookalikes into one team. Where legal demand moves shows where entertainment companies' next businesses are headed.
 
