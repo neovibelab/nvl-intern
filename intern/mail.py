@@ -111,15 +111,6 @@ def send_piece(lang: str, day: int, title: str, body_md: str, slug: str, send: b
     # 앞 대여섯 글자를 우리 쪽 회차 번호가 먹는다. 수신함에서 제목이 잘리면 잘리는 쪽은 늘 뒷부분이다.
     # D+N은 읽기로 마음먹은 뒤에 의미가 생기는 값이라 본문 머리와 사이트에만 둔다.
     subject = title
-    url = f"{config.SITE_URL}/{'' if lang == 'ko' else 'en/'}{slug}"
-    if lang == "ko":
-        fb = ("**이 글은 어땠습니까** · [맞는 말이다](%s?fb=agree) · [뻔하다](%s?fb=obvious) · [근거가 약하다](%s?fb=weak) · [관점이 어긋난다](%s?fb=off)"
-              "\n\n누른 것은 매주 묶여 인턴의 규칙 후보가 됩니다. 지적을 문장으로 남기려면 웹 페이지 아래 칸에, 또는 이 메일에 답장하면 됩니다." % (url, url, url, url))
-        footer = "\n\n---\n\n" + fb + "\n\n[웹에서 읽기](%s)" % url
-    else:
-        fb = ("**How was this piece** · [Fair point](%s?fb=agree) · [Obvious](%s?fb=obvious) · [Weak evidence](%s?fb=weak) · [Wrong lens](%s?fb=off)"
-              "\n\nVotes are batched weekly into the intern's rule candidates. To leave a note, use the box on the web page or reply to this email." % (url, url, url, url))
-        footer = "\n\n---\n\n" + fb + "\n\n[Read on the web](%s)" % url
     # 언어가 비어 있으면 **한국어로 간다**(2026-09-16). 버튼다운 포털·아카이브의 구독 폼에는
     # 언어 칸이 없어서 거기로 들어온 사람은 `lang`이 빈다. 정확히 일치만 보면 그 사람은
     # 구독은 됐는데 메일을 한 통도 못 받는다(대표 계정에서 실제로 났던 사고다).
@@ -133,12 +124,7 @@ def send_piece(lang: str, day: int, title: str, body_md: str, slug: str, send: b
         filters = {"predicate": "and", "groups": [], "filters": [
             {"field": "subscriber.metadata.lang", "operator": "equals", "value": "en"},
         ]}
-    # 꼬리 문구는 본문 끝의 AI 표시 하나만 둔다. 버튼다운 계정 푸터는 2026-09-27에 비웠다 -
-    # 한국어 한 벌이라 영문 메일에도 한국어로 붙었고, 한국어 메일에서는 본문 꼬리와 같은 말을 두 번 했다.
-    body = strip_grid(body_md, lang)
-    if TEMPLATE == "modern":      # 머리에 제목을 찍는 템플릿일 때만 본문 제목을 뺀다
-        body = drop_title(body)
-    payload = {"subject": subject, "body": body + footer, "status": "about_to_send" if send else "draft",
+    payload = {"subject": subject, "body": compose_body(lang, body_md, slug), "status": "about_to_send" if send else "draft",
                "archival_mode": "enabled" if lang == "ko" else "disabled", "filters": filters}
     when = next_slot(lang) if send else None
     if when:
@@ -149,3 +135,37 @@ def send_piece(lang: str, day: int, title: str, body_md: str, slug: str, send: b
     how = ("초안" if not send else (f"{when:%m-%d %H:%M} 예약" if when else "즉시 발송"))
     print(f"  [mail] {lang} {how} → HTTP {st}" + ("" if ok else f" {str(resp)[:120]}"))
     return {"lang": lang, "status": st, "id": resp.get("id") if isinstance(resp, dict) else None, "sent": send and ok}
+
+
+def compose_body(lang: str, body_md: str, slug: str) -> str:
+    """메일 본문 = 발행본(격자 표 → 한 줄, 제목 빼기) + 독자 신호 꼬리.
+
+    발송과 **예약된 메일 고치기**(`python -m intern.mail --update <id> <lang> <slug>`)가 같이 쓴다 -
+    따로 만들면 고친 본문이 발송본과 다른 모양이 된다(2026-09-28 영문 예약분 바로잡기에서 분리).
+    """
+    url = f"{config.SITE_URL}/{'' if lang == 'ko' else 'en/'}{slug}"
+    if lang == "ko":
+        fb = ("**이 글은 어땠습니까** · [맞는 말이다](%s?fb=agree) · [뻔하다](%s?fb=obvious) · [근거가 약하다](%s?fb=weak) · [관점이 어긋난다](%s?fb=off)"
+              "\n\n누른 것은 매주 묶여 인턴의 규칙 후보가 됩니다. 지적을 문장으로 남기려면 웹 페이지 아래 칸에, 또는 이 메일에 답장하면 됩니다." % (url, url, url, url))
+        footer = "\n\n---\n\n" + fb + "\n\n[웹에서 읽기](%s)" % url
+    else:
+        fb = ("**How was this piece** · [Fair point](%s?fb=agree) · [Obvious](%s?fb=obvious) · [Weak evidence](%s?fb=weak) · [Wrong lens](%s?fb=off)"
+              "\n\nVotes are batched weekly into the intern's rule candidates. To leave a note, use the box on the web page or reply to this email." % (url, url, url, url))
+        footer = "\n\n---\n\n" + fb + "\n\n[Read on the web](%s)" % url
+    # 꼬리 문구는 본문 끝의 AI 표시 하나만 둔다. 버튼다운 계정 푸터는 2026-09-27에 비웠다 -
+    # 한국어 한 벌이라 영문 메일에도 한국어로 붙었고, 한국어 메일에서는 본문 꼬리와 같은 말을 두 번 했다.
+    body = strip_grid(body_md, lang)
+    if TEMPLATE == "modern":      # 머리에 제목을 찍는 템플릿일 때만 본문 제목을 뺀다
+        body = drop_title(body)
+    return body + footer
+
+
+def update_scheduled(email_id: str, lang: str, slug: str) -> tuple[int, str]:
+    """아직 안 나간(예약) 메일의 본문을 지금 발행본으로 바꾼다. 발행본을 바로잡은 뒤에 쓴다."""
+    from . import publish  # noqa: PLC0415
+    st, cur = _call("GET", f"/emails/{email_id}")
+    if st != 200 or not isinstance(cur, dict) or cur.get("status") != "scheduled":
+        return st, f"예약 상태가 아니다: {cur.get('status') if isinstance(cur, dict) else cur}"
+    _fm, body = publish.parse_piece(config.CONTENT_DIR / lang / f"{slug}.md")
+    st, r = _call("PATCH", f"/emails/{email_id}", {"body": compose_body(lang, body.strip(), slug)})
+    return st, (r.get("status") if isinstance(r, dict) else str(r)[:200])
