@@ -33,16 +33,17 @@ def main() -> int:
     if args.rebuild:
         return rebuild(args)
     # 리듬은 **도착 기준**이다 - 월~금 한 편 · 토요일 회고 · 일요일 없음.
-    # 발송이 다음 날 08:00 예약으로 바뀌었으므로(2026-09-14) 작성 요일은 한 칸 앞이다.
-    #   작성  일 월 화 수 목 | 금(회고) | 토(휴재)
-    #   도착  월 화 수 목 금 | 토        | -
-    # 회고를 토요일 도착으로 둔 이유는 일요일 열람률이 낮아서다(2026-09-06 대표 판단, 그대로 유효).
+    # 2026-09-28부터 다 쓴 직후 보내므로(mail.SEND_HOUR) 작성 요일 = 도착 요일이다.
+    #   작성·도착  월 화 수 목 금 | 토(회고) | 일(휴재)
+    # (09-14~09-27에는 다음 날 08:00 예약이라 작성이 한 칸 앞 - 일~목 편 · 금 회고 · 토 휴재였다)
+    # 회고를 토요일에 두는 이유는 일요일 열람률이 낮아서다(2026-09-06 대표 판단, 그대로 유효).
+    # 토요일에 쓰므로 회고가 금요일 편까지 읽는다.
     y, m, d = map(int, args.date.split("-"))
     wd = __import__("datetime").date(y, m, d).weekday()      # 0=월 … 4=금 5=토 6=일
-    if args.weekly or (wd == 4 and not args.daily):
+    if args.weekly or (wd == 5 and not args.daily):
         return run_weekly(args)
-    if wd == 5 and not args.daily:
-        print("  [rhythm] 토요일은 쉰다(일요일 도착분이 없다). 기록만 남긴다.")
+    if wd == 6 and not args.daily:
+        print("  [rhythm] 일요일은 쉰다. 기록만 남긴다.")
         publish._dump(config.LOG_DIR / f"{args.date}.json", {"date": args.date, "rest": True})
         return 0
     config.ensure_dirs()

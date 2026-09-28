@@ -29,9 +29,11 @@ def _call(method: str, path: str, body: dict | None = None, live: bool = False) 
 
 
 # 독자 도착 시각(KST). **언어마다 다르다**(2026-09-16 대표 제안) - 같은 시각은 한쪽을
-# 반드시 죽은 시간에 꽂는다. 08:00 KST는 영어권에서 전날 밤 11시(ET)다.
-# 22:00 KST = 09:00 ET · 14:00 런던 · 15:00 베를린.
-SEND_HOUR = {"ko": 8, "en": 22}
+# 반드시 죽은 시간에 꽂는다. 22:00 KST = 09:00 ET · 14:00 런던 · 15:00 베를린.
+# **한국어는 다 쓴 직후 바로 보낸다**(2026-09-28 대표 지시). 그전엔 다음 날 08:00 예약이었는데
+# GitHub 예약 실행이 매일 두 시간쯤 밀려(실제 시작 10:25~10:55 KST) 쓴 글이 하루를 묵었다.
+# 영어는 그날 22:00 - 영어권 아침에 맞춘 16일 판단은 그대로 둔다.
+SEND_HOUR = {"en": 22}
 
 # 버튼다운 계정의 이메일 템플릿. **계정 설정과 같은 값이어야 한다** - 여기서 바꾸지 않는다.
 # modern을 쓴다. 2026-09-27에 classic을 시험하고 같은 날 되돌렸다 - classic은 머리의 영어 안내 문구와
@@ -42,17 +44,17 @@ TEMPLATE = "modern"
 
 
 def next_slot(lang: str = "ko", now: dt.datetime | None = None) -> dt.datetime | None:
-    """다음 발송 시각. **이미 지났으면 None**을 돌려 즉시 발송으로 떨어뜨린다.
+    """발송 예약 시각. **None이면 즉시 발송**이다.
 
-    회전은 오전 10시 무렵에 끝나므로 보통 **다음 날**이 잡힌다. 속보를 쫓지 않기로 했으므로
-    (2026-09-14) 하루 묵는 것이 비용이 아니다.
-
-    **기준일은 한국어 슬롯이 잡히는 날이고 영어는 그날 밤이다.** 두 언어가 같은 날에 묶이고
-    영어가 한국어보다 먼저 나가지 않는다.
+    한국어는 늘 None(즉시). 영어는 **같은 날** 22:00이고, 그 시각이 이미 지났으면 즉시 보낸다.
+    두 언어가 같은 날에 묶이고 영어가 한국어보다 먼저 나가지 않는다.
+    (2026-09-14~09-27에는 한국어도 다음 날 08:00 예약이었다 - 위 SEND_HOUR 주석)
     """
+    hour = SEND_HOUR.get(lang)
+    if hour is None:
+        return None
     now = now or dt.datetime.now(config.KST)
-    day = now.date() if now.hour < SEND_HOUR["ko"] else (now + dt.timedelta(days=1)).date()
-    slot = dt.datetime.combine(day, dt.time(SEND_HOUR.get(lang, 8)), tzinfo=config.KST)
+    slot = dt.datetime.combine(now.date(), dt.time(hour), tzinfo=config.KST)
     return slot if slot > now + dt.timedelta(minutes=5) else None
 
 

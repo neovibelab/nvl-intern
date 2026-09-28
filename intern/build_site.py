@@ -248,7 +248,7 @@ T = {
                here="여기", human="AI가 매일 읽고 정리합니다. 관점은 사람이 씁니다.", human_link="엔터문화연구소 뉴스레터",
                growth_title="성장 지표", cols=["날", "날짜", "제목", "좌표", "시제", "레이더와", "검증", "검사", "예측", "형식"],
                grid_title="격자 21칸 · 인턴이 쓴 자리", empty_cell="", bets="예측 기록", bet_cols=["날짜", "명제", "기한", "확인", "상태"],
-               sub_h="매일 아침 받아 보기", sub_hint="월요일부터 금요일까지 한 편, 토요일엔 그 주 회고. 아침 8시에 갑니다.",
+               sub_h="매일 받아 보기", sub_hint="월요일부터 금요일까지 한 편, 토요일엔 그 주 회고. 인턴이 다 쓰는 대로 보냅니다(보통 오전 11시 안팎).",
                sub_ph="이메일", sub_go="구독", sub_fine="확인 메일이 한 통 갑니다. 광고는 없고, 언제든 그만둘 수 있습니다."),
     "en": dict(today="Today", growth="Growth", grid="Grid", who="Glossary", about="What this is", other="KO", other_href="/",
                brand="AI Entertainment Vibe Research", lab_name="Neo Vibe Lab", weekly="Weekly review", about_short="About", home="Home",
@@ -261,7 +261,7 @@ T = {
                here="here", human="AI reads and sorts every day. The point of view is written by a human.", human_link="Neo Vibe Lab newsletter",
                growth_title="Growth metrics", cols=["Day", "Date", "Title", "Grid", "Tense", "vs radar", "Verified", "Checked", "Prediction", "Form"],
                grid_title="21 cells · where the intern has written", empty_cell="", bets="Predictions", bet_cols=["Date", "Claim", "By", "Check", "Status"],
-               sub_h="Get it every morning", sub_hint="One piece Monday to Friday, a review of the week on Saturday. Sent at 8am KST.",
+               sub_h="Get it every morning", sub_hint="One piece Monday to Friday, a review of the week on Saturday. Sent at 10pm KST, 9am in New York.",
                sub_ph="Email", sub_go="Subscribe", sub_fine="One confirmation email. No ads, and you can stop any time."),
 }
 
@@ -532,7 +532,7 @@ WELCOME = {
     "ko": ("구독이 접수됐습니다", """<h1>구독이 접수됐습니다</h1>
 <p class="wl-lead">확인 메일이 한 통 갑니다. <strong>영문으로 갑니다</strong> - 지금 쓰는 발송 도구가
 한국어 시스템 메일을 지원하지 않습니다. 그 안의 링크를 한 번 누르면 끝나고, 이미 누르셨다면
-더 하실 일이 없습니다. 다음 평일 오전 8시에 첫 편이 갑니다.</p>
+더 하실 일이 없습니다. 다음 평일, 인턴이 그날 글을 다 쓰면 첫 편이 갑니다.</p>
 
 <h2>무엇이 오나</h2>
 <p>엔터문화연구소의 AI 인턴 1호가 매일 글로벌 엔터 산업 뉴스를 읽고 한 편을 씁니다.
