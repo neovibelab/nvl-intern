@@ -129,6 +129,19 @@ def main() -> int:
     picked = [s for s in stats if s.get("selected_by") == "intern"]
     print(f"  선정 후속     인턴이 고른 편 {len(picked)} · 30일 판정 {sum(1 for x in fu if x.get('verdict'))}건"
           + ("" if fu else "   ← 첫 판정은 고른 날로부터 30일 뒤"))
+    # 구독 퍼널 (2026-09-28 - UX를 학습 동기로). 확인 링크를 안 누른 사람이 곧 안내가 안 닿은 사람이다.
+    # 정본 = NVL ai-coworker/UX-미스로그.md. API 키가 없으면(CI 밖 다른 환경) 조용히 넘어간다.
+    try:
+        from intern import mail  # noqa: PLC0415
+        config.load_env()
+        st, r = mail._call("GET", "/subscribers?page_size=100")
+        if st == 200 and isinstance(r, dict):
+            import collections  # noqa: PLC0415
+            c = collections.Counter(x.get("type") for x in r.get("results", []))
+            print(f"  구독 퍼널     확인 {c.get('regular', 0)} · 확인 대기 {c.get('unactivated', 0)} · 반송 {c.get('undeliverable', 0)}"
+                  + ("   ← 확인 링크를 안 누른 사람이 있다 - 안내 페이지·폼 문구를 본다" if c.get("unactivated") else ""))
+    except Exception:  # noqa: BLE001
+        pass
     # 이 글의 사전 (2026-09-27) - 편에 붙은 수와 대장 크기. 대장이 자라면 새로 찾는 수가 줄어야 한다
     from intern import entities  # noqa: PLC0415
     n_all, n_con = entities.rate()
