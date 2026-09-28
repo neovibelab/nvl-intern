@@ -78,10 +78,14 @@ JSON: {{"items":[{{"key":"","kind":"company","name_ko":"...","name_en":"...","ro
 DESCRIBE = """다음 {kind_ko}을(를) 음악산업 실무자가 아닌 독자에게 풀어 준다. 웹에서 확인한 사실만 쓴다.
 
 이름: {name}
-글의 맥락(참고용, 풀이에 옮기지 않는다): {context}
+이 이름이 나온 본문 문장(참고용, 풀이에 옮기지 않는다): {context}
 
 규칙
-- ko: 한국어 합니다체 1~2문장, 90자 안. 무엇인지(업종·국적·규모 중 확인된 것)와 알아볼 단서 하나(대표작·소속 아티스트·설립 연도 중 하나).
+- **먼저 본문 문장 속 대상이 무엇인지 정한다**(어느 나라의 어떤 기관·회사·제도인가). 검색 결과가 **이름만 비슷한 다른 대상**이면
+  (다른 나라의 같은 이름 제도, 동명의 다른 회사 등) 그것을 풀지 않고 status를 unverified로 둔다.
+  2026-09-28 실측 - 한국 공정위의 「추천·보증 심사지침」을 미국 FTC 지침으로 풀어 독자에게 나갔다.
+- ko: 한국어 **합니다체** 1~2문장, 90자 안. 문장은 모두 「~입니다」「~합니다」「~했습니다」로 끝난다(「~했다」「~됨」 금지).
+  무엇인지(업종·국적·규모 중 확인된 것)와 알아볼 단서 하나(대표작·소속 아티스트·설립 연도 중 하나).
   사람이면 직함과 소속, 개념이면 뜻과 어디서 쓰는지. 평가·수식어(「유명한」「대표적인」) 없이.
 - en: the same in plain English, one or two sentences, under 35 words.
 - 확인한 페이지 URL 하나(공식 사이트나 신뢰할 만한 매체)와 그 매체 이름.
@@ -95,15 +99,32 @@ def _known_text(d: dict) -> str:
     return NL.join(rows[-300:]) if rows else "(없음)"
 
 
+def _polite(ko: str) -> bool:
+    """문장이 전부 합니다체로 끝나나. 본문·요약이 합니다체라 풀이만 해라체면 읽다가 걸린다."""
+    sents = [x.strip() for x in re.split(r"(?<=[.。])\s+", ko.strip()) if x.strip()]
+    return bool(sents) and all(re.search(r"니다[.。]?$", x) for x in sents)
+
+
+def context_of(name: str, text: str, n: int = 2) -> str:
+    """본문에서 그 이름이 나온 문장. 요약만 넘기면 요약에 없는 이름은 맥락 없이 검색돼 동명의 다른 대상을 잡는다."""
+    sents = re.split(r"(?<=[.!?。])\s+", text or "")
+    return " ".join([s for s in sents if name in s][:n])[:500]
+
+
 def describe(name: str, kind: str, context: str) -> dict | None:
-    try:
-        r = llm.ask_json(DESCRIBE.format(kind_ko=KIND_KO.get(kind, "항목"), name=name, context=context[:400]),
-                         tools=llm.WEB_SEARCH_TOOL, max_tokens=3000, model=config.MODEL_VERIFY)
-    except Exception as e:  # noqa: BLE001
-        print(f"  [cast] {name} 풀이 호출 실패 {type(e).__name__}")
-        return None
+    r = {}
+    for attempt in (1, 2):      # 합니다체가 아니면 한 번 더 받는다
+        try:
+            r = llm.ask_json(DESCRIBE.format(kind_ko=KIND_KO.get(kind, "항목"), name=name, context=context[:500]),
+                             tools=llm.WEB_SEARCH_TOOL, max_tokens=3000, model=config.MODEL_VERIFY)
+        except Exception as e:  # noqa: BLE001
+            print(f"  [cast] {name} 풀이 호출 실패 {type(e).__name__}")
+            return None
+        if r.get("status") != "verified" or _polite(str(r.get("ko", ""))):
+            break
+        print(f"  [cast] {name} 풀이가 합니다체가 아니다 · {'다시 받는다' if attempt == 1 else '싣지 않는다'}")
     ko, en = str(r.get("ko", "")).strip(), str(r.get("en", "")).strip()
-    if r.get("status") != "verified" or not ko or not en:
+    if r.get("status") != "verified" or not ko or not en or not _polite(ko):
         print(f"  [cast] {name} 확인 안 됨 · 싣지 않는다")
         return None
     return {"ko": ko, "en": en, "url": str(r.get("url", "")).strip(), "source": str(r.get("source", "")).strip()}
@@ -133,7 +154,9 @@ def cast(ko: str, en: str, summary_ko: str, slug: str = "", date: str = "", writ
         seen.add(k)
         e = d["entries"].get(k)
         if not e:
-            desc = describe(name_en or name_ko, kind, summary_ko)
+            # 두 이름을 같이 넘긴다. 영문명만 넘기면 한국 제도가 같은 영문명의 외국 제도로 검색된다(09-28 실측)
+            label = name_ko if not name_en or name_en == name_ko else f"{name_ko} ({name_en})"
+            desc = describe(label, kind, context_of(name_ko, ko) or summary_ko)
             if not desc:
                 continue
             e = {"kind": kind, "name_ko": name_ko, "name_en": name_en or name_ko, "first": date, "pieces": [], **desc}
