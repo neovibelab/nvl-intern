@@ -445,7 +445,7 @@ def page(lang: str, title: str, body: str, here: str = "", latest: str = "",
     def l(key: str, href: str, text: str, short: str = "") -> str:
         label = (f'<span class="full">{text}</span><span class="short">{short}</span>') if short else text
         return f'<a class="l{" on" if here == key else ""}" data-k="{key}" href="{href}">{label}</a>'
-    links = (l("home", root, t["home"]) + l("today", latest or root, t["today"])
+    links = (l("home", root, t["home"]) + l("today", (root + latest) if latest else root, t["today"])
              + l("growth", f"{root}growth", t["growth"]) + l("grid", f"{root}grid", t["grid"]) + (l("who", f"{root}who", t["who"]) if _has_who() else "")
              + l("", ab, t["about"], t["about_short"]) + l("", "#subscribe", t["subscribe"])
              + l("", t["other_href"], t["other"]))
@@ -721,7 +721,7 @@ def who_page(lang: str, pieces: list) -> str:
                 name = f"{name} ({e['name_en']})"
             src = (f'<span class="w-src"><a href="{html.escape(e["url"])}" rel="noopener">{html.escape(e.get("source") or e["url"])}</a></span>'
                    if e.get("url") else "")
-            ins = [f'<a href="{s2}">{html.escape(titles[s2])}</a>' for s2 in e.get("pieces", []) if s2 in titles]
+            ins = [f'<a href="{"/" if lang == "ko" else "/en/"}{s2}">{html.escape(titles[s2])}</a>' for s2 in e.get("pieces", []) if s2 in titles]
             inn = (f'<span class="w-in">{"나온 글" if ko else "In"} · ' + " · ".join(ins) + "</span>") if ins else ""
             out.append(f'<dt id="{html.escape(k)}">{html.escape(name or k)}</dt>'
                        f'<dd>{html.escape(e.get("ko" if ko else "en", ""))}{src}{inn}</dd>')
@@ -833,7 +833,7 @@ def _selection_section(lang: str) -> str:
         why = sel.get("reason_ko" if ko else "reason_en") or ""
         f = fu.get(s["date"]) or {}
         verdict = f.get("verdict_ko" if ko else "verdict_en") or ("대기" if ko else "pending")
-        rows.append(f"<tr><td>{s['date'][5:]}</td><td class='ttl'><a href='{s['slug']}'>"
+        rows.append(f"<tr><td>{s['date'][5:]}</td><td class='ttl'><a href='{"/" if lang == "ko" else "/en/"}{s['slug']}'>"
                     f"{html.escape(s['title_ko'] if ko else s['title_en'])}</a></td>"
                     f"<td class='ttl'>{html.escape(why)}</td><td>{len(sel.get('rejected') or [])}</td>"
                     f"<td>{html.escape(verdict)}</td></tr>")
@@ -867,7 +867,7 @@ def _thread_section(lang: str) -> str:
         for y in syn:
             r = sd.get(y["slug"]) or {}
             mark = {"synth": "이김" if ko else "won", "parts": "짐" if ko else "lost", "tie": "비김" if ko else "tie"}.get(r.get("winner"), "")
-            cell += f"<a href='{y['slug']}'>{y['date'][5:]}</a>{(' · ' + mark) if mark else ''} "
+            cell += f"<a href='{"/" if lang == "ko" else "/en/"}{y['slug']}'>{y['date'][5:]}</a>{(' · ' + mark) if mark else ''} "
         rows.append(f"<tr><td class='ttl'>{html.escape(x.get('label_ko' if ko else 'label_en', iid))}</td>"
                     f"<td>{len(ms)}</td><td>{ms[0]['date'][5:] if ms else ''}</td><td>{ms[-1]['date'][5:] if ms else ''}</td>"
                     f"<td>{len(issues.unsynth(d, iid))}</td><td>{cell or '-'}</td></tr>")
@@ -929,7 +929,7 @@ def build() -> None:
                         + f'{html.escape(factor)} {html.escape(stage)} · <span class="t2">{html.escape(word)}</span>')
                 right = (f'D+{f.get("day")} · {f.get("date", "")[5:]}' if lang == "ko"
                          else f'Day {f.get("day")} · {f.get("date", "")[5:]}')
-            return (f'<a href="{slug}"><span class="c"><span class="t">{html.escape(f.get("title", ""))}</span>'
+            return (f'<a href="{"/" if lang == "ko" else "/en/"}{slug}"><span class="c"><span class="t">{html.escape(f.get("title", ""))}</span>'
                     f'<span class="m">{meta}</span></span><span class="d">{right}</span></a>')
 
         latest_slug = pieces[0][2] if pieces else ""
@@ -948,7 +948,7 @@ def build() -> None:
                     f'<span>{len({(x[0].get("factor"), x[0].get("to_stage")) for x in pieces if x[0].get("factor")})}/21 {t["grid_word"]}</span></p>'
                     f'<p class="hero-cta"><a class="btn" href="#subscribe">{t["sub_cta"]}</a>'
                     f'<a class="btn ghost" href="{ab}">{t["about"]}</a></p></section>')
-            today_card = (f'<a class="today-card" href="{latest_slug}"><span class="k">{t["latest"]}</span>{chip}'
+            today_card = (f'<a class="today-card" href="{"/" if lang == "ko" else "/en/"}{latest_slug}"><span class="k">{t["latest"]}</span>{chip}'
                     f'<span class="t">{html.escape(fm0.get("title", ""))}</span>'
                     + (f'<span class="s">{html.escape(summary)}</span>' if summary else "")
                     + f'<span class="go">{t["read"]} →</span></a>')
@@ -995,7 +995,7 @@ def build() -> None:
                 if f0.get("lead_concrete"):
                     marks.append("리드" if lang == "ko" else "lead")
                 fm_cell += f" <span style='color:var(--dim)'>{' · '.join(marks) or '-'}</span>"
-            return (f"<tr><td>{s['day']}</td><td>{s['date'][5:]}</td><td class='ttl'><a href='{s['slug']}'>{title}</a></td>"
+            return (f"<tr><td>{s['day']}</td><td>{s['date'][5:]}</td><td class='ttl'><a href='{"/" if lang == "ko" else "/en/"}{s['slug']}'>{title}</a></td>"
                     f"<td>{html.escape(coord)}</td><td>{html.escape(tense)}</td><td>{radar}</td>"
                     f"<td>{s['claims_verified']}/{s['claims_total']}</td><td>{html.escape(rv)}</td>"
                     f"<td>{'●' if s['bet'] else ''}</td><td>{fm_cell}</td></tr>")
@@ -1046,7 +1046,7 @@ def build() -> None:
             gh += f"<div class='f'>{f if lang=='ko' else config.FACTORS_EN[f]}</div>"
             for st in config.STAGES:
                 ss = cells.get((f, st), [])
-                gh += "<div>" + ("".join(f"<a href='{x['slug']}'>D+{x['day']}</a> " for x in ss) if ss else "<span class='z'>·</span>") + "</div>"
+                gh += "<div>" + ("".join(f"<a href='{"/" if lang == "ko" else "/en/"}{x['slug']}'>D+{x['day']}</a> " for x in ss) if ss else "<span class='z'>·</span>") + "</div>"
         gh += "</div>"
         filled = len({(s2["factor"], s2["to_stage"]) for s2 in stats})
         note = (f"<p class='meta' style='border:none;margin-top:6px'><span>{filled}/21 " +
