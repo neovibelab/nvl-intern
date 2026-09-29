@@ -1,3 +1,69 @@
 {
-  "entries": {}
+  "entries": {
+    "suno": {
+      "kind": "company",
+      "name_ko": "Suno",
+      "name_en": "Suno",
+      "first": "2026-09-29",
+      "pieces": [
+        "2026-09-29-judge-saylor-refused-61-026-songs-told-the-labels-"
+      ],
+      "ko": "AI 음악 생성 플랫폼으로, 텍스트 프롬프트를 입력하면 보컬과 가사, 악기 연주가 포함된 완전한 곡을 생성합니다. 매사추세츠 캐임브리지의 Suno Inc.가 2023년 12월에 공개했습니다.",
+      "en": "An AI music generation platform that creates complete songs with vocals, lyrics, and instrumentation from text prompts. Developed by Suno, Inc. of Cambridge, Massachusetts and launched publicly in December 2023.",
+      "url": "https://suno.com/",
+      "source": "Suno official website"
+    },
+    "jack-brody": {
+      "kind": "person",
+      "name_ko": "잭 브로디",
+      "name_en": "Jack Brody",
+      "first": "2026-09-29",
+      "pieces": [
+        "2026-09-29-judge-saylor-refused-61-026-songs-told-the-labels-"
+      ],
+      "ko": "Suno의 최고제품책임자입니다. AI 음악 생성 플랫폼의 제품과 디자인을 담당하며, 2024년 11월 Snap에서 전임했습니다.",
+      "en": "Chief Product Officer at Suno, overseeing product and design for the AI music generation platform. Joined from Snap in November 2024.",
+      "url": "https://www.musicbusinessworldwide.com/suno-v6-ai-music-models-launch-in-partnership-with-wmg-bmg-and-believe/",
+      "source": "Music Business Worldwide"
+    },
+    "distrokid": {
+      "kind": "company",
+      "name_ko": "DistroKid",
+      "name_en": "DistroKid",
+      "first": "2026-09-29",
+      "pieces": [
+        "2026-09-29-judge-saylor-refused-61-026-songs-told-the-labels-"
+      ],
+      "ko": "독립 음악가가 Spotify·Apple Music 등 150여 개 플랫폼에 음악을 배포하도록 돕는 미국 회사입니다. 2013년 필립 카플란이 설립했습니다.",
+      "en": "A U.S. digital music distribution company that helps independent artists deliver music to 150+ streaming platforms including Spotify and Apple Music. Founded in 2013 by Philip Kaplan.",
+      "url": "https://distrokid.com/",
+      "source": "DistroKid official website"
+    },
+    "bmg": {
+      "kind": "company",
+      "name_ko": "BMG",
+      "name_en": "BMG",
+      "first": "2026-09-29",
+      "pieces": [
+        "2026-09-29-judge-saylor-refused-61-026-songs-told-the-labels-"
+      ],
+      "ko": "음악 출판과 음반을 겸하는 독일계 미국 회사로 음악 공급, 관리, 배급을 합니다.",
+      "en": "A German-American music company combining music publishing and record label operations that manages music rights.",
+      "url": "https://en.wikipedia.org/wiki/BMG_Rights_Management",
+      "source": "Wikipedia"
+    },
+    "believe": {
+      "kind": "company",
+      "name_ko": "Believe",
+      "name_en": "Believe",
+      "first": "2026-09-29",
+      "pieces": [
+        "2026-09-29-judge-saylor-refused-61-026-songs-told-the-labels-"
+      ],
+      "ko": "프랑스 파리에 본사를 둔 음악 유통 및 아티스트 개발 회사입니다. 2005년 설립되었으며 TuneCore를 소유하고 있습니다.",
+      "en": "Paris-based music distribution and artist development company founded in 2005, owner of TuneCore platform.",
+      "url": "https://en.wikipedia.org/wiki/Believe_Music",
+      "source": "Wikipedia"
+    }
+  }
 }

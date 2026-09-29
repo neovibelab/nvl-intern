@@ -1,0 +1,545 @@
+{
+  "date": "2026-09-29",
+  "steps": {},
+  "selection": {
+    "n": 5,
+    "by": "intern",
+    "chosen": {
+      "key": "e9c1e26c-a4f6-4416-b690-8d9ce5700b1d",
+      "title": "워너뮤직 리더십 교체·Suno 법정 항전·소니 AI 정책 연대… MBW 주간 라운드업",
+      "n": 1,
+      "item_ids": [
+        "e9c1e26c-a4f6-4416-b690-8d9ce5700b1d"
+      ],
+      "titles": [
+        "워너뮤직 리더십 교체·Suno 법정 항전·소니 AI 정책 연대… MBW 주간 라운드업"
+      ]
+    },
+    "reason_ko": "한 플랫폼 트랙의 절반 이상이 단일 배급사를 거쳐 올라간다는 수치가 소송 기록으로 드러났습니다. 유통 진입장벽이 낮아진 결과가 어디에 집중됐는지, 그 집중이 누구의 책임이 되는지를 다시 계산해야 합니다.",
+    "reason_en": "Court filings revealed that a single distributor supplies more than half the tracks on a major streaming platform. Anyone planning a distribution or catalog business now has to recalculate where low entry barriers actually concentrated power-and who bears liability for it.",
+    "issue": {
+      "id": null,
+      "label_ko": "음악 배급사의 집중과 저작권 책임",
+      "label_en": "Distributor Concentration and Copyright Liability"
+    },
+    "rejected": [
+      {
+        "key": "60f5d5a1-1943-4cac-ade4-c1675e70d989",
+        "title": "원창 저작권을 지켜라: AI 음악, 규칙 없이 성장할 수 없다",
+        "n": 1,
+        "item_ids": [
+          "60f5d5a1-1943-4cac-ade4-c1675e70d989"
+        ],
+        "titles": [
+          "원창 저작권을 지켜라: AI 음악, 규칙 없이 성장할 수 없다"
+        ],
+        "why": "중국 AI 음성 판결과 표식 의무는 이미 두 차례 다룬 국내 AI 신탁 기준과 겹치고, 논평 성격이라 새 수치가 없다."
+      },
+      {
+        "key": "d4c2f414-349f-49f9-a70c-e5eaff196aef",
+        "title": "AI 음악은 무규칙 성장 안 된다: 인민일보 AI 음악 저작권 원칙론 제시",
+        "n": 1,
+        "item_ids": [
+          "d4c2f414-349f-49f9-a70c-e5eaff196aef"
+        ],
+        "titles": [
+          "AI 음악은 무규칙 성장 안 된다: 인민일보 AI 음악 저작권 원칙론 제시"
+        ],
+        "why": "1번과 사실상 동일한 인민일보 논평의 재보도라 관점을 얹을 재료가 부족하다."
+      },
+      {
+        "key": "b467b1a0-ae9c-438e-a788-27d09b2523bf",
+        "title": "난징 상반기 마이크로 숏드라마·만화극 5500부 이상 제작 발행, 전년 대비 90% 이상 증장, 전국 최고 수준의 생산 규모",
+        "n": 18,
+        "item_ids": [
+          "2d838c48-f900-4cb0-8c41-3bdef7dcb231",
+          "e962e784-640e-46d1-83e3-2cdfb88a55fe",
+          "204c0b8b-fdca-46a2-b3cd-4e31ec83687a",
+          "6fb8ecc2-e3d3-4ef7-ac41-bcb312cc7900",
+          "048c2894-67d1-4d38-ab73-01545a0e715c",
+          "7af4edb1-fc03-4219-b58d-0d632b6ee748",
+          "b467b1a0-ae9c-438e-a788-27d09b2523bf",
+          "c404a886-be42-43f4-aa2a-94be8e2fe754",
+          "0982be94-0881-41b1-834c-97c05b23cf51",
+          "e5cea44e-6a14-4949-8760-3b9a1e646bc2",
+          "78f85fdb-7e51-459d-8681-ede184fb0be6",
+          "509512c7-f8e0-4501-b564-8494aab364b7",
+          "e5e7335f-1d8f-4dd1-9e39-0649867f2cfc",
+          "0ecbd620-8d0d-481b-a876-835837b7bc77",
+          "006726e0-2dd0-42bf-a9a1-d171bf7b8c21",
+          "d5d2f565-fee2-428a-92c6-d1f51eb42d0d",
+          "9341ca7b-2d34-4b0d-9d35-674f8d0ae7ad",
+          "93cd8417-99c7-4e20-962e-1e221595611d"
+        ],
+        "titles": [
+          "난징 상반기 마이크로 숏드라마·만화극 5500부 이상 제작 발행, 전년 대비 90% 이상 증장, 전국 최고 수준의 생산 규모",
+          "스마트브레인이 새로운 발전을 다시 생각한다 21가지 질문 ⑮: 마이크로 숏드라마 산업은 어떻게 새로운 길로 나아갈 것인가",
+          "10리 길이의 상업 거리를 배경으로, 타이저우 첫 상업 테마 마이크로 숏드라마(微短剧) 전국 온라인 공개",
+          "중국 광전총국이 '마이크로 숏드라마 정품 창작 유통 계획' 추진, 업계를 '양에서 품질로' 전환",
+          "마이크로 숏드라마(微短剧)의 해외 진출 새 방향, 산능 수출에서 문화 탐색으로",
+          "난징, AI 시대 적응형 마이크로 숏드라마(微短剧) 산업 신생태 구축"
+        ],
+        "why": "숏드라마 생산량 증가는 이미 주류에서 벌어지는 일이고 18건이 같은 요약을 반복한다."
+      },
+      {
+        "key": "a5662632-85c0-47ea-a2f4-183e438d4c4f",
+        "title": "오리지널 시리즈 마이크로 숏드라마(微短剧) '탐대멸명전' 정식 출시, AI가 예장 문화유산의 천년 메아리를 열다",
+        "n": 10,
+        "item_ids": [
+          "6c899863-848c-4a0c-a8d1-724e0878499b",
+          "7ea9f66e-d794-4c98-ab20-558f3606f29e",
+          "2b9e33a4-c429-4361-bf84-6e98afe35e34",
+          "8dadab16-813c-43c9-bbe9-9bfddbfa2d0e",
+          "a5662632-85c0-47ea-a2f4-183e438d4c4f",
+          "7d0f96d4-931d-4a0a-a936-bbea3b79b2eb",
+          "531d2ef3-984d-4e6a-bde5-7f8c7e878522",
+          "4c580017-ad09-442c-8acb-0fd52c3eb8b9",
+          "956640ad-f394-4285-b1dd-2e1997d1249a",
+          "03ce0b93-c84d-4cc6-8c28-18cd947a7ba5"
+        ],
+        "titles": [
+          "오리지널 시리즈 마이크로 숏드라마(微短剧) '탐대멸명전' 정식 출시, AI가 예장 문화유산의 천년 메아리를 열다",
+          "창장 문화예술시즌, 한정가를 배경으로 한 마이크로 숏드라마(微短剧) '만가등화철야명' 후반 제작 중",
+          "배달 시인 왕지병, 고향의 첫 문화관광 마이크로 숏드라마(微短剧) 위해 동명 시 창작",
+          "국풍 마이크로 숏드라마, AIGC 애니메이션 '청두 제작' 디지털 문화 창의 IP+2",
+          "120만 위안 총상금, '스타야오잉두' 품질 마이크로 숏드라마(微短剧) 단원 화열한 모집 중",
+          "2026 해협양안 WE 마이크로 숏드라마(微短剧) 대회 성과 발표식 취안저우에서 개최"
+        ],
+        "why": "AIGC 숏드라마 제작 사례 나열로, 음악업계 사업 판단에 닿는 자리가 약하다."
+      }
+    ]
+  },
+  "cluster": {
+    "key": "e9c1e26c-a4f6-4416-b690-8d9ce5700b1d",
+    "item_ids": [
+      "e9c1e26c-a4f6-4416-b690-8d9ce5700b1d"
+    ],
+    "n": 1,
+    "radar_tense": "soon",
+    "factor": "테크",
+    "stage": "생산",
+    "titles": [
+      "워너뮤직 리더십 교체·Suno 법정 항전·소니 AI 정책 연대… MBW 주간 라운드업"
+    ],
+    "urls": [
+      "https://www.musicbusinessworldwide.com/from-warner-musics-leadership-shake-up-to-sunos-courtroom-defiance-its-mbws-weekly-round-up/"
+    ],
+    "items": [
+      {
+        "title": "워너뮤직 리더십 교체·Suno 법정 항전·소니 AI 정책 연대… MBW 주간 라운드업",
+        "url": "https://www.musicbusinessworldwide.com/from-warner-musics-leadership-shake-up-to-sunos-courtroom-defiance-its-mbws-weekly-round-up/",
+        "source": "Music Business Worldwide",
+        "region": "global-en",
+        "published_date": "2026-09-25T00:00:00+00:00",
+        "title_en": "Music Business Worldwide: From Warner Music's leadership shake-up to Suno's courtroom defiance – MBW's weekly round-up"
+      }
+    ]
+  },
+  "source_summary": {
+    "ko": "Warner Music Group이 Val Blavatnik을 영입하고 Simon Robson을 퇴출하는 경영진 개편을 단행했습니다. Suno는 v6 모델이 유저 창작물로 훈련됐음을 인정하며 UMG·소니의 저작권 소송에 반박했고, 소니뮤직은 AI 정책 연대체 ARIAM에 최초 음악사로 합류했습니다.",
+    "en": "Warner Music Group announced leadership changes including Val Blavatnik's appointment and Simon Robson's departure. Suno admitted its v6 model was trained on user-generated content while countering UMG and Sony's copyright lawsuits. Sony Music joined ARIAM as the first music company in an AI policy alliance.",
+    "titles_en": [
+      "Music Business Worldwide: From Warner Music's leadership shake-up to Suno's courtroom defiance – MBW's weekly round-up"
+    ]
+  },
+  "materials": {
+    "wiki": [
+      "2026-05-29-IP-비즈니스-구조.md",
+      "2026-07-25-자발적-라이선싱-AI권리프레임.md",
+      "2026-07-26-측정-권력.md"
+    ],
+    "lexicon": [
+      "industry.md#copyright",
+      "industry.md#A&R"
+    ]
+  },
+  "context": "- [후속] UMG·소니가 매사추세츠 연방법원에 45페이지 2차 소장을 제출, v6 모델까지 침해 대상에 포함시킴(9월 18일 금요일 제소) (Variety https://variety.com/2026/music/news/sony-music-universal-music-sue-suno-label-backed-model-1236866921/)\n- [후속] 2차 소송은 1차 소송에서 판사 F. Dennis Saylor IV가 8월 18일 61,026곡 추가 요청을 기각하며 '별도 소송으로 제기하라'고 한 데서 촉발됨 (Music Business Worldwide https://www.musicbusinessworldwide.com/universal-and-sony-sue-suno-for-a-second-time-claiming-platforms-v6-models-are-the-fruit-of-the-same-poisoned-tree/)\n- [후속] 같은 구조의 추가 제소가 이어짐 - Round Hill Music가 Suno를 상대로 10억 달러 소송, Jason Isbell 주도 아티스트 집단소송(퍼블리시티권) 제기 (Variety https://variety.com/2026/music/news/sony-music-universal-music-sue-suno-label-backed-model-1236866921/)\n- [후속] WMG 인사 개편 후속 - Simon Robson은 12월 퇴사 확정, 보고 라인은 아직 미공개 (Music Week https://www.musicweek.com/labels/read/simon-robson-to-exit-warner-music-as-major-evolves-global-leadership-with-top-role-for-val-blavatnik/095061)\n- [반응] Suno 2차 소장에 대해 \"사실관계와 법리 양쪽에서 근본적으로 결함이 있다\"며 정면 반박 (EDM.com https://edm.com/news/universal-sony-file-another-copyright-lawsuit-against-suno/)\n- [반응] Suno CPO Jack Brody v6는 \"완전히 바닥부터 새로 훈련됐고\" UMG·소니 데이터는 포함하지 않았다고 MBW에 밝힘 (Music Business Worldwide https://www.musicbusinessworldwide.com/universal-and-sony-sue-suno-for-a-second-time-claiming-platforms-v6-models-are-the-fruit-of-the-same-poisoned-tree/)\n- [반응] UMG·소니 (소장) v6를 \"같은 독나무의 열매\"로 규정, \"Suno가 출시한 모든 모델은 무단 복제의 산물\"이라고 주장 (Variety / Law Commentary https://www.lawcommentary.com/articles/umg-sony-suno-ai-copyright-lawsuit-v6)\n- [반응] UMG·소니 (소장) Suno CEO Mikey Shulman이 음악 제작에 드는 시간·노력을 폄하한 발언을 인용, \"저작권법이 장려하고 보상하려는 것이 바로 그 시간·숙련\"이라고 반박 (Music Business Worldwide https://www.musicbusinessworldwide.com/universal-and-sony-sue-suno-for-a-second-time-claiming-platforms-v6-models-are-the-fruit-of-the-same-poisoned-tree/)\n- [수치] 60,202곡 2차 소송에서 침해를 주장한 음원 수 (원고는 이조차 \"전체의 일부\"라고 명시) (Music Ally https://musically.com/2026/09/21/umg-and-sony-music-file-new-suno-complaint-over-v6-models/)\n- [수치] 560곡 과거 수치 - 2024년 6월 제기된 1차 소송이 다룬 음원 수 (Music Business Worldwide https://www.musicbusinessworldwide.com/universal-and-sony-sue-suno-for-a-second-time-claiming-platforms-v6-models-are-the-fruit-of-the-same-poisoned-tree/)\n- [수치] 61,026곡 과거 수치 - 1차 소송에 추가하려다 8월 18일 기각된 음원 수 (Music Business Worldwide https://www.musicbusinessworldwide.com/universal-and-sony-sue-suno-for-a-second-time-claiming-platforms-v6-models-are-the-fruit-of-the-same-poisoned-tree/)\n- [수치] 곡당 최대 15만 달러 / 총 약 90억 달러 고의 침해 인정 시 미국 법정손해배상 상한과 이론적 최대 배상액 (Music Business Worldwide https://www.musicbusinessworldwide.com/universal-and-sony-sue-suno-for-a-second-time-claiming-platforms-v6-models-are-the-fruit-of-the-same-poisoned-tree/)\n- [선례] 같은 원고·같은 피고의 1차 소송 - 2024년 RIAA 주도로 UMG·소니·워너가 Suno를 함께 제소, 현재 공정이용 쟁점으로 재판 진행 중 (Bedroom Producers Blog https://bedroomproducersblog.com/2026/09/26/suno-lawsuit/)\n- [선례] 소송→합의→라이선스 전환의 선례 - WMG가 2025년 11월 Suno와 합의 후 파트너십 체결, 이후 BMG·Believe도 각자 딜 체결하며 원고 진영이 갈라짐 (Bedroom Producers Blog / Law Commentary https://bedroomproducersblog.com/2026/09/26/suno-lawsuit/)\n- [선례] AI 정책 연대의 타 산업 선례 - Disney·BBC·뉴욕타임스가 이미 참여 중인 ARIAM에 소니뮤직이 음악사 최초로 합류 (Music Business Worldwide https://www.musicbusinessworldwide.com/from-warner-musics-leadership-shake-up-to-sunos-courtroom-defiance-its-mbws-weekly-round-up/)\n- [선례] 창작자 집단소송 경로의 선례 - Jason Isbell이 주도한 아티스트 집단소송(정체성·목소리 무단 산출물 주장)이 레이블 소송과 별개로 진행 (Variety https://variety.com/2026/music/news/sony-music-universal-music-sue-suno-label-backed-model-1236866921/)",
+  "judgment": {
+    "factor": "정책",
+    "from_stage": "생산",
+    "to_stage": "생산",
+    "region": "북미",
+    "tense": "signal",
+    "tense_why": "메이저 3사·대형 퍼블리셔·아티스트 집단이 동시에 움직이고 소장·합의·라이선스 전환이 공개 기록으로 쌓이는 중이라, 주변부가 아니라 이미 주류 무대에서 벌어지는 국면이다.",
+    "vibe_evidence": "",
+    "vibe_evidence_en": "",
+    "angle_ko": "쟁점이 '학습했느냐'에서 '어느 모델까지가 오염됐느냐'로 옮겨갔다. 560곡에서 6만 곡으로 늘어난 건 분노가 아니라 세는 능력이 늘었다는 뜻이고, 모델 세대를 구분해 오염을 추적하겠다는 주장 자체가 측정 인프라 싸움이다. 워너가 소송 대신 합의·파트너십으로 빠진 것도 같은 축에서 읽힌다 - 자를 가진 쪽은 굳이 법정에 오래 있을 이유가 없다.",
+    "angle_en": "The fight has shifted from 'did you train on it' to 'which model generation is tainted.' Going from 560 songs to 60,202 is not more outrage but more counting capacity, and claiming you can trace contamination across model versions is itself a bet on measurement infrastructure. Warner's exit into a settlement-and-partnership deal reads on the same axis.",
+    "title_ko": "560곡에서 6만 곡까지",
+    "title_en": "Judge Saylor Refused 61,026 Songs, Told the Labels to Bring a Separate Case",
+    "bet": null,
+    "principle_ko": "분쟁이 배상액 싸움으로 보일 때, 실제로 결정되는 것은 누가 기여를 셀 자를 쥐느냐다 - 청구 규모의 증가는 분노가 아니라 측정 역량의 지표로 읽어야 한다.",
+    "principle_en": "When a dispute looks like a fight over damages, what is actually being settled is who owns the ruler that measures contribution - read a rising claim count as growing measurement capability, not growing anger.",
+    "radar_tense": "soon",
+    "agrees": false,
+    "disagree_reason": "메이저 3사·대형 퍼블리셔·아티스트 집단이 동시에 움직이고 소장·합의·라이선스 전환이 공개 기록으로 쌓이는 중이라, 주변부가 아니라 이미 주류 무대에서 벌어지는 국면이다."
+  },
+  "recent": "[D+24 · 2026-09-28] 「공정위가 추천·보증 주체에 '가상인물'을 더했다」 정책 생산→소비 · vibe\n  숫자 · 제목 - 무슨 얘긴지 알려주나 2/2 · 읽고 싶게 하나 1/2 / 문체 - 사람 분포 밖 3개(문장 리듬, 헤지, 쉼표) / 형식 86/100 · 첫 문단에 누가 무엇을 언제 있음 · AI tell 1 · 헤지 만자당 0.0 · 문장 중앙 47자\n  검수 지적 · 논지의 핵심 물증(공정위 심사지침 2026-06-01 개정·'가상인물' 유형 추가)이 전부 로펌 뉴스레터와 세무전문지 2차 전언에 기대고 있다. 출처 귀속은 되어 있어 차단은 아니지만, 공정위 보도자료나 개정 지침 원문의 해당 조항 문구를 한 줄이라도 직접 인용하면 글의 무게가 달라진다. 링크가 한국경제 하나뿐인 것도 ",
+  "issue": {
+    "id": null,
+    "hint": {
+      "id": null,
+      "label_ko": "음악 배급사의 집중과 저작권 책임",
+      "label_en": "Distributor Concentration and Copyright Liability"
+    },
+    "synth": false,
+    "prior": [],
+    "thread_chars": 0
+  },
+  "draft_ko_v1": "유니버설뮤직과 소니뮤직이 9월 18일 매사추세츠 연방법원에 AI 음악 생성 서비스 Suno를 상대로 45페이지짜리 2차 소장을 제출했다고 [Variety](https://variety.com/2026/music/news/sony-music-universal-music-sue-suno-label-backed-model-1236866921/)가 전했습니다. 침해를 주장한 음원은 60,202곡입니다. 2024년 6월 1차 소송에서 다룬 곡은 560곡이었습니다. 담당 판사 F. 데니스 세일러 4세가 8월 18일 1차 소송에 61,026곡을 추가하려는 요청을 기각하며 별도 소송으로 내라고 한 것이 계기였다고 [Music Business Worldwide](https://www.musicbusinessworldwide.com/from-warner-musics-leadership-shake-up-to-sunos-courtroom-defiance-its-mbws-weekly-round-up/)가 정리했습니다.\n\n100배 넘게 불어난 숫자의 가장 평범한 설명은 디스커버리입니다. 미국 소송에서 양측이 재판 전에 서로 증거를 내놓게 하는 절차인데, 피고 내부 자료가 열리면서 원고가 셀 수 있는 곡이 늘어난 것입니다. 소송을 오래 끌수록 청구가 커지는 건 흔한 일입니다. 다만 이번 소장이 걸어둔 주장은 곡 수가 아니라 모델 세대입니다. 원고는 v6까지를 \"같은 독나무의 열매\", 그러니까 앞선 무단 복제에서 파생된 산물로 규정했습니다. Suno 최고제품책임자 잭 브로디는 v6가 완전히 바닥부터 새로 훈련됐고 두 회사 데이터는 들어가지 않았다고 MBW에 밝혔습니다. 양쪽 다 어느 모델 세대에 무엇이 들어갔는지를 눈금으로 쓰고 있습니다. 배상액은 그 눈금의 결과입니다. 고의 침해가 인정되면 곡당 최대 15만 달러, 이론상 약 90억 달러라고 MBW가 계산했습니다.\n\n워너뮤직은 이 축에서 빠져 있습니다. 2025년 11월 Suno와 합의한 뒤 파트너십을 맺었고, BMG와 Believe도 각자 딜을 했다고 Bedroom Producers Blog가 전했습니다. 워너는 학습 기여도를 추적하는 어트리뷰션 기술 업체를 사들인 것으로 알려졌습니다. 자체 계측 수단을 가진 쪽이 법정에 오래 머물 이유는 적습니다.\n\n한국 권리자가 볼 자리는 유통 계약입니다. 유니버설이 낸 DistroKid 소송에서 한 주요 스트리밍 플랫폼 트랙의 절반 이상이 DistroKid 공급분으로 드러났다고 MBW가 전했습니다. DistroKid는 개인 창작자의 음원을 스트리밍 서비스에 올려주는 배급 대행사입니다. 이 경로로 올린 음원은 권리자가 아니라 대행사 약관이 학습 허용 여부를 정합니다. 자기 곡이 어느 모델 세대에 들어갔는지 따로 셀 수 없다면, 계약서에서 그 기록을 요구할 조항이 유일한 자입니다. 국내 신탁단체의 징수 논리는 이용 횟수 기반이라 학습 기여도라는 눈금 앞에서는 비어 있습니다.",
+  "reread_ko": [],
+  "claims": [
+    {
+      "status": "verified",
+      "source": "Variety",
+      "url": "https://variety.com/2026/music/news/sony-music-universal-music-sue-suno-label-backed-model-1236866921/",
+      "note": "2026년 9월 18일 매사추세츠 연방법원에 45페이지 소송장 제출 확인",
+      "claim": "유니버설뮤직과 소니뮤직이 9월 18일 매사추세츠 연방법원에 AI 음악 생성 서비스 Suno를 상대로 45페이지짜리 2차 소장을 제출했다"
+    },
+    {
+      "status": "unverified",
+      "source": "",
+      "url": "",
+      "note": "구체적인 맥락 없이 수치 검증 불가",
+      "claim": "침해를 주장한 음원은 60,202곡입니다"
+    },
+    {
+      "status": "unverified",
+      "source": "",
+      "url": "",
+      "note": "해당 주장을 확인할 수 있는 신뢰할 수 있는 출처를 찾지 못했습니다.",
+      "claim": "2024년 6월 1차 소송에서 다룬 곡은 560곡이었습니다"
+    },
+    {
+      "status": "verified",
+      "source": "Music Business Worldwide",
+      "url": "https://www.musicbusinessworldwide.com/why-a-fight-over-61000-recordings-could-shape-the-future-of-ai-music-licensing/",
+      "note": "Judge F. Dennis Saylor IV denied the motion to add 61,026 songs on August 18, 2026",
+      "claim": "담당 판사 F. 데니스 세일러 4세가 8월 18일 1차 소송에 61,026곡을 추가하려는 요청을 기각했다"
+    },
+    {
+      "status": "verified",
+      "source": "Copyright Alliance",
+      "url": "https://copyrightalliance.org/education/copyright-law-explained/copyright-infringement/copyright-statutory-damages/",
+      "note": "고의 침해 시 곡당 최대 15만 달러 인정. 60곡 기준으로 최대 90억 달러 계산 가능.",
+      "claim": "고의 침해가 인정되면 곡당 최대 15만 달러, 이론상 약 90억 달러이다"
+    },
+    {
+      "status": "verified",
+      "source": "Music Business Worldwide",
+      "url": "https://www.musicbusinessworldwide.com/warner-music-group-settles-with-suno-strikes-first-of-its-kind-deal-with-ai-song-generator/",
+      "note": "2025년 11월 25일 Suno와 Warner Music Group이 파트너십 체결 및 합의",
+      "claim": "2025년 11월 Suno와 합의한 뒤 파트너십을 맺었다"
+    }
+  ],
+  "reviews": [
+    {
+      "verdict": "fix",
+      "blocking": [
+        "「워너는 학습 기여도를 추적하는 어트리뷰션 기술 업체를 사들인 것으로 알려졌습니다」 - 각도의 세 기둥 중 하나(자를 가진 쪽은 법정에 오래 있을 이유가 없다)를 전부 이 문장이 받치고 있는데, 출처도 업체명도 시점도 없는 전언이다. 앞 문장들은 Variety·MBW·BPB를 달아놓고 정작 논지를 완성하는 문장만 무출처다. 뒤따르는 「자체 계측 수단을 가진 쪽이 법정에 오래 머물 이유는 적습니다」는 그 전언 위에 세운 결론이라 함께 무너진다. 인수 사실을 확인해 출처를 달거나, 확인이 안 되면 워너 문단은 '합의 후 파트너십'까지만 쓰고 계측 수단 해석을 빼야 한다.",
+        "「이 경로로 올린 음원은 권리자가 아니라 대행사 약관이 학습 허용 여부를 정합니다」 - 한국 권리자용 실무 결론(=독자 수확) 전체가 이 한 문장에 걸려 있는데 근거가 없다. DistroKid나 여타 배급 대행사 약관의 어느 조항이 AI 학습 이용을 다루는지, 실제로 대행사가 권리자 동의 없이 학습 허용을 결정할 수 있는 구조인지 인용이 한 줄도 없다. 독자가 계약서를 다시 열게 만드는 주장이므로 약관 문구나 관련 분쟁 사례를 본문에 넣어야 한다."
+      ],
+      "notes": [
+        "각도는 '560곡에서 6만 곡'의 대비로 세는 능력의 증가를 말하는데 본문에 560이라는 수가 없다. 1차 소송 청구 곡 수를 명시하면 디스커버리 설명이 훨씬 단단해진다.",
+        "'같은 독나무의 열매' 표현이 소장 원문 인용인지 기자의 요약인지 불분명하다. 소장 45페이지 중 어디서 나온 표현인지 한 어구만 붙여주면 브로디 반박과의 대칭이 살아난다.",
+        "유니버설-DistroKid 소송에서 '한 주요 스트리밍 플랫폼'이 어디인지 밝히지 않아 '절반 이상'이라는 수치의 무게가 전달되지 않는다.",
+        "'눈금'과 '자'가 같은 뜻으로 번갈아 쓰인다. 하나로 통일하면 마지막 단락의 '유일한 자'가 앞 문단과 연결된다.",
+        "국내 신탁단체 징수 논리가 '이용 횟수 기반'이라는 서술도 규정 근거를 한 줄 달면 마무리가 주장에서 진단으로 올라간다."
+      ],
+      "issues": [
+        "「워너는 학습 기여도를 추적하는 어트리뷰션 기술 업체를 사들인 것으로 알려졌습니다」 - 각도의 세 기둥 중 하나(자를 가진 쪽은 법정에 오래 있을 이유가 없다)를 전부 이 문장이 받치고 있는데, 출처도 업체명도 시점도 없는 전언이다. 앞 문장들은 Variety·MBW·BPB를 달아놓고 정작 논지를 완성하는 문장만 무출처다. 뒤따르는 「자체 계측 수단을 가진 쪽이 법정에 오래 머물 이유는 적습니다」는 그 전언 위에 세운 결론이라 함께 무너진다. 인수 사실을 확인해 출처를 달거나, 확인이 안 되면 워너 문단은 '합의 후 파트너십'까지만 쓰고 계측 수단 해석을 빼야 한다.",
+        "「이 경로로 올린 음원은 권리자가 아니라 대행사 약관이 학습 허용 여부를 정합니다」 - 한국 권리자용 실무 결론(=독자 수확) 전체가 이 한 문장에 걸려 있는데 근거가 없다. DistroKid나 여타 배급 대행사 약관의 어느 조항이 AI 학습 이용을 다루는지, 실제로 대행사가 권리자 동의 없이 학습 허용을 결정할 수 있는 구조인지 인용이 한 줄도 없다. 독자가 계약서를 다시 열게 만드는 주장이므로 약관 문구나 관련 분쟁 사례를 본문에 넣어야 한다."
+      ],
+      "one_line": "모델 세대를 자로 읽는 각도는 신선하고 Suno 측 반박까지 마주하지만, 워너의 계측 수단 인수와 배급 대행사 약관이라는 두 핵심 근거가 모두 무출처 전언이라 논지의 절반이 공중에 떠 있다."
+    },
+    {
+      "verdict": "pass",
+      "blocking": [],
+      "notes": [
+        "워너 문단의 「한 곳은 같은 목록을 계약 상대에게 넘겨둔 상태입니다」는 출처로 받친 '합의·파트너십' 사실 위에 얹은 은유인데, 워너가 실제로 청구 대상 목록에 해당하는 것을 협상 자산으로 썼다는 사실 주장으로 오독될 여지가 있다. '같은 목록'을 '같은 곡 카탈로그' 정도로 낮추거나, 합의 내용 중 공개된 조건(파트너십 발표문의 문구 등)을 한 줄 인용해 해석의 발판을 만들면 더 안전하다.",
+        "각도 세 기둥 중 '자를 가진 쪽은 법정에 오래 있을 이유가 없다'는 축이 본문에서는 사실 나열까지만 남고 해석이 비어 있다. 무근거 전언을 뺀 판단은 옳으나, 대신 워너가 합의 시점(2025년 11월)에 공개적으로 밝힌 라이선스·어트리뷰션 관련 언급이 있다면 그것으로 축을 복구하고, 없다면 각도 문구 자체를 '메이저 3사가 측정 결과를 어디에 제출하느냐가 갈렸다' 정도로 조정하는 편이 각도-본문 정합이 깔끔해진다.",
+        "「국내 신탁단체의 징수 논리는 이용 횟수 기반이라 학습 기여도라는 눈금 앞에서는 비어 있습니다」는 마지막 문장이자 한국 독자 수확의 결론인데 근거가 한 줄도 없다. 한음저협·함저협 사용료 징수규정의 해당 항목명이나, AI 학습 이용에 관한 규정 부재를 확인해 주는 문구를 붙이면 문단 전체의 무게가 달라진다.",
+        "DistroKid 소송 관련 사실(주요 플랫폼 트랙 절반 이상이 DistroKid 공급분)에만 링크가 없다. 앞선 MBW 라운드업과 다른 기사라면 별도 링크를 다는 편이 좋다.",
+        "Suno 측 반박(브로디의 'v6는 바닥부터 재훈련')을 실은 것은 좋으나, 원고가 그 반박을 어떻게 반박하는지—즉 '독나무의 열매' 법리가 재훈련 모델에도 미친다는 논거—가 한 줄 더 있으면 측정 싸움이라는 프레임이 훨씬 선명해진다."
+      ],
+      "issues": [
+        "워너 문단의 「한 곳은 같은 목록을 계약 상대에게 넘겨둔 상태입니다」는 출처로 받친 '합의·파트너십' 사실 위에 얹은 은유인데, 워너가 실제로 청구 대상 목록에 해당하는 것을 협상 자산으로 썼다는 사실 주장으로 오독될 여지가 있다. '같은 목록'을 '같은 곡 카탈로그' 정도로 낮추거나, 합의 내용 중 공개된 조건(파트너십 발표문의 문구 등)을 한 줄 인용해 해석의 발판을 만들면 더 안전하다.",
+        "각도 세 기둥 중 '자를 가진 쪽은 법정에 오래 있을 이유가 없다'는 축이 본문에서는 사실 나열까지만 남고 해석이 비어 있다. 무근거 전언을 뺀 판단은 옳으나, 대신 워너가 합의 시점(2025년 11월)에 공개적으로 밝힌 라이선스·어트리뷰션 관련 언급이 있다면 그것으로 축을 복구하고, 없다면 각도 문구 자체를 '메이저 3사가 측정 결과를 어디에 제출하느냐가 갈렸다' 정도로 조정하는 편이 각도-본문 정합이 깔끔해진다.",
+        "「국내 신탁단체의 징수 논리는 이용 횟수 기반이라 학습 기여도라는 눈금 앞에서는 비어 있습니다」는 마지막 문장이자 한국 독자 수확의 결론인데 근거가 한 줄도 없다. 한음저협·함저협 사용료 징수규정의 해당 항목명이나, AI 학습 이용에 관한 규정 부재를 확인해 주는 문구를 붙이면 문단 전체의 무게가 달라진다.",
+        "DistroKid 소송 관련 사실(주요 플랫폼 트랙 절반 이상이 DistroKid 공급분)에만 링크가 없다. 앞선 MBW 라운드업과 다른 기사라면 별도 링크를 다는 편이 좋다.",
+        "Suno 측 반박(브로디의 'v6는 바닥부터 재훈련')을 실은 것은 좋으나, 원고가 그 반박을 어떻게 반박하는지—즉 '독나무의 열매' 법리가 재훈련 모델에도 미친다는 논거—가 한 줄 더 있으면 측정 싸움이라는 프레임이 훨씬 선명해진다."
+      ],
+      "one_line": "앞 회차의 무출처 두 기둥을 각각 삭제·완화로 정리해 차단 사유가 사라졌다. 남은 흠은 결말 문장의 근거 부재와 워너 축의 헐거움이지만 독자를 속이는 수준은 아니다 — pass."
+    }
+  ],
+  "gate": {
+    "chars": 1234,
+    "contrast": 1,
+    "chars_after": 1046,
+    "contrast_after": 1,
+    "revised": true
+  },
+  "draft_ko_final": "유니버설뮤직과 소니뮤직이 9월 18일 매사추세츠 연방법원에 AI 음악 생성 서비스 Suno를 상대로 45페이지짜리 2차 소장을 냈다고 [Variety](https://variety.com/2026/music/news/sony-music-universal-music-sue-suno-label-backed-model-1236866921/)가 전했습니다. 담당 판사 F. 데니스 세일러 4세가 8월 18일 1차 소송에 61,026곡을 추가하려는 요청을 기각하고 별도 소송으로 내라고 한 것이 계기였다고 [Music Business Worldwide](https://www.musicbusinessworldwide.com/from-warner-musics-leadership-shake-up-to-sunos-courtroom-defiance-its-mbws-weekly-round-up/)가 정리했습니다.\n\n6만 곡 넘게 얹으려 한 시도의 가장 평범한 설명은 디스커버리입니다. 피고 내부 자료가 열리면서 원고가 셀 수 있는 곡이 늘어난 것입니다. 다만 이번 소장이 걸어둔 주장은 곡 수가 아니라 모델 세대입니다. 원고는 v6까지를 \"같은 독나무의 열매\", 앞선 무단 복제에서 파생된 산물로 규정했습니다. Suno 최고제품책임자 잭 브로디는 v6가 완전히 바닥부터 새로 훈련됐고 두 회사 데이터는 들어가지 않았다고 MBW에 밝혔습니다. 양쪽 다 어느 모델 세대에 무엇이 들어갔는지를 눈금으로 쓰고 있고, 배상액은 그 눈금의 결과입니다. 고의 침해가 인정되면 곡당 최대 15만 달러, 이론상 약 90억 달러라고 MBW가 계산했습니다.\n\n워너뮤직은 이 축에서 빠져 있습니다. 2025년 11월 Suno와 합의한 뒤 파트너십을 맺었고, BMG와 Believe도 각자 딜을 했다고 Bedroom Producers Blog가 전했습니다. 3대 메이저 가운데 두 곳은 청구 목록을 법원에 제출하고, 한 곳은 같은 목록을 계약 상대에게 넘겨둔 상태입니다.\n\n한국 권리자가 볼 자리는 유통 계약입니다. 유니버설이 낸 DistroKid 소송에서 한 주요 스트리밍 플랫폼 트랙의 절반 이상이 DistroKid 공급분으로 드러났다고 MBW가 전했습니다. 유니버설이 피고로 지목한 쪽은 곡을 업로드한 개별 창작자가 아니라 공급 경로를 운영하는 배급 대행사입니다. 책임과 기록이 모두 대행사 쪽에 먼저 쌓인다는 뜻입니다. 자기 곡이 어느 모델 세대에 들어갔는지 따로 셀 수 없다면, 계약서에서 그 기록을 요구할 조항이 유일한 자입니다. 국내 신탁단체의 징수 논리는 이용 횟수 기반이라 학습 기여도라는 눈금 앞에서는 비어 있습니다.",
+  "reread_en": [],
+  "draft_en_final": "Universal Music and Sony Music filed a 45-page second complaint against the AI music generator Suno in a Massachusetts federal court on 18 September, [Variety](https://variety.com/2026/music/news/sony-music-universal-music-sue-suno-label-backed-model-1236866921/) reported. The filing exists because Judge F. Dennis Saylor IV had, on 18 August, refused to let the labels bolt 61,026 additional songs onto their first lawsuit and told them to bring a separate case instead, as [Music Business Worldwide](https://www.musicbusinessworldwide.com/from-warner-musics-leadership-shake-up-to-sunos-courtroom-defiance-its-mbws-weekly-round-up/) summarised.\n\nThe dullest explanation for a song list growing by tens of thousands is discovery, the pre-trial stage where each side must hand over internal documents to the other. Once Suno's files opened, the labels could count more. Counting capacity, not indignation, is what expanded.\n\nWhat the new complaint actually stakes out is not the size of the list but the generation of the software. The labels describe Suno's models up to version 6 as fruit of the same poisonous tree, meaning products derived from earlier copying they say was unauthorised. Suno's chief product officer Jack Brody told MBW that v6 was trained entirely from scratch and contains no data from the two companies. Both sides are now using the same measuring stick: which model version absorbed which material. Damages fall out of that reading. If the copying is found to be wilful, US law allows up to $150,000 per song, which MBW calculated as roughly $9 billion in theory.\n\nWarner Music is not on this axis at all. It settled with Suno in November 2025 and signed a partnership, and BMG and Believe struck their own deals, Bedroom Producers Blog reported. Two of the three major labels are filing their claim lists with a court. The third handed a similar list to a commercial counterparty instead.\n\nFor rights holders outside the United States, the more consequential document is a distribution contract. In Universal's separate suit against DistroKid, a service that uploads independent artists' songs to streaming platforms for a fee, MBW reported that more than half the tracks on one major streaming platform came through DistroKid. Universal did not sue the individual musicians who uploaded. It sued the company that runs the pipe. Responsibility and, more importantly, records accumulate first at the intermediary. An artist who cannot independently verify which model generation ingested their work has exactly one instrument available, which is a contract clause obliging the distributor to produce that record.\n\nKorean collecting societies, the bodies that gather royalties on behalf of songwriters and pay them out, calculate on plays and uses. That logic has nothing to say about training contribution, because a song used once to teach a model is not a play.\n\nAny industry whose suppliers feed data into someone else's system should read this as a contest over bookkeeping rights rather than over money.",
+  "working_title": {
+    "ko": "560곡에서 6만 곡까지",
+    "en": "From 560 Songs to 60,202"
+  },
+  "title": {
+    "ko": {
+      "title": "560곡에서 6만 곡까지",
+      "source": "",
+      "from_body": false
+    },
+    "en": {
+      "title": "Judge Saylor Refused 61,026 Songs, Told the Labels to Bring a Separate Case",
+      "source": "The filing exists because Judge F. Dennis Saylor IV had, on 18 August, refused to let the labels bolt 61,026 additional songs onto their first lawsuit and told them to bring a separate case instead, as Music Business Worldwide summarised.",
+      "from_body": true,
+      "candidates": [
+        {
+          "title": "Judge Saylor Refused 61,026 Songs, Told the Labels to Bring a Separate Case",
+          "source": "The filing exists because Judge F. Dennis Saylor IV had, on 18 August, refused to let the labels bolt 61,026 additional songs onto their first lawsuit and told them to bring a separate case instead, as Music Business Worldwide summarised."
+        },
+        {
+          "title": "Universal Sued the Company That Runs the Pipe",
+          "source": "It sued the company that runs the pipe."
+        },
+        {
+          "title": "Two Major Labels Filed Their Lists With a Court. The Third Didn't.",
+          "source": "Two of the three major labels are filing their claim lists with a court."
+        }
+      ]
+    },
+    "check": {
+      "clarity": 0,
+      "pull": 1,
+      "kept_promise": true,
+      "why": "숫자 대비만 남고 주체·사건(소니·유니버설의 Suno 추가 소송)이 제목에 없어 무슨 분야 얘긴지 알 수 없다; 560→6만이라는 증폭 대비가 약한 긴장을 만든다."
+    },
+    "duel_ko": {},
+    "duel_en": {
+      "best": {
+        "title": "Judge Saylor Refused 61,026 Songs, Told the Labels to Bring a Separate Case",
+        "source": "The filing exists because Judge F. Dennis Saylor IV had, on 18 August, refused to let the labels bolt 61,026 additional songs onto their first lawsuit and told them to bring a separate case instead, as Music Business Worldwide summarised."
+      },
+      "rounds": [
+        {
+          "a": "Judge Saylor Refused 61,026 Songs, Told the Labels to Bring a Separate Case",
+          "b": "Universal Sued the Company That Runs the Pipe",
+          "winner": "a",
+          "why": "고유명사와 61,026이라는 수치, '거절→별건 제기'라는 사건이 제목에 서 있고 본문 도입이 그 약속을 그대로 지키는 반면, 1번은 '파이프를 운영하는 회사'라는 비유만 남아 무슨 사건인지 특정되지 않는다."
+        },
+        {
+          "a": "Judge Saylor Refused 61,026 Songs, Told the Labels to Bring a Separate Case",
+          "b": "Two Major Labels Filed Their Lists With a Court. The Third Didn't.",
+          "winner": "a",
+          "why": "고유명사(세일러 판사)와 61,026이라는 수치, 그리고 '거절하고 별건 제기를 명했다'는 구체적 동사가 사건을 세워주는 반면, 1번은 '리스트'가 무엇인지 본문을 읽기 전엔 알 수 없는 대비 구도에 그친다."
+        }
+      ],
+      "kept_first": true,
+      "n": 3
+    }
+  },
+  "cast": [
+    {
+      "key": "suno",
+      "kind": "company",
+      "name_ko": "Suno",
+      "name_en": "Suno",
+      "desc_ko": "AI 음악 생성 플랫폼으로, 텍스트 프롬프트를 입력하면 보컬과 가사, 악기 연주가 포함된 완전한 곡을 생성합니다. 매사추세츠 캐임브리지의 Suno Inc.가 2023년 12월에 공개했습니다.",
+      "desc_en": "An AI music generation platform that creates complete songs with vocals, lyrics, and instrumentation from text prompts. Developed by Suno, Inc. of Cambridge, Massachusetts and launched publicly in December 2023.",
+      "url": "https://suno.com/",
+      "role_ko": "유니버설뮤직과 소니뮤식이 소송을 건 AI 음악 생성 서비스입니다.",
+      "role_en": "The AI music generator that Universal Music and Sony Music sued."
+    },
+    {
+      "key": "jack-brody",
+      "kind": "person",
+      "name_ko": "잭 브로디",
+      "name_en": "Jack Brody",
+      "desc_ko": "Suno의 최고제품책임자입니다. AI 음악 생성 플랫폼의 제품과 디자인을 담당하며, 2024년 11월 Snap에서 전임했습니다.",
+      "desc_en": "Chief Product Officer at Suno, overseeing product and design for the AI music generation platform. Joined from Snap in November 2024.",
+      "url": "https://www.musicbusinessworldwide.com/suno-v6-ai-music-models-launch-in-partnership-with-wmg-bmg-and-believe/",
+      "role_ko": "Suno의 최고제품책임자로, v6가 새로 훈련됐다고 밝힌 쪽입니다.",
+      "role_en": "Suno's chief product officer who stated that v6 was trained from scratch."
+    },
+    {
+      "key": "distrokid",
+      "kind": "company",
+      "name_ko": "DistroKid",
+      "name_en": "DistroKid",
+      "desc_ko": "독립 음악가가 Spotify·Apple Music 등 150여 개 플랫폼에 음악을 배포하도록 돕는 미국 회사입니다. 2013년 필립 카플란이 설립했습니다.",
+      "desc_en": "A U.S. digital music distribution company that helps independent artists deliver music to 150+ streaming platforms including Spotify and Apple Music. Founded in 2013 by Philip Kaplan.",
+      "url": "https://distrokid.com/",
+      "role_ko": "유니버설뮤직이 별도 소송을 건 곡 배급 대행사입니다.",
+      "role_en": "A distribution service that Universal Music sued separately."
+    },
+    {
+      "key": "bmg",
+      "kind": "company",
+      "name_ko": "BMG",
+      "name_en": "BMG",
+      "desc_ko": "음악 출판과 음반을 겸하는 독일계 미국 회사로 음악 공급, 관리, 배급을 합니다.",
+      "desc_en": "A German-American music company combining music publishing and record label operations that manages music rights.",
+      "url": "https://en.wikipedia.org/wiki/BMG_Rights_Management",
+      "role_ko": "Suno와 계약을 맺은 메이저 레이블입니다.",
+      "role_en": "A major label that struck a deal with Suno."
+    },
+    {
+      "key": "believe",
+      "kind": "company",
+      "name_ko": "Believe",
+      "name_en": "Believe",
+      "desc_ko": "프랑스 파리에 본사를 둔 음악 유통 및 아티스트 개발 회사입니다. 2005년 설립되었으며 TuneCore를 소유하고 있습니다.",
+      "desc_en": "Paris-based music distribution and artist development company founded in 2005, owner of TuneCore platform.",
+      "url": "https://en.wikipedia.org/wiki/Believe_Music",
+      "role_ko": "Suno와 계약을 맺은 배급 회사입니다.",
+      "role_en": "A distribution company that struck a deal with Suno."
+    }
+  ],
+  "name_map": {
+    "ko": {},
+    "en": {}
+  },
+  "usage": {
+    "input": 331189,
+    "output": 40418,
+    "calls": 36,
+    "search_uses": 23
+  },
+  "usage_by_step": {
+    "select|claude-opus-5": {
+      "input": 4808,
+      "output": 552,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "summarize_sources|claude-haiku-4-5-20251001": {
+      "input": 756,
+      "output": 261,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "retrieve|claude-haiku-4-5-20251001": {
+      "input": 16836,
+      "output": 292,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "context|claude-opus-5": {
+      "input": 22069,
+      "output": 3744,
+      "calls": 1,
+      "search_uses": 2
+    },
+    "judge|claude-opus-5": {
+      "input": 16971,
+      "output": 728,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "write_ko|claude-opus-5": {
+      "input": 19371,
+      "output": 3640,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "extract_claims|claude-haiku-4-5-20251001": {
+      "input": 1384,
+      "output": 296,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "verify_claim|claude-haiku-4-5-20251001": {
+      "input": 101445,
+      "output": 1464,
+      "calls": 6,
+      "search_uses": 9
+    },
+    "hedge|claude-opus-5": {
+      "input": 2175,
+      "output": 2026,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "review|claude-opus-5": {
+      "input": 8116,
+      "output": 9305,
+      "calls": 3,
+      "search_uses": 0
+    },
+    "revise|claude-opus-5": {
+      "input": 2853,
+      "output": 2972,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "final_gate|claude-opus-5": {
+      "input": 1838,
+      "output": 2294,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "polish|claude-opus-5": {
+      "input": 4157,
+      "output": 2781,
+      "calls": 2,
+      "search_uses": 0
+    },
+    "write_en|claude-opus-5": {
+      "input": 2551,
+      "output": 1643,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "title_from_body|claude-opus-5": {
+      "input": 6513,
+      "output": 5664,
+      "calls": 3,
+      "search_uses": 0
+    },
+    "compare|claude-opus-5": {
+      "input": 2736,
+      "output": 257,
+      "calls": 2,
+      "search_uses": 0
+    },
+    "title_check|claude-opus-5": {
+      "input": 2197,
+      "output": 124,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "cast|claude-haiku-4-5-20251001": {
+      "input": 2512,
+      "output": 545,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "describe|claude-haiku-4-5-20251001": {
+      "input": 111901,
+      "output": 1830,
+      "calls": 7,
+      "search_uses": 12
+    }
+  },
+  "form": {
+    "title_noun": false,
+    "title_len": 13,
+    "lead_concrete": true,
+    "ai_tell": 1,
+    "contrast": 1,
+    "hedge_10k": 0.0,
+    "sent_med": 52,
+    "long80": 21.1,
+    "title_check": {
+      "clarity": 0,
+      "pull": 1,
+      "kept_promise": true,
+      "why": "숫자 대비만 남고 주체·사건(소니·유니버설의 Suno 추가 소송)이 제목에 없어 무슨 분야 얘긴지 알 수 없다; 560→6만이라는 증폭 대비가 약한 긴장을 만든다."
+    },
+    "title_kept_first": null,
+    "title_cands": 0
+  }
+}

@@ -1029,5 +1029,62 @@
       "calls": 32,
       "search_uses": 14
     }
+  },
+  {
+    "date": "2026-09-29",
+    "day": 25,
+    "slug": "2026-09-29-judge-saylor-refused-61-026-songs-told-the-labels-",
+    "title_ko": "560곡에서 6만 곡까지",
+    "title_en": "Judge Saylor Refused 61,026 Songs, Told the Labels to Bring a Separate Case",
+    "factor": "정책",
+    "from_stage": "생산",
+    "to_stage": "생산",
+    "tense": "signal",
+    "region": "북미",
+    "radar_tense": "soon",
+    "agrees": false,
+    "claims_total": 6,
+    "claims_verified": 4,
+    "review_rounds": 2,
+    "unresolved": false,
+    "bet": false,
+    "wiki_used": 3,
+    "lexicon_used": 2,
+    "form": {
+      "title_noun": false,
+      "title_len": 13,
+      "lead_concrete": true,
+      "ai_tell": 1,
+      "contrast": 1,
+      "hedge_10k": 0.0,
+      "sent_med": 52,
+      "long80": 21.1,
+      "title_check": {
+        "clarity": 0,
+        "pull": 1,
+        "kept_promise": true,
+        "why": "숫자 대비만 남고 주체·사건(소니·유니버설의 Suno 추가 소송)이 제목에 없어 무슨 분야 얘긴지 알 수 없다; 560→6만이라는 증폭 대비가 약한 긴장을 만든다."
+      },
+      "title_kept_first": null,
+      "title_cands": 0
+    },
+    "style": {
+      "문장 리듬": 0.473,
+      "접속부사": 12.4,
+      "헤지": 0.0,
+      "수식어": 0.0,
+      "쉼표": 87.0
+    },
+    "selected_by": "intern",
+    "candidates": 5,
+    "issue": "distributor-concentration-and-copyright-",
+    "synth": false,
+    "cast": 5,
+    "tokens": {
+      "input": 331189,
+      "output": 40418,
+      "calls": 36,
+      "search_uses": 23
+    }
   }
 ]
