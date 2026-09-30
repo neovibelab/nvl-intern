@@ -1,0 +1,650 @@
+{
+  "date": "2026-09-30",
+  "steps": {},
+  "selection": {
+    "n": 5,
+    "by": "intern",
+    "chosen": {
+      "key": "b467b1a0-ae9c-438e-a788-27d09b2523bf",
+      "title": "《왼쪽 귀》 파생 마이크로 숏드라마(微短剧) 제작 시작, 바이두 YY 마이쑤 마이크로 숏드라마와 타오바오가 협력해 '마이크로 숏드라마+전자상거래' 새로운 모델 탐색",
+      "n": 18,
+      "item_ids": [
+        "b467b1a0-ae9c-438e-a788-27d09b2523bf",
+        "7af4edb1-fc03-4219-b58d-0d632b6ee748",
+        "048c2894-67d1-4d38-ab73-01545a0e715c",
+        "6fb8ecc2-e3d3-4ef7-ac41-bcb312cc7900",
+        "204c0b8b-fdca-46a2-b3cd-4e31ec83687a",
+        "e962e784-640e-46d1-83e3-2cdfb88a55fe",
+        "2d838c48-f900-4cb0-8c41-3bdef7dcb231",
+        "509512c7-f8e0-4501-b564-8494aab364b7",
+        "e5e7335f-1d8f-4dd1-9e39-0649867f2cfc",
+        "0ecbd620-8d0d-481b-a876-835837b7bc77",
+        "006726e0-2dd0-42bf-a9a1-d171bf7b8c21",
+        "d5d2f565-fee2-428a-92c6-d1f51eb42d0d",
+        "9341ca7b-2d34-4b0d-9d35-674f8d0ae7ad",
+        "93cd8417-99c7-4e20-962e-1e221595611d",
+        "c404a886-be42-43f4-aa2a-94be8e2fe754",
+        "0982be94-0881-41b1-834c-97c05b23cf51",
+        "e5cea44e-6a14-4949-8760-3b9a1e646bc2",
+        "78f85fdb-7e51-459d-8681-ede184fb0be6"
+      ],
+      "titles": [
+        "《왼쪽 귀》 파생 마이크로 숏드라마(微短剧) 제작 시작, 바이두 YY 마이쑤 마이크로 숏드라마와 타오바오가 협력해 '마이크로 숏드라마+전자상거래' 새로운 모델 탐색",
+        "난징, AI 시대 적응형 마이크로 숏드라마(微短剧) 산업 신생태 구축",
+        "마이크로 숏드라마(微短剧)의 해외 진출 새 방향, 산능 수출에서 문화 탐색으로",
+        "중국 광전총국이 '마이크로 숏드라마 정품 창작 유통 계획' 추진, 업계를 '양에서 품질로' 전환",
+        "10리 길이의 상업 거리를 배경으로, 타이저우 첫 상업 테마 마이크로 숏드라마(微短剧) 전국 온라인 공개",
+        "스마트브레인이 새로운 발전을 다시 생각한다 21가지 질문 ⑮: 마이크로 숏드라마 산업은 어떻게 새로운 길로 나아갈 것인가"
+      ]
+    },
+    "reason_ko": "숏드라마가 타오바오와 붙고 규제는 편수 대신 품질로 기준을 옮기면서, 음악 IP를 빌려주는 쪽의 협상 단위가 회당 사용료에서 판매 전환으로 옮겨갈 자리가 생기고 있습니다.",
+    "reason_en": "As short dramas link directly to Taobao commerce and regulators shift the bar from volume to quality, the unit of negotiation for music IP licensors starts moving from per-episode fees toward sales conversion.",
+    "issue": {
+      "id": null,
+      "label_ko": "중국 마이크로 숏드라마와 IP 확장·커머스 결합",
+      "label_en": "Chinese micro-dramas, IP expansion, and commerce integration"
+    },
+    "rejected": [
+      {
+        "key": "60f5d5a1-1943-4cac-ade4-c1675e70d989",
+        "title": "원창 저작권을 지켜라: AI 음악, 규칙 없이 성장할 수 없다",
+        "n": 1,
+        "item_ids": [
+          "60f5d5a1-1943-4cac-ade4-c1675e70d989"
+        ],
+        "titles": [
+          "원창 저작권을 지켜라: AI 음악, 규칙 없이 성장할 수 없다"
+        ],
+        "why": "중국 AI 음성 판결과 표식 규칙은 관점이 이미 두 판(AI 음악 라이선스·국내 신탁 기준)에서 소진됐고, 단일 논평 기사라 덧붙일 수치가 없다."
+      },
+      {
+        "key": "d4c2f414-349f-49f9-a70c-e5eaff196aef",
+        "title": "AI 음악은 무규칙 성장 안 된다: 인민일보 AI 음악 저작권 원칙론 제시",
+        "n": 1,
+        "item_ids": [
+          "d4c2f414-349f-49f9-a70c-e5eaff196aef"
+        ],
+        "titles": [
+          "AI 음악은 무규칙 성장 안 된다: 인민일보 AI 음악 저작권 원칙론 제시"
+        ],
+        "why": "[0]과 사실상 같은 인민일보 논평의 재보도라 따로 다룰 국면이 없다."
+      },
+      {
+        "key": "24511117-2e20-46aa-919a-8247174ede78",
+        "title": "상하이 100시간 도시AI 마이크로 숏드라마(微短剧) 창작 대회 성료",
+        "n": 7,
+        "item_ids": [
+          "4351a3be-1317-4d2a-90cf-2f49ee79fd89",
+          "d100bb0f-d962-483a-9793-a69a8b47ecdd",
+          "24511117-2e20-46aa-919a-8247174ede78",
+          "9e1a96e9-d4d9-4517-b88d-59b76998f9e2",
+          "57a09492-2688-4127-a6ca-1b44ec7a3f7e",
+          "daeb5f3a-0b5a-4984-821b-70e77fe041ed",
+          "f5f97f10-2e5c-41f0-bbb3-d44114744489"
+        ],
+        "titles": [
+          "상하이 100시간 도시AI 마이크로 숏드라마(微短剧) 창작 대회 성료",
+          "첩보극 다시 시작, 열혈로 안개를 헤치다! 마이크로 숏드라마(微短剧) '위장자 짙은 안개 아래'가 인기 방송 순위 TOP2에 올라",
+          "AI 마이크로 숏드라마(微短剧)가 게임을 만나다, 만화 숏드라마 미니게임이 새로운 바람이 되고 있다",
+          "실인 마이크로 숏드라마(微短剧) 새로운 기회를 맞다",
+          "베이징 23개 작품 선정, 총국 2026년 제2차 '마이크로 숏드라마+' 추천작품 공개",
+          "실인 마이크로 숏드라마(微短剧)와 AI 드라마, 어떻게 공존 발전할 것인가"
+        ],
+        "why": "숏드라마+미니게임은 [2]와 같은 판의 하위 갈래라 함께 읽는 편이 낫고, 대회·순위 기사 위주로 재료가 얕다."
+      },
+      {
+        "key": "15a293e9-de68-40e2-9e93-d9c5df328f94",
+        "title": "TikTok음악대회에서 아시아 2위 입상한 絢音, 데뷔곡이 '왕님의 브런치' ED곡으로 결정",
+        "n": 3,
+        "item_ids": [
+          "15a293e9-de68-40e2-9e93-d9c5df328f94",
+          "6a42d17a-53b9-42c3-b565-9058fc492a20",
+          "b1189d7e-9b3c-44aa-bcfb-7110fabb81cb"
+        ],
+        "titles": [
+          "TikTok음악대회에서 아시아 2위 입상한 絢音, 데뷔곡이 '왕님의 브런치' ED곡으로 결정",
+          "TikTok 음악 대회에서 아시아 2위 입상한 絢音, 데뷔곡이 '왕님의 브랜치' 엔딩곡 확정 '믿을 수 없을 정도로 기쁘다'",
+          "TikTok音楽大会에서 아시아 2위 입상한 絢音, 데뷔곡이 '왕님의 브런치' ED로 결정, \"믿기지 않을 정도로 기쁘다\""
+        ],
+        "why": "TikTok 대회 입상자의 방송 ED 기용은 진입로 사례 한 건이라 사업 판단을 바꿀 만한 수치나 후속이 아직 붙지 않았다."
+      }
+    ]
+  },
+  "cluster": {
+    "key": "b467b1a0-ae9c-438e-a788-27d09b2523bf",
+    "item_ids": [
+      "b467b1a0-ae9c-438e-a788-27d09b2523bf",
+      "7af4edb1-fc03-4219-b58d-0d632b6ee748",
+      "048c2894-67d1-4d38-ab73-01545a0e715c",
+      "6fb8ecc2-e3d3-4ef7-ac41-bcb312cc7900",
+      "204c0b8b-fdca-46a2-b3cd-4e31ec83687a",
+      "e962e784-640e-46d1-83e3-2cdfb88a55fe",
+      "2d838c48-f900-4cb0-8c41-3bdef7dcb231",
+      "509512c7-f8e0-4501-b564-8494aab364b7",
+      "e5e7335f-1d8f-4dd1-9e39-0649867f2cfc",
+      "0ecbd620-8d0d-481b-a876-835837b7bc77",
+      "006726e0-2dd0-42bf-a9a1-d171bf7b8c21",
+      "d5d2f565-fee2-428a-92c6-d1f51eb42d0d",
+      "9341ca7b-2d34-4b0d-9d35-674f8d0ae7ad",
+      "93cd8417-99c7-4e20-962e-1e221595611d",
+      "c404a886-be42-43f4-aa2a-94be8e2fe754",
+      "0982be94-0881-41b1-834c-97c05b23cf51",
+      "e5cea44e-6a14-4949-8760-3b9a1e646bc2",
+      "78f85fdb-7e51-459d-8681-ede184fb0be6"
+    ],
+    "n": 18,
+    "radar_tense": "soon",
+    "factor": "포맷",
+    "stage": "유통",
+    "titles": [
+      "《왼쪽 귀》 파생 마이크로 숏드라마(微短剧) 제작 시작, 바이두 YY 마이쑤 마이크로 숏드라마와 타오바오가 협력해 '마이크로 숏드라마+전자상거래' 새로운 모델 탐색",
+      "난징, AI 시대 적응형 마이크로 숏드라마(微短剧) 산업 신생태 구축",
+      "마이크로 숏드라마(微短剧)의 해외 진출 새 방향, 산능 수출에서 문화 탐색으로",
+      "중국 광전총국이 '마이크로 숏드라마 정품 창작 유통 계획' 추진, 업계를 '양에서 품질로' 전환",
+      "10리 길이의 상업 거리를 배경으로, 타이저우 첫 상업 테마 마이크로 숏드라마(微短剧) 전국 온라인 공개",
+      "스마트브레인이 새로운 발전을 다시 생각한다 21가지 질문 ⑮: 마이크로 숏드라마 산업은 어떻게 새로운 길로 나아갈 것인가",
+      "난징 상반기 마이크로 숏드라마·만화극 5500부 이상 제작 발행, 전년 대비 90% 이상 증장, 전국 최고 수준의 생산 규모",
+      "중국 모델을 참고해 대규모 사용자층 확보한 인도 마이크로 숏드라마(微短剧) 시장이 '폭발적' 성장",
+      "장시성 6개 작품 선정, 국가광전총국 2026년 제2차 '마이크로 숏드라마+' 추천 작품 공개",
+      "난징이 AI 마이크로 숏드라마(微短剧)의 가속화를 위한 '시나리오'를 쓰다",
+      "중국 광전총국, '마이크로 숏드라마 정품 창작 전파 계획' 추진, 업계 '양에서 질로' 업그레이드",
+      "마이크로 숏드라마(微短剧)의 해외 진출 새로운 항로, 산능 수출에서 문화 탐색으로",
+      "100시간 AI 마이크로 숏드라마(微短剧) 대회 웨스트코스트에서 막내려",
+      "2026년 제2차 '마이크로 숏드라마+' 행동계획 추천 작품 발표",
+      "해외 마이크로 숏드라마&APP 주간 리포트: AI 짐승 세계 판타지 드라마가 인기 차트 7위 도달, 掌玩 FlickReels 성장 순위 1위 진입",
+      "입찰 분야의 '암투'에 집중, 마이크로 숏드라마(微短剧) 《개표지전》 개봉!",
+      "제3회 '剧查查의 밤' 개최 예정, 60명 이상 마이크로 숏드라마 아티스트 12월 11일 춘차(春茧) 체육관 무대",
+      "《被裁掉的女孩》 이후, AI 마이크로 숏드라마(微短剧)가 기술 경쟁에서 콘텐츠와 인간의 경합으로 전환"
+    ],
+    "urls": [
+      "https://news.google.com/rss/articles/CBMibkFVX3lxTFBtWXFjX2xDaDYtRk94VXc3TnBIM05PdEw4UzZJZ2dNdUdKNnJMTnhkSmhPR203UktaWVo5VHFQWXdGZEVoRWtIaWpVN24yV1BQb1lpU2U1M3JKd0VfTVpkbGhLVUVLeGxlSUJxck1n?oc=5",
+      "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1qMjVHbG1OcmdhMTIwSG1VUVVpOTR3LVpZc3A5cW5qUnJhcjlyYl9uTUlFNVFxOVVpdVpnZkVQSTZvMDc5aEhrc25lXzUyRnRaSWN5TVV3TXBuOXVCbHJWVW8xdnZzSVdz?oc=5",
+      "https://news.google.com/rss/articles/CBMiakFVX3lxTE1vc1ZyanBSQ1JXcDAxYkVkaEVDY3UzNzdldXp4OG9pTmpWbGxfWmVRbjBUdlhmbmt6NlM4Z0JOeUQ5UE1NYnBmT0p4RDE3NnkzaWtlSS1aM2JsclR1Mk9RN3FFMnpkMTdEZXc?oc=5",
+      "https://news.google.com/rss/articles/CBMieEFVX3lxTE9FU016Nm5aRHc4T3lVQmttbzAwM2Q2T0N5WG5BNndVLVQ3MFo5Z3lZT2lWcWtOYWxxNVk2dHFiMWZ2Q1ltUTQybnlOR3pCSFRjNEVXSGpURkU2Nk0tNnptYmUwSE9DODdON1RQcTMxbG5qOE40Qk1YUA?oc=5",
+      "https://news.google.com/rss/articles/CBMiakFVX3lxTE9uM0JfSXFwZ2ZwMTJ4YlFqOWltUnJtNnpXYmQzcHVoQ2g5LW1PWjlUVFplMFVnNko5dmlaMVRrTlFUYjBQckJXcXZpU1ZDTFVBdzVWOWxLSXJnanhOX2t1OVlSMHdRa0hmQUE?oc=5",
+      "https://news.google.com/rss/articles/CBMijAFBVV95cUxPUWRaaTJXZ3VwVWxmcEpJZnZCVEVyX0I4cV91blRiemdqeFJXc0hpaFVVTk1xdW9ua2FuMU9QdklTM3dxcmR1b2xiOWFjZVBQTkV3c19obDNFcmZOZ1ctdl8tazNqbmFyNG9xTGR4dnhHVnFObVZMQUl0bkowcWtsbTQ1QXE3MDhCQXR4VQ?oc=5",
+      "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMGJ3YzNJVVlmYWpCZWQxbW9NYklVbDZDN2NjTU1CaHlrQzVYM0lmSFR6V1JmLTJyX3RrSHZ1VndGWXZCeHhOWkJEcEVaVkt4MzVER2t1cTA4YUZfcmx5ZzAwbzgtNG5pV1BHOTViVkJfTkJBV0piRjhGZGpTYTlwN1htT1NSUlBpc2ZPVA?oc=5",
+      "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1NbnZVQjJEaVkyYkJYY3F5bHU4N1ByeXRtMzVsS3Rac3h6TGJKallPMzJJQUdXVzJZdTg0V0M3bW9MZWhjbUd4Q2NKQQ?oc=5",
+      "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1NbmZEWk9yQ2hrRzVkTXlUTWhLRlRiMG9heGxKMk5STWRxaVd1cnZhaTdKVXJDM2tWYURMeVR4M0w5dWliNUhDRVNB?oc=5",
+      "https://news.google.com/rss/articles/CBMiakFVX3lxTE9EemZrNVFRN0ZwbXBLMWNzN0hSNHdTRkxfUWhmaUh1cXR1T0ZaR3lwaWZzQ29qQ3ZTUDhEYjVza3FuaHpzTUtTS0NBZ2FqWHN5Y29GVGFLaFlsSTFnUmRFZEs3TFlHd3puM2c?oc=5",
+      "https://news.google.com/rss/articles/CBMid0FVX3lxTE9yZGF4ZFBKQThjYlVBbzZGOFF6cXdncTBSYVE3X0c2ZFRoZDhrcHEzZF8zMkI5NklHcG5GSWxuVUZZTFliREF2Wmhaa2dJVWdKMnZpU25SR2ZObXhmWFg5M1cxLTh1ZmFBZnp6Nm5HN2hqS3lUWDdj?oc=5",
+      "https://news.google.com/rss/articles/CBMijAFBVV95cUxPbE9BZ25vTFBUb0lDM3VSS01jSmRQQVk4dDhjY2ZaODBCMnFDaHVXa3JiRDJUQnBXWDRxSVFWek52ZkpMa3c5Um91SUt6UmUwOFRna2Y4Y0NXb1RLSTR4Q3hEbUs3Z1NQWXR0aHZNNTRGbTlxckhQVDR2TUp2bVJsM1pJdjdMTVhsNWxZZQ?oc=5",
+      "https://news.google.com/rss/articles/CBMieEFVX3lxTE51MlFIX2dQWjVhUXZjNGE2d3Q3dmQwSGVTVTJEdzV2VVo5ZGFVRmVXQVVXckpUaElhRmJuTy1uNGdZUElYWDVMZGZ3aVFfM0lxQW8xX3BPdlpPLTVPSnZ0SmdtUzQ4TG9VRFRvakt6b0Z3dXhCTm1Rcw?oc=5",
+      "https://news.google.com/rss/articles/CBMigAFBVV95cUxOOFNkVEdpaG5lTGJ6U1lNXzB3UFZaWlN3NjU4OXdjbFIxcDUwVnJ2dngzYjhpeV9xU2FHRjN4bk0xdHdtYWZsRExURzJGdHFYT2lIM0NiUFc2QXNnQTdRVDBiWkk3VEZKUUxNSUNHVWd6MTBxQV9pUjZfMWdxTFd0bQ?oc=5",
+      "https://news.google.com/rss/articles/CBMiTEFVX3lxTE42dHd3Qy1UWjlVYVJyVkp5cFM4VDAwWW9uN2pYeUNfeW41bldXX1JjRTFiYnlzWkxTNXNmNUc3elAxSzBGM0VNa09mczQ?oc=5",
+      "https://news.google.com/rss/articles/CBMicEFVX3lxTE1MYkdtdUFrRVAwU3RIblEwV3FnZWpHRjV5QmFnRk9QOUhVMmh5elpQUHV4S1FDUGJWUEIzQ29GRENoTTl6alFNRkxQa1FKdmlyZWJzSVF5M3l4NFhSSVNabFQxN0l3TkpRTWYzVk5kYWc?oc=5",
+      "https://news.google.com/rss/articles/CBMidkFVX3lxTE51bEhfd2lIM1dXQ2NhTTM5b3FYVHJjU0MwZ0JUZHNxWnRaV2dWMHRIQy1HS1BzZUg4YmNOWWNHNXdpZnoyNmozcGl1RHA1MmVOSzhSa2ZnNmVrUGxHZGRWZXdDczYyaUhQNlg4bUxKNkw4eFdZOGc?oc=5",
+      "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBiaFZjT3NOYnFiQnZTTGtZdUFDR3ZBczVkeFdBT0V6MEo3X0VQdGE4SkNGUkVXT0ViNERnSnMxNXB2MEZTeW42cUd5VEtFcVY2WlA4TVZNclFUdW9sTXBJ?oc=5"
+    ],
+    "items": [
+      {
+        "title": "《왼쪽 귀》 파생 마이크로 숏드라마(微短剧) 제작 시작, 바이두 YY 마이쑤 마이크로 숏드라마와 타오바오가 협력해 '마이크로 숏드라마+전자상거래' 새로운 모델 탐색",
+        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBtWXFjX2xDaDYtRk94VXc3TnBIM05PdEw4UzZJZ2dNdUdKNnJMTnhkSmhPR203UktaWVo5VHFQWXdGZEVoRWtIaWpVN24yV1BQb1lpU2U1M3JKd0VfTVpkbGhLVUVLeGxlSUJxck1n?oc=5",
+        "source": "央广网",
+        "region": "china",
+        "published_date": "2026-09-28T09:49:19+00:00",
+        "title_en": "Baidu YY Maishu Partners with Taobao to Explore Micro Short-form Drama and E-commerce Model"
+      },
+      {
+        "title": "난징, AI 시대 적응형 마이크로 숏드라마(微短剧) 산업 신생태 구축",
+        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1qMjVHbG1OcmdhMTIwSG1VUVVpOTR3LVpZc3A5cW5qUnJhcjlyYl9uTUlFNVFxOVVpdVpnZkVQSTZvMDc5aEhrc25lXzUyRnRaSWN5TVV3TXBuOXVCbHJWVW8xdnZzSVdz?oc=5",
+        "source": "js.cnr.cn",
+        "region": "china",
+        "published_date": "2026-09-28T09:34:08+00:00",
+        "title_en": "Nanjing Builds New Micro Short-form Drama Industry Ecosystem Adapted to AI Era"
+      },
+      {
+        "title": "마이크로 숏드라마(微短剧)의 해외 진출 새 방향, 산능 수출에서 문화 탐색으로",
+        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1vc1ZyanBSQ1JXcDAxYkVkaEVDY3UzNzdldXp4OG9pTmpWbGxfWmVRbjBUdlhmbmt6NlM4Z0JOeUQ5UE1NYnBmT0p4RDE3NnkzaWtlSS1aM2JsclR1Mk9RN3FFMnpkMTdEZXc?oc=5",
+        "source": "chinanews.com.cn",
+        "region": "china",
+        "published_date": "2026-09-28T07:48:32+00:00",
+        "title_en": "Micro Short-form Drama's Overseas Expansion: From Commodity Export to Cultural Exploration"
+      },
+      {
+        "title": "중국 광전총국이 '마이크로 숏드라마 정품 창작 유통 계획' 추진, 업계를 '양에서 품질로' 전환",
+        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9FU016Nm5aRHc4T3lVQmttbzAwM2Q2T0N5WG5BNndVLVQ3MFo5Z3lZT2lWcWtOYWxxNVk2dHFiMWZ2Q1ltUTQybnlOR3pCSFRjNEVXSGpURkU2Nk0tNnptYmUwSE9DODdON1RQcTMxbG5qOE40Qk1YUA?oc=5",
+        "source": "finance.sina.cn",
+        "region": "china",
+        "published_date": "2026-09-28T12:56:15+00:00",
+        "title_en": "China's National Radio and Television Administration Promotes 'Micro Short-form Drama Quality Creation Distribution Plan'"
+      },
+      {
+        "title": "10리 길이의 상업 거리를 배경으로, 타이저우 첫 상업 테마 마이크로 숏드라마(微短剧) 전국 온라인 공개",
+        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9uM0JfSXFwZ2ZwMTJ4YlFqOWltUnJtNnpXYmQzcHVoQ2g5LW1PWjlUVFplMFVnNko5dmlaMVRrTlFUYjBQckJXcXZpU1ZDTFVBdzVWOWxLSXJnanhOX2t1OVlSMHdRa0hmQUE?oc=5",
+        "source": "台州新闻",
+        "region": "china",
+        "published_date": "2026-09-28T07:41:47+00:00",
+        "title_en": "Taizhou Launches First Commercial-themed Micro Short-form Drama Against 10-li Commercial Street Backdrop"
+      },
+      {
+        "title": "스마트브레인이 새로운 발전을 다시 생각한다 21가지 질문 ⑮: 마이크로 숏드라마 산업은 어떻게 새로운 길로 나아갈 것인가",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPUWRaaTJXZ3VwVWxmcEpJZnZCVEVyX0I4cV91blRiemdqeFJXc0hpaFVVTk1xdW9ua2FuMU9QdklTM3dxcmR1b2xiOWFjZVBQTkV3c19obDNFcmZOZ1ctdl8tazNqbmFyNG9xTGR4dnhHVnFObVZMQUl0bkowcWtsbTQ1QXE3MDhCQXR4VQ?oc=5",
+        "source": "搜狐网",
+        "region": "china",
+        "published_date": "2026-09-28T09:49:05+00:00",
+        "title_en": "SmartBrain Reconsiders New Development: 21 Questions ⑮ How Will the Micro Short-form Drama Industry Move Forward?"
+      }
+    ]
+  },
+  "source_summary": {
+    "ko": "중국의 마이크로 숏드라마 산업이 전자상거래와 결합하는 새로운 모델을 확대하고 있습니다. 바이두, YY, 마이쑤 등이 타오바오와 협력해 콘텐츠-커머스 결합 모델을 탐색하고 있으며, 난징과 타이저우 등 지역에서 IP 확장과 상업 테마 마이크로 숏드라마 제작을 추진하고 있습니다. 중국 광전총국도 '마이크로 숏드라마 정품 창작 유통 계획'을 통해 업계의 질적 전환을 도모하고 있습니다.",
+    "en": "China's micro short-form drama industry is expanding a new model combining content with e-commerce. Baidu, YY, and Maishu are collaborating with Taobao to explore content-commerce integration, while cities like Nanjing and Taizhou are promoting IP expansion and commercial-themed productions. China's National Radio and Television Administration is also driving quality improvement through its 'Micro Short-form Drama Original Creation Distribution Plan'.",
+    "titles_en": [
+      "Baidu YY Maishu Partners with Taobao to Explore Micro Short-form Drama and E-commerce Model",
+      "Nanjing Builds New Micro Short-form Drama Industry Ecosystem Adapted to AI Era",
+      "Micro Short-form Drama's Overseas Expansion: From Commodity Export to Cultural Exploration",
+      "China's National Radio and Television Administration Promotes 'Micro Short-form Drama Quality Creation Distribution Plan'",
+      "Taizhou Launches First Commercial-themed Micro Short-form Drama Against 10-li Commercial Street Backdrop",
+      "SmartBrain Reconsiders New Development: 21 Questions ⑮ How Will the Micro Short-form Drama Industry Move Forward?"
+    ]
+  },
+  "materials": {
+    "wiki": [
+      "2026-05-29-IP-비즈니스-구조.md",
+      "2026-09-16-소비재브랜드-이식-분해.md",
+      "2026-09-16-인수분해-사업을-층으로-내리기.md"
+    ],
+    "lexicon": []
+  },
+  "context": "- [후속] 광전총국이 2026년 5월 14일 '마이크로 숏드라마 정품 창작 전파 계획' 업무 배치 추진회를 열고 실시방안을 발표, 2026년 우수 숏드라마 1000편 목표 제시 (新华网 https://www.news.cn/politics/20260515/0708388c0ee34b1898de0657b1eb5de4/c.html)\n- [후속] 광전총국 판공청이 2026년 5월 23일 广电办发〔2026〕123호로 실시방안을 정식 인쇄·배포, '5개 일괄(五个一批) 공정' 등 전국 시행 지시 (湖南省人民政府 https://www.hunan.gov.cn/zqt/zcsd/202605/t20260527_33987563.html)\n- [후속] 계획은 2026년 4월 15일 청두 제13회 중국 인터넷시청대회에서 정식 출범, '장정: 우리의 이야기' 주제 숏드라마 창작 전시 활동도 동시 시작 (新华网 https://www.news.cn/politics/20260415/620804dbe90944609b14c303fcefa1d3/c.html)\n- [후속] 베이징·랴오닝·상하이·장쑤 등 11개 성(省)이 전용 지원자금을 배정하고 극본·촬영·방영·국제전파까지 연계 정책 마련 (中国新闻网 https://www.chinanews.com.cn/cul/2026/05-15/10621501.shtml)\n- [반응] 광전총국 관계자 중국 숏드라마가 조방적 성장에서 번영 발전의 관건 단계로 진입, 정품화·디지털지능화·산업화·국제화의 전략적 기회기에 있다고 평가 (新华网 https://www.news.cn/politics/20260415/620804dbe90944609b14c303fcefa1d3/c.html)\n- [반응] 映宇宙(잉위저우) 샤샤오후이 '숏드라마 1000억 위안 규모는 머지않았다'며 무료 시장이 주류가 되고 유료는 희소성·차별화 노선만 생존한다고 발언 (21世纪经济报道 https://www.21jingji.com/article/20251127/herald/813a875a168357dbe17577ffab312e38.html)\n- [반응] 업계 종사자(백서 설문) 90% 이상이 소속 기업 매출이 안정 또는 증가라 답했고, 87% 이상이 향후 1년 시장 규모 성장을 전망 (中国网络视听节目服务协会 http://www.cnsa.cn/art/2025/11/11/art_1955_47836.html)\n- [반응] 업계 종사자(백서 설문) 60% 이상이 AI 등 신기술 적용을 숏드라마 산업 성장의 중요 동력으로 지목 (中国网络视听节目服务协会 http://www.cnsa.cn/art/2025/11/11/art_1955_47836.html)\n- [수치] 최소 60억 위안 6개 주요 인터넷 시청 플랫폼이 우수 실사 숏드라마 창작·전파에 투입하기로 한 자금 (中国新闻网 https://www.chinanews.com.cn/cul/2026/05-15/10621501.shtml)\n- [수치] 1000편 / 2026년 말까지 광전총국이 2026년 한 해에 내놓겠다고 제시한 우수 숏드라마 편수 목표와 기한 (国家广播电视总局 https://www.nrta.gov.cn/art/2026/5/14/art_112_73305.html)\n- [수치] 11개 성 전용 지원자금을 배정한 지방(베이징·랴오닝·상하이·장쑤·저장·푸젠·장시·허난·후난·광시·산시) (中国新闻网 https://www.chinanews.com.cn/cul/2026/05-15/10621501.shtml)\n- [수치] 505억 위안 (2024) → 634.3억 위안 (2025 전망) → 856.5억 위안 (2027 전망) 중국 마이크로 숏드라마 시장 규모 추이. 2024년 처음으로 연간 영화 흥행수입 추월 (财联社 https://www.cls.cn/detail/2064298)\n- [선례] 애니메이션 IP 파생 숏드라마 선례 - 국산 애니 IP 《时光代理人》 파생 숏드라마가 B사이트에서 재생 2.5억 회 돌파 (读特新闻 https://www.dutenews.com/p/8763308.html)\n- [선례] 보조금·기금 선례 - 광전총국이 인터넷시청 정품 지원 전문기금과 정품 창작전파 공정을 통해 중대 주제·현실 생활·역사 문화 프로젝트에 자금 지원하던 기존 구조를 숏드라마로 확장 (新华网 https://www.news.cn/politics/20260415/620804dbe90944609b14c303fcefa1d3/c.html)\n- [선례] '천행백업 부가' 선례 - 보급(普法)극·문화관광(文旅)극·브랜드 맞춤극이 2025년 상반기 뚜렷한 성장을 보이며 숏드라마가 타 산업 도구로 쓰인 사례 (DataEye研究院 (东方财富) https://pdf.dfcfw.com/pdf/H3_AP202507111706795697_1.pdf)",
+  "judgment": {
+    "factor": "정책",
+    "from_stage": "생산",
+    "to_stage": "소비",
+    "region": "중화권",
+    "tense": "signal",
+    "tense_why": "광전총국 공식 실시방안·11개 성 전용자금·6개 플랫폼 60억 위안 투입까지 확정된 국가 단위 주류 움직임이고, 시장 규모도 이미 영화 흥행수입을 넘겼다.",
+    "vibe_evidence": "",
+    "vibe_evidence_en": "",
+    "angle_ko": "숏드라마가 커머스·지역관광·브랜드의 '부가 도구'로 붙기 시작하자 국가가 품질 기준을 들고 들어왔다. 정책은 콘텐츠를 규제하는 게 아니라 파이프라인 ④번 칸의 단가를 정하는 장치로 작동한다.",
+    "angle_en": "As micro-dramas become an attachable tool for commerce, local tourism and brands, the regulator stepped in with a quality mandate. The policy is less content control than a price-setting device for the media-mix slot of the IP pipeline.",
+    "title_ko": "타오바오가 시험할 값은 조회수가 아니다",
+    "title_en": "Eleven Provinces Set Aside Subsidy Funds, Six Platforms Commit 6 Billion Yuan",
+    "bet": null,
+    "principle_ko": "자기 상품 옆에 붙는 '2분짜리 서사 라인'은 광고비가 아니라 별도 매출 라인으로 세울 때만 지속된다 - 판촉으로 두면 예산이 깎이는 순간 사라진다.",
+    "principle_en": "A two-minute narrative line attached to your product only survives if it is booked as its own revenue line, not as marketing spend - treat it as promotion and it dies with the next budget cut.",
+    "radar_tense": "soon",
+    "agrees": false,
+    "disagree_reason": "광전총국 공식 실시방안·11개 성 전용자금·6개 플랫폼 60억 위안 투입까지 확정된 국가 단위 주류 움직임이고, 시장 규모도 이미 영화 흥행수입을 넘겼다."
+  },
+  "recent": "[D+25 · 2026-09-29] 「560곡에서 6만 곡까지」 정책 생산→생산 · signal\n  숫자 · 제목 - 무슨 얘긴지 알려주나 0/2 · 읽고 싶게 하나 1/2 / 문체 - 사람 분포 밖 3개(문장 리듬, 접속부사, 쉼표) / 형식 66/100 · 첫 문단에 누가 무엇을 언제 있음 · AI tell 1 · 헤지 만자당 0.0 · 문장 중앙 52자\n  검수 지적 · 워너 문단의 「한 곳은 같은 목록을 계약 상대에게 넘겨둔 상태입니다」는 출처로 받친 '합의·파트너십' 사실 위에 얹은 은유인데, 워너가 실제로 청구 대상 목록에 해당하는 것을 협상 자산으로 썼다는 사실 주장으로 오독될 여지가 있다. '같은 목록'을 '같은 곡 카탈로그' 정도로 낮추거나, 합의 내용 중 공개된 조건(파트너십\n  검수 지적",
+  "issue": {
+    "id": null,
+    "hint": {
+      "id": null,
+      "label_ko": "중국 마이크로 숏드라마와 IP 확장·커머스 결합",
+      "label_en": "Chinese micro-dramas, IP expansion, and commerce integration"
+    },
+    "synth": false,
+    "prior": [],
+    "thread_chars": 0
+  },
+  "draft_ko_v1": "중국 청춘소설 《왼쪽 귀(左耳)》의 파생 마이크로 숏드라마가 제작에 들어갔다고 [央广网](https://news.google.com/rss/articles/CBMibkFVX3lxTFBtWXFjX2xDaDYtRk94VXc3TnBIM05PdEw4UzZJZ2dNdUdKNnJMTnhkSmhPR203UktaWVo5VHFQWXdGZEVoRWtIaWpVN24yV1BQb1lpU2U1M3JKd0VfTVpkbGhLVUVLeGxlSUJxck1n?oc=5)이 전했습니다. 바이두 계열 제작 라인과 타오바오가 붙어 숏드라마와 전자상거래를 잇는 모델을 시험한다는 내용입니다. 마이크로 숏드라마(微短剧)는 회당 1~3분짜리 세로 화면 연속물입니다. 원작을 다른 매체로 옮겨 붙이는 자리, 웹툰을 게임으로 만들고 드라마를 뮤지컬로 만드는 그 칸에 들어갑니다.\n\n같은 칸에 국가가 돈을 들고 들어왔습니다. 광전총국의 '마이크로 숏드라마 정품 창작 전파 계획'은 2026년 4월 15일 청두 인터넷시청대회에서 출범했고, 5월 14일 업무배치 추진회에서 2026년 말까지 우수 숏드라마 1000편이라는 목표가 제시됐으며, 5월 23일 广电办发〔2026〕123호로 실시방안이 배포됐다고 新华网과 후난성 인민정부가 각각 공개했습니다. 中国新闻网은 2026년 5월 15일 기사에서 11개 성이 전용 지원자금을 배정했고 6개 주요 시청 플랫폼이 최소 60억 위안을 투입하기로 했다고 전했습니다.\n\n돈이 가는 방향을 보면 이 정책이 만지는 건 내용이 아니라 제작 단가입니다. 시장 규모는 财联社 집계로 2024년 505억 위안이고 그해 연간 영화 흥행수입을 처음 넘었는데, 잉위저우(映宇宙)의 샤샤오후이는 2025년 11월 21世纪经济报道에서 무료 시장이 주류가 되고 유료는 희소성 노선만 살아남는다고 말했습니다. 시청자가 직접 돈을 내지 않으면 제작비는 광고주와 플랫폼과 정부에서 옵니다. DataEye연구원이 2025년 상반기 보고서에서 보급극과 문화관광극과 브랜드 맞춤극의 성장을 짚은 것, 타이저우가 상업거리를 배경으로 홍보 숏드라마를 만든 것이 전부 그 자리입니다.\n\n문제는 이렇게 붙은 2분짜리 서사가 판촉 예산 항목에 들어가 있다는 점입니다. 판촉비는 분기 실적이 나빠지면 가장 먼저 깎입니다. 타오바오 결합이 시험할 값은 조회수가 아니라 이 라인이 전환 수수료라는 별도 매출로 잡히는지 여부입니다. 지방정부 자금도 같은 위험을 집니다. 1000편이라는 수량 목표를 단 보조금은 보조금이 끊길 때 판촉과 똑같이 멈춥니다.\n\n한국 쪽이 볼 수치는 따로 있습니다. 读特新闻은 국산 애니메이션 IP 《시광대리인(时光代理人)》의 파생 숏드라마가 B사이트에서 재생 2.5억 회를 넘겼다고 전했습니다. 재생수는 회사 밖에서 집계되니 다음 브랜드 협상에서 단가의 근거로 섭니다. 케이팝 IP가 짧은 서사를 만들 때 먼저 정할 것은 그 수치가 어느 청구서에 붙느냐입니다.",
+  "reread_ko": [],
+  "claims": [
+    {
+      "status": "unverified",
+      "source": "AsiaNet(연합뉴스)",
+      "url": "https://m.news.nate.com/view/20260417n22763",
+      "note": "청두 4월 15일 행사는 확인되나, 해당 계획명의 출범은 확인 불가",
+      "claim": "광전총국의 '마이크로 숏드라마 정품 창작 전파 계획'은 2026년 4월 15일 청두 인터넷시청대회에서 출범했고"
+    },
+    {
+      "status": "unverified",
+      "source": "",
+      "url": "",
+      "note": "검색 결과에서 5월 14일 업무배치 추진회와 숏드라마 1000편 목표에 대한 정보를 찾을 수 없음",
+      "claim": "5월 14일 업무배치 추진회에서 2026년 말까지 우수 숏드라마 1000편이라는 목표가 제시됐으며"
+    },
+    {
+      "status": "verified",
+      "source": "国家广播电视总局",
+      "url": "https://www.nrta.gov.cn/art/2026/5/26/art_113_73378.html",
+      "note": "广电办发〔2026〕123号实施方案于2026年5月23日由国家广播电视总局办公厅印发",
+      "claim": "5월 23일 广电办发〔2026〕123호로 실시방안이 배포됐다"
+    },
+    {
+      "status": "contradicted",
+      "source": "新京报网",
+      "url": "https://finance.sina.com.cn/tech/roll/2026-05-15/doc-inhxyimh8143467.shtml",
+      "note": "中国新闻网未报道此消息;新京报网5月15日报道称会议召开于5月14日,非5月15日",
+      "claim": "中国新闻网은 2026년 5월 15일 기사에서 11개 성이 전용 지원자금을 배정했고 6개 주요 시청 플랫폼이 최소 60억 위안을 투입하기로 했다고 전했습니다"
+    },
+    {
+      "status": "unverified",
+      "source": "",
+      "url": "",
+      "note": "505억 위안 규모와 영화 흥행수입 초과 주장을 뒷받침하는 사료를 찾을 수 없음. 2024년 영화 총 박스오피스는 425.02억 원으로 알려짐.",
+      "claim": "市场 규모는 财联社 집계로 2024년 505억 위안이고 그해 연간 영화 흥행수입을 처음 넘었는데"
+    },
+    {
+      "status": "unverified",
+      "source": "",
+      "url": "",
+      "note": "B站 공식에 시즌2 재생량 2.5억 확인되나 파생 숏드라마 및 읽특신문 보도 미확인",
+      "claim": "读特新闻은 국산 애니메이션 IP 《시광대리인(时光代理人)》의 파생 숏드라마가 B사이트에서 재생 2.5억 회를 넘겼다고 전했습니다"
+    }
+  ],
+  "reviews": [
+    {
+      "verdict": "pass",
+      "blocking": [],
+      "notes": [
+        "각도 문장은 '국가가 품질 기준을 들고 들어왔다'로 시작하는데, 본문은 자금 배정(11개 성·60억 위안)만 다루고 '정품 창작' 계획이 실제로 어떤 기준(분류심사·제목·소재 제한 등)을 제작 라인에 강제하는지는 한 줄도 없다. 논지가 '기준이 곧 단가'라면 기준의 실물 한 조각은 보여야 설득이 선다.",
+        "마지막 문단의 《시광대리인》 2.5억 회는 앞 네 문단(숏드라마 판촉 예산의 취약성)과 논리적으로 붙지 않는다. 애니 IP 시즌물 재생수와 2분 판촉 숏드라마의 단가 근거는 다른 종류의 수치다. '회사 밖 집계라 협상 근거가 된다'는 명제를 숏드라마 쪽 수치(플랫폼 공개 재생·전환율)로 끌고 오면 문단이 본문과 한 몸이 된다.",
+        "반례 처리가 한 줄로 얇다. '유료는 희소성 노선만 살아남는다'는 인용은 반례를 소개만 하고 닫는다. 홍궈·허우랑 류의 광고분성·IAA 모델처럼 판촉·보조금 밖에서 매출을 만드는 라인이 실제로 존재하는데, 그 경우에도 단가가 정책에 끌려가는지 아닌지를 한 단락 마주하면 논지가 훨씬 단단해진다.",
+        "음악업계 독자의 수확이 마지막 한 문장('케이팝 IP가 짧은 서사를 만들 때')에 몰려 있다. 아티스트 IP 기반 숏드라마가 어느 예산(마케팅비 vs 콘텐츠 제작비)에 계상되는지, 그 차이가 재계약·정산에서 무엇을 바꾸는지 한 문장만 더 있으면 전용 가능한 지침이 된다.",
+        "'B사이트', '보급극', '전환 수수료'는 엔터 밖 독자에게 설명 없이 던져진다. 앞서 微短剧를 '회당 1~3분 세로 화면 연속물'로 풀어준 만큼의 친절을 뒤쪽 용어에도 적용할 것."
+      ],
+      "issues": [
+        "각도 문장은 '국가가 품질 기준을 들고 들어왔다'로 시작하는데, 본문은 자금 배정(11개 성·60억 위안)만 다루고 '정품 창작' 계획이 실제로 어떤 기준(분류심사·제목·소재 제한 등)을 제작 라인에 강제하는지는 한 줄도 없다. 논지가 '기준이 곧 단가'라면 기준의 실물 한 조각은 보여야 설득이 선다.",
+        "마지막 문단의 《시광대리인》 2.5억 회는 앞 네 문단(숏드라마 판촉 예산의 취약성)과 논리적으로 붙지 않는다. 애니 IP 시즌물 재생수와 2분 판촉 숏드라마의 단가 근거는 다른 종류의 수치다. '회사 밖 집계라 협상 근거가 된다'는 명제를 숏드라마 쪽 수치(플랫폼 공개 재생·전환율)로 끌고 오면 문단이 본문과 한 몸이 된다.",
+        "반례 처리가 한 줄로 얇다. '유료는 희소성 노선만 살아남는다'는 인용은 반례를 소개만 하고 닫는다. 홍궈·허우랑 류의 광고분성·IAA 모델처럼 판촉·보조금 밖에서 매출을 만드는 라인이 실제로 존재하는데, 그 경우에도 단가가 정책에 끌려가는지 아닌지를 한 단락 마주하면 논지가 훨씬 단단해진다.",
+        "음악업계 독자의 수확이 마지막 한 문장('케이팝 IP가 짧은 서사를 만들 때')에 몰려 있다. 아티스트 IP 기반 숏드라마가 어느 예산(마케팅비 vs 콘텐츠 제작비)에 계상되는지, 그 차이가 재계약·정산에서 무엇을 바꾸는지 한 문장만 더 있으면 전용 가능한 지침이 된다.",
+        "'B사이트', '보급극', '전환 수수료'는 엔터 밖 독자에게 설명 없이 던져진다. 앞서 微短剧를 '회당 1~3분 세로 화면 연속물'로 풀어준 만큼의 친절을 뒤쪽 용어에도 적용할 것."
+      ],
+      "one_line": "정책을 검열이 아니라 단가 결정 장치로 읽는 각도가 선명하고 자금 수치도 출처와 함께 실려 있다 — 품질 기준의 실물이 비어 있고 마지막 문단이 겉도는 건 개선 사항이지 차단 사유는 아니다. pass."
+    }
+  ],
+  "gate": {
+    "chars": 1042,
+    "contrast": 2,
+    "chars_after": 990,
+    "contrast_after": 1,
+    "revised": true
+  },
+  "draft_ko_final": "중국 청춘소설 《왼쪽 귀(左耳)》의 파생 마이크로 숏드라마가 제작에 들어갔다고 [央广网](https://news.google.com/rss/articles/CBMibkFVX3lxTFBtWXFjX2xDaDYtRk94VXc3TnBIM05PdEw4UzZJZ2dNdUdKNnJMTnhkSmhPR203UktaWVo5VHFQWXdGZEVoRWtIaWpVN24yV1BQb1lpU2U1M3JKd0VfTVpkbGhLVUVLeGxlSUJxck1n?oc=5)이 전했습니다. 바이두 계열 제작 라인과 타오바오가 붙어 숏드라마와 전자상거래를 잇는 모델을 시험한다는 내용입니다. 마이크로 숏드라마(微短剧)는 회당 1~3분짜리 세로 화면 연속물입니다. 원작을 다른 매체로 옮겨 붙이는 자리, 웹툰을 게임으로 만드는 그 칸에 들어갑니다.\n\n같은 칸에 국가가 돈을 들고 들어왔습니다. [광전총국](https://www.nrta.gov.cn/art/2026/5/26/art_113_73378.html)의 '마이크로 숏드라마 정품 창작 전파 계획' 실시방안은 2026년 5월 23일 广电办发〔2026〕123호로 배포됐다고 新华网과 후난성 인민정부가 각각 공개했습니다. 新京报网은 2026년 5월 15일 기사에서 전날 열린 업무배치 회의를 전하며 11개 성이 전용 지원자금을 배정했고 6개 주요 시청 플랫폼이 최소 60억 위안을 투입하기로 했다고 보도했습니다.\n\n돈이 가는 방향을 보면 이 정책이 만지는 건 제작 단가입니다. 잉위저우(映宇宙)의 샤샤오후이는 2025년 11월 21世纪经济报道에서 무료 시장이 주류가 되고 유료는 희소성 노선만 살아남는다고 말했습니다. 시청자가 직접 돈을 내지 않으면 제작비는 광고주와 플랫폼과 정부에서 옵니다. DataEye연구원이 2025년 상반기 보고서에서 짚은 보급극·문화관광극·브랜드 맞춤극의 성장이 그 자리입니다.\n\n문제는 이렇게 붙은 2분짜리 서사가 판촉 예산 항목에 들어가 있다는 점입니다. 판촉비는 분기 실적이 나빠지면 가장 먼저 깎입니다. 타오바오 결합이 시험할 값은 조회수가 아니라 이 라인이 전환 수수료라는 별도 매출로 잡히는지 여부입니다. 지방정부 자금도 같은 위험을 집니다. 전용 지원자금에 기대어 선 제작 라인은 그 자금이 끊길 때 함께 멈춥니다.\n\n한국 쪽이 볼 수치는 따로 있습니다. 국산 애니메이션 IP 《시광대리인(时光代理人)》 시즌2는 B사이트 공식 집계로 재생 2.5억 회를 넘겼습니다. 재생수는 회사 밖에서 집계되니 다음 브랜드 협상에서 단가의 근거로 섭니다. 케이팝 IP가 짧은 서사를 만들 때 먼저 정할 것은 그 수치가 어느 청구서에 붙느냐입니다.",
+  "reread_en": [],
+  "draft_en_final": "A spin-off micro-drama based on the Chinese youth novel *Left Ear* (左耳) has entered production, [CNR](https://news.google.com/rss/articles/CBMibkFVX3lxTFBtWXFjX2xDaDYtRk94VXc3TnBIM05PdEw4UzZJZ2dNdUdKNnJMTnhkSmhPR203UktaWVo5VHFQWXdGZEVoRWtIaWpVN24yV1BQb1lpU2U1M3JKd0VfTVpkbGhLVUVLeGxlSUJxck1n?oc=5), the state broadcaster's news site, reported. A Baidu-affiliated production unit and Taobao, China's largest online shopping platform, are attached to it, testing a format that runs the drama and the checkout page together. A micro-drama is a vertical-screen serial of one to three minutes per episode, watched on a phone the way you would watch a short video, except it continues. In the life of an intellectual property, it sits in the same slot a web comic occupies when it is turned into a mobile game. It is the adaptation shelf.\n\nThe state has now walked onto that shelf carrying money. The [National Radio and Television Administration](https://www.nrta.gov.cn/art/2026/5/26/art_113_73378.html)'s plan for quality micro-drama creation and distribution was circulated on 23 May 2026 as document 广电办发〔2026〕123号, as Xinhua and the Hunan provincial government each disclosed. Beijing News reported on 15 May 2026, covering a planning meeting held the previous day, that eleven provinces have set aside dedicated subsidy funds and six major streaming platforms have committed at least 6 billion yuan. A mandate framed as raising quality is, in practice, a mandate that moves the production budget per episode.\n\nWatch where the money originates. Xia Xiaohui of Inke (映宇宙) told 21st Century Business Herald in November 2025 that the free-to-watch market has become the mainstream and that paid micro-dramas survive only on a scarcity strategy. If viewers do not pay directly, the production cost has to come from advertisers, platforms and government programmes. The DataEye research institute, in its first-half 2025 report, identified growth precisely there: public-message dramas, dramas commissioned by local tourism bureaus, and dramas made to order for brands.\n\nWhich puts the two-minute story line inside a marketing budget. Promotional spend is the first item cut when a quarter goes badly, and a drama funded as promotion dies with it. The Taobao tie-up will be measured not by view counts but by whether the line books its own revenue, conversion commission that appears on an invoice rather than an expense report. Provincial subsidies carry the same exposure. A production line standing on a dedicated support fund stops when the fund stops.\n\nThere is a different number worth watching from Korea. Season two of the Chinese animation property *Link Click* (时光代理人) passed 250 million plays on Bilibili's official count. A play count tallied outside the company becomes the price evidence in the next brand negotiation, because the buyer cannot dispute it. Korean pop properties building short-form narrative should decide first which invoice that number attaches to.\n\nAny business tempted to fund storytelling out of its marketing line should ask what happens to that story when the marketing line is halved.",
+  "working_title": {
+    "ko": "숏드라마, 부가에서 규격으로",
+    "en": "Micro-Drama Goes From Add-On to Standard"
+  },
+  "title": {
+    "ko": {
+      "title": "타오바오가 시험할 값은 조회수가 아니다",
+      "source": "타오바오 결합이 시험할 값은 조회수가 아니라 이 라인이 전환 수수료라는 별도 매출로 잡히는지 여부입니다.",
+      "from_body": true,
+      "candidates": [
+        {
+          "title": "11개 성이 숏드라마 전용 지원자금을 배정했다",
+          "source": "新京报网은 2026년 5월 15일 기사에서 전날 열린 업무배치 회의를 전하며 11개 성이 전용 지원자금을 배정했고 6개 주요 시청 플랫폼이 최소 60억 위안을 투입하기로 했다고 보도했습니다."
+        },
+        {
+          "title": "타오바오가 시험할 값은 조회수가 아니다",
+          "source": "타오바오 결합이 시험할 값은 조회수가 아니라 이 라인이 전환 수수료라는 별도 매출로 잡히는지 여부입니다."
+        },
+        {
+          "title": "케이팝 IP가 먼저 정할 것은 어느 청구서에 붙느냐",
+          "source": "케이팝 IP가 짧은 서사를 만들 때 먼저 정할 것은 그 수치가 어느 청구서에 붙느냐입니다."
+        }
+      ]
+    },
+    "en": {
+      "title": "Eleven Provinces Set Aside Subsidy Funds, Six Platforms Commit 6 Billion Yuan",
+      "source": "Beijing News reported on 15 May 2026, covering a planning meeting held the previous day, that eleven provinces have set aside dedicated subsidy funds and six major streaming platforms have committed at least 6 billion yuan.",
+      "from_body": true,
+      "candidates": [
+        {
+          "title": "Eleven Provinces Set Aside Subsidy Funds, Six Platforms Commit 6 Billion Yuan",
+          "source": "Beijing News reported on 15 May 2026, covering a planning meeting held the previous day, that eleven provinces have set aside dedicated subsidy funds and six major streaming platforms have committed at least 6 billion yuan."
+        },
+        {
+          "title": "Will the Taobao Tie-Up Book Its Own Revenue?",
+          "source": "The Taobao tie-up will be measured not by view counts but by whether the line books its own revenue, conversion commission that appears on an invoice rather than an expense report."
+        },
+        {
+          "title": "Inke Says Paid Micro-Dramas Survive Only on Scarcity",
+          "source": "Xia Xiaohui of Inke (映宇宙) told 21st Century Business Herald in November 2025 that the free-to-watch market has become the mainstream and that paid micro-dramas survive only on a scarcity strategy."
+        }
+      ]
+    },
+    "check": {
+      "clarity": 1,
+      "pull": 2,
+      "kept_promise": true,
+      "why": "타오바오라는 소재는 서 있으나 무엇을 하는 사건이 흐리고, '조회수가 아니라면 무엇인가'라는 미지수가 본문 답과 맞물려 끌어당긴다."
+    },
+    "duel_ko": {
+      "best": {
+        "title": "타오바오가 시험할 값은 조회수가 아니다",
+        "source": "타오바오 결합이 시험할 값은 조회수가 아니라 이 라인이 전환 수수료라는 별도 매출로 잡히는지 여부입니다."
+      },
+      "rounds": [
+        {
+          "a": "11개 성이 숏드라마 전용 지원자금을 배정했다",
+          "b": "타오바오가 시험할 값은 조회수가 아니다",
+          "winner": "b",
+          "why": "2번은 본문 사실 하나를 옮긴 설명문이라 긴장이 없는 반면, 1번은 '타오바오'라는 고유명사에 '조회수가 아니다'라는 부정·대비를 걸어 그럼 무엇이냐는 미지수를 만들고 본문의 전환 수수료 결론이 그 약속을 갚는다"
+        },
+        {
+          "a": "타오바오가 시험할 값은 조회수가 아니다",
+          "b": "케이팝 IP가 먼저 정할 것은 어느 청구서에 붙느냐",
+          "winner": "a",
+          "why": "고유명사 '타오바오'와 '조회수가 아니다'라는 부정이 박혀 이 글에만 붙는 반전을 만드는데, 1번은 '어느 청구서'라는 비유만 남아 어느 산업 얘긴지 서지 않는다"
+        }
+      ],
+      "kept_first": false,
+      "n": 3
+    },
+    "duel_en": {
+      "best": {
+        "title": "Eleven Provinces Set Aside Subsidy Funds, Six Platforms Commit 6 Billion Yuan",
+        "source": "Beijing News reported on 15 May 2026, covering a planning meeting held the previous day, that eleven provinces have set aside dedicated subsidy funds and six major streaming platforms have committed at least 6 billion yuan."
+      },
+      "rounds": [
+        {
+          "a": "Eleven Provinces Set Aside Subsidy Funds, Six Platforms Commit 6 Billion Yuan",
+          "b": "Will the Taobao Tie-Up Book Its Own Revenue?",
+          "winner": "a",
+          "why": "2번은 고유명사와 수치(11개 성·6개 플랫폼·60억 위안)로 사건을 세우고 '보조금 대 플랫폼 투입'의 대비까지 담아 본문의 핵심 동력을 지키는 반면, 1번은 고유명사 하나에 기댄 관용적 물음에 가깝고 규제·자금 흐름이라는 본문 중심을 비껴간다."
+        },
+        {
+          "a": "Eleven Provinces Set Aside Subsidy Funds, Six Platforms Commit 6 Billion Yuan",
+          "b": "Inke Says Paid Micro-Dramas Survive Only on Scarcity",
+          "winner": "a",
+          "why": "고유명사 대신 수치가 박혔지만 '11개 성·6개 플랫폼·60억 위안'은 이 기사에만 붙는 사건이고 본문 핵심인 국가 자금 유입을 그대로 약속·이행하는 반면, 1번은 인용 한 줄에 머물러 사건의 규모가 보이지 않는다."
+        }
+      ],
+      "kept_first": true,
+      "n": 3
+    }
+  },
+  "cast": [
+    {
+      "key": "national-radio-and-television-administration",
+      "kind": "org",
+      "name_ko": "광전총국",
+      "name_en": "National Radio and Television Administration",
+      "desc_ko": "중국의 라디오·텔레비전 방송 및 온라인 오디오비디오 콘텐츠를 감시·관리하는 국무원 소속 기관입니다. 2018년 설립되었습니다.",
+      "desc_en": "China's ministry-level agency under the State Council that regulates radio, television, and online audio-visual programs. Established in 2018.",
+      "url": "https://en.wikipedia.org/wiki/National_Radio_and_Television_Administration",
+      "role_ko": "마이크로 숏드라마 정품 창작 전파 계획을 실시하는 중국 정부 기관입니다.",
+      "role_en": "Chinese government body implementing the quality micro-drama creation and distribution plan."
+    },
+    {
+      "key": "baidu",
+      "kind": "company",
+      "name_ko": "바이두",
+      "name_en": "Baidu",
+      "desc_ko": "중국의 인터넷 검색 회사입니다. 2000년 창립했습니다.",
+      "desc_en": "A Chinese internet search company founded in 2000.",
+      "url": "https://simple.wikipedia.org/wiki/Baidu",
+      "role_ko": "마이크로 숏드라마 제작 라인을 갖춘 중국 기업입니다.",
+      "role_en": "Chinese company with a micro-drama production unit attached to the Taobao project."
+    },
+    {
+      "key": "taobao",
+      "kind": "company",
+      "name_ko": "타오바오",
+      "name_en": "Taobao",
+      "desc_ko": "알리바바 그룹 산하 중국 전자상거래 플랫폼으로, 개인 판매자와 소상공인의 상품을 판매합니다. 2003년 설립했습니다.",
+      "desc_en": "A Chinese e-commerce platform under Alibaba Group selling products from individual sellers and small businesses, established in 2003.",
+      "url": "https://www.alibabagroup.com/en-US/about-alibaba-businesses-1744508703945523200",
+      "role_ko": "숏드라마와 전자상거래를 잇는 모델을 시험하는 중국 온라인쇼핑 플랫폼입니다.",
+      "role_en": "China's largest online shopping platform testing a format linking drama to checkout."
+    }
+  ],
+  "name_map": {
+    "ko": {
+      "21世纪经济报道": "21세기경제보도",
+      "时光代理人": "시광대리인",
+      "新京报网": "신징바오망",
+      "台州新闻": "타이저우신문",
+      "搜狐网": "써우후망",
+      "新华网": "신화망",
+      "央广网": "양광망",
+      "映宇宙": "잉위저우",
+      "左耳": "쭤얼"
+    },
+    "en": {
+      "时光代理人": "Link Click",
+      "台州新闻": "Taizhou News",
+      "搜狐网": "Sohu",
+      "央广网": "CNR News",
+      "映宇宙": "Inkeverse",
+      "左耳": "The Left Ear"
+    }
+  },
+  "usage": {
+    "input": 326823,
+    "output": 38760,
+    "calls": 35,
+    "search_uses": 20
+  },
+  "usage_by_step": {
+    "select|claude-opus-5": {
+      "input": 4907,
+      "output": 1457,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "summarize_sources|claude-haiku-4-5-20251001": {
+      "input": 2166,
+      "output": 491,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "retrieve|claude-haiku-4-5-20251001": {
+      "input": 18246,
+      "output": 327,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "context|claude-opus-5": {
+      "input": 23506,
+      "output": 3867,
+      "calls": 1,
+      "search_uses": 2
+    },
+    "judge|claude-opus-5": {
+      "input": 18542,
+      "output": 579,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "write_ko|claude-opus-5": {
+      "input": 20575,
+      "output": 4660,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "extract_claims|claude-haiku-4-5-20251001": {
+      "input": 1543,
+      "output": 395,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "verify_claim|claude-haiku-4-5-20251001": {
+      "input": 120029,
+      "output": 2021,
+      "calls": 6,
+      "search_uses": 10
+    },
+    "hedge|claude-opus-5": {
+      "input": 2865,
+      "output": 4679,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "review|claude-opus-5": {
+      "input": 4786,
+      "output": 5257,
+      "calls": 2,
+      "search_uses": 0
+    },
+    "final_gate|claude-opus-5": {
+      "input": 1961,
+      "output": 3054,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "polish|claude-opus-5": {
+      "input": 6375,
+      "output": 3303,
+      "calls": 2,
+      "search_uses": 0
+    },
+    "write_en|claude-opus-5": {
+      "input": 4096,
+      "output": 1687,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "title_from_body|claude-opus-5": {
+      "input": 4711,
+      "output": 2274,
+      "calls": 2,
+      "search_uses": 0
+    },
+    "compare|claude-opus-5": {
+      "input": 6930,
+      "output": 547,
+      "calls": 4,
+      "search_uses": 0
+    },
+    "title_check|claude-opus-5": {
+      "input": 2308,
+      "output": 415,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "cast|claude-haiku-4-5-20251001": {
+      "input": 2827,
+      "output": 647,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "describe|claude-haiku-4-5-20251001": {
+      "input": 79826,
+      "output": 1231,
+      "calls": 5,
+      "search_uses": 8
+    },
+    "name_map|claude-opus-5": {
+      "input": 624,
+      "output": 1869,
+      "calls": 2,
+      "search_uses": 0
+    }
+  },
+  "form": {
+    "title_noun": true,
+    "title_len": 21,
+    "lead_concrete": true,
+    "ai_tell": 1,
+    "contrast": 1,
+    "hedge_10k": 0.0,
+    "sent_med": 45,
+    "long80": 15.0,
+    "title_check": {
+      "clarity": 1,
+      "pull": 2,
+      "kept_promise": true,
+      "why": "타오바오라는 소재는 서 있으나 무엇을 하는 사건이 흐리고, '조회수가 아니라면 무엇인가'라는 미지수가 본문 답과 맞물려 끌어당긴다."
+    },
+    "title_kept_first": false,
+    "title_cands": 3
+  }
+}

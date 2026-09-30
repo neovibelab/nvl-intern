@@ -64,6 +64,45 @@
       "en": "Paris-based music distribution and artist development company founded in 2005, owner of TuneCore platform.",
       "url": "https://en.wikipedia.org/wiki/Believe_Music",
       "source": "Wikipedia"
+    },
+    "national-radio-and-television-administration": {
+      "kind": "org",
+      "name_ko": "광전총국",
+      "name_en": "National Radio and Television Administration",
+      "first": "2026-09-30",
+      "pieces": [
+        "2026-09-30-eleven-provinces-set-aside-subsidy-funds-six-platf"
+      ],
+      "ko": "중국의 라디오·텔레비전 방송 및 온라인 오디오비디오 콘텐츠를 감시·관리하는 국무원 소속 기관입니다. 2018년 설립되었습니다.",
+      "en": "China's ministry-level agency under the State Council that regulates radio, television, and online audio-visual programs. Established in 2018.",
+      "url": "https://en.wikipedia.org/wiki/National_Radio_and_Television_Administration",
+      "source": "Wikipedia"
+    },
+    "baidu": {
+      "kind": "company",
+      "name_ko": "바이두",
+      "name_en": "Baidu",
+      "first": "2026-09-30",
+      "pieces": [
+        "2026-09-30-eleven-provinces-set-aside-subsidy-funds-six-platf"
+      ],
+      "ko": "중국의 인터넷 검색 회사입니다. 2000년 창립했습니다.",
+      "en": "A Chinese internet search company founded in 2000.",
+      "url": "https://simple.wikipedia.org/wiki/Baidu",
+      "source": "Wikipedia"
+    },
+    "taobao": {
+      "kind": "company",
+      "name_ko": "타오바오",
+      "name_en": "Taobao",
+      "first": "2026-09-30",
+      "pieces": [
+        "2026-09-30-eleven-provinces-set-aside-subsidy-funds-six-platf"
+      ],
+      "ko": "알리바바 그룹 산하 중국 전자상거래 플랫폼으로, 개인 판매자와 소상공인의 상품을 판매합니다. 2003년 설립했습니다.",
+      "en": "A Chinese e-commerce platform under Alibaba Group selling products from individual sellers and small businesses, established in 2003.",
+      "url": "https://www.alibabagroup.com/en-US/about-alibaba-businesses-1744508703945523200",
+      "source": "Alibaba Group"
     }
   }
 }

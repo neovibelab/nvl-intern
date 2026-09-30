@@ -1086,5 +1086,62 @@
       "calls": 36,
       "search_uses": 23
     }
+  },
+  {
+    "date": "2026-09-30",
+    "day": 26,
+    "slug": "2026-09-30-eleven-provinces-set-aside-subsidy-funds-six-platf",
+    "title_ko": "타오바오가 시험할 값은 조회수가 아니다",
+    "title_en": "Eleven Provinces Set Aside Subsidy Funds, Six Platforms Commit 6 Billion Yuan",
+    "factor": "정책",
+    "from_stage": "생산",
+    "to_stage": "소비",
+    "tense": "signal",
+    "region": "중화권",
+    "radar_tense": "soon",
+    "agrees": false,
+    "claims_total": 6,
+    "claims_verified": 1,
+    "review_rounds": 1,
+    "unresolved": false,
+    "bet": false,
+    "wiki_used": 3,
+    "lexicon_used": 0,
+    "form": {
+      "title_noun": true,
+      "title_len": 21,
+      "lead_concrete": true,
+      "ai_tell": 1,
+      "contrast": 1,
+      "hedge_10k": 0.0,
+      "sent_med": 45,
+      "long80": 15.0,
+      "title_check": {
+        "clarity": 1,
+        "pull": 2,
+        "kept_promise": true,
+        "why": "타오바오라는 소재는 서 있으나 무엇을 하는 사건이 흐리고, '조회수가 아니라면 무엇인가'라는 미지수가 본문 답과 맞물려 끌어당긴다."
+      },
+      "title_kept_first": false,
+      "title_cands": 3
+    },
+    "style": {
+      "문장 리듬": 0.459,
+      "접속부사": 0.0,
+      "헤지": 0.0,
+      "수식어": 0.0,
+      "쉼표": 12.6
+    },
+    "selected_by": "intern",
+    "candidates": 5,
+    "issue": "chinese-micro-dramas-ip-expansion-and-co",
+    "synth": false,
+    "cast": 3,
+    "tokens": {
+      "input": 326823,
+      "output": 38760,
+      "calls": 35,
+      "search_uses": 20
+    }
   }
 ]
