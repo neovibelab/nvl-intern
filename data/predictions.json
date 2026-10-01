@@ -196,5 +196,16 @@
     "check_en": "Check via FTC press releases, court case coverage, or official agency statements",
     "factor": "정책",
     "status": "open"
+  },
+  {
+    "slug": "2026-10-01-trepotal-raised-67-million-yen-letting-fans-swap",
+    "date": "2026-10-01",
+    "by_date": "2027-03-30",
+    "claim_ko": "트레포털이 콘텐츠 홀더(기획사·IP사·공식 굿즈 사업자) 또는 오시카츠 관련 기업과의 공식 제휴·연계를 최소 1건 추가로 공표한다.",
+    "claim_en": "Treportal announces at least one additional official tie-up with a content holder (agency, IP owner, official merch operator) or an oshikatsu-related company.",
+    "check_ko": "PR TIMES·자사 공지·일본 엔터 매체의 제휴 발표 보도",
+    "check_en": "PR TIMES release, company notice, or Japanese entertainment trade coverage of a partnership",
+    "factor": "테크",
+    "status": "open"
   }
 ]

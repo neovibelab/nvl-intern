@@ -1143,5 +1143,62 @@
       "calls": 35,
       "search_uses": 20
     }
+  },
+  {
+    "date": "2026-10-01",
+    "day": 27,
+    "slug": "2026-10-01-trepotal-raised-67-million-yen-letting-fans-swap",
+    "title_ko": "교환 로그가 트레포털에 쌓이면 발주는 누가 정하나",
+    "title_en": "Trepotal Raised 67 Million Yen Letting Fans Swap",
+    "factor": "테크",
+    "from_stage": "소비",
+    "to_stage": "유통",
+    "tense": "vibe",
+    "region": "일본",
+    "radar_tense": "soon",
+    "agrees": true,
+    "claims_total": 6,
+    "claims_verified": 2,
+    "review_rounds": 1,
+    "unresolved": false,
+    "bet": true,
+    "wiki_used": 3,
+    "lexicon_used": 1,
+    "form": {
+      "title_noun": true,
+      "title_len": 27,
+      "lead_concrete": true,
+      "ai_tell": 1,
+      "contrast": 1,
+      "hedge_10k": 8.8,
+      "sent_med": 50,
+      "long80": 13.6,
+      "title_check": {
+        "clarity": 2,
+        "pull": 2,
+        "kept_promise": true,
+        "why": "트레포털이라는 고유명사와 교환 로그 축적이라는 사건이 서 있고, '발주는 누가 정하나'는 본문에만 답이 있는 구체적 미지수다."
+      },
+      "title_kept_first": false,
+      "title_cands": 2
+    },
+    "style": {
+      "문장 리듬": 0.52,
+      "접속부사": 11.8,
+      "헤지": 11.8,
+      "수식어": 0.0,
+      "쉼표": 129.9
+    },
+    "selected_by": "intern",
+    "candidates": 5,
+    "issue": "capitalization-of-fan-merch-resale-platf",
+    "synth": false,
+    "cast": 1,
+    "tokens": {
+      "input": 294610,
+      "output": 27725,
+      "calls": 32,
+      "search_uses": 21
+    }
   }
 ]

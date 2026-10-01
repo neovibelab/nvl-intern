@@ -103,6 +103,19 @@
       "en": "A Chinese e-commerce platform under Alibaba Group selling products from individual sellers and small businesses, established in 2003.",
       "url": "https://www.alibabagroup.com/en-US/about-alibaba-businesses-1744508703945523200",
       "source": "Alibaba Group"
+    },
+    "streamart": {
+      "kind": "company",
+      "name_ko": "streamart",
+      "name_en": "streamart",
+      "first": "2026-10-01",
+      "pieces": [
+        "2026-10-01-trepotal-raised-67-million-yen-letting-fans-swap"
+      ],
+      "ko": "버튜버 대상 굿즈 판매 서비스입니다. 일본의 streamart는 메달 형태의 디지털 굿즈와 실물 굿즈를 가챠 방식으로 판매하며, 구매한 굿즈를 '추し棚'에 전시할 수 있습니다.",
+      "en": "A merchandise sales service for VTubers. Japan-based streamart sells digital and physical goods via gacha mechanics and allows fans to display purchased items on their \"oshi shelf\".",
+      "url": "https://streamart.tokyo",
+      "source": "streamart Official X Account"
     }
   }
 }
