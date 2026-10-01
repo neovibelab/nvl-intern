@@ -189,7 +189,7 @@ def main() -> int:
     trace["reviews"] = reviews
     # ⑥' 기계 게이트 - 분량 규격과 대조 공식. 수정 루프가 끝난 뒤라야 되돌려지지 않는다
     # 종합 편은 문턱이 다르다 - 기본값(700~1000)으로 두면 1,400자 글이 1,000자로 잘린다(2026-09-26).
-    ko, trace["gate"] = steps.final_gate(ko, "ko", *((1200, 1600) if synth else ()))
+    ko, trace["gate"] = steps.final_gate(ko, "ko", *((1200, 1600) if synth else ()), region=j.get("region"))
     # ⑥'' 표기·인링크 정리 (논지는 안 건드린다)
     links = steps.link_sources(trace["cluster"]["items"], results)
     ko = steps.polish(ko, "ko", links)
@@ -380,7 +380,8 @@ def rebuild(args) -> int:
     last_issues = reviews[-1].get("issues", []) if unresolved else []
     links = steps.link_sources(items, results)
     synth = bool((trace.get("issue") or {}).get("synth"))
-    ko, trace["gate"] = steps.final_gate(trace["draft_ko_final"], "ko", *((1200, 1600) if synth else ()))
+    ko, trace["gate"] = steps.final_gate(trace["draft_ko_final"], "ko", *((1200, 1600) if synth else ()),
+                                        region=(trace.get("judgment") or {}).get("region"))
     ko = steps.polish(ko, "ko", links)
     en = steps.polish(trace["draft_en_final"], "en", links)
     trace["draft_ko_final"], trace["draft_en_final"] = ko, en

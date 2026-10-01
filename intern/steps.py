@@ -252,7 +252,7 @@ def judge(cluster_text: str, radar: dict, materials: str, extra: str = "") -> di
 - 지역(region): 이 소재가 **어디 이야기인가** 하나 고른다: {' | '.join(config.REGIONS)}. 기사가 어느 매체에 실렸는지가 아니라
   **사건이 벌어진 곳**이다. 여러 지역이 걸쳐 있으면 「글로벌」.
 - 각도(angle): 이 사건에서 무엇을 말할지 한 줄. 뻔한 것(누구나 아는 요약)이면 다른 각도를 찾는다.
-- 원리(principle): 다른 업종이 이 사례에서 가져갈 원리 한 문장.
+- 원리(principle): 다른 업종이 이 사례에서 가져갈 원리 한 문장. **격언이 아니라 작동 방식이다** - 무엇이 무엇을 낳는지, 어떤 조건에서 그런지가 문장 안에 있어야 한다. 「~이 새로운 화폐가 된다」처럼 조건 없는 경구는 실패다.
 
 JSON:
 {{"factor":"...","from_stage":"...","to_stage":"...","region":"...","tense":"vibe|signal|news","tense_why":"한 줄",
@@ -454,8 +454,47 @@ def write_ko(cluster_text: str, j: dict, materials: str, recent: str = "", extra
   줄일 것은 사건의 서사이고, 풀 것은 말이다.
 - **그 자리에 「그 뒤 나온 것」을 넣는다.** 후속·반응·수치가 있으면 그것이 이 글의 값이다.
   기사 하나만 읽고는 못 쓰는 문장이 한 단락은 있어야 한다.
-- **선례가 있으면 비교는 한 번만.** 같은 구조가 다른 산업에서 어떻게 끝났는지가 원리로 이어진다."""
+- **선례가 있으면 비교는 한 번만.** 같은 구조가 다른 산업에서 어떻게 끝났는지가 원리로 이어진다.
+
+{ENDING_KO}
+{_korea_rule(j)}"""
     return llm.ask(prompt, system=PERSONA, max_tokens=6000)
+
+
+# 마지막 단락 (2026-10-01 대표 지시). 09-09 이후 14편 중 12편이 「한국 기획사·제작사가 볼 것」으로
+# 끝났고 7편은 「볼 줄은 두 개입니다」로 계약 조항 점검 목록을 냈다. 틀이 굳어 끝을 안 읽게 되고,
+# 그 계약을 앞둔 소수에게만 쓸모가 있고, 원리 줄과 같은 말을 두 번 한다.
+# 대표 판단: 숙제보다 **사례가 작동하는 원리를 풀어 주는 쪽**이 두 독자 층 모두에게 도움이 된다.
+ENDING_KO = """**마지막 단락은 이 사례가 작동하는 원리를 푼다** (2026-10-01).
+- 누가 무엇을 얻는가 · 왜 지금 작동하는가 · 어떤 조건이 깨지면 멈추는가. 이 셋 중 본문이 아직 안 푼 것을 푼다.
+- 독자에게 할 일을 주지 않는다. 「~라면 볼 것은」「볼 줄은 두 개입니다」「계약서에서 먼저 볼 줄」 같은
+  점검 목록으로 끝내지 않는다. 원리가 풀리면 독자가 자기 자리에 옮겨 간다.
+- 마지막 원리 줄은 코드가 붙인다. **그 줄을 미리 말하지 않는다** - 본문 끝 단락이 원리 줄과 같은 말이면 같은 결론을 두 번 쓰는 것이다.
+  단락은 작동 과정을 보여 주고, 원리 줄은 그것을 한 문장으로 일반화한다."""
+
+
+def _korea_rule(j: dict) -> str:
+    """한국 실무 적용은 사건이 한국 것일 때만 허용한다."""
+    if j.get("region") == "한국":
+        return ("이 사건은 한국에서 벌어졌다. 한국 회사에 적용하는 문장을 써도 되지만 **원리를 푼 뒤 한 문장까지**다. "
+                "점검 목록으로 늘리지 않는다.")
+    return ("이 사건은 한국 밖 이야기다. **한국 기획사·제작사·실무자에게 무엇을 하라고 쓰지 않는다.** "
+            "한국 사정은 원리를 설명하는 데 필요한 비교일 때만 쓴다.")
+
+
+# 기계 게이트가 끝 단락에서 찾는 점검 목록 꼴. 09-09~09-28 발행본에서 실측한 문형이다.
+CHECKLIST_PATS = [r"(볼|확인할|챙길|정할|찾을) (줄|것|자리)은 (하나|둘|두 (개|가지|줄)|세 (개|가지))",
+                  r"(볼|확인할|챙길|정할) (것|줄)은 [^.]{0,30}(두 줄|두 가지|하나)입니다",
+                  r"(기획사|제작사|레이블|유통사|실무자|팀)[^.]{0,40}(볼|챙길|확인할|정할) (것|줄|자리)",
+                  r"계약서에서 [^.]{0,15}볼 ",
+                  r"(한국|국내)[^.]{0,20}(볼|챙길|확인할|정할) (것|줄|자리|수치)",
+                  r"(실무자|담당자)는 [^.]{0,30}(두|세) (줄|가지)"]
+
+
+def checklist_ending(text: str) -> bool:
+    """끝 단락이 독자에게 점검 목록을 주는 꼴인가."""
+    paras = [p for p in (text or "").strip().split("\n\n") if p.strip() and not p.lstrip().startswith((">", "#", "**"))]
+    return bool(paras) and any(re.search(p, paras[-1]) for p in CHECKLIST_PATS)
 
 
 def write_en(cluster_text: str, j: dict, ko_final: str, synth: bool = False, reread_ko: list | None = None) -> str:
@@ -480,6 +519,7 @@ def write_en(cluster_text: str, j: dict, ko_final: str, synth: bool = False, rer
 
 Write the English body only, {size}. Title, header line and the closing principle are added by code.
 Open with the concrete event (who, what, when). Follow the angle. Do not put a forecast in the body ("within N days X will happen"). Forecasts go to a separate ledger and are scored when due. The body reads what is taking shape now.
+End by explaining why the case works: who gains what, why now, and what would make it stop. Do not end with advice or a checklist for Korean companies, even if the Korean piece does. Do not restate the closing principle; it is added after the body.
 Only facts that appear in the cluster or the Korean piece. Invent no figures or quotes.{rr}"""
     return llm.ask(prompt, system=PERSONA, max_tokens=7000)
 
@@ -575,16 +615,20 @@ def _chars(t: str) -> int:
     return len(re.sub(r"\s", "", t))
 
 
-def final_gate(text: str, lang: str = "ko", lo: int = 700, hi: int = 1000) -> tuple[str, dict]:
+def final_gate(text: str, lang: str = "ko", lo: int = 700, hi: int = 1000,
+               region: str | None = None) -> tuple[str, dict]:
     """분량 규격과 대조 공식을 기계로 확인하고, 어긋나면 한 번만 고쳐 받는다.
 
     링크·헤지·출처 표기가 줄면 원문을 지킨다 - 줄이라고 했더니 근거를 지우는 쪽이 제일 위험하다.
     """
     hits = contrast_hits(text) if lang == "ko" else []
     n, links = _chars(text), len(re.findall(r"\]\(https?://", text))
-    stat = {"chars": n, "contrast": len(hits), "chars_after": n, "contrast_after": len(hits), "revised": False}
+    # 한국 밖 사건인데 끝이 한국 실무 점검 목록이면 고친다(2026-10-01). region을 모르면 보지 않는다.
+    chk = lang == "ko" and region not in (None, "한국") and checklist_ending(text)
+    stat = {"chars": n, "contrast": len(hits), "chars_after": n, "contrast_after": len(hits), "revised": False,
+            "checklist": chk}
     over, under = n > hi, n < lo
-    if lang != "ko" or (not over and not under and len(hits) <= 1):
+    if lang != "ko" or (not over and not under and len(hits) <= 1 and not chk):
         return text, stat
     orders = []
     if over:
@@ -596,6 +640,10 @@ def final_gate(text: str, lang: str = "ko", lo: int = 700, hi: int = 1000) -> tu
         orders.append("「A가 아니라 B」 꼴 대조 공식이 " + str(len(hits)) + "번 나온다. 가장 중요한 하나만 남기고 "
                       "나머지는 부정을 지우고 긍정문으로 쓴다(예: 「총액이 아니라 회당 매출이 지표다」 → 「지표는 회당 매출이다」).\n"
                       "지목: " + " / ".join(h[:60] for h in hits))
+    if chk:
+        orders.append("마지막 단락이 독자에게 할 일을 주는 점검 목록이다(「볼 것은」「볼 줄은 두 개」 꼴). "
+                      "**그 단락만** 이 사례가 작동하는 원리로 바꿔 쓴다 - 누가 무엇을 얻는가, 왜 지금 작동하는가, "
+                      "어떤 조건이 깨지면 멈추는가. 본문에 있는 사실만 쓴다. 한국 회사에게 할 일을 주지 않는다.")
     prompt = ("아래 글을 지시대로만 고친다. 논지·순서·사실은 바꾸지 않는다.\n\n"
               + "\n\n".join(f"{i}. {o}" for i, o in enumerate(orders, 1))
               + f"\n\n본문만 돌려준다.\n\n[글]\n{text}")
@@ -606,7 +654,8 @@ def final_gate(text: str, lang: str = "ko", lo: int = 700, hi: int = 1000) -> tu
     if len(re.findall(r"\]\(https?://", out)) < links:
         print(f"  [gate] 링크가 줄어 원문 유지({links} → {len(re.findall(r']\(https?://', out))})")
         return text, stat
-    stat.update(chars_after=_chars(out), contrast_after=len(contrast_hits(out)), revised=True)
+    stat.update(chars_after=_chars(out), contrast_after=len(contrast_hits(out)), revised=True,
+                checklist_after=lang == "ko" and checklist_ending(out))
     print(f"  [gate] 분량 {stat['chars']} → {stat['chars_after']}자 · 대조공식 {stat['contrast']} → {stat['contrast_after']}")
     return out, stat
 
@@ -776,7 +825,7 @@ JSON: {{"clarity":0|1|2,"pull":0|1|2,"kept_promise":true|false,"why":"한 줄"}}
 # ── ⑥ 자기 검수 (별도 컨텍스트) ────────────────────────────────────────────
 
 REVIEWER = """너는 발행 전 검수자다. 집필자가 아니다. 관대하지 않다. 다섯 질문을 묻는다.
-1 뻔한가 - 누구나 아는 요약이면 실패. 2 소재 필연성 - 왜 오늘 이 사건인가가 글에 있나. 3 독자 수확 - 두 층 다 본다. 음악업계에서 신규 사업·확장을 고민하는 사람이 가져갈 것이 있나, 그리고 엔터 밖 독자가 업계 용어를 몰라도 끝까지 읽히나.
+1 뻔한가 - 누구나 아는 요약이면 실패. 2 소재 필연성 - 왜 오늘 이 사건인가가 글에 있나. 3 독자 수확 - 두 층 다 본다. **이 사례가 왜 작동하는지가 본문에서 풀렸나**(누가 무엇을 얻고, 왜 지금이고, 어떤 조건에서 멈추나) - 풀리면 음악업계에서 신규 사업·확장을 고민하는 사람이 자기 자리에 옮겨 간다. 그리고 엔터 밖 독자가 업계 용어를 몰라도 끝까지 읽히나. 끝 단락이 독자에게 점검 목록을 주거나 마지막 원리 줄과 같은 말을 반복하면 개선 지적이다.
 4 반대편 - 이 논지의 반례를 글이 스스로 다루나. 5 근거 - 논지를 받치는 사실이 글 안에 있나.
 
 **지적을 두 층으로 나눈다. 이 구분이 판정을 정한다.**

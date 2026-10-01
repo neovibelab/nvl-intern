@@ -12,6 +12,8 @@
 - `ai_tell` - 대조 공식·메타 수사·가운데 줄표. 0이 정상이고 늘면 AI 티가 돌아온 것이다.
 - `hedge_10k` - 만자당 「알려졌다」류. 근거를 못 댄 자리의 대리 지표다.
 - `sent_med`·`long80` - 문장 길이. 길수록 읽기 어렵다.
+- `checklist_end` - 끝 단락이 독자에게 점검 목록을 주나(「볼 줄은 두 개」 꼴, 2026-10-01).
+  끝을 원리 풀이로 바꾼 지시가 실제로 도는지 전후를 가르는 자다.
 """
 import re
 
@@ -40,6 +42,11 @@ def source_nouns(items: list[dict], body: str = "") -> list[str]:
     return keep
 
 
+def _checklist_end(body: str) -> bool:
+    from .steps import checklist_ending  # noqa: PLC0415 - 순환 참조 회피
+    return checklist_ending(body)
+
+
 def measure(title: str, body: str, items: list[dict] | None = None) -> dict:
     """한 편의 형식 지표. 본문은 프레임·소재 카드·격자를 뺀 순수 본문을 넣는다."""
     nouns = source_nouns(items or [], body)
@@ -57,6 +64,7 @@ def measure(title: str, body: str, items: list[dict] | None = None) -> dict:
         "hedge_10k": round(n(HEDGE) / chars * 10000, 1),
         "sent_med": int(sorted(lens)[len(lens) // 2]),
         "long80": round(sum(1 for x in lens if x >= 80) / len(lens) * 100, 1),
+        "checklist_end": _checklist_end(body),
     }
 
 
