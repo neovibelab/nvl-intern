@@ -1,0 +1,524 @@
+{
+  "date": "2026-10-02",
+  "steps": {},
+  "selection": {
+    "n": 5,
+    "by": "intern",
+    "chosen": {
+      "key": "3dd020ad-c611-432a-bf7d-8b2dd6ea7d33",
+      "title": "밀리의서재, 전자책 넘어 웹툰·웹소설 'IP 승부수'—원천 IP 44개→124개, KT 밸류체인 연계 영상화",
+      "n": 4,
+      "item_ids": [
+        "3dd020ad-c611-432a-bf7d-8b2dd6ea7d33",
+        "7848e5ab-1650-495d-8066-198cbe05d329",
+        "32c0afe0-bfdb-4b62-9cf5-c79dff970aa4",
+        "0983d21f-c50f-4ef5-8689-153bdad51b92"
+      ],
+      "titles": [
+        "밀리의서재, 전자책 넘어 웹툰·웹소설 'IP 승부수'—원천 IP 44개→124개, KT 밸류체인 연계 영상화",
+        "웹소설·웹툰 기회 엿보는 kt밀리의서재, 오리지널 IP 키운다",
+        "밀리의서재, 전자책 넘어 '스토리 IP'로…웹툰·영상·해외 확장",
+        "전자책만 보던 밀리의 변신, 웹툰·웹소설 'IP 승부수'"
+      ]
+    },
+    "reason_ko": "남의 작품을 빌려 파는 구독 플랫폼이 원천 IP를 직접 쥐면 수익 배분에서 서는 자리가 바뀝니다. 음원 플랫폼과 유통사가 레이블을 품을지 저울질할 때 비용과 회수 기간의 실물 사례가 됩니다.",
+    "reason_en": "When a subscription platform that merely resells others' works starts owning source IP, its position in the revenue split changes. For music streamers and distributors weighing whether to absorb labels, this is a live case study in cost and payback period.",
+    "issue": {
+      "id": null,
+      "label_ko": "구독 콘텐츠 플랫폼의 원천 IP 직접 보유",
+      "label_en": "Subscription Content Platforms Taking Ownership of Source IP"
+    },
+    "rejected": [
+      {
+        "key": "acdac190-c938-48b9-a622-d06d88bf612d",
+        "title": "소비자 1만 명 연구로 도출한 2026년 신소비 30가지 비밀: 밀레니얼·신실버 세대의 흑판 복고와 실물 의례 소비",
+        "n": 1,
+        "item_ids": [
+          "acdac190-c938-48b9-a622-d06d88bf612d"
+        ],
+        "titles": [
+          "소비자 1만 명 연구로 도출한 2026년 신소비 30가지 비밀: 밀레니얼·신실버 세대의 흑판 복고와 실물 의례 소비"
+        ],
+        "why": "설문 기반 트렌드 요약이라 수치의 출처와 표본이 흐리고, 아날로그 재소비 판은 이미 두 편 썼다."
+      },
+      {
+        "key": "60f5d5a1-1943-4cac-ade4-c1675e70d989",
+        "title": "원창 저작권을 지켜라: AI 음악, 규칙 없이 성장할 수 없다",
+        "n": 1,
+        "item_ids": [
+          "60f5d5a1-1943-4cac-ade4-c1675e70d989"
+        ],
+        "titles": [
+          "원창 저작권을 지켜라: AI 음악, 규칙 없이 성장할 수 없다"
+        ],
+        "why": "AI 음악 권리 판은 국내외로 아홉 편을 썼고, 이 건은 판결과 표식 의무를 다시 정리한 논평이라 새 국면이 아니다."
+      },
+      {
+        "key": "de60a8f6-8240-4502-86e7-16ea004ee5a6",
+        "title": "국경절 첫날 동교기억 트렌드플레이 거리에 긴 줄, '청두 제작' AI 마이크로 숏드라마 IP 협업 문화상품 첫 출시",
+        "n": 6,
+        "item_ids": [
+          "de2c5a11-b962-4c37-95dc-64ba9f14d6c0",
+          "10110f9f-0284-4b2e-98b4-d0d7fd0fe271",
+          "568851a5-bc9f-491b-ae95-f8817b3a433c",
+          "de60a8f6-8240-4502-86e7-16ea004ee5a6",
+          "46e9f7c6-7bec-4d3e-869e-428dbe5da5cc",
+          "98aa11e0-8139-4370-90b5-44a24a2def01"
+        ],
+        "titles": [
+          "국경절 첫날 동교기억 트렌드플레이 거리에 긴 줄, '청두 제작' AI 마이크로 숏드라마 IP 협업 문화상품 첫 출시",
+          "광전총국, 실사 마이크로 숏드라마(微短剧) 지속 지원",
+          "《아궤의 '촌완'》 징독수리텔레비전예술절 '연도 마이크로 숏드라마' 수상",
+          "싱가포르 미디어청과 TikTok, 마이크로 숏드라마(微短剧) 계획 추진 - 첫 배치 20개사 참여",
+          "《소년전야(少年田野)》, 금매상(金鹰奖) 년도 마이크로 숏드라마(微短剧) 및 년도 감독상 수상",
+          "디지털 영상으로 영웅을 추도하다, 도창 AI 마이크로 숏드라마(微短剧) 《홍인(红刃)》 정식 론칭"
+        ],
+        "why": "숏드라마 판을 바로 이틀 전에 썼고, 정부·플랫폼 표준화라는 같은 각도가 반복된다."
+      },
+      {
+        "key": "565cd18c-299e-4677-a92b-f52a2872328f",
+        "title": "다중 플랫폼 10월부터 마이크로 숏드라마(微短剧) 인센티브 규칙 시행, 실사 숏드라마 열풍 다시 부나",
+        "n": 6,
+        "item_ids": [
+          "99e75fca-30ad-45a7-8c02-48ea98df6ccb",
+          "858bf68d-6ae3-447e-8e2e-1996df85457c",
+          "565cd18c-299e-4677-a92b-f52a2872328f",
+          "4a88c7a4-601e-409a-a5bb-2f33b4f4289c",
+          "ffb4edde-e72f-431c-a054-f6323aecb105",
+          "518b9288-20d0-4add-b404-432ade120d52"
+        ],
+        "titles": [
+          "다중 플랫폼 10월부터 마이크로 숏드라마(微短剧) 인센티브 규칙 시행, 실사 숏드라마 열풍 다시 부나",
+          "《아궤의 마을 저녁 공연(村晚)》, 금독수리TV예술절서 '올해 마이크로 숏드라마(微短剧)' 수상",
+          "금독수리상 처음 미크로 숏드라마(微短剧) 명예부문 신설, 《거액의 진실》 연간 미크로 숏드라마상 수상, 류칭이 연간 남우상 수상",
+          "중국 첫 AIGC 전 제작 과정 장정 소재 마이크로 숏드라마(微短剧) 개방, AI가 장정 이야기를 '절대 낙오 없이' 살려낸다",
+          "중국 광전총국, 실인 마이크로 숏드라마(微短剧) 지속 지원, AI 드라마 건강한 규범 발전 유도",
+          "중국 금독수리 TV 예술제, 마이크로 숏드라마(微短剧) 명예 부문 첫 설립"
+        ],
+        "why": "3번과 사실상 같은 판이며 시상식 부문 신설은 후속 수치가 붙기 전이라 관점을 얹을 재료가 얇다."
+      }
+    ]
+  },
+  "cluster": {
+    "key": "3dd020ad-c611-432a-bf7d-8b2dd6ea7d33",
+    "item_ids": [
+      "3dd020ad-c611-432a-bf7d-8b2dd6ea7d33",
+      "7848e5ab-1650-495d-8066-198cbe05d329",
+      "32c0afe0-bfdb-4b62-9cf5-c79dff970aa4",
+      "0983d21f-c50f-4ef5-8689-153bdad51b92"
+    ],
+    "n": 4,
+    "radar_tense": "soon",
+    "factor": "IP",
+    "stage": "생산",
+    "titles": [
+      "밀리의서재, 전자책 넘어 웹툰·웹소설 'IP 승부수'—원천 IP 44개→124개, KT 밸류체인 연계 영상화",
+      "웹소설·웹툰 기회 엿보는 kt밀리의서재, 오리지널 IP 키운다",
+      "밀리의서재, 전자책 넘어 '스토리 IP'로…웹툰·영상·해외 확장",
+      "전자책만 보던 밀리의 변신, 웹툰·웹소설 'IP 승부수'"
+    ],
+    "urls": [
+      "https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=05113526645608656",
+      "https://news.google.com/rss/articles/CBMiT0FVX3lxTE4zR2ZXVE9ocWFlZDU4NkJfY2hzTmFLWkRKcUtQUEptT1NrSWJGU3BrUldfSEN6NXJBVDg1dFF3VF90MDVHc3M4RVM3T21OQVE?oc=5",
+      "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5OWi1oaXlMQ1oxQTBEb2ZZYjZ1UUktUnRnbHU1dTFOcUxzXzluN3VlaFprQklsUkx4b2N0OGlnQXc4ZWJ3ZGtleWFyT1ljdw?oc=5",
+      "https://news.google.com/rss/articles/CBMigAFBVV95cUxNVndsbTZtYVQ4MFF4VVNLSlowaUl1OXhIWTRObDNybExndUV2a09DMVJCeFJ4X1RpVDZIWXRjMEw3OWFRazVfSnZObDNLWlBjR3dTUG12QVNrMHZnakxiSmdHOFluQjdLZkdEZXBoaDlQWWVpc0pmVjhtek5qbjVmdw?oc=5"
+    ],
+    "items": [
+      {
+        "title": "밀리의서재, 전자책 넘어 웹툰·웹소설 'IP 승부수'—원천 IP 44개→124개, KT 밸류체인 연계 영상화",
+        "url": "https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=05113526645608656",
+        "source": "이데일리",
+        "region": "korea",
+        "published_date": "2026-10-01T00:00:00+00:00",
+        "title_en": "Millie's Sejae Makes 'IP Play' Beyond E-books into Webtoons and Web Novels—Expanding Original IP from 44 to 124, Linking KT Value Chain to Videolization"
+      },
+      {
+        "title": "웹소설·웹툰 기회 엿보는 kt밀리의서재, 오리지널 IP 키운다",
+        "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE4zR2ZXVE9ocWFlZDU4NkJfY2hzTmFLWkRKcUtQUEptT1NrSWJGU3BrUldfSEN6NXJBVDg1dFF3VF90MDVHc3M4RVM3T21OQVE?oc=5",
+        "source": "v.daum.net",
+        "region": "korea",
+        "published_date": "2026-10-01T06:30:30+00:00",
+        "title_en": "KT Millie's Sejae Eyes Web Novel and Webtoon Opportunities, Cultivates Original IP"
+      },
+      {
+        "title": "밀리의서재, 전자책 넘어 '스토리 IP'로…웹툰·영상·해외 확장",
+        "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5OWi1oaXlMQ1oxQTBEb2ZZYjZ1UUktUnRnbHU1dTFOcUxzXzluN3VlaFprQklsUkx4b2N0OGlnQXc4ZWJ3ZGtleWFyT1ljdw?oc=5",
+        "source": "전자신문",
+        "region": "korea",
+        "published_date": "2026-10-01T04:49:29+00:00",
+        "title_en": "Millie's Sejae Transcends E-books with 'Story IP'—Expanding into Webtoons, Video, and Overseas"
+      },
+      {
+        "title": "전자책만 보던 밀리의 변신, 웹툰·웹소설 'IP 승부수'",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNVndsbTZtYVQ4MFF4VVNLSlowaUl1OXhIWTRObDNybExndUV2a09DMVJCeFJ4X1RpVDZIWXRjMEw3OWFRazVfSnZObDNLWlBjR3dTUG12QVNrMHZnakxiSmdHOFluQjdLZkdEZXBoaDlQWWVpc0pmVjhtek5qbjVmdw?oc=5",
+        "source": "edaily.co.kr",
+        "region": "korea",
+        "published_date": "2026-10-01T07:21:42+00:00",
+        "title_en": "Millie's Sejae Transformation Beyond E-books, 'IP Play' in Webtoons and Web Novels"
+      }
+    ]
+  },
+  "source_summary": {
+    "ko": "밀리의서재가 오리지널 IP 라인업을 44개에서 124개로 확대하고, KT 미디어 밸류체인과 연계해 웹툰·웹소설 플랫폼으로 사업을 확장합니다. 신인 작가 발굴부터 영상화·해외 진출까지 이어지는 구조를 구축해 3년 내 시장 점유율 5~10%를 목표로 합니다.",
+    "en": "Millie's Sejae has expanded its original IP lineup from 44 to 124 titles and is diversifying into webtoon and web novel platforms through KT Media's value chain. The platform aims to establish a vertically integrated structure from discovering new writers to video adaptation and overseas expansion, targeting 5-10% market share within three years.",
+    "titles_en": [
+      "Millie's Sejae Makes 'IP Play' Beyond E-books into Webtoons and Web Novels—Expanding Original IP from 44 to 124, Linking KT Value Chain to Videolization",
+      "KT Millie's Sejae Eyes Web Novel and Webtoon Opportunities, Cultivates Original IP",
+      "Millie's Sejae Transcends E-books with 'Story IP'—Expanding into Webtoons, Video, and Overseas",
+      "Millie's Sejae Transformation Beyond E-books, 'IP Play' in Webtoons and Web Novels"
+    ]
+  },
+  "materials": {
+    "wiki": [
+      "2026-05-29-IP-비즈니스-구조.md",
+      "2026-08-24-원천IP-확장슬롯.md",
+      "2026-09-16-웹툰-사업-분해.md"
+    ],
+    "lexicon": []
+  },
+  "context": "- [후속] 같은 날(10/1) 간담회에서 '발굴-고도화-제작-유통-확장' 5단계 파이프라인 구축 및 정부·지자체·한국만화영상진흥원·대학 연계 신인 발굴 계획이 추가 공개됨 (파이낸셜투데이 https://www.ftoday.co.kr/news/articleView.html?idxno=366461)\n- [후속] 오리지널 IP를 밀리에서 선공개 후 네이버·카카오 등 외부 플랫폼 재유통, 검증된 IP는 드라마·영화 2차 제작 및 해외 맞춤형 작품 별도 준비 방침 공개 (디지털데일리 https://www.ddaily.co.kr/page/view/2026100111003454199)\n- [후속] 2025년 연간 실적 발표(2026-02-13)에서 웹소설·웹툰 '밀리 스토리' 효과를 성장 요인으로 제시하고 창사 첫 현금배당 계획 발표 (EBN https://www.ebn.co.kr/news/articleView.html?idxno=1699804)\n- [반응] 이명우 밀리의서재 스토리사업본부장 웹소설·웹툰 진출은 단순 영역 확장이 아닌 시장 변화에 따른 선택이라고 강조 (파이낸셜투데이 https://www.ftoday.co.kr/news/articleView.html?idxno=366461)\n- [반응] 이명우 본부장 구독 서비스의 강점은 신인 작가에게 있으며, 제휴 시 발굴부터 제작·유통·확장까지 이어지는 구조를 만들고 있다고 설명 (디지털데일리 https://www.ddaily.co.kr/page/view/2026100111003454199)\n- [반응] 이명우 본부장 IP 병렬 입점으로 웹툰·웹소설 플랫폼의 독점 콘텐츠 중심 구조가 깨지면서 밀리에 유리한 환경이 조성될 것이라고 진단 (ZDNet Korea https://zdnet.co.kr/view/?no=20261001113126)\n- [반응] 이명우 본부장 현재는 '밀리를 구독하면서 웹툰·웹소설도 있네'에 가깝다며 인지도 한계를 자인 (EBN https://www.ebn.co.kr/news/articleView.html?idxno=1726376)\n- [수치] 44개 → 124개 (약 3배) 올해 대비 내년 오리지널 IP 라인업 (디지털데일리 https://www.ddaily.co.kr/page/view/2026100111003454199)\n- [수치] 969만 건 8월 기준 웹소설·웹툰 누적 '서재 담기'/스토리 콘텐츠 수 (파이낸셜투데이 https://www.ftoday.co.kr/news/articleView.html?idxno=366461)\n- [수치] 600종 이상 스토리 IP 파트너십 콘텐츠 수 (디지털데일리 https://www.ddaily.co.kr/page/view/2026100111003454199)\n- [수치] 3년 내 10%, 향후 20% ZDNet이 전한 시장점유율 목표(이데일리는 '3년 내 5~10%'로 보도, 매체 간 수치 상충) (ZDNet Korea https://search.zdnet.co.kr/?area=4&kwd=%EC%9B%B9%ED%88%B0)\n- [선례] 통신사 제휴(B2B2C) 확장 선례 — 2025년 4월 SK텔레콤 멤버십 제휴로 국내 통신 3사 고객 전체에 서비스 제공, 신규 가입자·채널 매출 증가로 이어짐 (벤처스퀘어 https://www.venturesquare.net/1039054)\n- [선례] 일반문학 IP의 웹툰 전환 선례 — 천선란 작가 SF 소설 '천 개의 파랑'을 오리지널 웹툰으로 재해석해 기존 독자를 웹툰으로 연결 (이데일리 https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=05113526645608656)\n- [선례] 카카오페이지 웹소설 → 웹툰 → 애니메이션으로 이어진 OSMU 구조 선례('그녀가 공작저로 가야 했던 사정', 2016 연재→2017 웹툰화→2023 애니 방영) (Wikipedia https://en.wikipedia.org/wiki/Why_Raeliana_Ended_Up_at_the_Duke%27s_Mansion)",
+  "judgment": {
+    "factor": "IP",
+    "from_stage": "생산",
+    "to_stage": "유통",
+    "region": "한국",
+    "tense": "signal",
+    "tense_why": "KT 계열 상장사가 간담회로 공식 발표한 투자 계획이고, 원천 IP 확보 경쟁은 이미 네카오가 주도하는 주류 전장이다.",
+    "vibe_evidence": "",
+    "vibe_evidence_en": "",
+    "angle_ko": "구독 플랫폼이 IP 제작사로 가는 길에서 진짜 자산은 124개 라인업이 아니라 '신인 작가에게 월정액 구독이 주는 안정적 노출'이라는 수급 조건이다 — 웹툰 사업의 병목은 작가이고, 밀리는 그 병목을 돈이 아니라 유통 구조로 사려 한다",
+    "angle_en": "For a subscription platform turning into an IP studio, the real asset isn't 124 titles but the supply-side pitch to rookie writers: guaranteed exposure inside a flat-fee bundle. The bottleneck in webtoon/web-novel businesses is talent, and Milli is trying to buy it with distribution structure rather than cash advances.",
+    "title_ko": "밀리의서재, 오리지널 IP를 44개에서 124개로 늘린다",
+    "title_en": "Milli's Library Takes Its Original IP Lineup From 44 to 124",
+    "bet": null,
+    "principle_ko": "창작자가 병목인 업종에서 후발 플랫폼이 선두와 선급금 경쟁을 하면 자본력에서 지므로, 대신 자사 유통 구조가 창작자에게 주는 비(非)현금 보상(고정 구독 기반 노출·외부 재유통 허용·독점 해제)을 설계해 수급을 역전시킨다 — 단 이 전략은 자사 구독자 규모가 창작자의 기대 노출량을 넘길 때만 작동한다.",
+    "principle_en": "Where creators are the bottleneck, a late-entrant platform loses any advance-payment war against incumbents, so it instead designs non-cash compensation built into its own distribution—guaranteed exposure inside a flat-fee subscriber base, permission to re-distribute on rival platforms, no exclusivity lock—to flip supply. This only works once its subscriber base exceeds the exposure creators expect elsewhere.",
+    "radar_tense": "soon",
+    "agrees": false,
+    "disagree_reason": "KT 계열 상장사가 간담회로 공식 발표한 투자 계획이고, 원천 IP 확보 경쟁은 이미 네카오가 주도하는 주류 전장이다."
+  },
+  "recent": "[D+27 · 2026-10-01] 「교환 로그가 트레포털에 쌓이면 발주는 누가 정하나」 테크 소비→유통 · vibe\n  숫자 · 제목 - 무슨 얘긴지 알려주나 2/2 · 읽고 싶게 하나 2/2 / 문체 - 사람 분포 밖 2개(접속부사, 헤지) / 형식 89/100 · 첫 문단에 누가 무엇을 언제 있음 · AI tell 1 · 헤지 만자당 8.8 · 문장 중앙 50자\n  검수 지적 · '조달 자체는 8월에 제3자배정 증자로 끝났고'와 '조달 직전인 2026년 8월 31일'이 서로 어긋난다. 8월 말이면 조달 '직전'이 아니라 조달 '직후' 혹은 같은 달이다. 한 문장만 정리하면 연표가 깔끔해진다.\n  검수 지적 · '개인투자자 두 명이 더 붙은 것으로 알려졌습니다'는 본문 유일의 무출처 전언이다. 논지의 핵",
+  "issue": {
+    "id": null,
+    "hint": {
+      "id": null,
+      "label_ko": "구독 콘텐츠 플랫폼의 원천 IP 직접 보유",
+      "label_en": "Subscription Content Platforms Taking Ownership of Source IP"
+    },
+    "synth": false,
+    "prior": [],
+    "thread_chars": 0
+  },
+  "draft_ko_v1": "밀리의서재가 2026년 10월 1일 간담회에서 오리지널 IP 라인업을 올해 44개에서 내년 124개로 늘린다고 밝혔습니다. 발굴부터 제작, 유통, 영상화까지 다섯 단계를 잇고 KT 미디어 밸류체인의 원천 IP 공급기지가 되겠다는 구상입니다. [이데일리](https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=05113526645608656)는 3년 내 웹툰·웹소설 시장점유율 5~10%를, ZDNet Korea는 3년 내 10%·향후 20%를 목표로 전했습니다. 매체 간 수치가 어긋납니다.\n\n라인업 숫자보다 먼저 볼 것은 작가를 어떻게 데려오느냐입니다. 웹툰·웹소설 사업의 병목은 플랫폼이 아니라 그릴 사람입니다. 디앤씨미디어는 2025년 사업보고서에서 자사 경쟁력을 작가 수급으로 적었고, 작가에게 미리 지급한 선급금 가운데 1년 이후 회수분만 113.2억 원을 비유동자산으로 잡아뒀습니다. 같은 보고서에는 신간 배너 노출을 플랫폼이 자기 트래픽을 위해 알아서 돌리므로 출판사에 별도 마케팅비가 들지 않는다는 설명도 있습니다. 작가가 받는 보상이 선급금이라는 현금과 노출이라는 현물 두 갈래로 나뉘어 있다는 뜻입니다.\n\n후발 주자가 선급금으로 네이버·카카오와 붙으면 자본에서 집니다. 밀리가 꺼낸 것은 다른 쪽입니다. 이명우 스토리사업본부장은 디지털데일리에 구독 서비스의 강점이 신인 작가에게 있다고 말했습니다. 월정액 구독은 독자가 회차마다 결제를 결심하지 않아도 되는 구조라, 이름값이 없어 첫 결제를 못 넘기는 신인에게 유리합니다. 여기에 밀리 선공개 뒤 네이버·카카오 재유통을 허용하는 조건이 붙습니다. 작가가 독점을 내주지 않아도 됩니다. 같은 자리에서 그는 ZDNet Korea에 IP 병렬 입점으로 독점 콘텐츠 중심 구조가 깨지는 중이고 그게 밀리에 유리한 환경이라고 진단했습니다.\n\n이 교환이 성립하려면 구독 노출이 선급금을 대신할 만큼 커야 합니다. 밀리가 내놓은 숫자는 8월 기준 웹소설·웹툰 누적 서재 담기 969만 건, 파트너십 콘텐츠 600종 이상입니다. 담기는 열람이 아니고, 600종은 남의 작품입니다. 같은 본부장이 EBN에 현재는 밀리를 구독하다 웹툰도 있네 하는 수준이라며 인지도 한계를 스스로 인정했습니다.\n\n그래서 이 구조는 전자책 구독자가 웹툰 화면까지 걸어 들어오는 만큼만 작동합니다. 작가는 선급금 대신 노출과 독점 해제를 받고, 밀리는 현금 대신 자사 유통 구조를 지불합니다. 독점의 값이 떨어지는 국면이라 지금은 거래가 성립하지만, 구독자가 기대 노출량을 못 채우면 작가는 다시 현금 쪽으로 갑니다. 그때 남는 것은 124개라는 숫자뿐입니다.",
+  "reread_ko": [],
+  "claims": [
+    {
+      "status": "verified",
+      "source": "디지털데일리",
+      "url": "https://www.ddaily.co.kr/page/view/2026100111003454199",
+      "note": "밀리의서재 스토리사업본부장이 10월 1일 간담회에서 오리지널 라인업을 올해 44개에서 내년 124개로 확대할 계획임을 밝힘",
+      "claim": "밀리의서재가 2026년 10월 1일 간담회에서 오리지널 IP 라인업을 올해 44개에서 내년 124개로 늘린다고 밝혔습니다."
+    },
+    {
+      "status": "verified",
+      "source": "이데일리, ZDNet Korea",
+      "url": "https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=05113526645608656, https://zdnet.co.kr/view/?no=20261001113126",
+      "note": "밀리의서재가 3년내 5~10%, 향후 20% 목표 전달. 이데일리가 밀리의서재 관계자 인터뷰, ZDNet Korea가 10월 1일 보도",
+      "claim": "이데일리는 3년 내 웹툰·웹소설 시장점유율 5~10%를, ZDNet Korea는 3년 내 10%·향후 20%를 목표로 전했습니다."
+    },
+    {
+      "status": "unverified",
+      "source": "",
+      "url": "",
+      "note": "2025년 사업보고서 공시 자료에서 해당 수치 확인 불가",
+      "claim": "디앤씨미디어는 2025년 사업보고서에서 작가에게 미리 지급한 선급금 가운데 1년 이후 회수분만 113.2억 원을 비유동자산으로 잡아뒀습니다."
+    },
+    {
+      "status": "verified",
+      "source": "디지털데일리",
+      "url": "https://www.ddaily.co.kr/page/view/2026100111003454199",
+      "note": "이명우 본부장이 디지털데일리 기사에서 '구독 서비스의 강점은 생각보다 신인 작가들에게 있다'고 명시됨",
+      "claim": "이명우 스토리사업본부장은 디지털데일리에 구독 서비스의 강점이 신인 작가에게 있다고 말했습니다."
+    },
+    {
+      "status": "verified",
+      "source": "디지털데일리, 이데일리 등",
+      "url": "https://www.ddaily.co.kr/page/view/2026100111003454199",
+      "note": "밀리의서재가 8월 기준 웹소설·웹툰 누적 서재 담기 969만 건, 파트너십 콘텐츠 600종 이상 수치 확인됨",
+      "claim": "밀리가 내놓은 숫자는 8월 기준 웹소설·웹툰 누적 서재 담기 969만 건, 파트너십 콘텐츠 600종 이상입니다."
+    }
+  ],
+  "reviews": [
+    {
+      "verdict": "pass",
+      "blocking": [],
+      "notes": [
+        "매체 간 점유율 수치(5~10% vs 10%·20%)가 어긋난다고 짚고 넘어가기만 했다. 어긋남을 지적했으면 어느 쪽이 간담회 발표 원문에 가까운지, 혹은 '3년 내 10%'가 신인 중심 수급으로 달성 가능한 규모인지 한 줄이라도 따져야 논지에 붙는다. 지금은 불신의 표식만 남고 쓸모가 없다.",
+        "핵심 교환의 한쪽 값이 비어 있다. 작가가 받는 것은 '노출'인데, 구독형에서 노출이 실제 정산으로 바뀌는 방식(열람 기반 분배인지, 보장 최소 수익이 있는지)이 본문에 없다. 선급금과 비교 가능한 단위가 제시되지 않으면 '현금 대신 유통 구조를 지불한다'는 문장이 검증 불가 주장으로 남는다.",
+        "반례를 한 번 마주하긴 했으나(인지도 한계·담기≠열람) 선례 층위의 반례가 없다. 구독형으로 신인 수급을 노린 앞선 시도(리디셀렉트 계열, 웹소설 월정액 실험 등)가 어디서 멈췄는지 한 사례만 붙어도 '멈추는 조건'이 추상이 아니라 관측된 값이 된다.",
+        "엔터 밖 독자 기준으로 '선급금'과 '독점(익스클루시브)'이 왜 그렇게 비싼 조건인지 설명이 한 줄도 없다. 이 두 단어가 글 전체의 교환 구조를 지탱하는데 업계 상식으로 처리됐다.",
+        "마지막 단락이 교환 구조를 다시 요약하는 쪽으로 기울어, 앞 단락에서 이미 말한 내용과 겹친다. 음악·공연 등 다른 업계에서 '유통 구조를 통화처럼 지불하는' 조건이 성립하려면 무엇이 선행돼야 하는지로 한 칸 더 나갔으면 이동 가능성이 커진다."
+      ],
+      "issues": [
+        "매체 간 점유율 수치(5~10% vs 10%·20%)가 어긋난다고 짚고 넘어가기만 했다. 어긋남을 지적했으면 어느 쪽이 간담회 발표 원문에 가까운지, 혹은 '3년 내 10%'가 신인 중심 수급으로 달성 가능한 규모인지 한 줄이라도 따져야 논지에 붙는다. 지금은 불신의 표식만 남고 쓸모가 없다.",
+        "핵심 교환의 한쪽 값이 비어 있다. 작가가 받는 것은 '노출'인데, 구독형에서 노출이 실제 정산으로 바뀌는 방식(열람 기반 분배인지, 보장 최소 수익이 있는지)이 본문에 없다. 선급금과 비교 가능한 단위가 제시되지 않으면 '현금 대신 유통 구조를 지불한다'는 문장이 검증 불가 주장으로 남는다.",
+        "반례를 한 번 마주하긴 했으나(인지도 한계·담기≠열람) 선례 층위의 반례가 없다. 구독형으로 신인 수급을 노린 앞선 시도(리디셀렉트 계열, 웹소설 월정액 실험 등)가 어디서 멈췄는지 한 사례만 붙어도 '멈추는 조건'이 추상이 아니라 관측된 값이 된다.",
+        "엔터 밖 독자 기준으로 '선급금'과 '독점(익스클루시브)'이 왜 그렇게 비싼 조건인지 설명이 한 줄도 없다. 이 두 단어가 글 전체의 교환 구조를 지탱하는데 업계 상식으로 처리됐다.",
+        "마지막 단락이 교환 구조를 다시 요약하는 쪽으로 기울어, 앞 단락에서 이미 말한 내용과 겹친다. 음악·공연 등 다른 업계에서 '유통 구조를 통화처럼 지불하는' 조건이 성립하려면 무엇이 선행돼야 하는지로 한 칸 더 나갔으면 이동 가능성이 커진다."
+      ],
+      "one_line": "라인업 숫자를 걷어내고 '작가 수급'이라는 진짜 병목으로 내려간 각도가 선명하고, 담기≠열람·인지도 한계·현금 회귀 시나리오까지 스스로 반대편을 마주했다. 정산 단위와 선례가 비면 설득이 더 두꺼워지겠지만 차단 사유는 없다."
+    }
+  ],
+  "gate": {
+    "chars": 992,
+    "contrast": 1,
+    "chars_after": 992,
+    "contrast_after": 1,
+    "revised": false,
+    "checklist": false
+  },
+  "draft_ko_final": "밀리의서재가 2026년 10월 1일 간담회에서 오리지널 IP 라인업을 올해 44개에서 내년 124개로 늘린다고 밝혔습니다. 발굴부터 제작, 유통, 영상화까지 다섯 단계를 잇고 KT 미디어 밸류체인의 원천 IP 공급기지가 되겠다는 구상입니다. [이데일리](https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=05113526645608656)는 3년 내 웹툰·웹소설 시장점유율 5~10%를, ZDNet Korea는 3년 내 10%·향후 20%를 목표로 전했습니다. 매체 간 수치가 어긋납니다.\n\n라인업 숫자보다 먼저 볼 것은 작가를 어떻게 데려오느냐입니다. 웹툰·웹소설 사업의 병목은 플랫폼이 아니라 그릴 사람입니다. 디앤씨미디어는 2025년 사업보고서에서 자사 경쟁력을 작가 수급으로 적었습니다. 같은 보고서에는 신간 배너 노출을 플랫폼이 자기 트래픽을 위해 알아서 돌리므로 출판사에 별도 마케팅비가 들지 않는다는 설명도 있습니다. 작가를 확보하는 일이 이 업계의 경쟁력이고, 그 작가에게 돌아갈 노출은 플랫폼 트래픽에 얹혀 간다는 뜻입니다.\n\n후발 주자가 선급금으로 네이버·카카오와 붙으면 자본에서 집니다. 밀리가 꺼낸 것은 다른 쪽입니다. 이명우 스토리사업본부장은 [디지털데일리](https://www.ddaily.co.kr/page/view/2026100111003454199)에 구독 서비스의 강점이 신인 작가에게 있다고 말했습니다. 월정액 구독은 독자가 회차마다 결제를 결심하지 않아도 되는 구조라, 이름값이 없어 첫 결제를 못 넘기는 신인에게 유리합니다. 여기에 밀리 선공개 뒤 네이버·카카오 재유통을 허용하는 조건이 붙습니다. 작가가 독점을 내주지 않아도 됩니다. 같은 자리에서 그는 ZDNet Korea에 IP 병렬 입점으로 독점 콘텐츠 중심 구조가 깨지는 중이고 그게 밀리에 유리한 환경이라고 진단했습니다.\n\n이 교환이 성립하려면 구독 노출이 선급금을 대신할 만큼 커야 합니다. 밀리가 내놓은 숫자는 8월 기준 웹소설·웹툰 누적 서재 담기 969만 건, 파트너십 콘텐츠 600종 이상입니다. 담기는 열람이 아니고, 600종은 남의 작품입니다. 같은 본부장이 EBN에 현재는 밀리를 구독하다 웹툰도 있네 하는 수준이라며 인지도 한계를 스스로 인정했습니다.\n\n그래서 이 구조는 전자책 구독자가 웹툰 화면까지 걸어 들어오는 만큼만 작동합니다. 작가는 선급금 대신 노출과 독점 해제를 받고, 밀리는 현금 대신 자사 유통 구조를 지불합니다. 독점의 값이 떨어지는 국면이라 지금은 거래가 성립하지만, 구독자가 기대 노출량을 못 채우면 작가는 다시 현금 쪽으로 갑니다. 그때 남는 것은 124개라는 숫자뿐입니다.",
+  "reread_en": [],
+  "draft_en_final": "Milli's Library (밀리의서재), a South Korean e-book subscription service owned by the telecom group KT, said at a press briefing on October 1, 2026 that it will expand its original IP lineup from 44 titles this year to 124 next year. IP here means a story the company owns outright rather than licenses, which is what lets it sell the same work again as a webtoon, a web novel, a foreign-language edition or a drama. The plan links five stages, from finding writers to production, distribution and screen adaptation, and positions the company as the source-story supplier inside KT's media businesses. [Edaily](https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=05113526645608656) reported a target of 5 to 10 percent of the webtoon and web novel market within three years, while ZDNet Korea reported 10 percent within three years and 20 percent later. The two figures do not match.\n\nThe lineup count matters less than how the writers get there. In webtoons and web novels, the scarce thing is not shelf space but people who can draw and write at serial pace. D&C Media, a Korean publisher of web novels, listed securing authors as its core competitive strength in its 2025 business report, and noted in the same document that platforms run new-release banner promotion on their own initiative to feed their own traffic, so publishers pay no separate marketing cost. Author supply is the contest, and the promotion a writer receives rides on whoever owns the audience.\n\nA latecomer cannot win that contest with advances, the upfront cash a platform pays a writer before any reader arrives, because Naver and Kakao have more of it. So Milli is paying in distribution instead. Lee Myung-woo (이명우), head of its story business division, told [Digital Daily](https://www.ddaily.co.kr/page/view/2026100111003454199) that a subscription model favors unknown writers, because a monthly flat fee removes the moment where a reader decides whether an unfamiliar name is worth paying for episode by episode. On top of that, a writer who premieres on Milli may then re-release the same work on Naver or Kakao. No exclusivity is demanded. Lee told ZDNet Korea that this parallel listing is eroding the exclusive-content model, and that the erosion works in Milli's favor.\n\nThe trade only holds if subscription exposure is worth as much as cash. The company's own figures, as of August, are 9.69 million cumulative shelf-adds for web novels and webtoons and more than 600 partnership titles. A shelf-add is a save, not a read, and the 600 are other people's works. Lee conceded to EBN that recognition is still at the level of subscribers noticing that webtoons exist inside the app.\n\nWriters gain reach without surrendering ownership, Milli gains a catalogue without a cash war, and the moment subscribers stop walking from the e-book screen to the comics tab, the writers go back to whoever pays upfront. Any business buying scarce talent with access rather than money is making the same bet.",
+  "working_title": {
+    "ko": "선급금 대신 노출을 준다",
+    "en": "Exposure Instead of Advances"
+  },
+  "title": {
+    "ko": {
+      "title": "밀리의서재, 오리지널 IP를 44개에서 124개로 늘린다",
+      "source": "밀리의서재가 2026년 10월 1일 간담회에서 오리지널 IP 라인업을 올해 44개에서 내년 124개로 늘린다고 밝혔습니다.",
+      "from_body": true,
+      "candidates": [
+        {
+          "title": "밀리의서재, 오리지널 IP를 44개에서 124개로 늘린다",
+          "source": "밀리의서재가 2026년 10월 1일 간담회에서 오리지널 IP 라인업을 올해 44개에서 내년 124개로 늘린다고 밝혔습니다."
+        }
+      ]
+    },
+    "en": {
+      "title": "Milli's Library Takes Its Original IP Lineup From 44 to 124",
+      "source": "Milli's Library (밀리의서재), a South Korean e-book subscription service owned by the telecom group KT, said at a press briefing on October 1, 2026 that it will expand its original IP lineup from 44 titles this year to 124 next year.",
+      "from_body": true,
+      "candidates": [
+        {
+          "title": "Milli's Library Takes Its Original IP Lineup From 44 to 124",
+          "source": "Milli's Library (밀리의서재), a South Korean e-book subscription service owned by the telecom group KT, said at a press briefing on October 1, 2026 that it will expand its original IP lineup from 44 titles this year to 124 next year."
+        },
+        {
+          "title": "Will the Writers Go Back to Whoever Pays Upfront?",
+          "source": "Writers gain reach without surrendering ownership, Milli gains a catalogue without a cash war, and the moment subscribers stop walking from the e-book screen to the comics tab, the writers go back to whoever pays upfront."
+        },
+        {
+          "title": "Milli Is Paying in Distribution Instead",
+          "source": "So Milli is paying in distribution instead."
+        }
+      ]
+    },
+    "check": {
+      "clarity": 2,
+      "pull": 1,
+      "kept_promise": true,
+      "why": "밀리의서재가 오리지널 IP를 44→124개로 늘린다는 주체·행위·수치가 다 서 있어 명확하나, 긴장은 44와 124의 수치 대비 정도에 그쳐 약하다. 본문은 그 확장 선언의 성립 조건을 실제로 따져 약속은 지킨다."
+    },
+    "duel_ko": {
+      "best": {
+        "title": "밀리의서재, 오리지널 IP를 44개에서 124개로 늘린다",
+        "source": "밀리의서재가 2026년 10월 1일 간담회에서 오리지널 IP 라인업을 올해 44개에서 내년 124개로 늘린다고 밝혔습니다."
+      },
+      "rounds": [],
+      "kept_first": true,
+      "n": 1
+    },
+    "duel_en": {
+      "best": {
+        "title": "Milli's Library Takes Its Original IP Lineup From 44 to 124",
+        "source": "Milli's Library (밀리의서재), a South Korean e-book subscription service owned by the telecom group KT, said at a press briefing on October 1, 2026 that it will expand its original IP lineup from 44 titles this year to 124 next year."
+      },
+      "rounds": [
+        {
+          "a": "Milli's Library Takes Its Original IP Lineup From 44 to 124",
+          "b": "Will the Writers Go Back to Whoever Pays Upfront?",
+          "winner": "a",
+          "why": "1번은 소재만 갈아끼우면 어디든 붙는 관용적 물음이라 긴장으로 치지 않고, 2번은 고유명사와 44→124라는 수치·동사로 무슨 일인지 즉시 세운다."
+        },
+        {
+          "a": "Milli's Library Takes Its Original IP Lineup From 44 to 124",
+          "b": "Milli Is Paying in Distribution Instead",
+          "winner": "a",
+          "why": "2번은 고유명사와 44→124라는 수치로 무슨 산업의 어떤 사건인지 제목에 세우고 증폭 자체가 미지수를 품는 반면, 1번은 'Milli'만 남고 무슨 업계인지·무엇을 거래하는지 비유로만 암시해 본문 없이는 해독이 안 된다."
+        }
+      ],
+      "kept_first": true,
+      "n": 3
+    }
+  },
+  "cast": [
+    {
+      "key": "d-c-media",
+      "kind": "company",
+      "name_ko": "디앤씨미디어",
+      "name_en": "D&C Media",
+      "desc_ko": "한국의 웹툰 및 웹소설 출판사입니다. 2012년 설립했습니다.",
+      "desc_en": "South Korean webtoon and web novel publisher established in 2012.",
+      "url": "https://dncmedia.irpage.co.kr/",
+      "role_ko": "웹소설 출판사로서 작가 수급을 경쟁력으로 삼는 업체입니다.",
+      "role_en": "A web novel publisher that lists author supply as its core competitive strength."
+    },
+    {
+      "key": "lee-myung-woo",
+      "kind": "person",
+      "name_ko": "이명우",
+      "name_en": "Lee Myung-woo",
+      "desc_ko": "KT 계열사 밀리의서재의 웹소설·웹툰 사업 책임자입니다. 전자책 구독 플랫폼에서 웹소설과 웹툰으로 사업을 확대 중입니다.",
+      "desc_en": "Executive leading web novel and webtoon business at Millie's Bookstore, a KT subsidiary. Oversees expansion from e-book subscriptions to web content.",
+      "url": "https://www.ddaily.co.kr/page/view/2026100111003454199",
+      "role_ko": "밀리의서재 스토리사업본부장으로서 구독 서비스의 신인 작가 유리성을 설명합니다.",
+      "role_en": "Head of Milli's Library story business division who explains the subscription model's advantage for unknown writers."
+    }
+  ],
+  "name_map": {
+    "ko": {},
+    "en": {
+      "밀리의서재": "Millies Library",
+      "전자신문": "etnews",
+      "이데일리": "Edaily",
+      "이명우": "Lee Myeongu"
+    }
+  },
+  "usage": {
+    "input": 255362,
+    "output": 23289,
+    "calls": 26,
+    "search_uses": 15
+  },
+  "usage_by_step": {
+    "select|claude-opus-5": {
+      "input": 5395,
+      "output": 1335,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "summarize_sources|claude-haiku-4-5-20251001": {
+      "input": 1383,
+      "output": 380,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "retrieve|claude-haiku-4-5-20251001": {
+      "input": 17934,
+      "output": 300,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "context|claude-opus-5": {
+      "input": 26309,
+      "output": 2901,
+      "calls": 1,
+      "search_uses": 2
+    },
+    "judge|claude-opus-5": {
+      "input": 16815,
+      "output": 771,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "write_ko|claude-opus-5": {
+      "input": 20282,
+      "output": 3296,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "extract_claims|claude-haiku-4-5-20251001": {
+      "input": 1426,
+      "output": 362,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "verify_claim|claude-haiku-4-5-20251001": {
+      "input": 99337,
+      "output": 1415,
+      "calls": 5,
+      "search_uses": 9
+    },
+    "hedge|claude-opus-5": {
+      "input": 2175,
+      "output": 2489,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "review|claude-opus-5": {
+      "input": 2518,
+      "output": 1821,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "polish|claude-opus-5": {
+      "input": 5364,
+      "output": 3249,
+      "calls": 2,
+      "search_uses": 0
+    },
+    "write_en|claude-opus-5": {
+      "input": 3517,
+      "output": 1626,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "title_from_body|claude-opus-5": {
+      "input": 4317,
+      "output": 1682,
+      "calls": 2,
+      "search_uses": 0
+    },
+    "compare|claude-opus-5": {
+      "input": 2715,
+      "output": 237,
+      "calls": 2,
+      "search_uses": 0
+    },
+    "title_check|claude-opus-5": {
+      "input": 2364,
+      "output": 149,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "cast|claude-haiku-4-5-20251001": {
+      "input": 2804,
+      "output": 206,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "describe|claude-haiku-4-5-20251001": {
+      "input": 40448,
+      "output": 658,
+      "calls": 2,
+      "search_uses": 4
+    },
+    "name_map|claude-opus-5": {
+      "input": 259,
+      "output": 412,
+      "calls": 1,
+      "search_uses": 0
+    }
+  },
+  "form": {
+    "title_noun": true,
+    "title_len": 31,
+    "lead_concrete": true,
+    "ai_tell": 1,
+    "contrast": 1,
+    "hedge_10k": 0.0,
+    "sent_med": 51,
+    "long80": 12.5,
+    "checklist_end": false,
+    "title_check": {
+      "clarity": 2,
+      "pull": 1,
+      "kept_promise": true,
+      "why": "밀리의서재가 오리지널 IP를 44→124개로 늘린다는 주체·행위·수치가 다 서 있어 명확하나, 긴장은 44와 124의 수치 대비 정도에 그쳐 약하다. 본문은 그 확장 선언의 성립 조건을 실제로 따져 약속은 지킨다."
+    },
+    "title_kept_first": true,
+    "title_cands": 1
+  }
+}

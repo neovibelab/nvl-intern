@@ -116,6 +116,32 @@
       "en": "A merchandise sales service for VTubers. Japan-based streamart sells digital and physical goods via gacha mechanics and allows fans to display purchased items on their \"oshi shelf\".",
       "url": "https://streamart.tokyo",
       "source": "streamart Official X Account"
+    },
+    "d-c-media": {
+      "kind": "company",
+      "name_ko": "디앤씨미디어",
+      "name_en": "D&C Media",
+      "first": "2026-10-02",
+      "pieces": [
+        "2026-10-02-milli-s-library-takes-its-original-ip-lineup-from-"
+      ],
+      "ko": "한국의 웹툰 및 웹소설 출판사입니다. 2012년 설립했습니다.",
+      "en": "South Korean webtoon and web novel publisher established in 2012.",
+      "url": "https://dncmedia.irpage.co.kr/",
+      "source": "D&C Media IR Page"
+    },
+    "lee-myung-woo": {
+      "kind": "person",
+      "name_ko": "이명우",
+      "name_en": "Lee Myung-woo",
+      "first": "2026-10-02",
+      "pieces": [
+        "2026-10-02-milli-s-library-takes-its-original-ip-lineup-from-"
+      ],
+      "ko": "KT 계열사 밀리의서재의 웹소설·웹툰 사업 책임자입니다. 전자책 구독 플랫폼에서 웹소설과 웹툰으로 사업을 확대 중입니다.",
+      "en": "Executive leading web novel and webtoon business at Millie's Bookstore, a KT subsidiary. Oversees expansion from e-book subscriptions to web content.",
+      "url": "https://www.ddaily.co.kr/page/view/2026100111003454199",
+      "source": "디지털데일리"
     }
   }
 }

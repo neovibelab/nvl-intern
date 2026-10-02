@@ -1200,5 +1200,63 @@
       "calls": 32,
       "search_uses": 21
     }
+  },
+  {
+    "date": "2026-10-02",
+    "day": 28,
+    "slug": "2026-10-02-milli-s-library-takes-its-original-ip-lineup-from-",
+    "title_ko": "밀리의서재, 오리지널 IP를 44개에서 124개로 늘린다",
+    "title_en": "Milli's Library Takes Its Original IP Lineup From 44 to 124",
+    "factor": "IP",
+    "from_stage": "생산",
+    "to_stage": "유통",
+    "tense": "signal",
+    "region": "한국",
+    "radar_tense": "soon",
+    "agrees": false,
+    "claims_total": 5,
+    "claims_verified": 4,
+    "review_rounds": 1,
+    "unresolved": false,
+    "bet": false,
+    "wiki_used": 3,
+    "lexicon_used": 0,
+    "form": {
+      "title_noun": true,
+      "title_len": 31,
+      "lead_concrete": true,
+      "ai_tell": 1,
+      "contrast": 1,
+      "hedge_10k": 0.0,
+      "sent_med": 51,
+      "long80": 12.5,
+      "checklist_end": false,
+      "title_check": {
+        "clarity": 2,
+        "pull": 1,
+        "kept_promise": true,
+        "why": "밀리의서재가 오리지널 IP를 44→124개로 늘린다는 주체·행위·수치가 다 서 있어 명확하나, 긴장은 44와 124의 수치 대비 정도에 그쳐 약하다. 본문은 그 확장 선언의 성립 조건을 실제로 따져 약속은 지킨다."
+      },
+      "title_kept_first": true,
+      "title_cands": 1
+    },
+    "style": {
+      "문장 리듬": 0.41,
+      "접속부사": 21.8,
+      "헤지": 0.0,
+      "수식어": 0.0,
+      "쉼표": 98.1
+    },
+    "selected_by": "intern",
+    "candidates": 5,
+    "issue": "subscription-content-platforms-taking-ow",
+    "synth": false,
+    "cast": 2,
+    "tokens": {
+      "input": 255362,
+      "output": 23289,
+      "calls": 26,
+      "search_uses": 15
+    }
   }
 ]
