@@ -39,7 +39,8 @@ def _body(slug: str, lang: str = "ko") -> str:
         t = ln.strip()
         if t.startswith(("**예측** ·", "**가져갈 것** ·", "> **발행 전 검사**",
                          "**베팅** ·", "**원리** ·", "> **검수 기록**",   # 옛 이름도 받는다
-                         "**지난 판단 되읽기** ·", "**Takeaway** ·", "**Checking earlier calls** ·")):
+                         "**지난 판단 되읽기** ·", "**Takeaway** ·", "**Checking earlier calls** ·",
+                         "**한 줄 정리** ·", "**이 판의 원리** ·", "**In short** ·", "**What the thread shows** ·")):
             break
         if started and t == "---":
             break

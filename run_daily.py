@@ -201,6 +201,10 @@ def main() -> int:
     trace["reread_en"] = reread_en
     en = steps.polish(en, "en", links)
     trace["draft_en_final"] = en
+    # ⑦'' 한 줄 정리 - 최종 본문에서만 뽑고 본문이 받치는지 확인한다(2026-10-02)
+    lk, le = steps.closing_line(ko, "ko", synth), steps.closing_line(en, "en", synth)
+    j["line_ko"], j["line_en"] = lk["line"], le["line"]
+    trace["closing_line"] = {"ko": lk, "en": le}
     # ⑦' 제목 - 최종 본문에서 뽑는다(판정 단계 제목은 임시였다)
     trace["working_title"] = {"ko": j.get("title_ko"), "en": j.get("title_en")}
     nouns = form.source_nouns(trace["cluster"]["items"], ko)
@@ -239,7 +243,7 @@ def main() -> int:
         print("\n" + "=" * 60 + "\n" + steps.header_line(j, "ko") + "\n# " + j["title_ko"]
               + ("\n\n왜 이걸 골랐나 · " + sl.get("reason_ko", "") if sl.get("reason_ko") else "")
               + ("\n[종합 편 · 이전 " + str(len(prior)) + "편]" if synth else "")
-              + "\n\n" + ko + "\n\n원리 · " + j["principle_ko"]
+              + "\n\n" + ko + "\n\n" + ("이 판의 원리" if synth else "한 줄 정리") + " · " + (j.get("line_ko") or "(싣지 않음)")
               + ("\n\n지난 판단 되읽기\n" + "\n".join("- " + x for x in reread_ko) if reread_ko else ""))
         return 0
 
@@ -384,6 +388,14 @@ def rebuild(args) -> int:
                                         region=(trace.get("judgment") or {}).get("region"))
     ko = steps.polish(ko, "ko", links)
     en = steps.polish(trace["draft_en_final"], "en", links)
+    # 한 줄 정리 - 로그에 있으면 그대로. 없으면(10-02 이전 편) 옛 「가져갈 것」을 그대로 다시 싣는다 -
+    # 다시 만들면 이미 나간 글이 바뀐다(인턴 글은 사람이 고치지 않는다).
+    cl_line = trace.get("closing_line")
+    if cl_line:
+        j["line_ko"] = (cl_line.get("ko") or {}).get("line", "")
+        j["line_en"] = (cl_line.get("en") or {}).get("line", "")
+    else:
+        j["legacy_take"] = True
     trace["draft_ko_final"], trace["draft_en_final"] = ko, en
     # 사전 - 로그에 있으면 그대로, 없으면(09-27 이전 편) 지금 만든다
     cast = trace.get("cast")

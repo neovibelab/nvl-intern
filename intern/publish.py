@@ -139,9 +139,9 @@ def day_number(date: str) -> int:
 
 L = {  # 라벨. 사이트 렌더러(build_site.BLOCK_KINDS)가 이 머리말로 블록을 알아본다 - 바꾸면 거기도 바꾼다
     "ko": {"what": "무슨 일이 있었나", "why": "왜 이걸 골랐나", "thread": "이어지는 흐름", "span": "이어 본 판",
-           "added": "오늘 더해진 것", "take": "가져갈 것", "reread": "지난 판단 되읽기", "past": "이 판의 지난 글"},
+           "added": "오늘 더해진 것", "take": "한 줄 정리", "take_synth": "이 판의 원리", "take_old": "가져갈 것", "reread": "지난 판단 되읽기", "past": "이 판의 지난 글"},
     "en": {"what": "What happened", "why": "Why this one", "thread": "Part of a thread", "span": "Reading the thread",
-           "added": "What today adds", "take": "Takeaway", "reread": "Checking earlier calls", "past": "Earlier on this thread"},
+           "added": "What today adds", "take": "In short", "take_synth": "What the thread shows", "take_old": "Takeaway", "reread": "Checking earlier calls", "past": "Earlier on this thread"},
 }
 
 
@@ -212,7 +212,13 @@ def past_list(lang: str, meta: dict) -> str:
 def piece_markdown(lang: str, date: str, slug: str, j: dict, body: str, meta: dict) -> str:
     title = j["title_ko"] if lang == "ko" else j["title_en"]
     header = steps.header_line(j, lang)
-    principle = j["principle_ko"] if lang == "ko" else j["principle_en"]
+    # 끝 줄 = 본문 확정 뒤 만든 한 줄(2026-10-02). 옛 로그에는 없으므로 비면 안 싣는다 -
+    # 판정 단계의 원리(집필용 가설)로 되돌아가 채우지 않는다.
+    principle = (j.get("line_ko") if lang == "ko" else j.get("line_en")) or ""
+    take_key = "take_synth" if meta.get("synth") else "take"
+    if j.get("legacy_take"):   # 10-02 이전 편을 다시 그릴 때 - 발행된 그대로
+        principle = j.get("principle_ko" if lang == "ko" else "principle_en", "")
+        take_key = "take_old"
     label = AI_LABEL_KO if lang == "ko" else AI_LABEL_EN
     bet = j.get("bet")
     fm = {
@@ -269,7 +275,7 @@ def piece_markdown(lang: str, date: str, slug: str, j: dict, body: str, meta: di
             src_sum += NL + NL + cast
         head_blocks = [src_sum, why_line(lang, meta), vibe_line(lang, j), thread_line(lang, meta, date)]
     head = "".join(f"{b}\n\n" for b in head_blocks if b)
-    # 본문 - 본문 · 가져갈 것 · (종합 편이면) 지난 판단 되읽기
+    # 본문 - 본문 · 한 줄 정리(종합 편이면 이 판의 원리) · (종합 편이면) 지난 판단 되읽기
     rr = reread_block(lang, meta) if synth else ""
     # 꼬리 - 이 판의 지난 글 · 원문 · 격자 · 검사
     past = past_list(lang, meta)
@@ -278,7 +284,7 @@ def piece_markdown(lang: str, date: str, slug: str, j: dict, body: str, meta: di
             + head
             + hr.lstrip("\n")
             + f"{body.strip()}\n\n"
-            + f"**{L[lang]['take']}** · {principle}"
+            + (f"**{L[lang][take_key]}** · {principle}" if principle else "")
             + (f"\n\n{rr}" if rr else "") + hr
             + (f"{past}\n\n" if past else "")
             + (f"{src_links}\n\n" if src_links else "")

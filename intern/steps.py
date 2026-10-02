@@ -252,7 +252,7 @@ def judge(cluster_text: str, radar: dict, materials: str, extra: str = "") -> di
 - 지역(region): 이 소재가 **어디 이야기인가** 하나 고른다: {' | '.join(config.REGIONS)}. 기사가 어느 매체에 실렸는지가 아니라
   **사건이 벌어진 곳**이다. 여러 지역이 걸쳐 있으면 「글로벌」.
 - 각도(angle): 이 사건에서 무엇을 말할지 한 줄. 뻔한 것(누구나 아는 요약)이면 다른 각도를 찾는다.
-- 원리(principle): 다른 업종이 이 사례에서 가져갈 원리 한 문장. **격언이 아니라 작동 방식이다** - 무엇이 무엇을 낳는지, 어떤 조건에서 그런지가 문장 안에 있어야 한다. 「~이 새로운 화폐가 된다」처럼 조건 없는 경구는 실패다.
+- 원리(principle): 이 사례가 어떻게 작동하는지에 대한 **집필용 가설** 한 문장. 무엇이 무엇을 낳는지, 어떤 조건에서 그런지가 문장 안에 있어야 한다. **발행되지 않는다** - 본문이 사실로 확인하는 만큼만 쓰이고, 독자가 보는 끝 줄은 본문을 다 쓴 뒤 따로 만든다(2026-10-02).
 
 JSON:
 {{"factor":"...","from_stage":"...","to_stage":"...","region":"...","tense":"vibe|signal|news","tense_why":"한 줄",
@@ -377,7 +377,7 @@ def write_synth_ko(cluster_text: str, j: dict, materials: str, thread: str, extr
 {cluster_text}
 
 [판정] {header_line(j, 'ko')} · 각도: {j['angle_ko']}
-[원리] {j['principle_ko']}
+[작동 방식 가설 - 본문에서 사실로 확인되는 만큼만 쓴다] {j['principle_ko']}
 
 [재료]
 {materials[:9000] or '(없음)'}
@@ -424,7 +424,7 @@ def write_ko(cluster_text: str, j: dict, materials: str, recent: str = "", extra
 {cluster_text}
 
 [판정] {header_line(j, 'ko')} · 각도: {j['angle_ko']}
-[원리] {j['principle_ko']}
+[작동 방식 가설 - 본문에서 사실로 확인되는 만큼만 쓴다] {j['principle_ko']}
 
 {thr}
 
@@ -469,8 +469,7 @@ ENDING_KO = """**마지막 단락은 이 사례가 작동하는 원리를 푼다
 - 누가 무엇을 얻는가 · 왜 지금 작동하는가 · 어떤 조건이 깨지면 멈추는가. 이 셋 중 본문이 아직 안 푼 것을 푼다.
 - 독자에게 할 일을 주지 않는다. 「~라면 볼 것은」「볼 줄은 두 개입니다」「계약서에서 먼저 볼 줄」 같은
   점검 목록으로 끝내지 않는다. 원리가 풀리면 독자가 자기 자리에 옮겨 간다.
-- 마지막 원리 줄은 코드가 붙인다. **그 줄을 미리 말하지 않는다** - 본문 끝 단락이 원리 줄과 같은 말이면 같은 결론을 두 번 쓰는 것이다.
-  단락은 작동 과정을 보여 주고, 원리 줄은 그것을 한 문장으로 일반화한다."""
+- 끝의 한 줄 정리는 본문을 다 쓴 뒤 코드가 따로 만든다. **본문을 요약 문장으로 닫지 않는다.**"""
 
 
 def _korea_rule(j: dict) -> str:
@@ -497,6 +496,104 @@ def checklist_ending(text: str) -> bool:
     return bool(paras) and any(re.search(p, paras[-1]) for p in CHECKLIST_PATS)
 
 
+# ── ⑦'' 한 줄 정리 - 본문을 다 쓴 뒤 (2026-10-02 대표 지시) ───────────────────
+# 전에는 판정 단계(본문보다 먼저)에서 「다른 업종이 가져갈 원리」를 정해 끝에 그대로 붙였다.
+# 사실 확인도 검수도 안 거쳐 본문이 재지 않은 것을 말했고(10-01 「막는 비용이 중개 비용보다 비싸다」),
+# 권고형이라 뉴스로 읽는 사람에게는 할 일이 없었다. 사건 하나로 업종을 넘는 원리는 넘친다 -
+# 두뇌 구조 연구도 업종 셋 이상이라야 원리로 올린다. 그래서 데일리는 **이 사건 범위의 한 줄 정리**,
+# 원리는 여러 편 근거가 있는 **종합 편**에만 둔다.
+
+LINE_BAN = re.compile(r"해야 (한다|합니다)|편이 (낫|싸|좋|현실)|하라\b|때만|반드시|언제나|모든 업종|어느 업종이든")
+
+
+def _line_prompt(body: str, lang: str, synth: bool, fix: str = "") -> str:
+    if lang == "ko":
+        scope = ("이 글은 같은 흐름의 여러 편을 이어 본 종합 편이다. **본문에 나온 여러 사례에 공통으로 확인되는 구조**를 "
+                 "한 문장으로 쓴다. 사례 하나에만 있는 것은 원리로 올리지 않는다."
+                 if synth else
+                 "**주어는 이 사건의 당사자**(회사·기관·사람)다. 이 사건 범위 안에서 무엇이 어떻게 돌아가는지를 쓴다. "
+                 "다른 업종 일반으로 넓히지 않는다.")
+        return f"""아래는 오늘 발행할 글의 최종 본문이다. 끝에 붙을 한 줄을 쓴다.
+
+{scope}
+- **본문에 있는 사실과 조건만** 쓴다. 본문이 재지 않은 비교·인과를 만들지 않는다.
+- 독자에게 할 일을 주지 않는다. 「~해야 한다」「~하는 편이 낫다」를 쓰지 않는다. 「때만」「반드시」 같은 전칭도 쓰지 않는다.
+- 뉴스로 읽는 사람이 바로 알아듣는 말로 쓴다. 본문에 없던 개념어를 새로 꺼내지 않는다. **비유를 쓰지 않는다**(「울타리」「~ 위에 서 있다」「배관」) - 누가 무엇을 하는지 그대로 쓴다. 40~90자 한 문장, 합니다체가 아닌 「~다」체.
+- 본문 문장을 그대로 옮기지 않는다.{fix}
+
+[본문]
+{body}
+
+JSON: {{"line": "..."}}"""
+    scope = ("This is a synthesis piece connecting several earlier pieces. State the structure that **recurs across the cases "
+             "in the body**. Do not lift something from a single case into a principle."
+             if synth else
+             "**The subject is the party in this event** (company, body, person). Say how this case works, within this case. "
+             "Do not generalise to other industries.")
+    return f"""Below is the final body of today's piece. Write the one line that closes it.
+
+{scope}
+- Only facts and conditions that are in the body. Invent no comparison or cause the body did not establish.
+- No advice: no "should", "it pays to", "only if", "always".
+- Plain words a general news reader gets at once. No new jargon. No metaphors; say who does what. One sentence, 12 to 30 words.
+- Do not copy a body sentence.{fix}
+
+[Body]
+{body}
+
+JSON: {{"line": "..."}}"""
+
+
+def _line_check(line: str, body: str, lang: str) -> dict:
+    """본문이 받치나 · 권고형·전칭이 있나. 기계로 먼저, 그다음 별도 맥락의 판정자."""
+    if not line:
+        return {"ok": False, "why": "빈 줄"}
+    if lang == "ko" and LINE_BAN.search(line):
+        return {"ok": False, "why": "권고형·전칭: " + LINE_BAN.search(line).group(0)}
+    try:
+        d = _line_judge(line, body)
+    except Exception as e:   # 판정이 깨지면 통과로 본다 - 기계 금칙은 이미 위에서 걸렀다
+        print(f"  [line] 판정 응답 파싱 실패 · 통과 처리 · {str(e)[:60]}")
+        return {"ok": True, "why": "판정 실패 - 통과 처리"}
+    return {"ok": bool(d.get("ok")), "why": str(d.get("why") or "")[:160]}
+
+
+def _line_judge(line: str, body: str) -> dict:
+    return llm.ask_json(f"""아래 한 문장이 본문과 어긋나는지만 본다. **애매하면 통과다.**
+- **실패는 둘뿐이다.** ① 본문에 없는 수치·고유명사·사건을 새로 넣었다 ② 본문과 반대되는 말을 한다.
+- 본문 내용을 줄이거나 다른 말로 옮긴 것, 본문이 내린 판단이나 조건을 옮긴 것, 본문의 여러 대목을 한 문장에 묶은 것은 통과다.
+- 낱말·뉘앙스 차이로 실패시키지 않는다(2026-10-02 대표 지시 - 기준이 과도하게 엄격했다).
+
+[문장] {line}
+
+[본문]
+{body}
+
+JSON 하나만, 뒤에 설명을 붙이지 않는다: {{"ok": true|false, "why": "실패면 어느 대목이 본문에 없는지 한 줄"}}""",
+                     model=config.MODEL_VERIFY, max_tokens=600)
+
+
+def closing_line(body: str, lang: str, synth: bool = False) -> dict:
+    """끝 줄 하나. 두 번 고쳐 받고도 본문이 안 받치면 **빈 줄로 낸다** - 틀린 줄보다 없는 편이 낫다."""
+    fix, tries = "", []
+    for _ in range(3):
+        try:
+            d = llm.ask_json(_line_prompt(body, lang, synth, fix), system=PERSONA, max_tokens=3000)
+        except Exception as e:
+            print(f"  [line] {lang} 생성 응답 파싱 실패 · {str(e)[:60]}")
+            continue
+        line = str(d.get("line") or "").strip().strip('"「」')
+        chk = _line_check(line, body, lang)
+        tries.append({"line": line, **chk})
+        if chk["ok"]:
+            print(f"  [line] {lang} {line[:60]}")
+            return {"line": line, "tries": tries}
+        fix = f"\n- **앞 시도가 실패했다**: 「{line}」 - {chk['why']}" if lang == "ko" else \
+              f"\n- **The previous try failed**: \"{line}\" - {chk['why']}"
+    print(f"  [line] {lang} 세 번 다 실패해 싣지 않는다 · {(tries[-1]['why'] if tries else '응답 없음')[:60]}")
+    return {"line": "", "tries": tries}
+
+
 def write_en(cluster_text: str, j: dict, ko_final: str, synth: bool = False, reread_ko: list | None = None) -> str:
     """영문판. 종합 편이면 되읽기도 같이 쓰고 `=== RECHECK ===` 아래로 돌려준다(`split_reread`)."""
     size = ("550 to 800 words. This is a synthesis piece: it connects earlier pieces on the same thread"
@@ -510,16 +607,16 @@ def write_en(cluster_text: str, j: dict, ko_final: str, synth: bool = False, rer
 {cluster_text}
 
 [Call] {header_line(j, 'en')} · angle: {j['angle_en']}
-[Principle] {j['principle_en']}
+[Working hypothesis - use only as far as the facts support it] {j['principle_en']}
 
 [The Korean piece, already fact-checked. Use the same facts and the same call. Do not translate it; write the English piece for a general reader with no background in the music or entertainment industry.]
 {ko_final}
 
 {STYLE_EN}
 
-Write the English body only, {size}. Title, header line and the closing principle are added by code.
+Write the English body only, {size}. Title, header line and the closing one-line summary are added by code.
 Open with the concrete event (who, what, when). Follow the angle. Do not put a forecast in the body ("within N days X will happen"). Forecasts go to a separate ledger and are scored when due. The body reads what is taking shape now.
-End by explaining why the case works: who gains what, why now, and what would make it stop. Do not end with advice or a checklist for Korean companies, even if the Korean piece does. Do not restate the closing principle; it is added after the body.
+End by explaining why the case works: who gains what, why now, and what would make it stop. Do not end with advice or a checklist for Korean companies, even if the Korean piece does. Do not end with a one-line summary; one is added after the body.
 Only facts that appear in the cluster or the Korean piece. Invent no figures or quotes.{rr}"""
     return llm.ask(prompt, system=PERSONA, max_tokens=7000)
 

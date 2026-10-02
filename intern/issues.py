@@ -129,11 +129,16 @@ def _piece(slug: str, lang: str) -> tuple[dict, str]:
     return publish.parse_piece(p)
 
 
+TAKE_HEADS = {"ko": ("**한 줄 정리** ·", "**이 판의 원리** ·", "**가져갈 것** ·"),   # 마지막은 10-02 이전 편
+              "en": ("**In short** ·", "**What the thread shows** ·", "**Takeaway** ·")}
+
+
 def _principle(body: str, lang: str) -> str:
-    head = "**가져갈 것** ·" if lang == "ko" else "**Takeaway** ·"
     for ln in body.split("\n"):
-        if ln.strip().startswith(head):
-            return ln.strip()[len(head):].strip()
+        t = ln.strip()
+        for head in TAKE_HEADS["ko" if lang == "ko" else "en"]:
+            if t.startswith(head):
+                return t[len(head):].strip()
     return ""
 
 
