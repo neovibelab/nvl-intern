@@ -548,7 +548,14 @@ def subscribe_box(lang: str) -> str:
             f'<input type="hidden" name="metadata__lang" value="{lang}">'
             f'<input type="hidden" name="metadata__from" value="piece">'
             f'<input type="hidden" name="embed" value="1">'
-            f'</form><p class="fine">{t["sub_fine"]}</p></div>')
+            f'</form><p class="fine">{t["sub_fine"]}</p></div>'
+            # 유입 표시 (2026-10-02). 연구소 뉴스레터 꼬리 링크는 ?utm_source=newsletter로 온다.
+            # 들어온 첫 페이지에서 기억해 두고 다른 글로 옮겨 가서 구독해도 그 값을 싣는다.
+            # 저장소가 막힌 브라우저면 첫 페이지에서만 붙는다 - 구독 자체는 그대로 된다.
+            "<script>(function(){var k='nvl_from',v=null;"
+            "try{v=new URLSearchParams(location.search).get('utm_source');"
+            "if(v&&/^[a-z0-9_-]{1,32}$/.test(v)){localStorage.setItem(k,v)}else{v=localStorage.getItem(k)}}catch(e){}"
+            "if(v)document.querySelectorAll('input[name=metadata__from]').forEach(function(i){i.value=v})})();</script>")
 
 
 # 구독 안내 페이지 (2026-09-28 개편 - 대표 지시 「확인 메일을 더 잘 보이게, 안내 페이지 UX 우선」).

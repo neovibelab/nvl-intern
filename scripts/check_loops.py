@@ -140,6 +140,11 @@ def main() -> int:
             c = collections.Counter(x.get("type") for x in r.get("results", []))
             print(f"  구독 퍼널     확인 {c.get('regular', 0)} · 확인 대기 {c.get('unactivated', 0)} · 반송 {c.get('undeliverable', 0)}"
                   + ("   ← 확인 링크를 안 누른 사람이 있다 - 안내 페이지·폼 문구를 본다" if c.get("unactivated") else ""))
+            # 유입 (2026-10-02) - 연구소 뉴스레터 꼬리 링크(newsletter)가 실제로 사람을 데려오나
+            src = collections.Counter(((x.get("metadata") or {}).get("from") or "미표시")
+                                      for x in r.get("results", []) if x.get("type") == "regular")
+            print("  구독 유입     " + " · ".join(f"{k} {v}" for k, v in src.most_common())
+                  + ("" if src.get("newsletter") else "   ← 뉴스레터에서 온 구독자 아직 0"))
     except Exception:  # noqa: BLE001
         pass
     # 이 글의 사전 (2026-09-27) - 편에 붙은 수와 대장 크기. 대장이 자라면 새로 찾는 수가 줄어야 한다
