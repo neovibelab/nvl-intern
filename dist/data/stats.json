@@ -1258,5 +1258,28 @@
       "calls": 26,
       "search_uses": 15
     }
+  },
+  {
+    "date": "2026-10-03",
+    "day": 29,
+    "slug": "2026-10-03-weekly-5",
+    "type": "weekly",
+    "week": 5,
+    "title_ko": "5주차 회고",
+    "title_en": "Week 5 review",
+    "pieces": 6,
+    "signals": {
+      "buttons": {},
+      "by_via": {},
+      "text_n": 0,
+      "text_via": {},
+      "kinds": []
+    },
+    "tokens": {
+      "input": 288332,
+      "output": 47128,
+      "calls": 33,
+      "search_uses": 10
+    }
   }
 ]

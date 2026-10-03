@@ -178,5 +178,113 @@
     "why": "AI 음원 신탁 등록 통과라는 단일 사건에서 '심사 대상이 완성곡에서 작업 이력으로 내려간다'는 인과를 세우고 로그 위조·소규모 창작자 비용·판정주체 신뢰 붕괴(철회 의결)까지 반례를 안은 뒤 계약서 조항과 세션 파일 보관이라는 즉시 실행 항목으로 닫은 반면, 2번은 투자 유치 보도자료",
     "date": "2026-09-25",
     "lang": "ko"
+  },
+  {
+    "axis": "제목",
+    "new": "2026-09-27-partisan-bought-firebird-s-stake-in-otm-and-folded",
+    "old": "2026-09-06-the-bottleneck-called-100m",
+    "winner": "new",
+    "why": "①고유명사(Partisan·Left)와 '샀는데 지워졌다'는 구체적 사건 동사가 함께 서 있고 매수-삭제의 대비가 긴장을 만드는 반면, 1번은 '1400억' 수치는 있으나 '병목의 다른 이름'이라는 비유로 끝나 무슨 거래인지 알 수 없다.",
+    "date": "2026-10-03",
+    "lang": "ko"
+  },
+  {
+    "axis": "본문",
+    "new": "2026-09-27-partisan-bought-firebird-s-stake-in-otm-and-folded",
+    "old": "2026-09-06-the-bottleneck-called-100m",
+    "winner": "old",
+    "why": "1번은 '창구 단일화' 한 줄 통찰로 끝나지만, 2번은 손익분기 점유율·특전 25% 기준 같은 계산 가능한 수치와 반증 조건(대관료 상승률 비교, 회차 축소 3징후)을 걸어 틀릴 여지를 열어둔 채 논지를 밀었다",
+    "date": "2026-10-03",
+    "lang": "ko"
+  },
+  {
+    "axis": "제목",
+    "new": "2026-09-28-the-korea-fair-trade-commission-built-it-not-any-t",
+    "old": "2026-09-11-circle-chart-shows-the-top-400-albums-falling-from",
+    "winner": "old",
+    "why": "'Quad 71%'라는 수치가 박힌 데다 '~가 아니다'로 통념을 뒤집는 반전까지 걸려 있어, 사실만 나열한 2번의 평서문보다 소재와 긴장을 동시에 세운다",
+    "date": "2026-10-03",
+    "lang": "ko"
+  },
+  {
+    "axis": "본문",
+    "new": "2026-09-28-the-korea-fair-trade-commission-built-it-not-any-t",
+    "old": "2026-09-11-circle-chart-shows-the-top-400-albums-falling-from",
+    "winner": "old",
+    "why": "1번은 '표시 의무가 도용의 안전구역이 된다'는 통찰은 좋으나 로펌 보도자료 해설에 머물고 실행 단서가 계약 조항 한 줄뿐인 반면, 2번은 인용 수치의 출처 오류를 직접 교정하고 음반 판매 감소라는 반대 사실까지 끌어안은 뒤 180일 검증 조건과 '멤버 이름을 지우고 남는 문장' 이라는",
+    "date": "2026-10-03",
+    "lang": "ko"
+  },
+  {
+    "axis": "제목",
+    "new": "2026-09-29-judge-saylor-refused-61-026-songs-told-the-labels-",
+    "old": "2026-09-08-who-names-the-price-of-a-lyric",
+    "winner": "new",
+    "why": "560곡→6만 곡이라는 두 수치의 100배 낙차가 소재와 긴장을 동시에 세우는 반면, 2번은 수치·고유명사 없이 소재만 갈아 끼우면 어디든 붙는 관용적 물음이다",
+    "date": "2026-10-03",
+    "lang": "ko"
+  },
+  {
+    "axis": "본문",
+    "new": "2026-09-29-judge-saylor-refused-61-026-songs-told-the-labels-",
+    "old": "2026-09-08-who-names-the-price-of-a-lyric",
+    "winner": "old",
+    "why": "신탁약관 위임범위·문체부 승인 징수규정이라는 국내 실무 병목을 구체적으로 짚고, 'K팝 공동작곡 차별점' 같은 자기 논지의 반례를 수치 부재까지 밝히며 기각한 뒤 검증 가능한 기한·확인처까지 건 반면, 1번은 디스커버리·모델 세대 정리는 깔끔해도 국내 적용이 '계약 조항이 유일한 자'라",
+    "date": "2026-10-03",
+    "lang": "ko"
+  },
+  {
+    "axis": "제목",
+    "new": "2026-09-30-eleven-provinces-set-aside-subsidy-funds-six-platf",
+    "old": "2026-09-14-accord-entertainment-closed-a-2-billion-won-pre-se",
+    "winner": "old",
+    "why": "고유명사 둘과 '20억'·'3년째'라는 수치가 박혀 그 글에만 붙는 제목인 반면, 1번은 '조회수가 아니다'라는 부정형 관용구로 무슨 사건인지 소재가 서지 않는다",
+    "date": "2026-10-03",
+    "lang": "ko"
+  },
+  {
+    "axis": "본문",
+    "new": "2026-09-30-eleven-provinces-set-aside-subsidy-funds-six-platf",
+    "old": "2026-09-14-accord-entertainment-closed-a-2-billion-won-pre-se",
+    "winner": "old",
+    "why": "'보도자료 문구는 3년째 같아 증거가 못 된다'는 반례를 자기 논지에 먼저 던지고 증원·월1회 발매라는 실행 지표로 넘어간 뒤, 180일 검증 조건과 '확장이냐 리부트냐'라는 현장에서 바로 써먹을 판별 기준까지 내놓은 반면, 1번은 '별도 매출 라인으로 세워라'는 결론이 중국 정책·단가",
+    "date": "2026-10-03",
+    "lang": "ko"
+  },
+  {
+    "axis": "제목",
+    "new": "2026-10-01-trepotal-raised-67-million-yen-letting-fans-swap",
+    "old": "2026-09-17-umg-confirmed-the-new-platform-will-be-distinct-an",
+    "winner": "old",
+    "why": "UMG라는 고유명사에 '라이선스 대가=제품 분리'라는 교환 구조가 박혀 무슨 사건인지 서 있는 반면, 2번은 '트레포털'이 뭔지 불명확한 채 '누가 정하나'라는 소재만 갈아끼우면 되는 관용적 물음에 기대고 있다.",
+    "date": "2026-10-03",
+    "lang": "ko"
+  },
+  {
+    "axis": "본문",
+    "new": "2026-10-01-trepotal-raised-67-million-yen-letting-fans-swap",
+    "old": "2026-09-17-umg-confirmed-the-new-platform-will-be-distinct-an",
+    "winner": "new",
+    "why": "2번은 '180일 안에 ~라고 봅니다' 식 예측과 계약 조항 체크리스트에 머무는 반면, 1번은 '랜덤 봉입 잉여는 설계의 결과이고 공식이 회수하면 장치가 무너진다'는 인과를 세운 뒤 수익원 부재라는 반례까지 끌어안고 교환 로그=수요 분포라는 실행 가능한 결론으로 착지한다.",
+    "date": "2026-10-03",
+    "lang": "ko"
+  },
+  {
+    "axis": "제목",
+    "new": "2026-10-02-milli-s-library-takes-its-original-ip-lineup-from-",
+    "old": "2026-09-16-universal-music-sued-distrokid-the-day-after-the-l",
+    "winner": "old",
+    "why": "1번은 수치와 주어는 있으나 '늘린다'는 계획 발표라 반전이 없는 반면, 2번은 '명단에서 빠졌다'와 '다음 날 제소'라는 고유명사 박힌 사건의 인과 대비가 제목 안에 서 있다",
+    "date": "2026-10-03",
+    "lang": "ko"
+  },
+  {
+    "axis": "본문",
+    "new": "2026-10-02-milli-s-library-takes-its-original-ip-lineup-from-",
+    "old": "2026-09-16-universal-music-sued-distrokid-the-day-after-the-l",
+    "winner": "new",
+    "why": "2번은 '작가 수급이 병목'이라는 사건 축을 세우고 선급금 대신 비현금 보상이라는 거래 구조를 밀면서 '담기는 열람이 아니다·600종은 남의 작품·인지도 한계 자인'으로 자기 논지의 약한 고리까지 숫자로 반박해, 1번의 나열형 정황 요약보다 업무에 옮길 판단이 남는다",
+    "date": "2026-10-03",
+    "lang": "ko"
   }
 ]
