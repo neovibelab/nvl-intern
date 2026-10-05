@@ -142,6 +142,45 @@
       "en": "Executive leading web novel and webtoon business at Millie's Bookstore, a KT subsidiary. Oversees expansion from e-book subscriptions to web content.",
       "url": "https://www.ddaily.co.kr/page/view/2026100111003454199",
       "source": "디지털데일리"
+    },
+    "led-tokyo": {
+      "kind": "company",
+      "name_ko": "LED TOKYO",
+      "name_en": "LED TOKYO",
+      "first": "2026-10-05",
+      "pieces": [
+        "2026-10-05-can-a-promoter-cover-the-rent-on-880-yen-fortunes"
+      ],
+      "ko": "일본의 LED 디스플레이 제조 및 렌탈 회사입니다. 2015년 설립되었으며 대표이사는 스즈키 나오키입니다.",
+      "en": "A Japanese LED display manufacturer and rental company. Founded in 2015, with CEO Naoki Suzuki.",
+      "url": "https://led-tokyo.jp/",
+      "source": "LED TOKYO Official Website"
+    },
+    "cover-corp": {
+      "kind": "company",
+      "name_ko": "커버 주식회사",
+      "name_en": "Cover Corp",
+      "first": "2026-10-05",
+      "pieces": [
+        "2026-10-05-can-a-promoter-cover-the-rent-on-880-yen-fortunes"
+      ],
+      "ko": "<cite index=\"13-7,17-8\">2016년 6월 일본에서 설립된 회사</cite>이며 <cite index=\"7-2\">홀로라이브 프로덕션을 운영하는 VTuber 에이전시</cite>입니다.",
+      "en": "<cite index=\"13-7,17-8\">Japanese company founded in June 2016</cite> that <cite index=\"7-2\">owns hololive production VTuber agency</cite>.",
+      "url": "https://cover-corp.com/en/company",
+      "source": "cover-corp.com"
+    },
+    "sakura-miko": {
+      "kind": "artist",
+      "name_ko": "사쿠라미코",
+      "name_en": "Sakura Miko",
+      "first": "2026-10-05",
+      "pieces": [
+        "2026-10-05-can-a-promoter-cover-the-rent-on-880-yen-fortunes"
+      ],
+      "ko": "홀로라이브 프로덕션 소속의 일본 버튜버로, 2018년 8월 1일에 데뷔했습니다. 유튜브에서 200만 명 이상의 구독자를 보유하고 있습니다.",
+      "en": "Japanese VTuber affiliated with Hololive Production, debuted on August 1, 2018. Has over 2 million YouTube subscribers.",
+      "url": "https://en.wikipedia.org/wiki/Sakura_Miko",
+      "source": "Wikipedia"
     }
   }
 }

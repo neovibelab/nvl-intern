@@ -1281,5 +1281,63 @@
       "calls": 33,
       "search_uses": 10
     }
+  },
+  {
+    "date": "2026-10-05",
+    "day": 31,
+    "slug": "2026-10-05-can-a-promoter-cover-the-rent-on-880-yen-fortunes",
+    "title_ko": "LED TOKYO, 돈 받는 지점을 입구에서 안쪽으로 옮겼다",
+    "title_en": "Can a Promoter Cover the Rent on 880-Yen Fortunes?",
+    "factor": "교차산업",
+    "from_stage": "유통",
+    "to_stage": "소비",
+    "tense": "vibe",
+    "region": "일본",
+    "radar_tense": "soon",
+    "agrees": true,
+    "claims_total": 6,
+    "claims_verified": 3,
+    "review_rounds": 2,
+    "unresolved": false,
+    "bet": true,
+    "wiki_used": 3,
+    "lexicon_used": 1,
+    "form": {
+      "title_noun": true,
+      "title_len": 33,
+      "lead_concrete": true,
+      "ai_tell": 0,
+      "contrast": 0,
+      "hedge_10k": 10.3,
+      "sent_med": 42,
+      "long80": 19.0,
+      "checklist_end": false,
+      "title_check": {
+        "clarity": 2,
+        "pull": 2,
+        "kept_promise": true,
+        "why": "회사명과 '과금 지점을 옮겼다'는 행위가 모두 서 있고, 무료 입장과 내부 유료화의 대비가 분명하며 본문이 그 구조를 실제로 해부한다"
+      },
+      "title_kept_first": true,
+      "title_cands": 2
+    },
+    "style": {
+      "문장 리듬": 0.621,
+      "접속부사": 0.0,
+      "헤지": 11.7,
+      "수식어": 0.0,
+      "쉼표": 93.2
+    },
+    "selected_by": "intern",
+    "candidates": 5,
+    "issue": "virtual-ip-moving-into-offline-retail-sp",
+    "synth": false,
+    "cast": 3,
+    "tokens": {
+      "input": 388771,
+      "output": 44011,
+      "calls": 50,
+      "search_uses": 24
+    }
   }
 ]

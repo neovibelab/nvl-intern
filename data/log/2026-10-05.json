@@ -1,0 +1,606 @@
+{
+  "date": "2026-10-05",
+  "steps": {},
+  "selection": {
+    "n": 5,
+    "by": "intern",
+    "chosen": {
+      "key": "ad01a5b4-a1c5-4b81-bfdb-6b8a0c4a304e",
+      "title": "호로라이브 VTuber 사쿠라미코, 오다이바에서 체험형 콜라보 이벤트 '에리토에이조파크' 개최",
+      "n": 1,
+      "item_ids": [
+        "ad01a5b4-a1c5-4b81-bfdb-6b8a0c4a304e"
+      ],
+      "titles": [
+        "호로라이브 VTuber 사쿠라미코, 오다이바에서 체험형 콜라보 이벤트 '에리토에이조파크' 개최"
+      ]
+    },
+    "reason_ko": "VTuber IP가 굿즈 판매를 넘어 상설 상업공간의 체험 구좌를 직접 빌리기 시작하면, 팬덤 사업의 단가 계산이 유통 마진에서 공간 임대와 회전율로 옮겨갑니다.",
+    "reason_en": "When a VTuber IP rents real retail space for a ticketed experience rather than just selling goods, the unit economics of fandom business shift from distribution margin to floor rent and turnover.",
+    "issue": {
+      "id": null,
+      "label_ko": "버추얼 IP의 오프라인 상업공간 진출",
+      "label_en": "Virtual IP Moving Into Offline Retail Space"
+    },
+    "rejected": [
+      {
+        "key": "acdac190-c938-48b9-a622-d06d88bf612d",
+        "title": "소비자 1만 명 연구로 도출한 2026년 신소비 30가지 비밀: 밀레니얼·신실버 세대의 흑판 복고와 실물 의례 소비",
+        "n": 1,
+        "item_ids": [
+          "acdac190-c938-48b9-a622-d06d88bf612d"
+        ],
+        "titles": [
+          "소비자 1만 명 연구로 도출한 2026년 신소비 30가지 비밀: 밀레니얼·신실버 세대의 흑판 복고와 실물 의례 소비"
+        ],
+        "why": "1만 명 조사라는 규모는 크지만 세대별 복고 소비 요약에 그쳐 누가 써도 같은 글이 되고, 아날로그 재소비 판은 이미 2편 썼다."
+      },
+      {
+        "key": "67545ef9-76c3-4003-bc61-d3ac5aae104c",
+        "title": "적토지 위의 '백억 픽셀' 해석하기: 간파 마이크로 숏드라마(微短剧)가 어떻게 천개 업종에 힘을 주고 장시 이야기를 잘 말하는가",
+        "n": 6,
+        "item_ids": [
+          "053d7b60-890c-4b10-a942-21d3d6b5d0ae",
+          "42f494d5-7b90-4e03-a6c4-0f6f077d2dd4",
+          "67545ef9-76c3-4003-bc61-d3ac5aae104c",
+          "c5345642-93a6-407a-8eaf-f5738719a569",
+          "cfc6fdc4-452b-4b87-ba75-c035f450cd5d",
+          "3bfac14e-b4f9-47a5-ab0f-bedf4ea8327a"
+        ],
+        "titles": [
+          "적토지 위의 '백억 픽셀' 해석하기: 간파 마이크로 숏드라마(微短剧)가 어떻게 천개 업종에 힘을 주고 장시 이야기를 잘 말하는가",
+          "국경절 첫날 동교기억 조이플레이 거리에 긴 줄, '청두 제조' AI 웹툰IP 콜라보 문창상품 첫 출시",
+          "2026 제2회 베이징 대시청(追光计划) 국제 마이크로 숏드라마(微短剧) 대회 최종 평가 로드쇼 시작",
+          "AI 마이크로 숏드라마(微短剧)가 심화 단계에 진입, 다중 시험 속 산업의 방향은",
+          "2026 정품 마이크로 숏드라마(微短剧) 추계 평가회 베이징 개최",
+          "스마트폰 세로보기, 반전 반복되는 스토리... 할리우드도 중국 마이크로 숏드라마(微短剧) 따라하기"
+        ],
+        "why": "숏드라마 판은 사흘 전 썼고 기사 4건이 전부 '표준 포맷 전환' 일반론이라 새 국면이라 부를 조각이 없다."
+      },
+      {
+        "key": "e4f98439-d621-4ce7-908d-bca38ad9a811",
+        "title": "AI 음악 제작 플랫폼 Suno, Speech 음성 생성 기능 베타 출시, 배경음악과 나레이션 동시 제작 가능",
+        "n": 4,
+        "item_ids": [
+          "77c62dfc-27b9-4c46-a0e2-00f0fa77e54d",
+          "98ad9177-c51f-401f-8467-30e5d01348f0",
+          "5aaabbe4-ec61-4359-804f-3c691e0ca2bd",
+          "e4f98439-d621-4ce7-908d-bca38ad9a811"
+        ],
+        "titles": [
+          "AI 음악 제작 플랫폼 Suno, Speech 음성 생성 기능 베타 출시, 배경음악과 나레이션 동시 제작 가능",
+          "AI 음악 제작 플랫폼 Suno, Speech 음성 생성 기능 베타 출시, 배경음악과 나레이션 동시 제작 가능",
+          "업계 첫 AI 음악 제작 플랫폼 Suno, Speech 음성 생성 기능 출시",
+          "Suno Speech 베타, 영국 억양이 호주로 샌다…학습 데이터 비공개에 저작권 논란도"
+        ],
+        "why": "Suno 음성 기능은 AI 음악 라이선스 판 7편과 겹치고, 베타 출시 단계라 사업 판단에 쓸 수치나 후속이 아직 안 붙었다."
+      },
+      {
+        "key": "04a200e9-cc79-4ca6-991f-5d1069dc0dee",
+        "title": "영상, 세로화면 할리우드 진출부터 AI 기술 활용까지 중국 영상물의 해외 진출 업그레이드",
+        "n": 3,
+        "item_ids": [
+          "b5643c13-5e8a-45ac-bf8d-0ee11b142542",
+          "04a200e9-cc79-4ca6-991f-5d1069dc0dee",
+          "e8a12718-964d-4b74-9e9c-5e36e223436d"
+        ],
+        "titles": [
+          "영상, 세로화면 할리우드 진출부터 AI 기술 활용까지 중국 영상물의 해외 진출 업그레이드",
+          "AI '몰입'! 중국 비디오 툴이 할리우드 제작 체인에 진입",
+          "AI '연기까지'... 중국 영상 툴이 할리우드 제작 파이프라인에 진입"
+        ],
+        "why": "중국 영상 툴의 할리우드 진입은 음악 워크플로우까지 가는 연결이 추정에 머물러 소재 층이 결정을 바꿀 자리가 없다."
+      }
+    ]
+  },
+  "cluster": {
+    "key": "ad01a5b4-a1c5-4b81-bfdb-6b8a0c4a304e",
+    "item_ids": [
+      "ad01a5b4-a1c5-4b81-bfdb-6b8a0c4a304e"
+    ],
+    "n": 1,
+    "radar_tense": "soon",
+    "factor": "IP",
+    "stage": "소비",
+    "titles": [
+      "호로라이브 VTuber 사쿠라미코, 오다이바에서 체험형 콜라보 이벤트 '에리토에이조파크' 개최"
+    ],
+    "urls": [
+      "https://realsound.jp/tech/2026/10/post-2542450.html"
+    ],
+    "items": [
+      {
+        "title": "호로라이브 VTuber 사쿠라미코, 오다이바에서 체험형 콜라보 이벤트 '에리토에이조파크' 개최",
+        "url": "https://realsound.jp/tech/2026/10/post-2542450.html",
+        "source": "リアルサウンド",
+        "region": "japan",
+        "published_date": "2026-10-02T00:00:00+00:00",
+        "title_en": "Hololive VTuber Sakura Miko Holds Experience-Type Collaboration Event 'Elito Eizo Park' at Odaiba - [japan/RealSound]"
+      }
+    ]
+  },
+  "source_summary": {
+    "ko": "호로라이브 소속 VTuber 사쿠라미코와 LED TOKYO가 10월 15일부터 11월 1일까지 오다이바 덱스도쿠비치 3층에서 콜라보 이벤트를 개최합니다. 3면 대형 LED 스크린 특별 영상 방영, 신규 일러스트 오리지널 굿즈 판매, 오미쿠지와 미스터리 랠리 등을 제공합니다.",
+    "en": "Hololive VTuber Sakura Miko and LED TOKYO will hold a collaborative experience event at Decks Tokyo Beach 3F from October 15 to November 1. The event features large LED screen videos, original merchandise with new illustrations, and special items like omikuji and mystery rallies.",
+    "titles_en": [
+      "Hololive VTuber Sakura Miko Holds Experience-Type Collaboration Event 'Elito Eizo Park' at Odaiba - [japan/RealSound]"
+    ]
+  },
+  "materials": {
+    "wiki": [
+      "2026-08-24-경험-사업화-LBE.md",
+      "2026-05-29-IP-비즈니스-구조.md",
+      "2026-09-15-마이크로미디어-희소성의-이동.md"
+    ],
+    "lexicon": [
+      "fandom.md#cultural localization (event) - 이벤트의 문화적 현지화"
+    ]
+  },
+  "context": "- [후속] 이벤트 주최 측이 굿즈 구매 특전 포스트카드 뒷면 QR 응모를 통한 추첨제 '에리토에이조파크 쁘띠 팬미팅 in 오다이바' 실시를 추가 고지 (Koubo https://koubo.jp/article/127032)\n- [후속] 오리지널 굿즈 온라인 판매(EDITH ONLINE) 수주 기간 2026년 10월 15일 11시~11월 8일 23시 59분, 배송은 2027년 1월 중순부터 순차 개시로 확정 공지 (リアルサウンド https://realsound.jp/tech/2026/10/post-2542450.html)\n- [후속] 기사 이후 추가로 확인되는 합의·철회·추가 제소 등 후속 전개는 검색 결과에서 확인되지 않음 (- -)\n- [반응] LED TOKYO(대표이사 스즈키 나오키) 자사 운영 LED DAIBA STUDIO에서 이디스·커버와 연계해 입장 무료 POP UP 이벤트를 연다고 보도자료로 발표 (PR TIMES https://prtimes.jp/main/html/rd/p/000000451.000030501.html)\n- [반응] 주식회사 이디스(대표이사 모리 슌페이) IP 활용 이벤트·굿즈 사업자로서 커버 소속 사쿠라미코와의 콜라보 개최를 자사 명의 릴리스로 발표 (PR TIMES https://prtimes.jp/main/html/rd/p/000000355.000066407.html)\n- [반응] 운영 측 회장 한정 특별 영상은 기간 중에만 볼 수 있으며 혼잡 시 입장을 제한할 수 있다고 안내 (zaikei(LED TOKYO 릴리스) https://www.zaikei.co.jp/releases/3645515/)\n- [수치] 2026년 10월 15일~11월 1일 (18일간) 이벤트 개최 기간 (リアルサウンド https://realsound.jp/tech/2026/10/post-2542450.html)\n- [수치] 3면 특별 영상이 방영되는 대형 LED 비전 면 수 (リアルサウンド https://realsound.jp/tech/2026/10/post-2542450.html)\n- [수치] 3,000엔(세금 포함)당 포스트카드 1매 굿즈 구매 특전 지급 기준 금액 (リアルサウンド https://realsound.jp/tech/2026/10/post-2542450.html)\n- [수치] 880엔(세금 포함) / 1회 '에리토 오미쿠지' 및 '수수께끼 풀이 랠리' 각각의 참가 가격 (リアルサウンド https://realsound.jp/tech/2026/10/post-2542450.html)\n- [선례] 같은 회장(LED DAIBA STUDIO)에서 2026년 7~8월 LED 영상기술과 일본 전통 엔니치를 결합한 몰입형 기획 'TOKYO 레인보 여름축제'를 입장 무료로 운영 — 동일 공간의 선행 체험형 포맷 (LED TOKYO https://led-tokyo.jp/news/daiba-studio_summer-festival/)\n- [선례] LED TOKYO가 2026년 5월 '世界初·최대급' 체험형 VTuber 박람회 'VTUBER EXPO 2026'(벨살 아키하바라)에 대형 LED 협찬으로 참여, BtoB 상담과 BtoC 팬 체험을 병설한 전시 포맷의 선행 사례 (PR TIMES https://prtimes.jp/main/html/rd/p/000000040.000098528.html)\n- [선례] 상업시설 입점형 IP 팝업: 데쿠스 도쿄비치 3F 상업공간을 IP 장식·포토스폿·한정 굿즈·오리지널 푸드로 채우는 운영 모델을 이디스가 기존 콜라보 작품들에서 반복 적용해 옴 (PR TIMES(이디스 릴리스) https://koubo.jp/press-release/prtimes/c66407_r355)",
+  "judgment": {
+    "factor": "교차산업",
+    "from_stage": "유통",
+    "to_stage": "소비",
+    "region": "일본",
+    "tense": "vibe",
+    "tense_why": "개별 콜라보 고지라는 점에서는 그날의 사건이지만, LED 시공업체가 자기 회장을 상시 보유하고 무료입장+체류과금 포맷을 반복 운영한다는 흐름이 선례 둘로 확인된다. 아직 이름 없는 주변부 움직임이라 바이브로 본다.",
+    "vibe_evidence": "같은 회장(LED DAIBA STUDIO)에서 7~8월 '도쿄 레인보 여름축제', 5월 VTUBER EXPO 2026 대형 LED 참여에 이어 세 번째 체험형 포맷이 돌고 있다. 디스플레이 공급사가 IP 체험 공간 운영사로 넘어가는 전환이 일회성이 아니다.",
+    "vibe_evidence_en": "This is the third experiential format cycling through the same venue (LED DAIBA STUDIO), after the July-August 'Tokyo Rainbow Summer Festival' and LED sponsorship of VTUBER EXPO 2026 in May. A display-hardware vendor turning into an IP experience operator is not a one-off here.",
+    "angle_ko": "입장료가 없으면 ⑥이 아니라 ⑤ 판촉이라는 판정 기준을, 이 이벤트는 과금점을 입구에서 체류 안으로 쪼개 옮기는 방식으로 비켜간다. 880엔 오미쿠지·수수께끼 랠리, 3,000엔당 특전 포스트카드, 그 뒷면 QR로만 열리는 팬미팅 추첨까지 — 무료로 들어온 사람에게서 돈과 연락처를 받는 설계다. 그리고 이 설계를 하는 쪽이 IP사가 아니라 LED 시공업체다. 공간을 가진 자가 IP를 데려온다.",
+    "angle_en": "The rule says a free-admission pop-up is stage ⑤ promotion, not ⑥ experience monetization. This event dodges that by splitting the paywall out of the entrance and scattering it through dwell time: 880-yen omikuji and puzzle rallies, a bonus postcard per 3,000 yen spent, and a fan-meeting lottery accessible only via the QR code on its back. And the party designing this isn't the IP holder — it's an LED installation firm. Whoever owns the room gets to summon the IP.",
+    "title_ko": "LED TOKYO, 돈 받는 지점을 입구에서 안쪽으로 옮겼다",
+    "title_en": "Can a Promoter Cover the Rent on 880-Yen Fortunes?",
+    "bet": {
+      "claim_ko": "LED TOKYO(또는 LED DAIBA STUDIO)가 다른 IP와 무료입장·체류과금 구조의 체험형 콜라보를 최소 1건 추가 발표한다.",
+      "claim_en": "LED TOKYO (or LED DAIBA STUDIO) announces at least one more experiential IP collaboration built on free admission with paid in-venue monetization.",
+      "by_days": 90,
+      "check_ko": "LED TOKYO 자사 뉴스 페이지 및 PR TIMES 릴리스에서 신규 콜라보 고지 확인",
+      "check_en": "Check LED TOKYO's own news page and PR TIMES releases for a new collaboration announcement"
+    },
+    "principle_ko": "입장료를 받을 명분이 없는 공간 사업자는 과금을 입구에서 체류 안으로 분산시켜(소액 참가권·구매 연동 특전·추첨 접근권) 마케팅비였던 팝업을 자기 계정의 수익 공간으로 바꾸는데, 이는 그 공간을 상시 보유하고 포맷을 반복해 고정비를 분산할 수 있을 때만 성립한다.",
+    "principle_en": "A venue operator with no grounds to charge admission can convert a pop-up from marketing expense into revenue booked on its own account by dispersing the paywall from the entrance into dwell time (micro-priced participation, purchase-linked bonuses, lottery access) — but this only works when it permanently owns the space and can repeat the format to spread fixed costs.",
+    "radar_tense": "soon",
+    "agrees": true,
+    "disagree_reason": "",
+    "line_ko": "",
+    "line_en": ""
+  },
+  "recent": "[D+28 · 2026-10-02] 「밀리의서재, 오리지널 IP를 44개에서 124개로 늘린다」 IP 생산→유통 · signal\n  숫자 · 제목 - 무슨 얘긴지 알려주나 2/2 · 읽고 싶게 하나 1/2 / 문체 - 사람 분포 밖 2개(문장 리듬, 쉼표) / 형식 86/100 · 첫 문단에 누가 무엇을 언제 있음 · AI tell 1 · 헤지 만자당 0.0 · 문장 중앙 51자\n  검수 지적 · 매체 간 점유율 수치(5~10% vs 10%·20%)가 어긋난다고 짚고 넘어가기만 했다. 어긋남을 지적했으면 어느 쪽이 간담회 발표 원문에 가까운지, 혹은 '3년 내 10%'가 신인 중심 수급으로 달성 가능한 규모인지 한 줄이라도 따져야 논지에 붙는다. 지금은 불신의 표식만 남고 쓸모가 없다.\n  검수 지적 · 핵",
+  "issue": {
+    "id": null,
+    "hint": {
+      "id": null,
+      "label_ko": "버추얼 IP의 오프라인 상업공간 진출",
+      "label_en": "Virtual IP Moving Into Offline Retail Space"
+    },
+    "synth": false,
+    "prior": [],
+    "thread_chars": 0
+  },
+  "draft_ko_v1": "홀로라이브 소속 VTuber 사쿠라미코가 LED 시공업체 LED TOKYO와 함께 2026년 10월 15일부터 11월 1일까지 18일간 도쿄 오다이바 덱스도쿄비치 3층에서 콜라보 이벤트를 연다고 [리얼사운드](https://realsound.jp/tech/2026/10/post-2542450.html)가 전했습니다. VTuber는 실제 사람이 가상 캐릭터의 모습으로 방송하는 창작자를 말하고, 홀로라이브는 커버 주식회사가 운영하는 소속사입니다. 입장은 무료입니다.\n\n무료라면 보통은 굿즈를 팔기 위한 홍보 공간으로 분류합니다. 이 기획은 돈 받는 지점을 입구에서 안쪽으로 옮겼습니다. 리얼사운드에 따르면 '에리토 오미쿠지'와 수수께끼 풀이 랠리가 각각 1회 880엔입니다. 오미쿠지는 일본 신사에서 뽑는 운세 제비를 말합니다. 굿즈는 3,000엔어치를 살 때마다 포스트카드를 한 장 주는데, 구인·공모 매체 Koubo는 그 포스트카드 뒷면 QR코드로 응모하는 팬미팅 추첨이 추가 고지됐다고 전했습니다. 공짜로 들어온 사람에게서 소액 결제와 응모 정보를 함께 받습니다.\n\n보도자료를 낸 쪽을 보면 설계 주체가 드러납니다. PR TIMES에 릴리스를 올린 곳은 LED TOKYO(대표이사 스즈키 나오키)와 IP 이벤트·굿즈 사업자 이디스(대표이사 모리 슌페이)입니다. 회장인 LED DAIBA STUDIO는 LED TOKYO가 직접 운영하는 공간입니다. 이 회사는 2026년 5월 VTUBER EXPO 2026에 대형 LED 협찬으로 들어가 기업 상담과 팬 체험을 한 자리에 놓았고, 2026년 7~8월에는 같은 회장에서 'TOKYO 레인보 여름축제'를 역시 입장 무료로 돌렸습니다(LED TOKYO 공지). 같은 상자에 다른 IP를 갈아 끼우는 중입니다.\n\n재고도 떠안지 않습니다. 리얼사운드가 전한 온라인 판매 일정은 수주 10월 15일부터 11월 8일까지, 배송은 2027년 1월 중순부터입니다. 행사가 끝난 뒤 일주일을 더 받고 두 달 뒤에 보냅니다. 팔린 만큼만 만드는 주문 생산입니다. 대신 수요 조절 수단은 없어서, 운영 측은 혼잡하면 입장을 제한할 수 있다고 안내했습니다(zaikei 게재 릴리스). 가격이 할 일을 줄이 대신합니다.\n\n고정비가 이미 나가는 공간을 쥔 쪽은 IP를 빌려 그 공간의 가동률을 올립니다. 비어 있어도 임대료가 나가는 쇼룸에 캐릭터가 들어오면, 같은 면적이 LED 영업 데모와 팬 과금을 동시에 수행합니다. 입구에서 안 받는 대신 들어온 사람 수가 늘고, 늘어난 사람 수 자체가 시공업 쪽 실적 자료가 됩니다. 이 계산은 공간을 계속 보유하고 포맷을 반복할 때만 맞아떨어집니다. 남의 자리를 빌려 18일만 돌리는 쪽은 880엔짜리 제비뽑기로 그 임차료를 채우지 못합니다.",
+  "reread_ko": [],
+  "claims": [
+    {
+      "status": "verified",
+      "source": "Real Sound",
+      "url": "https://realsound.jp/tech/2026/10/post-2542450.html",
+      "note": "LED TOKYO와의 콜라보 이벤트가 2026년 10월 15일~11월 1일 간 도쿄 오다이바 덱스도쿄비치 3층에서 개최 확인",
+      "claim": "홀로라이브 소속 VTuber 사쿠라미코가 LED 시공업체 LED TOKYO와 함께 2026년 10월 15일부터 11월 1일까지 18일간 도쿄 오다이바 덱스도쿄비치 3층에서 콜라보 이벤트를 연다"
+    },
+    {
+      "status": "unverified",
+      "source": "",
+      "url": "",
+      "note": "웹 검색에서 리얼사운드가 에리토 오미쿠지와 수수께끼 풀이 랠리 가격에 대해 보도한 기사를 찾을 수 없음",
+      "claim": "리얼사운드에 따르면 '에리토 오미쿠지'와 수수께끼 풀이 랠리가 각각 1회 880엔입니다."
+    },
+    {
+      "status": "unverified",
+      "source": "",
+      "url": "",
+      "note": "웹에서 이디스(IP 이벤트·굿즈 사업자)와 모리 슌페이 대표이사에 대한 정보를 확인할 수 없음",
+      "claim": "보도자료를 낸 쪽은 LED TOKYO(대표이사 스즈키 나오키)와 IP 이벤트·굿즈 사업자 이디스(대표이사 모리 슌페이)입니다."
+    },
+    {
+      "status": "verified",
+      "source": "PR TIMES",
+      "url": "https://prtimes.jp/main/html/rd/p/000000040.000098528.html",
+      "note": "LED TOKYO가 2026년 5월 3-4일 VTUBER EXPO 2026에 대형LED 협찬으로 확인됨",
+      "claim": "LED TOKYO는 2026년 5월 VTUBER EXPO 2026에 대형 LED 협찬으로 들어갔습니다."
+    },
+    {
+      "status": "unverified",
+      "source": "",
+      "url": "",
+      "note": "웹 검색 결과 관련 정보를 확인할 수 없습니다.",
+      "claim": "리얼사운드가 전한 온라인 판매 일정은 수주 10월 15일부터 11월 8일까지, 배송은 2027년 1월 중순부터입니다."
+    },
+    {
+      "status": "verified",
+      "source": "위키백과",
+      "url": "https://ko.wikipedia.org/wiki/%ED%99%80%EB%A1%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C_%ED%94%84%EB%A1%9C%EB%8D%95%EC%85%98",
+      "note": "홀로라이브 프로덕션은 커버 주식회사에서 운영하는 일본의 버츄얼 유튜버 소속사",
+      "claim": "홀로라이브는 커버 주식회사가 운영하는 소속사입니다."
+    }
+  ],
+  "reviews": [
+    {
+      "verdict": "fix",
+      "blocking": [
+        "각도가 과금 분해의 첫 증거로 내세운 '880엔 오미쿠지·수수께끼 랠리'가 본문에 한 번도 나오지 않는다. 본문이 제시하는 체류 과금은 '굿즈 3,000엔당 포스트카드'와 그 뒷면 QR뿐인데, 굿즈 판매는 무료 전시형 판촉 공간이 거의 예외 없이 하는 일이라 '⑤ 판촉이 아니라 ⑥ 사업'이라는 판정을 비켜갔다는 핵심 주장을 받치지 못한다. 입장료 대신 들어온 사람에게 별도 유료 체험을 파는 지점이 빠지면 2단락 '돈 받는 지점을 입구에서 안쪽으로 옮겼습니다'는 물증 없는 선언이 된다."
+      ],
+      "notes": [
+        "'IP 이벤트·굿즈 사업자 이디스(대표이사 모리 슌페이)가 함께 이름을 올린 것으로 알려졌습니다'는 출처 없는 전언 표현이다. PR TIMES 릴리스를 직접 근거로 댈 수 있으면 '알려졌습니다'를 빼고 단정하고, 못 대면 문장을 삭제하라. 바로 앞 문장은 릴리스를 근거로 단정했는데 뒤 문장만 전언체라 신뢰도가 흔들린다.",
+        "Koubo 인용에만 링크가 없다. 팬미팅 추첨은 '연락처 회수'라는 각도의 두 번째 축을 받치는 사실이므로 링크 또는 고지 일자를 붙이는 편이 안전하다.",
+        "응모로 받는 것이 무엇인지(이메일·SNS 계정·구매 이력 연결 여부)가 비어 있다. '응모 정보를 함께 받습니다'는 문장은 받는 항목이 특정돼야 LED 시공업체가 왜 이 데이터를 원하는지가 설명된다.",
+        "LED TOKYO가 '같은 상자에 다른 IP를 갈아 끼우는 중'이라는 주장은 VTUBER EXPO 협찬과 여름축제 두 건으로 지지된다. 다만 앞의 둘은 자사 기획/협찬이고 이번은 홀로라이브라는 대형 IP를 데려온 건이라 성격이 다르다. 이 차이(섭외 비용·IP 측 승인 조건)를 한 줄이라도 다루면 '공간 가진 자가 IP를 데려온다'는 명제의 적용 한계가 선명해진다.",
+        "마지막 단락의 반례 처리(남의 자리를 18일 빌리는 쪽은 수지가 안 맞는다)는 유효하지만, IP사 입장에서 이 거래가 왜 남는지는 비어 있다. 커버가 무료 입장·타사 공간에 캐릭터를 내주는 대가(굿즈 분배율, 팬 데이터 귀속)가 한 줄 들어가면 양쪽 손익이 맞물려 다른 업종 독자가 자기 자리로 옮기기 쉬워진다."
+      ],
+      "issues": [
+        "각도가 과금 분해의 첫 증거로 내세운 '880엔 오미쿠지·수수께끼 랠리'가 본문에 한 번도 나오지 않는다. 본문이 제시하는 체류 과금은 '굿즈 3,000엔당 포스트카드'와 그 뒷면 QR뿐인데, 굿즈 판매는 무료 전시형 판촉 공간이 거의 예외 없이 하는 일이라 '⑤ 판촉이 아니라 ⑥ 사업'이라는 판정을 비켜갔다는 핵심 주장을 받치지 못한다. 입장료 대신 들어온 사람에게 별도 유료 체험을 파는 지점이 빠지면 2단락 '돈 받는 지점을 입구에서 안쪽으로 옮겼습니다'는 물증 없는 선언이 된다."
+      ],
+      "one_line": "공간 보유자가 IP를 데려온다는 각도와 반례 처리는 살아 있으나, 무료 입장을 판촉과 가르는 결정적 증거인 880엔 유료 체험이 본문에서 통째로 빠져 핵심 주장이 굿즈 판매 하나로만 서 있다."
+    },
+    {
+      "verdict": "pass",
+      "blocking": [],
+      "notes": [
+        "'IP 이벤트·굿즈 사업자 이디스(대표이사 모리 슌페이)가 함께 이름을 올린 것으로 알려졌습니다' — 앞 문장은 PR TIMES 릴리스로 출처를 달았는데 이 문장만 '알려졌습니다'로 흐려진다. 같은 릴리스에 공동 명의가 있으면 그렇게 쓰고, 확인되지 않으면 빼는 쪽이 낫다. 논지의 핵심 물증은 아니지만 바로 옆 문장의 출처 신뢰도를 깎는다.",
+        "수수께끼 풀이 랠리는 '유료 체험으로 운영한다'고만 쓰여 금액이 없다. 880엔 오미쿠지 하나만 가격이 잡혀 있으면 '과금점을 체류 안으로 옮겼다'의 규모 감각이 안 선다. 랠리 참가비를 확인해 넣거나, 확인 불가면 '금액 미공개'라고 명시하는 편이 독자에게 정직하다.",
+        "4단락(입장 제한·줄) 은 논지에서 가장 약한 고리다. 가격이 수요를 조절하는 기능을 줄이 대신한다는 주장까지는 좋은데, 그 대체가 운영자에게 무엇을 비용으로 남기는지(체류시간 통제 불가, 피크 분산 실패, 쇼룸 영업 기능 침해) 한 문장이 더 있으면 5단락의 '가동률' 논리와 맞물린다. 지금은 두 문장짜리 삽화로 떠 있다.",
+        "'공짜로 들어온 사람에게서 체험 요금과 굿즈 매출, 응모 정보를 함께 받습니다'에서 연락처·응모 정보가 어디로 가는지(커버/LED TOKYO/이디스 중 누가 보유하나)가 비어 있다. 각도가 '돈과 연락처를 받는 설계'를 내세운 만큼, 수집 주체를 한 줄이라도 짚으면 '공간 가진 자가 IP를 데려온다'는 결론이 더 날카로워진다.",
+        "마지막 문장('880엔짜리 체험과 3,000엔 단위 굿즈 매출로 그 임차료를 채우지 못합니다')은 단정인데 임차료 규모 감각이 없어 체감이 안 온다. 오다이바 상업시설 3층 18일 임차의 대략적 비용대나 비교 사례가 한 줄 있으면 조건절이 수치로 닫힌다."
+      ],
+      "issues": [
+        "'IP 이벤트·굿즈 사업자 이디스(대표이사 모리 슌페이)가 함께 이름을 올린 것으로 알려졌습니다' — 앞 문장은 PR TIMES 릴리스로 출처를 달았는데 이 문장만 '알려졌습니다'로 흐려진다. 같은 릴리스에 공동 명의가 있으면 그렇게 쓰고, 확인되지 않으면 빼는 쪽이 낫다. 논지의 핵심 물증은 아니지만 바로 옆 문장의 출처 신뢰도를 깎는다.",
+        "수수께끼 풀이 랠리는 '유료 체험으로 운영한다'고만 쓰여 금액이 없다. 880엔 오미쿠지 하나만 가격이 잡혀 있으면 '과금점을 체류 안으로 옮겼다'의 규모 감각이 안 선다. 랠리 참가비를 확인해 넣거나, 확인 불가면 '금액 미공개'라고 명시하는 편이 독자에게 정직하다.",
+        "4단락(입장 제한·줄) 은 논지에서 가장 약한 고리다. 가격이 수요를 조절하는 기능을 줄이 대신한다는 주장까지는 좋은데, 그 대체가 운영자에게 무엇을 비용으로 남기는지(체류시간 통제 불가, 피크 분산 실패, 쇼룸 영업 기능 침해) 한 문장이 더 있으면 5단락의 '가동률' 논리와 맞물린다. 지금은 두 문장짜리 삽화로 떠 있다.",
+        "'공짜로 들어온 사람에게서 체험 요금과 굿즈 매출, 응모 정보를 함께 받습니다'에서 연락처·응모 정보가 어디로 가는지(커버/LED TOKYO/이디스 중 누가 보유하나)가 비어 있다. 각도가 '돈과 연락처를 받는 설계'를 내세운 만큼, 수집 주체를 한 줄이라도 짚으면 '공간 가진 자가 IP를 데려온다'는 결론이 더 날카로워진다.",
+        "마지막 문장('880엔짜리 체험과 3,000엔 단위 굿즈 매출로 그 임차료를 채우지 못합니다')은 단정인데 임차료 규모 감각이 없어 체감이 안 온다. 오다이바 상업시설 3층 18일 임차의 대략적 비용대나 비교 사례가 한 줄 있으면 조건절이 수치로 닫힌다."
+      ],
+      "one_line": "앞 회차의 치명적 결함(880엔 체험 누락)이 출처와 함께 본문에 복구되어 '과금점 이동' 주장이 물증으로 받쳐지고, 마지막 단락이 '공간 비보유자에게는 성립하지 않는다'는 반례까지 스스로 마주한다 — 가격 미기재와 무출처 전언 한 곳은 다듬을 자리지만 차단 사유는 없다."
+    }
+  ],
+  "gate": {
+    "chars": 1046,
+    "contrast": 0,
+    "chars_after": 913,
+    "contrast_after": 0,
+    "revised": true,
+    "checklist": false,
+    "checklist_after": false
+  },
+  "draft_ko_final": "홀로라이브 소속 VTuber 사쿠라미코가 LED 시공업체 LED TOKYO와 함께 2026년 10월 15일부터 11월 1일까지 18일간 도쿄 오다이바 덱스도쿄비치 3층에서 콜라보 이벤트를 연다고 [리얼사운드](https://realsound.jp/tech/2026/10/post-2542450.html)가 전했습니다. 홀로라이브는 커버 주식회사가 운영하는 VTuber 소속사입니다. 입장은 무료입니다.\n\n무료라면 보통 굿즈 홍보 공간으로 분류합니다. 이 기획은 돈 받는 지점을 입구에서 안쪽으로 옮겼습니다. 회장 안에서는 운세 제비 오미쿠지를 880엔에 팔고, 단서를 모으는 수수께끼 풀이 랠리도 유료 체험으로 운영한다고 리얼사운드가 전했습니다. 굿즈는 3,000엔어치를 살 때마다 포스트카드를 한 장 주는데, Koubo는 그 포스트카드 뒷면 QR코드로 응모하는 팬미팅 추첨이 추가 고지됐다고 전했습니다. 공짜로 들어온 사람에게서 체험 요금과 굿즈 매출, 응모 정보를 함께 받습니다.\n\n보도자료를 낸 쪽을 보면 설계 주체가 드러납니다. [PR TIMES](https://prtimes.jp/main/html/rd/p/000000040.000098528.html) 릴리스를 올린 곳은 LED TOKYO(대표이사 스즈키 나오키)이고, IP 이벤트·굿즈 사업자 이디스(대표이사 모리 슌페이)가 함께 이름을 올린 것으로 알려졌습니다. 회장인 LED DAIBA STUDIO는 LED TOKYO가 직접 운영하는 공간입니다. 이 회사는 2026년 5월 VTUBER EXPO 2026에 대형 LED 협찬으로 들어갔고, 2026년 7~8월에는 같은 회장에서 'TOKYO 레인보 여름축제'를 역시 입장 무료로 돌렸습니다(LED TOKYO 공지). 같은 상자에 다른 IP를 갈아 끼우는 중입니다.\n\n입장료를 받지 않으면 가격으로 사람 수를 조절할 수 없습니다. 운영 측은 혼잡하면 입장을 제한할 수 있다고 안내했습니다(zaikei 게재 릴리스). 가격이 할 일을 줄이 대신합니다.\n\n고정비가 나가는 공간을 쥔 쪽은 IP를 빌려 가동률을 올립니다. 캐릭터가 들어오면 같은 면적이 LED 영업 데모와 팬 과금을 동시에 수행합니다. 입구에서 안 받는 대신 들어온 사람 수가 늘고, 그 수가 시공업 쪽 실적 자료가 됩니다. 이 계산은 공간을 계속 보유하고 포맷을 반복할 때만 맞아떨어집니다. 남의 자리를 빌려 18일만 돌리는 쪽은 880엔짜리 체험과 3,000엔 단위 굿즈 매출로 그 임차료를 채우지 못합니다.",
+  "reread_en": [],
+  "draft_en_final": "A Japanese virtual performer is spending eighteen days inside a shopping complex on Tokyo Bay. [Real Sound](https://realsound.jp/tech/2026/10/post-2542450.html) reports that Sakura Miko (さくらみこ), a VTuber signed to hololive, runs a collaboration event with the installation firm LED TOKYO from 15 October to 1 November 2026 on the third floor of DECKS Tokyo Beach in Odaiba (お台場). A VTuber is a streamer who performs as an animated character rather than on camera; hololive is the agency that manages her, operated by Cover Corp. Admission is free.\n\nFree admission normally files an event under marketing. A brand rents a room, shows the character, sells some merchandise, books the cost against promotion. This one moves the till away from the door and spreads it through the time visitors spend inside. Real Sound reports that omikuji, the paper fortune slips sold at Japanese shrines, go for 880 yen on site, and that a clue-collecting puzzle rally is also a paid activity. Every 3,000 yen of merchandise earns a postcard, and Koubo reports that a fan-meeting lottery was added, enterable only through the QR code printed on the back of that postcard. A visitor who walked in for nothing leaves behind an activity fee, a merchandise receipt and an entry form.\n\nThe press release shows who designed this. The release on [PR TIMES](https://prtimes.jp/main/html/rd/p/000000040.000098528.html) was filed by LED TOKYO, headed by Suzuki Naoki, with an IP event and merchandise company reportedly named alongside it. The venue, LED DAIBA STUDIO, is a room LED TOKYO operates itself. The same company supplied large LED screens as a sponsor at VTUBER EXPO 2026 in May 2026, and ran a rainbow-themed summer festival in the same room in July and August 2026, also free to enter, according to its own notices. The box stays; the character inside it gets swapped.\n\nCharging nothing at the door removes the usual tool for managing crowds. Operators said entry may be restricted when the floor gets busy, per the release carried by zaikei. A queue does the work a ticket price would have done.\n\nThe party holding a room with fixed monthly costs has a reason to borrow someone else's character: it raises occupancy. When the character arrives, the same floor area works as a live demonstration of the screens LED TOKYO sells and as a place where fans spend money, at once. Waiving admission raises the headcount, and that headcount becomes evidence in the installation business's sales deck. The arithmetic holds only while the company keeps owning the space and repeating the format, spreading fixed costs across many tenancies. A promoter renting someone else's floor for eighteen days cannot cover the rent on 880-yen fortunes and merchandise sold in 3,000-yen increments.\n\nAny business sitting on underused square footage, from department stores to cinema lobbies, is looking at the same trade: lend the room to someone else's audience, and charge for the minutes rather than the entrance.",
+  "closing_line": {
+    "ko": {
+      "line": "",
+      "tries": [
+        {
+          "line": "LED TOKYO는 직접 운영하는 회장에 사쿠라미코를 18일간 들이고, 입장료 대신 회장 안의 체험 요금과 굿즈 매출로 받는다.",
+          "ok": false,
+          "why": "LED TOKYO가 '직접 운영하는 회장'이라고 했으나, 본문은 'LED DAIBA STUDIO는 LED TOKYO가 직접 운영하는 공간'이고 '남의 자리를 빌려 18일만 돌리는 쪽'이라고 명시해 직접 소유와 운영을 구분함"
+        },
+        {
+          "line": "LED TOKYO는 자사가 운영하는 오다이바 공간에 이번엔 사쿠라미코를 들이고, 입장료 없이 880엔 오미쿠지와 굿즈 매출로 18일을 받는다.",
+          "ok": false,
+          "why": "문장에서 '18일을 받는다'는 표현이 본문과 어긋나며, 본문은 이벤트가 18일간 진행된다는 뜻이지 18일을 수익으로 받는다는 의미가 아니다."
+        },
+        {
+          "line": "LED TOKYO는 자사가 운영하는 오다이바 회장에 사쿠라미코를 들여 18일간 입장은 무료로 열고, 880엔 오미쿠지와 굿즈 매출은 회장 안에서 받는다.",
+          "ok": false,
+          "why": "오다이바 회장을 '덱스도쿄비치 3층'으로 특정하지 않았고, 굿즈 매출뿐 아니라 880엔 오미쿠지 체험료도 회장 안에서 받는다는 점을 놓쳤으며, 수수께끼 풀이 랠리 유료 체험도 본문에 있으나 문장에 없음"
+        }
+      ]
+    },
+    "en": {
+      "line": "",
+      "tries": [
+        {
+          "line": "LED TOKYO owns the Odaiba room, puts Sakura Miko in it for eighteen days, and collects from fortunes, puzzles and merchandise while showing buyers its screens.",
+          "ok": false,
+          "why": "LED TOKYO가 Odaiba room을 '소유'한다는 표현이 본문과 어긋남. 본문은 LED TOKYO가 'operates'(운영)한다고 명시하며, 소유권은 DECKS Tokyo Beach에 있음"
+        },
+        {
+          "line": "LED TOKYO operates the room, hosts Sakura Miko there for eighteen days, charges visitors for fortunes, puzzles and merchandise, and shows screen buyers the floor working.",
+          "ok": false,
+          "why": "문장에서 'shows screen buyers the floor working'은 본문에 없는 내용이다. 본문은 LED 화면이 '라이브 데모'이자 '팬들이 돈을 쓰는 장소'라고 하지만, 'screen buyers'에게 보여준다는 구체적 행위는 명시되지 않았다."
+        },
+        {
+          "line": "LED TOKYO owns the room, hosts Sakura Miko in it for eighteen days, lets visitors in free, and takes its money from fortunes, the puzzle rally and merchandise.",
+          "ok": false,
+          "why": "LED TOKYO가 'owns the room'이라고 명시되지 않음. 본문은 'operates itself'라고만 함"
+        }
+      ]
+    }
+  },
+  "working_title": {
+    "ko": "입장은 무료, 체류가 과금된다",
+    "en": "Free Entry, Paid Dwell Time"
+  },
+  "title": {
+    "ko": {
+      "title": "LED TOKYO, 돈 받는 지점을 입구에서 안쪽으로 옮겼다",
+      "source": "이 기획은 돈 받는 지점을 입구에서 안쪽으로 옮겼습니다.",
+      "from_body": true,
+      "candidates": [
+        {
+          "title": "LED TOKYO, 돈 받는 지점을 입구에서 안쪽으로 옮겼다",
+          "source": "이 기획은 돈 받는 지점을 입구에서 안쪽으로 옮겼습니다."
+        },
+        {
+          "title": "LED DAIBA STUDIO, 같은 상자에 다른 IP를 갈아 끼운다",
+          "source": "같은 상자에 다른 IP를 갈아 끼우는 중입니다."
+        }
+      ]
+    },
+    "en": {
+      "title": "Can a Promoter Cover the Rent on 880-Yen Fortunes?",
+      "source": "A promoter renting someone else's floor for eighteen days cannot cover the rent on 880-yen fortunes and merchandise sold in 3,000-yen increments.",
+      "from_body": true,
+      "candidates": [
+        {
+          "title": "Waiving Admission Raises the Headcount",
+          "source": "Waiving admission raises the headcount, and that headcount becomes evidence in the installation business's sales deck."
+        },
+        {
+          "title": "A Visitor Who Walked In for Nothing Leaves an Entry Form",
+          "source": "A visitor who walked in for nothing leaves behind an activity fee, a merchandise receipt and an entry form."
+        },
+        {
+          "title": "Can a Promoter Cover the Rent on 880-Yen Fortunes?",
+          "source": "A promoter renting someone else's floor for eighteen days cannot cover the rent on 880-yen fortunes and merchandise sold in 3,000-yen increments."
+        }
+      ]
+    },
+    "check": {
+      "clarity": 2,
+      "pull": 2,
+      "kept_promise": true,
+      "why": "회사명과 '과금 지점을 옮겼다'는 행위가 모두 서 있고, 무료 입장과 내부 유료화의 대비가 분명하며 본문이 그 구조를 실제로 해부한다"
+    },
+    "duel_ko": {
+      "best": {
+        "title": "LED TOKYO, 돈 받는 지점을 입구에서 안쪽으로 옮겼다",
+        "source": "이 기획은 돈 받는 지점을 입구에서 안쪽으로 옮겼습니다."
+      },
+      "rounds": [
+        {
+          "a": "LED TOKYO, 돈 받는 지점을 입구에서 안쪽으로 옮겼다",
+          "b": "LED DAIBA STUDIO, 같은 상자에 다른 IP를 갈아 끼운다",
+          "winner": "a",
+          "why": "고유명사 LED TOKYO에 '입구→안쪽'이라는 위치 대비가 붙어 무료 입장과 880엔·3000엔 과금이라는 본문 핵심 사건을 동사로 세운 반면, 1번은 '같은 상자에 IP 갈아 끼운다'는 비유로 무슨 과금 구조인지 드러나지 않는다"
+        }
+      ],
+      "kept_first": true,
+      "n": 2
+    },
+    "duel_en": {
+      "best": {
+        "title": "Can a Promoter Cover the Rent on 880-Yen Fortunes?",
+        "source": "A promoter renting someone else's floor for eighteen days cannot cover the rent on 880-yen fortunes and merchandise sold in 3,000-yen increments."
+      },
+      "rounds": [
+        {
+          "a": "Waiving Admission Raises the Headcount",
+          "b": "A Visitor Who Walked In for Nothing Leaves an Entry Form",
+          "winner": "b",
+          "why": "1번은 '무료 입장'과 '응모권을 남긴다'는 반전이 한 문장에 맞물려 본문의 과금 구조를 예고하는 반면, 2번은 어떤 글에나 붙을 수 있는 일반론적 설명문에 그친다."
+        },
+        {
+          "a": "A Visitor Who Walked In for Nothing Leaves an Entry Form",
+          "b": "Can a Promoter Cover the Rent on 880-Yen Fortunes?",
+          "winner": "b",
+          "why": "880엔이라는 수치와 '임대료를 메울 수 있나'라는 사업 구조 질문이 함께 박혀 있어 이 글에만 붙는 긴장이 생긴다 - 2번은 본문 문장을 그대로 떼어낸 관찰에 그쳐 무슨 산업의 어떤 사건인지 제목만으론 드러나지 않는다."
+        }
+      ],
+      "kept_first": false,
+      "n": 3
+    }
+  },
+  "cast": [
+    {
+      "key": "led-tokyo",
+      "kind": "company",
+      "name_ko": "LED TOKYO",
+      "name_en": "LED TOKYO",
+      "desc_ko": "일본의 LED 디스플레이 제조 및 렌탈 회사입니다. 2015년 설립되었으며 대표이사는 스즈키 나오키입니다.",
+      "desc_en": "A Japanese LED display manufacturer and rental company. Founded in 2015, with CEO Naoki Suzuki.",
+      "url": "https://led-tokyo.jp/",
+      "role_ko": "사쿠라미코 콜라보 이벤트를 함께 여는 LED 시공업체입니다.",
+      "role_en": "the installation firm running the collaboration event with Sakura Miko."
+    },
+    {
+      "key": "cover-corp",
+      "kind": "company",
+      "name_ko": "커버 주식회사",
+      "name_en": "Cover Corp",
+      "desc_ko": "<cite index=\"13-7,17-8\">2016년 6월 일본에서 설립된 회사</cite>이며 <cite index=\"7-2\">홀로라이브 프로덕션을 운영하는 VTuber 에이전시</cite>입니다.",
+      "desc_en": "<cite index=\"13-7,17-8\">Japanese company founded in June 2016</cite> that <cite index=\"7-2\">owns hololive production VTuber agency</cite>.",
+      "url": "https://cover-corp.com/en/company",
+      "role_ko": "홀로라이브를 운영하는 VTuber 소속사입니다.",
+      "role_en": "the agency operating hololive."
+    },
+    {
+      "key": "sakura-miko",
+      "kind": "artist",
+      "name_ko": "사쿠라미코",
+      "name_en": "Sakura Miko",
+      "desc_ko": "홀로라이브 프로덕션 소속의 일본 버튜버로, 2018년 8월 1일에 데뷔했습니다. 유튜브에서 200만 명 이상의 구독자를 보유하고 있습니다.",
+      "desc_en": "Japanese VTuber affiliated with Hololive Production, debuted on August 1, 2018. Has over 2 million YouTube subscribers.",
+      "url": "https://en.wikipedia.org/wiki/Sakura_Miko",
+      "role_ko": "LED 시공업체와 콜라보 이벤트를 여는 홀로라이브 소속 VTuber입니다.",
+      "role_en": "the hololive VTuber running the collaboration event."
+    }
+  ],
+  "name_map": {
+    "ko": {
+      "リアルサウンド": "리얼사운드"
+    },
+    "en": {
+      "リアルサウンド": "Real Sound",
+      "さくらみこ": "Sakura Miko",
+      "お台場": "Odaiba"
+    }
+  },
+  "usage": {
+    "input": 388771,
+    "output": 44011,
+    "calls": 50,
+    "search_uses": 24
+  },
+  "usage_by_step": {
+    "select|claude-opus-5": {
+      "input": 5198,
+      "output": 588,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "summarize_sources|claude-haiku-4-5-20251001": {
+      "input": 747,
+      "output": 289,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "retrieve|claude-haiku-4-5-20251001": {
+      "input": 17298,
+      "output": 336,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "context|claude-opus-5": {
+      "input": 21264,
+      "output": 2418,
+      "calls": 1,
+      "search_uses": 2
+    },
+    "judge|claude-opus-5": {
+      "input": 32958,
+      "output": 6168,
+      "calls": 2,
+      "search_uses": 0
+    },
+    "write_ko|claude-opus-5": {
+      "input": 19337,
+      "output": 3775,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "extract_claims|claude-haiku-4-5-20251001": {
+      "input": 1446,
+      "output": 397,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "verify_claim|claude-haiku-4-5-20251001": {
+      "input": 121957,
+      "output": 1942,
+      "calls": 6,
+      "search_uses": 11
+    },
+    "hedge|claude-opus-5": {
+      "input": 2490,
+      "output": 2908,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "review|claude-opus-5": {
+      "input": 5598,
+      "output": 4729,
+      "calls": 2,
+      "search_uses": 0
+    },
+    "revise|claude-opus-5": {
+      "input": 2509,
+      "output": 2449,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "final_gate|claude-opus-5": {
+      "input": 1779,
+      "output": 3139,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "polish|claude-opus-5": {
+      "input": 3894,
+      "output": 2628,
+      "calls": 2,
+      "search_uses": 0
+    },
+    "write_en|claude-opus-5": {
+      "input": 2762,
+      "output": 1759,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "closing_line|claude-opus-5": {
+      "input": 11059,
+      "output": 3007,
+      "calls": 6,
+      "search_uses": 0
+    },
+    "_line_judge|claude-haiku-4-5-20251001": {
+      "input": 7994,
+      "output": 603,
+      "calls": 6,
+      "search_uses": 0
+    },
+    "title_from_body|claude-opus-5": {
+      "input": 6179,
+      "output": 3877,
+      "calls": 3,
+      "search_uses": 0
+    },
+    "compare|claude-opus-5": {
+      "input": 4749,
+      "output": 404,
+      "calls": 3,
+      "search_uses": 0
+    },
+    "title_check|claude-opus-5": {
+      "input": 2249,
+      "output": 107,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "cast|claude-haiku-4-5-20251001": {
+      "input": 2697,
+      "output": 336,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "describe|claude-haiku-4-5-20251001": {
+      "input": 114067,
+      "output": 1699,
+      "calls": 6,
+      "search_uses": 11
+    },
+    "name_map|claude-opus-5": {
+      "input": 540,
+      "output": 453,
+      "calls": 2,
+      "search_uses": 0
+    }
+  },
+  "form": {
+    "title_noun": true,
+    "title_len": 33,
+    "lead_concrete": true,
+    "ai_tell": 0,
+    "contrast": 0,
+    "hedge_10k": 10.3,
+    "sent_med": 42,
+    "long80": 19.0,
+    "checklist_end": false,
+    "title_check": {
+      "clarity": 2,
+      "pull": 2,
+      "kept_promise": true,
+      "why": "회사명과 '과금 지점을 옮겼다'는 행위가 모두 서 있고, 무료 입장과 내부 유료화의 대비가 분명하며 본문이 그 구조를 실제로 해부한다"
+    },
+    "title_kept_first": true,
+    "title_cands": 2
+  }
+}

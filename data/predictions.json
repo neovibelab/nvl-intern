@@ -207,5 +207,16 @@
     "check_en": "PR TIMES release, company notice, or Japanese entertainment trade coverage of a partnership",
     "factor": "테크",
     "status": "open"
+  },
+  {
+    "slug": "2026-10-05-can-a-promoter-cover-the-rent-on-880-yen-fortunes",
+    "date": "2026-10-05",
+    "by_date": "2027-01-03",
+    "claim_ko": "LED TOKYO(또는 LED DAIBA STUDIO)가 다른 IP와 무료입장·체류과금 구조의 체험형 콜라보를 최소 1건 추가 발표한다.",
+    "claim_en": "LED TOKYO (or LED DAIBA STUDIO) announces at least one more experiential IP collaboration built on free admission with paid in-venue monetization.",
+    "check_ko": "LED TOKYO 자사 뉴스 페이지 및 PR TIMES 릴리스에서 신규 콜라보 고지 확인",
+    "check_en": "Check LED TOKYO's own news page and PR TIMES releases for a new collaboration announcement",
+    "factor": "교차산업",
+    "status": "open"
   }
 ]

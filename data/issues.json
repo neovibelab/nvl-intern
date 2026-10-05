@@ -83,6 +83,12 @@
       "label_en": "Subscription Content Platforms Taking Ownership of Source IP",
       "created": "2026-10-02",
       "synth": []
+    },
+    "virtual-ip-moving-into-offline-retail-sp": {
+      "label_ko": "버추얼 IP의 오프라인 상업공간 진출",
+      "label_en": "Virtual IP Moving Into Offline Retail Space",
+      "created": "2026-10-05",
+      "synth": []
     }
   },
   "pieces": {
@@ -107,6 +113,7 @@
     "2026-09-29-judge-saylor-refused-61-026-songs-told-the-labels-": "distributor-concentration-and-copyright-",
     "2026-09-30-eleven-provinces-set-aside-subsidy-funds-six-platf": "chinese-micro-dramas-ip-expansion-and-co",
     "2026-10-01-trepotal-raised-67-million-yen-letting-fans-swap": "capitalization-of-fan-merch-resale-platf",
-    "2026-10-02-milli-s-library-takes-its-original-ip-lineup-from-": "subscription-content-platforms-taking-ow"
+    "2026-10-02-milli-s-library-takes-its-original-ip-lineup-from-": "subscription-content-platforms-taking-ow",
+    "2026-10-05-can-a-promoter-cover-the-rent-on-880-yen-fortunes": "virtual-ip-moving-into-offline-retail-sp"
   }
 }
