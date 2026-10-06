@@ -218,5 +218,16 @@
     "check_en": "Check LED TOKYO's own news page and PR TIMES releases for a new collaboration announcement",
     "factor": "교차산업",
     "status": "open"
+  },
+  {
+    "slug": "2026-10-06-suntory-s-tag-live-tripled-its-sales-year-on-year",
+    "date": "2026-10-06",
+    "by_date": "2027-04-04",
+    "claim_ko": "일본 외 지역(한국 포함)에서 음료·편의점 등 비엔터 리테일 사업자가 아이돌·애니 IP 굿즈를 현장 출력·즉시 수령 방식으로 파는 상설 무인 채널을 공식 발표한다.",
+    "claim_en": "Outside Japan (including Korea), a non-entertainment retail operator (beverage or convenience chain) announces a permanent unmanned channel selling idol/anime IP goods with on-site printing or instant pickup.",
+    "check_ko": "해당 사업자 또는 IP사의 공식 보도자료·기업 공시에서 상설(단기 팝업 제외) 운영 명시 여부",
+    "check_en": "Official press release or corporate disclosure from the retailer or IP holder specifying permanent (not short-term pop-up) operation",
+    "factor": "교차산업",
+    "status": "open"
   }
 ]

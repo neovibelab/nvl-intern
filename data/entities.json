@@ -181,6 +181,45 @@
       "en": "Japanese VTuber affiliated with Hololive Production, debuted on August 1, 2018. Has over 2 million YouTube subscribers.",
       "url": "https://en.wikipedia.org/wiki/Sakura_Miko",
       "source": "Wikipedia"
+    },
+    "sutopuri": {
+      "kind": "artist",
+      "name_ko": "스토프리",
+      "name_en": "Sutopuri",
+      "first": "2026-10-06",
+      "pieces": [
+        "2026-10-06-suntory-s-tag-live-tripled-its-sales-year-on-year"
+      ],
+      "ko": "日本의 6인조 엔터테인먼트 그룹으로 주로 YouTube와 트위캐스 같은 영상 공유 사이트에서 활동합니다. 2016년 리더 나나모리가 중심이 되어 결성했습니다.",
+      "en": "Japanese six-member entertainment group founded in June 2016, primarily active on video-sharing platforms like YouTube and Nico Nico Douga.",
+      "url": "https://ja.wikipedia.org/wiki/%E3%81%99%E3%81%A8%E3%82%8D%E3%81%B9%E3%82%8A%E3%83%BC%E3%81%B7%E3%82%8A%E3%82%93%E3%81%99",
+      "source": "Wikipedia"
+    },
+    "dydo-group-holdings": {
+      "kind": "company",
+      "name_ko": "다이도 그룹홀딩스",
+      "name_en": "DyDo Group Holdings",
+      "first": "2026-10-06",
+      "pieces": [
+        "2026-10-06-suntory-s-tag-live-tripled-its-sales-year-on-year"
+      ],
+      "ko": "일본의 음료 제조·판매 회사입니다. 1975년에 설립되었습니다.",
+      "en": "Japanese beverage manufacturer and distributor founded in 1975.",
+      "url": "https://holdings.dydo.co.jp/en/about/profile/",
+      "source": "DyDo Group Holdings"
+    },
+    "sapporo-holdings": {
+      "kind": "company",
+      "name_ko": "삿포로HD",
+      "name_en": "Sapporo Holdings",
+      "first": "2026-10-06",
+      "pieces": [
+        "2026-10-06-suntory-s-tag-live-tripled-its-sales-year-on-year"
+      ],
+      "ko": "일본의 음료·식품 회사로 맥주·포카음료·부동산 임대 사업을 합니다. 1876년 설립되었습니다.",
+      "en": "Japanese beverage and food company engaged in beer, food products, and real estate leasing operations. Founded in 1876.",
+      "url": "https://www.sapporoholdings.jp/english/",
+      "source": "Sapporo Holdings Official Website"
     }
   }
 }

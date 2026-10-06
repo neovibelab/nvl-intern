@@ -1339,5 +1339,63 @@
       "calls": 50,
       "search_uses": 24
     }
+  },
+  {
+    "date": "2026-10-06",
+    "day": 32,
+    "slug": "2026-10-06-suntory-s-tag-live-tripled-its-sales-year-on-year",
+    "title_ko": "다이도는 2만대 줄이고, 산토리는 3배 올렸다",
+    "title_en": "Suntory's TAG-LIVE! Tripled Its Sales Year on Year",
+    "factor": "교차산업",
+    "from_stage": "유통",
+    "to_stage": "소비",
+    "tense": "vibe",
+    "region": "일본",
+    "radar_tense": "soon",
+    "agrees": true,
+    "claims_total": 6,
+    "claims_verified": 2,
+    "review_rounds": 1,
+    "unresolved": false,
+    "bet": true,
+    "wiki_used": 3,
+    "lexicon_used": 2,
+    "form": {
+      "title_noun": false,
+      "title_len": 25,
+      "lead_concrete": true,
+      "ai_tell": 1,
+      "contrast": 1,
+      "hedge_10k": 10.1,
+      "sent_med": 54,
+      "long80": 26.3,
+      "checklist_end": false,
+      "title_check": {
+        "clarity": 2,
+        "pull": 2,
+        "kept_promise": true,
+        "why": "두 회사 이름과 수치가 박힌 동사 대비형 제목이고, 본문이 다이도 2만대 감축과 산토리 3배 성장을 모두 다룬다"
+      },
+      "title_kept_first": true,
+      "title_cands": 2
+    },
+    "style": {
+      "문장 리듬": 0.588,
+      "접속부사": 0.0,
+      "헤지": 21.3,
+      "수식어": 21.3,
+      "쉼표": 95.7
+    },
+    "selected_by": "intern",
+    "candidates": 5,
+    "issue": "vending-machines-converted-into-fan-merc",
+    "synth": false,
+    "cast": 3,
+    "tokens": {
+      "input": 305637,
+      "output": 30046,
+      "calls": 41,
+      "search_uses": 21
+    }
   }
 ]

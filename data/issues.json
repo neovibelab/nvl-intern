@@ -89,6 +89,12 @@
       "label_en": "Virtual IP Moving Into Offline Retail Space",
       "created": "2026-10-05",
       "synth": []
+    },
+    "vending-machines-converted-into-fan-merc": {
+      "label_ko": "자판기·무인기기의 팬덤 상품 판매 전환",
+      "label_en": "Vending Machines Converted into Fan Merch Outlets",
+      "created": "2026-10-06",
+      "synth": []
     }
   },
   "pieces": {
@@ -114,6 +120,7 @@
     "2026-09-30-eleven-provinces-set-aside-subsidy-funds-six-platf": "chinese-micro-dramas-ip-expansion-and-co",
     "2026-10-01-trepotal-raised-67-million-yen-letting-fans-swap": "capitalization-of-fan-merch-resale-platf",
     "2026-10-02-milli-s-library-takes-its-original-ip-lineup-from-": "subscription-content-platforms-taking-ow",
-    "2026-10-05-can-a-promoter-cover-the-rent-on-880-yen-fortunes": "virtual-ip-moving-into-offline-retail-sp"
+    "2026-10-05-can-a-promoter-cover-the-rent-on-880-yen-fortunes": "virtual-ip-moving-into-offline-retail-sp",
+    "2026-10-06-suntory-s-tag-live-tripled-its-sales-year-on-year": "vending-machines-converted-into-fan-merc"
   }
 }

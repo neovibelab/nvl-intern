@@ -1,0 +1,565 @@
+{
+  "date": "2026-10-06",
+  "steps": {},
+  "selection": {
+    "n": 5,
+    "by": "intern",
+    "chosen": {
+      "key": "d683d438-1eb0-4cdd-86d8-d51e19913bf0",
+      "title": "음료 자판기가 '오시카츠' 시장으로 대변신! 매출 3배 돌파의 새로운 발상",
+      "n": 1,
+      "item_ids": [
+        "d683d438-1eb0-4cdd-86d8-d51e19913bf0"
+      ],
+      "titles": [
+        "음료 자판기가 '오시카츠' 시장으로 대변신! 매출 3배 돌파의 새로운 발상"
+      ]
+    },
+    "reason_ko": "팬 접점을 만들려면 매장을 빌려야 한다는 전제가 흔들립니다. 기기 한 대 값으로 굿즈 판매 지점을 깔 수 있다면 투어·팝업의 동선 설계와 재고 배치 계산이 달라집니다.",
+    "reason_en": "It challenges the assumption that fan touchpoints require renting retail space. If a single machine can become a merch outlet, the math behind tour routing, pop-up placement, and inventory allocation changes.",
+    "issue": {
+      "id": null,
+      "label_ko": "자판기·무인기기의 팬덤 상품 판매 전환",
+      "label_en": "Vending Machines Converted into Fan Merch Outlets"
+    },
+    "rejected": [
+      {
+        "key": "c813c7a2-a3f4-46c8-8bb6-f57641f5cc3b",
+        "title": "국조(国潮)의 정점은 아직 오지 않았다: 자본 재평가와 증분 발굴이 필요하다",
+        "n": 1,
+        "item_ids": [
+          "c813c7a2-a3f4-46c8-8bb6-f57641f5cc3b"
+        ],
+        "titles": [
+          "국조(国潮)의 정점은 아직 오지 않았다: 자본 재평가와 증분 발굴이 필요하다"
+        ],
+        "why": "국조 패션의 점유율 상승은 흐름 요약에 가깝고 음악업계의 사업 판단으로 옮겨 붙는 지점이 약하다."
+      },
+      {
+        "key": "acdac190-c938-48b9-a622-d06d88bf612d",
+        "title": "소비자 1만 명 연구로 도출한 2026년 신소비 30가지 비밀: 밀레니얼·신실버 세대의 흑판 복고와 실물 의례 소비",
+        "n": 1,
+        "item_ids": [
+          "acdac190-c938-48b9-a622-d06d88bf612d"
+        ],
+        "titles": [
+          "소비자 1만 명 연구로 도출한 2026년 신소비 30가지 비밀: 밀레니얼·신실버 세대의 흑판 복고와 실물 의례 소비"
+        ],
+        "why": "실물 음악 소비 부활은 이미 아날로그 매체 판에서 두 편 다뤘고, 1만 명 조사 요약 이상의 새 국면이 없다."
+      },
+      {
+        "key": "67545ef9-76c3-4003-bc61-d3ac5aae104c",
+        "title": "적토지 위의 '백억 픽셀' 해석하기: 간파 마이크로 숏드라마(微短剧)가 어떻게 천개 업종에 힘을 주고 장시 이야기를 잘 말하는가",
+        "n": 6,
+        "item_ids": [
+          "053d7b60-890c-4b10-a942-21d3d6b5d0ae",
+          "42f494d5-7b90-4e03-a6c4-0f6f077d2dd4",
+          "67545ef9-76c3-4003-bc61-d3ac5aae104c",
+          "c5345642-93a6-407a-8eaf-f5738719a569",
+          "cfc6fdc4-452b-4b87-ba75-c035f450cd5d",
+          "3bfac14e-b4f9-47a5-ab0f-bedf4ea8327a"
+        ],
+        "titles": [
+          "적토지 위의 '백억 픽셀' 해석하기: 간파 마이크로 숏드라마(微短剧)가 어떻게 천개 업종에 힘을 주고 장시 이야기를 잘 말하는가",
+          "국경절 첫날 동교기억 조이플레이 거리에 긴 줄, '청두 제조' AI 웹툰IP 콜라보 문창상품 첫 출시",
+          "2026 제2회 베이징 대시청(追光计划) 국제 마이크로 숏드라마(微短剧) 대회 최종 평가 로드쇼 시작",
+          "AI 마이크로 숏드라마(微短剧)가 심화 단계에 진입, 다중 시험 속 산업의 방향은",
+          "2026 정품 마이크로 숏드라마(微短剧) 추계 평가회 베이징 개최",
+          "스마트폰 세로보기, 반전 반복되는 스토리... 할리우드도 중국 마이크로 숏드라마(微短剧) 따라하기"
+        ],
+        "why": "숏드라마 판은 지난주에 썼고 이번 6건은 행사·수상·콜라보 소식이라 이어 갈 이유가 분명하지 않다."
+      },
+      {
+        "key": "e4f98439-d621-4ce7-908d-bca38ad9a811",
+        "title": "AI 음악 제작 플랫폼 Suno, Speech 음성 생성 기능 베타 출시, 배경음악과 나레이션 동시 제작 가능",
+        "n": 4,
+        "item_ids": [
+          "77c62dfc-27b9-4c46-a0e2-00f0fa77e54d",
+          "98ad9177-c51f-401f-8467-30e5d01348f0",
+          "5aaabbe4-ec61-4359-804f-3c691e0ca2bd",
+          "e4f98439-d621-4ce7-908d-bca38ad9a811"
+        ],
+        "titles": [
+          "AI 음악 제작 플랫폼 Suno, Speech 음성 생성 기능 베타 출시, 배경음악과 나레이션 동시 제작 가능",
+          "AI 음악 제작 플랫폼 Suno, Speech 음성 생성 기능 베타 출시, 배경음악과 나레이션 동시 제작 가능",
+          "업계 첫 AI 음악 제작 플랫폼 Suno, Speech 음성 생성 기능 출시",
+          "Suno Speech 베타, 영국 억양이 호주로 샌다…학습 데이터 비공개에 저작권 논란도"
+        ],
+        "why": "AI 음악 라이선스 판을 7편 써 왔는데 Suno 기능 출시 자체는 누가 써도 같은 요약이 나오고 반응·수치가 아직 안 붙었다."
+      }
+    ]
+  },
+  "cluster": {
+    "key": "d683d438-1eb0-4cdd-86d8-d51e19913bf0",
+    "item_ids": [
+      "d683d438-1eb0-4cdd-86d8-d51e19913bf0"
+    ],
+    "n": 1,
+    "radar_tense": "soon",
+    "factor": "교차산업",
+    "stage": "유통",
+    "titles": [
+      "음료 자판기가 '오시카츠' 시장으로 대변신! 매출 3배 돌파의 새로운 발상"
+    ],
+    "urls": [
+      "https://xtrend.nikkei.com/atcl/contents/18/01480/"
+    ],
+    "items": [
+      {
+        "title": "음료 자판기가 '오시카츠' 시장으로 대변신! 매출 3배 돌파의 새로운 발상",
+        "url": "https://xtrend.nikkei.com/atcl/contents/18/01480/",
+        "source": "日経クロストレンド",
+        "region": "japan",
+        "published_date": "2026-10-05T00:00:00+00:00",
+        "title_en": "Beverage Vending Machines Transform into 'Oshikatsu' Market with Sales Tripled: A New Approach - Nikkei Cross Trend"
+      }
+    ]
+  },
+  "source_summary": {
+    "ko": "日経クロストレンド가 음료 자판기를 '오시카츠' 콘텐츠 연동 판매기로 전환한 사례를 보도했습니다. 해당 자판기는 매출이 3배 이상 증가했으며, 팬덤 소비가 음식·음료·편의점 등 비엔터테인먼트 영역으로 확산되는 사례로 기록되었습니다.",
+    "en": "Nikkei Cross Trend reported a case where a beverage vending machine was converted into an 'oshikatsu' content-linked sales device. The vending machine recorded sales increases of more than threefold, demonstrating how fandom consumption is expanding into non-entertainment sectors including food, beverages, and convenience retail.",
+    "titles_en": [
+      "Beverage Vending Machines Transform into 'Oshikatsu' Market with Sales Tripled: A New Approach - Nikkei Cross Trend"
+    ]
+  },
+  "materials": {
+    "wiki": [
+      "2026-05-29-팬덤-비즈니스-5단계.md",
+      "2026-09-02-사업모델-성립조건-6종.md",
+      "2026-09-16-소비재브랜드-이식-분해.md"
+    ],
+    "lexicon": [
+      "industry.md#culture industries; entertainment industries",
+      "fandom.md#fan platform as commerce - 커머스로서의 팬 플랫폼"
+    ]
+  },
+  "context": "- [후속] サントリーBFが推し活自販機事業「TAG-LIVE!」を3サービス構成に拡張、アクリルカードをその場で印刷する新サービスを開始（2026年6月17日からすとぷりコラボで音声・楽曲が流れる自販機を展開） (日経クロストレンド https://xtrend.nikkei.com/atcl/contents/18/01399/00002/)\n- [후속] 日経クロストレンドが特集「\"推し活\"のリアル」で、斜陽の自販機がサントリーBFの全国網を使ったカード販売で\"転生\"した事例を推し活市場拡大の原動力として再整理 (日経クロストレンド https://xtrend.nikkei.com/atcl/contents/18/01466/00001/)\n- [후속] 自販機依存度が高いダイドーGHDは2026年2月に国内27万台のうち2万台削減を発表、同時期にサッポロHDが約4万台の自販機事業を売却 (ビジネス+IT（SBクリエイティブ） https://www.sbbit.jp/article/cont1/183065)\n- [반응] サントリーBF 自販機のリアル接点を生かし、都市部偏重のグッズ販売や在庫リスクというエンタメ業界の課題を解決すると説明 (日経クロストレンド https://xtrend.nikkei.com/atcl/contents/18/01399/00002/)\n- [반응] ダイドーGHD 高松富也社長 国内販売数量が想定以上に落ち込んでいるとし、「今後1〜2年の間に自販機での販売を黒字化したい」と発言 (日本経済新聞 https://www.nikkei.com/article/DGXZQOUF276KI0X20C25A8000000/)\n- [수치] 前年比3倍・数十億円規模（2026年内目標）／2028年に100億円以上 サントリーBF推し活自販機事業TAG-LIVE!の売上目標 (日経クロストレンド https://xtrend.nikkei.com/atcl/contents/18/01399/00002/)\n- [수치] 3.4兆円（3年で3割増） 推し活市場規模（最新推計） (日経クロストレンド https://xtrend.nikkei.com/atcl/contents/18/01466/00001/)\n- [수치] 約4兆1000億円（2025年） 推し活市場規模の過去推計（※同誌の別系列推計、上記3.4兆円と出所が異なる） (日経クロストレンド https://xtrend.nikkei.com/atcl/contents/18/01346/00001/)\n- [수치] 売上高2412億円・経常利益41億円、国内飲料事業22億円の赤字、減損298億円、最終損失303億円 ダイドーGHD 2025年度（2026年1月期）業績＝推し活自販機が狙う本体市場の地盤沈下 (ビジネス+IT https://www.sbbit.jp/article/cont1/183065)\n- [선례] ダイドーが『鬼滅の刃』タイアップ缶コーヒーで発売3週間で累計5000万本突破、営業利益が前年同期比1.6倍に（IP×自販機の先行例） (ITmedia ビジネスオンライン https://www.itmedia.co.jp/business/articles/2101/07/news015.html)\n- [선례] ダイドーが2021年10月から『呪術廻戦』コラボを実施、同年2Qの自販機チャネル売上は前年比5.8%増の461億700万円 (AdverTimes https://www.advertimes.com/20210831/article362105/)\n- [선례] ダイドーが自販機でマスク・除菌シート、グンゼのストッキング、大王製紙のおむつなど非飲料商材を販売した実験（自販機インフラの用途転用の先例） (Lmaga.jp／Wikipedia https://www.lmaga.jp/news/2021/09/333653/)\n- [선례] 推し活クラファンでNMB48が3400万円を突破するなど、非エンタメ事業者（モバオク）が推し活導線で既存事業をてこ入れした例 (日経クロストレンド https://xtrend.nikkei.com/atcl/contents/18/01399/)",
+  "judgment": {
+    "factor": "교차산업",
+    "from_stage": "유통",
+    "to_stage": "소비",
+    "region": "일본",
+    "tense": "vibe",
+    "tense_why": "산토리 한 회사의 신사업이고 추활 자판기라는 이름도 아직 없지만, 쇠퇴하는 자판기 인프라를 팬덤 접점으로 전용하는 움직임은 다이도·삿포로의 감축·매각과 겹쳐 반복될 종류다.",
+    "vibe_evidence": "산토리BF가 TAG-LIVE!를 3서비스 구성으로 확장하고 현장 인쇄 아크릴카드까지 붙이는 동안, 다이도는 2만 대 감축·삿포로는 4만 대 매각으로 같은 인프라를 비우고 있다.",
+    "vibe_evidence_en": "While Suntory BF expanded TAG-LIVE! into a three-service lineup with on-the-spot acrylic card printing, DyDo is cutting 20,000 machines and Sapporo sold off some 40,000 — the same infrastructure emptying out as one player repurposes it.",
+    "angle_ko": "굿즈가 도시에 몰리고 재고가 쌓이는 문제를 자판기가 푼다는 산토리의 설명이 핵심이다. 팬덤 커머스의 다음 병목은 콘텐츠가 아니라 '어디서 받느냐'이고, 이미 깔린 비엔터 인프라가 그 답을 들고 있다.",
+    "angle_en": "Suntory's own pitch is the tell: vending machines solve goods distribution concentrated in big cities and inventory risk. Fandom commerce's next bottleneck isn't content but pickup points — and already-installed non-entertainment infrastructure holds the answer.",
+    "title_ko": "다이도는 2만대 줄이고, 산토리는 3배 올렸다",
+    "title_en": "Suntory's TAG-LIVE! Tripled Its Sales Year on Year",
+    "bet": {
+      "claim_ko": "일본 외 지역(한국 포함)에서 음료·편의점 등 비엔터 리테일 사업자가 아이돌·애니 IP 굿즈를 현장 출력·즉시 수령 방식으로 파는 상설 무인 채널을 공식 발표한다.",
+      "claim_en": "Outside Japan (including Korea), a non-entertainment retail operator (beverage or convenience chain) announces a permanent unmanned channel selling idol/anime IP goods with on-site printing or instant pickup.",
+      "by_days": 180,
+      "check_ko": "해당 사업자 또는 IP사의 공식 보도자료·기업 공시에서 상설(단기 팝업 제외) 운영 명시 여부",
+      "check_en": "Official press release or corporate disclosure from the retailer or IP holder specifying permanent (not short-term pop-up) operation"
+    },
+    "principle_ko": "팬덤 지출이 굿즈로 쏠릴수록 병목은 제작이 아니라 수령 지점으로 옮겨가고, 이때 전국에 깔렸지만 본업 수요가 꺼진 무인 리테일 인프라는 재고 없이 즉시 생산·수령이 가능한 디지털 굿즈와 결합해 가장 싼 유통망으로 재활성화된다.",
+    "principle_en": "As fandom spending shifts toward merchandise, the bottleneck moves from production to pickup; nationwide unmanned retail infrastructure whose core demand has collapsed can be reactivated as the cheapest distribution network when paired with print-on-demand digital goods that carry no inventory.",
+    "radar_tense": "soon",
+    "agrees": true,
+    "disagree_reason": "",
+    "line_ko": "",
+    "line_en": "Suntory BF is using machines it already paid to install to hand fans printed cards and music, and that works while enough of those machines stay where fans walk."
+  },
+  "recent": "[D+31 · 2026-10-05] 「LED TOKYO, 돈 받는 지점을 입구에서 안쪽으로 옮겼다」 교차산업 유통→소비 · vibe\n  숫자 · 제목 - 무슨 얘긴지 알려주나 2/2 · 읽고 싶게 하나 2/2 / 문체 - 사람 분포 밖 3개(접속부사, 헤지, 쉼표) / 형식 95/100 · 첫 문단에 누가 무엇을 언제 있음 · AI tell 0 · 헤지 만자당 10.3 · 문장 중앙 42자\n  검수 지적 · 'IP 이벤트·굿즈 사업자 이디스(대표이사 모리 슌페이)가 함께 이름을 올린 것으로 알려졌습니다' — 앞 문장은 PR TIMES 릴리스로 출처를 달았는데 이 문장만 '알려졌습니다'로 흐려진다. 같은 릴리스에 공동 명의가 있으면 그렇게 쓰고, 확인되지 않으면 빼는 쪽이 낫다. 논지의 핵심 물증은 아니지만 ",
+  "issue": {
+    "id": null,
+    "hint": {
+      "id": null,
+      "label_ko": "자판기·무인기기의 팬덤 상품 판매 전환",
+      "label_en": "Vending Machines Converted into Fan Merch Outlets"
+    },
+    "synth": false,
+    "prior": [],
+    "thread_chars": 0
+  },
+  "draft_ko_v1": "산토리 식품인터내셔널(산토리BF)이 운영하는 오시카츠 자판기 사업 TAG-LIVE!가 전년 대비 3배 매출을 올렸다고 [닛케이 크로스트렌드(日経クロストレンド)](https://xtrend.nikkei.com/atcl/contents/18/01480/)가 보도했습니다. 오시카츠(推し活)는 좋아하는 대상에 돈과 시간을 쓰는 일본식 응원 소비를 가리키는 말이고, 같은 매체는 이 시장을 3.4조엔 규모로 추산했습니다. 산토리BF는 2026년 안에 수십억엔, 2028년 100억엔 이상을 목표로 걸었고, 2026년 6월 17일 스토프리(すとぷり) 콜라보로 음성과 악곡이 나오는 자판기를 내놓으면서 아크릴 카드를 그 자리에서 인쇄하는 서비스를 추가해 3개 서비스 구성으로 넓혔다고 닛케이 크로스트렌드가 전했습니다.\n\n회사가 밝힌 이유가 사업의 전부입니다. 굿즈 판매가 도시에 몰리고 재고 위험이 따라붙는 엔터 업계의 문제를, 전국에 깔린 자판기라는 실물 접점으로 푼다는 설명입니다. 팬 소비는 좋아하기 시작한 다음 구간에서 굿즈와 공연으로 한 번 크게 불어나는데, 받을 곳이 도쿄·오사카에만 있으면 그 구간에 들어가지 못하는 사람이 생깁니다. 병목이 만드는 쪽에 있지 않고 건네는 쪽에 있었다는 뜻입니다.\n\n같은 자판기로 다른 길을 간 선례가 있습니다. 다이도(ダイドー)는 2021년 귀멸의 칼날 타이업 캔커피를 발매 3주 만에 누적 5000만개 팔았고 영업이익이 전년 동기의 1.6배가 됐다고 ITmedia 비즈니스 온라인이 2021년 보도했습니다. 주술회전 콜라보를 돌린 분기의 자판기 채널 매출은 전년비 5.8% 늘어 461억700만엔이었다고 애드버타임스(AdverTimes)가 2021년 전했습니다. 음료를 더 팔기 위해 IP를 빌린 구조였고, 캠페인이 끝나면 숫자도 함께 끝납니다. 다이도 그룹홀딩스는 2026년 2월 국내 27만대 중 2만대 감축을 발표했고 2026년 1월기에 국내 음료사업 22억엔 적자, 최종손실 303억엔을 기록했다고 비즈니스+IT가 보도했습니다. 비슷한 시기 삿포로HD는 약 4만대 규모 자판기 사업을 팔았습니다.\n\n산토리BF가 가진 것은 설계가 아니라 조건입니다. 전국망은 새로 깔면 설비비가 먼저 나가므로, 이미 서 있는 기계를 쥔 쪽만 쓸 수 있습니다. IP 보유사는 디지털 원본만 보내면 팔린 만큼만 카드가 인쇄되니 재고를 들지 않고 수령 지점을 전국으로 늘립니다. 기계 주인은 음료 수요가 꺼진 자산에서 한 대당 매출을 올립니다. 이 교환은 망이 충분히 남아 있을 때만 성립합니다. 감축이 이어져 남은 기계의 위치가 팬의 이동 경로와 어긋나면, 전국이라는 말이 주던 값이 먼저 사라집니다.",
+  "reread_ko": [],
+  "claims": [
+    {
+      "status": "verified",
+      "source": "식품新聞(Shokuhin.net)",
+      "url": "https://shokuhin.net/151978/2026/06/20/inryou/inryou-inryou/",
+      "note": "TAG-LIVE! 서비스 전체로 2026년 전년 대비 3배 매출 목표 달성 관련 보도",
+      "claim": "산토리 식품인터내셔널(산토리BF)이 운영하는 오시카츠 자판기 사업 TAG-LIVE!가 전년 대비 3배 매출을 올렸다고 닛케이 크로스트렌드(日経クロストレンド)가 보도했습니다."
+    },
+    {
+      "status": "unverified",
+      "source": "",
+      "note": "검증 호출 실패: JSON 없음 :: 주장을 확인하기 위해서는 구체적인 맥락이 필요합니다. \"같은 매체\"가 어느 매체를 지칭하는지, \"이 시장\"이 어떤 시장을 의",
+      "claim": "같은 매체는 이 시장을 3.4조엔 규모로 추산했습니다."
+    },
+    {
+      "status": "verified",
+      "source": "オリコンニュース",
+      "url": "https://www.oricon.co.jp/news/2461966/full/",
+      "note": "2026年6月17日よりすとぷりコラボの推しボイス自販機が導入され、オリジナルラベル缶の印刷サービスが提供された",
+      "claim": "2026년 6월 17일 스토프리(すとぷり) 콜라보로 음성과 악곡이 나오는 자판기를 내놓으면서 아크릴 카드를 그 자리에서 인쇄하는 서비스를 추가했습니다."
+    },
+    {
+      "status": "contradicted",
+      "source": "Anime News Network (Mainichi 보도 인용)",
+      "url": "https://www.animenewsnetwork.com/interest/2021-05-27/mainichi-demon-slayer-kimetsu-no-yaiba-canned-coffee-sells-over-100-million-units/.173281",
+      "note": "5000만개는 맞으나 영업이익은 1.6배가 아닌 1.5배",
+      "claim": "다이도(ダイドー)는 2021년 귀멸의 칼날 타이업 캔커피를 발매 3주 만에 누적 5000만개 팔았고 영업이익이 전년 동기의 1.6배가 됐다고 ITmedia 비즈니스 온라인이 2021년 보도했습니다."
+    },
+    {
+      "status": "unverified",
+      "source": "",
+      "url": "",
+      "note": "검색 결과에서 해당 주장을 뒷받침하는 AdverTimes 기사를 확인할 수 없음",
+      "claim": "주술회전 콜라보를 돌린 분기의 자판기 채널 매출은 전년비 5.8% 늘어 461억700만엔이었다고 애드버타임스(AdverTimes)가 2021년 전했습니다."
+    },
+    {
+      "status": "contradicted",
+      "source": "뉴시스, 네이트뉴스, 알파경제",
+      "url": "https://www.newsis.com/view/NISX20260305_0003535625",
+      "note": "22억엔은 국내 음료사업 적자가 아니라 해외 음료 사업의 영업이익이며, 비즈니스+IT 보도는 확인 불가",
+      "claim": "다이도 그룹홀딩스는 2026년 2월 국내 27만대 중 2만대 감축을 발표했고 2026년 1월기에 국내 음료사업 22억엔 적자, 최종손실 303억엔을 기록했다고 비즈니스+IT가 보도했습니다."
+    }
+  ],
+  "reviews": [
+    {
+      "verdict": "pass",
+      "blocking": [],
+      "notes": [
+        "산토리BF가 실제로 TAG-LIVE!에 투입한 자판기 대수와 설치 지역 분포가 본문에 없다. '전국망'이 논지의 핵심 자산인데 그 규모를 보여주는 숫자가 다이도(27만대)·삿포로(4만대)에만 붙어 있어, 정작 주인공의 망 크기는 독자가 가늠할 수 없다. 한 줄이면 논지가 훨씬 단단해진다.",
+        "'전년 대비 3배'만 있고 절대 매출이 없어 2028년 100억엔 목표와의 거리가 보이지 않는다. 공개된 수치가 없다면 '3배가 어느 기준선 위의 3배인지는 공개되지 않았다'고 적어 두는 편이 독자에게 정직하다.",
+        "'회사가 밝힌 이유가 사업의 전부입니다'는 보도자료 논리를 그대로 승인하는 문장으로 읽힌다. 바로 뒤 문단에서 다이도 반례로 균형을 잡긴 하지만, 산토리 설명 자체의 검증 가능한 부분(지방 주문 비중, 인쇄 단가, 기계 1대당 매출)이 하나라도 붙으면 '설명'이 '증거'가 된다.",
+        "팬 쪽 수확이 얇다. 지방 팬이 자판기에서 아크릴 카드를 뽑을 때 가격·소요 시간·한정 여부가 온라인 통판 대비 어떻게 다른지가 없어, '받을 곳이 늘었다'는 명제가 실감으로 내려오지 않는다.",
+        "IP 보유사 입장에서의 중단 조건도 하나 더 있으면 좋다. 인쇄 품질·단가가 공식 굿즈 기준에 못 미치면 브랜드 쪽이 먼저 발을 뺄 수 있는데, 글은 '망의 축소'라는 기계 주인 쪽 리스크만 다룬다."
+      ],
+      "issues": [
+        "산토리BF가 실제로 TAG-LIVE!에 투입한 자판기 대수와 설치 지역 분포가 본문에 없다. '전국망'이 논지의 핵심 자산인데 그 규모를 보여주는 숫자가 다이도(27만대)·삿포로(4만대)에만 붙어 있어, 정작 주인공의 망 크기는 독자가 가늠할 수 없다. 한 줄이면 논지가 훨씬 단단해진다.",
+        "'전년 대비 3배'만 있고 절대 매출이 없어 2028년 100억엔 목표와의 거리가 보이지 않는다. 공개된 수치가 없다면 '3배가 어느 기준선 위의 3배인지는 공개되지 않았다'고 적어 두는 편이 독자에게 정직하다.",
+        "'회사가 밝힌 이유가 사업의 전부입니다'는 보도자료 논리를 그대로 승인하는 문장으로 읽힌다. 바로 뒤 문단에서 다이도 반례로 균형을 잡긴 하지만, 산토리 설명 자체의 검증 가능한 부분(지방 주문 비중, 인쇄 단가, 기계 1대당 매출)이 하나라도 붙으면 '설명'이 '증거'가 된다.",
+        "팬 쪽 수확이 얇다. 지방 팬이 자판기에서 아크릴 카드를 뽑을 때 가격·소요 시간·한정 여부가 온라인 통판 대비 어떻게 다른지가 없어, '받을 곳이 늘었다'는 명제가 실감으로 내려오지 않는다.",
+        "IP 보유사 입장에서의 중단 조건도 하나 더 있으면 좋다. 인쇄 품질·단가가 공식 굿즈 기준에 못 미치면 브랜드 쪽이 먼저 발을 뺄 수 있는데, 글은 '망의 축소'라는 기계 주인 쪽 리스크만 다룬다."
+      ],
+      "one_line": "유통 병목이라는 각도와 본문이 어긋나지 않고, 다이도 실패라는 반례와 '망이 줄면 깨진다'는 중단 조건을 스스로 마주했다. 수치 보강 여지는 남지만 차단 사유는 없다 — pass."
+    }
+  ],
+  "gate": {
+    "chars": 993,
+    "contrast": 1,
+    "chars_after": 993,
+    "contrast_after": 1,
+    "revised": false,
+    "checklist": false
+  },
+  "draft_ko_final": "산토리 식품인터내셔널(산토리BF)이 운영하는 오시카츠 자판기 사업 TAG-LIVE!가 전년 대비 3배 매출을 올렸다고 [닛케이 크로스트렌드(日経クロストレンド)](https://xtrend.nikkei.com/atcl/contents/18/01480/)가 보도했습니다. 오시카츠(推し活)는 좋아하는 대상에 돈과 시간을 쓰는 일본식 응원 소비를 가리키는 말이고, 이 시장은 3.4조엔 규모로 알려졌습니다. 산토리BF는 2026년 안에 수십억엔, 2028년 100억엔 이상을 목표로 걸었고, 2026년 6월 17일 스토프리(すとぷり) 콜라보로 음성과 악곡이 나오는 자판기를 내놓으면서 아크릴 카드를 그 자리에서 인쇄하는 서비스를 추가해 3개 서비스 구성으로 넓혔다고 닛케이 크로스트렌드가 전했습니다.\n\n회사가 밝힌 이유가 사업의 전부입니다. 굿즈 판매가 도시에 몰리고 재고 위험이 따라붙는 엔터 업계의 문제를, 전국에 깔린 자판기라는 실물 접점으로 푼다는 설명입니다. 팬 소비는 좋아하기 시작한 다음 구간에서 굿즈와 공연으로 한 번 크게 불어나는데, 받을 곳이 도쿄·오사카에만 있으면 그 구간에 들어가지 못하는 사람이 생깁니다. 병목이 만드는 쪽에 있지 않고 건네는 쪽에 있었다는 뜻입니다.\n\n같은 자판기로 다른 길을 간 선례가 있습니다. 다이도(ダイドー)는 2021년 귀멸의 칼날 타이업 캔커피를 발매 3주 만에 누적 5000만개 팔았고 영업이익이 전년 동기의 1.5배가 됐다고 애니메 뉴스 네트워크(Anime News Network)가 마이니치 보도를 인용해 전했습니다. 음료를 더 팔기 위해 IP를 빌린 구조였고, 작품이 끌어올린 숫자는 캠페인이 끝나면 함께 끝납니다. 자판기는 그 기간 동안 더 잘 팔리는 매대였을 뿐, 팬이 계속 찾아올 이유를 얻지는 못했습니다. 다이도 그룹홀딩스는 2026년 2월 국내 27만대 중 2만대 감축을 발표했고 2026년 1월기에 최종손실 303억엔을 기록했다고 뉴시스가 보도했습니다. 비슷한 시기 삿포로HD는 약 4만대 규모 자판기 사업을 팔았습니다.\n\n산토리BF가 가진 것은 설계가 아니라 조건입니다. 전국망은 새로 깔면 설비비가 먼저 나가므로, 이미 서 있는 기계를 쥔 쪽만 쓸 수 있습니다. IP 보유사는 디지털 원본만 보내면 팔린 만큼만 카드가 인쇄되니 재고를 들지 않고 수령 지점을 전국으로 늘립니다. 기계 주인은 음료 수요가 꺼진 자산에서 한 대당 매출을 올립니다. 이 교환은 망이 충분히 남아 있을 때만 성립합니다. 감축이 이어져 남은 기계의 위치가 팬의 이동 경로와 어긋나면, 전국이라는 말이 주던 값이 먼저 사라집니다.",
+  "reread_en": [],
+  "draft_en_final": "Suntory Beverage & Food, the drinks arm of the Japanese brewer, says its vending machine business TAG-LIVE! tripled its sales year on year, according to [Nikkei Cross Trend](https://xtrend.nikkei.com/atcl/contents/18/01480/). The machines sell oshikatsu (推し活), a Japanese word for the money and time people spend supporting a favourite singer, group or character, a market reportedly worth 3.4 trillion yen. Suntory BF has set targets of several billion yen within 2026 and more than 10 billion yen by 2028. On 17 June 2026 it launched a machine tied to the online singing group Sutopuri (すとぷり) that plays voice clips and songs, and added a service that prints an acrylic collectible card on the spot, bringing the line to three services, Nikkei Cross Trend reported.\n\nThe company's own explanation is the whole business. Merchandise selling is concentrated in big cities and carries inventory risk, and a vending machine network already standing across the country is a physical counter that solves both. Fan spending tends to swell once someone moves past simply liking a group and starts buying goods and concert tickets. If the only places to collect those goods are Tokyo and Osaka, part of the audience never enters that stage. The constraint sits on the handover side, not the production side.\n\nThe same hardware has been used the other way before. DyDo (ダイドー) sold a cumulative 50 million cans of its Demon Slayer tie-up coffee within three weeks of release in 2021, and its operating profit reached 1.5 times the year-earlier figure, Anime News Network reported, citing Mainichi. That structure borrowed an intellectual property to sell more beverage, and numbers lifted by a title end when the campaign ends. The machine was a better-selling shelf for a season, and never gave fans a reason to come back. DyDo Group Holdings announced in February 2026 that it would cut 20,000 of its 270,000 domestic machines and posted a net loss of 30.3 billion yen for the year to January 2026, Newsis reported. Around the same period Sapporo Holdings sold a vending operation of roughly 40,000 machines.\n\nWhat Suntory BF holds is a condition rather than a clever design. Building a nationwide network means paying for equipment first, so only an operator whose machines are already installed can use this. The rights holder sends a digital file and cards are printed only as they sell, so it carries no stock while multiplying collection points nationwide. The machine owner raises revenue per unit on an asset whose beverage demand has faded. The exchange holds only while enough of the network survives. If the cuts continue and the surviving locations drift away from where fans actually walk, the word nationwide loses its value before anything else does. Any business sitting on installed physical capacity with collapsing core demand owns a distribution asset before it owns a problem.",
+  "closing_line": {
+    "ko": {
+      "line": "",
+      "tries": [
+        {
+          "line": "산토리BF는 팔릴 만큼만 인쇄하는 자판기로 매출을 3배 올렸지만, 그 값은 전국에 남은 기계의 위치가 정해준다.",
+          "ok": false,
+          "why": "문장이 본문의 핵심 논리를 왜곡함. 본문은 '기계의 위치가 정해준다'가 아니라 '남은 기계의 위치가 팬의 이동 경로와 어긋나면 그 값이 사라진다'고 함"
+        },
+        {
+          "line": "산토리BF의 전국망은 남은 기계가 팬의 이동 경로와 겹치는 만큼 값을 내고, 어긋나는 만큼 그 값을 잃는다.",
+          "ok": false,
+          "why": "\"값을 내고\" \"그 값을 잃는다\"는 본문에 없는 표현으로, 본문의 \"값이 먼저 사라진다\"와 다른 뉘앙스를 만듦"
+        },
+        {
+          "line": "산토리BF는 남아 있는 자판기로 IP의 카드를 전국에서 건네지만, 기계가 줄어 팬의 이동 경로에서 멀어지면 전국이라는 조건부터 사라진다.",
+          "ok": false,
+          "why": "본문에서 산토리BF가 '남아 있는 자판기로 IP의 카드를 전국에서 건네는' 것이 아니라, IP 보유사가 '디지털 원본만 보내면' 카드가 인쇄되고 '수령 지점을 전국으로 늘린다'고 설명하고 있음"
+        }
+      ]
+    },
+    "en": {
+      "line": "Suntory BF is using machines it already paid to install to hand fans printed cards and music, and that works while enough of those machines stay where fans walk.",
+      "tries": [
+        {
+          "line": "Suntory BF is using machines it already paid to install to hand fans printed cards and music, and that works while enough of those machines stay where fans walk.",
+          "ok": true,
+          "why": ""
+        }
+      ]
+    }
+  },
+  "working_title": {
+    "ko": "자판기가 굿즈샵이 될 때",
+    "en": "When the Vending Machine Becomes the Merch Store"
+  },
+  "title": {
+    "ko": {
+      "title": "다이도는 2만대 줄이고, 산토리는 3배 올렸다",
+      "source": "다이도 그룹홀딩스는 2026년 2월 국내 27만대 중 2만대 감축을 발표했고 2026년 1월기에 최종손실 303억엔을 기록했다고 뉴시스가 보도했습니다.",
+      "from_body": true,
+      "candidates": [
+        {
+          "title": "다이도는 2만대 줄이고, 산토리는 3배 올렸다",
+          "source": "다이도 그룹홀딩스는 2026년 2월 국내 27만대 중 2만대 감축을 발표했고 2026년 1월기에 최종손실 303억엔을 기록했다고 뉴시스가 보도했습니다."
+        },
+        {
+          "title": "산토리BF가 가진 건 설계가 아니라 전국망이었나",
+          "source": "산토리BF가 가진 것은 설계가 아니라 조건입니다."
+        }
+      ]
+    },
+    "en": {
+      "title": "Suntory's TAG-LIVE! Tripled Its Sales Year on Year",
+      "source": "Suntory Beverage & Food, the drinks arm of the Japanese brewer, says its vending machine business TAG-LIVE! tripled its sales year on year, according to Nikkei Cross Trend.",
+      "from_body": true,
+      "candidates": [
+        {
+          "title": "Suntory's TAG-LIVE! Tripled Its Sales Year on Year",
+          "source": "Suntory Beverage & Food, the drinks arm of the Japanese brewer, says its vending machine business TAG-LIVE! tripled its sales year on year, according to Nikkei Cross Trend."
+        },
+        {
+          "title": "DyDo Cuts 20,000 of Its 270,000 Machines",
+          "source": "DyDo Group Holdings announced in February 2026 that it would cut 20,000 of its 270,000 domestic machines and posted a net loss of 30.3 billion yen for the year to January 2026, Newsis reported."
+        },
+        {
+          "title": "A Machine Tied to Sutopuri Prints a Card on the Spot",
+          "source": "On 17 June 2026 it launched a machine tied to the online singing group Sutopuri (すとぷり) that plays voice clips and songs, and added a service that prints an acrylic collectible card on the spot, bringing the line to three services, Nikkei Cross Trend reported."
+        }
+      ]
+    },
+    "check": {
+      "clarity": 2,
+      "pull": 2,
+      "kept_promise": true,
+      "why": "두 회사 이름과 수치가 박힌 동사 대비형 제목이고, 본문이 다이도 2만대 감축과 산토리 3배 성장을 모두 다룬다"
+    },
+    "duel_ko": {
+      "best": {
+        "title": "다이도는 2만대 줄이고, 산토리는 3배 올렸다",
+        "source": "다이도 그룹홀딩스는 2026년 2월 국내 27만대 중 2만대 감축을 발표했고 2026년 1월기에 최종손실 303억엔을 기록했다고 뉴시스가 보도했습니다."
+      },
+      "rounds": [
+        {
+          "a": "다이도는 2만대 줄이고, 산토리는 3배 올렸다",
+          "b": "산토리BF가 가진 건 설계가 아니라 전국망이었나",
+          "winner": "a",
+          "why": "고유명사 두 개와 '2만대 감축 vs 매출 3배'라는 수치 대비가 제목에 박혀 본문의 다이도-산토리 대조 구조를 그대로 약속하는 반면, 1번은 '설계가 아니라'라는 추상어에 관용적 물음표라 어느 기사에나 붙는다"
+        }
+      ],
+      "kept_first": true,
+      "n": 2
+    },
+    "duel_en": {
+      "best": {
+        "title": "Suntory's TAG-LIVE! Tripled Its Sales Year on Year",
+        "source": "Suntory Beverage & Food, the drinks arm of the Japanese brewer, says its vending machine business TAG-LIVE! tripled its sales year on year, according to Nikkei Cross Trend."
+      },
+      "rounds": [
+        {
+          "a": "Suntory's TAG-LIVE! Tripled Its Sales Year on Year",
+          "b": "DyDo Cuts 20,000 of Its 270,000 Machines",
+          "winner": "a",
+          "why": "2번은 본문의 중심 주체·사건(수치 포함)을 그대로 세워 약속을 지키는 반면, 1번은 대조 사례 한 단락만 가리켜 본문이 그 제목을 배신한다."
+        },
+        {
+          "a": "Suntory's TAG-LIVE! Tripled Its Sales Year on Year",
+          "b": "A Machine Tied to Sutopuri Prints a Card on the Spot",
+          "winner": "a",
+          "why": "고유명사에 '3배'라는 수치 사건이 붙어 본문의 핵심 주장(기존 자판기망이 굿즈 유통 제약을 푼다)을 바로 떠받치는 반면, 2번은 한 번의 런칭 장면만 묘사해 무슨 산업적 변화인지 제목만으로 서지 않는다."
+        }
+      ],
+      "kept_first": true,
+      "n": 3
+    }
+  },
+  "cast": [
+    {
+      "key": "sutopuri",
+      "kind": "artist",
+      "name_ko": "스토프리",
+      "name_en": "Sutopuri",
+      "desc_ko": "日本의 6인조 엔터테인먼트 그룹으로 주로 YouTube와 트위캐스 같은 영상 공유 사이트에서 활동합니다. 2016년 리더 나나모리가 중심이 되어 결성했습니다.",
+      "desc_en": "Japanese six-member entertainment group founded in June 2016, primarily active on video-sharing platforms like YouTube and Nico Nico Douga.",
+      "url": "https://ja.wikipedia.org/wiki/%E3%81%99%E3%81%A8%E3%82%8D%E3%81%B9%E3%82%8A%E3%83%BC%E3%81%B7%E3%82%8A%E3%82%93%E3%81%99",
+      "role_ko": "산토리BF가 2026년 6월 자판기 콜라보를 진행한 온라인 싱잉 그룹입니다.",
+      "role_en": "The online singing group that Suntory BF partnered with for a vending machine collaboration in June 2026."
+    },
+    {
+      "key": "dydo-group-holdings",
+      "kind": "company",
+      "name_ko": "다이도 그룹홀딩스",
+      "name_en": "DyDo Group Holdings",
+      "desc_ko": "일본의 음료 제조·판매 회사입니다. 1975년에 설립되었습니다.",
+      "desc_en": "Japanese beverage manufacturer and distributor founded in 1975.",
+      "url": "https://holdings.dydo.co.jp/en/about/profile/",
+      "role_ko": "2021년 귀멸의 칼날 캔커피로 3주 만에 5000만개를 팔았으나 이후 자판기 감축을 단행한 회사입니다.",
+      "role_en": "The company that sold 50 million cans of Demon Slayer tie-up coffee in three weeks in 2021 but later cut its vending machine fleet."
+    },
+    {
+      "key": "sapporo-holdings",
+      "kind": "company",
+      "name_ko": "삿포로HD",
+      "name_en": "Sapporo Holdings",
+      "desc_ko": "일본의 음료·식품 회사로 맥주·포카음료·부동산 임대 사업을 합니다. 1876년 설립되었습니다.",
+      "desc_en": "Japanese beverage and food company engaged in beer, food products, and real estate leasing operations. Founded in 1876.",
+      "url": "https://www.sapporoholdings.jp/english/",
+      "role_ko": "2026년 초 약 4만대 규모의 자판기 사업을 매각한 회사입니다.",
+      "role_en": "The company that sold a vending operation of roughly 40,000 machines around early 2026."
+    }
+  ],
+  "name_map": {
+    "ko": {
+      "日経クロストレンド": "닛케이 크로스트렌드",
+      "すとぷり": "스토푸리",
+      "ダイド": "다이도",
+      "日本": "일본"
+    },
+    "en": {
+      "日経クロストレンド": "Nikkei xTrend",
+      "すとぷり": "Strawberry Prince",
+      "ダイド": "Daido"
+    }
+  },
+  "usage": {
+    "input": 305637,
+    "output": 30046,
+    "calls": 41,
+    "search_uses": 21
+  },
+  "usage_by_step": {
+    "select|claude-opus-5": {
+      "input": 5138,
+      "output": 1160,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "summarize_sources|claude-haiku-4-5-20251001": {
+      "input": 696,
+      "output": 267,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "retrieve|claude-haiku-4-5-20251001": {
+      "input": 17274,
+      "output": 311,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "context|claude-opus-5": {
+      "input": 21361,
+      "output": 2161,
+      "calls": 1,
+      "search_uses": 2
+    },
+    "judge|claude-opus-5": {
+      "input": 14330,
+      "output": 1203,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "write_ko|claude-opus-5": {
+      "input": 18756,
+      "output": 4150,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "extract_claims|claude-haiku-4-5-20251001": {
+      "input": 1435,
+      "output": 541,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "verify_claim|claude-haiku-4-5-20251001": {
+      "input": 97629,
+      "output": 2241,
+      "calls": 6,
+      "search_uses": 10
+    },
+    "hedge|claude-opus-5": {
+      "input": 2733,
+      "output": 2805,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "review|claude-opus-5": {
+      "input": 2533,
+      "output": 1757,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "polish|claude-opus-5": {
+      "input": 3748,
+      "output": 2719,
+      "calls": 2,
+      "search_uses": 0
+    },
+    "write_en|claude-opus-5": {
+      "input": 2719,
+      "output": 1827,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "closing_line|claude-opus-5": {
+      "input": 7890,
+      "output": 1468,
+      "calls": 4,
+      "search_uses": 0
+    },
+    "_line_judge|claude-haiku-4-5-20251001": {
+      "input": 6180,
+      "output": 314,
+      "calls": 4,
+      "search_uses": 0
+    },
+    "title_from_body|claude-opus-5": {
+      "input": 6797,
+      "output": 3217,
+      "calls": 3,
+      "search_uses": 0
+    },
+    "compare|claude-opus-5": {
+      "input": 4777,
+      "output": 632,
+      "calls": 3,
+      "search_uses": 0
+    },
+    "title_check|claude-opus-5": {
+      "input": 2356,
+      "output": 95,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "cast|claude-haiku-4-5-20251001": {
+      "input": 2845,
+      "output": 355,
+      "calls": 1,
+      "search_uses": 0
+    },
+    "describe|claude-haiku-4-5-20251001": {
+      "input": 85871,
+      "output": 1371,
+      "calls": 5,
+      "search_uses": 9
+    },
+    "name_map|claude-opus-5": {
+      "input": 569,
+      "output": 1452,
+      "calls": 2,
+      "search_uses": 0
+    }
+  },
+  "form": {
+    "title_noun": false,
+    "title_len": 25,
+    "lead_concrete": true,
+    "ai_tell": 1,
+    "contrast": 1,
+    "hedge_10k": 10.1,
+    "sent_med": 54,
+    "long80": 26.3,
+    "checklist_end": false,
+    "title_check": {
+      "clarity": 2,
+      "pull": 2,
+      "kept_promise": true,
+      "why": "두 회사 이름과 수치가 박힌 동사 대비형 제목이고, 본문이 다이도 2만대 감축과 산토리 3배 성장을 모두 다룬다"
+    },
+    "title_kept_first": true,
+    "title_cands": 2
+  }
+}
