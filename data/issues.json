@@ -95,6 +95,12 @@
       "label_en": "Vending Machines Converted into Fan Merch Outlets",
       "created": "2026-10-06",
       "synth": []
+    },
+    "artist-owned-labels-and-major-distributi": {
+      "label_ko": "아티스트가 소유하는 레이블과 메이저의 유통 계약",
+      "label_en": "Artist-Owned Labels and Major Distribution Deals",
+      "created": "2026-10-07",
+      "synth": []
     }
   },
   "pieces": {
@@ -121,6 +127,7 @@
     "2026-10-01-trepotal-raised-67-million-yen-letting-fans-swap": "capitalization-of-fan-merch-resale-platf",
     "2026-10-02-milli-s-library-takes-its-original-ip-lineup-from-": "subscription-content-platforms-taking-ow",
     "2026-10-05-can-a-promoter-cover-the-rent-on-880-yen-fortunes": "virtual-ip-moving-into-offline-retail-sp",
-    "2026-10-06-suntory-s-tag-live-tripled-its-sales-year-on-year": "vending-machines-converted-into-fan-merc"
+    "2026-10-06-suntory-s-tag-live-tripled-its-sales-year-on-year": "vending-machines-converted-into-fan-merc",
+    "2026-10-07-fifty-one-forty-nine-already-appeared-in-rhett-s-2": "artist-owned-labels-and-major-distributi"
   }
 }

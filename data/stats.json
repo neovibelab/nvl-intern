@@ -1397,5 +1397,63 @@
       "calls": 41,
       "search_uses": 21
     }
+  },
+  {
+    "date": "2026-10-07",
+    "day": 33,
+    "slug": "2026-10-07-fifty-one-forty-nine-already-appeared-in-rhett-s-2",
+    "title_ko": "렛의 법인은 2년 전부터 남의 라이선스 아래 돌아갔다",
+    "title_en": "Fifty-One/Forty-Nine Already Appeared in Rhett's 2024 Copyright Line",
+    "factor": "자본",
+    "from_stage": "생산",
+    "to_stage": "유통",
+    "tense": "vibe",
+    "region": "글로벌",
+    "radar_tense": "soon",
+    "agrees": true,
+    "claims_total": 6,
+    "claims_verified": 3,
+    "review_rounds": 1,
+    "unresolved": false,
+    "bet": true,
+    "wiki_used": 3,
+    "lexicon_used": 0,
+    "form": {
+      "title_noun": false,
+      "title_len": 29,
+      "lead_concrete": true,
+      "ai_tell": 1,
+      "contrast": 1,
+      "hedge_10k": 0.0,
+      "sent_med": 62,
+      "long80": 31.6,
+      "checklist_end": false,
+      "title_check": {
+        "clarity": 2,
+        "pull": 2,
+        "kept_promise": true,
+        "why": "고유명사와 동사가 다 서 있고 '새 레이블인 줄 알았는데 2년 전부터 남의 라이선스'라는 반전이 본문 4문단에서 실제로 확인된다."
+      },
+      "title_kept_first": false,
+      "title_cands": 3
+    },
+    "style": {
+      "문장 리듬": 0.589,
+      "접속부사": 20.1,
+      "헤지": 0.0,
+      "수식어": 0.0,
+      "쉼표": 80.4
+    },
+    "selected_by": "intern",
+    "candidates": 5,
+    "issue": "artist-owned-labels-and-major-distributi",
+    "synth": false,
+    "cast": 3,
+    "tokens": {
+      "input": 390626,
+      "output": 42524,
+      "calls": 47,
+      "search_uses": 25
+    }
   }
 ]

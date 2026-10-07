@@ -229,5 +229,16 @@
     "check_en": "Official press release or corporate disclosure from the retailer or IP holder specifying permanent (not short-term pop-up) operation",
     "factor": "교차산업",
     "status": "open"
+  },
+  {
+    "slug": "2026-10-07-fifty-one-forty-nine-already-appeared-in-rhett-s-2",
+    "date": "2026-10-07",
+    "by_date": "2027-04-05",
+    "claim_ko": "한국 메이저·대형 기획사(하이브·SM·JYP·YG 또는 그 산하 레이블) 중 최소 한 곳이 소속·전속 아티스트에게 마스터 소유권 또는 자가 레이블 설립을 공식 허용하고 유통·인프라 계약으로 전환하는 사례를 공개 발표한다",
+    "claim_en": "At least one Korean major agency (HYBE, SM, JYP, YG or a subsidiary label) publicly announces a deal in which a signed artist owns their masters or launches their own imprint, with the agency retreating to a distribution/infrastructure contract",
+    "check_ko": "해당 사(社)의 공시·보도자료 또는 음악 전문 매체(MBW·빌보드코리아·텐아시아) 보도에서 '아티스트 소유 레이블' 또는 '마스터 소유권 이전/보유' 명시 확인",
+    "check_en": "Company disclosure/press release or trade coverage (MBW, Billboard Korea, Ten Asia) explicitly stating 'artist-owned label' or master ownership retained/transferred",
+    "factor": "자본",
+    "status": "open"
   }
 ]

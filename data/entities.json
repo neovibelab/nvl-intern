@@ -220,6 +220,45 @@
       "en": "Japanese beverage and food company engaged in beer, food products, and real estate leasing operations. Founded in 1876.",
       "url": "https://www.sapporoholdings.jp/english/",
       "source": "Sapporo Holdings Official Website"
+    },
+    "sound-distribution": {
+      "kind": "company",
+      "name_ko": "Sound Distribution",
+      "name_en": "Sound Distribution",
+      "first": "2026-10-07",
+      "pieces": [
+        "2026-10-07-fifty-one-forty-nine-already-appeared-in-rhett-s-2"
+      ],
+      "ko": "스위스 레이블로, 2026년 10월 5일 워너뮤직 산하 유통사 ADA와 전 세계 디지털 유통 계약을 맺었습니다. DJ 포맷에서 독립 레코드 레이블로 전환했습니다.",
+      "en": "Swiss record label that signed a global digital distribution deal with Warner Music's ADA Central Europe on October 5, 2026. Recently transitioned from DJ format to independent label.",
+      "url": "https://www.musicbusinessworldwide.com/warners-ada-central-europe-inks-exclusive-worldwide-digital-distribution-deal-with-swiss-label-sound-distribution/",
+      "source": "Music Business Worldwide"
+    },
+    "thomas-rhett": {
+      "kind": "artist",
+      "name_ko": "토마스 렛",
+      "name_en": "Thomas Rhett",
+      "first": "2026-10-07",
+      "pieces": [
+        "2026-10-07-fifty-one-forty-nine-already-appeared-in-rhett-s-2"
+      ],
+      "ko": "미국 컨트리 가수이며 'Marry Me', 'Die a Happy Man' 등 히트곡을 냈습니다.",
+      "en": "American country singer known for hit songs including Marry Me and Die a Happy Man.",
+      "url": "https://en.wikipedia.org/wiki/Thomas_Rhett",
+      "source": "Wikipedia"
+    },
+    "tonherd": {
+      "kind": "company",
+      "name_ko": "Tonherd",
+      "name_en": "Tonherd",
+      "first": "2026-10-07",
+      "pieces": [
+        "2026-10-07-fifty-one-forty-nine-already-appeared-in-rhett-s-2"
+      ],
+      "ko": "오스트리아 빈의 음악 레이블·스튜디오·출판사입니다. Josh.와 Ina Regen 등 오스트리아 아티스트 작업으로 알려져 있습니다.",
+      "en": "An Austrian music label, recording studio, and publishing company based in Vienna. Known for work with artists like Josh. and Ina Regen.",
+      "url": "https://tonherd.music/overview",
+      "source": "Tonherd official website"
     }
   }
 }
